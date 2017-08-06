@@ -386,6 +386,10 @@
 		BB340C591E08B11D00DA5E5E /* WritableRenderedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB340AE01E08B11C00DA5E5E /* WritableRenderedImage.swift */; };
 		BBBF2F0F1D49A179004142AE /* java_awt.h in Headers */ = {isa = PBXBuildFile; fileRef = BBBF2F0B1D49A179004142AE /* java_awt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BBBF2F141D49A1A9004142AE /* java_util.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBF2F131D49A1A9004142AE /* java_util.framework */; };
+		CED756EA1F2EB84F007C97C7 /* GraphicsDevice_WindowTranslucency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED756E61F2EB84F007C97C7 /* GraphicsDevice_WindowTranslucency.swift */; };
+		CED756EB1F2EB84F007C97C7 /* NumericShaper_Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED756E71F2EB84F007C97C7 /* NumericShaper_Range.swift */; };
+		CED756EC1F2EB84F007C97C7 /* SecondaryLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED756E81F2EB84F007C97C7 /* SecondaryLoop.swift */; };
+		CED756ED1F2EB84F007C97C7 /* Window_Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED756E91F2EB84F007C97C7 /* Window_Type.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -773,6 +777,10 @@
 		BBBF2F0B1D49A179004142AE /* java_awt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = java_awt.h; sourceTree = "<group>"; };
 		BBBF2F0C1D49A179004142AE /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		BBBF2F131D49A1A9004142AE /* java_util.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = java_util.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftJava-bhwyspxgviouaubrunixdmmpgggl/Build/Products/Debug/java_util.framework"; sourceTree = "<group>"; };
+		CED756E61F2EB84F007C97C7 /* GraphicsDevice_WindowTranslucency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphicsDevice_WindowTranslucency.swift; path = Sources/GraphicsDevice_WindowTranslucency.swift; sourceTree = "<group>"; };
+		CED756E71F2EB84F007C97C7 /* NumericShaper_Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumericShaper_Range.swift; path = Sources/NumericShaper_Range.swift; sourceTree = "<group>"; };
+		CED756E81F2EB84F007C97C7 /* SecondaryLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondaryLoop.swift; path = Sources/SecondaryLoop.swift; sourceTree = "<group>"; };
+		CED756E91F2EB84F007C97C7 /* Window_Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Window_Type.swift; path = Sources/Window_Type.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -812,6 +820,10 @@
 		BBBF2F111D49A17C004142AE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CED756E61F2EB84F007C97C7 /* GraphicsDevice_WindowTranslucency.swift */,
+				CED756E71F2EB84F007C97C7 /* NumericShaper_Range.swift */,
+				CED756E81F2EB84F007C97C7 /* SecondaryLoop.swift */,
+				CED756E91F2EB84F007C97C7 /* Window_Type.swift */,
 				BB3409681E08B11B00DA5E5E /* ActionEvent.swift */,
 				BB3409691E08B11B00DA5E5E /* ActionListener.swift */,
 				BB34096A1E08B11B00DA5E5E /* ActiveEvent.swift */,
@@ -1360,15 +1372,18 @@
 				BB340C521E08B11D00DA5E5E /* WindowAdapter.swift in Sources */,
 				BB340BDC1E08B11D00DA5E5E /* MouseWheelListener.swift in Sources */,
 				BB340AE11E08B11C00DA5E5E /* ActionEvent.swift in Sources */,
+				CED756EB1F2EB84F007C97C7 /* NumericShaper_Range.swift in Sources */,
 				BB340C271E08B11D00DA5E5E /* RoundRectangle2D.swift in Sources */,
 				BB340B671E08B11D00DA5E5E /* FlavorTable.swift in Sources */,
 				BB340BE71E08B11D00DA5E5E /* PageAttributes_ColorType.swift in Sources */,
+				CED756ED1F2EB84F007C97C7 /* Window_Type.swift in Sources */,
 				BB340B261E08B11C00DA5E5E /* ContainerOrderFocusTraversalPolicy.swift in Sources */,
 				BB340B5D1E08B11C00DA5E5E /* Event.swift in Sources */,
 				BB340AEB1E08B11C00DA5E5E /* Arc2D_Float.swift in Sources */,
 				BB340B2A1E08B11C00DA5E5E /* CropImageFilter.swift in Sources */,
 				BB340AF71E08B11C00DA5E5E /* AWTPermission.swift in Sources */,
 				BB340BD81E08B11D00DA5E5E /* MouseListener.swift in Sources */,
+				CED756EC1F2EB84F007C97C7 /* SecondaryLoop.swift in Sources */,
 				BB340BFC1E08B11D00DA5E5E /* Point2D_Double.swift in Sources */,
 				BB340BD11E08B11D00DA5E5E /* MenuShortcut.swift in Sources */,
 				BB340BC61E08B11D00DA5E5E /* MediaTracker.swift in Sources */,
@@ -1579,6 +1594,7 @@
 				BB340C421E08B11D00DA5E5E /* TextLayout_CaretPolicy.swift in Sources */,
 				BB340C141E08B11D00DA5E5E /* Rectangle2D_Double.swift in Sources */,
 				BB340C561E08B11D00DA5E5E /* WindowPeer.swift in Sources */,
+				CED756EA1F2EB84F007C97C7 /* GraphicsDevice_WindowTranslucency.swift in Sources */,
 				BB340B461E08B11C00DA5E5E /* DragGestureListener.swift in Sources */,
 				BB340B2E1E08B11C00DA5E5E /* Cursor.swift in Sources */,
 				BB340BFE1E08B11D00DA5E5E /* Point2D.swift in Sources */,
