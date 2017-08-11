@@ -317,7 +317,7 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
     open func equals( o: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: o != nil ? o! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &NumericShaper.equals_MethodID_1, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -379,7 +379,7 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
         __args[0] = JNIType.toJava( value: text, locals: &__locals )
         __args[1] = JNIType.toJava( value: start, locals: &__locals )
         __args[2] = JNIType.toJava( value: count, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: context, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "shape", methodSig: "([CIILjava/awt/font/NumericShaper$Range;)V", methodCache: &NumericShaper.shape_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -419,7 +419,7 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
     open class func getShaper( singleRange: NumericShaper_Range? ) -> NumericShaper! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: singleRange != nil ? singleRange! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: singleRange, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getShaper", methodSig: "(Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;", methodCache: &getShaper_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? NumericShaper( javaObject: __return ) : nil
@@ -437,7 +437,7 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: ranges, locals: &__locals )
-        __args[1] = JNIType.toJava( value: defaultContext != nil ? defaultContext! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: defaultContext, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getContextualShaper", methodSig: "(Ljava/util/Set;Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;", methodCache: &getContextualShaper_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? NumericShaper( javaObject: __return ) : nil

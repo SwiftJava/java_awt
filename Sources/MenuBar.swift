@@ -72,7 +72,7 @@ open class MenuBar: MenuComponent, MenuContainer {
     open func add( m: Menu? ) -> Menu! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: m, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Menu;)Ljava/awt/Menu;", methodCache: &MenuBar.add_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Menu( javaObject: __return ) : nil
@@ -104,7 +104,7 @@ open class MenuBar: MenuComponent, MenuContainer {
     open func remove( comp: MenuComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &MenuBar.remove_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -118,30 +118,15 @@ open class MenuBar: MenuComponent, MenuContainer {
 
     /// private static native void java.awt.MenuBar.initIDs()
 
-    /// public java.awt.Menu java.awt.MenuBar.getHelpMenu()
-
-    private static var getHelpMenu_MethodID_5: jmethodID?
-
-    open func getHelpMenu() -> Menu! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHelpMenu", methodSig: "()Ljava/awt/Menu;", methodCache: &MenuBar.getHelpMenu_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Menu( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.accessibility.AccessibleContext java.awt.MenuBar.getAccessibleContext()
-
     /// public void java.awt.MenuBar.setHelpMenu(java.awt.Menu)
 
-    private static var setHelpMenu_MethodID_6: jmethodID?
+    private static var setHelpMenu_MethodID_5: jmethodID?
 
     open func setHelpMenu( m: Menu? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHelpMenu", methodSig: "(Ljava/awt/Menu;)V", methodCache: &MenuBar.setHelpMenu_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: m, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHelpMenu", methodSig: "(Ljava/awt/Menu;)V", methodCache: &MenuBar.setHelpMenu_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func setHelpMenu( _ _m: Menu? ) {
@@ -150,24 +135,24 @@ open class MenuBar: MenuComponent, MenuContainer {
 
     /// public int java.awt.MenuBar.getMenuCount()
 
-    private static var getMenuCount_MethodID_7: jmethodID?
+    private static var getMenuCount_MethodID_6: jmethodID?
 
     open func getMenuCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMenuCount", methodSig: "()I", methodCache: &MenuBar.getMenuCount_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMenuCount", methodSig: "()I", methodCache: &MenuBar.getMenuCount_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.MenuBar.countMenus()
 
-    private static var countMenus_MethodID_8: jmethodID?
+    private static var countMenus_MethodID_7: jmethodID?
 
     open func countMenus() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "countMenus", methodSig: "()I", methodCache: &MenuBar.countMenus_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "countMenus", methodSig: "()I", methodCache: &MenuBar.countMenus_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -176,13 +161,13 @@ open class MenuBar: MenuComponent, MenuContainer {
 
     /// public java.awt.Menu java.awt.MenuBar.getMenu(int)
 
-    private static var getMenu_MethodID_9: jmethodID?
+    private static var getMenu_MethodID_8: jmethodID?
 
     open func getMenu( i: Int ) -> Menu! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenu", methodSig: "(I)Ljava/awt/Menu;", methodCache: &MenuBar.getMenu_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenu", methodSig: "(I)Ljava/awt/Menu;", methodCache: &MenuBar.getMenu_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Menu( javaObject: __return ) : nil
     }
@@ -193,17 +178,21 @@ open class MenuBar: MenuComponent, MenuContainer {
 
     /// final java.awt.Menu java.awt.MenuBar.getMenuImpl(int)
 
+    /// java.lang.String java.awt.MenuBar.constructComponentName()
+
+    /// public javax.accessibility.AccessibleContext java.awt.MenuBar.getAccessibleContext()
+
     /// boolean java.awt.MenuBar.handleShortcut(java.awt.event.KeyEvent)
 
     /// public java.awt.MenuItem java.awt.MenuBar.getShortcutMenuItem(java.awt.MenuShortcut)
 
-    private static var getShortcutMenuItem_MethodID_10: jmethodID?
+    private static var getShortcutMenuItem_MethodID_9: jmethodID?
 
     open func getShortcutMenuItem( s: MenuShortcut? ) -> MenuItem! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShortcutMenuItem", methodSig: "(Ljava/awt/MenuShortcut;)Ljava/awt/MenuItem;", methodCache: &MenuBar.getShortcutMenuItem_MethodID_10, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShortcutMenuItem", methodSig: "(Ljava/awt/MenuShortcut;)Ljava/awt/MenuItem;", methodCache: &MenuBar.getShortcutMenuItem_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MenuItem( javaObject: __return ) : nil
     }
@@ -214,12 +203,12 @@ open class MenuBar: MenuComponent, MenuContainer {
 
     /// public synchronized java.util.Enumeration java.awt.MenuBar.shortcuts()
 
-    private static var shortcuts_MethodID_11: jmethodID?
+    private static var shortcuts_MethodID_10: jmethodID?
 
     open func shortcuts() -> java_util.Enumeration! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "shortcuts", methodSig: "()Ljava/util/Enumeration;", methodCache: &MenuBar.shortcuts_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "shortcuts", methodSig: "()Ljava/util/Enumeration;", methodCache: &MenuBar.shortcuts_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
     }
@@ -227,13 +216,13 @@ open class MenuBar: MenuComponent, MenuContainer {
 
     /// public void java.awt.MenuBar.deleteShortcut(java.awt.MenuShortcut)
 
-    private static var deleteShortcut_MethodID_12: jmethodID?
+    private static var deleteShortcut_MethodID_11: jmethodID?
 
     open func deleteShortcut( s: MenuShortcut? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deleteShortcut", methodSig: "(Ljava/awt/MenuShortcut;)V", methodCache: &MenuBar.deleteShortcut_MethodID_12, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deleteShortcut", methodSig: "(Ljava/awt/MenuShortcut;)V", methodCache: &MenuBar.deleteShortcut_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func deleteShortcut( _ _s: MenuShortcut? ) {
@@ -241,6 +230,19 @@ open class MenuBar: MenuComponent, MenuContainer {
     }
 
     /// int java.awt.MenuBar.getAccessibleChildIndex(java.awt.MenuComponent)
+
+    /// public java.awt.Menu java.awt.MenuBar.getHelpMenu()
+
+    private static var getHelpMenu_MethodID_12: jmethodID?
+
+    open func getHelpMenu() -> Menu! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHelpMenu", methodSig: "()Ljava/awt/Menu;", methodCache: &MenuBar.getHelpMenu_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Menu( javaObject: __return ) : nil
+    }
+
 
     /// public void java.awt.MenuBar.addNotify()
 
@@ -254,8 +256,6 @@ open class MenuBar: MenuComponent, MenuContainer {
 
 
     /// public void java.awt.MenuBar.removeNotify()
-
-    /// java.lang.String java.awt.MenuBar.constructComponentName()
 
     /// In declared protocol but not defined.. ///
 

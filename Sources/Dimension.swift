@@ -63,7 +63,7 @@ open class Dimension: Dimension2D, /* java.io.Serializable */ UnclassedProtocol 
     public convenience init( d: Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: d, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dimension", classCache: &Dimension.DimensionJNIClass, methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Dimension.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -110,7 +110,7 @@ open class Dimension: Dimension2D, /* java.io.Serializable */ UnclassedProtocol 
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &Dimension.equals_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -161,7 +161,7 @@ open class Dimension: Dimension2D, /* java.io.Serializable */ UnclassedProtocol 
     open func setSize( d: Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: d, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Dimension.setSize_MethodID_7, args: &__args, locals: &__locals )
     }
 

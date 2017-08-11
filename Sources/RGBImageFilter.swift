@@ -28,7 +28,7 @@ open class RGBImageFilter: ImageFilter {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "origmodel", fieldType: "Ljava/awt/image/ColorModel;", fieldCache: &RGBImageFilter.origmodel_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -45,7 +45,7 @@ open class RGBImageFilter: ImageFilter {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "newmodel", fieldType: "Ljava/awt/image/ColorModel;", fieldCache: &RGBImageFilter.newmodel_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -114,10 +114,6 @@ open class RGBImageFilter: ImageFilter {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void java.awt.image.RGBImageFilter.setPixels(int,int,int,int,java.awt.image.ColorModel,byte[],int,int)
-
-    /// public void java.awt.image.RGBImageFilter.setPixels(int,int,int,int,java.awt.image.ColorModel,int[],int,int)
-
     /// public void java.awt.image.RGBImageFilter.substituteColorModel(java.awt.image.ColorModel,java.awt.image.ColorModel)
 
     private static var substituteColorModel_MethodID_2: jmethodID?
@@ -125,8 +121,8 @@ open class RGBImageFilter: ImageFilter {
     open func substituteColorModel( oldcm: ColorModel?, newcm: ColorModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: oldcm != nil ? oldcm! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: newcm != nil ? newcm! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: oldcm, locals: &__locals )
+        __args[1] = JNIType.toJava( value: newcm, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "substituteColorModel", methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/image/ColorModel;)V", methodCache: &RGBImageFilter.substituteColorModel_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -141,7 +137,7 @@ open class RGBImageFilter: ImageFilter {
     open func filterIndexColorModel( icm: IndexColorModel? ) -> IndexColorModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: icm != nil ? icm! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: icm, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filterIndexColorModel", methodSig: "(Ljava/awt/image/IndexColorModel;)Ljava/awt/image/IndexColorModel;", methodCache: &RGBImageFilter.filterIndexColorModel_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IndexColorModel( javaObject: __return ) : nil
@@ -189,6 +185,10 @@ open class RGBImageFilter: ImageFilter {
     open func filterRGB( _ _x: Int, _ _y: Int, _ _rgb: Int ) -> Int {
         return filterRGB( x: _x, y: _y, rgb: _rgb )
     }
+
+    /// public void java.awt.image.RGBImageFilter.setPixels(int,int,int,int,java.awt.image.ColorModel,int[],int,int)
+
+    /// public void java.awt.image.RGBImageFilter.setPixels(int,int,int,int,java.awt.image.ColorModel,byte[],int,int)
 
     /// public void java.awt.image.RGBImageFilter.setColorModel(java.awt.image.ColorModel)
 

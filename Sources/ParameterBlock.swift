@@ -33,7 +33,7 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "sources", fieldType: "Ljava/util/Vector;", fieldCache: &ParameterBlock.sources_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -50,7 +50,7 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "parameters", fieldType: "Ljava/util/Vector;", fieldCache: &ParameterBlock.parameters_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -62,8 +62,8 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
     public convenience init( sources: java_util.Vector?, parameters: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sources != nil ? sources! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: parameters != nil ? parameters! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sources, locals: &__locals )
+        __args[1] = JNIType.toJava( value: parameters, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/renderable/ParameterBlock", classCache: &ParameterBlock.ParameterBlockJNIClass, methodSig: "(Ljava/util/Vector;Ljava/util/Vector;)V", methodCache: &ParameterBlock.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -80,7 +80,7 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
     public convenience init( sources: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sources != nil ? sources! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sources, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/renderable/ParameterBlock", classCache: &ParameterBlock.ParameterBlockJNIClass, methodSig: "(Ljava/util/Vector;)V", methodCache: &ParameterBlock.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -160,7 +160,7 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
     open func add( obj: java_swift.JavaObject? ) -> ParameterBlock! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/lang/Object;)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &ParameterBlock.add_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ParameterBlock( javaObject: __return ) : nil
@@ -312,7 +312,7 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
     open func set( obj: java_swift.JavaObject?, index: Int ) -> ParameterBlock! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "set", methodSig: "(Ljava/lang/Object;I)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &ParameterBlock.set_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -341,22 +341,22 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
         return set( b: _b, index: _index )
     }
 
-    /// public java.awt.image.renderable.ParameterBlock java.awt.image.renderable.ParameterBlock.set(float,int)
+    /// public java.awt.image.renderable.ParameterBlock java.awt.image.renderable.ParameterBlock.set(double,int)
 
     private static var set_MethodID_18: jmethodID?
 
-    open func set( f: Float, index: Int ) -> ParameterBlock! {
+    open func set( d: Double, index: Int ) -> ParameterBlock! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        __args[0] = JNIType.toJava( value: d, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "set", methodSig: "(FI)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &ParameterBlock.set_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "set", methodSig: "(DI)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &ParameterBlock.set_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ParameterBlock( javaObject: __return ) : nil
     }
 
-    open func set( _ _f: Float, _ _index: Int ) -> ParameterBlock! {
-        return set( f: _f, index: _index )
+    open func set( _ _d: Double, _ _index: Int ) -> ParameterBlock! {
+        return set( d: _d, index: _index )
     }
 
     /// public java.awt.image.renderable.ParameterBlock java.awt.image.renderable.ParameterBlock.set(long,int)
@@ -377,22 +377,22 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
         return set( l: _l, index: _index )
     }
 
-    /// public java.awt.image.renderable.ParameterBlock java.awt.image.renderable.ParameterBlock.set(double,int)
+    /// public java.awt.image.renderable.ParameterBlock java.awt.image.renderable.ParameterBlock.set(float,int)
 
     private static var set_MethodID_20: jmethodID?
 
-    open func set( d: Double, index: Int ) -> ParameterBlock! {
+    open func set( f: Float, index: Int ) -> ParameterBlock! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: d, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "set", methodSig: "(DI)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &ParameterBlock.set_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "set", methodSig: "(FI)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &ParameterBlock.set_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ParameterBlock( javaObject: __return ) : nil
     }
 
-    open func set( _ _d: Double, _ _index: Int ) -> ParameterBlock! {
-        return set( d: _d, index: _index )
+    open func set( _ _f: Float, _ _index: Int ) -> ParameterBlock! {
+        return set( f: _f, index: _index )
     }
 
     /// public java.util.Vector java.awt.image.renderable.ParameterBlock.getParameters()
@@ -408,32 +408,14 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
     }
 
 
-    /// public java.awt.image.renderable.ParameterBlock java.awt.image.renderable.ParameterBlock.setSource(java.lang.Object,int)
-
-    private static var setSource_MethodID_22: jmethodID?
-
-    open func setSource( source: java_swift.JavaObject?, index: Int ) -> ParameterBlock! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "setSource", methodSig: "(Ljava/lang/Object;I)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &ParameterBlock.setSource_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ParameterBlock( javaObject: __return ) : nil
-    }
-
-    open func setSource( _ _source: java_swift.JavaObject?, _ _index: Int ) -> ParameterBlock! {
-        return setSource( source: _source, index: _index )
-    }
-
     /// public java.lang.Object java.awt.image.renderable.ParameterBlock.shallowClone()
 
-    private static var shallowClone_MethodID_23: jmethodID?
+    private static var shallowClone_MethodID_22: jmethodID?
 
     open func shallowClone() -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "shallowClone", methodSig: "()Ljava/lang/Object;", methodCache: &ParameterBlock.shallowClone_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "shallowClone", methodSig: "()Ljava/lang/Object;", methodCache: &ParameterBlock.shallowClone_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -441,13 +423,13 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public java.awt.image.renderable.ParameterBlock java.awt.image.renderable.ParameterBlock.addSource(java.lang.Object)
 
-    private static var addSource_MethodID_24: jmethodID?
+    private static var addSource_MethodID_23: jmethodID?
 
     open func addSource( source: java_swift.JavaObject? ) -> ParameterBlock! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addSource", methodSig: "(Ljava/lang/Object;)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &ParameterBlock.addSource_MethodID_24, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addSource", methodSig: "(Ljava/lang/Object;)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &ParameterBlock.addSource_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ParameterBlock( javaObject: __return ) : nil
     }
@@ -458,13 +440,13 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public java.awt.image.RenderedImage java.awt.image.renderable.ParameterBlock.getRenderedSource(int)
 
-    private static var getRenderedSource_MethodID_25: jmethodID?
+    private static var getRenderedSource_MethodID_24: jmethodID?
 
     open func getRenderedSource( index: Int ) -> RenderedImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderedSource", methodSig: "(I)Ljava/awt/image/RenderedImage;", methodCache: &ParameterBlock.getRenderedSource_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderedSource", methodSig: "(I)Ljava/awt/image/RenderedImage;", methodCache: &ParameterBlock.getRenderedSource_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RenderedImageForward( javaObject: __return ) : nil
     }
@@ -475,13 +457,13 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public java.awt.image.renderable.RenderableImage java.awt.image.renderable.ParameterBlock.getRenderableSource(int)
 
-    private static var getRenderableSource_MethodID_26: jmethodID?
+    private static var getRenderableSource_MethodID_25: jmethodID?
 
     open func getRenderableSource( index: Int ) -> RenderableImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderableSource", methodSig: "(I)Ljava/awt/image/renderable/RenderableImage;", methodCache: &ParameterBlock.getRenderableSource_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderableSource", methodSig: "(I)Ljava/awt/image/renderable/RenderableImage;", methodCache: &ParameterBlock.getRenderableSource_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RenderableImageForward( javaObject: __return ) : nil
     }
@@ -492,25 +474,25 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public int java.awt.image.renderable.ParameterBlock.getNumSources()
 
-    private static var getNumSources_MethodID_27: jmethodID?
+    private static var getNumSources_MethodID_26: jmethodID?
 
     open func getNumSources() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumSources", methodSig: "()I", methodCache: &ParameterBlock.getNumSources_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumSources", methodSig: "()I", methodCache: &ParameterBlock.getNumSources_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void java.awt.image.renderable.ParameterBlock.setSources(java.util.Vector)
 
-    private static var setSources_MethodID_28: jmethodID?
+    private static var setSources_MethodID_27: jmethodID?
 
     open func setSources( sources: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sources != nil ? sources! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSources", methodSig: "(Ljava/util/Vector;)V", methodCache: &ParameterBlock.setSources_MethodID_28, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sources, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSources", methodSig: "(Ljava/util/Vector;)V", methodCache: &ParameterBlock.setSources_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func setSources( _ _sources: java_util.Vector? ) {
@@ -519,36 +501,36 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public void java.awt.image.renderable.ParameterBlock.removeSources()
 
-    private static var removeSources_MethodID_29: jmethodID?
+    private static var removeSources_MethodID_28: jmethodID?
 
     open func removeSources() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeSources", methodSig: "()V", methodCache: &ParameterBlock.removeSources_MethodID_29, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeSources", methodSig: "()V", methodCache: &ParameterBlock.removeSources_MethodID_28, args: &__args, locals: &__locals )
     }
 
 
     /// public int java.awt.image.renderable.ParameterBlock.getNumParameters()
 
-    private static var getNumParameters_MethodID_30: jmethodID?
+    private static var getNumParameters_MethodID_29: jmethodID?
 
     open func getNumParameters() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumParameters", methodSig: "()I", methodCache: &ParameterBlock.getNumParameters_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumParameters", methodSig: "()I", methodCache: &ParameterBlock.getNumParameters_MethodID_29, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void java.awt.image.renderable.ParameterBlock.setParameters(java.util.Vector)
 
-    private static var setParameters_MethodID_31: jmethodID?
+    private static var setParameters_MethodID_30: jmethodID?
 
     open func setParameters( parameters: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parameters != nil ? parameters! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParameters", methodSig: "(Ljava/util/Vector;)V", methodCache: &ParameterBlock.setParameters_MethodID_31, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parameters, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParameters", methodSig: "(Ljava/util/Vector;)V", methodCache: &ParameterBlock.setParameters_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func setParameters( _ _parameters: java_util.Vector? ) {
@@ -557,24 +539,24 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public void java.awt.image.renderable.ParameterBlock.removeParameters()
 
-    private static var removeParameters_MethodID_32: jmethodID?
+    private static var removeParameters_MethodID_31: jmethodID?
 
     open func removeParameters() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeParameters", methodSig: "()V", methodCache: &ParameterBlock.removeParameters_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeParameters", methodSig: "()V", methodCache: &ParameterBlock.removeParameters_MethodID_31, args: &__args, locals: &__locals )
     }
 
 
     /// public java.lang.Object java.awt.image.renderable.ParameterBlock.getObjectParameter(int)
 
-    private static var getObjectParameter_MethodID_33: jmethodID?
+    private static var getObjectParameter_MethodID_32: jmethodID?
 
     open func getObjectParameter( index: Int ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getObjectParameter", methodSig: "(I)Ljava/lang/Object;", methodCache: &ParameterBlock.getObjectParameter_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getObjectParameter", methodSig: "(I)Ljava/lang/Object;", methodCache: &ParameterBlock.getObjectParameter_MethodID_32, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -585,13 +567,13 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public byte java.awt.image.renderable.ParameterBlock.getByteParameter(int)
 
-    private static var getByteParameter_MethodID_34: jmethodID?
+    private static var getByteParameter_MethodID_33: jmethodID?
 
     open func getByteParameter( index: Int ) -> Int8 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallByteMethod( object: javaObject, methodName: "getByteParameter", methodSig: "(I)B", methodCache: &ParameterBlock.getByteParameter_MethodID_34, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallByteMethod( object: javaObject, methodName: "getByteParameter", methodSig: "(I)B", methodCache: &ParameterBlock.getByteParameter_MethodID_33, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int8(), from: __return )
     }
 
@@ -601,13 +583,13 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public char java.awt.image.renderable.ParameterBlock.getCharParameter(int)
 
-    private static var getCharParameter_MethodID_35: jmethodID?
+    private static var getCharParameter_MethodID_34: jmethodID?
 
     open func getCharParameter( index: Int ) -> UInt16 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getCharParameter", methodSig: "(I)C", methodCache: &ParameterBlock.getCharParameter_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getCharParameter", methodSig: "(I)C", methodCache: &ParameterBlock.getCharParameter_MethodID_34, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: UInt16(), from: __return )
     }
 
@@ -617,13 +599,13 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public short java.awt.image.renderable.ParameterBlock.getShortParameter(int)
 
-    private static var getShortParameter_MethodID_36: jmethodID?
+    private static var getShortParameter_MethodID_35: jmethodID?
 
     open func getShortParameter( index: Int ) -> Int16 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getShortParameter", methodSig: "(I)S", methodCache: &ParameterBlock.getShortParameter_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getShortParameter", methodSig: "(I)S", methodCache: &ParameterBlock.getShortParameter_MethodID_35, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int16(), from: __return )
     }
 
@@ -633,13 +615,13 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public int java.awt.image.renderable.ParameterBlock.getIntParameter(int)
 
-    private static var getIntParameter_MethodID_37: jmethodID?
+    private static var getIntParameter_MethodID_36: jmethodID?
 
     open func getIntParameter( index: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIntParameter", methodSig: "(I)I", methodCache: &ParameterBlock.getIntParameter_MethodID_37, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIntParameter", methodSig: "(I)I", methodCache: &ParameterBlock.getIntParameter_MethodID_36, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -649,13 +631,13 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public long java.awt.image.renderable.ParameterBlock.getLongParameter(int)
 
-    private static var getLongParameter_MethodID_38: jmethodID?
+    private static var getLongParameter_MethodID_37: jmethodID?
 
     open func getLongParameter( index: Int ) -> Int64 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getLongParameter", methodSig: "(I)J", methodCache: &ParameterBlock.getLongParameter_MethodID_38, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getLongParameter", methodSig: "(I)J", methodCache: &ParameterBlock.getLongParameter_MethodID_37, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int64(), from: __return )
     }
 
@@ -665,13 +647,13 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public float java.awt.image.renderable.ParameterBlock.getFloatParameter(int)
 
-    private static var getFloatParameter_MethodID_39: jmethodID?
+    private static var getFloatParameter_MethodID_38: jmethodID?
 
     open func getFloatParameter( index: Int ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getFloatParameter", methodSig: "(I)F", methodCache: &ParameterBlock.getFloatParameter_MethodID_39, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getFloatParameter", methodSig: "(I)F", methodCache: &ParameterBlock.getFloatParameter_MethodID_38, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -681,13 +663,13 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public double java.awt.image.renderable.ParameterBlock.getDoubleParameter(int)
 
-    private static var getDoubleParameter_MethodID_40: jmethodID?
+    private static var getDoubleParameter_MethodID_39: jmethodID?
 
     open func getDoubleParameter( index: Int ) -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getDoubleParameter", methodSig: "(I)D", methodCache: &ParameterBlock.getDoubleParameter_MethodID_40, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getDoubleParameter", methodSig: "(I)D", methodCache: &ParameterBlock.getDoubleParameter_MethodID_39, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
@@ -697,38 +679,25 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
 
     /// public java.lang.Class[] java.awt.image.renderable.ParameterBlock.getParamClasses()
 
-    private static var getParamClasses_MethodID_41: jmethodID?
+    private static var getParamClasses_MethodID_40: jmethodID?
 
     open func getParamClasses() -> [JavaClass]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParamClasses", methodSig: "()[Ljava/lang/Class;", methodCache: &ParameterBlock.getParamClasses_MethodID_41, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParamClasses", methodSig: "()[Ljava/lang/Class;", methodCache: &ParameterBlock.getParamClasses_MethodID_40, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [JavaClass](), from: __return )
-    }
-
-
-    /// public java.util.Vector java.awt.image.renderable.ParameterBlock.getSources()
-
-    private static var getSources_MethodID_42: jmethodID?
-
-    open func getSources() -> java_util.Vector! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSources", methodSig: "()Ljava/util/Vector;", methodCache: &ParameterBlock.getSources_MethodID_42, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.Vector( javaObject: __return ) : nil
     }
 
 
     /// public java.lang.Object java.awt.image.renderable.ParameterBlock.getSource(int)
 
-    private static var getSource_MethodID_43: jmethodID?
+    private static var getSource_MethodID_41: jmethodID?
 
     open func getSource( index: Int ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSource", methodSig: "(I)Ljava/lang/Object;", methodCache: &ParameterBlock.getSource_MethodID_43, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSource", methodSig: "(I)Ljava/lang/Object;", methodCache: &ParameterBlock.getSource_MethodID_41, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -736,6 +705,37 @@ open class ParameterBlock: java_swift.JavaObject, java_lang.Cloneable, /* java.i
     open func getSource( _ _index: Int ) -> java_swift.JavaObject! {
         return getSource( index: _index )
     }
+
+    /// public java.awt.image.renderable.ParameterBlock java.awt.image.renderable.ParameterBlock.setSource(java.lang.Object,int)
+
+    private static var setSource_MethodID_42: jmethodID?
+
+    open func setSource( source: java_swift.JavaObject?, index: Int ) -> ParameterBlock! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: index, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "setSource", methodSig: "(Ljava/lang/Object;I)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &ParameterBlock.setSource_MethodID_42, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ParameterBlock( javaObject: __return ) : nil
+    }
+
+    open func setSource( _ _source: java_swift.JavaObject?, _ _index: Int ) -> ParameterBlock! {
+        return setSource( source: _source, index: _index )
+    }
+
+    /// public java.util.Vector java.awt.image.renderable.ParameterBlock.getSources()
+
+    private static var getSources_MethodID_43: jmethodID?
+
+    open func getSources() -> java_util.Vector! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSources", methodSig: "()Ljava/util/Vector;", methodCache: &ParameterBlock.getSources_MethodID_43, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.Vector( javaObject: __return ) : nil
+    }
+
 
 }
 

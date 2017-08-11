@@ -44,7 +44,7 @@ open class RenderingHints_Key: java_swift.JavaObject {
     open func equals( o: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: o != nil ? o! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints_Key.equals_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -55,14 +55,30 @@ open class RenderingHints_Key: java_swift.JavaObject {
 
     /// public final int java.awt.RenderingHints$Key.hashCode()
 
+    /// public abstract boolean java.awt.RenderingHints$Key.isCompatibleValue(java.lang.Object)
+
+    private static var isCompatibleValue_MethodID_3: jmethodID?
+
+    open func isCompatibleValue( val: java_swift.JavaObject? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: val, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompatibleValue", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints_Key.isCompatibleValue_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isCompatibleValue( _ _val: java_swift.JavaObject? ) -> Bool {
+        return isCompatibleValue( val: _val )
+    }
+
     /// protected final int java.awt.RenderingHints$Key.intKey()
 
-    private static var intKey_MethodID_3: jmethodID?
+    private static var intKey_MethodID_4: jmethodID?
 
     open func intKey() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "intKey", methodSig: "()I", methodCache: &RenderingHints_Key.intKey_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "intKey", methodSig: "()I", methodCache: &RenderingHints_Key.intKey_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -70,22 +86,6 @@ open class RenderingHints_Key: java_swift.JavaObject {
     /// private java.lang.String java.awt.RenderingHints$Key.getIdentity()
 
     /// private static synchronized void java.awt.RenderingHints$Key.recordIdentity(java.awt.RenderingHints$Key)
-
-    /// public abstract boolean java.awt.RenderingHints$Key.isCompatibleValue(java.lang.Object)
-
-    private static var isCompatibleValue_MethodID_4: jmethodID?
-
-    open func isCompatibleValue( val: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: val != nil ? val! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompatibleValue", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints_Key.isCompatibleValue_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isCompatibleValue( _ _val: java_swift.JavaObject? ) -> Bool {
-        return isCompatibleValue( val: _val )
-    }
 
 }
 

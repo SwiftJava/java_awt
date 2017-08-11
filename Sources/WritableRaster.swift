@@ -28,7 +28,7 @@ open class WritableRaster: Raster {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "sampleModel", fieldType: "Ljava/awt/image/SampleModel;", fieldCache: &WritableRaster.sampleModel_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -45,7 +45,7 @@ open class WritableRaster: Raster {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dataBuffer", fieldType: "Ljava/awt/image/DataBuffer;", fieldCache: &WritableRaster.dataBuffer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -198,7 +198,7 @@ open class WritableRaster: Raster {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "parent", fieldType: "Ljava/awt/image/Raster;", fieldCache: &WritableRaster.parent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -210,11 +210,11 @@ open class WritableRaster: Raster {
     public convenience init( sampleModel: SampleModel?, dataBuffer: DataBuffer?, aRegion: Rectangle?, sampleModelTranslate: Point?, parent: WritableRaster? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sampleModel != nil ? sampleModel! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dataBuffer != nil ? dataBuffer! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: aRegion != nil ? aRegion! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: sampleModelTranslate != nil ? sampleModelTranslate! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sampleModel, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dataBuffer, locals: &__locals )
+        __args[2] = JNIType.toJava( value: aRegion, locals: &__locals )
+        __args[3] = JNIType.toJava( value: sampleModelTranslate, locals: &__locals )
+        __args[4] = JNIType.toJava( value: parent, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/WritableRaster", classCache: &WritableRaster.WritableRasterJNIClass, methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/image/DataBuffer;Ljava/awt/Rectangle;Ljava/awt/Point;Ljava/awt/image/WritableRaster;)V", methodCache: &WritableRaster.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -231,9 +231,9 @@ open class WritableRaster: Raster {
     public convenience init( sampleModel: SampleModel?, dataBuffer: DataBuffer?, origin: Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sampleModel != nil ? sampleModel! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dataBuffer != nil ? dataBuffer! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: origin != nil ? origin! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sampleModel, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dataBuffer, locals: &__locals )
+        __args[2] = JNIType.toJava( value: origin, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/WritableRaster", classCache: &WritableRaster.WritableRasterJNIClass, methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/image/DataBuffer;Ljava/awt/Point;)V", methodCache: &WritableRaster.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -250,8 +250,8 @@ open class WritableRaster: Raster {
     public convenience init( sampleModel: SampleModel?, origin: Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sampleModel != nil ? sampleModel! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: origin != nil ? origin! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sampleModel, locals: &__locals )
+        __args[1] = JNIType.toJava( value: origin, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/WritableRaster", classCache: &WritableRaster.WritableRasterJNIClass, methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/Point;)V", methodCache: &WritableRaster.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -326,7 +326,7 @@ open class WritableRaster: Raster {
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: w, locals: &__locals )
         __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: inData, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDataElements", methodSig: "(IIIILjava/lang/Object;)V", methodCache: &WritableRaster.setDataElements_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -343,7 +343,7 @@ open class WritableRaster: Raster {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: inRaster != nil ? inRaster! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: inRaster, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDataElements", methodSig: "(IILjava/awt/image/Raster;)V", methodCache: &WritableRaster.setDataElements_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -360,7 +360,7 @@ open class WritableRaster: Raster {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: inData, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDataElements", methodSig: "(IILjava/lang/Object;)V", methodCache: &WritableRaster.setDataElements_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -597,7 +597,7 @@ open class WritableRaster: Raster {
     open func setRect( srcRaster: Raster? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: srcRaster != nil ? srcRaster! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: srcRaster, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRect", methodSig: "(Ljava/awt/image/Raster;)V", methodCache: &WritableRaster.setRect_MethodID_22, args: &__args, locals: &__locals )
     }
 
@@ -614,7 +614,7 @@ open class WritableRaster: Raster {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dx, locals: &__locals )
         __args[1] = JNIType.toJava( value: dy, locals: &__locals )
-        __args[2] = JNIType.toJava( value: srcRaster != nil ? srcRaster! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: srcRaster, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRect", methodSig: "(IILjava/awt/image/Raster;)V", methodCache: &WritableRaster.setRect_MethodID_23, args: &__args, locals: &__locals )
     }
 

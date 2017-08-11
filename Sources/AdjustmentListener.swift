@@ -26,7 +26,7 @@ open class AdjustmentListenerForward: java_util.EventListenerForward, Adjustment
     open func adjustmentValueChanged( e: AdjustmentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "adjustmentValueChanged", methodSig: "(Ljava/awt/event/AdjustmentEvent;)V", methodCache: &AdjustmentListenerForward.adjustmentValueChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

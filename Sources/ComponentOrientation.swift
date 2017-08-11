@@ -62,27 +62,39 @@ open class ComponentOrientation: java_swift.JavaObject, /* java.io.Serializable 
 
     /// private java.awt.ComponentOrientation(int)
 
+    /// public boolean java.awt.ComponentOrientation.isLeftToRight()
+
+    private static var isLeftToRight_MethodID_1: jmethodID?
+
+    open func isLeftToRight() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeftToRight", methodSig: "()Z", methodCache: &ComponentOrientation.isLeftToRight_MethodID_1, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
     /// public boolean java.awt.ComponentOrientation.isHorizontal()
 
-    private static var isHorizontal_MethodID_1: jmethodID?
+    private static var isHorizontal_MethodID_2: jmethodID?
 
     open func isHorizontal() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isHorizontal", methodSig: "()Z", methodCache: &ComponentOrientation.isHorizontal_MethodID_1, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isHorizontal", methodSig: "()Z", methodCache: &ComponentOrientation.isHorizontal_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public static java.awt.ComponentOrientation java.awt.ComponentOrientation.getOrientation(java.util.Locale)
 
-    private static var getOrientation_MethodID_2: jmethodID?
+    private static var getOrientation_MethodID_3: jmethodID?
 
     open class func getOrientation( locale: java_util.JavaLocale? ) -> ComponentOrientation! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: locale != nil ? locale! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/ComponentOrientation", classCache: &ComponentOrientationJNIClass, methodName: "getOrientation", methodSig: "(Ljava/util/Locale;)Ljava/awt/ComponentOrientation;", methodCache: &getOrientation_MethodID_2, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: locale, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/ComponentOrientation", classCache: &ComponentOrientationJNIClass, methodName: "getOrientation", methodSig: "(Ljava/util/Locale;)Ljava/awt/ComponentOrientation;", methodCache: &getOrientation_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentOrientation( javaObject: __return ) : nil
     }
@@ -93,13 +105,13 @@ open class ComponentOrientation: java_swift.JavaObject, /* java.io.Serializable 
 
     /// public static java.awt.ComponentOrientation java.awt.ComponentOrientation.getOrientation(java.util.ResourceBundle)
 
-    private static var getOrientation_MethodID_3: jmethodID?
+    private static var getOrientation_MethodID_4: jmethodID?
 
     open class func getOrientation( bdl: java_util.ResourceBundle? ) -> ComponentOrientation! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bdl != nil ? bdl! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/ComponentOrientation", classCache: &ComponentOrientationJNIClass, methodName: "getOrientation", methodSig: "(Ljava/util/ResourceBundle;)Ljava/awt/ComponentOrientation;", methodCache: &getOrientation_MethodID_3, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: bdl, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/ComponentOrientation", classCache: &ComponentOrientationJNIClass, methodName: "getOrientation", methodSig: "(Ljava/util/ResourceBundle;)Ljava/awt/ComponentOrientation;", methodCache: &getOrientation_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentOrientation( javaObject: __return ) : nil
     }
@@ -107,18 +119,6 @@ open class ComponentOrientation: java_swift.JavaObject, /* java.io.Serializable 
     open class func getOrientation( _ _bdl: java_util.ResourceBundle? ) -> ComponentOrientation! {
         return getOrientation( bdl: _bdl )
     }
-
-    /// public boolean java.awt.ComponentOrientation.isLeftToRight()
-
-    private static var isLeftToRight_MethodID_4: jmethodID?
-
-    open func isLeftToRight() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeftToRight", methodSig: "()Z", methodCache: &ComponentOrientation.isLeftToRight_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
 
 }
 

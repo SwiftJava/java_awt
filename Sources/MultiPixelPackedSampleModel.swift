@@ -145,7 +145,7 @@ open class MultiPixelPackedSampleModel: SampleModel {
     open func equals( o: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: o != nil ? o! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &MultiPixelPackedSampleModel.equals_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -172,32 +172,6 @@ open class MultiPixelPackedSampleModel: SampleModel {
     open func getOffset( _ _x: Int, _ _y: Int ) -> Int {
         return getOffset( x: _x, y: _y )
     }
-
-    /// public int java.awt.image.MultiPixelPackedSampleModel.getSampleSize(int)
-
-    /// public int[] java.awt.image.MultiPixelPackedSampleModel.getSampleSize()
-
-    /// public java.awt.image.DataBuffer java.awt.image.MultiPixelPackedSampleModel.createDataBuffer()
-
-    /// public java.awt.image.SampleModel java.awt.image.MultiPixelPackedSampleModel.createSubsetSampleModel(int[])
-
-    /// public void java.awt.image.MultiPixelPackedSampleModel.setDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.MultiPixelPackedSampleModel.setPixel(int,int,int[],java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.MultiPixelPackedSampleModel.setSample(int,int,int,int,java.awt.image.DataBuffer)
-
-    /// public int java.awt.image.MultiPixelPackedSampleModel.getTransferType()
-
-    /// public java.lang.Object java.awt.image.MultiPixelPackedSampleModel.getDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
-
-    /// public java.awt.image.SampleModel java.awt.image.MultiPixelPackedSampleModel.createCompatibleSampleModel(int,int)
-
-    /// public int java.awt.image.MultiPixelPackedSampleModel.getNumDataElements()
-
-    /// public int[] java.awt.image.MultiPixelPackedSampleModel.getPixel(int,int,int[],java.awt.image.DataBuffer)
-
-    /// public int java.awt.image.MultiPixelPackedSampleModel.getSample(int,int,int,java.awt.image.DataBuffer)
 
     /// public int java.awt.image.MultiPixelPackedSampleModel.getBitOffset(int)
 
@@ -238,6 +212,32 @@ open class MultiPixelPackedSampleModel: SampleModel {
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
+
+    /// public int[] java.awt.image.MultiPixelPackedSampleModel.getSampleSize()
+
+    /// public int java.awt.image.MultiPixelPackedSampleModel.getSampleSize(int)
+
+    /// public java.awt.image.DataBuffer java.awt.image.MultiPixelPackedSampleModel.createDataBuffer()
+
+    /// public java.awt.image.SampleModel java.awt.image.MultiPixelPackedSampleModel.createSubsetSampleModel(int[])
+
+    /// public void java.awt.image.MultiPixelPackedSampleModel.setDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
+
+    /// public void java.awt.image.MultiPixelPackedSampleModel.setPixel(int,int,int[],java.awt.image.DataBuffer)
+
+    /// public void java.awt.image.MultiPixelPackedSampleModel.setSample(int,int,int,int,java.awt.image.DataBuffer)
+
+    /// public int java.awt.image.MultiPixelPackedSampleModel.getTransferType()
+
+    /// public java.lang.Object java.awt.image.MultiPixelPackedSampleModel.getDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
+
+    /// public java.awt.image.SampleModel java.awt.image.MultiPixelPackedSampleModel.createCompatibleSampleModel(int,int)
+
+    /// public int java.awt.image.MultiPixelPackedSampleModel.getNumDataElements()
+
+    /// public int[] java.awt.image.MultiPixelPackedSampleModel.getPixel(int,int,int[],java.awt.image.DataBuffer)
+
+    /// public int java.awt.image.MultiPixelPackedSampleModel.getSample(int,int,int,java.awt.image.DataBuffer)
 
     /// public int java.awt.image.MultiPixelPackedSampleModel.getScanlineStride()
 

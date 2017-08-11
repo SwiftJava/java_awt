@@ -35,7 +35,7 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     open func windowOpened( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowOpened", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowOpened_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -50,7 +50,7 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     open func windowClosing( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosing", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowClosing_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -65,7 +65,7 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     open func windowClosed( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosed", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowClosed_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -80,7 +80,7 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     open func windowIconified( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowIconified", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowIconified_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -95,7 +95,7 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     open func windowDeiconified( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowDeiconified", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowDeiconified_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -110,7 +110,7 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     open func windowActivated( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowActivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowActivated_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -125,7 +125,7 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     open func windowDeactivated( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowDeactivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowDeactivated_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -140,7 +140,7 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     open func windowGainedFocus( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowGainedFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowGainedFocus_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -155,7 +155,7 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     open func windowLostFocus( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowLostFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowLostFocus_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -170,7 +170,7 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     open func windowStateChanged( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowStateChanged", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowStateChanged_MethodID_11, args: &__args, locals: &__locals )
     }
 

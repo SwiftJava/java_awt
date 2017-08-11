@@ -35,7 +35,30 @@ open class GraphicsEnvironment: java_swift.JavaObject {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// static void java.awt.GraphicsEnvironment.checkHeadless() throws java.awt.HeadlessException
+    /// public static boolean java.awt.GraphicsEnvironment.isHeadless()
+
+    private static var isHeadless_MethodID_2: jmethodID?
+
+    open class func isHeadless() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/GraphicsEnvironment", classCache: &GraphicsEnvironmentJNIClass, methodName: "isHeadless", methodSig: "()Z", methodCache: &isHeadless_MethodID_2, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public static synchronized java.awt.GraphicsEnvironment java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment()
+
+    private static var getLocalGraphicsEnvironment_MethodID_3: jmethodID?
+
+    open class func getLocalGraphicsEnvironment() -> GraphicsEnvironment! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/GraphicsEnvironment", classCache: &GraphicsEnvironmentJNIClass, methodName: "getLocalGraphicsEnvironment", methodSig: "()Ljava/awt/GraphicsEnvironment;", methodCache: &getLocalGraphicsEnvironment_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? GraphicsEnvironment( javaObject: __return ) : nil
+    }
+
 
     /// private static java.awt.GraphicsEnvironment java.awt.GraphicsEnvironment.createGE()
 
@@ -45,24 +68,24 @@ open class GraphicsEnvironment: java_swift.JavaObject {
 
     /// public boolean java.awt.GraphicsEnvironment.isHeadlessInstance()
 
-    private static var isHeadlessInstance_MethodID_2: jmethodID?
+    private static var isHeadlessInstance_MethodID_4: jmethodID?
 
     open func isHeadlessInstance() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isHeadlessInstance", methodSig: "()Z", methodCache: &GraphicsEnvironment.isHeadlessInstance_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isHeadlessInstance", methodSig: "()Z", methodCache: &GraphicsEnvironment.isHeadlessInstance_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract java.awt.GraphicsDevice[] java.awt.GraphicsEnvironment.getScreenDevices() throws java.awt.HeadlessException
 
-    private static var getScreenDevices_MethodID_3: jmethodID?
+    private static var getScreenDevices_MethodID_5: jmethodID?
 
     open func getScreenDevices() throws /* java.awt.HeadlessException */ -> [GraphicsDevice]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScreenDevices", methodSig: "()[Ljava/awt/GraphicsDevice;", methodCache: &GraphicsEnvironment.getScreenDevices_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScreenDevices", methodSig: "()[Ljava/awt/GraphicsDevice;", methodCache: &GraphicsEnvironment.getScreenDevices_MethodID_5, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -72,12 +95,12 @@ open class GraphicsEnvironment: java_swift.JavaObject {
 
     /// public abstract java.awt.GraphicsDevice java.awt.GraphicsEnvironment.getDefaultScreenDevice() throws java.awt.HeadlessException
 
-    private static var getDefaultScreenDevice_MethodID_4: jmethodID?
+    private static var getDefaultScreenDevice_MethodID_6: jmethodID?
 
     open func getDefaultScreenDevice() throws /* java.awt.HeadlessException */ -> GraphicsDevice! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultScreenDevice", methodSig: "()Ljava/awt/GraphicsDevice;", methodCache: &GraphicsEnvironment.getDefaultScreenDevice_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultScreenDevice", methodSig: "()Ljava/awt/GraphicsDevice;", methodCache: &GraphicsEnvironment.getDefaultScreenDevice_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -88,13 +111,13 @@ open class GraphicsEnvironment: java_swift.JavaObject {
 
     /// public abstract java.awt.Graphics2D java.awt.GraphicsEnvironment.createGraphics(java.awt.image.BufferedImage)
 
-    private static var createGraphics_MethodID_5: jmethodID?
+    private static var createGraphics_MethodID_7: jmethodID?
 
     open func createGraphics( img: BufferedImage? ) -> Graphics2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img != nil ? img! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createGraphics", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/Graphics2D;", methodCache: &GraphicsEnvironment.createGraphics_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createGraphics", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/Graphics2D;", methodCache: &GraphicsEnvironment.createGraphics_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Graphics2D( javaObject: __return ) : nil
     }
@@ -105,37 +128,37 @@ open class GraphicsEnvironment: java_swift.JavaObject {
 
     /// public abstract java.awt.Font[] java.awt.GraphicsEnvironment.getAllFonts()
 
-    private static var getAllFonts_MethodID_6: jmethodID?
+    private static var getAllFonts_MethodID_8: jmethodID?
 
     open func getAllFonts() -> [Font]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAllFonts", methodSig: "()[Ljava/awt/Font;", methodCache: &GraphicsEnvironment.getAllFonts_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAllFonts", methodSig: "()[Ljava/awt/Font;", methodCache: &GraphicsEnvironment.getAllFonts_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Font](), from: __return )
     }
 
 
     /// public abstract java.lang.String[] java.awt.GraphicsEnvironment.getAvailableFontFamilyNames()
 
-    private static var getAvailableFontFamilyNames_MethodID_7: jmethodID?
+    private static var getAvailableFontFamilyNames_MethodID_9: jmethodID?
 
     open func getAvailableFontFamilyNames() -> [String]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAvailableFontFamilyNames", methodSig: "()[Ljava/lang/String;", methodCache: &GraphicsEnvironment.getAvailableFontFamilyNames_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAvailableFontFamilyNames", methodSig: "()[Ljava/lang/String;", methodCache: &GraphicsEnvironment.getAvailableFontFamilyNames_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [String](), from: __return )
     }
 
 
     /// public abstract java.lang.String[] java.awt.GraphicsEnvironment.getAvailableFontFamilyNames(java.util.Locale)
 
-    private static var getAvailableFontFamilyNames_MethodID_8: jmethodID?
+    private static var getAvailableFontFamilyNames_MethodID_10: jmethodID?
 
     open func getAvailableFontFamilyNames( l: java_util.JavaLocale? ) -> [String]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l != nil ? l! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAvailableFontFamilyNames", methodSig: "(Ljava/util/Locale;)[Ljava/lang/String;", methodCache: &GraphicsEnvironment.getAvailableFontFamilyNames_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAvailableFontFamilyNames", methodSig: "(Ljava/util/Locale;)[Ljava/lang/String;", methodCache: &GraphicsEnvironment.getAvailableFontFamilyNames_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [String](), from: __return )
     }
 
@@ -145,13 +168,13 @@ open class GraphicsEnvironment: java_swift.JavaObject {
 
     /// public boolean java.awt.GraphicsEnvironment.registerFont(java.awt.Font)
 
-    private static var registerFont_MethodID_9: jmethodID?
+    private static var registerFont_MethodID_11: jmethodID?
 
     open func registerFont( font: Font? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: font != nil ? font! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "registerFont", methodSig: "(Ljava/awt/Font;)Z", methodCache: &GraphicsEnvironment.registerFont_MethodID_9, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: font, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "registerFont", methodSig: "(Ljava/awt/Font;)Z", methodCache: &GraphicsEnvironment.registerFont_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -161,34 +184,34 @@ open class GraphicsEnvironment: java_swift.JavaObject {
 
     /// public void java.awt.GraphicsEnvironment.preferLocaleFonts()
 
-    private static var preferLocaleFonts_MethodID_10: jmethodID?
+    private static var preferLocaleFonts_MethodID_12: jmethodID?
 
     open func preferLocaleFonts() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "preferLocaleFonts", methodSig: "()V", methodCache: &GraphicsEnvironment.preferLocaleFonts_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "preferLocaleFonts", methodSig: "()V", methodCache: &GraphicsEnvironment.preferLocaleFonts_MethodID_12, args: &__args, locals: &__locals )
     }
 
 
     /// public void java.awt.GraphicsEnvironment.preferProportionalFonts()
 
-    private static var preferProportionalFonts_MethodID_11: jmethodID?
+    private static var preferProportionalFonts_MethodID_13: jmethodID?
 
     open func preferProportionalFonts() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "preferProportionalFonts", methodSig: "()V", methodCache: &GraphicsEnvironment.preferProportionalFonts_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "preferProportionalFonts", methodSig: "()V", methodCache: &GraphicsEnvironment.preferProportionalFonts_MethodID_13, args: &__args, locals: &__locals )
     }
 
 
     /// public java.awt.Point java.awt.GraphicsEnvironment.getCenterPoint() throws java.awt.HeadlessException
 
-    private static var getCenterPoint_MethodID_12: jmethodID?
+    private static var getCenterPoint_MethodID_14: jmethodID?
 
     open func getCenterPoint() throws /* java.awt.HeadlessException */ -> Point! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCenterPoint", methodSig: "()Ljava/awt/Point;", methodCache: &GraphicsEnvironment.getCenterPoint_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCenterPoint", methodSig: "()Ljava/awt/Point;", methodCache: &GraphicsEnvironment.getCenterPoint_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -199,12 +222,12 @@ open class GraphicsEnvironment: java_swift.JavaObject {
 
     /// public java.awt.Rectangle java.awt.GraphicsEnvironment.getMaximumWindowBounds() throws java.awt.HeadlessException
 
-    private static var getMaximumWindowBounds_MethodID_13: jmethodID?
+    private static var getMaximumWindowBounds_MethodID_15: jmethodID?
 
     open func getMaximumWindowBounds() throws /* java.awt.HeadlessException */ -> Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumWindowBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &GraphicsEnvironment.getMaximumWindowBounds_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumWindowBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &GraphicsEnvironment.getMaximumWindowBounds_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -215,30 +238,7 @@ open class GraphicsEnvironment: java_swift.JavaObject {
 
     /// private static java.lang.Void java.awt.GraphicsEnvironment.lambda$getHeadlessProperty$0()
 
-    /// public static boolean java.awt.GraphicsEnvironment.isHeadless()
-
-    private static var isHeadless_MethodID_14: jmethodID?
-
-    open class func isHeadless() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/GraphicsEnvironment", classCache: &GraphicsEnvironmentJNIClass, methodName: "isHeadless", methodSig: "()Z", methodCache: &isHeadless_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public static synchronized java.awt.GraphicsEnvironment java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment()
-
-    private static var getLocalGraphicsEnvironment_MethodID_15: jmethodID?
-
-    open class func getLocalGraphicsEnvironment() -> GraphicsEnvironment! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/GraphicsEnvironment", classCache: &GraphicsEnvironmentJNIClass, methodName: "getLocalGraphicsEnvironment", methodSig: "()Ljava/awt/GraphicsEnvironment;", methodCache: &getLocalGraphicsEnvironment_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? GraphicsEnvironment( javaObject: __return ) : nil
-    }
-
+    /// static void java.awt.GraphicsEnvironment.checkHeadless() throws java.awt.HeadlessException
 
 }
 

@@ -72,7 +72,7 @@ open class TextMeasurer: java_swift.JavaObject, java_lang.Cloneable {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        __args[1] = JNIType.toJava( value: frc != nil ? frc! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: frc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/font/TextMeasurer", classCache: &TextMeasurer.TextMeasurerJNIClass, methodSig: "(Ljava/text/AttributedCharacterIterator;Ljava/awt/font/FontRenderContext;)V", methodCache: &TextMeasurer.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

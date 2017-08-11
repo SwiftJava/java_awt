@@ -42,7 +42,7 @@ open class RenderableImageOp: java_swift.JavaObject, RenderableImage {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: CRIF, locals: &__locals )
-        __args[1] = JNIType.toJava( value: paramBlock != nil ? paramBlock! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: paramBlock, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/renderable/RenderableImageOp", classCache: &RenderableImageOp.RenderableImageOpJNIClass, methodSig: "(Ljava/awt/image/renderable/ContextualRenderedImageFactory;Ljava/awt/image/renderable/ParameterBlock;)V", methodCache: &RenderableImageOp.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -69,45 +69,21 @@ open class RenderableImageOp: java_swift.JavaObject, RenderableImage {
         return getProperty( name: _name )
     }
 
-    /// public float java.awt.image.renderable.RenderableImageOp.getMinX()
-
-    private static var getMinX_MethodID_3: jmethodID?
-
-    open func getMinX() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinX", methodSig: "()F", methodCache: &RenderableImageOp.getMinX_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
-    /// public float java.awt.image.renderable.RenderableImageOp.getMinY()
-
-    private static var getMinY_MethodID_4: jmethodID?
-
-    open func getMinY() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinY", methodSig: "()F", methodCache: &RenderableImageOp.getMinY_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
     /// public boolean java.awt.image.renderable.RenderableImageOp.isDynamic()
 
-    private static var isDynamic_MethodID_5: jmethodID?
+    private static var isDynamic_MethodID_3: jmethodID?
 
     open func isDynamic() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDynamic", methodSig: "()Z", methodCache: &RenderableImageOp.isDynamic_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDynamic", methodSig: "()Z", methodCache: &RenderableImageOp.isDynamic_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public java.awt.image.RenderedImage java.awt.image.renderable.RenderableImageOp.createScaledRendering(int,int,java.awt.RenderingHints)
 
-    private static var createScaledRendering_MethodID_6: jmethodID?
+    private static var createScaledRendering_MethodID_4: jmethodID?
 
     open func createScaledRendering( w: Int, h: Int, hints: RenderingHints? ) -> RenderedImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -115,7 +91,7 @@ open class RenderableImageOp: java_swift.JavaObject, RenderableImage {
         __args[0] = JNIType.toJava( value: w, locals: &__locals )
         __args[1] = JNIType.toJava( value: h, locals: &__locals )
         __args[2] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScaledRendering", methodSig: "(IILjava/awt/RenderingHints;)Ljava/awt/image/RenderedImage;", methodCache: &RenderableImageOp.createScaledRendering_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScaledRendering", methodSig: "(IILjava/awt/RenderingHints;)Ljava/awt/image/RenderedImage;", methodCache: &RenderableImageOp.createScaledRendering_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RenderedImageForward( javaObject: __return ) : nil
     }
@@ -126,12 +102,12 @@ open class RenderableImageOp: java_swift.JavaObject, RenderableImage {
 
     /// public java.awt.image.RenderedImage java.awt.image.renderable.RenderableImageOp.createDefaultRendering()
 
-    private static var createDefaultRendering_MethodID_7: jmethodID?
+    private static var createDefaultRendering_MethodID_5: jmethodID?
 
     open func createDefaultRendering() -> RenderedImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRendering", methodSig: "()Ljava/awt/image/RenderedImage;", methodCache: &RenderableImageOp.createDefaultRendering_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRendering", methodSig: "()Ljava/awt/image/RenderedImage;", methodCache: &RenderableImageOp.createDefaultRendering_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RenderedImageForward( javaObject: __return ) : nil
     }
@@ -139,13 +115,13 @@ open class RenderableImageOp: java_swift.JavaObject, RenderableImage {
 
     /// public java.awt.image.RenderedImage java.awt.image.renderable.RenderableImageOp.createRendering(java.awt.image.renderable.RenderContext)
 
-    private static var createRendering_MethodID_8: jmethodID?
+    private static var createRendering_MethodID_6: jmethodID?
 
     open func createRendering( renderContext: RenderContext? ) -> RenderedImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: renderContext != nil ? renderContext! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRendering", methodSig: "(Ljava/awt/image/renderable/RenderContext;)Ljava/awt/image/RenderedImage;", methodCache: &RenderableImageOp.createRendering_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: renderContext, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRendering", methodSig: "(Ljava/awt/image/renderable/RenderContext;)Ljava/awt/image/RenderedImage;", methodCache: &RenderableImageOp.createRendering_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RenderedImageForward( javaObject: __return ) : nil
     }
@@ -158,13 +134,13 @@ open class RenderableImageOp: java_swift.JavaObject, RenderableImage {
 
     /// public java.awt.image.renderable.ParameterBlock java.awt.image.renderable.RenderableImageOp.setParameterBlock(java.awt.image.renderable.ParameterBlock)
 
-    private static var setParameterBlock_MethodID_9: jmethodID?
+    private static var setParameterBlock_MethodID_7: jmethodID?
 
     open func setParameterBlock( paramBlock: ParameterBlock? ) -> ParameterBlock! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: paramBlock != nil ? paramBlock! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "setParameterBlock", methodSig: "(Ljava/awt/image/renderable/ParameterBlock;)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &RenderableImageOp.setParameterBlock_MethodID_9, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: paramBlock, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "setParameterBlock", methodSig: "(Ljava/awt/image/renderable/ParameterBlock;)Ljava/awt/image/renderable/ParameterBlock;", methodCache: &RenderableImageOp.setParameterBlock_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ParameterBlock( javaObject: __return ) : nil
     }
@@ -175,25 +151,73 @@ open class RenderableImageOp: java_swift.JavaObject, RenderableImage {
 
     /// public java.awt.image.renderable.ParameterBlock java.awt.image.renderable.RenderableImageOp.getParameterBlock()
 
-    private static var getParameterBlock_MethodID_10: jmethodID?
+    private static var getParameterBlock_MethodID_8: jmethodID?
 
     open func getParameterBlock() -> ParameterBlock! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParameterBlock", methodSig: "()Ljava/awt/image/renderable/ParameterBlock;", methodCache: &RenderableImageOp.getParameterBlock_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParameterBlock", methodSig: "()Ljava/awt/image/renderable/ParameterBlock;", methodCache: &RenderableImageOp.getParameterBlock_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ParameterBlock( javaObject: __return ) : nil
     }
 
 
+    /// public float java.awt.image.renderable.RenderableImageOp.getMinX()
+
+    private static var getMinX_MethodID_9: jmethodID?
+
+    open func getMinX() -> Float {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinX", methodSig: "()F", methodCache: &RenderableImageOp.getMinX_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Float(), from: __return )
+    }
+
+
+    /// public float java.awt.image.renderable.RenderableImageOp.getMinY()
+
+    private static var getMinY_MethodID_10: jmethodID?
+
+    open func getMinY() -> Float {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinY", methodSig: "()F", methodCache: &RenderableImageOp.getMinY_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Float(), from: __return )
+    }
+
+
+    /// public float java.awt.image.renderable.RenderableImageOp.getWidth()
+
+    private static var getWidth_MethodID_11: jmethodID?
+
+    open func getWidth() -> Float {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getWidth", methodSig: "()F", methodCache: &RenderableImageOp.getWidth_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Float(), from: __return )
+    }
+
+
+    /// public float java.awt.image.renderable.RenderableImageOp.getHeight()
+
+    private static var getHeight_MethodID_12: jmethodID?
+
+    open func getHeight() -> Float {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getHeight", methodSig: "()F", methodCache: &RenderableImageOp.getHeight_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Float(), from: __return )
+    }
+
+
     /// public java.util.Vector java.awt.image.renderable.RenderableImageOp.getSources()
 
-    private static var getSources_MethodID_11: jmethodID?
+    private static var getSources_MethodID_13: jmethodID?
 
     open func getSources() -> java_util.Vector! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSources", methodSig: "()Ljava/util/Vector;", methodCache: &RenderableImageOp.getSources_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSources", methodSig: "()Ljava/util/Vector;", methodCache: &RenderableImageOp.getSources_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.Vector( javaObject: __return ) : nil
     }
@@ -201,37 +225,13 @@ open class RenderableImageOp: java_swift.JavaObject, RenderableImage {
 
     /// public java.lang.String[] java.awt.image.renderable.RenderableImageOp.getPropertyNames()
 
-    private static var getPropertyNames_MethodID_12: jmethodID?
+    private static var getPropertyNames_MethodID_14: jmethodID?
 
     open func getPropertyNames() -> [String]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyNames", methodSig: "()[Ljava/lang/String;", methodCache: &RenderableImageOp.getPropertyNames_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyNames", methodSig: "()[Ljava/lang/String;", methodCache: &RenderableImageOp.getPropertyNames_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [String](), from: __return )
-    }
-
-
-    /// public float java.awt.image.renderable.RenderableImageOp.getWidth()
-
-    private static var getWidth_MethodID_13: jmethodID?
-
-    open func getWidth() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getWidth", methodSig: "()F", methodCache: &RenderableImageOp.getWidth_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
-    /// public float java.awt.image.renderable.RenderableImageOp.getHeight()
-
-    private static var getHeight_MethodID_14: jmethodID?
-
-    open func getHeight() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getHeight", methodSig: "()F", methodCache: &RenderableImageOp.getHeight_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
     }
 
 

@@ -284,7 +284,7 @@ open class Panel: Container {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Panel.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -336,11 +336,11 @@ open class Panel: Container {
         self.init( layout: _layout )
     }
 
+    /// java.lang.String java.awt.Panel.constructComponentName()
+
     /// public javax.accessibility.AccessibleContext java.awt.Panel.getAccessibleContext()
 
     /// public void java.awt.Panel.addNotify()
-
-    /// java.lang.String java.awt.Panel.constructComponentName()
 
     /// In declared protocol but not defined.. ///
 

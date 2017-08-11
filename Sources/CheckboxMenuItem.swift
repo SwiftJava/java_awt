@@ -145,7 +145,11 @@ open class CheckboxMenuItem: MenuItem, ItemSelectable {
 
     /// private static native void java.awt.CheckboxMenuItem.initIDs()
 
+    /// java.lang.String java.awt.CheckboxMenuItem.constructComponentName()
+
     /// public javax.accessibility.AccessibleContext java.awt.CheckboxMenuItem.getAccessibleContext()
+
+    /// void java.awt.CheckboxMenuItem.doMenuEvent(long,int)
 
     /// public synchronized void java.awt.CheckboxMenuItem.addItemListener(java.awt.event.ItemListener)
 
@@ -223,15 +227,13 @@ open class CheckboxMenuItem: MenuItem, ItemSelectable {
     open func processItemEvent( e: ItemEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "processItemEvent", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &CheckboxMenuItem.processItemEvent_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func processItemEvent( _ _e: ItemEvent? ) {
         processItemEvent( e: _e )
     }
-
-    /// void java.awt.CheckboxMenuItem.doMenuEvent(long,int)
 
     /// public java.util.EventListener[] java.awt.CheckboxMenuItem.getListeners(java.lang.Class)
 
@@ -246,15 +248,13 @@ open class CheckboxMenuItem: MenuItem, ItemSelectable {
     override open func processEvent( e: AWTEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &CheckboxMenuItem.processEvent_MethodID_11, args: &__args, locals: &__locals )
     }
 
     override open func processEvent( _ _e: AWTEvent? ) {
         processEvent( e: _e )
     }
-
-    /// java.lang.String java.awt.CheckboxMenuItem.constructComponentName()
 
     /// In declared protocol but not defined.. ///
 

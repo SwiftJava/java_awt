@@ -42,7 +42,7 @@ open class AutoscrollForward: JNIObjectForward, Autoscroll {
     open func autoscroll( cursorLocn: Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cursorLocn != nil ? cursorLocn! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: cursorLocn, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "autoscroll", methodSig: "(Ljava/awt/Point;)V", methodCache: &AutoscrollForward.autoscroll_MethodID_4, args: &__args, locals: &__locals )
     }
 

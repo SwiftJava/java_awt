@@ -120,27 +120,27 @@ open class ScrollPaneAdjustable: java_swift.JavaObject, Adjustable, /* java.io.S
 
     /// private static native void java.awt.ScrollPaneAdjustable.initIDs()
 
-    /// public boolean java.awt.ScrollPaneAdjustable.getValueIsAdjusting()
-
-    private static var getValueIsAdjusting_MethodID_4: jmethodID?
-
-    open func getValueIsAdjusting() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &ScrollPaneAdjustable.getValueIsAdjusting_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public int java.awt.ScrollPaneAdjustable.getOrientation()
 
-    private static var getOrientation_MethodID_5: jmethodID?
+    private static var getOrientation_MethodID_4: jmethodID?
 
     open func getOrientation() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &ScrollPaneAdjustable.getOrientation_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &ScrollPaneAdjustable.getOrientation_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public boolean java.awt.ScrollPaneAdjustable.getValueIsAdjusting()
+
+    private static var getValueIsAdjusting_MethodID_5: jmethodID?
+
+    open func getValueIsAdjusting() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &ScrollPaneAdjustable.getValueIsAdjusting_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 

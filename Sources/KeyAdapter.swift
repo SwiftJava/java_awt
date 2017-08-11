@@ -35,7 +35,7 @@ open class KeyAdapter: java_swift.JavaObject, KeyListener {
     open func keyTyped( e: KeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyTyped", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyAdapter.keyTyped_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -50,7 +50,7 @@ open class KeyAdapter: java_swift.JavaObject, KeyListener {
     open func keyPressed( e: KeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyPressed", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyAdapter.keyPressed_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -65,7 +65,7 @@ open class KeyAdapter: java_swift.JavaObject, KeyListener {
     open func keyReleased( e: KeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyReleased", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyAdapter.keyReleased_MethodID_4, args: &__args, locals: &__locals )
     }
 

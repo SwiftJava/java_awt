@@ -15,10 +15,6 @@ public protocol ContextualRenderedImageFactory: RenderedImageFactory {
 
     func create( renderContext: RenderContext?, paramBlock: ParameterBlock? ) -> RenderedImage!
 
-    /// public abstract java.awt.geom.Rectangle2D java.awt.image.renderable.ContextualRenderedImageFactory.getBounds2D(java.awt.image.renderable.ParameterBlock)
-
-    func getBounds2D( paramBlock: ParameterBlock? ) -> Rectangle2D!
-
     /// public abstract java.awt.image.renderable.RenderContext java.awt.image.renderable.ContextualRenderedImageFactory.mapRenderContext(int,java.awt.image.renderable.RenderContext,java.awt.image.renderable.ParameterBlock,java.awt.image.renderable.RenderableImage)
 
     func mapRenderContext( i: Int, renderContext: RenderContext?, paramBlock: ParameterBlock?, image: RenderableImage? ) -> RenderContext!
@@ -26,6 +22,10 @@ public protocol ContextualRenderedImageFactory: RenderedImageFactory {
     /// public abstract boolean java.awt.image.renderable.ContextualRenderedImageFactory.isDynamic()
 
     func isDynamic() -> Bool
+
+    /// public abstract java.awt.geom.Rectangle2D java.awt.image.renderable.ContextualRenderedImageFactory.getBounds2D(java.awt.image.renderable.ParameterBlock)
+
+    func getBounds2D( paramBlock: ParameterBlock? ) -> Rectangle2D!
 
     /// public abstract java.lang.String[] java.awt.image.renderable.ContextualRenderedImageFactory.getPropertyNames()
 
@@ -45,7 +45,7 @@ open class ContextualRenderedImageFactoryForward: RenderedImageFactoryForward, C
     open func getProperty( paramBlock: ParameterBlock?, name: String? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: paramBlock != nil ? paramBlock! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: paramBlock, locals: &__locals )
         __args[1] = JNIType.toJava( value: name, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProperty", methodSig: "(Ljava/awt/image/renderable/ParameterBlock;Ljava/lang/String;)Ljava/lang/Object;", methodCache: &ContextualRenderedImageFactoryForward.getProperty_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -63,8 +63,8 @@ open class ContextualRenderedImageFactoryForward: RenderedImageFactoryForward, C
     open func create( renderContext: RenderContext?, paramBlock: ParameterBlock? ) -> RenderedImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: renderContext != nil ? renderContext! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: paramBlock != nil ? paramBlock! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: renderContext, locals: &__locals )
+        __args[1] = JNIType.toJava( value: paramBlock, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "create", methodSig: "(Ljava/awt/image/renderable/RenderContext;Ljava/awt/image/renderable/ParameterBlock;)Ljava/awt/image/RenderedImage;", methodCache: &ContextualRenderedImageFactoryForward.create_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RenderedImageForward( javaObject: __return ) : nil
@@ -74,35 +74,18 @@ open class ContextualRenderedImageFactoryForward: RenderedImageFactoryForward, C
         return create( renderContext: _renderContext, paramBlock: _paramBlock )
     }
 
-    /// public abstract java.awt.geom.Rectangle2D java.awt.image.renderable.ContextualRenderedImageFactory.getBounds2D(java.awt.image.renderable.ParameterBlock)
-
-    private static var getBounds2D_MethodID_9: jmethodID?
-
-    open func getBounds2D( paramBlock: ParameterBlock? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: paramBlock != nil ? paramBlock! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/renderable/ParameterBlock;)Ljava/awt/geom/Rectangle2D;", methodCache: &ContextualRenderedImageFactoryForward.getBounds2D_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-    open func getBounds2D( _ _paramBlock: ParameterBlock? ) -> Rectangle2D! {
-        return getBounds2D( paramBlock: _paramBlock )
-    }
-
     /// public abstract java.awt.image.renderable.RenderContext java.awt.image.renderable.ContextualRenderedImageFactory.mapRenderContext(int,java.awt.image.renderable.RenderContext,java.awt.image.renderable.ParameterBlock,java.awt.image.renderable.RenderableImage)
 
-    private static var mapRenderContext_MethodID_10: jmethodID?
+    private static var mapRenderContext_MethodID_9: jmethodID?
 
     open func mapRenderContext( i: Int, renderContext: RenderContext?, paramBlock: ParameterBlock?, image: RenderableImage? ) -> RenderContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        __args[1] = JNIType.toJava( value: renderContext != nil ? renderContext! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: paramBlock != nil ? paramBlock! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: renderContext, locals: &__locals )
+        __args[2] = JNIType.toJava( value: paramBlock, locals: &__locals )
         __args[3] = JNIType.toJava( value: image, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "mapRenderContext", methodSig: "(ILjava/awt/image/renderable/RenderContext;Ljava/awt/image/renderable/ParameterBlock;Ljava/awt/image/renderable/RenderableImage;)Ljava/awt/image/renderable/RenderContext;", methodCache: &ContextualRenderedImageFactoryForward.mapRenderContext_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "mapRenderContext", methodSig: "(ILjava/awt/image/renderable/RenderContext;Ljava/awt/image/renderable/ParameterBlock;Ljava/awt/image/renderable/RenderableImage;)Ljava/awt/image/renderable/RenderContext;", methodCache: &ContextualRenderedImageFactoryForward.mapRenderContext_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RenderContext( javaObject: __return ) : nil
     }
@@ -113,15 +96,32 @@ open class ContextualRenderedImageFactoryForward: RenderedImageFactoryForward, C
 
     /// public abstract boolean java.awt.image.renderable.ContextualRenderedImageFactory.isDynamic()
 
-    private static var isDynamic_MethodID_11: jmethodID?
+    private static var isDynamic_MethodID_10: jmethodID?
 
     open func isDynamic() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDynamic", methodSig: "()Z", methodCache: &ContextualRenderedImageFactoryForward.isDynamic_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDynamic", methodSig: "()Z", methodCache: &ContextualRenderedImageFactoryForward.isDynamic_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
+
+    /// public abstract java.awt.geom.Rectangle2D java.awt.image.renderable.ContextualRenderedImageFactory.getBounds2D(java.awt.image.renderable.ParameterBlock)
+
+    private static var getBounds2D_MethodID_11: jmethodID?
+
+    open func getBounds2D( paramBlock: ParameterBlock? ) -> Rectangle2D! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: paramBlock, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/renderable/ParameterBlock;)Ljava/awt/geom/Rectangle2D;", methodCache: &ContextualRenderedImageFactoryForward.getBounds2D_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getBounds2D( _ _paramBlock: ParameterBlock? ) -> Rectangle2D! {
+        return getBounds2D( paramBlock: _paramBlock )
+    }
 
     /// public abstract java.lang.String[] java.awt.image.renderable.ContextualRenderedImageFactory.getPropertyNames()
 
@@ -142,7 +142,7 @@ open class ContextualRenderedImageFactoryForward: RenderedImageFactoryForward, C
     override open func create( paramBlock: ParameterBlock?, hints: RenderingHints? ) -> RenderedImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: paramBlock != nil ? paramBlock! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: paramBlock, locals: &__locals )
         __args[1] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "create", methodSig: "(Ljava/awt/image/renderable/ParameterBlock;Ljava/awt/RenderingHints;)Ljava/awt/image/RenderedImage;", methodCache: &ContextualRenderedImageFactoryForward.create_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }

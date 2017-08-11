@@ -159,10 +159,10 @@ open class MultipleGradientPaint: java_swift.JavaObject, Paint {
     open func createContext( cm: ColorModel?, deviceBounds: Rectangle?, userBounds: Rectangle2D?, xform: AffineTransform?, hints: RenderingHints? ) -> PaintContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cm != nil ? cm! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: deviceBounds != nil ? deviceBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: userBounds != nil ? userBounds! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: xform != nil ? xform! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: cm, locals: &__locals )
+        __args[1] = JNIType.toJava( value: deviceBounds, locals: &__locals )
+        __args[2] = JNIType.toJava( value: userBounds, locals: &__locals )
+        __args[3] = JNIType.toJava( value: xform, locals: &__locals )
         __args[4] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContext", methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/Rectangle;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)Ljava/awt/PaintContext;", methodCache: &MultipleGradientPaint.createContext_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }

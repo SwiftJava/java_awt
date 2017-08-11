@@ -207,7 +207,7 @@ open class ActionEvent: AWTEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &ActionEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -219,7 +219,7 @@ open class ActionEvent: AWTEvent {
     public convenience init( source: java_swift.JavaObject?, id: Int, command: String?, when: Int64, modifiers: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: command, locals: &__locals )
         __args[3] = JNIType.toJava( value: when, locals: &__locals )
@@ -240,7 +240,7 @@ open class ActionEvent: AWTEvent {
     public convenience init( source: java_swift.JavaObject?, id: Int, command: String?, modifiers: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: command, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -260,7 +260,7 @@ open class ActionEvent: AWTEvent {
     public convenience init( source: java_swift.JavaObject?, id: Int, command: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: command, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/ActionEvent", classCache: &ActionEvent.ActionEventJNIClass, methodSig: "(Ljava/lang/Object;ILjava/lang/String;)V", methodCache: &ActionEvent.new_MethodID_3, args: &__args, locals: &__locals )
@@ -286,27 +286,27 @@ open class ActionEvent: AWTEvent {
 
     /// public java.lang.String java.awt.event.ActionEvent.paramString()
 
-    /// public java.lang.String java.awt.event.ActionEvent.getActionCommand()
-
-    private static var getActionCommand_MethodID_5: jmethodID?
-
-    open func getActionCommand() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &ActionEvent.getActionCommand_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
     /// public long java.awt.event.ActionEvent.getWhen()
 
-    private static var getWhen_MethodID_6: jmethodID?
+    private static var getWhen_MethodID_5: jmethodID?
 
     open func getWhen() -> Int64 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getWhen", methodSig: "()J", methodCache: &ActionEvent.getWhen_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getWhen", methodSig: "()J", methodCache: &ActionEvent.getWhen_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int64(), from: __return )
+    }
+
+
+    /// public java.lang.String java.awt.event.ActionEvent.getActionCommand()
+
+    private static var getActionCommand_MethodID_6: jmethodID?
+
+    open func getActionCommand() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &ActionEvent.getActionCommand_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
     }
 
 

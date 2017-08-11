@@ -38,7 +38,7 @@ open class ComponentListenerForward: java_util.EventListenerForward, ComponentLi
     open func componentResized( e: ComponentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentResized", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentListenerForward.componentResized_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -53,7 +53,7 @@ open class ComponentListenerForward: java_util.EventListenerForward, ComponentLi
     open func componentMoved( e: ComponentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentMoved", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentListenerForward.componentMoved_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -68,7 +68,7 @@ open class ComponentListenerForward: java_util.EventListenerForward, ComponentLi
     open func componentShown( e: ComponentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentShown", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentListenerForward.componentShown_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -83,7 +83,7 @@ open class ComponentListenerForward: java_util.EventListenerForward, ComponentLi
     open func componentHidden( e: ComponentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentHidden", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentListenerForward.componentHidden_MethodID_8, args: &__args, locals: &__locals )
     }
 

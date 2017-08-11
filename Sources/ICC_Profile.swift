@@ -1369,7 +1369,7 @@ open class ICC_Profile: java_swift.JavaObject, /* java.io.Serializable */ Unclas
     open class func getInstance( arg0: /* java.io.InputStream */ UnclassedObject? ) throws /* java.io.IOException */ -> ICC_Profile! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass, methodName: "getInstance", methodSig: "(Ljava/io/InputStream;)Ljava/awt/color/ICC_Profile;", methodCache: &getInstance_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
@@ -1463,7 +1463,7 @@ open class ICC_Profile: java_swift.JavaObject, /* java.io.Serializable */ Unclas
     open func write( arg0: /* java.io.OutputStream */ UnclassedObject? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "write", methodSig: "(Ljava/io/OutputStream;)V", methodCache: &ICC_Profile.write_MethodID_7, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
@@ -1524,18 +1524,6 @@ open class ICC_Profile: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     /// static byte[] java.awt.color.ICC_Profile.getData(sun.java2d.cmm.Profile,int)
 
-    /// public int java.awt.color.ICC_Profile.getNumComponents()
-
-    private static var getNumComponents_MethodID_11: jmethodID?
-
-    open func getNumComponents() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumComponents", methodSig: "()I", methodCache: &ICC_Profile.getNumComponents_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// private static java.awt.color.ICC_Profile java.awt.color.ICC_Profile.getStandardProfile(java.lang.String)
 
     /// static byte[] java.awt.color.ICC_Profile.getProfileDataFromStream(java.io.InputStream) throws java.io.IOException
@@ -1546,78 +1534,78 @@ open class ICC_Profile: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     /// public int java.awt.color.ICC_Profile.getMajorVersion()
 
-    private static var getMajorVersion_MethodID_12: jmethodID?
+    private static var getMajorVersion_MethodID_11: jmethodID?
 
     open func getMajorVersion() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMajorVersion", methodSig: "()I", methodCache: &ICC_Profile.getMajorVersion_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMajorVersion", methodSig: "()I", methodCache: &ICC_Profile.getMajorVersion_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.color.ICC_Profile.getMinorVersion()
 
-    private static var getMinorVersion_MethodID_13: jmethodID?
+    private static var getMinorVersion_MethodID_12: jmethodID?
 
     open func getMinorVersion() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinorVersion", methodSig: "()I", methodCache: &ICC_Profile.getMinorVersion_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinorVersion", methodSig: "()I", methodCache: &ICC_Profile.getMinorVersion_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.color.ICC_Profile.getProfileClass()
 
-    private static var getProfileClass_MethodID_14: jmethodID?
+    private static var getProfileClass_MethodID_13: jmethodID?
 
     open func getProfileClass() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getProfileClass", methodSig: "()I", methodCache: &ICC_Profile.getProfileClass_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getProfileClass", methodSig: "()I", methodCache: &ICC_Profile.getProfileClass_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int java.awt.color.ICC_Profile.getColorSpaceType()
+
+    private static var getColorSpaceType_MethodID_14: jmethodID?
+
+    open func getColorSpaceType() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColorSpaceType", methodSig: "()I", methodCache: &ICC_Profile.getColorSpaceType_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// static int java.awt.color.ICC_Profile.getColorSpaceType(sun.java2d.cmm.Profile)
 
-    /// public int java.awt.color.ICC_Profile.getColorSpaceType()
-
-    private static var getColorSpaceType_MethodID_15: jmethodID?
-
-    open func getColorSpaceType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColorSpaceType", methodSig: "()I", methodCache: &ICC_Profile.getColorSpaceType_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// static int java.awt.color.ICC_Profile.getPCSType(sun.java2d.cmm.Profile)
 
     /// public int java.awt.color.ICC_Profile.getPCSType()
 
-    private static var getPCSType_MethodID_16: jmethodID?
+    private static var getPCSType_MethodID_15: jmethodID?
 
     open func getPCSType() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPCSType", methodSig: "()I", methodCache: &ICC_Profile.getPCSType_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPCSType", methodSig: "()I", methodCache: &ICC_Profile.getPCSType_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void java.awt.color.ICC_Profile.setData(int,byte[])
 
-    private static var setData_MethodID_17: jmethodID?
+    private static var setData_MethodID_16: jmethodID?
 
     open func setData( arg0: Int, arg1: [Int8]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setData", methodSig: "(I[B)V", methodCache: &ICC_Profile.setData_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setData", methodSig: "(I[B)V", methodCache: &ICC_Profile.setData_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setData( _ _arg0: Int, _ _arg1: [Int8]? ) {
@@ -1653,6 +1641,18 @@ open class ICC_Profile: java_swift.JavaObject, /* java.io.Serializable */ Unclas
     /// private static boolean java.awt.color.ICC_Profile.isChildOf(java.io.File,java.lang.String)
 
     /// private static boolean java.awt.color.ICC_Profile.standardProfileExists(java.lang.String)
+
+    /// public int java.awt.color.ICC_Profile.getNumComponents()
+
+    private static var getNumComponents_MethodID_17: jmethodID?
+
+    open func getNumComponents() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumComponents", methodSig: "()I", methodCache: &ICC_Profile.getNumComponents_MethodID_17, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
 
 }
 

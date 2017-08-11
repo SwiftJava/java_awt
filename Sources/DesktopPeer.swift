@@ -45,7 +45,7 @@ open class DesktopPeerForward: JNIObjectForward, DesktopPeer {
     open func print( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: file != nil ? file! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: file, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "print", methodSig: "(Ljava/io/File;)V", methodCache: &DesktopPeerForward.print_MethodID_7, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
@@ -63,7 +63,7 @@ open class DesktopPeerForward: JNIObjectForward, DesktopPeer {
     open func isSupported( action: Desktop_Action? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: action != nil ? action! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: action, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSupported", methodSig: "(Ljava/awt/Desktop$Action;)Z", methodCache: &DesktopPeerForward.isSupported_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -79,7 +79,7 @@ open class DesktopPeerForward: JNIObjectForward, DesktopPeer {
     open func open( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: file != nil ? file! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: file, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "open", methodSig: "(Ljava/io/File;)V", methodCache: &DesktopPeerForward.open_MethodID_9, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
@@ -97,7 +97,7 @@ open class DesktopPeerForward: JNIObjectForward, DesktopPeer {
     open func edit( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: file != nil ? file! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: file, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "edit", methodSig: "(Ljava/io/File;)V", methodCache: &DesktopPeerForward.edit_MethodID_10, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
@@ -115,7 +115,7 @@ open class DesktopPeerForward: JNIObjectForward, DesktopPeer {
     open func browse( uri: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: uri != nil ? uri! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: uri, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "browse", methodSig: "(Ljava/net/URI;)V", methodCache: &DesktopPeerForward.browse_MethodID_11, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
@@ -133,7 +133,7 @@ open class DesktopPeerForward: JNIObjectForward, DesktopPeer {
     open func mail( mailtoURL: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mailtoURL != nil ? mailtoURL! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: mailtoURL, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mail", methodSig: "(Ljava/net/URI;)V", methodCache: &DesktopPeerForward.mail_MethodID_12, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )

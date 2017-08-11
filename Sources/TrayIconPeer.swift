@@ -11,6 +11,10 @@ public protocol TrayIconPeer: JavaProtocol {
 
     func showPopupMenu( x: Int, y: Int )
 
+    /// public abstract void java.awt.peer.TrayIconPeer.dispose()
+
+    func dispose()
+
     /// public abstract void java.awt.peer.TrayIconPeer.setToolTip(java.lang.String)
 
     func setToolTip( tooltip: String? )
@@ -22,10 +26,6 @@ public protocol TrayIconPeer: JavaProtocol {
     /// public abstract void java.awt.peer.TrayIconPeer.updateImage()
 
     func updateImage()
-
-    /// public abstract void java.awt.peer.TrayIconPeer.dispose()
-
-    func dispose()
 
 }
 
@@ -50,15 +50,26 @@ open class TrayIconPeerForward: JNIObjectForward, TrayIconPeer {
         showPopupMenu( x: _x, y: _y )
     }
 
+    /// public abstract void java.awt.peer.TrayIconPeer.dispose()
+
+    private static var dispose_MethodID_7: jmethodID?
+
+    open func dispose() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &TrayIconPeerForward.dispose_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
     /// public abstract void java.awt.peer.TrayIconPeer.setToolTip(java.lang.String)
 
-    private static var setToolTip_MethodID_7: jmethodID?
+    private static var setToolTip_MethodID_8: jmethodID?
 
     open func setToolTip( tooltip: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tooltip, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToolTip", methodSig: "(Ljava/lang/String;)V", methodCache: &TrayIconPeerForward.setToolTip_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToolTip", methodSig: "(Ljava/lang/String;)V", methodCache: &TrayIconPeerForward.setToolTip_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setToolTip( _ _tooltip: String? ) {
@@ -67,7 +78,7 @@ open class TrayIconPeerForward: JNIObjectForward, TrayIconPeer {
 
     /// public abstract void java.awt.peer.TrayIconPeer.displayMessage(java.lang.String,java.lang.String,java.lang.String)
 
-    private static var displayMessage_MethodID_8: jmethodID?
+    private static var displayMessage_MethodID_9: jmethodID?
 
     open func displayMessage( caption: String?, text: String?, messageType: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -75,7 +86,7 @@ open class TrayIconPeerForward: JNIObjectForward, TrayIconPeer {
         __args[0] = JNIType.toJava( value: caption, locals: &__locals )
         __args[1] = JNIType.toJava( value: text, locals: &__locals )
         __args[2] = JNIType.toJava( value: messageType, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "displayMessage", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &TrayIconPeerForward.displayMessage_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "displayMessage", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &TrayIconPeerForward.displayMessage_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func displayMessage( _ _caption: String?, _ _text: String?, _ _messageType: String? ) {
@@ -84,23 +95,12 @@ open class TrayIconPeerForward: JNIObjectForward, TrayIconPeer {
 
     /// public abstract void java.awt.peer.TrayIconPeer.updateImage()
 
-    private static var updateImage_MethodID_9: jmethodID?
+    private static var updateImage_MethodID_10: jmethodID?
 
     open func updateImage() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateImage", methodSig: "()V", methodCache: &TrayIconPeerForward.updateImage_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// public abstract void java.awt.peer.TrayIconPeer.dispose()
-
-    private static var dispose_MethodID_10: jmethodID?
-
-    open func dispose() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &TrayIconPeerForward.dispose_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateImage", methodSig: "()V", methodCache: &TrayIconPeerForward.updateImage_MethodID_10, args: &__args, locals: &__locals )
     }
 
 

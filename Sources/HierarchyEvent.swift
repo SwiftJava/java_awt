@@ -218,7 +218,7 @@ open class HierarchyEvent: AWTEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &HierarchyEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -230,10 +230,10 @@ open class HierarchyEvent: AWTEvent {
     public convenience init( source: Component?, id: Int, changed: Component?, changedParent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: changed != nil ? changed! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: changedParent != nil ? changedParent! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: changed, locals: &__locals )
+        __args[3] = JNIType.toJava( value: changedParent, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEvent.HierarchyEventJNIClass, methodSig: "(Ljava/awt/Component;ILjava/awt/Component;Ljava/awt/Container;)V", methodCache: &HierarchyEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -250,10 +250,10 @@ open class HierarchyEvent: AWTEvent {
     public convenience init( source: Component?, id: Int, changed: Component?, changedParent: Container?, changeFlags: Int64 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: changed != nil ? changed! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: changedParent != nil ? changedParent! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: changed, locals: &__locals )
+        __args[3] = JNIType.toJava( value: changedParent, locals: &__locals )
         __args[4] = JNIType.toJava( value: changeFlags, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEvent.HierarchyEventJNIClass, methodSig: "(Ljava/awt/Component;ILjava/awt/Component;Ljava/awt/Container;J)V", methodCache: &HierarchyEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

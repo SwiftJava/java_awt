@@ -69,7 +69,7 @@ open class MenuItem: MenuComponent {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        __args[1] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: s, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/MenuItem", classCache: &MenuItem.MenuItemJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/MenuShortcut;)V", methodCache: &MenuItem.new_MethodID_1, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -136,31 +136,31 @@ open class MenuItem: MenuComponent {
 
     /// private static native void java.awt.MenuItem.initIDs()
 
-    /// public void java.awt.MenuItem.enable(boolean)
+    /// public synchronized void java.awt.MenuItem.enable()
 
     private static var enable_MethodID_5: jmethodID?
+
+    open func enable() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enable", methodSig: "()V", methodCache: &MenuItem.enable_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void java.awt.MenuItem.enable(boolean)
+
+    private static var enable_MethodID_6: jmethodID?
 
     open func enable( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enable", methodSig: "(Z)V", methodCache: &MenuItem.enable_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enable", methodSig: "(Z)V", methodCache: &MenuItem.enable_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func enable( _ _b: Bool ) {
         enable( b: _b )
     }
-
-    /// public synchronized void java.awt.MenuItem.enable()
-
-    private static var enable_MethodID_6: jmethodID?
-
-    open func enable() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enable", methodSig: "()V", methodCache: &MenuItem.enable_MethodID_6, args: &__args, locals: &__locals )
-    }
-
 
     /// public synchronized void java.awt.MenuItem.disable()
 
@@ -173,113 +173,43 @@ open class MenuItem: MenuComponent {
     }
 
 
-    /// public java.lang.String java.awt.MenuItem.getActionCommand()
+    /// java.lang.String java.awt.MenuItem.constructComponentName()
 
-    private static var getActionCommand_MethodID_8: jmethodID?
+    /// protected final void java.awt.MenuItem.disableEvents(long)
 
-    open func getActionCommand() -> String! {
+    private static var disableEvents_MethodID_8: jmethodID?
+
+    open func disableEvents( eventsToDisable: Int64 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &MenuItem.getActionCommand_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: eventsToDisable, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "disableEvents", methodSig: "(J)V", methodCache: &MenuItem.disableEvents_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func disableEvents( _ _eventsToDisable: Int64 ) {
+        disableEvents( eventsToDisable: _eventsToDisable )
+    }
+
+    /// public java.lang.String java.awt.MenuItem.getLabel()
+
+    private static var getLabel_MethodID_9: jmethodID?
+
+    open func getLabel() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabel", methodSig: "()Ljava/lang/String;", methodCache: &MenuItem.getLabel_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
-    /// public synchronized void java.awt.MenuItem.setLabel(java.lang.String)
-
-    private static var setLabel_MethodID_9: jmethodID?
-
-    open func setLabel( label: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &MenuItem.setLabel_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func setLabel( _ _label: String? ) {
-        setLabel( label: _label )
-    }
-
-    /// public void java.awt.MenuItem.setActionCommand(java.lang.String)
-
-    private static var setActionCommand_MethodID_10: jmethodID?
-
-    open func setActionCommand( command: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: command, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &MenuItem.setActionCommand_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func setActionCommand( _ _command: String? ) {
-        setActionCommand( command: _command )
-    }
-
-    /// public synchronized void java.awt.MenuItem.addActionListener(java.awt.event.ActionListener)
-
-    private static var addActionListener_MethodID_11: jmethodID?
-
-    open func addActionListener( l: ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &MenuItem.addActionListener_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func addActionListener( _ _l: ActionListener? ) {
-        addActionListener( l: _l )
-    }
-
-    /// public synchronized void java.awt.MenuItem.removeActionListener(java.awt.event.ActionListener)
-
-    private static var removeActionListener_MethodID_12: jmethodID?
-
-    open func removeActionListener( l: ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &MenuItem.removeActionListener_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func removeActionListener( _ _l: ActionListener? ) {
-        removeActionListener( l: _l )
-    }
-
-    /// public synchronized java.awt.event.ActionListener[] java.awt.MenuItem.getActionListeners()
-
-    private static var getActionListeners_MethodID_13: jmethodID?
-
-    open func getActionListeners() -> [ActionListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &MenuItem.getActionListeners_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
-    }
-
-
-    /// protected void java.awt.MenuItem.processActionEvent(java.awt.event.ActionEvent)
-
-    private static var processActionEvent_MethodID_14: jmethodID?
-
-    open func processActionEvent( e: ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processActionEvent", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &MenuItem.processActionEvent_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func processActionEvent( _ _e: ActionEvent? ) {
-        processActionEvent( e: _e )
-    }
-
     /// public boolean java.awt.MenuItem.isEnabled()
 
-    private static var isEnabled_MethodID_15: jmethodID?
+    private static var isEnabled_MethodID_10: jmethodID?
 
     open func isEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &MenuItem.isEnabled_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &MenuItem.isEnabled_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -290,27 +220,27 @@ open class MenuItem: MenuComponent {
 
     /// java.awt.MenuItem java.awt.MenuItem.getShortcutMenuItem(java.awt.MenuShortcut)
 
+    /// void java.awt.MenuItem.deleteShortcut(java.awt.MenuShortcut)
+
     /// public void java.awt.MenuItem.deleteShortcut()
 
-    private static var deleteShortcut_MethodID_16: jmethodID?
+    private static var deleteShortcut_MethodID_11: jmethodID?
 
     open func deleteShortcut() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deleteShortcut", methodSig: "()V", methodCache: &MenuItem.deleteShortcut_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deleteShortcut", methodSig: "()V", methodCache: &MenuItem.deleteShortcut_MethodID_11, args: &__args, locals: &__locals )
     }
 
 
-    /// void java.awt.MenuItem.deleteShortcut(java.awt.MenuShortcut)
-
     /// public java.awt.MenuShortcut java.awt.MenuItem.getShortcut()
 
-    private static var getShortcut_MethodID_17: jmethodID?
+    private static var getShortcut_MethodID_12: jmethodID?
 
     open func getShortcut() -> MenuShortcut! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShortcut", methodSig: "()Ljava/awt/MenuShortcut;", methodCache: &MenuItem.getShortcut_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShortcut", methodSig: "()Ljava/awt/MenuShortcut;", methodCache: &MenuItem.getShortcut_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MenuShortcut( javaObject: __return ) : nil
     }
@@ -318,13 +248,13 @@ open class MenuItem: MenuComponent {
 
     /// public void java.awt.MenuItem.setShortcut(java.awt.MenuShortcut)
 
-    private static var setShortcut_MethodID_18: jmethodID?
+    private static var setShortcut_MethodID_13: jmethodID?
 
     open func setShortcut( s: MenuShortcut? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setShortcut", methodSig: "(Ljava/awt/MenuShortcut;)V", methodCache: &MenuItem.setShortcut_MethodID_18, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setShortcut", methodSig: "(Ljava/awt/MenuShortcut;)V", methodCache: &MenuItem.setShortcut_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setShortcut( _ _s: MenuShortcut? ) {
@@ -339,13 +269,13 @@ open class MenuItem: MenuComponent {
 
     /// public synchronized void java.awt.MenuItem.setEnabled(boolean)
 
-    private static var setEnabled_MethodID_19: jmethodID?
+    private static var setEnabled_MethodID_14: jmethodID?
 
     open func setEnabled( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &MenuItem.setEnabled_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &MenuItem.setEnabled_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setEnabled( _ _b: Bool ) {
@@ -354,13 +284,13 @@ open class MenuItem: MenuComponent {
 
     /// public java.util.EventListener[] java.awt.MenuItem.getListeners(java.lang.Class)
 
-    private static var getListeners_MethodID_20: jmethodID?
+    private static var getListeners_MethodID_15: jmethodID?
 
     open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &MenuItem.getListeners_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &MenuItem.getListeners_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [EventListenerForward](), from: __return )
     }
 
@@ -370,24 +300,24 @@ open class MenuItem: MenuComponent {
 
     /// public void java.awt.MenuItem.addNotify()
 
-    private static var addNotify_MethodID_21: jmethodID?
+    private static var addNotify_MethodID_16: jmethodID?
 
     open func addNotify() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addNotify", methodSig: "()V", methodCache: &MenuItem.addNotify_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addNotify", methodSig: "()V", methodCache: &MenuItem.addNotify_MethodID_16, args: &__args, locals: &__locals )
     }
 
 
     /// protected final void java.awt.MenuItem.enableEvents(long)
 
-    private static var enableEvents_MethodID_22: jmethodID?
+    private static var enableEvents_MethodID_17: jmethodID?
 
     open func enableEvents( eventsToEnable: Int64 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: eventsToEnable, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableEvents", methodSig: "(J)V", methodCache: &MenuItem.enableEvents_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableEvents", methodSig: "(J)V", methodCache: &MenuItem.enableEvents_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func enableEvents( _ _eventsToEnable: Int64 ) {
@@ -398,47 +328,117 @@ open class MenuItem: MenuComponent {
 
     /// protected void java.awt.MenuItem.processEvent(java.awt.AWTEvent)
 
-    private static var processEvent_MethodID_23: jmethodID?
+    private static var processEvent_MethodID_18: jmethodID?
 
     override open func processEvent( e: AWTEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &MenuItem.processEvent_MethodID_23, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &MenuItem.processEvent_MethodID_18, args: &__args, locals: &__locals )
     }
 
     override open func processEvent( _ _e: AWTEvent? ) {
         processEvent( e: _e )
     }
 
-    /// java.lang.String java.awt.MenuItem.constructComponentName()
+    /// public java.lang.String java.awt.MenuItem.getActionCommand()
 
-    /// protected final void java.awt.MenuItem.disableEvents(long)
+    private static var getActionCommand_MethodID_19: jmethodID?
 
-    private static var disableEvents_MethodID_24: jmethodID?
-
-    open func disableEvents( eventsToDisable: Int64 ) {
+    open func getActionCommand() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: eventsToDisable, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "disableEvents", methodSig: "(J)V", methodCache: &MenuItem.disableEvents_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open func disableEvents( _ _eventsToDisable: Int64 ) {
-        disableEvents( eventsToDisable: _eventsToDisable )
-    }
-
-    /// public java.lang.String java.awt.MenuItem.getLabel()
-
-    private static var getLabel_MethodID_25: jmethodID?
-
-    open func getLabel() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabel", methodSig: "()Ljava/lang/String;", methodCache: &MenuItem.getLabel_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &MenuItem.getActionCommand_MethodID_19, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
+
+    /// public synchronized void java.awt.MenuItem.setLabel(java.lang.String)
+
+    private static var setLabel_MethodID_20: jmethodID?
+
+    open func setLabel( label: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: label, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &MenuItem.setLabel_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func setLabel( _ _label: String? ) {
+        setLabel( label: _label )
+    }
+
+    /// public void java.awt.MenuItem.setActionCommand(java.lang.String)
+
+    private static var setActionCommand_MethodID_21: jmethodID?
+
+    open func setActionCommand( command: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: command, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &MenuItem.setActionCommand_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func setActionCommand( _ _command: String? ) {
+        setActionCommand( command: _command )
+    }
+
+    /// public synchronized void java.awt.MenuItem.addActionListener(java.awt.event.ActionListener)
+
+    private static var addActionListener_MethodID_22: jmethodID?
+
+    open func addActionListener( l: ActionListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &MenuItem.addActionListener_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func addActionListener( _ _l: ActionListener? ) {
+        addActionListener( l: _l )
+    }
+
+    /// public synchronized void java.awt.MenuItem.removeActionListener(java.awt.event.ActionListener)
+
+    private static var removeActionListener_MethodID_23: jmethodID?
+
+    open func removeActionListener( l: ActionListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &MenuItem.removeActionListener_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func removeActionListener( _ _l: ActionListener? ) {
+        removeActionListener( l: _l )
+    }
+
+    /// public synchronized java.awt.event.ActionListener[] java.awt.MenuItem.getActionListeners()
+
+    private static var getActionListeners_MethodID_24: jmethodID?
+
+    open func getActionListeners() -> [ActionListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &MenuItem.getActionListeners_MethodID_24, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
+    }
+
+
+    /// protected void java.awt.MenuItem.processActionEvent(java.awt.event.ActionEvent)
+
+    private static var processActionEvent_MethodID_25: jmethodID?
+
+    open func processActionEvent( e: ActionEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processActionEvent", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &MenuItem.processActionEvent_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func processActionEvent( _ _e: ActionEvent? ) {
+        processActionEvent( e: _e )
+    }
 
     /// In declared protocol but not defined.. ///
 

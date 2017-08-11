@@ -76,7 +76,7 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
     public convenience init( comp: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/MediaTracker", classCache: &MediaTracker.MediaTrackerJNIClass, methodSig: "(Ljava/awt/Component;)V", methodCache: &MediaTracker.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -86,58 +86,18 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         self.init( comp: _comp )
     }
 
-    /// private static java.awt.Image java.awt.MediaTracker.getResolutionVariant(java.awt.Image)
-
-    /// public synchronized boolean java.awt.MediaTracker.waitForID(int,long) throws java.lang.InterruptedException
-
-    private static var waitForID_MethodID_2: jmethodID?
-
-    open func waitForID( id: Int, ms: Int64 ) throws /* java.lang.InterruptedException */ -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: id, locals: &__locals )
-        __args[1] = JNIType.toJava( value: ms, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "waitForID", methodSig: "(IJ)Z", methodCache: &MediaTracker.waitForID_MethodID_2, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.InterruptedException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func waitForID( _ _id: Int, _ _ms: Int64 ) throws /* java.lang.InterruptedException */ -> Bool {
-        return try waitForID( id: _id, ms: _ms )
-    }
-
-    /// public void java.awt.MediaTracker.waitForID(int) throws java.lang.InterruptedException
-
-    private static var waitForID_MethodID_3: jmethodID?
-
-    open func waitForID( id: Int ) throws /* java.lang.InterruptedException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: id, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "waitForID", methodSig: "(I)V", methodCache: &MediaTracker.waitForID_MethodID_3, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.InterruptedException( javaObject: throwable )
-        }
-    }
-
-    open func waitForID( _ _id: Int ) throws /* java.lang.InterruptedException */ {
-        try waitForID( id: _id )
-    }
-
     /// public synchronized void java.awt.MediaTracker.addImage(java.awt.Image,int,int,int)
 
-    private static var addImage_MethodID_4: jmethodID?
+    private static var addImage_MethodID_2: jmethodID?
 
     open func addImage( image: Image?, id: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: w, locals: &__locals )
         __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImage", methodSig: "(Ljava/awt/Image;III)V", methodCache: &MediaTracker.addImage_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImage", methodSig: "(Ljava/awt/Image;III)V", methodCache: &MediaTracker.addImage_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func addImage( _ _image: Image?, _ _id: Int, _ _w: Int, _ _h: Int ) {
@@ -146,14 +106,14 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
 
     /// public void java.awt.MediaTracker.addImage(java.awt.Image,int)
 
-    private static var addImage_MethodID_5: jmethodID?
+    private static var addImage_MethodID_3: jmethodID?
 
     open func addImage( image: Image?, id: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImage", methodSig: "(Ljava/awt/Image;I)V", methodCache: &MediaTracker.addImage_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImage", methodSig: "(Ljava/awt/Image;I)V", methodCache: &MediaTracker.addImage_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func addImage( _ _image: Image?, _ _id: Int ) {
@@ -162,29 +122,17 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
 
     /// private void java.awt.MediaTracker.addImageImpl(java.awt.Image,int,int,int)
 
-    /// public boolean java.awt.MediaTracker.checkAll()
-
-    private static var checkAll_MethodID_6: jmethodID?
-
-    open func checkAll() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "checkAll", methodSig: "()Z", methodCache: &MediaTracker.checkAll_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// private synchronized boolean java.awt.MediaTracker.checkAll(boolean,boolean)
 
     /// public boolean java.awt.MediaTracker.checkAll(boolean)
 
-    private static var checkAll_MethodID_7: jmethodID?
+    private static var checkAll_MethodID_4: jmethodID?
 
     open func checkAll( load: Bool ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: load, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "checkAll", methodSig: "(Z)Z", methodCache: &MediaTracker.checkAll_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "checkAll", methodSig: "(Z)Z", methodCache: &MediaTracker.checkAll_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -192,39 +140,51 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         return checkAll( load: _load )
     }
 
+    /// public boolean java.awt.MediaTracker.checkAll()
+
+    private static var checkAll_MethodID_5: jmethodID?
+
+    open func checkAll() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "checkAll", methodSig: "()Z", methodCache: &MediaTracker.checkAll_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
     /// public synchronized boolean java.awt.MediaTracker.isErrorAny()
 
-    private static var isErrorAny_MethodID_8: jmethodID?
+    private static var isErrorAny_MethodID_6: jmethodID?
 
     open func isErrorAny() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isErrorAny", methodSig: "()Z", methodCache: &MediaTracker.isErrorAny_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isErrorAny", methodSig: "()Z", methodCache: &MediaTracker.isErrorAny_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public synchronized java.lang.Object[] java.awt.MediaTracker.getErrorsAny()
 
-    private static var getErrorsAny_MethodID_9: jmethodID?
+    private static var getErrorsAny_MethodID_7: jmethodID?
 
     open func getErrorsAny() -> [JavaObject]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getErrorsAny", methodSig: "()[Ljava/lang/Object;", methodCache: &MediaTracker.getErrorsAny_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getErrorsAny", methodSig: "()[Ljava/lang/Object;", methodCache: &MediaTracker.getErrorsAny_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [JavaObject](), from: __return )
     }
 
 
     /// public synchronized boolean java.awt.MediaTracker.waitForAll(long) throws java.lang.InterruptedException
 
-    private static var waitForAll_MethodID_10: jmethodID?
+    private static var waitForAll_MethodID_8: jmethodID?
 
     open func waitForAll( ms: Int64 ) throws /* java.lang.InterruptedException */ -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: ms, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "waitForAll", methodSig: "(J)Z", methodCache: &MediaTracker.waitForAll_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "waitForAll", methodSig: "(J)Z", methodCache: &MediaTracker.waitForAll_MethodID_8, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.InterruptedException( javaObject: throwable )
         }
@@ -237,12 +197,12 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
 
     /// public void java.awt.MediaTracker.waitForAll() throws java.lang.InterruptedException
 
-    private static var waitForAll_MethodID_11: jmethodID?
+    private static var waitForAll_MethodID_9: jmethodID?
 
     open func waitForAll() throws /* java.lang.InterruptedException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "waitForAll", methodSig: "()V", methodCache: &MediaTracker.waitForAll_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "waitForAll", methodSig: "()V", methodCache: &MediaTracker.waitForAll_MethodID_9, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.InterruptedException( javaObject: throwable )
         }
@@ -253,13 +213,13 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
 
     /// public int java.awt.MediaTracker.statusAll(boolean)
 
-    private static var statusAll_MethodID_12: jmethodID?
+    private static var statusAll_MethodID_10: jmethodID?
 
     open func statusAll( load: Bool ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: load, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "statusAll", methodSig: "(Z)I", methodCache: &MediaTracker.statusAll_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "statusAll", methodSig: "(Z)I", methodCache: &MediaTracker.statusAll_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -269,32 +229,16 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
 
     /// private synchronized boolean java.awt.MediaTracker.checkID(int,boolean,boolean)
 
-    /// public boolean java.awt.MediaTracker.checkID(int)
-
-    private static var checkID_MethodID_13: jmethodID?
-
-    open func checkID( id: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: id, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "checkID", methodSig: "(I)Z", methodCache: &MediaTracker.checkID_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func checkID( _ _id: Int ) -> Bool {
-        return checkID( id: _id )
-    }
-
     /// public boolean java.awt.MediaTracker.checkID(int,boolean)
 
-    private static var checkID_MethodID_14: jmethodID?
+    private static var checkID_MethodID_11: jmethodID?
 
     open func checkID( id: Int, load: Bool ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: id, locals: &__locals )
         __args[1] = JNIType.toJava( value: load, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "checkID", methodSig: "(IZ)Z", methodCache: &MediaTracker.checkID_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "checkID", methodSig: "(IZ)Z", methodCache: &MediaTracker.checkID_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -302,15 +246,31 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         return checkID( id: _id, load: _load )
     }
 
+    /// public boolean java.awt.MediaTracker.checkID(int)
+
+    private static var checkID_MethodID_12: jmethodID?
+
+    open func checkID( id: Int ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: id, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "checkID", methodSig: "(I)Z", methodCache: &MediaTracker.checkID_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func checkID( _ _id: Int ) -> Bool {
+        return checkID( id: _id )
+    }
+
     /// public synchronized boolean java.awt.MediaTracker.isErrorID(int)
 
-    private static var isErrorID_MethodID_15: jmethodID?
+    private static var isErrorID_MethodID_13: jmethodID?
 
     open func isErrorID( id: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: id, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isErrorID", methodSig: "(I)Z", methodCache: &MediaTracker.isErrorID_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isErrorID", methodSig: "(I)Z", methodCache: &MediaTracker.isErrorID_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -320,13 +280,13 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
 
     /// public synchronized java.lang.Object[] java.awt.MediaTracker.getErrorsID(int)
 
-    private static var getErrorsID_MethodID_16: jmethodID?
+    private static var getErrorsID_MethodID_14: jmethodID?
 
     open func getErrorsID( id: Int ) -> [JavaObject]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: id, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getErrorsID", methodSig: "(I)[Ljava/lang/Object;", methodCache: &MediaTracker.getErrorsID_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getErrorsID", methodSig: "(I)[Ljava/lang/Object;", methodCache: &MediaTracker.getErrorsID_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [JavaObject](), from: __return )
     }
 
@@ -334,16 +294,18 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         return getErrorsID( id: _id )
     }
 
+    /// private synchronized int java.awt.MediaTracker.statusID(int,boolean,boolean)
+
     /// public int java.awt.MediaTracker.statusID(int,boolean)
 
-    private static var statusID_MethodID_17: jmethodID?
+    private static var statusID_MethodID_15: jmethodID?
 
     open func statusID( id: Int, load: Bool ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: id, locals: &__locals )
         __args[1] = JNIType.toJava( value: load, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "statusID", methodSig: "(IZ)I", methodCache: &MediaTracker.statusID_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "statusID", methodSig: "(IZ)I", methodCache: &MediaTracker.statusID_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -351,7 +313,36 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         return statusID( id: _id, load: _load )
     }
 
-    /// private synchronized int java.awt.MediaTracker.statusID(int,boolean,boolean)
+    /// public synchronized void java.awt.MediaTracker.removeImage(java.awt.Image)
+
+    private static var removeImage_MethodID_16: jmethodID?
+
+    open func removeImage( image: Image? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &MediaTracker.removeImage_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func removeImage( _ _image: Image? ) {
+        removeImage( image: _image )
+    }
+
+    /// public synchronized void java.awt.MediaTracker.removeImage(java.awt.Image,int)
+
+    private static var removeImage_MethodID_17: jmethodID?
+
+    open func removeImage( image: Image?, id: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
+        __args[1] = JNIType.toJava( value: id, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeImage", methodSig: "(Ljava/awt/Image;I)V", methodCache: &MediaTracker.removeImage_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func removeImage( _ _image: Image?, _ _id: Int ) {
+        removeImage( image: _image, id: _id )
+    }
 
     /// public synchronized void java.awt.MediaTracker.removeImage(java.awt.Image,int,int,int)
 
@@ -360,7 +351,7 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
     open func removeImage( image: Image?, id: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: width, locals: &__locals )
         __args[3] = JNIType.toJava( value: height, locals: &__locals )
@@ -371,44 +362,53 @@ open class MediaTracker: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         removeImage( image: _image, id: _id, width: _width, height: _height )
     }
 
-    /// public synchronized void java.awt.MediaTracker.removeImage(java.awt.Image,int)
-
-    private static var removeImage_MethodID_19: jmethodID?
-
-    open func removeImage( image: Image?, id: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeImage", methodSig: "(Ljava/awt/Image;I)V", methodCache: &MediaTracker.removeImage_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func removeImage( _ _image: Image?, _ _id: Int ) {
-        removeImage( image: _image, id: _id )
-    }
-
-    /// public synchronized void java.awt.MediaTracker.removeImage(java.awt.Image)
-
-    private static var removeImage_MethodID_20: jmethodID?
-
-    open func removeImage( image: Image? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &MediaTracker.removeImage_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func removeImage( _ _image: Image? ) {
-        removeImage( image: _image )
-    }
-
-    /// private void java.awt.MediaTracker.removeImageImpl(java.awt.Image)
-
     /// private void java.awt.MediaTracker.removeImageImpl(java.awt.Image,int,int,int)
 
     /// private void java.awt.MediaTracker.removeImageImpl(java.awt.Image,int)
 
+    /// private void java.awt.MediaTracker.removeImageImpl(java.awt.Image)
+
     /// synchronized void java.awt.MediaTracker.setDone()
+
+    /// private static java.awt.Image java.awt.MediaTracker.getResolutionVariant(java.awt.Image)
+
+    /// public synchronized boolean java.awt.MediaTracker.waitForID(int,long) throws java.lang.InterruptedException
+
+    private static var waitForID_MethodID_19: jmethodID?
+
+    open func waitForID( id: Int, ms: Int64 ) throws /* java.lang.InterruptedException */ -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: id, locals: &__locals )
+        __args[1] = JNIType.toJava( value: ms, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "waitForID", methodSig: "(IJ)Z", methodCache: &MediaTracker.waitForID_MethodID_19, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw java_lang.InterruptedException( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func waitForID( _ _id: Int, _ _ms: Int64 ) throws /* java.lang.InterruptedException */ -> Bool {
+        return try waitForID( id: _id, ms: _ms )
+    }
+
+    /// public void java.awt.MediaTracker.waitForID(int) throws java.lang.InterruptedException
+
+    private static var waitForID_MethodID_20: jmethodID?
+
+    open func waitForID( id: Int ) throws /* java.lang.InterruptedException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: id, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "waitForID", methodSig: "(I)V", methodCache: &MediaTracker.waitForID_MethodID_20, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw java_lang.InterruptedException( javaObject: throwable )
+        }
+    }
+
+    open func waitForID( _ _id: Int ) throws /* java.lang.InterruptedException */ {
+        try waitForID( id: _id )
+    }
 
 }
 

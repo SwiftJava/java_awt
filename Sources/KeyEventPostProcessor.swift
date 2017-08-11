@@ -25,7 +25,7 @@ open class KeyEventPostProcessorForward: JNIObjectForward, KeyEventPostProcessor
     open func postProcessKeyEvent( e: KeyEvent? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "postProcessKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)Z", methodCache: &KeyEventPostProcessorForward.postProcessKeyEvent_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

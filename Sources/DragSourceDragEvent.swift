@@ -52,7 +52,7 @@ open class DragSourceDragEvent: DragSourceEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &DragSourceDragEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -64,7 +64,7 @@ open class DragSourceDragEvent: DragSourceEvent {
     public convenience init( dsc: DragSourceContext?, dropAction: Int, action: Int, modifiers: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsc != nil ? dsc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dsc, locals: &__locals )
         __args[1] = JNIType.toJava( value: dropAction, locals: &__locals )
         __args[2] = JNIType.toJava( value: action, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -84,7 +84,7 @@ open class DragSourceDragEvent: DragSourceEvent {
     public convenience init( dsc: DragSourceContext?, dropAction: Int, action: Int, modifiers: Int, x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsc != nil ? dsc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dsc, locals: &__locals )
         __args[1] = JNIType.toJava( value: dropAction, locals: &__locals )
         __args[2] = JNIType.toJava( value: action, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )

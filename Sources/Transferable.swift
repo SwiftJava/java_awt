@@ -45,7 +45,7 @@ open class TransferableForward: JNIObjectForward, Transferable {
     open func isDataFlavorSupported( flavor: DataFlavor? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: flavor != nil ? flavor! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: flavor, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDataFlavorSupported", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &TransferableForward.isDataFlavorSupported_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -61,7 +61,7 @@ open class TransferableForward: JNIObjectForward, Transferable {
     open func getTransferData( flavor: DataFlavor? ) throws /* java.awt.datatransfer.UnsupportedFlavorException, java.io.IOException */ -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: flavor != nil ? flavor! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: flavor, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferData", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Ljava/lang/Object;", methodCache: &TransferableForward.getTransferData_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {

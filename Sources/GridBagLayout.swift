@@ -54,7 +54,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "defaultConstraints", fieldType: "Ljava/awt/GridBagConstraints;", fieldCache: &GridBagLayout.defaultConstraints_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -71,7 +71,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "layoutInfo", fieldType: "Ljava/awt/GridBagLayoutInfo;", fieldCache: &GridBagLayout.layoutInfo_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -189,8 +189,8 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func setConstraints( comp: Component?, constraints: GridBagConstraints? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setConstraints", methodSig: "(Ljava/awt/Component;Ljava/awt/GridBagConstraints;)V", methodCache: &GridBagLayout.setConstraints_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -205,7 +205,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func getConstraints( comp: Component? ) -> GridBagConstraints! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getConstraints", methodSig: "(Ljava/awt/Component;)Ljava/awt/GridBagConstraints;", methodCache: &GridBagLayout.getConstraints_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GridBagConstraints( javaObject: __return ) : nil
@@ -222,7 +222,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func lookupConstraints( comp: Component? ) -> GridBagConstraints! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "lookupConstraints", methodSig: "(Ljava/awt/Component;)Ljava/awt/GridBagConstraints;", methodCache: &GridBagLayout.lookupConstraints_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GridBagConstraints( javaObject: __return ) : nil
@@ -278,7 +278,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func getLayoutInfo( parent: Container?, sizeflag: Int ) -> GridBagLayoutInfo! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: sizeflag, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayoutInfo", methodSig: "(Ljava/awt/Container;I)Ljava/awt/GridBagLayoutInfo;", methodCache: &GridBagLayout.getLayoutInfo_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -298,7 +298,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func GetLayoutInfo( parent: Container?, sizeflag: Int ) -> GridBagLayoutInfo! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: sizeflag, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "GetLayoutInfo", methodSig: "(Ljava/awt/Container;I)Ljava/awt/GridBagLayoutInfo;", methodCache: &GridBagLayout.GetLayoutInfo_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -318,8 +318,8 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func adjustForGravity( constraints: GridBagConstraints?, r: Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: constraints, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "adjustForGravity", methodSig: "(Ljava/awt/GridBagConstraints;Ljava/awt/Rectangle;)V", methodCache: &GridBagLayout.adjustForGravity_MethodID_11, args: &__args, locals: &__locals )
     }
 
@@ -334,8 +334,8 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func AdjustForGravity( constraints: GridBagConstraints?, r: Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: constraints, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "AdjustForGravity", methodSig: "(Ljava/awt/GridBagConstraints;Ljava/awt/Rectangle;)V", methodCache: &GridBagLayout.AdjustForGravity_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -358,8 +358,8 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func getMinSize( parent: Container?, info: GridBagLayoutInfo? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: info != nil ? info! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: info, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinSize", methodSig: "(Ljava/awt/Container;Ljava/awt/GridBagLayoutInfo;)Ljava/awt/Dimension;", methodCache: &GridBagLayout.getMinSize_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
@@ -376,8 +376,8 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func GetMinSize( parent: Container?, info: GridBagLayoutInfo? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: info != nil ? info! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: info, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "GetMinSize", methodSig: "(Ljava/awt/Container;Ljava/awt/GridBagLayoutInfo;)Ljava/awt/Dimension;", methodCache: &GridBagLayout.GetMinSize_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
@@ -394,7 +394,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func arrangeGrid( parent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "arrangeGrid", methodSig: "(Ljava/awt/Container;)V", methodCache: &GridBagLayout.arrangeGrid_MethodID_15, args: &__args, locals: &__locals )
     }
 
@@ -409,7 +409,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func ArrangeGrid( parent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "ArrangeGrid", methodSig: "(Ljava/awt/Container;)V", methodCache: &GridBagLayout.ArrangeGrid_MethodID_16, args: &__args, locals: &__locals )
     }
 
@@ -424,7 +424,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func removeLayoutComponent( comp: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &GridBagLayout.removeLayoutComponent_MethodID_17, args: &__args, locals: &__locals )
     }
 
@@ -439,8 +439,8 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func addLayoutComponent( comp: Component?, constraints: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &GridBagLayout.addLayoutComponent_MethodID_18, args: &__args, locals: &__locals )
     }
 
@@ -456,7 +456,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &GridBagLayout.addLayoutComponent_MethodID_19, args: &__args, locals: &__locals )
     }
 
@@ -471,7 +471,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func layoutContainer( parent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &GridBagLayout.layoutContainer_MethodID_20, args: &__args, locals: &__locals )
     }
 
@@ -486,7 +486,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func invalidateLayout( target: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidateLayout", methodSig: "(Ljava/awt/Container;)V", methodCache: &GridBagLayout.invalidateLayout_MethodID_21, args: &__args, locals: &__locals )
     }
 
@@ -501,7 +501,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func preferredLayoutSize( parent: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &GridBagLayout.preferredLayoutSize_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
@@ -518,7 +518,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func minimumLayoutSize( parent: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &GridBagLayout.minimumLayoutSize_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
@@ -535,7 +535,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func maximumLayoutSize( target: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "maximumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &GridBagLayout.maximumLayoutSize_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
@@ -552,7 +552,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func getLayoutAlignmentX( target: Container? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentX", methodSig: "(Ljava/awt/Container;)F", methodCache: &GridBagLayout.getLayoutAlignmentX_MethodID_25, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
@@ -568,7 +568,7 @@ open class GridBagLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seri
     open func getLayoutAlignmentY( target: Container? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentY", methodSig: "(Ljava/awt/Container;)F", methodCache: &GridBagLayout.getLayoutAlignmentY_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }

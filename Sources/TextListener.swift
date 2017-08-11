@@ -26,7 +26,7 @@ open class TextListenerForward: java_util.EventListenerForward, TextListener {
     open func textValueChanged( e: TextEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "textValueChanged", methodSig: "(Ljava/awt/event/TextEvent;)V", methodCache: &TextListenerForward.textValueChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

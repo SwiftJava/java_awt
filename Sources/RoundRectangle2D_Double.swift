@@ -162,9 +162,19 @@ open class RoundRectangle2D_Double: RoundRectangle2D, /* java.io.Serializable */
 
     /// public java.awt.geom.Rectangle2D java.awt.geom.RoundRectangle2D$Double.getBounds2D()
 
+    /// public double java.awt.geom.RoundRectangle2D$Double.getX()
+
+    /// public double java.awt.geom.RoundRectangle2D$Double.getY()
+
+    /// public double java.awt.geom.RoundRectangle2D$Double.getWidth()
+
+    /// public double java.awt.geom.RoundRectangle2D$Double.getHeight()
+
     /// public double java.awt.geom.RoundRectangle2D$Double.getArcWidth()
 
     /// public double java.awt.geom.RoundRectangle2D$Double.getArcHeight()
+
+    /// public void java.awt.geom.RoundRectangle2D$Double.setRoundRect(java.awt.geom.RoundRectangle2D)
 
     /// public void java.awt.geom.RoundRectangle2D$Double.setRoundRect(double,double,double,double,double,double)
 
@@ -185,16 +195,6 @@ open class RoundRectangle2D_Double: RoundRectangle2D, /* java.io.Serializable */
     override open func setRoundRect( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double, _ _arcw: Double, _ _arch: Double ) {
         setRoundRect( x: _x, y: _y, w: _w, h: _h, arcw: _arcw, arch: _arch )
     }
-
-    /// public void java.awt.geom.RoundRectangle2D$Double.setRoundRect(java.awt.geom.RoundRectangle2D)
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.getX()
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.getY()
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.getWidth()
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.getHeight()
 
 }
 

@@ -29,7 +29,7 @@ open class DropTargetPeerForward: JNIObjectForward, DropTargetPeer {
     open func addDropTarget( dt: DropTarget? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dt != nil ? dt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDropTarget", methodSig: "(Ljava/awt/dnd/DropTarget;)V", methodCache: &DropTargetPeerForward.addDropTarget_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -44,7 +44,7 @@ open class DropTargetPeerForward: JNIObjectForward, DropTargetPeer {
     open func removeDropTarget( dt: DropTarget? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dt != nil ? dt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeDropTarget", methodSig: "(Ljava/awt/dnd/DropTarget;)V", methodCache: &DropTargetPeerForward.removeDropTarget_MethodID_4, args: &__args, locals: &__locals )
     }
 

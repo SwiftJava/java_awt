@@ -35,7 +35,7 @@ open class RoundRectangle2D: RectangularShape {
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RoundRectangle2D.equals_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -52,9 +52,9 @@ open class RoundRectangle2D: RectangularShape {
 
     /// public boolean java.awt.geom.RoundRectangle2D.intersects(double,double,double,double)
 
-    /// public void java.awt.geom.RoundRectangle2D.setFrame(double,double,double,double)
-
     /// public java.awt.geom.PathIterator java.awt.geom.RoundRectangle2D.getPathIterator(java.awt.geom.AffineTransform)
+
+    /// public void java.awt.geom.RoundRectangle2D.setFrame(double,double,double,double)
 
     /// public abstract double java.awt.geom.RoundRectangle2D.getArcWidth()
 
@@ -107,7 +107,7 @@ open class RoundRectangle2D: RectangularShape {
     open func setRoundRect( rr: RoundRectangle2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rr != nil ? rr! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: rr, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRoundRect", methodSig: "(Ljava/awt/geom/RoundRectangle2D;)V", methodCache: &RoundRectangle2D.setRoundRect_MethodID_6, args: &__args, locals: &__locals )
     }
 

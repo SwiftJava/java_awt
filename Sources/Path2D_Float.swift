@@ -90,7 +90,7 @@ open class Path2D_Float: Path2D, /* java.io.Serializable */ UnclassedProtocol {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        __args[1] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: at, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Path2D$Float", classCache: &Path2D_Float.Path2D_FloatJNIClass, methodSig: "(Ljava/awt/Shape;Ljava/awt/geom/AffineTransform;)V", methodCache: &Path2D_Float.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -176,11 +176,11 @@ open class Path2D_Float: Path2D, /* java.io.Serializable */ UnclassedProtocol {
 
     /// private void java.awt.geom.Path2D$Float.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
-    /// public final synchronized java.awt.geom.Rectangle2D java.awt.geom.Path2D$Float.getBounds2D()
-
     /// public final java.awt.geom.PathIterator java.awt.geom.Path2D$Float.getPathIterator(java.awt.geom.AffineTransform)
 
     /// public final void java.awt.geom.Path2D$Float.transform(java.awt.geom.AffineTransform)
+
+    /// public final synchronized java.awt.geom.Rectangle2D java.awt.geom.Path2D$Float.getBounds2D()
 
     /// java.awt.geom.Point2D java.awt.geom.Path2D$Float.getPoint(int)
 

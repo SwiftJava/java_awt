@@ -520,7 +520,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "insets", fieldType: "Ljava/awt/Insets;", fieldCache: &GridBagConstraints.insets_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -610,7 +610,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
         __args[5] = JNIType.toJava( value: weighty, locals: &__locals )
         __args[6] = JNIType.toJava( value: anchor, locals: &__locals )
         __args[7] = JNIType.toJava( value: fill, locals: &__locals )
-        __args[8] = JNIType.toJava( value: insets != nil ? insets! as JNIObject : nil, locals: &__locals )
+        __args[8] = JNIType.toJava( value: insets, locals: &__locals )
         __args[9] = JNIType.toJava( value: ipadx, locals: &__locals )
         __args[10] = JNIType.toJava( value: ipady, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/GridBagConstraints", classCache: &GridBagConstraints.GridBagConstraintsJNIClass, methodSig: "(IIIIDDIILjava/awt/Insets;II)V", methodCache: &GridBagConstraints.new_MethodID_2, args: &__args, locals: &__locals )

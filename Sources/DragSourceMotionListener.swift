@@ -26,7 +26,7 @@ open class DragSourceMotionListenerForward: java_util.EventListenerForward, Drag
     open func dragMouseMoved( dsde: DragSourceDragEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsde != nil ? dsde! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragMouseMoved", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceMotionListenerForward.dragMouseMoved_MethodID_2, args: &__args, locals: &__locals )
     }
 

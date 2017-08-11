@@ -38,7 +38,7 @@ open class TransformAttribute: java_swift.JavaObject, /* java.io.Serializable */
     public convenience init( transform: AffineTransform? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: transform != nil ? transform! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: transform, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/font/TransformAttribute", classCache: &TransformAttribute.TransformAttributeJNIClass, methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &TransformAttribute.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -55,7 +55,7 @@ open class TransformAttribute: java_swift.JavaObject, /* java.io.Serializable */
     open func equals( rhs: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rhs != nil ? rhs! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &TransformAttribute.equals_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

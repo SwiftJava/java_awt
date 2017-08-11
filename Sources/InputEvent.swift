@@ -330,7 +330,7 @@ open class InputEvent: ComponentEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &InputEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -353,15 +353,81 @@ open class InputEvent: ComponentEvent {
 
     /// private static native void java.awt.event.InputEvent.initIDs()
 
+    /// public long java.awt.event.InputEvent.getWhen()
+
+    private static var getWhen_MethodID_2: jmethodID?
+
+    open func getWhen() -> Int64 {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getWhen", methodSig: "()J", methodCache: &InputEvent.getWhen_MethodID_2, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int64(), from: __return )
+    }
+
+
+    /// public boolean java.awt.event.InputEvent.isControlDown()
+
+    private static var isControlDown_MethodID_3: jmethodID?
+
+    open func isControlDown() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isControlDown", methodSig: "()Z", methodCache: &InputEvent.isControlDown_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean java.awt.event.InputEvent.isShiftDown()
+
+    private static var isShiftDown_MethodID_4: jmethodID?
+
+    open func isShiftDown() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isShiftDown", methodSig: "()Z", methodCache: &InputEvent.isShiftDown_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public int java.awt.event.InputEvent.getModifiersEx()
+
+    private static var getModifiersEx_MethodID_5: jmethodID?
+
+    open func getModifiersEx() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getModifiersEx", methodSig: "()I", methodCache: &InputEvent.getModifiersEx_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public static int java.awt.event.InputEvent.getMaskForButton(int)
+
+    private static var getMaskForButton_MethodID_6: jmethodID?
+
+    open class func getMaskForButton( arg0: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass, methodName: "getMaskForButton", methodSig: "(I)I", methodCache: &getMaskForButton_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open class func getMaskForButton( _ _arg0: Int ) -> Int {
+        return getMaskForButton( arg0: _arg0 )
+    }
+
+    /// private static int[] java.awt.event.InputEvent.getButtonDownMasks()
+
     /// public static java.lang.String java.awt.event.InputEvent.getModifiersExText(int)
 
-    private static var getModifiersExText_MethodID_2: jmethodID?
+    private static var getModifiersExText_MethodID_7: jmethodID?
 
     open class func getModifiersExText( arg0: Int ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass, methodName: "getModifiersExText", methodSig: "(I)Ljava/lang/String;", methodCache: &getModifiersExText_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass, methodName: "getModifiersExText", methodSig: "(I)Ljava/lang/String;", methodCache: &getModifiersExText_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -373,126 +439,60 @@ open class InputEvent: ComponentEvent {
 
     /// public boolean java.awt.event.InputEvent.isMetaDown()
 
-    private static var isMetaDown_MethodID_3: jmethodID?
+    private static var isMetaDown_MethodID_8: jmethodID?
 
     open func isMetaDown() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMetaDown", methodSig: "()Z", methodCache: &InputEvent.isMetaDown_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMetaDown", methodSig: "()Z", methodCache: &InputEvent.isMetaDown_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public boolean java.awt.event.InputEvent.isAltDown()
 
-    private static var isAltDown_MethodID_4: jmethodID?
+    private static var isAltDown_MethodID_9: jmethodID?
 
     open func isAltDown() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAltDown", methodSig: "()Z", methodCache: &InputEvent.isAltDown_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAltDown", methodSig: "()Z", methodCache: &InputEvent.isAltDown_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public boolean java.awt.event.InputEvent.isAltGraphDown()
 
-    private static var isAltGraphDown_MethodID_5: jmethodID?
+    private static var isAltGraphDown_MethodID_10: jmethodID?
 
     open func isAltGraphDown() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAltGraphDown", methodSig: "()Z", methodCache: &InputEvent.isAltGraphDown_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAltGraphDown", methodSig: "()Z", methodCache: &InputEvent.isAltGraphDown_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-
-    /// public boolean java.awt.event.InputEvent.isControlDown()
-
-    private static var isControlDown_MethodID_6: jmethodID?
-
-    open func isControlDown() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isControlDown", methodSig: "()Z", methodCache: &InputEvent.isControlDown_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.event.InputEvent.isShiftDown()
-
-    private static var isShiftDown_MethodID_7: jmethodID?
-
-    open func isShiftDown() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isShiftDown", methodSig: "()Z", methodCache: &InputEvent.isShiftDown_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public int java.awt.event.InputEvent.getModifiersEx()
-
-    private static var getModifiersEx_MethodID_8: jmethodID?
-
-    open func getModifiersEx() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getModifiersEx", methodSig: "()I", methodCache: &InputEvent.getModifiersEx_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public static int java.awt.event.InputEvent.getMaskForButton(int)
-
-    private static var getMaskForButton_MethodID_9: jmethodID?
-
-    open class func getMaskForButton( arg0: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass, methodName: "getMaskForButton", methodSig: "(I)I", methodCache: &getMaskForButton_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func getMaskForButton( _ _arg0: Int ) -> Int {
-        return getMaskForButton( arg0: _arg0 )
-    }
-
-    /// private static int[] java.awt.event.InputEvent.getButtonDownMasks()
 
     /// public boolean java.awt.event.InputEvent.isConsumed()
 
-    private static var isConsumed_MethodID_10: jmethodID?
+    private static var isConsumed_MethodID_11: jmethodID?
 
     override open func isConsumed() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumed", methodSig: "()Z", methodCache: &InputEvent.isConsumed_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumed", methodSig: "()Z", methodCache: &InputEvent.isConsumed_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void java.awt.event.InputEvent.consume()
 
-    private static var consume_MethodID_11: jmethodID?
+    private static var consume_MethodID_12: jmethodID?
 
     override open func consume() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "consume", methodSig: "()V", methodCache: &InputEvent.consume_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-
-    /// public long java.awt.event.InputEvent.getWhen()
-
-    private static var getWhen_MethodID_12: jmethodID?
-
-    open func getWhen() -> Int64 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getWhen", methodSig: "()J", methodCache: &InputEvent.getWhen_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int64(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "consume", methodSig: "()V", methodCache: &InputEvent.consume_MethodID_12, args: &__args, locals: &__locals )
     }
 
 

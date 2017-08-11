@@ -317,7 +317,7 @@ open class TextArea: TextComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &TextArea.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -485,6 +485,8 @@ open class TextArea: TextComponent {
 
     /// private static native void java.awt.TextArea.initIDs()
 
+    /// java.lang.String java.awt.TextArea.constructComponentName()
+
     /// public java.awt.Dimension java.awt.TextArea.getPreferredSize(int,int)
 
     private static var getPreferredSize_MethodID_9: jmethodID?
@@ -561,93 +563,18 @@ open class TextArea: TextComponent {
         setColumns( columns: _columns )
     }
 
-    /// public synchronized void java.awt.TextArea.insertText(java.lang.String,int)
-
-    private static var insertText_MethodID_14: jmethodID?
-
-    open func insertText( str: String?, pos: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pos, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertText", methodSig: "(Ljava/lang/String;I)V", methodCache: &TextArea.insertText_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func insertText( _ _str: String?, _ _pos: Int ) {
-        insertText( str: _str, pos: _pos )
-    }
-
-    /// public synchronized void java.awt.TextArea.appendText(java.lang.String)
-
-    private static var appendText_MethodID_15: jmethodID?
-
-    open func appendText( str: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "appendText", methodSig: "(Ljava/lang/String;)V", methodCache: &TextArea.appendText_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func appendText( _ _str: String? ) {
-        appendText( str: _str )
-    }
-
-    /// public void java.awt.TextArea.replaceRange(java.lang.String,int,int)
-
-    private static var replaceRange_MethodID_16: jmethodID?
-
-    open func replaceRange( str: String?, start: Int, end: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        __args[1] = JNIType.toJava( value: start, locals: &__locals )
-        __args[2] = JNIType.toJava( value: end, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceRange", methodSig: "(Ljava/lang/String;II)V", methodCache: &TextArea.replaceRange_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func replaceRange( _ _str: String?, _ _start: Int, _ _end: Int ) {
-        replaceRange( str: _str, start: _start, end: _end )
-    }
-
-    /// public synchronized void java.awt.TextArea.replaceText(java.lang.String,int,int)
-
-    private static var replaceText_MethodID_17: jmethodID?
-
-    open func replaceText( str: String?, start: Int, end: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        __args[1] = JNIType.toJava( value: start, locals: &__locals )
-        __args[2] = JNIType.toJava( value: end, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceText", methodSig: "(Ljava/lang/String;II)V", methodCache: &TextArea.replaceText_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func replaceText( _ _str: String?, _ _start: Int, _ _end: Int ) {
-        replaceText( str: _str, start: _start, end: _end )
-    }
-
-    /// public int java.awt.TextArea.getScrollbarVisibility()
-
-    private static var getScrollbarVisibility_MethodID_18: jmethodID?
-
-    open func getScrollbarVisibility() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollbarVisibility", methodSig: "()I", methodCache: &TextArea.getScrollbarVisibility_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
+    /// public java.awt.Dimension java.awt.TextArea.preferredSize()
 
     /// public java.awt.Dimension java.awt.TextArea.preferredSize(int,int)
 
-    private static var preferredSize_MethodID_19: jmethodID?
+    private static var preferredSize_MethodID_14: jmethodID?
 
     open func preferredSize( rows: Int, columns: Int ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: rows, locals: &__locals )
         __args[1] = JNIType.toJava( value: columns, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredSize", methodSig: "(II)Ljava/awt/Dimension;", methodCache: &TextArea.preferredSize_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredSize", methodSig: "(II)Ljava/awt/Dimension;", methodCache: &TextArea.preferredSize_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -656,18 +583,16 @@ open class TextArea: TextComponent {
         return preferredSize( rows: _rows, columns: _columns )
     }
 
-    /// public java.awt.Dimension java.awt.TextArea.preferredSize()
-
     /// public java.awt.Dimension java.awt.TextArea.minimumSize(int,int)
 
-    private static var minimumSize_MethodID_20: jmethodID?
+    private static var minimumSize_MethodID_15: jmethodID?
 
     open func minimumSize( rows: Int, columns: Int ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: rows, locals: &__locals )
         __args[1] = JNIType.toJava( value: columns, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumSize", methodSig: "(II)Ljava/awt/Dimension;", methodCache: &TextArea.minimumSize_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumSize", methodSig: "(II)Ljava/awt/Dimension;", methodCache: &TextArea.minimumSize_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -680,14 +605,14 @@ open class TextArea: TextComponent {
 
     /// public java.awt.Dimension java.awt.TextArea.getMinimumSize(int,int)
 
-    private static var getMinimumSize_MethodID_21: jmethodID?
+    private static var getMinimumSize_MethodID_16: jmethodID?
 
     open func getMinimumSize( rows: Int, columns: Int ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: rows, locals: &__locals )
         __args[1] = JNIType.toJava( value: columns, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(II)Ljava/awt/Dimension;", methodCache: &TextArea.getMinimumSize_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(II)Ljava/awt/Dimension;", methodCache: &TextArea.getMinimumSize_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -700,7 +625,82 @@ open class TextArea: TextComponent {
 
     /// public void java.awt.TextArea.addNotify()
 
-    /// java.lang.String java.awt.TextArea.constructComponentName()
+    /// public synchronized void java.awt.TextArea.insertText(java.lang.String,int)
+
+    private static var insertText_MethodID_17: jmethodID?
+
+    open func insertText( str: String?, pos: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: str, locals: &__locals )
+        __args[1] = JNIType.toJava( value: pos, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertText", methodSig: "(Ljava/lang/String;I)V", methodCache: &TextArea.insertText_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func insertText( _ _str: String?, _ _pos: Int ) {
+        insertText( str: _str, pos: _pos )
+    }
+
+    /// public synchronized void java.awt.TextArea.appendText(java.lang.String)
+
+    private static var appendText_MethodID_18: jmethodID?
+
+    open func appendText( str: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: str, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "appendText", methodSig: "(Ljava/lang/String;)V", methodCache: &TextArea.appendText_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func appendText( _ _str: String? ) {
+        appendText( str: _str )
+    }
+
+    /// public void java.awt.TextArea.replaceRange(java.lang.String,int,int)
+
+    private static var replaceRange_MethodID_19: jmethodID?
+
+    open func replaceRange( str: String?, start: Int, end: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: str, locals: &__locals )
+        __args[1] = JNIType.toJava( value: start, locals: &__locals )
+        __args[2] = JNIType.toJava( value: end, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceRange", methodSig: "(Ljava/lang/String;II)V", methodCache: &TextArea.replaceRange_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func replaceRange( _ _str: String?, _ _start: Int, _ _end: Int ) {
+        replaceRange( str: _str, start: _start, end: _end )
+    }
+
+    /// public synchronized void java.awt.TextArea.replaceText(java.lang.String,int,int)
+
+    private static var replaceText_MethodID_20: jmethodID?
+
+    open func replaceText( str: String?, start: Int, end: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: str, locals: &__locals )
+        __args[1] = JNIType.toJava( value: start, locals: &__locals )
+        __args[2] = JNIType.toJava( value: end, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceText", methodSig: "(Ljava/lang/String;II)V", methodCache: &TextArea.replaceText_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func replaceText( _ _str: String?, _ _start: Int, _ _end: Int ) {
+        replaceText( str: _str, start: _start, end: _end )
+    }
+
+    /// public int java.awt.TextArea.getScrollbarVisibility()
+
+    private static var getScrollbarVisibility_MethodID_21: jmethodID?
+
+    open func getScrollbarVisibility() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollbarVisibility", methodSig: "()I", methodCache: &TextArea.getScrollbarVisibility_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
 
 }
 

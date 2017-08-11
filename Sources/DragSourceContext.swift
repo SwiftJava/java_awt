@@ -51,10 +51,10 @@ open class DragSourceContext: java_swift.JavaObject, DragSourceListener, DragSou
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dscp, locals: &__locals )
-        __args[1] = JNIType.toJava( value: trigger != nil ? trigger! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: dragCursor != nil ? dragCursor! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: dragImage != nil ? dragImage! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: offset != nil ? offset! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: trigger, locals: &__locals )
+        __args[2] = JNIType.toJava( value: dragCursor, locals: &__locals )
+        __args[3] = JNIType.toJava( value: dragImage, locals: &__locals )
+        __args[4] = JNIType.toJava( value: offset, locals: &__locals )
         __args[5] = JNIType.toJava( value: t, locals: &__locals )
         __args[6] = JNIType.toJava( value: dsl, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DragSourceContext", classCache: &DragSourceContext.DragSourceContextJNIClass, methodSig: "(Ljava/awt/dnd/peer/DragSourceContextPeer;Ljava/awt/dnd/DragGestureEvent;Ljava/awt/Cursor;Ljava/awt/Image;Ljava/awt/Point;Ljava/awt/datatransfer/Transferable;Ljava/awt/dnd/DragSourceListener;)V", methodCache: &DragSourceContext.new_MethodID_1, args: &__args, locals: &__locals )
@@ -70,144 +70,15 @@ open class DragSourceContext: java_swift.JavaObject, DragSourceListener, DragSou
 
     /// private void java.awt.dnd.DragSourceContext.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
-    /// public void java.awt.dnd.DragSourceContext.transferablesFlavorsChanged()
-
-    private static var transferablesFlavorsChanged_MethodID_2: jmethodID?
-
-    open func transferablesFlavorsChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transferablesFlavorsChanged", methodSig: "()V", methodCache: &DragSourceContext.transferablesFlavorsChanged_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.awt.dnd.DragGestureEvent java.awt.dnd.DragSourceContext.getTrigger()
-
-    private static var getTrigger_MethodID_3: jmethodID?
-
-    open func getTrigger() -> DragGestureEvent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTrigger", methodSig: "()Ljava/awt/dnd/DragGestureEvent;", methodCache: &DragSourceContext.getTrigger_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DragGestureEvent( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.datatransfer.Transferable java.awt.dnd.DragSourceContext.getTransferable()
-
-    private static var getTransferable_MethodID_4: jmethodID?
-
-    open func getTransferable() -> Transferable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferable", methodSig: "()Ljava/awt/datatransfer/Transferable;", methodCache: &DragSourceContext.getTransferable_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TransferableForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected synchronized void java.awt.dnd.DragSourceContext.updateCurrentCursor(int,int,int)
-
-    private static var updateCurrentCursor_MethodID_5: jmethodID?
-
-    open func updateCurrentCursor( sourceAct: Int, targetAct: Int, status: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sourceAct, locals: &__locals )
-        __args[1] = JNIType.toJava( value: targetAct, locals: &__locals )
-        __args[2] = JNIType.toJava( value: status, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateCurrentCursor", methodSig: "(III)V", methodCache: &DragSourceContext.updateCurrentCursor_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func updateCurrentCursor( _ _sourceAct: Int, _ _targetAct: Int, _ _status: Int ) {
-        updateCurrentCursor( sourceAct: _sourceAct, targetAct: _targetAct, status: _status )
-    }
-
-    /// private void java.awt.dnd.DragSourceContext.setCursorImpl(java.awt.Cursor)
-
-    /// public void java.awt.dnd.DragSourceContext.dragEnter(java.awt.dnd.DragSourceDragEvent)
-
-    private static var dragEnter_MethodID_6: jmethodID?
-
-    open func dragEnter( dsde: DragSourceDragEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsde != nil ? dsde! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragEnter", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceContext.dragEnter_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func dragEnter( _ _dsde: DragSourceDragEvent? ) {
-        dragEnter( dsde: _dsde )
-    }
-
-    /// public void java.awt.dnd.DragSourceContext.dragOver(java.awt.dnd.DragSourceDragEvent)
-
-    private static var dragOver_MethodID_7: jmethodID?
-
-    open func dragOver( dsde: DragSourceDragEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsde != nil ? dsde! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragOver", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceContext.dragOver_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func dragOver( _ _dsde: DragSourceDragEvent? ) {
-        dragOver( dsde: _dsde )
-    }
-
-    /// public void java.awt.dnd.DragSourceContext.dropActionChanged(java.awt.dnd.DragSourceDragEvent)
-
-    private static var dropActionChanged_MethodID_8: jmethodID?
-
-    open func dropActionChanged( dsde: DragSourceDragEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsde != nil ? dsde! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dropActionChanged", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceContext.dropActionChanged_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func dropActionChanged( _ _dsde: DragSourceDragEvent? ) {
-        dropActionChanged( dsde: _dsde )
-    }
-
-    /// public void java.awt.dnd.DragSourceContext.dragExit(java.awt.dnd.DragSourceEvent)
-
-    private static var dragExit_MethodID_9: jmethodID?
-
-    open func dragExit( dse: DragSourceEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dse != nil ? dse! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragExit", methodSig: "(Ljava/awt/dnd/DragSourceEvent;)V", methodCache: &DragSourceContext.dragExit_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func dragExit( _ _dse: DragSourceEvent? ) {
-        dragExit( dse: _dse )
-    }
-
-    /// public java.awt.Component java.awt.dnd.DragSourceContext.getComponent()
-
-    private static var getComponent_MethodID_10: jmethodID?
-
-    open func getComponent() -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &DragSourceContext.getComponent_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-
     /// public synchronized void java.awt.dnd.DragSourceContext.setCursor(java.awt.Cursor)
 
-    private static var setCursor_MethodID_11: jmethodID?
+    private static var setCursor_MethodID_2: jmethodID?
 
     open func setCursor( c: Cursor? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &DragSourceContext.setCursor_MethodID_11, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &DragSourceContext.setCursor_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func setCursor( _ _c: Cursor? ) {
@@ -216,12 +87,12 @@ open class DragSourceContext: java_swift.JavaObject, DragSourceListener, DragSou
 
     /// public java.awt.Cursor java.awt.dnd.DragSourceContext.getCursor()
 
-    private static var getCursor_MethodID_12: jmethodID?
+    private static var getCursor_MethodID_3: jmethodID?
 
     open func getCursor() -> Cursor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &DragSourceContext.getCursor_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &DragSourceContext.getCursor_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Cursor( javaObject: __return ) : nil
     }
@@ -229,13 +100,13 @@ open class DragSourceContext: java_swift.JavaObject, DragSourceListener, DragSou
 
     /// public void java.awt.dnd.DragSourceContext.dragDropEnd(java.awt.dnd.DragSourceDropEvent)
 
-    private static var dragDropEnd_MethodID_13: jmethodID?
+    private static var dragDropEnd_MethodID_4: jmethodID?
 
     open func dragDropEnd( dsde: DragSourceDropEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsde != nil ? dsde! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragDropEnd", methodSig: "(Ljava/awt/dnd/DragSourceDropEvent;)V", methodCache: &DragSourceContext.dragDropEnd_MethodID_13, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragDropEnd", methodSig: "(Ljava/awt/dnd/DragSourceDropEvent;)V", methodCache: &DragSourceContext.dragDropEnd_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func dragDropEnd( _ _dsde: DragSourceDropEvent? ) {
@@ -244,13 +115,13 @@ open class DragSourceContext: java_swift.JavaObject, DragSourceListener, DragSou
 
     /// public void java.awt.dnd.DragSourceContext.dragMouseMoved(java.awt.dnd.DragSourceDragEvent)
 
-    private static var dragMouseMoved_MethodID_14: jmethodID?
+    private static var dragMouseMoved_MethodID_5: jmethodID?
 
     open func dragMouseMoved( dsde: DragSourceDragEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsde != nil ? dsde! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragMouseMoved", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceContext.dragMouseMoved_MethodID_14, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragMouseMoved", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceContext.dragMouseMoved_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func dragMouseMoved( _ _dsde: DragSourceDragEvent? ) {
@@ -259,12 +130,12 @@ open class DragSourceContext: java_swift.JavaObject, DragSourceListener, DragSou
 
     /// public java.awt.dnd.DragSource java.awt.dnd.DragSourceContext.getDragSource()
 
-    private static var getDragSource_MethodID_15: jmethodID?
+    private static var getDragSource_MethodID_6: jmethodID?
 
     open func getDragSource() -> DragSource! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDragSource", methodSig: "()Ljava/awt/dnd/DragSource;", methodCache: &DragSourceContext.getDragSource_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDragSource", methodSig: "()Ljava/awt/dnd/DragSource;", methodCache: &DragSourceContext.getDragSource_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DragSource( javaObject: __return ) : nil
     }
@@ -272,13 +143,13 @@ open class DragSourceContext: java_swift.JavaObject, DragSourceListener, DragSou
 
     /// public synchronized void java.awt.dnd.DragSourceContext.addDragSourceListener(java.awt.dnd.DragSourceListener) throws java.util.TooManyListenersException
 
-    private static var addDragSourceListener_MethodID_16: jmethodID?
+    private static var addDragSourceListener_MethodID_7: jmethodID?
 
     open func addDragSourceListener( dsl: DragSourceListener? ) throws /* java.util.TooManyListenersException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dsl, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDragSourceListener", methodSig: "(Ljava/awt/dnd/DragSourceListener;)V", methodCache: &DragSourceContext.addDragSourceListener_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDragSourceListener", methodSig: "(Ljava/awt/dnd/DragSourceListener;)V", methodCache: &DragSourceContext.addDragSourceListener_MethodID_7, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_util.TooManyListenersException( javaObject: throwable )
         }
@@ -290,13 +161,13 @@ open class DragSourceContext: java_swift.JavaObject, DragSourceListener, DragSou
 
     /// public synchronized void java.awt.dnd.DragSourceContext.removeDragSourceListener(java.awt.dnd.DragSourceListener)
 
-    private static var removeDragSourceListener_MethodID_17: jmethodID?
+    private static var removeDragSourceListener_MethodID_8: jmethodID?
 
     open func removeDragSourceListener( dsl: DragSourceListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dsl, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeDragSourceListener", methodSig: "(Ljava/awt/dnd/DragSourceListener;)V", methodCache: &DragSourceContext.removeDragSourceListener_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeDragSourceListener", methodSig: "(Ljava/awt/dnd/DragSourceListener;)V", methodCache: &DragSourceContext.removeDragSourceListener_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func removeDragSourceListener( _ _dsl: DragSourceListener? ) {
@@ -305,13 +176,142 @@ open class DragSourceContext: java_swift.JavaObject, DragSourceListener, DragSou
 
     /// public int java.awt.dnd.DragSourceContext.getSourceActions()
 
-    private static var getSourceActions_MethodID_18: jmethodID?
+    private static var getSourceActions_MethodID_9: jmethodID?
 
     open func getSourceActions() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSourceActions", methodSig: "()I", methodCache: &DragSourceContext.getSourceActions_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSourceActions", methodSig: "()I", methodCache: &DragSourceContext.getSourceActions_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void java.awt.dnd.DragSourceContext.dragEnter(java.awt.dnd.DragSourceDragEvent)
+
+    private static var dragEnter_MethodID_10: jmethodID?
+
+    open func dragEnter( dsde: DragSourceDragEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragEnter", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceContext.dragEnter_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func dragEnter( _ _dsde: DragSourceDragEvent? ) {
+        dragEnter( dsde: _dsde )
+    }
+
+    /// public void java.awt.dnd.DragSourceContext.dragOver(java.awt.dnd.DragSourceDragEvent)
+
+    private static var dragOver_MethodID_11: jmethodID?
+
+    open func dragOver( dsde: DragSourceDragEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragOver", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceContext.dragOver_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func dragOver( _ _dsde: DragSourceDragEvent? ) {
+        dragOver( dsde: _dsde )
+    }
+
+    /// public void java.awt.dnd.DragSourceContext.dropActionChanged(java.awt.dnd.DragSourceDragEvent)
+
+    private static var dropActionChanged_MethodID_12: jmethodID?
+
+    open func dropActionChanged( dsde: DragSourceDragEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dropActionChanged", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceContext.dropActionChanged_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func dropActionChanged( _ _dsde: DragSourceDragEvent? ) {
+        dropActionChanged( dsde: _dsde )
+    }
+
+    /// public void java.awt.dnd.DragSourceContext.dragExit(java.awt.dnd.DragSourceEvent)
+
+    private static var dragExit_MethodID_13: jmethodID?
+
+    open func dragExit( dse: DragSourceEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: dse, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragExit", methodSig: "(Ljava/awt/dnd/DragSourceEvent;)V", methodCache: &DragSourceContext.dragExit_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func dragExit( _ _dse: DragSourceEvent? ) {
+        dragExit( dse: _dse )
+    }
+
+    /// public void java.awt.dnd.DragSourceContext.transferablesFlavorsChanged()
+
+    private static var transferablesFlavorsChanged_MethodID_14: jmethodID?
+
+    open func transferablesFlavorsChanged() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transferablesFlavorsChanged", methodSig: "()V", methodCache: &DragSourceContext.transferablesFlavorsChanged_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+
+    /// public java.awt.dnd.DragGestureEvent java.awt.dnd.DragSourceContext.getTrigger()
+
+    private static var getTrigger_MethodID_15: jmethodID?
+
+    open func getTrigger() -> DragGestureEvent! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTrigger", methodSig: "()Ljava/awt/dnd/DragGestureEvent;", methodCache: &DragSourceContext.getTrigger_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DragGestureEvent( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.datatransfer.Transferable java.awt.dnd.DragSourceContext.getTransferable()
+
+    private static var getTransferable_MethodID_16: jmethodID?
+
+    open func getTransferable() -> Transferable! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferable", methodSig: "()Ljava/awt/datatransfer/Transferable;", methodCache: &DragSourceContext.getTransferable_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TransferableForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected synchronized void java.awt.dnd.DragSourceContext.updateCurrentCursor(int,int,int)
+
+    private static var updateCurrentCursor_MethodID_17: jmethodID?
+
+    open func updateCurrentCursor( sourceAct: Int, targetAct: Int, status: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: sourceAct, locals: &__locals )
+        __args[1] = JNIType.toJava( value: targetAct, locals: &__locals )
+        __args[2] = JNIType.toJava( value: status, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateCurrentCursor", methodSig: "(III)V", methodCache: &DragSourceContext.updateCurrentCursor_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func updateCurrentCursor( _ _sourceAct: Int, _ _targetAct: Int, _ _status: Int ) {
+        updateCurrentCursor( sourceAct: _sourceAct, targetAct: _targetAct, status: _status )
+    }
+
+    /// private void java.awt.dnd.DragSourceContext.setCursorImpl(java.awt.Cursor)
+
+    /// public java.awt.Component java.awt.dnd.DragSourceContext.getComponent()
+
+    private static var getComponent_MethodID_18: jmethodID?
+
+    open func getComponent() -> Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &DragSourceContext.getComponent_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component( javaObject: __return ) : nil
     }
 
 

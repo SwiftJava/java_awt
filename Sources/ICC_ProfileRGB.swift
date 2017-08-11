@@ -315,27 +315,39 @@ open class ICC_ProfileRGB: ICC_Profile {
 
     /// java.awt.color.ICC_ProfileRGB(sun.java2d.cmm.ProfileDeferralInfo)
 
+    /// public float[][] java.awt.color.ICC_ProfileRGB.getMatrix()
+
+    private static var getMatrix_MethodID_1: jmethodID?
+
+    open func getMatrix() -> [[Float]]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMatrix", methodSig: "()[[F", methodCache: &ICC_ProfileRGB.getMatrix_MethodID_1, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [[Float]](), from: __return )
+    }
+
+
     /// public float[] java.awt.color.ICC_ProfileRGB.getMediaWhitePoint()
 
-    private static var getMediaWhitePoint_MethodID_1: jmethodID?
+    private static var getMediaWhitePoint_MethodID_2: jmethodID?
 
     open func getMediaWhitePoint() -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMediaWhitePoint", methodSig: "()[F", methodCache: &ICC_ProfileRGB.getMediaWhitePoint_MethodID_1, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMediaWhitePoint", methodSig: "()[F", methodCache: &ICC_ProfileRGB.getMediaWhitePoint_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Float](), from: __return )
     }
 
 
     /// public float java.awt.color.ICC_ProfileRGB.getGamma(int)
 
-    private static var getGamma_MethodID_2: jmethodID?
+    private static var getGamma_MethodID_3: jmethodID?
 
     open func getGamma( arg0: Int ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getGamma", methodSig: "(I)F", methodCache: &ICC_ProfileRGB.getGamma_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getGamma", methodSig: "(I)F", methodCache: &ICC_ProfileRGB.getGamma_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -345,31 +357,19 @@ open class ICC_ProfileRGB: ICC_Profile {
 
     /// public short[] java.awt.color.ICC_ProfileRGB.getTRC(int)
 
-    private static var getTRC_MethodID_3: jmethodID?
+    private static var getTRC_MethodID_4: jmethodID?
 
     open func getTRC( arg0: Int ) -> [Int16]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTRC", methodSig: "(I)[S", methodCache: &ICC_ProfileRGB.getTRC_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTRC", methodSig: "(I)[S", methodCache: &ICC_ProfileRGB.getTRC_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Int16](), from: __return )
     }
 
     open func getTRC( _ _arg0: Int ) -> [Int16]! {
         return getTRC( arg0: _arg0 )
     }
-
-    /// public float[][] java.awt.color.ICC_ProfileRGB.getMatrix()
-
-    private static var getMatrix_MethodID_4: jmethodID?
-
-    open func getMatrix() -> [[Float]]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMatrix", methodSig: "()[[F", methodCache: &ICC_ProfileRGB.getMatrix_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [[Float]](), from: __return )
-    }
-
 
 }
 

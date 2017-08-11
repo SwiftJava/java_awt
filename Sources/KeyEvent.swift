@@ -2406,7 +2406,7 @@ open class KeyEvent: InputEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &KeyEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -2418,7 +2418,7 @@ open class KeyEvent: InputEvent {
     public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, keyCode: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -2439,7 +2439,7 @@ open class KeyEvent: InputEvent {
     public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, keyCode: Int, keyChar: UInt16, keyLocation: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -2464,7 +2464,7 @@ open class KeyEvent: InputEvent {
     public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, keyCode: Int, keyChar: UInt16 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -2493,36 +2493,35 @@ open class KeyEvent: InputEvent {
 
     /// private static native void java.awt.event.KeyEvent.initIDs()
 
-    /// public void java.awt.event.KeyEvent.setKeyCode(int)
+    /// public void java.awt.event.KeyEvent.setKeyChar(char)
 
-    private static var setKeyCode_MethodID_4: jmethodID?
+    private static var setKeyChar_MethodID_4: jmethodID?
 
-    open func setKeyCode( keyCode: Int ) {
+    open func setKeyChar( keyChar: UInt16 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keyCode, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeyCode", methodSig: "(I)V", methodCache: &KeyEvent.setKeyCode_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: keyChar, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeyChar", methodSig: "(C)V", methodCache: &KeyEvent.setKeyChar_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func setKeyCode( _ _keyCode: Int ) {
-        setKeyCode( keyCode: _keyCode )
+    open func setKeyChar( _ _keyChar: UInt16 ) {
+        setKeyChar( keyChar: _keyChar )
     }
 
-    /// public int java.awt.event.KeyEvent.getKeyLocation()
+    /// public void java.awt.event.KeyEvent.setModifiers(int)
 
-    private static var getKeyLocation_MethodID_5: jmethodID?
+    private static var setModifiers_MethodID_5: jmethodID?
 
-    open func getKeyLocation() -> Int {
+    open func setModifiers( modifiers: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getKeyLocation", methodSig: "()I", methodCache: &KeyEvent.getKeyLocation_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[0] = JNIType.toJava( value: modifiers, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModifiers", methodSig: "(I)V", methodCache: &KeyEvent.setModifiers_MethodID_5, args: &__args, locals: &__locals )
     }
 
-
-    /// private void java.awt.event.KeyEvent.setNewModifiers()
-
-    /// private void java.awt.event.KeyEvent.setOldModifiers()
+    open func setModifiers( _ _modifiers: Int ) {
+        setModifiers( modifiers: _modifiers )
+    }
 
     /// public static int java.awt.event.KeyEvent.getExtendedKeyCodeForChar(int)
 
@@ -2540,43 +2539,15 @@ open class KeyEvent: InputEvent {
         return getExtendedKeyCodeForChar( c: _c )
     }
 
-    /// public static java.lang.String java.awt.event.KeyEvent.getKeyText(int)
-
-    private static var getKeyText_MethodID_7: jmethodID?
-
-    open class func getKeyText( keyCode: Int ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keyCode, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass, methodName: "getKeyText", methodSig: "(I)Ljava/lang/String;", methodCache: &getKeyText_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open class func getKeyText( _ _keyCode: Int ) -> String! {
-        return getKeyText( keyCode: _keyCode )
-    }
-
-    /// public boolean java.awt.event.KeyEvent.isActionKey()
-
-    private static var isActionKey_MethodID_8: jmethodID?
-
-    open func isActionKey() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isActionKey", methodSig: "()Z", methodCache: &KeyEvent.isActionKey_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public static java.lang.String java.awt.event.KeyEvent.getKeyModifiersText(int)
 
-    private static var getKeyModifiersText_MethodID_9: jmethodID?
+    private static var getKeyModifiersText_MethodID_7: jmethodID?
 
     open class func getKeyModifiersText( modifiers: Int ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: modifiers, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass, methodName: "getKeyModifiersText", methodSig: "(I)Ljava/lang/String;", methodCache: &getKeyModifiersText_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass, methodName: "getKeyModifiersText", methodSig: "(I)Ljava/lang/String;", methodCache: &getKeyModifiersText_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -2584,71 +2555,100 @@ open class KeyEvent: InputEvent {
         return getKeyModifiersText( modifiers: _modifiers )
     }
 
+    /// public static java.lang.String java.awt.event.KeyEvent.getKeyText(int)
+
+    private static var getKeyText_MethodID_8: jmethodID?
+
+    open class func getKeyText( keyCode: Int ) -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: keyCode, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass, methodName: "getKeyText", methodSig: "(I)Ljava/lang/String;", methodCache: &getKeyText_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open class func getKeyText( _ _keyCode: Int ) -> String! {
+        return getKeyText( keyCode: _keyCode )
+    }
+
+    /// public void java.awt.event.KeyEvent.setKeyCode(int)
+
+    private static var setKeyCode_MethodID_9: jmethodID?
+
+    open func setKeyCode( keyCode: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: keyCode, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeyCode", methodSig: "(I)V", methodCache: &KeyEvent.setKeyCode_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func setKeyCode( _ _keyCode: Int ) {
+        setKeyCode( keyCode: _keyCode )
+    }
+
+    /// public int java.awt.event.KeyEvent.getKeyLocation()
+
+    private static var getKeyLocation_MethodID_10: jmethodID?
+
+    open func getKeyLocation() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getKeyLocation", methodSig: "()I", methodCache: &KeyEvent.getKeyLocation_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// private void java.awt.event.KeyEvent.setNewModifiers()
+
+    /// private void java.awt.event.KeyEvent.setOldModifiers()
+
+    /// public boolean java.awt.event.KeyEvent.isActionKey()
+
+    private static var isActionKey_MethodID_11: jmethodID?
+
+    open func isActionKey() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isActionKey", methodSig: "()Z", methodCache: &KeyEvent.isActionKey_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
     /// public char java.awt.event.KeyEvent.getKeyChar()
 
-    private static var getKeyChar_MethodID_10: jmethodID?
+    private static var getKeyChar_MethodID_12: jmethodID?
 
     open func getKeyChar() -> UInt16 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getKeyChar", methodSig: "()C", methodCache: &KeyEvent.getKeyChar_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getKeyChar", methodSig: "()C", methodCache: &KeyEvent.getKeyChar_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: UInt16(), from: __return )
     }
 
 
     /// public int java.awt.event.KeyEvent.getKeyCode()
 
-    private static var getKeyCode_MethodID_11: jmethodID?
+    private static var getKeyCode_MethodID_13: jmethodID?
 
     open func getKeyCode() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getKeyCode", methodSig: "()I", methodCache: &KeyEvent.getKeyCode_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getKeyCode", methodSig: "()I", methodCache: &KeyEvent.getKeyCode_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.event.KeyEvent.getExtendedKeyCode()
 
-    private static var getExtendedKeyCode_MethodID_12: jmethodID?
+    private static var getExtendedKeyCode_MethodID_14: jmethodID?
 
     open func getExtendedKeyCode() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getExtendedKeyCode", methodSig: "()I", methodCache: &KeyEvent.getExtendedKeyCode_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getExtendedKeyCode", methodSig: "()I", methodCache: &KeyEvent.getExtendedKeyCode_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
-
-    /// public void java.awt.event.KeyEvent.setKeyChar(char)
-
-    private static var setKeyChar_MethodID_13: jmethodID?
-
-    open func setKeyChar( keyChar: UInt16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keyChar, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeyChar", methodSig: "(C)V", methodCache: &KeyEvent.setKeyChar_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setKeyChar( _ _keyChar: UInt16 ) {
-        setKeyChar( keyChar: _keyChar )
-    }
-
-    /// public void java.awt.event.KeyEvent.setModifiers(int)
-
-    private static var setModifiers_MethodID_14: jmethodID?
-
-    open func setModifiers( modifiers: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: modifiers, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModifiers", methodSig: "(I)V", methodCache: &KeyEvent.setModifiers_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setModifiers( _ _modifiers: Int ) {
-        setModifiers( modifiers: _modifiers )
-    }
 
 }
 

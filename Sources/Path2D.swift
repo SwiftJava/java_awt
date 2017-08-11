@@ -147,25 +147,9 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     }
 
 
-    /// public final boolean java.awt.geom.Path2D.contains(java.awt.geom.Point2D)
-
-    private static var contains_MethodID_4: jmethodID?
-
-    open func contains( p: Point2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &Path2D.contains_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func contains( _ _p: Point2D? ) -> Bool {
-        return contains( p: _p )
-    }
-
     /// public static boolean java.awt.geom.Path2D.contains(java.awt.geom.PathIterator,double,double,double,double)
 
-    private static var contains_MethodID_5: jmethodID?
+    private static var contains_MethodID_4: jmethodID?
 
     open class func contains( pi: PathIterator?, x: Double, y: Double, w: Double, h: Double ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -175,7 +159,7 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: w, locals: &__locals )
         __args[4] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "contains", methodSig: "(Ljava/awt/geom/PathIterator;DDDD)Z", methodCache: &contains_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "contains", methodSig: "(Ljava/awt/geom/PathIterator;DDDD)Z", methodCache: &contains_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -185,19 +169,35 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public static boolean java.awt.geom.Path2D.contains(java.awt.geom.PathIterator,java.awt.geom.Rectangle2D)
 
-    private static var contains_MethodID_6: jmethodID?
+    private static var contains_MethodID_5: jmethodID?
 
     open class func contains( pi: PathIterator?, r: Rectangle2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pi, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "contains", methodSig: "(Ljava/awt/geom/PathIterator;Ljava/awt/geom/Rectangle2D;)Z", methodCache: &contains_MethodID_6, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "contains", methodSig: "(Ljava/awt/geom/PathIterator;Ljava/awt/geom/Rectangle2D;)Z", methodCache: &contains_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
     open class func contains( _ _pi: PathIterator?, _ _r: Rectangle2D? ) -> Bool {
         return contains( pi: _pi, r: _r )
+    }
+
+    /// public final boolean java.awt.geom.Path2D.contains(java.awt.geom.Rectangle2D)
+
+    private static var contains_MethodID_6: jmethodID?
+
+    open func contains( r: Rectangle2D? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Path2D.contains_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func contains( _ _r: Rectangle2D? ) -> Bool {
+        return contains( r: _r )
     }
 
     /// public final boolean java.awt.geom.Path2D.contains(double,double,double,double)
@@ -219,25 +219,9 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return contains( x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public final boolean java.awt.geom.Path2D.contains(java.awt.geom.Rectangle2D)
-
-    private static var contains_MethodID_8: jmethodID?
-
-    open func contains( r: Rectangle2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Path2D.contains_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func contains( _ _r: Rectangle2D? ) -> Bool {
-        return contains( r: _r )
-    }
-
     /// public static boolean java.awt.geom.Path2D.contains(java.awt.geom.PathIterator,double,double)
 
-    private static var contains_MethodID_9: jmethodID?
+    private static var contains_MethodID_8: jmethodID?
 
     open class func contains( pi: PathIterator?, x: Double, y: Double ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -245,7 +229,7 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[0] = JNIType.toJava( value: pi, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "contains", methodSig: "(Ljava/awt/geom/PathIterator;DD)Z", methodCache: &contains_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "contains", methodSig: "(Ljava/awt/geom/PathIterator;DD)Z", methodCache: &contains_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -255,14 +239,14 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public static boolean java.awt.geom.Path2D.contains(java.awt.geom.PathIterator,java.awt.geom.Point2D)
 
-    private static var contains_MethodID_10: jmethodID?
+    private static var contains_MethodID_9: jmethodID?
 
     open class func contains( pi: PathIterator?, p: Point2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pi, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "contains", methodSig: "(Ljava/awt/geom/PathIterator;Ljava/awt/geom/Point2D;)Z", methodCache: &contains_MethodID_10, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "contains", methodSig: "(Ljava/awt/geom/PathIterator;Ljava/awt/geom/Point2D;)Z", methodCache: &contains_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -272,19 +256,35 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public final boolean java.awt.geom.Path2D.contains(double,double)
 
-    private static var contains_MethodID_11: jmethodID?
+    private static var contains_MethodID_10: jmethodID?
 
     open func contains( x: Double, y: Double ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DD)Z", methodCache: &Path2D.contains_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DD)Z", methodCache: &Path2D.contains_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
     open func contains( _ _x: Double, _ _y: Double ) -> Bool {
         return contains( x: _x, y: _y )
+    }
+
+    /// public final boolean java.awt.geom.Path2D.contains(java.awt.geom.Point2D)
+
+    private static var contains_MethodID_11: jmethodID?
+
+    open func contains( p: Point2D? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &Path2D.contains_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func contains( _ _p: Point2D? ) -> Bool {
+        return contains( p: _p )
     }
 
     /// final void java.awt.geom.Path2D.readObject(java.io.ObjectInputStream,boolean) throws java.lang.ClassNotFoundException,java.io.IOException
@@ -302,61 +302,9 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     }
 
 
-    /// public final boolean java.awt.geom.Path2D.intersects(java.awt.geom.Rectangle2D)
-
-    private static var intersects_MethodID_13: jmethodID?
-
-    open func intersects( r: Rectangle2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Path2D.intersects_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func intersects( _ _r: Rectangle2D? ) -> Bool {
-        return intersects( r: _r )
-    }
-
-    /// public final boolean java.awt.geom.Path2D.intersects(double,double,double,double)
-
-    private static var intersects_MethodID_14: jmethodID?
-
-    open func intersects( x: Double, y: Double, w: Double, h: Double ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(DDDD)Z", methodCache: &Path2D.intersects_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func intersects( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Bool {
-        return intersects( x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public static boolean java.awt.geom.Path2D.intersects(java.awt.geom.PathIterator,java.awt.geom.Rectangle2D)
-
-    private static var intersects_MethodID_15: jmethodID?
-
-    open class func intersects( pi: PathIterator?, r: Rectangle2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pi, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "intersects", methodSig: "(Ljava/awt/geom/PathIterator;Ljava/awt/geom/Rectangle2D;)Z", methodCache: &intersects_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func intersects( _ _pi: PathIterator?, _ _r: Rectangle2D? ) -> Bool {
-        return intersects( pi: _pi, r: _r )
-    }
-
     /// public static boolean java.awt.geom.Path2D.intersects(java.awt.geom.PathIterator,double,double,double,double)
 
-    private static var intersects_MethodID_16: jmethodID?
+    private static var intersects_MethodID_13: jmethodID?
 
     open class func intersects( pi: PathIterator?, x: Double, y: Double, w: Double, h: Double ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -366,7 +314,7 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: w, locals: &__locals )
         __args[4] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "intersects", methodSig: "(Ljava/awt/geom/PathIterator;DDDD)Z", methodCache: &intersects_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "intersects", methodSig: "(Ljava/awt/geom/PathIterator;DDDD)Z", methodCache: &intersects_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -374,29 +322,68 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return intersects( pi: _pi, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public final java.awt.Rectangle java.awt.geom.Path2D.getBounds()
+    /// public final boolean java.awt.geom.Path2D.intersects(java.awt.geom.Rectangle2D)
 
-    private static var getBounds_MethodID_17: jmethodID?
+    private static var intersects_MethodID_14: jmethodID?
 
-    open func getBounds() -> Rectangle! {
+    open func intersects( r: Rectangle2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Path2D.getBounds_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Path2D.intersects_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
     }
 
+    open func intersects( _ _r: Rectangle2D? ) -> Bool {
+        return intersects( r: _r )
+    }
+
+    /// public final boolean java.awt.geom.Path2D.intersects(double,double,double,double)
+
+    private static var intersects_MethodID_15: jmethodID?
+
+    open func intersects( x: Double, y: Double, w: Double, h: Double ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        __args[2] = JNIType.toJava( value: w, locals: &__locals )
+        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(DDDD)Z", methodCache: &Path2D.intersects_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func intersects( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Bool {
+        return intersects( x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public static boolean java.awt.geom.Path2D.intersects(java.awt.geom.PathIterator,java.awt.geom.Rectangle2D)
+
+    private static var intersects_MethodID_16: jmethodID?
+
+    open class func intersects( pi: PathIterator?, r: Rectangle2D? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pi, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass, methodName: "intersects", methodSig: "(Ljava/awt/geom/PathIterator;Ljava/awt/geom/Rectangle2D;)Z", methodCache: &intersects_MethodID_16, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open class func intersects( _ _pi: PathIterator?, _ _r: Rectangle2D? ) -> Bool {
+        return intersects( pi: _pi, r: _r )
+    }
 
     /// public final java.awt.geom.PathIterator java.awt.geom.Path2D.getPathIterator(java.awt.geom.AffineTransform,double)
 
-    private static var getPathIterator_MethodID_18: jmethodID?
+    private static var getPathIterator_MethodID_17: jmethodID?
 
     open func getPathIterator( at: AffineTransform?, flatness: Double ) -> PathIterator! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
         __args[1] = JNIType.toJava( value: flatness, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &Path2D.getPathIterator_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &Path2D.getPathIterator_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
     }
@@ -407,13 +394,13 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public abstract void java.awt.geom.Path2D.transform(java.awt.geom.AffineTransform)
 
-    private static var transform_MethodID_19: jmethodID?
+    private static var transform_MethodID_18: jmethodID?
 
     open func transform( at: AffineTransform? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &Path2D.transform_MethodID_19, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &Path2D.transform_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func transform( _ _at: AffineTransform? ) {
@@ -422,13 +409,13 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public final synchronized java.awt.Shape java.awt.geom.Path2D.createTransformedShape(java.awt.geom.AffineTransform)
 
-    private static var createTransformedShape_MethodID_20: jmethodID?
+    private static var createTransformedShape_MethodID_19: jmethodID?
 
     open func createTransformedShape( at: AffineTransform? ) -> Shape! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTransformedShape", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/Shape;", methodCache: &Path2D.createTransformedShape_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTransformedShape", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/Shape;", methodCache: &Path2D.createTransformedShape_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ShapeForward( javaObject: __return ) : nil
     }
@@ -436,6 +423,19 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     open func createTransformedShape( _ _at: AffineTransform? ) -> Shape! {
         return createTransformedShape( at: _at )
     }
+
+    /// public final java.awt.Rectangle java.awt.geom.Path2D.getBounds()
+
+    private static var getBounds_MethodID_20: jmethodID?
+
+    open func getBounds() -> Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Path2D.getBounds_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
 
     /// public final synchronized int java.awt.geom.Path2D.getWindingRule()
 
@@ -574,28 +574,15 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// In declared protocol but not defined.. ///
 
-    /// public abstract java.awt.geom.Rectangle2D java.awt.Shape.getBounds2D()
-
-    private static var getBounds2D_MethodID_29: jmethodID?
-
-    open func getBounds2D() -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &Path2D.getBounds2D_MethodID_29, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-
     /// public abstract java.awt.geom.PathIterator java.awt.Shape.getPathIterator(java.awt.geom.AffineTransform)
 
-    private static var getPathIterator_MethodID_30: jmethodID?
+    private static var getPathIterator_MethodID_29: jmethodID?
 
     open func getPathIterator( at: AffineTransform? ) -> PathIterator! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &Path2D.getPathIterator_MethodID_30, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &Path2D.getPathIterator_MethodID_29, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
     }
@@ -603,6 +590,19 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     open func getPathIterator( _ _at: AffineTransform? ) -> PathIterator! {
         return getPathIterator( at: _at )
     }
+
+    /// public abstract java.awt.geom.Rectangle2D java.awt.Shape.getBounds2D()
+
+    private static var getBounds2D_MethodID_30: jmethodID?
+
+    open func getBounds2D() -> Rectangle2D! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &Path2D.getBounds2D_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
 
 }
 

@@ -49,7 +49,7 @@ open class ContainerOrderFocusTraversalPolicy: FocusTraversalPolicy, /* java.io.
     open func accept( arg0: Component? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "accept", methodSig: "(Ljava/awt/Component;)Z", methodCache: &ContainerOrderFocusTraversalPolicy.accept_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -58,67 +58,16 @@ open class ContainerOrderFocusTraversalPolicy: FocusTraversalPolicy, /* java.io.
         return accept( arg0: _arg0 )
     }
 
-    /// public java.awt.Component java.awt.ContainerOrderFocusTraversalPolicy.getFirstComponent(java.awt.Container)
-
-    private static var getFirstComponent_MethodID_3: jmethodID?
-
-    open func getFirstComponent( arg0: Container? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFirstComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &ContainerOrderFocusTraversalPolicy.getFirstComponent_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-    override open func getFirstComponent( _ _arg0: Container? ) -> Component! {
-        return getFirstComponent( arg0: _arg0 )
-    }
-
-    /// public java.awt.Component java.awt.ContainerOrderFocusTraversalPolicy.getLastComponent(java.awt.Container)
-
-    private static var getLastComponent_MethodID_4: jmethodID?
-
-    open func getLastComponent( arg0: Container? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &ContainerOrderFocusTraversalPolicy.getLastComponent_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-    override open func getLastComponent( _ _arg0: Container? ) -> Component! {
-        return getLastComponent( arg0: _arg0 )
-    }
-
-    /// public java.awt.Component java.awt.ContainerOrderFocusTraversalPolicy.getDefaultComponent(java.awt.Container)
-
-    private static var getDefaultComponent_MethodID_5: jmethodID?
-
-    open func getDefaultComponent( arg0: Container? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &ContainerOrderFocusTraversalPolicy.getDefaultComponent_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-    override open func getDefaultComponent( _ _arg0: Container? ) -> Component! {
-        return getDefaultComponent( arg0: _arg0 )
-    }
-
     /// public java.awt.Component java.awt.ContainerOrderFocusTraversalPolicy.getComponentAfter(java.awt.Container,java.awt.Component)
 
-    private static var getComponentAfter_MethodID_6: jmethodID?
+    private static var getComponentAfter_MethodID_3: jmethodID?
 
     open func getComponentAfter( arg0: Container?, arg1: Component? ) -> Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAfter", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &ContainerOrderFocusTraversalPolicy.getComponentAfter_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAfter", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &ContainerOrderFocusTraversalPolicy.getComponentAfter_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
     }
@@ -129,20 +78,71 @@ open class ContainerOrderFocusTraversalPolicy: FocusTraversalPolicy, /* java.io.
 
     /// public java.awt.Component java.awt.ContainerOrderFocusTraversalPolicy.getComponentBefore(java.awt.Container,java.awt.Component)
 
-    private static var getComponentBefore_MethodID_7: jmethodID?
+    private static var getComponentBefore_MethodID_4: jmethodID?
 
     open func getComponentBefore( arg0: Container?, arg1: Component? ) -> Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentBefore", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &ContainerOrderFocusTraversalPolicy.getComponentBefore_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentBefore", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &ContainerOrderFocusTraversalPolicy.getComponentBefore_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
     }
 
     override open func getComponentBefore( _ _arg0: Container?, _ _arg1: Component? ) -> Component! {
         return getComponentBefore( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public java.awt.Component java.awt.ContainerOrderFocusTraversalPolicy.getFirstComponent(java.awt.Container)
+
+    private static var getFirstComponent_MethodID_5: jmethodID?
+
+    open func getFirstComponent( arg0: Container? ) -> Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFirstComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &ContainerOrderFocusTraversalPolicy.getFirstComponent_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component( javaObject: __return ) : nil
+    }
+
+    override open func getFirstComponent( _ _arg0: Container? ) -> Component! {
+        return getFirstComponent( arg0: _arg0 )
+    }
+
+    /// public java.awt.Component java.awt.ContainerOrderFocusTraversalPolicy.getLastComponent(java.awt.Container)
+
+    private static var getLastComponent_MethodID_6: jmethodID?
+
+    open func getLastComponent( arg0: Container? ) -> Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &ContainerOrderFocusTraversalPolicy.getLastComponent_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component( javaObject: __return ) : nil
+    }
+
+    override open func getLastComponent( _ _arg0: Container? ) -> Component! {
+        return getLastComponent( arg0: _arg0 )
+    }
+
+    /// public java.awt.Component java.awt.ContainerOrderFocusTraversalPolicy.getDefaultComponent(java.awt.Container)
+
+    private static var getDefaultComponent_MethodID_7: jmethodID?
+
+    open func getDefaultComponent( arg0: Container? ) -> Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &ContainerOrderFocusTraversalPolicy.getDefaultComponent_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component( javaObject: __return ) : nil
+    }
+
+    override open func getDefaultComponent( _ _arg0: Container? ) -> Component! {
+        return getDefaultComponent( arg0: _arg0 )
     }
 
     /// private java.util.List java.awt.ContainerOrderFocusTraversalPolicy.getFocusTraversalCycle(java.awt.Container)

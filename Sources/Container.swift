@@ -278,7 +278,7 @@ open class Container: Component {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Container.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -320,7 +320,7 @@ open class Container: Component {
     open func add( arg0: Component? ) -> Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &Container.add_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
@@ -338,7 +338,7 @@ open class Container: Component {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &Container.add_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
@@ -355,8 +355,8 @@ open class Container: Component {
     open func add( arg0: Component?, arg1: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &Container.add_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -371,7 +371,7 @@ open class Container: Component {
     open func add( arg0: Component?, arg1: Int ) -> Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Component;I)Ljava/awt/Component;", methodCache: &Container.add_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -389,8 +389,8 @@ open class Container: Component {
     open func add( arg0: Component?, arg1: java_swift.JavaObject?, arg2: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &Container.add_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -406,7 +406,7 @@ open class Container: Component {
     open func remove( arg0: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/Component;)V", methodCache: &Container.remove_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -595,7 +595,7 @@ open class Container: Component {
     open func setFocusTraversalPolicy( arg0: FocusTraversalPolicy? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusTraversalPolicy", methodSig: "(Ljava/awt/FocusTraversalPolicy;)V", methodCache: &Container.setFocusTraversalPolicy_MethodID_18, args: &__args, locals: &__locals )
     }
 
@@ -660,7 +660,7 @@ open class Container: Component {
     open func setComponentZOrder( arg0: Component?, arg1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentZOrder", methodSig: "(Ljava/awt/Component;I)V", methodCache: &Container.setComponentZOrder_MethodID_21, args: &__args, locals: &__locals )
     }
@@ -682,7 +682,7 @@ open class Container: Component {
     open func getComponentZOrder( arg0: Component? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getComponentZOrder", methodSig: "(Ljava/awt/Component;)I", methodCache: &Container.getComponentZOrder_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
@@ -698,8 +698,8 @@ open class Container: Component {
     open func addImpl( arg0: Component?, arg1: java_swift.JavaObject?, arg2: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &Container.addImpl_MethodID_23, args: &__args, locals: &__locals )
     }
@@ -784,7 +784,7 @@ open class Container: Component {
     open func paintComponents( arg0: Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponents", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Container.paintComponents_MethodID_27, args: &__args, locals: &__locals )
     }
 
@@ -803,7 +803,7 @@ open class Container: Component {
     open func printComponents( arg0: Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "printComponents", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Container.printComponents_MethodID_28, args: &__args, locals: &__locals )
     }
 
@@ -866,7 +866,7 @@ open class Container: Component {
     override open func processEvent( arg0: AWTEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Container.processEvent_MethodID_32, args: &__args, locals: &__locals )
     }
 
@@ -881,7 +881,7 @@ open class Container: Component {
     open func processContainerEvent( arg0: ContainerEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "processContainerEvent", methodSig: "(Ljava/awt/event/ContainerEvent;)V", methodCache: &Container.processContainerEvent_MethodID_33, args: &__args, locals: &__locals )
     }
 
@@ -940,7 +940,7 @@ open class Container: Component {
     open func findComponentAt( arg0: Point? ) -> Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "findComponentAt", methodSig: "(Ljava/awt/Point;)Ljava/awt/Component;", methodCache: &Container.findComponentAt_MethodID_35, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
@@ -981,7 +981,7 @@ open class Container: Component {
     open func isAncestorOf( arg0: Component? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAncestorOf", methodSig: "(Ljava/awt/Component;)Z", methodCache: &Container.isAncestorOf_MethodID_37, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

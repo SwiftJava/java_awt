@@ -41,8 +41,8 @@ open class BufferedImageOpForward: JNIObjectForward, BufferedImageOp {
     open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src != nil ? src! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest != nil ? dest! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &BufferedImageOpForward.filter_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImage( javaObject: __return ) : nil
@@ -59,7 +59,7 @@ open class BufferedImageOpForward: JNIObjectForward, BufferedImageOp {
     open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src != nil ? src! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &BufferedImageOpForward.getBounds2D_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
@@ -89,8 +89,8 @@ open class BufferedImageOpForward: JNIObjectForward, BufferedImageOp {
     open func createCompatibleDestImage( src: BufferedImage?, destCM: ColorModel? ) -> BufferedImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src != nil ? src! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: destCM != nil ? destCM! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: destCM, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &BufferedImageOpForward.createCompatibleDestImage_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImage( javaObject: __return ) : nil
@@ -107,8 +107,8 @@ open class BufferedImageOpForward: JNIObjectForward, BufferedImageOp {
     open func getPoint2D( srcPt: Point2D?, dstPt: Point2D? ) -> Point2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: srcPt != nil ? srcPt! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dstPt != nil ? dstPt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: srcPt, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dstPt, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &BufferedImageOpForward.getPoint2D_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point2D( javaObject: __return ) : nil

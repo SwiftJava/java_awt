@@ -237,7 +237,7 @@ open class Button: Component {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Button.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -310,116 +310,31 @@ open class Button: Component {
 
     /// private static native void java.awt.Button.initIDs()
 
-    /// public java.lang.String java.awt.Button.getActionCommand()
+    /// java.lang.String java.awt.Button.constructComponentName()
 
-    private static var getActionCommand_MethodID_4: jmethodID?
+    /// public java.lang.String java.awt.Button.getLabel()
 
-    open func getActionCommand() -> String! {
+    private static var getLabel_MethodID_4: jmethodID?
+
+    open func getLabel() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &Button.getActionCommand_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabel", methodSig: "()Ljava/lang/String;", methodCache: &Button.getLabel_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
-
-    /// public void java.awt.Button.setLabel(java.lang.String)
-
-    private static var setLabel_MethodID_5: jmethodID?
-
-    open func setLabel( label: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &Button.setLabel_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func setLabel( _ _label: String? ) {
-        setLabel( label: _label )
-    }
-
-    /// public void java.awt.Button.setActionCommand(java.lang.String)
-
-    private static var setActionCommand_MethodID_6: jmethodID?
-
-    open func setActionCommand( command: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: command, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &Button.setActionCommand_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setActionCommand( _ _command: String? ) {
-        setActionCommand( command: _command )
-    }
-
-    /// public synchronized void java.awt.Button.addActionListener(java.awt.event.ActionListener)
-
-    private static var addActionListener_MethodID_7: jmethodID?
-
-    open func addActionListener( l: ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &Button.addActionListener_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func addActionListener( _ _l: ActionListener? ) {
-        addActionListener( l: _l )
-    }
-
-    /// public synchronized void java.awt.Button.removeActionListener(java.awt.event.ActionListener)
-
-    private static var removeActionListener_MethodID_8: jmethodID?
-
-    open func removeActionListener( l: ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &Button.removeActionListener_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func removeActionListener( _ _l: ActionListener? ) {
-        removeActionListener( l: _l )
-    }
-
-    /// public synchronized java.awt.event.ActionListener[] java.awt.Button.getActionListeners()
-
-    private static var getActionListeners_MethodID_9: jmethodID?
-
-    open func getActionListeners() -> [ActionListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &Button.getActionListeners_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
-    }
-
-
-    /// protected void java.awt.Button.processActionEvent(java.awt.event.ActionEvent)
-
-    private static var processActionEvent_MethodID_10: jmethodID?
-
-    open func processActionEvent( e: ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processActionEvent", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &Button.processActionEvent_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func processActionEvent( _ _e: ActionEvent? ) {
-        processActionEvent( e: _e )
-    }
 
     /// public javax.accessibility.AccessibleContext java.awt.Button.getAccessibleContext()
 
     /// public java.util.EventListener[] java.awt.Button.getListeners(java.lang.Class)
 
-    private static var getListeners_MethodID_11: jmethodID?
+    private static var getListeners_MethodID_5: jmethodID?
 
     open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &Button.getListeners_MethodID_11, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &Button.getListeners_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [EventListenerForward](), from: __return )
     }
 
@@ -433,32 +348,117 @@ open class Button: Component {
 
     /// protected void java.awt.Button.processEvent(java.awt.AWTEvent)
 
-    private static var processEvent_MethodID_12: jmethodID?
+    private static var processEvent_MethodID_6: jmethodID?
 
     open func processEvent( e: AWTEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Button.processEvent_MethodID_12, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Button.processEvent_MethodID_6, args: &__args, locals: &__locals )
     }
 
     override open func processEvent( _ _e: AWTEvent? ) {
         processEvent( e: _e )
     }
 
-    /// java.lang.String java.awt.Button.constructComponentName()
+    /// public java.lang.String java.awt.Button.getActionCommand()
 
-    /// public java.lang.String java.awt.Button.getLabel()
+    private static var getActionCommand_MethodID_7: jmethodID?
 
-    private static var getLabel_MethodID_13: jmethodID?
-
-    open func getLabel() -> String! {
+    open func getActionCommand() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabel", methodSig: "()Ljava/lang/String;", methodCache: &Button.getLabel_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &Button.getActionCommand_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
+
+    /// public void java.awt.Button.setLabel(java.lang.String)
+
+    private static var setLabel_MethodID_8: jmethodID?
+
+    open func setLabel( label: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: label, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &Button.setLabel_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func setLabel( _ _label: String? ) {
+        setLabel( label: _label )
+    }
+
+    /// public void java.awt.Button.setActionCommand(java.lang.String)
+
+    private static var setActionCommand_MethodID_9: jmethodID?
+
+    open func setActionCommand( command: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: command, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &Button.setActionCommand_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func setActionCommand( _ _command: String? ) {
+        setActionCommand( command: _command )
+    }
+
+    /// public synchronized void java.awt.Button.addActionListener(java.awt.event.ActionListener)
+
+    private static var addActionListener_MethodID_10: jmethodID?
+
+    open func addActionListener( l: ActionListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &Button.addActionListener_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func addActionListener( _ _l: ActionListener? ) {
+        addActionListener( l: _l )
+    }
+
+    /// public synchronized void java.awt.Button.removeActionListener(java.awt.event.ActionListener)
+
+    private static var removeActionListener_MethodID_11: jmethodID?
+
+    open func removeActionListener( l: ActionListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &Button.removeActionListener_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func removeActionListener( _ _l: ActionListener? ) {
+        removeActionListener( l: _l )
+    }
+
+    /// public synchronized java.awt.event.ActionListener[] java.awt.Button.getActionListeners()
+
+    private static var getActionListeners_MethodID_12: jmethodID?
+
+    open func getActionListeners() -> [ActionListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &Button.getActionListeners_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
+    }
+
+
+    /// protected void java.awt.Button.processActionEvent(java.awt.event.ActionEvent)
+
+    private static var processActionEvent_MethodID_13: jmethodID?
+
+    open func processActionEvent( e: ActionEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processActionEvent", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &Button.processActionEvent_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func processActionEvent( _ _e: ActionEvent? ) {
+        processActionEvent( e: _e )
+    }
 
     /// In declared protocol but not defined.. ///
 

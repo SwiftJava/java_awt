@@ -33,7 +33,7 @@ open class MenuBarPeerForward: MenuComponentPeerForward, MenuBarPeer {
     open func addMenu( m: Menu? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: m, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMenu", methodSig: "(Ljava/awt/Menu;)V", methodCache: &MenuBarPeerForward.addMenu_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -63,7 +63,7 @@ open class MenuBarPeerForward: MenuComponentPeerForward, MenuBarPeer {
     open func addHelpMenu( m: Menu? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: m, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addHelpMenu", methodSig: "(Ljava/awt/Menu;)V", methodCache: &MenuBarPeerForward.addHelpMenu_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -78,7 +78,7 @@ open class MenuBarPeerForward: MenuComponentPeerForward, MenuBarPeer {
     override open func setFont( f: Font? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &MenuBarPeerForward.setFont_MethodID_7, args: &__args, locals: &__locals )
     }
 

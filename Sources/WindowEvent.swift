@@ -276,7 +276,7 @@ open class WindowEvent: ComponentEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &WindowEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -288,7 +288,7 @@ open class WindowEvent: ComponentEvent {
     public convenience init( source: Window?, id: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/WindowEvent", classCache: &WindowEvent.WindowEventJNIClass, methodSig: "(Ljava/awt/Window;I)V", methodCache: &WindowEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -306,7 +306,7 @@ open class WindowEvent: ComponentEvent {
     public convenience init( source: Window?, id: Int, oldState: Int, newState: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: oldState, locals: &__locals )
         __args[3] = JNIType.toJava( value: newState, locals: &__locals )
@@ -326,9 +326,9 @@ open class WindowEvent: ComponentEvent {
     public convenience init( source: Window?, id: Int, opposite: Window? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: opposite != nil ? opposite! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: opposite, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/WindowEvent", classCache: &WindowEvent.WindowEventJNIClass, methodSig: "(Ljava/awt/Window;ILjava/awt/Window;)V", methodCache: &WindowEvent.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -345,9 +345,9 @@ open class WindowEvent: ComponentEvent {
     public convenience init( source: Window?, id: Int, opposite: Window?, oldState: Int, newState: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: opposite != nil ? opposite! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: opposite, locals: &__locals )
         __args[3] = JNIType.toJava( value: oldState, locals: &__locals )
         __args[4] = JNIType.toJava( value: newState, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/WindowEvent", classCache: &WindowEvent.WindowEventJNIClass, methodSig: "(Ljava/awt/Window;ILjava/awt/Window;II)V", methodCache: &WindowEvent.new_MethodID_4, args: &__args, locals: &__locals )

@@ -144,6 +144,8 @@ open class VolatileImage: Image, Transparency {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public java.awt.image.ImageProducer java.awt.image.VolatileImage.getSource()
+
     /// public abstract int java.awt.image.VolatileImage.validate(java.awt.GraphicsConfiguration)
 
     private static var validate_MethodID_2: jmethodID?
@@ -151,7 +153,7 @@ open class VolatileImage: Image, Transparency {
     open func validate( gc: GraphicsConfiguration? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: gc, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "validate", methodSig: "(Ljava/awt/GraphicsConfiguration;)I", methodCache: &VolatileImage.validate_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
@@ -160,39 +162,14 @@ open class VolatileImage: Image, Transparency {
         return validate( gc: _gc )
     }
 
-    /// public abstract java.awt.image.BufferedImage java.awt.image.VolatileImage.getSnapshot()
-
-    private static var getSnapshot_MethodID_3: jmethodID?
-
-    open func getSnapshot() -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSnapshot", methodSig: "()Ljava/awt/image/BufferedImage;", methodCache: &VolatileImage.getSnapshot_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BufferedImage( javaObject: __return ) : nil
-    }
-
-
-    /// public int java.awt.image.VolatileImage.getTransparency()
-
-    private static var getTransparency_MethodID_4: jmethodID?
-
-    open func getTransparency() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &VolatileImage.getTransparency_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public abstract java.awt.ImageCapabilities java.awt.image.VolatileImage.getCapabilities()
 
-    private static var getCapabilities_MethodID_5: jmethodID?
+    private static var getCapabilities_MethodID_3: jmethodID?
 
     open func getCapabilities() -> ImageCapabilities! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCapabilities", methodSig: "()Ljava/awt/ImageCapabilities;", methodCache: &VolatileImage.getCapabilities_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCapabilities", methodSig: "()Ljava/awt/ImageCapabilities;", methodCache: &VolatileImage.getCapabilities_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ImageCapabilities( javaObject: __return ) : nil
     }
@@ -200,13 +177,38 @@ open class VolatileImage: Image, Transparency {
 
     /// public abstract boolean java.awt.image.VolatileImage.contentsLost()
 
-    private static var contentsLost_MethodID_6: jmethodID?
+    private static var contentsLost_MethodID_4: jmethodID?
 
     open func contentsLost() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contentsLost", methodSig: "()Z", methodCache: &VolatileImage.contentsLost_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contentsLost", methodSig: "()Z", methodCache: &VolatileImage.contentsLost_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public abstract java.awt.image.BufferedImage java.awt.image.VolatileImage.getSnapshot()
+
+    private static var getSnapshot_MethodID_5: jmethodID?
+
+    open func getSnapshot() -> BufferedImage! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSnapshot", methodSig: "()Ljava/awt/image/BufferedImage;", methodCache: &VolatileImage.getSnapshot_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BufferedImage( javaObject: __return ) : nil
+    }
+
+
+    /// public int java.awt.image.VolatileImage.getTransparency()
+
+    private static var getTransparency_MethodID_6: jmethodID?
+
+    open func getTransparency() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &VolatileImage.getTransparency_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
@@ -248,8 +250,6 @@ open class VolatileImage: Image, Transparency {
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
-
-    /// public java.awt.image.ImageProducer java.awt.image.VolatileImage.getSource()
 
 }
 

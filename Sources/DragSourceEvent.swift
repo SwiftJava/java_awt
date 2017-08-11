@@ -39,7 +39,7 @@ open class DragSourceEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &DragSourceEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -51,7 +51,7 @@ open class DragSourceEvent: java_util.EventObject {
     public convenience init( dsc: DragSourceContext? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsc != nil ? dsc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dsc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DragSourceEvent", classCache: &DragSourceEvent.DragSourceEventJNIClass, methodSig: "(Ljava/awt/dnd/DragSourceContext;)V", methodCache: &DragSourceEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -68,7 +68,7 @@ open class DragSourceEvent: java_util.EventObject {
     public convenience init( dsc: DragSourceContext?, x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsc != nil ? dsc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dsc, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DragSourceEvent", classCache: &DragSourceEvent.DragSourceEventJNIClass, methodSig: "(Ljava/awt/dnd/DragSourceContext;II)V", methodCache: &DragSourceEvent.new_MethodID_2, args: &__args, locals: &__locals )

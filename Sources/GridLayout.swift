@@ -193,7 +193,7 @@ open class GridLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
     open func removeLayoutComponent( comp: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &GridLayout.removeLayoutComponent_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -209,7 +209,7 @@ open class GridLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &GridLayout.addLayoutComponent_MethodID_13, args: &__args, locals: &__locals )
     }
 
@@ -224,7 +224,7 @@ open class GridLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
     open func layoutContainer( parent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &GridLayout.layoutContainer_MethodID_14, args: &__args, locals: &__locals )
     }
 
@@ -239,7 +239,7 @@ open class GridLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
     open func preferredLayoutSize( parent: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &GridLayout.preferredLayoutSize_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
@@ -256,7 +256,7 @@ open class GridLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
     open func minimumLayoutSize( parent: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &GridLayout.minimumLayoutSize_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil

@@ -427,75 +427,15 @@ open class ColorSpace: java_swift.JavaObject, /* java.io.Serializable */ Unclass
     }
 
 
-    /// public int java.awt.color.ColorSpace.getNumComponents()
-
-    private static var getNumComponents_MethodID_5: jmethodID?
-
-    open func getNumComponents() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumComponents", methodSig: "()I", methodCache: &ColorSpace.getNumComponents_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract float[] java.awt.color.ColorSpace.toRGB(float[])
-
-    private static var toRGB_MethodID_6: jmethodID?
-
-    open func toRGB( arg0: [Float]? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toRGB", methodSig: "([F)[F", methodCache: &ColorSpace.toRGB_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
-    }
-
-    open func toRGB( _ _arg0: [Float]? ) -> [Float]! {
-        return toRGB( arg0: _arg0 )
-    }
-
-    /// public abstract float[] java.awt.color.ColorSpace.toCIEXYZ(float[])
-
-    private static var toCIEXYZ_MethodID_7: jmethodID?
-
-    open func toCIEXYZ( arg0: [Float]? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toCIEXYZ", methodSig: "([F)[F", methodCache: &ColorSpace.toCIEXYZ_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
-    }
-
-    open func toCIEXYZ( _ _arg0: [Float]? ) -> [Float]! {
-        return toCIEXYZ( arg0: _arg0 )
-    }
-
-    /// public abstract float[] java.awt.color.ColorSpace.fromCIEXYZ(float[])
-
-    private static var fromCIEXYZ_MethodID_8: jmethodID?
-
-    open func fromCIEXYZ( arg0: [Float]? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "fromCIEXYZ", methodSig: "([F)[F", methodCache: &ColorSpace.fromCIEXYZ_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
-    }
-
-    open func fromCIEXYZ( _ _arg0: [Float]? ) -> [Float]! {
-        return fromCIEXYZ( arg0: _arg0 )
-    }
-
     /// public float java.awt.color.ColorSpace.getMinValue(int)
 
-    private static var getMinValue_MethodID_9: jmethodID?
+    private static var getMinValue_MethodID_5: jmethodID?
 
     open func getMinValue( arg0: Int ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinValue", methodSig: "(I)F", methodCache: &ColorSpace.getMinValue_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinValue", methodSig: "(I)F", methodCache: &ColorSpace.getMinValue_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -505,13 +445,13 @@ open class ColorSpace: java_swift.JavaObject, /* java.io.Serializable */ Unclass
 
     /// public float java.awt.color.ColorSpace.getMaxValue(int)
 
-    private static var getMaxValue_MethodID_10: jmethodID?
+    private static var getMaxValue_MethodID_6: jmethodID?
 
     open func getMaxValue( arg0: Int ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMaxValue", methodSig: "(I)F", methodCache: &ColorSpace.getMaxValue_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMaxValue", methodSig: "(I)F", methodCache: &ColorSpace.getMaxValue_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -521,13 +461,13 @@ open class ColorSpace: java_swift.JavaObject, /* java.io.Serializable */ Unclass
 
     /// public abstract float[] java.awt.color.ColorSpace.fromRGB(float[])
 
-    private static var fromRGB_MethodID_11: jmethodID?
+    private static var fromRGB_MethodID_7: jmethodID?
 
     open func fromRGB( arg0: [Float]? ) -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "fromRGB", methodSig: "([F)[F", methodCache: &ColorSpace.fromRGB_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "fromRGB", methodSig: "([F)[F", methodCache: &ColorSpace.fromRGB_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Float](), from: __return )
     }
 
@@ -537,17 +477,77 @@ open class ColorSpace: java_swift.JavaObject, /* java.io.Serializable */ Unclass
 
     /// public boolean java.awt.color.ColorSpace.isCS_sRGB()
 
-    private static var isCS_sRGB_MethodID_12: jmethodID?
+    private static var isCS_sRGB_MethodID_8: jmethodID?
 
     open func isCS_sRGB() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCS_sRGB", methodSig: "()Z", methodCache: &ColorSpace.isCS_sRGB_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCS_sRGB", methodSig: "()Z", methodCache: &ColorSpace.isCS_sRGB_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// static boolean java.awt.color.ColorSpace.isCS_CIEXYZ(java.awt.color.ColorSpace)
+
+    /// public int java.awt.color.ColorSpace.getNumComponents()
+
+    private static var getNumComponents_MethodID_9: jmethodID?
+
+    open func getNumComponents() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumComponents", methodSig: "()I", methodCache: &ColorSpace.getNumComponents_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public abstract float[] java.awt.color.ColorSpace.toRGB(float[])
+
+    private static var toRGB_MethodID_10: jmethodID?
+
+    open func toRGB( arg0: [Float]? ) -> [Float]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toRGB", methodSig: "([F)[F", methodCache: &ColorSpace.toRGB_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float](), from: __return )
+    }
+
+    open func toRGB( _ _arg0: [Float]? ) -> [Float]! {
+        return toRGB( arg0: _arg0 )
+    }
+
+    /// public abstract float[] java.awt.color.ColorSpace.toCIEXYZ(float[])
+
+    private static var toCIEXYZ_MethodID_11: jmethodID?
+
+    open func toCIEXYZ( arg0: [Float]? ) -> [Float]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toCIEXYZ", methodSig: "([F)[F", methodCache: &ColorSpace.toCIEXYZ_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float](), from: __return )
+    }
+
+    open func toCIEXYZ( _ _arg0: [Float]? ) -> [Float]! {
+        return toCIEXYZ( arg0: _arg0 )
+    }
+
+    /// public abstract float[] java.awt.color.ColorSpace.fromCIEXYZ(float[])
+
+    private static var fromCIEXYZ_MethodID_12: jmethodID?
+
+    open func fromCIEXYZ( arg0: [Float]? ) -> [Float]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "fromCIEXYZ", methodSig: "([F)[F", methodCache: &ColorSpace.fromCIEXYZ_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float](), from: __return )
+    }
+
+    open func fromCIEXYZ( _ _arg0: [Float]? ) -> [Float]! {
+        return fromCIEXYZ( arg0: _arg0 )
+    }
 
 }
 

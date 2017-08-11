@@ -44,7 +44,7 @@ open class DragSourceDropEvent: DragSourceEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &DragSourceDropEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -56,7 +56,7 @@ open class DragSourceDropEvent: DragSourceEvent {
     public convenience init( dsc: DragSourceContext? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsc != nil ? dsc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dsc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DragSourceDropEvent", classCache: &DragSourceDropEvent.DragSourceDropEventJNIClass, methodSig: "(Ljava/awt/dnd/DragSourceContext;)V", methodCache: &DragSourceDropEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -73,7 +73,7 @@ open class DragSourceDropEvent: DragSourceEvent {
     public convenience init( dsc: DragSourceContext?, action: Int, success: Bool, x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsc != nil ? dsc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dsc, locals: &__locals )
         __args[1] = JNIType.toJava( value: action, locals: &__locals )
         __args[2] = JNIType.toJava( value: success, locals: &__locals )
         __args[3] = JNIType.toJava( value: x, locals: &__locals )
@@ -94,7 +94,7 @@ open class DragSourceDropEvent: DragSourceEvent {
     public convenience init( dsc: DragSourceContext?, action: Int, success: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsc != nil ? dsc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dsc, locals: &__locals )
         __args[1] = JNIType.toJava( value: action, locals: &__locals )
         __args[2] = JNIType.toJava( value: success, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DragSourceDropEvent", classCache: &DragSourceDropEvent.DragSourceDropEventJNIClass, methodSig: "(Ljava/awt/dnd/DragSourceContext;IZ)V", methodCache: &DragSourceDropEvent.new_MethodID_3, args: &__args, locals: &__locals )

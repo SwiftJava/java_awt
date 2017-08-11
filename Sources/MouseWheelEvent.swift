@@ -266,7 +266,7 @@ open class MouseWheelEvent: MouseEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &MouseWheelEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -278,7 +278,7 @@ open class MouseWheelEvent: MouseEvent {
     public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, xAbs: Int, yAbs: Int, clickCount: Int, popupTrigger: Bool, scrollType: Int, scrollAmount: Int, wheelRotation: Int, preciseWheelRotation: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 14 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -308,7 +308,7 @@ open class MouseWheelEvent: MouseEvent {
     public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, xAbs: Int, yAbs: Int, clickCount: Int, popupTrigger: Bool, scrollType: Int, scrollAmount: Int, wheelRotation: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 13 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -337,7 +337,7 @@ open class MouseWheelEvent: MouseEvent {
     public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, clickCount: Int, popupTrigger: Bool, scrollType: Int, scrollAmount: Int, wheelRotation: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 11 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -359,63 +359,63 @@ open class MouseWheelEvent: MouseEvent {
 
     /// public java.lang.String java.awt.event.MouseWheelEvent.paramString()
 
-    /// public int java.awt.event.MouseWheelEvent.getUnitsToScroll()
-
-    private static var getUnitsToScroll_MethodID_4: jmethodID?
-
-    open func getUnitsToScroll() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUnitsToScroll", methodSig: "()I", methodCache: &MouseWheelEvent.getUnitsToScroll_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public int java.awt.event.MouseWheelEvent.getScrollType()
 
-    private static var getScrollType_MethodID_5: jmethodID?
+    private static var getScrollType_MethodID_4: jmethodID?
 
     open func getScrollType() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollType", methodSig: "()I", methodCache: &MouseWheelEvent.getScrollType_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollType", methodSig: "()I", methodCache: &MouseWheelEvent.getScrollType_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.event.MouseWheelEvent.getScrollAmount()
 
-    private static var getScrollAmount_MethodID_6: jmethodID?
+    private static var getScrollAmount_MethodID_5: jmethodID?
 
     open func getScrollAmount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollAmount", methodSig: "()I", methodCache: &MouseWheelEvent.getScrollAmount_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollAmount", methodSig: "()I", methodCache: &MouseWheelEvent.getScrollAmount_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.event.MouseWheelEvent.getWheelRotation()
 
-    private static var getWheelRotation_MethodID_7: jmethodID?
+    private static var getWheelRotation_MethodID_6: jmethodID?
 
     open func getWheelRotation() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWheelRotation", methodSig: "()I", methodCache: &MouseWheelEvent.getWheelRotation_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWheelRotation", methodSig: "()I", methodCache: &MouseWheelEvent.getWheelRotation_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public double java.awt.event.MouseWheelEvent.getPreciseWheelRotation()
 
-    private static var getPreciseWheelRotation_MethodID_8: jmethodID?
+    private static var getPreciseWheelRotation_MethodID_7: jmethodID?
 
     open func getPreciseWheelRotation() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getPreciseWheelRotation", methodSig: "()D", methodCache: &MouseWheelEvent.getPreciseWheelRotation_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getPreciseWheelRotation", methodSig: "()D", methodCache: &MouseWheelEvent.getPreciseWheelRotation_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+
+    /// public int java.awt.event.MouseWheelEvent.getUnitsToScroll()
+
+    private static var getUnitsToScroll_MethodID_8: jmethodID?
+
+    open func getUnitsToScroll() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUnitsToScroll", methodSig: "()I", methodCache: &MouseWheelEvent.getUnitsToScroll_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
 

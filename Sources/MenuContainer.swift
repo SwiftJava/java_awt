@@ -11,13 +11,13 @@ public protocol MenuContainer: JavaProtocol {
 
     func remove( comp: MenuComponent? )
 
-    /// public abstract java.awt.Font java.awt.MenuContainer.getFont()
-
-    func getFont() -> Font!
-
     /// public abstract boolean java.awt.MenuContainer.postEvent(java.awt.Event)
 
     func postEvent( evt: Event? ) -> Bool
+
+    /// public abstract java.awt.Font java.awt.MenuContainer.getFont()
+
+    func getFont() -> Font!
 
 }
 
@@ -33,7 +33,7 @@ open class MenuContainerForward: JNIObjectForward, MenuContainer {
     open func remove( comp: MenuComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &MenuContainerForward.remove_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -41,34 +41,34 @@ open class MenuContainerForward: JNIObjectForward, MenuContainer {
         remove( comp: _comp )
     }
 
-    /// public abstract java.awt.Font java.awt.MenuContainer.getFont()
-
-    private static var getFont_MethodID_5: jmethodID?
-
-    open func getFont() -> Font! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &MenuContainerForward.getFont_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Font( javaObject: __return ) : nil
-    }
-
-
     /// public abstract boolean java.awt.MenuContainer.postEvent(java.awt.Event)
 
-    private static var postEvent_MethodID_6: jmethodID?
+    private static var postEvent_MethodID_5: jmethodID?
 
     open func postEvent( evt: Event? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "postEvent", methodSig: "(Ljava/awt/Event;)Z", methodCache: &MenuContainerForward.postEvent_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "postEvent", methodSig: "(Ljava/awt/Event;)Z", methodCache: &MenuContainerForward.postEvent_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
     open func postEvent( _ _evt: Event? ) -> Bool {
         return postEvent( evt: _evt )
     }
+
+    /// public abstract java.awt.Font java.awt.MenuContainer.getFont()
+
+    private static var getFont_MethodID_6: jmethodID?
+
+    open func getFont() -> Font! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &MenuContainerForward.getFont_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Font( javaObject: __return ) : nil
+    }
+
 
 }
 

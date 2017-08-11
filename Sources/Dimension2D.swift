@@ -68,7 +68,7 @@ open class Dimension2D: java_swift.JavaObject, java_lang.Cloneable {
     open func setSize( d: Dimension2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: d, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSize", methodSig: "(Ljava/awt/geom/Dimension2D;)V", methodCache: &Dimension2D.setSize_MethodID_4, args: &__args, locals: &__locals )
     }
 

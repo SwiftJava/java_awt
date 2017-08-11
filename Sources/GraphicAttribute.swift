@@ -90,51 +90,64 @@ open class GraphicAttribute: java_swift.JavaObject {
         self.init( alignment: _alignment )
     }
 
+    /// public java.awt.geom.Rectangle2D java.awt.font.GraphicAttribute.getBounds()
+
+    private static var getBounds_MethodID_2: jmethodID?
+
+    open func getBounds() -> Rectangle2D! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &GraphicAttribute.getBounds_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+
     /// public abstract float java.awt.font.GraphicAttribute.getAscent()
 
-    private static var getAscent_MethodID_2: jmethodID?
+    private static var getAscent_MethodID_3: jmethodID?
 
     open func getAscent() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAscent", methodSig: "()F", methodCache: &GraphicAttribute.getAscent_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAscent", methodSig: "()F", methodCache: &GraphicAttribute.getAscent_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public abstract float java.awt.font.GraphicAttribute.getAdvance()
 
-    private static var getAdvance_MethodID_3: jmethodID?
+    private static var getAdvance_MethodID_4: jmethodID?
 
     open func getAdvance() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAdvance", methodSig: "()F", methodCache: &GraphicAttribute.getAdvance_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAdvance", methodSig: "()F", methodCache: &GraphicAttribute.getAdvance_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public abstract float java.awt.font.GraphicAttribute.getDescent()
 
-    private static var getDescent_MethodID_4: jmethodID?
+    private static var getDescent_MethodID_5: jmethodID?
 
     open func getDescent() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getDescent", methodSig: "()F", methodCache: &GraphicAttribute.getDescent_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getDescent", methodSig: "()F", methodCache: &GraphicAttribute.getDescent_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public java.awt.Shape java.awt.font.GraphicAttribute.getOutline(java.awt.geom.AffineTransform)
 
-    private static var getOutline_MethodID_5: jmethodID?
+    private static var getOutline_MethodID_6: jmethodID?
 
     open func getOutline( tx: AffineTransform? ) -> Shape! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tx != nil ? tx! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOutline", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/Shape;", methodCache: &GraphicAttribute.getOutline_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tx, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOutline", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/Shape;", methodCache: &GraphicAttribute.getOutline_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ShapeForward( javaObject: __return ) : nil
     }
@@ -145,15 +158,15 @@ open class GraphicAttribute: java_swift.JavaObject {
 
     /// public abstract void java.awt.font.GraphicAttribute.draw(java.awt.Graphics2D,float,float)
 
-    private static var draw_MethodID_6: jmethodID?
+    private static var draw_MethodID_7: jmethodID?
 
     open func draw( graphics: Graphics2D?, x: Float, y: Float ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: graphics != nil ? graphics! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: graphics, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "draw", methodSig: "(Ljava/awt/Graphics2D;FF)V", methodCache: &GraphicAttribute.draw_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "draw", methodSig: "(Ljava/awt/Graphics2D;FF)V", methodCache: &GraphicAttribute.draw_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func draw( _ _graphics: Graphics2D?, _ _x: Float, _ _y: Float ) {
@@ -162,39 +175,26 @@ open class GraphicAttribute: java_swift.JavaObject {
 
     /// public final int java.awt.font.GraphicAttribute.getAlignment()
 
-    private static var getAlignment_MethodID_7: jmethodID?
+    private static var getAlignment_MethodID_8: jmethodID?
 
     open func getAlignment() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlignment", methodSig: "()I", methodCache: &GraphicAttribute.getAlignment_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlignment", methodSig: "()I", methodCache: &GraphicAttribute.getAlignment_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public java.awt.font.GlyphJustificationInfo java.awt.font.GraphicAttribute.getJustificationInfo()
 
-    private static var getJustificationInfo_MethodID_8: jmethodID?
+    private static var getJustificationInfo_MethodID_9: jmethodID?
 
     open func getJustificationInfo() -> GlyphJustificationInfo! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getJustificationInfo", methodSig: "()Ljava/awt/font/GlyphJustificationInfo;", methodCache: &GraphicAttribute.getJustificationInfo_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getJustificationInfo", methodSig: "()Ljava/awt/font/GlyphJustificationInfo;", methodCache: &GraphicAttribute.getJustificationInfo_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GlyphJustificationInfo( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.geom.Rectangle2D java.awt.font.GraphicAttribute.getBounds()
-
-    private static var getBounds_MethodID_9: jmethodID?
-
-    open func getBounds() -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &GraphicAttribute.getBounds_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
     }
 
 

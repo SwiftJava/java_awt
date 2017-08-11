@@ -39,7 +39,7 @@ open class Point2D: java_swift.JavaObject, java_lang.Cloneable {
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &Point2D.equals_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -106,7 +106,7 @@ open class Point2D: java_swift.JavaObject, java_lang.Cloneable {
     open func distance( pt: Point2D? ) -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pt != nil ? pt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: pt, locals: &__locals )
         let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "distance", methodSig: "(Ljava/awt/geom/Point2D;)D", methodCache: &Point2D.distance_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
@@ -139,7 +139,7 @@ open class Point2D: java_swift.JavaObject, java_lang.Cloneable {
     open func distanceSq( pt: Point2D? ) -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pt != nil ? pt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: pt, locals: &__locals )
         let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "distanceSq", methodSig: "(Ljava/awt/geom/Point2D;)D", methodCache: &Point2D.distanceSq_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
@@ -198,7 +198,7 @@ open class Point2D: java_swift.JavaObject, java_lang.Cloneable {
     open func setLocation( p: Point2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(Ljava/awt/geom/Point2D;)V", methodCache: &Point2D.setLocation_MethodID_12, args: &__args, locals: &__locals )
     }
 

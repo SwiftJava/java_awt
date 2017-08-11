@@ -134,7 +134,7 @@ open class Menu: MenuItem, MenuContainer {
     open func add( mi: MenuItem? ) -> MenuItem! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mi != nil ? mi! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: mi, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/MenuItem;)Ljava/awt/MenuItem;", methodCache: &Menu.add_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MenuItem( javaObject: __return ) : nil
@@ -166,7 +166,7 @@ open class Menu: MenuItem, MenuContainer {
     open func remove( comp: MenuComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &Menu.remove_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -200,7 +200,7 @@ open class Menu: MenuItem, MenuContainer {
     open func insert( menuitem: MenuItem?, index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: menuitem != nil ? menuitem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: menuitem, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insert", methodSig: "(Ljava/awt/MenuItem;I)V", methodCache: &Menu.insert_MethodID_8, args: &__args, locals: &__locals )
     }
@@ -240,57 +240,42 @@ open class Menu: MenuItem, MenuContainer {
 
     /// private static native void java.awt.Menu.initIDs()
 
+    /// java.lang.String java.awt.Menu.constructComponentName()
+
     /// public javax.accessibility.AccessibleContext java.awt.Menu.getAccessibleContext()
-
-    /// public java.awt.MenuItem java.awt.Menu.getItem(int)
-
-    private static var getItem_MethodID_11: jmethodID?
-
-    open func getItem( index: Int ) -> MenuItem! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItem", methodSig: "(I)Ljava/awt/MenuItem;", methodCache: &Menu.getItem_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MenuItem( javaObject: __return ) : nil
-    }
-
-    open func getItem( _ _index: Int ) -> MenuItem! {
-        return getItem( index: _index )
-    }
 
     /// public int java.awt.Menu.getItemCount()
 
-    private static var getItemCount_MethodID_12: jmethodID?
+    private static var getItemCount_MethodID_11: jmethodID?
 
     open func getItemCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getItemCount", methodSig: "()I", methodCache: &Menu.getItemCount_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getItemCount", methodSig: "()I", methodCache: &Menu.getItemCount_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public boolean java.awt.Menu.isTearOff()
 
-    private static var isTearOff_MethodID_13: jmethodID?
+    private static var isTearOff_MethodID_12: jmethodID?
 
     open func isTearOff() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTearOff", methodSig: "()Z", methodCache: &Menu.isTearOff_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTearOff", methodSig: "()Z", methodCache: &Menu.isTearOff_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public int java.awt.Menu.countItems()
 
-    private static var countItems_MethodID_14: jmethodID?
+    private static var countItems_MethodID_13: jmethodID?
 
     open func countItems() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "countItems", methodSig: "()I", methodCache: &Menu.countItems_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "countItems", methodSig: "()I", methodCache: &Menu.countItems_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -301,24 +286,24 @@ open class Menu: MenuItem, MenuContainer {
 
     /// public void java.awt.Menu.addSeparator()
 
-    private static var addSeparator_MethodID_15: jmethodID?
+    private static var addSeparator_MethodID_14: jmethodID?
 
     open func addSeparator() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSeparator", methodSig: "()V", methodCache: &Menu.addSeparator_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSeparator", methodSig: "()V", methodCache: &Menu.addSeparator_MethodID_14, args: &__args, locals: &__locals )
     }
 
 
     /// public void java.awt.Menu.insertSeparator(int)
 
-    private static var insertSeparator_MethodID_16: jmethodID?
+    private static var insertSeparator_MethodID_15: jmethodID?
 
     open func insertSeparator( index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertSeparator", methodSig: "(I)V", methodCache: &Menu.insertSeparator_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertSeparator", methodSig: "(I)V", methodCache: &Menu.insertSeparator_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func insertSeparator( _ _index: Int ) {
@@ -335,11 +320,26 @@ open class Menu: MenuItem, MenuContainer {
 
     /// int java.awt.Menu.getAccessibleChildIndex(java.awt.MenuComponent)
 
+    /// public java.awt.MenuItem java.awt.Menu.getItem(int)
+
+    private static var getItem_MethodID_16: jmethodID?
+
+    open func getItem( index: Int ) -> MenuItem! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: index, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItem", methodSig: "(I)Ljava/awt/MenuItem;", methodCache: &Menu.getItem_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MenuItem( javaObject: __return ) : nil
+    }
+
+    open func getItem( _ _index: Int ) -> MenuItem! {
+        return getItem( index: _index )
+    }
+
     /// public void java.awt.Menu.addNotify()
 
     /// public void java.awt.Menu.removeNotify()
-
-    /// java.lang.String java.awt.Menu.constructComponentName()
 
     /// In declared protocol but not defined.. ///
 

@@ -360,7 +360,7 @@ open class MouseEvent: InputEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &MouseEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -372,7 +372,7 @@ open class MouseEvent: InputEvent {
     public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, clickCount: Int, popupTrigger: Bool, button: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 9 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -397,7 +397,7 @@ open class MouseEvent: InputEvent {
     public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, clickCount: Int, popupTrigger: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -421,7 +421,7 @@ open class MouseEvent: InputEvent {
     public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, xAbs: Int, yAbs: Int, clickCount: Int, popupTrigger: Bool, button: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 11 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -447,101 +447,14 @@ open class MouseEvent: InputEvent {
 
     /// private static native void java.awt.event.MouseEvent.initIDs()
 
-    /// private void java.awt.event.MouseEvent.setNewModifiers()
-
-    /// private void java.awt.event.MouseEvent.setOldModifiers()
-
-    /// public int java.awt.event.MouseEvent.getModifiersEx()
-
-    /// public int java.awt.event.MouseEvent.getButton()
-
-    private static var getButton_MethodID_4: jmethodID?
-
-    open func getButton() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getButton", methodSig: "()I", methodCache: &MouseEvent.getButton_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public synchronized void java.awt.event.MouseEvent.translatePoint(int,int)
-
-    private static var translatePoint_MethodID_5: jmethodID?
-
-    open func translatePoint( x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translatePoint", methodSig: "(II)V", methodCache: &MouseEvent.translatePoint_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func translatePoint( _ _x: Int, _ _y: Int ) {
-        translatePoint( x: _x, y: _y )
-    }
-
-    /// public java.awt.Point java.awt.event.MouseEvent.getPoint()
-
-    private static var getPoint_MethodID_6: jmethodID?
-
-    open func getPoint() -> Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint", methodSig: "()Ljava/awt/Point;", methodCache: &MouseEvent.getPoint_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point( javaObject: __return ) : nil
-    }
-
-
-    /// public static java.lang.String java.awt.event.MouseEvent.getMouseModifiersText(int)
-
-    private static var getMouseModifiersText_MethodID_7: jmethodID?
-
-    open class func getMouseModifiersText( modifiers: Int ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: modifiers, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass, methodName: "getMouseModifiersText", methodSig: "(I)Ljava/lang/String;", methodCache: &getMouseModifiersText_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open class func getMouseModifiersText( _ _modifiers: Int ) -> String! {
-        return getMouseModifiersText( modifiers: _modifiers )
-    }
-
-    /// public int java.awt.event.MouseEvent.getX()
-
-    private static var getX_MethodID_8: jmethodID?
-
-    open func getX() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getX", methodSig: "()I", methodCache: &MouseEvent.getX_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.event.MouseEvent.getY()
-
-    private static var getY_MethodID_9: jmethodID?
-
-    open func getY() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getY", methodSig: "()I", methodCache: &MouseEvent.getY_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public java.awt.Point java.awt.event.MouseEvent.getLocationOnScreen()
 
-    private static var getLocationOnScreen_MethodID_10: jmethodID?
+    private static var getLocationOnScreen_MethodID_4: jmethodID?
 
     open func getLocationOnScreen() -> Point! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocationOnScreen", methodSig: "()Ljava/awt/Point;", methodCache: &MouseEvent.getLocationOnScreen_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocationOnScreen", methodSig: "()Ljava/awt/Point;", methodCache: &MouseEvent.getLocationOnScreen_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point( javaObject: __return ) : nil
     }
@@ -549,51 +462,138 @@ open class MouseEvent: InputEvent {
 
     /// public int java.awt.event.MouseEvent.getXOnScreen()
 
-    private static var getXOnScreen_MethodID_11: jmethodID?
+    private static var getXOnScreen_MethodID_5: jmethodID?
 
     open func getXOnScreen() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getXOnScreen", methodSig: "()I", methodCache: &MouseEvent.getXOnScreen_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getXOnScreen", methodSig: "()I", methodCache: &MouseEvent.getXOnScreen_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.event.MouseEvent.getYOnScreen()
 
-    private static var getYOnScreen_MethodID_12: jmethodID?
+    private static var getYOnScreen_MethodID_6: jmethodID?
 
     open func getYOnScreen() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getYOnScreen", methodSig: "()I", methodCache: &MouseEvent.getYOnScreen_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getYOnScreen", methodSig: "()I", methodCache: &MouseEvent.getYOnScreen_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.event.MouseEvent.getClickCount()
 
-    private static var getClickCount_MethodID_13: jmethodID?
+    private static var getClickCount_MethodID_7: jmethodID?
 
     open func getClickCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getClickCount", methodSig: "()I", methodCache: &MouseEvent.getClickCount_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getClickCount", methodSig: "()I", methodCache: &MouseEvent.getClickCount_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public boolean java.awt.event.MouseEvent.isPopupTrigger()
 
-    private static var isPopupTrigger_MethodID_14: jmethodID?
+    private static var isPopupTrigger_MethodID_8: jmethodID?
 
     open func isPopupTrigger() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPopupTrigger", methodSig: "()Z", methodCache: &MouseEvent.isPopupTrigger_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPopupTrigger", methodSig: "()Z", methodCache: &MouseEvent.isPopupTrigger_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
+
+    /// public int java.awt.event.MouseEvent.getModifiersEx()
+
+    /// public int java.awt.event.MouseEvent.getButton()
+
+    private static var getButton_MethodID_9: jmethodID?
+
+    open func getButton() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getButton", methodSig: "()I", methodCache: &MouseEvent.getButton_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public synchronized void java.awt.event.MouseEvent.translatePoint(int,int)
+
+    private static var translatePoint_MethodID_10: jmethodID?
+
+    open func translatePoint( x: Int, y: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translatePoint", methodSig: "(II)V", methodCache: &MouseEvent.translatePoint_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func translatePoint( _ _x: Int, _ _y: Int ) {
+        translatePoint( x: _x, y: _y )
+    }
+
+    /// private void java.awt.event.MouseEvent.setNewModifiers()
+
+    /// private void java.awt.event.MouseEvent.setOldModifiers()
+
+    /// public int java.awt.event.MouseEvent.getX()
+
+    private static var getX_MethodID_11: jmethodID?
+
+    open func getX() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getX", methodSig: "()I", methodCache: &MouseEvent.getX_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int java.awt.event.MouseEvent.getY()
+
+    private static var getY_MethodID_12: jmethodID?
+
+    open func getY() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getY", methodSig: "()I", methodCache: &MouseEvent.getY_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public java.awt.Point java.awt.event.MouseEvent.getPoint()
+
+    private static var getPoint_MethodID_13: jmethodID?
+
+    open func getPoint() -> Point! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint", methodSig: "()Ljava/awt/Point;", methodCache: &MouseEvent.getPoint_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point( javaObject: __return ) : nil
+    }
+
+
+    /// public static java.lang.String java.awt.event.MouseEvent.getMouseModifiersText(int)
+
+    private static var getMouseModifiersText_MethodID_14: jmethodID?
+
+    open class func getMouseModifiersText( modifiers: Int ) -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: modifiers, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass, methodName: "getMouseModifiersText", methodSig: "(I)Ljava/lang/String;", methodCache: &getMouseModifiersText_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open class func getMouseModifiersText( _ _modifiers: Int ) -> String! {
+        return getMouseModifiersText( modifiers: _modifiers )
+    }
 
 }
 

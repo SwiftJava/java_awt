@@ -143,7 +143,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
     public convenience init( d: Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: d, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Rectangle", classCache: &Rectangle.RectangleJNIClass, methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Rectangle.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -160,7 +160,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
     public convenience init( p: Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Rectangle", classCache: &Rectangle.RectangleJNIClass, methodSig: "(Ljava/awt/Point;)V", methodCache: &Rectangle.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -177,7 +177,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
     public convenience init( r: Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Rectangle", classCache: &Rectangle.RectangleJNIClass, methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &Rectangle.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -206,8 +206,8 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
     public convenience init( p: Point?, d: Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        __args[1] = JNIType.toJava( value: d, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Rectangle", classCache: &Rectangle.RectangleJNIClass, methodSig: "(Ljava/awt/Point;Ljava/awt/Dimension;)V", methodCache: &Rectangle.new_MethodID_7, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -224,7 +224,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
     open func add( r: Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &Rectangle.add_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -239,7 +239,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
     open func add( pt: Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pt != nil ? pt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: pt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Point;)V", methodCache: &Rectangle.add_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -276,7 +276,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
     open func contains( r: Rectangle? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/Rectangle;)Z", methodCache: &Rectangle.contains_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -292,7 +292,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
     open func contains( p: Point? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/Point;)Z", methodCache: &Rectangle.contains_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -386,7 +386,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
     open func setSize( d: Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: d, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Rectangle.setSize_MethodID_18, args: &__args, locals: &__locals )
     }
 
@@ -435,7 +435,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
     open func intersects( r: Rectangle? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/Rectangle;)Z", methodCache: &Rectangle.intersects_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -444,13 +444,79 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
         return intersects( r: _r )
     }
 
+    /// public void java.awt.Rectangle.translate(int,int)
+
+    private static var translate_MethodID_22: jmethodID?
+
+    open func translate( dx: Int, dy: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: dx, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dy, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Rectangle.translate_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func translate( _ _dx: Int, _ _dy: Int ) {
+        translate( dx: _dx, dy: _dy )
+    }
+
+    /// public void java.awt.Rectangle.move(int,int)
+
+    private static var move_MethodID_23: jmethodID?
+
+    open func move( x: Int, y: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "move", methodSig: "(II)V", methodCache: &Rectangle.move_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func move( _ _x: Int, _ _y: Int ) {
+        move( x: _x, y: _y )
+    }
+
+    /// public boolean java.awt.Rectangle.inside(int,int)
+
+    private static var inside_MethodID_24: jmethodID?
+
+    open func inside( X: Int, Y: Int ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: X, locals: &__locals )
+        __args[1] = JNIType.toJava( value: Y, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inside", methodSig: "(II)Z", methodCache: &Rectangle.inside_MethodID_24, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func inside( _ _X: Int, _ _Y: Int ) -> Bool {
+        return inside( X: _X, Y: _Y )
+    }
+
+    /// public java.awt.Rectangle java.awt.Rectangle.intersection(java.awt.Rectangle)
+
+    private static var intersection_MethodID_25: jmethodID?
+
+    open func intersection( r: Rectangle? ) -> Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "intersection", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &Rectangle.intersection_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
+    open func intersection( _ _r: Rectangle? ) -> Rectangle! {
+        return intersection( r: _r )
+    }
+
     /// private static int java.awt.Rectangle.clip(double,boolean)
 
     /// public java.awt.geom.Rectangle2D java.awt.Rectangle.getBounds2D()
 
     /// public void java.awt.Rectangle.setRect(double,double,double,double)
 
-    private static var setRect_MethodID_22: jmethodID?
+    private static var setRect_MethodID_26: jmethodID?
 
     open func setRect( x: Double, y: Double, width: Double, height: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -459,7 +525,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: width, locals: &__locals )
         __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRect", methodSig: "(DDDD)V", methodCache: &Rectangle.setRect_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRect", methodSig: "(DDDD)V", methodCache: &Rectangle.setRect_MethodID_26, args: &__args, locals: &__locals )
     }
 
     override open func setRect( _ _x: Double, _ _y: Double, _ _width: Double, _ _height: Double ) {
@@ -468,13 +534,13 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
 
     /// public java.awt.Rectangle java.awt.Rectangle.union(java.awt.Rectangle)
 
-    private static var union_MethodID_23: jmethodID?
+    private static var union_MethodID_27: jmethodID?
 
     open func union( r: Rectangle? ) -> Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "union", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &Rectangle.union_MethodID_23, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "union", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &Rectangle.union_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
@@ -493,7 +559,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
 
     /// public void java.awt.Rectangle.reshape(int,int,int,int)
 
-    private static var reshape_MethodID_24: jmethodID?
+    private static var reshape_MethodID_28: jmethodID?
 
     open func reshape( x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -502,7 +568,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: width, locals: &__locals )
         __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reshape", methodSig: "(IIII)V", methodCache: &Rectangle.reshape_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reshape", methodSig: "(IIII)V", methodCache: &Rectangle.reshape_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func reshape( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
@@ -519,7 +585,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
 
     /// public void java.awt.Rectangle.setBounds(int,int,int,int)
 
-    private static var setBounds_MethodID_25: jmethodID?
+    private static var setBounds_MethodID_29: jmethodID?
 
     open func setBounds( x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -528,7 +594,7 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: width, locals: &__locals )
         __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBounds", methodSig: "(IIII)V", methodCache: &Rectangle.setBounds_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBounds", methodSig: "(IIII)V", methodCache: &Rectangle.setBounds_MethodID_29, args: &__args, locals: &__locals )
     }
 
     open func setBounds( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
@@ -537,13 +603,13 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
 
     /// public void java.awt.Rectangle.setBounds(java.awt.Rectangle)
 
-    private static var setBounds_MethodID_26: jmethodID?
+    private static var setBounds_MethodID_30: jmethodID?
 
     open func setBounds( r: Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &Rectangle.setBounds_MethodID_26, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &Rectangle.setBounds_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func setBounds( _ _r: Rectangle? ) {
@@ -552,13 +618,13 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
 
     /// public void java.awt.Rectangle.setLocation(java.awt.Point)
 
-    private static var setLocation_MethodID_27: jmethodID?
+    private static var setLocation_MethodID_31: jmethodID?
 
     open func setLocation( p: Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(Ljava/awt/Point;)V", methodCache: &Rectangle.setLocation_MethodID_27, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(Ljava/awt/Point;)V", methodCache: &Rectangle.setLocation_MethodID_31, args: &__args, locals: &__locals )
     }
 
     open func setLocation( _ _p: Point? ) {
@@ -567,84 +633,18 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
 
     /// public void java.awt.Rectangle.setLocation(int,int)
 
-    private static var setLocation_MethodID_28: jmethodID?
+    private static var setLocation_MethodID_32: jmethodID?
 
     open func setLocation( x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(II)V", methodCache: &Rectangle.setLocation_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(II)V", methodCache: &Rectangle.setLocation_MethodID_32, args: &__args, locals: &__locals )
     }
 
     open func setLocation( _ _x: Int, _ _y: Int ) {
         setLocation( x: _x, y: _y )
-    }
-
-    /// public void java.awt.Rectangle.translate(int,int)
-
-    private static var translate_MethodID_29: jmethodID?
-
-    open func translate( dx: Int, dy: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dx, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Rectangle.translate_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    open func translate( _ _dx: Int, _ _dy: Int ) {
-        translate( dx: _dx, dy: _dy )
-    }
-
-    /// public void java.awt.Rectangle.move(int,int)
-
-    private static var move_MethodID_30: jmethodID?
-
-    open func move( x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "move", methodSig: "(II)V", methodCache: &Rectangle.move_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    open func move( _ _x: Int, _ _y: Int ) {
-        move( x: _x, y: _y )
-    }
-
-    /// public boolean java.awt.Rectangle.inside(int,int)
-
-    private static var inside_MethodID_31: jmethodID?
-
-    open func inside( X: Int, Y: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: X, locals: &__locals )
-        __args[1] = JNIType.toJava( value: Y, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inside", methodSig: "(II)Z", methodCache: &Rectangle.inside_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func inside( _ _X: Int, _ _Y: Int ) -> Bool {
-        return inside( X: _X, Y: _Y )
-    }
-
-    /// public java.awt.Rectangle java.awt.Rectangle.intersection(java.awt.Rectangle)
-
-    private static var intersection_MethodID_32: jmethodID?
-
-    open func intersection( r: Rectangle? ) -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "intersection", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &Rectangle.intersection_MethodID_32, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
-    }
-
-    open func intersection( _ _r: Rectangle? ) -> Rectangle! {
-        return intersection( r: _r )
     }
 
     /// In declared protocol but not defined.. ///
@@ -661,9 +661,9 @@ open class Rectangle: Rectangle2D, /* java.io.Serializable */ UnclassedProtocol 
 
     /// public abstract boolean java.awt.Shape.intersects(java.awt.geom.Rectangle2D)
 
-    /// public abstract java.awt.geom.Rectangle2D java.awt.Shape.getBounds2D()
-
     /// public abstract java.awt.geom.PathIterator java.awt.Shape.getPathIterator(java.awt.geom.AffineTransform)
+
+    /// public abstract java.awt.geom.Rectangle2D java.awt.Shape.getBounds2D()
 
     /// public abstract boolean java.awt.Shape.contains(double,double,double,double)
 

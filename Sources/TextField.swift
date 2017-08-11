@@ -269,7 +269,7 @@ open class TextField: TextComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &TextField.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -383,74 +383,19 @@ open class TextField: TextComponent {
 
     /// private static native void java.awt.TextField.initIDs()
 
-    /// public synchronized void java.awt.TextField.addActionListener(java.awt.event.ActionListener)
-
-    private static var addActionListener_MethodID_6: jmethodID?
-
-    open func addActionListener( l: ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &TextField.addActionListener_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func addActionListener( _ _l: ActionListener? ) {
-        addActionListener( l: _l )
-    }
-
-    /// public synchronized void java.awt.TextField.removeActionListener(java.awt.event.ActionListener)
-
-    private static var removeActionListener_MethodID_7: jmethodID?
-
-    open func removeActionListener( l: ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &TextField.removeActionListener_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func removeActionListener( _ _l: ActionListener? ) {
-        removeActionListener( l: _l )
-    }
-
-    /// public synchronized java.awt.event.ActionListener[] java.awt.TextField.getActionListeners()
-
-    private static var getActionListeners_MethodID_8: jmethodID?
-
-    open func getActionListeners() -> [ActionListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &TextField.getActionListeners_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
-    }
-
-
-    /// protected void java.awt.TextField.processActionEvent(java.awt.event.ActionEvent)
-
-    private static var processActionEvent_MethodID_9: jmethodID?
-
-    open func processActionEvent( e: ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processActionEvent", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &TextField.processActionEvent_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func processActionEvent( _ _e: ActionEvent? ) {
-        processActionEvent( e: _e )
-    }
+    /// java.lang.String java.awt.TextField.constructComponentName()
 
     /// public java.awt.Dimension java.awt.TextField.getPreferredSize()
 
     /// public java.awt.Dimension java.awt.TextField.getPreferredSize(int)
 
-    private static var getPreferredSize_MethodID_10: jmethodID?
+    private static var getPreferredSize_MethodID_6: jmethodID?
 
     open func getPreferredSize( columns: Int ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: columns, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(I)Ljava/awt/Dimension;", methodCache: &TextField.getPreferredSize_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(I)Ljava/awt/Dimension;", methodCache: &TextField.getPreferredSize_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -465,94 +410,40 @@ open class TextField: TextComponent {
 
     /// public int java.awt.TextField.getColumns()
 
-    private static var getColumns_MethodID_11: jmethodID?
+    private static var getColumns_MethodID_7: jmethodID?
 
     open func getColumns() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumns", methodSig: "()I", methodCache: &TextField.getColumns_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumns", methodSig: "()I", methodCache: &TextField.getColumns_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void java.awt.TextField.setColumns(int)
 
-    private static var setColumns_MethodID_12: jmethodID?
+    private static var setColumns_MethodID_8: jmethodID?
 
     open func setColumns( columns: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: columns, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumns", methodSig: "(I)V", methodCache: &TextField.setColumns_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumns", methodSig: "(I)V", methodCache: &TextField.setColumns_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setColumns( _ _columns: Int ) {
         setColumns( columns: _columns )
     }
 
-    /// public char java.awt.TextField.getEchoChar()
-
-    private static var getEchoChar_MethodID_13: jmethodID?
-
-    open func getEchoChar() -> UInt16 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getEchoChar", methodSig: "()C", methodCache: &TextField.getEchoChar_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: UInt16(), from: __return )
-    }
-
-
-    /// public void java.awt.TextField.setEchoChar(char)
-
-    private static var setEchoChar_MethodID_14: jmethodID?
-
-    open func setEchoChar( c: UInt16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEchoChar", methodSig: "(C)V", methodCache: &TextField.setEchoChar_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setEchoChar( _ _c: UInt16 ) {
-        setEchoChar( c: _c )
-    }
-
-    /// public synchronized void java.awt.TextField.setEchoCharacter(char)
-
-    private static var setEchoCharacter_MethodID_15: jmethodID?
-
-    open func setEchoCharacter( c: UInt16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEchoCharacter", methodSig: "(C)V", methodCache: &TextField.setEchoCharacter_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setEchoCharacter( _ _c: UInt16 ) {
-        setEchoCharacter( c: _c )
-    }
-
-    /// public boolean java.awt.TextField.echoCharIsSet()
-
-    private static var echoCharIsSet_MethodID_16: jmethodID?
-
-    open func echoCharIsSet() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "echoCharIsSet", methodSig: "()Z", methodCache: &TextField.echoCharIsSet_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public java.awt.Dimension java.awt.TextField.preferredSize(int)
 
-    private static var preferredSize_MethodID_17: jmethodID?
+    private static var preferredSize_MethodID_9: jmethodID?
 
     open func preferredSize( columns: Int ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: columns, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredSize", methodSig: "(I)Ljava/awt/Dimension;", methodCache: &TextField.preferredSize_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredSize", methodSig: "(I)Ljava/awt/Dimension;", methodCache: &TextField.preferredSize_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -563,17 +454,15 @@ open class TextField: TextComponent {
 
     /// public java.awt.Dimension java.awt.TextField.preferredSize()
 
-    /// public java.awt.Dimension java.awt.TextField.minimumSize()
-
     /// public java.awt.Dimension java.awt.TextField.minimumSize(int)
 
-    private static var minimumSize_MethodID_18: jmethodID?
+    private static var minimumSize_MethodID_10: jmethodID?
 
     open func minimumSize( columns: Int ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: columns, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumSize", methodSig: "(I)Ljava/awt/Dimension;", methodCache: &TextField.minimumSize_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumSize", methodSig: "(I)Ljava/awt/Dimension;", methodCache: &TextField.minimumSize_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -582,15 +471,19 @@ open class TextField: TextComponent {
         return minimumSize( columns: _columns )
     }
 
+    /// public java.awt.Dimension java.awt.TextField.minimumSize()
+
+    /// public java.awt.Dimension java.awt.TextField.getMinimumSize()
+
     /// public java.awt.Dimension java.awt.TextField.getMinimumSize(int)
 
-    private static var getMinimumSize_MethodID_19: jmethodID?
+    private static var getMinimumSize_MethodID_11: jmethodID?
 
     open func getMinimumSize( columns: Int ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: columns, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(I)Ljava/awt/Dimension;", methodCache: &TextField.getMinimumSize_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(I)Ljava/awt/Dimension;", methodCache: &TextField.getMinimumSize_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -598,8 +491,6 @@ open class TextField: TextComponent {
     open func getMinimumSize( _ _columns: Int ) -> Dimension! {
         return getMinimumSize( columns: _columns )
     }
-
-    /// public java.awt.Dimension java.awt.TextField.getMinimumSize()
 
     /// public java.util.EventListener[] java.awt.TextField.getListeners(java.lang.Class)
 
@@ -609,20 +500,129 @@ open class TextField: TextComponent {
 
     /// protected void java.awt.TextField.processEvent(java.awt.AWTEvent)
 
-    private static var processEvent_MethodID_20: jmethodID?
+    private static var processEvent_MethodID_12: jmethodID?
 
     override open func processEvent( e: AWTEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &TextField.processEvent_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &TextField.processEvent_MethodID_12, args: &__args, locals: &__locals )
     }
 
     override open func processEvent( _ _e: AWTEvent? ) {
         processEvent( e: _e )
     }
 
-    /// java.lang.String java.awt.TextField.constructComponentName()
+    /// public synchronized void java.awt.TextField.addActionListener(java.awt.event.ActionListener)
+
+    private static var addActionListener_MethodID_13: jmethodID?
+
+    open func addActionListener( l: ActionListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &TextField.addActionListener_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func addActionListener( _ _l: ActionListener? ) {
+        addActionListener( l: _l )
+    }
+
+    /// public synchronized void java.awt.TextField.removeActionListener(java.awt.event.ActionListener)
+
+    private static var removeActionListener_MethodID_14: jmethodID?
+
+    open func removeActionListener( l: ActionListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &TextField.removeActionListener_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func removeActionListener( _ _l: ActionListener? ) {
+        removeActionListener( l: _l )
+    }
+
+    /// public synchronized java.awt.event.ActionListener[] java.awt.TextField.getActionListeners()
+
+    private static var getActionListeners_MethodID_15: jmethodID?
+
+    open func getActionListeners() -> [ActionListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &TextField.getActionListeners_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
+    }
+
+
+    /// protected void java.awt.TextField.processActionEvent(java.awt.event.ActionEvent)
+
+    private static var processActionEvent_MethodID_16: jmethodID?
+
+    open func processActionEvent( e: ActionEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processActionEvent", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &TextField.processActionEvent_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func processActionEvent( _ _e: ActionEvent? ) {
+        processActionEvent( e: _e )
+    }
+
+    /// public char java.awt.TextField.getEchoChar()
+
+    private static var getEchoChar_MethodID_17: jmethodID?
+
+    open func getEchoChar() -> UInt16 {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getEchoChar", methodSig: "()C", methodCache: &TextField.getEchoChar_MethodID_17, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: UInt16(), from: __return )
+    }
+
+
+    /// public void java.awt.TextField.setEchoChar(char)
+
+    private static var setEchoChar_MethodID_18: jmethodID?
+
+    open func setEchoChar( c: UInt16 ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEchoChar", methodSig: "(C)V", methodCache: &TextField.setEchoChar_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setEchoChar( _ _c: UInt16 ) {
+        setEchoChar( c: _c )
+    }
+
+    /// public synchronized void java.awt.TextField.setEchoCharacter(char)
+
+    private static var setEchoCharacter_MethodID_19: jmethodID?
+
+    open func setEchoCharacter( c: UInt16 ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEchoCharacter", methodSig: "(C)V", methodCache: &TextField.setEchoCharacter_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func setEchoCharacter( _ _c: UInt16 ) {
+        setEchoCharacter( c: _c )
+    }
+
+    /// public boolean java.awt.TextField.echoCharIsSet()
+
+    private static var echoCharIsSet_MethodID_20: jmethodID?
+
+    open func echoCharIsSet() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "echoCharIsSet", methodSig: "()Z", methodCache: &TextField.echoCharIsSet_MethodID_20, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
 
 }
 

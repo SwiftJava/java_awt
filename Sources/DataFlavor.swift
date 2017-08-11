@@ -112,7 +112,7 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetStaticObjectField( fieldName: "selectionHtmlFlavor", fieldType: "Ljava/awt/datatransfer/DataFlavor;", fieldCache: &selectionHtmlFlavor_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass, value: __value.l, locals: &__locals )
         }
     }
@@ -128,7 +128,7 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetStaticObjectField( fieldName: "fragmentHtmlFlavor", fieldType: "Ljava/awt/datatransfer/DataFlavor;", fieldCache: &fragmentHtmlFlavor_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass, value: __value.l, locals: &__locals )
         }
     }
@@ -144,7 +144,7 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetStaticObjectField( fieldName: "allHtmlFlavor", fieldType: "Ljava/awt/datatransfer/DataFlavor;", fieldCache: &allHtmlFlavor_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass, value: __value.l, locals: &__locals )
         }
     }
@@ -198,7 +198,7 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
     public convenience init( arg0: java_swift.JavaClass?, arg1: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavor.DataFlavorJNIClass, methodSig: "(Ljava/lang/Class;Ljava/lang/String;)V", methodCache: &DataFlavor.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -236,7 +236,7 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2 != nil ? arg2! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavor.DataFlavorJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V", methodCache: &DataFlavor.new_MethodID_5, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.ClassNotFoundException( javaObject: throwable )
@@ -276,7 +276,7 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
     open func equals( arg0: DataFlavor? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &DataFlavor.equals_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -312,7 +312,7 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
     open func match( arg0: DataFlavor? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "match", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &DataFlavor.match_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -325,19 +325,264 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
 
     /// private void java.awt.datatransfer.DataFlavor.initialize(java.lang.String,java.lang.String,java.lang.ClassLoader) throws java.awt.datatransfer.MimeTypeParseException,java.lang.ClassNotFoundException
 
+    /// private static java.awt.datatransfer.DataFlavor java.awt.datatransfer.DataFlavor.createConstant(java.lang.String,java.lang.String)
+
     /// private static java.awt.datatransfer.DataFlavor java.awt.datatransfer.DataFlavor.createConstant(java.lang.Class,java.lang.String)
 
-    /// private static java.awt.datatransfer.DataFlavor java.awt.datatransfer.DataFlavor.createConstant(java.lang.String,java.lang.String)
+    /// public java.lang.String java.awt.datatransfer.DataFlavor.getParameter(java.lang.String)
+
+    private static var getParameter_MethodID_10: jmethodID?
+
+    open func getParameter( arg0: String? ) -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParameter", methodSig: "(Ljava/lang/String;)Ljava/lang/String;", methodCache: &DataFlavor.getParameter_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open func getParameter( _ _arg0: String? ) -> String! {
+        return getParameter( arg0: _arg0 )
+    }
+
+    /// public void java.awt.datatransfer.DataFlavor.setHumanPresentableName(java.lang.String)
+
+    private static var setHumanPresentableName_MethodID_11: jmethodID?
+
+    open func setHumanPresentableName( arg0: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHumanPresentableName", methodSig: "(Ljava/lang/String;)V", methodCache: &DataFlavor.setHumanPresentableName_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func setHumanPresentableName( _ _arg0: String? ) {
+        setHumanPresentableName( arg0: _arg0 )
+    }
+
+    /// public boolean java.awt.datatransfer.DataFlavor.isMimeTypeEqual(java.lang.String)
+
+    private static var isMimeTypeEqual_MethodID_12: jmethodID?
+
+    open func isMimeTypeEqual( arg0: String? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMimeTypeEqual", methodSig: "(Ljava/lang/String;)Z", methodCache: &DataFlavor.isMimeTypeEqual_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isMimeTypeEqual( _ _arg0: String? ) -> Bool {
+        return isMimeTypeEqual( arg0: _arg0 )
+    }
+
+    /// private boolean java.awt.datatransfer.DataFlavor.isMimeTypeEqual(java.awt.datatransfer.MimeType)
+
+    /// public final boolean java.awt.datatransfer.DataFlavor.isMimeTypeEqual(java.awt.datatransfer.DataFlavor)
+
+    private static var isMimeTypeEqual_MethodID_13: jmethodID?
+
+    open func isMimeTypeEqual( arg0: DataFlavor? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMimeTypeEqual", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &DataFlavor.isMimeTypeEqual_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isMimeTypeEqual( _ _arg0: DataFlavor? ) -> Bool {
+        return isMimeTypeEqual( arg0: _arg0 )
+    }
+
+    /// private boolean java.awt.datatransfer.DataFlavor.isStandardTextRepresentationClass()
+
+    /// public boolean java.awt.datatransfer.DataFlavor.isMimeTypeSerializedObject()
+
+    private static var isMimeTypeSerializedObject_MethodID_14: jmethodID?
+
+    open func isMimeTypeSerializedObject() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMimeTypeSerializedObject", methodSig: "()Z", methodCache: &DataFlavor.isMimeTypeSerializedObject_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public final java.lang.Class java.awt.datatransfer.DataFlavor.getDefaultRepresentationClass()
+
+    private static var getDefaultRepresentationClass_MethodID_15: jmethodID?
+
+    open func getDefaultRepresentationClass() -> java_swift.JavaClass! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRepresentationClass", methodSig: "()Ljava/lang/Class;", methodCache: &DataFlavor.getDefaultRepresentationClass_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaClass( javaObject: __return ) : nil
+    }
+
+
+    /// public final java.lang.String java.awt.datatransfer.DataFlavor.getDefaultRepresentationClassAsString()
+
+    private static var getDefaultRepresentationClassAsString_MethodID_16: jmethodID?
+
+    open func getDefaultRepresentationClassAsString() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRepresentationClassAsString", methodSig: "()Ljava/lang/String;", methodCache: &DataFlavor.getDefaultRepresentationClassAsString_MethodID_16, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
+    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassInputStream()
+
+    private static var isRepresentationClassInputStream_MethodID_17: jmethodID?
+
+    open func isRepresentationClassInputStream() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassInputStream", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassInputStream_MethodID_17, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassReader()
+
+    private static var isRepresentationClassReader_MethodID_18: jmethodID?
+
+    open func isRepresentationClassReader() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassReader", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassReader_MethodID_18, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassCharBuffer()
+
+    private static var isRepresentationClassCharBuffer_MethodID_19: jmethodID?
+
+    open func isRepresentationClassCharBuffer() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassCharBuffer", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassCharBuffer_MethodID_19, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassByteBuffer()
+
+    private static var isRepresentationClassByteBuffer_MethodID_20: jmethodID?
+
+    open func isRepresentationClassByteBuffer() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassByteBuffer", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassByteBuffer_MethodID_20, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassSerializable()
+
+    private static var isRepresentationClassSerializable_MethodID_21: jmethodID?
+
+    open func isRepresentationClassSerializable() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassSerializable", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassSerializable_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassRemote()
+
+    private static var isRepresentationClassRemote_MethodID_22: jmethodID?
+
+    open func isRepresentationClassRemote() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassRemote", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassRemote_MethodID_22, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean java.awt.datatransfer.DataFlavor.isFlavorSerializedObjectType()
+
+    private static var isFlavorSerializedObjectType_MethodID_23: jmethodID?
+
+    open func isFlavorSerializedObjectType() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFlavorSerializedObjectType", methodSig: "()Z", methodCache: &DataFlavor.isFlavorSerializedObjectType_MethodID_23, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean java.awt.datatransfer.DataFlavor.isFlavorRemoteObjectType()
+
+    private static var isFlavorRemoteObjectType_MethodID_24: jmethodID?
+
+    open func isFlavorRemoteObjectType() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFlavorRemoteObjectType", methodSig: "()Z", methodCache: &DataFlavor.isFlavorRemoteObjectType_MethodID_24, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean java.awt.datatransfer.DataFlavor.isFlavorJavaFileListType()
+
+    private static var isFlavorJavaFileListType_MethodID_25: jmethodID?
+
+    open func isFlavorJavaFileListType() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFlavorJavaFileListType", methodSig: "()Z", methodCache: &DataFlavor.isFlavorJavaFileListType_MethodID_25, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// protected java.lang.String java.awt.datatransfer.DataFlavor.normalizeMimeTypeParameter(java.lang.String,java.lang.String)
+
+    private static var normalizeMimeTypeParameter_MethodID_26: jmethodID?
+
+    open func normalizeMimeTypeParameter( arg0: String?, arg1: String? ) -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "normalizeMimeTypeParameter", methodSig: "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", methodCache: &DataFlavor.normalizeMimeTypeParameter_MethodID_26, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open func normalizeMimeTypeParameter( _ _arg0: String?, _ _arg1: String? ) -> String! {
+        return normalizeMimeTypeParameter( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// protected java.lang.String java.awt.datatransfer.DataFlavor.normalizeMimeType(java.lang.String)
+
+    private static var normalizeMimeType_MethodID_27: jmethodID?
+
+    open func normalizeMimeType( arg0: String? ) -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "normalizeMimeType", methodSig: "(Ljava/lang/String;)Ljava/lang/String;", methodCache: &DataFlavor.normalizeMimeType_MethodID_27, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open func normalizeMimeType( _ _arg0: String? ) -> String! {
+        return normalizeMimeType( arg0: _arg0 )
+    }
 
     /// public synchronized void java.awt.datatransfer.DataFlavor.readExternal(java.io.ObjectInput) throws java.io.IOException,java.lang.ClassNotFoundException
 
-    private static var readExternal_MethodID_10: jmethodID?
+    private static var readExternal_MethodID_28: jmethodID?
 
     open func readExternal( _in: /* java.io.ObjectInput */ UnclassedProtocol? ) throws /* java.io.IOException, java.lang.ClassNotFoundException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: _in, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "readExternal", methodSig: "(Ljava/io/ObjectInput;)V", methodCache: &DataFlavor.readExternal_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "readExternal", methodSig: "(Ljava/io/ObjectInput;)V", methodCache: &DataFlavor.readExternal_MethodID_28, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
         }
@@ -349,13 +594,13 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
 
     /// public synchronized void java.awt.datatransfer.DataFlavor.writeExternal(java.io.ObjectOutput) throws java.io.IOException
 
-    private static var writeExternal_MethodID_11: jmethodID?
+    private static var writeExternal_MethodID_29: jmethodID?
 
     open func writeExternal( out: /* java.io.ObjectOutput */ UnclassedProtocol? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: out, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeExternal", methodSig: "(Ljava/io/ObjectOutput;)V", methodCache: &DataFlavor.writeExternal_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeExternal", methodSig: "(Ljava/io/ObjectOutput;)V", methodCache: &DataFlavor.writeExternal_MethodID_29, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
         }
@@ -367,48 +612,48 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
 
     /// public boolean java.awt.datatransfer.DataFlavor.isFlavorTextType()
 
-    private static var isFlavorTextType_MethodID_12: jmethodID?
+    private static var isFlavorTextType_MethodID_30: jmethodID?
 
     open func isFlavorTextType() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFlavorTextType", methodSig: "()Z", methodCache: &DataFlavor.isFlavorTextType_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFlavorTextType", methodSig: "()Z", methodCache: &DataFlavor.isFlavorTextType_MethodID_30, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public java.lang.String java.awt.datatransfer.DataFlavor.getPrimaryType()
 
-    private static var getPrimaryType_MethodID_13: jmethodID?
+    private static var getPrimaryType_MethodID_31: jmethodID?
 
     open func getPrimaryType() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrimaryType", methodSig: "()Ljava/lang/String;", methodCache: &DataFlavor.getPrimaryType_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrimaryType", methodSig: "()Ljava/lang/String;", methodCache: &DataFlavor.getPrimaryType_MethodID_31, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public java.lang.String java.awt.datatransfer.DataFlavor.getSubType()
 
-    private static var getSubType_MethodID_14: jmethodID?
+    private static var getSubType_MethodID_32: jmethodID?
 
     open func getSubType() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSubType", methodSig: "()Ljava/lang/String;", methodCache: &DataFlavor.getSubType_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSubType", methodSig: "()Ljava/lang/String;", methodCache: &DataFlavor.getSubType_MethodID_32, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public java.lang.Class java.awt.datatransfer.DataFlavor.getRepresentationClass()
 
-    private static var getRepresentationClass_MethodID_15: jmethodID?
+    private static var getRepresentationClass_MethodID_33: jmethodID?
 
     open func getRepresentationClass() -> java_swift.JavaClass! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRepresentationClass", methodSig: "()Ljava/lang/Class;", methodCache: &DataFlavor.getRepresentationClass_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRepresentationClass", methodSig: "()Ljava/lang/Class;", methodCache: &DataFlavor.getRepresentationClass_MethodID_33, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaClass( javaObject: __return ) : nil
     }
@@ -416,26 +661,26 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
 
     /// public java.lang.String java.awt.datatransfer.DataFlavor.getMimeType()
 
-    private static var getMimeType_MethodID_16: jmethodID?
+    private static var getMimeType_MethodID_34: jmethodID?
 
     open func getMimeType() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMimeType", methodSig: "()Ljava/lang/String;", methodCache: &DataFlavor.getMimeType_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMimeType", methodSig: "()Ljava/lang/String;", methodCache: &DataFlavor.getMimeType_MethodID_34, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// protected static final java.lang.Class java.awt.datatransfer.DataFlavor.tryToLoadClass(java.lang.String,java.lang.ClassLoader) throws java.lang.ClassNotFoundException
 
-    private static var tryToLoadClass_MethodID_17: jmethodID?
+    private static var tryToLoadClass_MethodID_35: jmethodID?
 
     open class func tryToLoadClass( arg0: String?, arg1: java_lang.ClassLoader? ) throws /* java.lang.ClassNotFoundException */ -> java_swift.JavaClass! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass, methodName: "tryToLoadClass", methodSig: "(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;", methodCache: &tryToLoadClass_MethodID_17, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass, methodName: "tryToLoadClass", methodSig: "(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;", methodCache: &tryToLoadClass_MethodID_35, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.ClassNotFoundException( javaObject: throwable )
@@ -451,12 +696,12 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
 
     /// public static final java.awt.datatransfer.DataFlavor java.awt.datatransfer.DataFlavor.getTextPlainUnicodeFlavor()
 
-    private static var getTextPlainUnicodeFlavor_MethodID_18: jmethodID?
+    private static var getTextPlainUnicodeFlavor_MethodID_36: jmethodID?
 
     open class func getTextPlainUnicodeFlavor() -> DataFlavor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass, methodName: "getTextPlainUnicodeFlavor", methodSig: "()Ljava/awt/datatransfer/DataFlavor;", methodCache: &getTextPlainUnicodeFlavor_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass, methodName: "getTextPlainUnicodeFlavor", methodSig: "()Ljava/awt/datatransfer/DataFlavor;", methodCache: &getTextPlainUnicodeFlavor_MethodID_36, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DataFlavor( javaObject: __return ) : nil
     }
@@ -464,13 +709,13 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
 
     /// public static final java.awt.datatransfer.DataFlavor java.awt.datatransfer.DataFlavor.selectBestTextFlavor(java.awt.datatransfer.DataFlavor[])
 
-    private static var selectBestTextFlavor_MethodID_19: jmethodID?
+    private static var selectBestTextFlavor_MethodID_37: jmethodID?
 
     open class func selectBestTextFlavor( arg0: [DataFlavor]? ) -> DataFlavor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass, methodName: "selectBestTextFlavor", methodSig: "([Ljava/awt/datatransfer/DataFlavor;)Ljava/awt/datatransfer/DataFlavor;", methodCache: &selectBestTextFlavor_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass, methodName: "selectBestTextFlavor", methodSig: "([Ljava/awt/datatransfer/DataFlavor;)Ljava/awt/datatransfer/DataFlavor;", methodCache: &selectBestTextFlavor_MethodID_37, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DataFlavor( javaObject: __return ) : nil
     }
@@ -481,13 +726,13 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
 
     /// public java.io.Reader java.awt.datatransfer.DataFlavor.getReaderForText(java.awt.datatransfer.Transferable) throws java.awt.datatransfer.UnsupportedFlavorException,java.io.IOException
 
-    private static var getReaderForText_MethodID_20: jmethodID?
+    private static var getReaderForText_MethodID_38: jmethodID?
 
     open func getReaderForText( arg0: Transferable? ) throws /* java.awt.datatransfer.UnsupportedFlavorException, java.io.IOException */ -> /* java.io.Reader */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getReaderForText", methodSig: "(Ljava/awt/datatransfer/Transferable;)Ljava/io/Reader;", methodCache: &DataFlavor.getReaderForText_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getReaderForText", methodSig: "(Ljava/awt/datatransfer/Transferable;)Ljava/io/Reader;", methodCache: &DataFlavor.getReaderForText_MethodID_38, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw UnsupportedFlavorException( javaObject: throwable )
@@ -501,260 +746,15 @@ open class DataFlavor: java_swift.JavaObject, /* java.io.Externalizable */ Uncla
 
     /// public java.lang.String java.awt.datatransfer.DataFlavor.getHumanPresentableName()
 
-    private static var getHumanPresentableName_MethodID_21: jmethodID?
+    private static var getHumanPresentableName_MethodID_39: jmethodID?
 
     open func getHumanPresentableName() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHumanPresentableName", methodSig: "()Ljava/lang/String;", methodCache: &DataFlavor.getHumanPresentableName_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHumanPresentableName", methodSig: "()Ljava/lang/String;", methodCache: &DataFlavor.getHumanPresentableName_MethodID_39, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
-
-    /// public java.lang.String java.awt.datatransfer.DataFlavor.getParameter(java.lang.String)
-
-    private static var getParameter_MethodID_22: jmethodID?
-
-    open func getParameter( arg0: String? ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParameter", methodSig: "(Ljava/lang/String;)Ljava/lang/String;", methodCache: &DataFlavor.getParameter_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getParameter( _ _arg0: String? ) -> String! {
-        return getParameter( arg0: _arg0 )
-    }
-
-    /// public void java.awt.datatransfer.DataFlavor.setHumanPresentableName(java.lang.String)
-
-    private static var setHumanPresentableName_MethodID_23: jmethodID?
-
-    open func setHumanPresentableName( arg0: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHumanPresentableName", methodSig: "(Ljava/lang/String;)V", methodCache: &DataFlavor.setHumanPresentableName_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func setHumanPresentableName( _ _arg0: String? ) {
-        setHumanPresentableName( arg0: _arg0 )
-    }
-
-    /// private boolean java.awt.datatransfer.DataFlavor.isMimeTypeEqual(java.awt.datatransfer.MimeType)
-
-    /// public final boolean java.awt.datatransfer.DataFlavor.isMimeTypeEqual(java.awt.datatransfer.DataFlavor)
-
-    private static var isMimeTypeEqual_MethodID_24: jmethodID?
-
-    open func isMimeTypeEqual( arg0: DataFlavor? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMimeTypeEqual", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &DataFlavor.isMimeTypeEqual_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isMimeTypeEqual( _ _arg0: DataFlavor? ) -> Bool {
-        return isMimeTypeEqual( arg0: _arg0 )
-    }
-
-    /// public boolean java.awt.datatransfer.DataFlavor.isMimeTypeEqual(java.lang.String)
-
-    private static var isMimeTypeEqual_MethodID_25: jmethodID?
-
-    open func isMimeTypeEqual( arg0: String? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMimeTypeEqual", methodSig: "(Ljava/lang/String;)Z", methodCache: &DataFlavor.isMimeTypeEqual_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isMimeTypeEqual( _ _arg0: String? ) -> Bool {
-        return isMimeTypeEqual( arg0: _arg0 )
-    }
-
-    /// private boolean java.awt.datatransfer.DataFlavor.isStandardTextRepresentationClass()
-
-    /// public boolean java.awt.datatransfer.DataFlavor.isMimeTypeSerializedObject()
-
-    private static var isMimeTypeSerializedObject_MethodID_26: jmethodID?
-
-    open func isMimeTypeSerializedObject() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMimeTypeSerializedObject", methodSig: "()Z", methodCache: &DataFlavor.isMimeTypeSerializedObject_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public final java.lang.Class java.awt.datatransfer.DataFlavor.getDefaultRepresentationClass()
-
-    private static var getDefaultRepresentationClass_MethodID_27: jmethodID?
-
-    open func getDefaultRepresentationClass() -> java_swift.JavaClass! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRepresentationClass", methodSig: "()Ljava/lang/Class;", methodCache: &DataFlavor.getDefaultRepresentationClass_MethodID_27, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaClass( javaObject: __return ) : nil
-    }
-
-
-    /// public final java.lang.String java.awt.datatransfer.DataFlavor.getDefaultRepresentationClassAsString()
-
-    private static var getDefaultRepresentationClassAsString_MethodID_28: jmethodID?
-
-    open func getDefaultRepresentationClassAsString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRepresentationClassAsString", methodSig: "()Ljava/lang/String;", methodCache: &DataFlavor.getDefaultRepresentationClassAsString_MethodID_28, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassInputStream()
-
-    private static var isRepresentationClassInputStream_MethodID_29: jmethodID?
-
-    open func isRepresentationClassInputStream() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassInputStream", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassInputStream_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassReader()
-
-    private static var isRepresentationClassReader_MethodID_30: jmethodID?
-
-    open func isRepresentationClassReader() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassReader", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassReader_MethodID_30, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassCharBuffer()
-
-    private static var isRepresentationClassCharBuffer_MethodID_31: jmethodID?
-
-    open func isRepresentationClassCharBuffer() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassCharBuffer", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassCharBuffer_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassByteBuffer()
-
-    private static var isRepresentationClassByteBuffer_MethodID_32: jmethodID?
-
-    open func isRepresentationClassByteBuffer() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassByteBuffer", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassByteBuffer_MethodID_32, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassSerializable()
-
-    private static var isRepresentationClassSerializable_MethodID_33: jmethodID?
-
-    open func isRepresentationClassSerializable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassSerializable", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassSerializable_MethodID_33, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.datatransfer.DataFlavor.isRepresentationClassRemote()
-
-    private static var isRepresentationClassRemote_MethodID_34: jmethodID?
-
-    open func isRepresentationClassRemote() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepresentationClassRemote", methodSig: "()Z", methodCache: &DataFlavor.isRepresentationClassRemote_MethodID_34, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.datatransfer.DataFlavor.isFlavorSerializedObjectType()
-
-    private static var isFlavorSerializedObjectType_MethodID_35: jmethodID?
-
-    open func isFlavorSerializedObjectType() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFlavorSerializedObjectType", methodSig: "()Z", methodCache: &DataFlavor.isFlavorSerializedObjectType_MethodID_35, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.datatransfer.DataFlavor.isFlavorRemoteObjectType()
-
-    private static var isFlavorRemoteObjectType_MethodID_36: jmethodID?
-
-    open func isFlavorRemoteObjectType() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFlavorRemoteObjectType", methodSig: "()Z", methodCache: &DataFlavor.isFlavorRemoteObjectType_MethodID_36, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.datatransfer.DataFlavor.isFlavorJavaFileListType()
-
-    private static var isFlavorJavaFileListType_MethodID_37: jmethodID?
-
-    open func isFlavorJavaFileListType() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFlavorJavaFileListType", methodSig: "()Z", methodCache: &DataFlavor.isFlavorJavaFileListType_MethodID_37, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected java.lang.String java.awt.datatransfer.DataFlavor.normalizeMimeTypeParameter(java.lang.String,java.lang.String)
-
-    private static var normalizeMimeTypeParameter_MethodID_38: jmethodID?
-
-    open func normalizeMimeTypeParameter( arg0: String?, arg1: String? ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "normalizeMimeTypeParameter", methodSig: "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", methodCache: &DataFlavor.normalizeMimeTypeParameter_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func normalizeMimeTypeParameter( _ _arg0: String?, _ _arg1: String? ) -> String! {
-        return normalizeMimeTypeParameter( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// protected java.lang.String java.awt.datatransfer.DataFlavor.normalizeMimeType(java.lang.String)
-
-    private static var normalizeMimeType_MethodID_39: jmethodID?
-
-    open func normalizeMimeType( arg0: String? ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "normalizeMimeType", methodSig: "(Ljava/lang/String;)Ljava/lang/String;", methodCache: &DataFlavor.normalizeMimeType_MethodID_39, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func normalizeMimeType( _ _arg0: String? ) -> String! {
-        return normalizeMimeType( arg0: _arg0 )
-    }
 
 }
 

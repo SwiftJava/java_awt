@@ -220,7 +220,7 @@ open class AdjustmentEvent: AWTEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &AdjustmentEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }

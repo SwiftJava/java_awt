@@ -58,7 +58,7 @@ open class AWTEventListenerProxy: java_util.EventListenerProxy, AWTEventListener
     open func eventDispatched( event: AWTEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "eventDispatched", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &AWTEventListenerProxy.eventDispatched_MethodID_3, args: &__args, locals: &__locals )
     }
 

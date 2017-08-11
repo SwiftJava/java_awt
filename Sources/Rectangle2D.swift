@@ -95,7 +95,7 @@ open class Rectangle2D: RectangularShape {
     open func add( pt: Point2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pt != nil ? pt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: pt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/geom/Point2D;)V", methodCache: &Rectangle2D.add_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -110,7 +110,7 @@ open class Rectangle2D: RectangularShape {
     open func add( r: Rectangle2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/geom/Rectangle2D;)V", methodCache: &Rectangle2D.add_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -125,7 +125,7 @@ open class Rectangle2D: RectangularShape {
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &Rectangle2D.equals_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -142,6 +142,10 @@ open class Rectangle2D: RectangularShape {
 
     /// public boolean java.awt.geom.Rectangle2D.intersects(double,double,double,double)
 
+    /// public java.awt.geom.PathIterator java.awt.geom.Rectangle2D.getPathIterator(java.awt.geom.AffineTransform)
+
+    /// public java.awt.geom.PathIterator java.awt.geom.Rectangle2D.getPathIterator(java.awt.geom.AffineTransform,double)
+
     /// public java.awt.geom.Rectangle2D java.awt.geom.Rectangle2D.getBounds2D()
 
     /// public void java.awt.geom.Rectangle2D.setRect(java.awt.geom.Rectangle2D)
@@ -151,7 +155,7 @@ open class Rectangle2D: RectangularShape {
     open func setRect( r: Rectangle2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRect", methodSig: "(Ljava/awt/geom/Rectangle2D;)V", methodCache: &Rectangle2D.setRect_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -184,9 +188,9 @@ open class Rectangle2D: RectangularShape {
     open class func union( src1: Rectangle2D?, src2: Rectangle2D?, dest: Rectangle2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src1 != nil ? src1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: src2 != nil ? src2! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: dest != nil ? dest! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: src1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: src2, locals: &__locals )
+        __args[2] = JNIType.toJava( value: dest, locals: &__locals )
         JNIMethod.CallStaticVoidMethod( className: "java/awt/geom/Rectangle2D", classCache: &Rectangle2DJNIClass, methodName: "union", methodSig: "(Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/Rectangle2D;)V", methodCache: &union_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -218,7 +222,7 @@ open class Rectangle2D: RectangularShape {
     open func outcode( p: Point2D? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "outcode", methodSig: "(Ljava/awt/geom/Point2D;)I", methodCache: &Rectangle2D.outcode_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
@@ -234,7 +238,7 @@ open class Rectangle2D: RectangularShape {
     open func createIntersection( r: Rectangle2D? ) -> Rectangle2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createIntersection", methodSig: "(Ljava/awt/geom/Rectangle2D;)Ljava/awt/geom/Rectangle2D;", methodCache: &Rectangle2D.createIntersection_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
@@ -251,7 +255,7 @@ open class Rectangle2D: RectangularShape {
     open func createUnion( r: Rectangle2D? ) -> Rectangle2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createUnion", methodSig: "(Ljava/awt/geom/Rectangle2D;)Ljava/awt/geom/Rectangle2D;", methodCache: &Rectangle2D.createUnion_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
@@ -268,9 +272,9 @@ open class Rectangle2D: RectangularShape {
     open class func intersect( src1: Rectangle2D?, src2: Rectangle2D?, dest: Rectangle2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src1 != nil ? src1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: src2 != nil ? src2! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: dest != nil ? dest! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: src1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: src2, locals: &__locals )
+        __args[2] = JNIType.toJava( value: dest, locals: &__locals )
         JNIMethod.CallStaticVoidMethod( className: "java/awt/geom/Rectangle2D", classCache: &Rectangle2DJNIClass, methodName: "intersect", methodSig: "(Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/Rectangle2D;)V", methodCache: &intersect_MethodID_13, args: &__args, locals: &__locals )
     }
 
@@ -285,7 +289,7 @@ open class Rectangle2D: RectangularShape {
     open func intersectsLine( l: Line2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l != nil ? l! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersectsLine", methodSig: "(Ljava/awt/geom/Line2D;)Z", methodCache: &Rectangle2D.intersectsLine_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -314,10 +318,6 @@ open class Rectangle2D: RectangularShape {
     }
 
     /// public void java.awt.geom.Rectangle2D.setFrame(double,double,double,double)
-
-    /// public java.awt.geom.PathIterator java.awt.geom.Rectangle2D.getPathIterator(java.awt.geom.AffineTransform)
-
-    /// public java.awt.geom.PathIterator java.awt.geom.Rectangle2D.getPathIterator(java.awt.geom.AffineTransform,double)
 
 }
 

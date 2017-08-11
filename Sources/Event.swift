@@ -746,7 +746,7 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "target", fieldType: "Ljava/lang/Object;", fieldCache: &Event.target_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -882,7 +882,7 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "arg", fieldType: "Ljava/lang/Object;", fieldCache: &Event.arg_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -899,7 +899,7 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "evt", fieldType: "Ljava/awt/Event;", fieldCache: &Event.evt_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -917,7 +917,7 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     public convenience init( target: java_swift.JavaObject?, when: Int64, id: Int, x: Int, y: Int, key: Int, modifiers: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         __args[1] = JNIType.toJava( value: when, locals: &__locals )
         __args[2] = JNIType.toJava( value: id, locals: &__locals )
         __args[3] = JNIType.toJava( value: x, locals: &__locals )
@@ -940,14 +940,14 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     public convenience init( target: java_swift.JavaObject?, when: Int64, id: Int, x: Int, y: Int, key: Int, modifiers: Int, arg: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         __args[1] = JNIType.toJava( value: when, locals: &__locals )
         __args[2] = JNIType.toJava( value: id, locals: &__locals )
         __args[3] = JNIType.toJava( value: x, locals: &__locals )
         __args[4] = JNIType.toJava( value: y, locals: &__locals )
         __args[5] = JNIType.toJava( value: key, locals: &__locals )
         __args[6] = JNIType.toJava( value: modifiers, locals: &__locals )
-        __args[7] = JNIType.toJava( value: arg != nil ? arg! as JNIObject : nil, locals: &__locals )
+        __args[7] = JNIType.toJava( value: arg, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Event", classCache: &Event.EventJNIClass, methodSig: "(Ljava/lang/Object;JIIIIILjava/lang/Object;)V", methodCache: &Event.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -964,9 +964,9 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     public convenience init( target: java_swift.JavaObject?, id: Int, arg: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg != nil ? arg! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Event", classCache: &Event.EventJNIClass, methodSig: "(Ljava/lang/Object;ILjava/lang/Object;)V", methodCache: &Event.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -992,58 +992,16 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     /// private static native void java.awt.Event.initIDs()
 
-    /// static int java.awt.Event.getOldEventKey(java.awt.event.KeyEvent)
-
-    /// public boolean java.awt.Event.shiftDown()
-
-    private static var shiftDown_MethodID_5: jmethodID?
-
-    open func shiftDown() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shiftDown", methodSig: "()Z", methodCache: &Event.shiftDown_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.Event.controlDown()
-
-    private static var controlDown_MethodID_6: jmethodID?
-
-    open func controlDown() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "controlDown", methodSig: "()Z", methodCache: &Event.controlDown_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.Event.metaDown()
-
-    private static var metaDown_MethodID_7: jmethodID?
-
-    open func metaDown() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "metaDown", methodSig: "()Z", methodCache: &Event.metaDown_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// boolean java.awt.Event.isConsumed()
-
-    /// void java.awt.Event.consume()
-
     /// public void java.awt.Event.translate(int,int)
 
-    private static var translate_MethodID_8: jmethodID?
+    private static var translate_MethodID_5: jmethodID?
 
     open func translate( dx: Int, dy: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dx, locals: &__locals )
         __args[1] = JNIType.toJava( value: dy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Event.translate_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Event.translate_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func translate( _ _dx: Int, _ _dy: Int ) {
@@ -1051,6 +1009,48 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     }
 
     /// char java.awt.Event.getKeyEventChar()
+
+    /// public boolean java.awt.Event.shiftDown()
+
+    private static var shiftDown_MethodID_6: jmethodID?
+
+    open func shiftDown() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shiftDown", methodSig: "()Z", methodCache: &Event.shiftDown_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean java.awt.Event.controlDown()
+
+    private static var controlDown_MethodID_7: jmethodID?
+
+    open func controlDown() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "controlDown", methodSig: "()Z", methodCache: &Event.controlDown_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean java.awt.Event.metaDown()
+
+    private static var metaDown_MethodID_8: jmethodID?
+
+    open func metaDown() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "metaDown", methodSig: "()Z", methodCache: &Event.metaDown_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// static int java.awt.Event.getOldEventKey(java.awt.event.KeyEvent)
+
+    /// boolean java.awt.Event.isConsumed()
+
+    /// void java.awt.Event.consume()
 
 }
 

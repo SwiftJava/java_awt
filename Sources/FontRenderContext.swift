@@ -31,9 +31,9 @@ open class FontRenderContext: java_swift.JavaObject {
     public convenience init( tx: AffineTransform?, aaHint: java_swift.JavaObject?, fmHint: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tx != nil ? tx! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: aaHint != nil ? aaHint! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: fmHint != nil ? fmHint! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tx, locals: &__locals )
+        __args[1] = JNIType.toJava( value: aaHint, locals: &__locals )
+        __args[2] = JNIType.toJava( value: fmHint, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/font/FontRenderContext", classCache: &FontRenderContext.FontRenderContextJNIClass, methodSig: "(Ljava/awt/geom/AffineTransform;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &FontRenderContext.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -50,7 +50,7 @@ open class FontRenderContext: java_swift.JavaObject {
     public convenience init( tx: AffineTransform?, isAntiAliased: Bool, usesFractionalMetrics: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tx != nil ? tx! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tx, locals: &__locals )
         __args[1] = JNIType.toJava( value: isAntiAliased, locals: &__locals )
         __args[2] = JNIType.toJava( value: usesFractionalMetrics, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/font/FontRenderContext", classCache: &FontRenderContext.FontRenderContextJNIClass, methodSig: "(Ljava/awt/geom/AffineTransform;ZZ)V", methodCache: &FontRenderContext.new_MethodID_2, args: &__args, locals: &__locals )
@@ -81,7 +81,7 @@ open class FontRenderContext: java_swift.JavaObject {
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &FontRenderContext.equals_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -97,7 +97,7 @@ open class FontRenderContext: java_swift.JavaObject {
     open func equals( rhs: FontRenderContext? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rhs != nil ? rhs! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/font/FontRenderContext;)Z", methodCache: &FontRenderContext.equals_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

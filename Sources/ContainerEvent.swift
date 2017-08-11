@@ -184,7 +184,7 @@ open class ContainerEvent: ComponentEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &ContainerEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -196,9 +196,9 @@ open class ContainerEvent: ComponentEvent {
     public convenience init( source: Component?, id: Int, child: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: child != nil ? child! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: child, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/ContainerEvent", classCache: &ContainerEvent.ContainerEventJNIClass, methodSig: "(Ljava/awt/Component;ILjava/awt/Component;)V", methodCache: &ContainerEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -210,29 +210,29 @@ open class ContainerEvent: ComponentEvent {
 
     /// public java.lang.String java.awt.event.ContainerEvent.paramString()
 
-    /// public java.awt.Component java.awt.event.ContainerEvent.getChild()
-
-    private static var getChild_MethodID_2: jmethodID?
-
-    open func getChild() -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChild", methodSig: "()Ljava/awt/Component;", methodCache: &ContainerEvent.getChild_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-
     /// public java.awt.Container java.awt.event.ContainerEvent.getContainer()
 
-    private static var getContainer_MethodID_3: jmethodID?
+    private static var getContainer_MethodID_2: jmethodID?
 
     open func getContainer() -> Container! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContainer", methodSig: "()Ljava/awt/Container;", methodCache: &ContainerEvent.getContainer_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContainer", methodSig: "()Ljava/awt/Container;", methodCache: &ContainerEvent.getContainer_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Container( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Component java.awt.event.ContainerEvent.getChild()
+
+    private static var getChild_MethodID_3: jmethodID?
+
+    open func getChild() -> Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChild", methodSig: "()Ljava/awt/Component;", methodCache: &ContainerEvent.getChild_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component( javaObject: __return ) : nil
     }
 
 

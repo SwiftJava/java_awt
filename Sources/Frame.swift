@@ -601,7 +601,7 @@ open class Frame: Window {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Frame.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -632,7 +632,7 @@ open class Frame: Window {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: gc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Frame", classCache: &Frame.FrameJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/GraphicsConfiguration;)V", methodCache: &Frame.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -669,7 +669,7 @@ open class Frame: Window {
     public convenience init( gc: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: gc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Frame", classCache: &Frame.FrameJNIClass, methodSig: "(Ljava/awt/GraphicsConfiguration;)V", methodCache: &Frame.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -698,7 +698,7 @@ open class Frame: Window {
     override open func remove( comp: MenuComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &Frame.remove_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -742,276 +742,17 @@ open class Frame: Window {
 
     /// private static native void java.awt.Frame.initIDs()
 
-    /// private boolean java.awt.Frame.isFrameStateSupported(int)
-
-    /// public boolean java.awt.Frame.isResizable()
-
-    private static var isResizable_MethodID_8: jmethodID?
-
-    open func isResizable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isResizable", methodSig: "()Z", methodCache: &Frame.isResizable_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void java.awt.Frame.setResizable(boolean)
-
-    private static var setResizable_MethodID_9: jmethodID?
-
-    open func setResizable( resizable: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: resizable, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &Frame.setResizable_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func setResizable( _ _resizable: Bool ) {
-        setResizable( resizable: _resizable )
-    }
-
-    /// public boolean java.awt.Frame.isUndecorated()
-
-    private static var isUndecorated_MethodID_10: jmethodID?
-
-    open func isUndecorated() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isUndecorated", methodSig: "()Z", methodCache: &Frame.isUndecorated_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void java.awt.Frame.setOpacity(float)
-
-    private static var setOpacity_MethodID_11: jmethodID?
-
-    open func setOpacity( opacity: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: opacity, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpacity", methodSig: "(F)V", methodCache: &Frame.setOpacity_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    override open func setOpacity( _ _opacity: Float ) {
-        setOpacity( opacity: _opacity )
-    }
-
-    /// public void java.awt.Frame.setShape(java.awt.Shape)
-
-    private static var setShape_MethodID_12: jmethodID?
-
-    open func setShape( shape: Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: shape, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setShape", methodSig: "(Ljava/awt/Shape;)V", methodCache: &Frame.setShape_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    override open func setShape( _ _shape: Shape? ) {
-        setShape( shape: _shape )
-    }
-
-    /// public void java.awt.Frame.setIconImage(java.awt.Image)
-
-    private static var setIconImage_MethodID_13: jmethodID?
-
-    open func setIconImage( image: Image? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &Frame.setIconImage_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    override open func setIconImage( _ _image: Image? ) {
-        setIconImage( image: _image )
-    }
-
-    /// public java.awt.Image java.awt.Frame.getIconImage()
-
-    private static var getIconImage_MethodID_14: jmethodID?
-
-    open func getIconImage() -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIconImage", methodSig: "()Ljava/awt/Image;", methodCache: &Frame.getIconImage_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.MenuBar java.awt.Frame.getMenuBar()
-
-    private static var getMenuBar_MethodID_15: jmethodID?
-
-    open func getMenuBar() -> MenuBar! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuBar", methodSig: "()Ljava/awt/MenuBar;", methodCache: &Frame.getMenuBar_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MenuBar( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.Frame.setMenuBar(java.awt.MenuBar)
-
-    private static var setMenuBar_MethodID_16: jmethodID?
-
-    open func setMenuBar( mb: MenuBar? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mb != nil ? mb! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMenuBar", methodSig: "(Ljava/awt/MenuBar;)V", methodCache: &Frame.setMenuBar_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setMenuBar( _ _mb: MenuBar? ) {
-        setMenuBar( mb: _mb )
-    }
-
-    /// public void java.awt.Frame.setExtendedState(int)
-
-    private static var setExtendedState_MethodID_17: jmethodID?
-
-    open func setExtendedState( state: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: state, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExtendedState", methodSig: "(I)V", methodCache: &Frame.setExtendedState_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func setExtendedState( _ _state: Int ) {
-        setExtendedState( state: _state )
-    }
-
-    /// public void java.awt.Frame.setMaximizedBounds(java.awt.Rectangle)
-
-    private static var setMaximizedBounds_MethodID_18: jmethodID?
-
-    open func setMaximizedBounds( bounds: Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximizedBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &Frame.setMaximizedBounds_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func setMaximizedBounds( _ _bounds: Rectangle? ) {
-        setMaximizedBounds( bounds: _bounds )
-    }
-
-    /// public java.awt.Rectangle java.awt.Frame.getMaximizedBounds()
-
-    private static var getMaximizedBounds_MethodID_19: jmethodID?
-
-    open func getMaximizedBounds() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximizedBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Frame.getMaximizedBounds_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
-    }
-
-
-    /// public int java.awt.Frame.getCursorType()
-
-    private static var getCursorType_MethodID_20: jmethodID?
-
-    open func getCursorType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCursorType", methodSig: "()I", methodCache: &Frame.getCursorType_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void java.awt.Frame.setBackground(java.awt.Color)
-
-    private static var setBackground_MethodID_21: jmethodID?
-
-    open func setBackground( bgColor: Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bgColor != nil ? bgColor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &Frame.setBackground_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    override open func setBackground( _ _bgColor: Color? ) {
-        setBackground( bgColor: _bgColor )
-    }
-
-    /// public javax.accessibility.AccessibleContext java.awt.Frame.getAccessibleContext()
-
-    /// public synchronized void java.awt.Frame.setState(int)
-
-    private static var setState_MethodID_22: jmethodID?
-
-    open func setState( state: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: state, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setState", methodSig: "(I)V", methodCache: &Frame.setState_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func setState( _ _state: Int ) {
-        setState( state: _state )
-    }
-
-    /// public static java.awt.Frame[] java.awt.Frame.getFrames()
-
-    private static var getFrames_MethodID_23: jmethodID?
-
-    open class func getFrames() -> [Frame]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Frame", classCache: &FrameJNIClass, methodName: "getFrames", methodSig: "()[Ljava/awt/Frame;", methodCache: &getFrames_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Frame](), from: __return )
-    }
-
-
-    /// public void java.awt.Frame.setUndecorated(boolean)
-
-    private static var setUndecorated_MethodID_24: jmethodID?
-
-    open func setUndecorated( undecorated: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: undecorated, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUndecorated", methodSig: "(Z)V", methodCache: &Frame.setUndecorated_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open func setUndecorated( _ _undecorated: Bool ) {
-        setUndecorated( undecorated: _undecorated )
-    }
-
-    /// public int java.awt.Frame.getExtendedState()
-
-    private static var getExtendedState_MethodID_25: jmethodID?
-
-    open func getExtendedState() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getExtendedState", methodSig: "()I", methodCache: &Frame.getExtendedState_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void java.awt.Frame.addNotify()
-
-    /// public void java.awt.Frame.removeNotify()
-
-    /// void java.awt.Frame.postProcessKeyEvent(java.awt.event.KeyEvent)
-
     /// java.lang.String java.awt.Frame.constructComponentName()
 
     /// public void java.awt.Frame.setCursor(int)
 
-    private static var setCursor_MethodID_26: jmethodID?
+    private static var setCursor_MethodID_8: jmethodID?
 
     open func setCursor( cursorType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: cursorType, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(I)V", methodCache: &Frame.setCursor_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(I)V", methodCache: &Frame.setCursor_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setCursor( _ _cursorType: Int ) {
@@ -1020,30 +761,289 @@ open class Frame: Window {
 
     /// public java.lang.String java.awt.Frame.getTitle()
 
-    private static var getTitle_MethodID_27: jmethodID?
+    private static var getTitle_MethodID_9: jmethodID?
 
     open func getTitle() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitle", methodSig: "()Ljava/lang/String;", methodCache: &Frame.getTitle_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitle", methodSig: "()Ljava/lang/String;", methodCache: &Frame.getTitle_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public void java.awt.Frame.setTitle(java.lang.String)
 
-    private static var setTitle_MethodID_28: jmethodID?
+    private static var setTitle_MethodID_10: jmethodID?
 
     open func setTitle( title: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &Frame.setTitle_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &Frame.setTitle_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setTitle( _ _title: String? ) {
         setTitle( title: _title )
     }
+
+    /// public void java.awt.Frame.setBackground(java.awt.Color)
+
+    private static var setBackground_MethodID_11: jmethodID?
+
+    open func setBackground( bgColor: Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: bgColor, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &Frame.setBackground_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    override open func setBackground( _ _bgColor: Color? ) {
+        setBackground( bgColor: _bgColor )
+    }
+
+    /// public javax.accessibility.AccessibleContext java.awt.Frame.getAccessibleContext()
+
+    /// public boolean java.awt.Frame.isResizable()
+
+    private static var isResizable_MethodID_12: jmethodID?
+
+    open func isResizable() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isResizable", methodSig: "()Z", methodCache: &Frame.isResizable_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void java.awt.Frame.setResizable(boolean)
+
+    private static var setResizable_MethodID_13: jmethodID?
+
+    open func setResizable( resizable: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: resizable, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &Frame.setResizable_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func setResizable( _ _resizable: Bool ) {
+        setResizable( resizable: _resizable )
+    }
+
+    /// public boolean java.awt.Frame.isUndecorated()
+
+    private static var isUndecorated_MethodID_14: jmethodID?
+
+    open func isUndecorated() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isUndecorated", methodSig: "()Z", methodCache: &Frame.isUndecorated_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void java.awt.Frame.setOpacity(float)
+
+    private static var setOpacity_MethodID_15: jmethodID?
+
+    open func setOpacity( opacity: Float ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: opacity, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpacity", methodSig: "(F)V", methodCache: &Frame.setOpacity_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    override open func setOpacity( _ _opacity: Float ) {
+        setOpacity( opacity: _opacity )
+    }
+
+    /// public void java.awt.Frame.setShape(java.awt.Shape)
+
+    private static var setShape_MethodID_16: jmethodID?
+
+    open func setShape( shape: Shape? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: shape, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setShape", methodSig: "(Ljava/awt/Shape;)V", methodCache: &Frame.setShape_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    override open func setShape( _ _shape: Shape? ) {
+        setShape( shape: _shape )
+    }
+
+    /// public void java.awt.Frame.setIconImage(java.awt.Image)
+
+    private static var setIconImage_MethodID_17: jmethodID?
+
+    open func setIconImage( image: Image? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &Frame.setIconImage_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    override open func setIconImage( _ _image: Image? ) {
+        setIconImage( image: _image )
+    }
+
+    /// public java.awt.Image java.awt.Frame.getIconImage()
+
+    private static var getIconImage_MethodID_18: jmethodID?
+
+    open func getIconImage() -> Image! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIconImage", methodSig: "()Ljava/awt/Image;", methodCache: &Frame.getIconImage_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Image( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.MenuBar java.awt.Frame.getMenuBar()
+
+    private static var getMenuBar_MethodID_19: jmethodID?
+
+    open func getMenuBar() -> MenuBar! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuBar", methodSig: "()Ljava/awt/MenuBar;", methodCache: &Frame.getMenuBar_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MenuBar( javaObject: __return ) : nil
+    }
+
+
+    /// public void java.awt.Frame.setMenuBar(java.awt.MenuBar)
+
+    private static var setMenuBar_MethodID_20: jmethodID?
+
+    open func setMenuBar( mb: MenuBar? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: mb, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMenuBar", methodSig: "(Ljava/awt/MenuBar;)V", methodCache: &Frame.setMenuBar_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func setMenuBar( _ _mb: MenuBar? ) {
+        setMenuBar( mb: _mb )
+    }
+
+    /// public void java.awt.Frame.setExtendedState(int)
+
+    private static var setExtendedState_MethodID_21: jmethodID?
+
+    open func setExtendedState( state: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: state, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExtendedState", methodSig: "(I)V", methodCache: &Frame.setExtendedState_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func setExtendedState( _ _state: Int ) {
+        setExtendedState( state: _state )
+    }
+
+    /// public void java.awt.Frame.setMaximizedBounds(java.awt.Rectangle)
+
+    private static var setMaximizedBounds_MethodID_22: jmethodID?
+
+    open func setMaximizedBounds( bounds: Rectangle? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: bounds, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximizedBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &Frame.setMaximizedBounds_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func setMaximizedBounds( _ _bounds: Rectangle? ) {
+        setMaximizedBounds( bounds: _bounds )
+    }
+
+    /// public java.awt.Rectangle java.awt.Frame.getMaximizedBounds()
+
+    private static var getMaximizedBounds_MethodID_23: jmethodID?
+
+    open func getMaximizedBounds() -> Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximizedBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Frame.getMaximizedBounds_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
+
+    /// public int java.awt.Frame.getCursorType()
+
+    private static var getCursorType_MethodID_24: jmethodID?
+
+    open func getCursorType() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCursorType", methodSig: "()I", methodCache: &Frame.getCursorType_MethodID_24, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public synchronized void java.awt.Frame.setState(int)
+
+    private static var setState_MethodID_25: jmethodID?
+
+    open func setState( state: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: state, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setState", methodSig: "(I)V", methodCache: &Frame.setState_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func setState( _ _state: Int ) {
+        setState( state: _state )
+    }
+
+    /// public void java.awt.Frame.addNotify()
+
+    /// public void java.awt.Frame.removeNotify()
+
+    /// void java.awt.Frame.postProcessKeyEvent(java.awt.event.KeyEvent)
+
+    /// private boolean java.awt.Frame.isFrameStateSupported(int)
+
+    /// public static java.awt.Frame[] java.awt.Frame.getFrames()
+
+    private static var getFrames_MethodID_26: jmethodID?
+
+    open class func getFrames() -> [Frame]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Frame", classCache: &FrameJNIClass, methodName: "getFrames", methodSig: "()[Ljava/awt/Frame;", methodCache: &getFrames_MethodID_26, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Frame](), from: __return )
+    }
+
+
+    /// public void java.awt.Frame.setUndecorated(boolean)
+
+    private static var setUndecorated_MethodID_27: jmethodID?
+
+    open func setUndecorated( undecorated: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: undecorated, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUndecorated", methodSig: "(Z)V", methodCache: &Frame.setUndecorated_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open func setUndecorated( _ _undecorated: Bool ) {
+        setUndecorated( undecorated: _undecorated )
+    }
+
+    /// public int java.awt.Frame.getExtendedState()
+
+    private static var getExtendedState_MethodID_28: jmethodID?
+
+    open func getExtendedState() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getExtendedState", methodSig: "()I", methodCache: &Frame.getExtendedState_MethodID_28, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
 
     /// In declared protocol but not defined.. ///
 
@@ -1056,7 +1056,7 @@ open class Frame: Window {
     override open func postEvent( evt: Event? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "postEvent", methodSig: "(Ljava/awt/Event;)Z", methodCache: &Frame.postEvent_MethodID_29, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -1127,7 +1127,7 @@ open class FrameBase: Frame {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: gc, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[2] = __local!.swiftValue()
@@ -1172,7 +1172,7 @@ open class FrameBase: Frame {
     public convenience init( gc: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: gc, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[1] = __local!.swiftValue()

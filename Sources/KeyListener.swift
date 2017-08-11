@@ -34,7 +34,7 @@ open class KeyListenerForward: java_util.EventListenerForward, KeyListener {
     open func keyTyped( e: KeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyTyped", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyListenerForward.keyTyped_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -49,7 +49,7 @@ open class KeyListenerForward: java_util.EventListenerForward, KeyListener {
     open func keyPressed( e: KeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyPressed", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyListenerForward.keyPressed_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -64,7 +64,7 @@ open class KeyListenerForward: java_util.EventListenerForward, KeyListener {
     open func keyReleased( e: KeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyReleased", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyListenerForward.keyReleased_MethodID_6, args: &__args, locals: &__locals )
     }
 

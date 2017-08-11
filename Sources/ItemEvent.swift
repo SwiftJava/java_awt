@@ -183,7 +183,7 @@ open class ItemEvent: AWTEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &ItemEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -197,7 +197,7 @@ open class ItemEvent: AWTEvent {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: item != nil ? item! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: item, locals: &__locals )
         __args[3] = JNIType.toJava( value: stateChange, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/ItemEvent", classCache: &ItemEvent.ItemEventJNIClass, methodSig: "(Ljava/awt/ItemSelectable;ILjava/lang/Object;I)V", methodCache: &ItemEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

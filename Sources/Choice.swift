@@ -237,7 +237,7 @@ open class Choice: Component, ItemSelectable {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Choice.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -287,34 +287,34 @@ open class Choice: Component, ItemSelectable {
         add( item: _item )
     }
 
-    /// public void java.awt.Choice.remove(int)
-
-    private static var remove_MethodID_3: jmethodID?
-
-    open func remove( position: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: position, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(I)V", methodCache: &Choice.remove_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func remove( _ _position: Int ) {
-        remove( position: _position )
-    }
-
     /// public void java.awt.Choice.remove(java.lang.String)
 
-    private static var remove_MethodID_4: jmethodID?
+    private static var remove_MethodID_3: jmethodID?
 
     open func remove( item: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: item, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/lang/String;)V", methodCache: &Choice.remove_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/lang/String;)V", methodCache: &Choice.remove_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func remove( _ _item: String? ) {
         remove( item: _item )
+    }
+
+    /// public void java.awt.Choice.remove(int)
+
+    private static var remove_MethodID_4: jmethodID?
+
+    open func remove( position: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: position, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(I)V", methodCache: &Choice.remove_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func remove( _ _position: Int ) {
+        remove( position: _position )
     }
 
     /// private void java.awt.Choice.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
@@ -362,17 +362,60 @@ open class Choice: Component, ItemSelectable {
 
     /// private static native void java.awt.Choice.initIDs()
 
+    /// java.lang.String java.awt.Choice.constructComponentName()
+
     /// public javax.accessibility.AccessibleContext java.awt.Choice.getAccessibleContext()
+
+    /// public int java.awt.Choice.getItemCount()
+
+    private static var getItemCount_MethodID_8: jmethodID?
+
+    open func getItemCount() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getItemCount", methodSig: "()I", methodCache: &Choice.getItemCount_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int java.awt.Choice.countItems()
+
+    private static var countItems_MethodID_9: jmethodID?
+
+    open func countItems() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "countItems", methodSig: "()I", methodCache: &Choice.countItems_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// final java.lang.String java.awt.Choice.getItemImpl(int)
+
+    /// public void java.awt.Choice.addItem(java.lang.String)
+
+    private static var addItem_MethodID_10: jmethodID?
+
+    open func addItem( item: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: item, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItem", methodSig: "(Ljava/lang/String;)V", methodCache: &Choice.addItem_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func addItem( _ _item: String? ) {
+        addItem( item: _item )
+    }
 
     /// public synchronized void java.awt.Choice.addItemListener(java.awt.event.ItemListener)
 
-    private static var addItemListener_MethodID_8: jmethodID?
+    private static var addItemListener_MethodID_11: jmethodID?
 
     open func addItemListener( l: ItemListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &Choice.addItemListener_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &Choice.addItemListener_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func addItemListener( _ _l: ItemListener? ) {
@@ -381,25 +424,25 @@ open class Choice: Component, ItemSelectable {
 
     /// public synchronized java.lang.Object[] java.awt.Choice.getSelectedObjects()
 
-    private static var getSelectedObjects_MethodID_9: jmethodID?
+    private static var getSelectedObjects_MethodID_12: jmethodID?
 
     open func getSelectedObjects() -> [JavaObject]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedObjects", methodSig: "()[Ljava/lang/Object;", methodCache: &Choice.getSelectedObjects_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedObjects", methodSig: "()[Ljava/lang/Object;", methodCache: &Choice.getSelectedObjects_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [JavaObject](), from: __return )
     }
 
 
     /// public synchronized void java.awt.Choice.removeItemListener(java.awt.event.ItemListener)
 
-    private static var removeItemListener_MethodID_10: jmethodID?
+    private static var removeItemListener_MethodID_13: jmethodID?
 
     open func removeItemListener( l: ItemListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &Choice.removeItemListener_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &Choice.removeItemListener_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func removeItemListener( _ _l: ItemListener? ) {
@@ -408,25 +451,25 @@ open class Choice: Component, ItemSelectable {
 
     /// public synchronized java.awt.event.ItemListener[] java.awt.Choice.getItemListeners()
 
-    private static var getItemListeners_MethodID_11: jmethodID?
+    private static var getItemListeners_MethodID_14: jmethodID?
 
     open func getItemListeners() -> [ItemListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemListeners", methodSig: "()[Ljava/awt/event/ItemListener;", methodCache: &Choice.getItemListeners_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemListeners", methodSig: "()[Ljava/awt/event/ItemListener;", methodCache: &Choice.getItemListeners_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [ItemListenerForward](), from: __return )
     }
 
 
     /// protected void java.awt.Choice.processItemEvent(java.awt.event.ItemEvent)
 
-    private static var processItemEvent_MethodID_12: jmethodID?
+    private static var processItemEvent_MethodID_15: jmethodID?
 
     open func processItemEvent( e: ItemEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processItemEvent", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &Choice.processItemEvent_MethodID_12, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processItemEvent", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &Choice.processItemEvent_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func processItemEvent( _ _e: ItemEvent? ) {
@@ -439,37 +482,37 @@ open class Choice: Component, ItemSelectable {
 
     /// public synchronized java.lang.String java.awt.Choice.getSelectedItem()
 
-    private static var getSelectedItem_MethodID_13: jmethodID?
+    private static var getSelectedItem_MethodID_16: jmethodID?
 
     open func getSelectedItem() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedItem", methodSig: "()Ljava/lang/String;", methodCache: &Choice.getSelectedItem_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedItem", methodSig: "()Ljava/lang/String;", methodCache: &Choice.getSelectedItem_MethodID_16, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public int java.awt.Choice.getSelectedIndex()
 
-    private static var getSelectedIndex_MethodID_14: jmethodID?
+    private static var getSelectedIndex_MethodID_17: jmethodID?
 
     open func getSelectedIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectedIndex", methodSig: "()I", methodCache: &Choice.getSelectedIndex_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectedIndex", methodSig: "()I", methodCache: &Choice.getSelectedIndex_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public synchronized void java.awt.Choice.select(java.lang.String)
 
-    private static var select_MethodID_15: jmethodID?
+    private static var select_MethodID_18: jmethodID?
 
     open func select( str: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "select", methodSig: "(Ljava/lang/String;)V", methodCache: &Choice.select_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "select", methodSig: "(Ljava/lang/String;)V", methodCache: &Choice.select_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func select( _ _str: String? ) {
@@ -478,13 +521,13 @@ open class Choice: Component, ItemSelectable {
 
     /// public synchronized void java.awt.Choice.select(int)
 
-    private static var select_MethodID_16: jmethodID?
+    private static var select_MethodID_19: jmethodID?
 
     open func select( pos: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "select", methodSig: "(I)V", methodCache: &Choice.select_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "select", methodSig: "(I)V", methodCache: &Choice.select_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func select( _ _pos: Int ) {
@@ -493,59 +536,18 @@ open class Choice: Component, ItemSelectable {
 
     /// public java.lang.String java.awt.Choice.getItem(int)
 
-    private static var getItem_MethodID_17: jmethodID?
+    private static var getItem_MethodID_20: jmethodID?
 
     open func getItem( index: Int ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItem", methodSig: "(I)Ljava/lang/String;", methodCache: &Choice.getItem_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItem", methodSig: "(I)Ljava/lang/String;", methodCache: &Choice.getItem_MethodID_20, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
     open func getItem( _ _index: Int ) -> String! {
         return getItem( index: _index )
-    }
-
-    /// public int java.awt.Choice.getItemCount()
-
-    private static var getItemCount_MethodID_18: jmethodID?
-
-    open func getItemCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getItemCount", methodSig: "()I", methodCache: &Choice.getItemCount_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.Choice.countItems()
-
-    private static var countItems_MethodID_19: jmethodID?
-
-    open func countItems() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "countItems", methodSig: "()I", methodCache: &Choice.countItems_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// final java.lang.String java.awt.Choice.getItemImpl(int)
-
-    /// public void java.awt.Choice.addItem(java.lang.String)
-
-    private static var addItem_MethodID_20: jmethodID?
-
-    open func addItem( item: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: item, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItem", methodSig: "(Ljava/lang/String;)V", methodCache: &Choice.addItem_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func addItem( _ _item: String? ) {
-        addItem( item: _item )
     }
 
     /// public java.util.EventListener[] java.awt.Choice.getListeners(java.lang.Class)
@@ -555,7 +557,7 @@ open class Choice: Component, ItemSelectable {
     open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &Choice.getListeners_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [EventListenerForward](), from: __return )
     }
@@ -575,15 +577,13 @@ open class Choice: Component, ItemSelectable {
     open func processEvent( e: AWTEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Choice.processEvent_MethodID_22, args: &__args, locals: &__locals )
     }
 
     override open func processEvent( _ _e: AWTEvent? ) {
         processEvent( e: _e )
     }
-
-    /// java.lang.String java.awt.Choice.constructComponentName()
 
     /// In declared protocol but not defined.. ///
 

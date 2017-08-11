@@ -43,7 +43,7 @@ open class DragGestureEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &DragGestureEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -55,9 +55,9 @@ open class DragGestureEvent: java_util.EventObject {
     public convenience init( dgr: DragGestureRecognizer?, act: Int, ori: Point?, evs: java_util.List? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dgr != nil ? dgr! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dgr, locals: &__locals )
         __args[1] = JNIType.toJava( value: act, locals: &__locals )
-        __args[2] = JNIType.toJava( value: ori != nil ? ori! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: ori, locals: &__locals )
         __args[3] = JNIType.toJava( value: evs, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DragGestureEvent", classCache: &DragGestureEvent.DragGestureEventJNIClass, methodSig: "(Ljava/awt/dnd/DragGestureRecognizer;ILjava/awt/Point;Ljava/util/List;)V", methodCache: &DragGestureEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -113,27 +113,14 @@ open class DragGestureEvent: java_util.EventObject {
 
     /// private void java.awt.dnd.DragGestureEvent.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
-    /// public java.awt.Component java.awt.dnd.DragGestureEvent.getComponent()
-
-    private static var getComponent_MethodID_5: jmethodID?
-
-    open func getComponent() -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &DragGestureEvent.getComponent_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-
     /// public java.awt.dnd.DragGestureRecognizer java.awt.dnd.DragGestureEvent.getSourceAsDragGestureRecognizer()
 
-    private static var getSourceAsDragGestureRecognizer_MethodID_6: jmethodID?
+    private static var getSourceAsDragGestureRecognizer_MethodID_5: jmethodID?
 
     open func getSourceAsDragGestureRecognizer() -> DragGestureRecognizer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSourceAsDragGestureRecognizer", methodSig: "()Ljava/awt/dnd/DragGestureRecognizer;", methodCache: &DragGestureEvent.getSourceAsDragGestureRecognizer_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSourceAsDragGestureRecognizer", methodSig: "()Ljava/awt/dnd/DragGestureRecognizer;", methodCache: &DragGestureEvent.getSourceAsDragGestureRecognizer_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DragGestureRecognizer( javaObject: __return ) : nil
     }
@@ -141,12 +128,12 @@ open class DragGestureEvent: java_util.EventObject {
 
     /// public java.awt.dnd.DragSource java.awt.dnd.DragGestureEvent.getDragSource()
 
-    private static var getDragSource_MethodID_7: jmethodID?
+    private static var getDragSource_MethodID_6: jmethodID?
 
     open func getDragSource() -> DragSource! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDragSource", methodSig: "()Ljava/awt/dnd/DragSource;", methodCache: &DragGestureEvent.getDragSource_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDragSource", methodSig: "()Ljava/awt/dnd/DragSource;", methodCache: &DragGestureEvent.getDragSource_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DragSource( javaObject: __return ) : nil
     }
@@ -154,12 +141,12 @@ open class DragGestureEvent: java_util.EventObject {
 
     /// public java.awt.Point java.awt.dnd.DragGestureEvent.getDragOrigin()
 
-    private static var getDragOrigin_MethodID_8: jmethodID?
+    private static var getDragOrigin_MethodID_7: jmethodID?
 
     open func getDragOrigin() -> Point! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDragOrigin", methodSig: "()Ljava/awt/Point;", methodCache: &DragGestureEvent.getDragOrigin_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDragOrigin", methodSig: "()Ljava/awt/Point;", methodCache: &DragGestureEvent.getDragOrigin_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point( javaObject: __return ) : nil
     }
@@ -167,24 +154,24 @@ open class DragGestureEvent: java_util.EventObject {
 
     /// public int java.awt.dnd.DragGestureEvent.getDragAction()
 
-    private static var getDragAction_MethodID_9: jmethodID?
+    private static var getDragAction_MethodID_8: jmethodID?
 
     open func getDragAction() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDragAction", methodSig: "()I", methodCache: &DragGestureEvent.getDragAction_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDragAction", methodSig: "()I", methodCache: &DragGestureEvent.getDragAction_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public java.awt.event.InputEvent java.awt.dnd.DragGestureEvent.getTriggerEvent()
 
-    private static var getTriggerEvent_MethodID_10: jmethodID?
+    private static var getTriggerEvent_MethodID_9: jmethodID?
 
     open func getTriggerEvent() -> InputEvent! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTriggerEvent", methodSig: "()Ljava/awt/event/InputEvent;", methodCache: &DragGestureEvent.getTriggerEvent_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTriggerEvent", methodSig: "()Ljava/awt/event/InputEvent;", methodCache: &DragGestureEvent.getTriggerEvent_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? InputEvent( javaObject: __return ) : nil
     }
@@ -192,15 +179,15 @@ open class DragGestureEvent: java_util.EventObject {
 
     /// public void java.awt.dnd.DragGestureEvent.startDrag(java.awt.Cursor,java.awt.datatransfer.Transferable,java.awt.dnd.DragSourceListener) throws java.awt.dnd.InvalidDnDOperationException
 
-    private static var startDrag_MethodID_11: jmethodID?
+    private static var startDrag_MethodID_10: jmethodID?
 
     open func startDrag( dragCursor: Cursor?, transferable: Transferable?, dsl: DragSourceListener? ) throws /* java.awt.dnd.InvalidDnDOperationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dragCursor != nil ? dragCursor! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dragCursor, locals: &__locals )
         __args[1] = JNIType.toJava( value: transferable, locals: &__locals )
         __args[2] = JNIType.toJava( value: dsl, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startDrag", methodSig: "(Ljava/awt/Cursor;Ljava/awt/datatransfer/Transferable;Ljava/awt/dnd/DragSourceListener;)V", methodCache: &DragGestureEvent.startDrag_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startDrag", methodSig: "(Ljava/awt/Cursor;Ljava/awt/datatransfer/Transferable;Ljava/awt/dnd/DragSourceListener;)V", methodCache: &DragGestureEvent.startDrag_MethodID_10, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw InvalidDnDOperationException( javaObject: throwable )
         }
@@ -210,6 +197,28 @@ open class DragGestureEvent: java_util.EventObject {
         try startDrag( dragCursor: _dragCursor, transferable: _transferable, dsl: _dsl )
     }
 
+    /// public void java.awt.dnd.DragGestureEvent.startDrag(java.awt.Cursor,java.awt.Image,java.awt.Point,java.awt.datatransfer.Transferable,java.awt.dnd.DragSourceListener) throws java.awt.dnd.InvalidDnDOperationException
+
+    private static var startDrag_MethodID_11: jmethodID?
+
+    open func startDrag( dragCursor: Cursor?, dragImage: Image?, imageOffset: Point?, transferable: Transferable?, dsl: DragSourceListener? ) throws /* java.awt.dnd.InvalidDnDOperationException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: dragCursor, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dragImage, locals: &__locals )
+        __args[2] = JNIType.toJava( value: imageOffset, locals: &__locals )
+        __args[3] = JNIType.toJava( value: transferable, locals: &__locals )
+        __args[4] = JNIType.toJava( value: dsl, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startDrag", methodSig: "(Ljava/awt/Cursor;Ljava/awt/Image;Ljava/awt/Point;Ljava/awt/datatransfer/Transferable;Ljava/awt/dnd/DragSourceListener;)V", methodCache: &DragGestureEvent.startDrag_MethodID_11, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw InvalidDnDOperationException( javaObject: throwable )
+        }
+    }
+
+    open func startDrag( _ _dragCursor: Cursor?, _ _dragImage: Image?, _ _imageOffset: Point?, _ _transferable: Transferable?, _ _dsl: DragSourceListener? ) throws /* java.awt.dnd.InvalidDnDOperationException */ {
+        try startDrag( dragCursor: _dragCursor, dragImage: _dragImage, imageOffset: _imageOffset, transferable: _transferable, dsl: _dsl )
+    }
+
     /// public void java.awt.dnd.DragGestureEvent.startDrag(java.awt.Cursor,java.awt.datatransfer.Transferable) throws java.awt.dnd.InvalidDnDOperationException
 
     private static var startDrag_MethodID_12: jmethodID?
@@ -217,7 +226,7 @@ open class DragGestureEvent: java_util.EventObject {
     open func startDrag( dragCursor: Cursor?, transferable: Transferable? ) throws /* java.awt.dnd.InvalidDnDOperationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dragCursor != nil ? dragCursor! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dragCursor, locals: &__locals )
         __args[1] = JNIType.toJava( value: transferable, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "startDrag", methodSig: "(Ljava/awt/Cursor;Ljava/awt/datatransfer/Transferable;)V", methodCache: &DragGestureEvent.startDrag_MethodID_12, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
@@ -229,27 +238,18 @@ open class DragGestureEvent: java_util.EventObject {
         try startDrag( dragCursor: _dragCursor, transferable: _transferable )
     }
 
-    /// public void java.awt.dnd.DragGestureEvent.startDrag(java.awt.Cursor,java.awt.Image,java.awt.Point,java.awt.datatransfer.Transferable,java.awt.dnd.DragSourceListener) throws java.awt.dnd.InvalidDnDOperationException
+    /// public java.awt.Component java.awt.dnd.DragGestureEvent.getComponent()
 
-    private static var startDrag_MethodID_13: jmethodID?
+    private static var getComponent_MethodID_13: jmethodID?
 
-    open func startDrag( dragCursor: Cursor?, dragImage: Image?, imageOffset: Point?, transferable: Transferable?, dsl: DragSourceListener? ) throws /* java.awt.dnd.InvalidDnDOperationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    open func getComponent() -> Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dragCursor != nil ? dragCursor! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dragImage != nil ? dragImage! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: imageOffset != nil ? imageOffset! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: transferable, locals: &__locals )
-        __args[4] = JNIType.toJava( value: dsl, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startDrag", methodSig: "(Ljava/awt/Cursor;Ljava/awt/Image;Ljava/awt/Point;Ljava/awt/datatransfer/Transferable;Ljava/awt/dnd/DragSourceListener;)V", methodCache: &DragGestureEvent.startDrag_MethodID_13, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw InvalidDnDOperationException( javaObject: throwable )
-        }
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &DragGestureEvent.getComponent_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component( javaObject: __return ) : nil
     }
 
-    open func startDrag( _ _dragCursor: Cursor?, _ _dragImage: Image?, _ _imageOffset: Point?, _ _transferable: Transferable?, _ _dsl: DragSourceListener? ) throws /* java.awt.dnd.InvalidDnDOperationException */ {
-        try startDrag( dragCursor: _dragCursor, dragImage: _dragImage, imageOffset: _imageOffset, transferable: _transferable, dsl: _dsl )
-    }
 
 }
 

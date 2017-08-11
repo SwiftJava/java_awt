@@ -139,7 +139,7 @@ open class ComponentColorModel: ColorModel {
     public convenience init( colorSpace: ColorSpace?, bits: [Int32]?, hasAlpha: Bool, isAlphaPremultiplied: Bool, transparency: Int, transferType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: colorSpace != nil ? colorSpace! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: colorSpace, locals: &__locals )
         __args[1] = JNIType.toJava( value: bits, locals: &__locals )
         __args[2] = JNIType.toJava( value: hasAlpha, locals: &__locals )
         __args[3] = JNIType.toJava( value: isAlphaPremultiplied, locals: &__locals )
@@ -161,7 +161,7 @@ open class ComponentColorModel: ColorModel {
     public convenience init( colorSpace: ColorSpace?, hasAlpha: Bool, isAlphaPremultiplied: Bool, transparency: Int, transferType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: colorSpace != nil ? colorSpace! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: colorSpace, locals: &__locals )
         __args[1] = JNIType.toJava( value: hasAlpha, locals: &__locals )
         __args[2] = JNIType.toJava( value: isAlphaPremultiplied, locals: &__locals )
         __args[3] = JNIType.toJava( value: transparency, locals: &__locals )
@@ -182,7 +182,7 @@ open class ComponentColorModel: ColorModel {
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &ComponentColorModel.equals_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -191,23 +191,22 @@ open class ComponentColorModel: ColorModel {
         return equals( obj: _obj )
     }
 
-    /// public java.lang.Object java.awt.image.ComponentColorModel.getDataElements(float[],int,java.lang.Object)
+    /// public java.awt.image.WritableRaster java.awt.image.ComponentColorModel.createCompatibleWritableRaster(int,int)
 
-    private static var getDataElements_MethodID_4: jmethodID?
+    private static var createCompatibleWritableRaster_MethodID_4: jmethodID?
 
-    open func getDataElements( normComponents: [Float]?, normOffset: Int, obj: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open func createCompatibleWritableRaster( w: Int, h: Int ) -> WritableRaster! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: normComponents, locals: &__locals )
-        __args[1] = JNIType.toJava( value: normOffset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "([FILjava/lang/Object;)Ljava/lang/Object;", methodCache: &ComponentColorModel.getDataElements_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: w, locals: &__locals )
+        __args[1] = JNIType.toJava( value: h, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "(II)Ljava/awt/image/WritableRaster;", methodCache: &ComponentColorModel.createCompatibleWritableRaster_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
 
-    override open func getDataElements( _ _normComponents: [Float]?, _ _normOffset: Int, _ _obj: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        return getDataElements( normComponents: _normComponents, normOffset: _normOffset, obj: _obj )
+    override open func createCompatibleWritableRaster( _ _w: Int, _ _h: Int ) -> WritableRaster! {
+        return createCompatibleWritableRaster( w: _w, h: _h )
     }
 
     /// public java.lang.Object java.awt.image.ComponentColorModel.getDataElements(int[],int,java.lang.Object)
@@ -219,7 +218,7 @@ open class ComponentColorModel: ColorModel {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: components, locals: &__locals )
         __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "([IILjava/lang/Object;)Ljava/lang/Object;", methodCache: &ComponentColorModel.getDataElements_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
@@ -237,7 +236,7 @@ open class ComponentColorModel: ColorModel {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: rgb, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pixel != nil ? pixel! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: pixel, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "(ILjava/lang/Object;)Ljava/lang/Object;", methodCache: &ComponentColorModel.getDataElements_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
@@ -247,9 +246,28 @@ open class ComponentColorModel: ColorModel {
         return getDataElements( rgb: _rgb, pixel: _pixel )
     }
 
+    /// public java.lang.Object java.awt.image.ComponentColorModel.getDataElements(float[],int,java.lang.Object)
+
+    private static var getDataElements_MethodID_7: jmethodID?
+
+    open func getDataElements( normComponents: [Float]?, normOffset: Int, obj: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: normComponents, locals: &__locals )
+        __args[1] = JNIType.toJava( value: normOffset, locals: &__locals )
+        __args[2] = JNIType.toJava( value: obj, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "([FILjava/lang/Object;)Ljava/lang/Object;", methodCache: &ComponentColorModel.getDataElements_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    override open func getDataElements( _ _normComponents: [Float]?, _ _normOffset: Int, _ _obj: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        return getDataElements( normComponents: _normComponents, normOffset: _normOffset, obj: _obj )
+    }
+
     /// public int[] java.awt.image.ComponentColorModel.getUnnormalizedComponents(float[],int,int[],int)
 
-    private static var getUnnormalizedComponents_MethodID_7: jmethodID?
+    private static var getUnnormalizedComponents_MethodID_8: jmethodID?
 
     open func getUnnormalizedComponents( normComponents: [Float]?, normOffset: Int, components: [Int32]?, offset: Int ) -> [Int32]! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -258,31 +276,12 @@ open class ComponentColorModel: ColorModel {
         __args[1] = JNIType.toJava( value: normOffset, locals: &__locals )
         __args[2] = JNIType.toJava( value: components, locals: &__locals )
         __args[3] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUnnormalizedComponents", methodSig: "([FI[II)[I", methodCache: &ComponentColorModel.getUnnormalizedComponents_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUnnormalizedComponents", methodSig: "([FI[II)[I", methodCache: &ComponentColorModel.getUnnormalizedComponents_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Int32](), from: __return )
     }
 
     override open func getUnnormalizedComponents( _ _normComponents: [Float]?, _ _normOffset: Int, _ _components: [Int32]?, _ _offset: Int ) -> [Int32]! {
         return getUnnormalizedComponents( normComponents: _normComponents, normOffset: _normOffset, components: _components, offset: _offset )
-    }
-
-    /// public float[] java.awt.image.ComponentColorModel.getNormalizedComponents(int[],int,float[],int)
-
-    private static var getNormalizedComponents_MethodID_8: jmethodID?
-
-    open func getNormalizedComponents( components: [Int32]?, offset: Int, normComponents: [Float]?, normOffset: Int ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: components, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: normComponents, locals: &__locals )
-        __args[3] = JNIType.toJava( value: normOffset, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNormalizedComponents", methodSig: "([II[FI)[F", methodCache: &ComponentColorModel.getNormalizedComponents_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
-    }
-
-    override open func getNormalizedComponents( _ _components: [Int32]?, _ _offset: Int, _ _normComponents: [Float]?, _ _normOffset: Int ) -> [Float]! {
-        return getNormalizedComponents( components: _components, offset: _offset, normComponents: _normComponents, normOffset: _normOffset )
     }
 
     /// public float[] java.awt.image.ComponentColorModel.getNormalizedComponents(java.lang.Object,float[],int)
@@ -292,7 +291,7 @@ open class ComponentColorModel: ColorModel {
     open func getNormalizedComponents( pixel: java_swift.JavaObject?, normComponents: [Float]?, normOffset: Int ) -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pixel != nil ? pixel! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
         __args[1] = JNIType.toJava( value: normComponents, locals: &__locals )
         __args[2] = JNIType.toJava( value: normOffset, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNormalizedComponents", methodSig: "(Ljava/lang/Object;[FI)[F", methodCache: &ComponentColorModel.getNormalizedComponents_MethodID_9, args: &__args, locals: &__locals )
@@ -303,16 +302,35 @@ open class ComponentColorModel: ColorModel {
         return getNormalizedComponents( pixel: _pixel, normComponents: _normComponents, normOffset: _normOffset )
     }
 
+    /// public float[] java.awt.image.ComponentColorModel.getNormalizedComponents(int[],int,float[],int)
+
+    private static var getNormalizedComponents_MethodID_10: jmethodID?
+
+    open func getNormalizedComponents( components: [Int32]?, offset: Int, normComponents: [Float]?, normOffset: Int ) -> [Float]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: components, locals: &__locals )
+        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[2] = JNIType.toJava( value: normComponents, locals: &__locals )
+        __args[3] = JNIType.toJava( value: normOffset, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNormalizedComponents", methodSig: "([II[FI)[F", methodCache: &ComponentColorModel.getNormalizedComponents_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float](), from: __return )
+    }
+
+    override open func getNormalizedComponents( _ _components: [Int32]?, _ _offset: Int, _ _normComponents: [Float]?, _ _normOffset: Int ) -> [Float]! {
+        return getNormalizedComponents( components: _components, offset: _offset, normComponents: _normComponents, normOffset: _normOffset )
+    }
+
     /// public int java.awt.image.ComponentColorModel.getDataElement(int[],int)
 
-    private static var getDataElement_MethodID_10: jmethodID?
+    private static var getDataElement_MethodID_11: jmethodID?
 
     open func getDataElement( components: [Int32]?, offset: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: components, locals: &__locals )
         __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataElement", methodSig: "([II)I", methodCache: &ComponentColorModel.getDataElement_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataElement", methodSig: "([II)I", methodCache: &ComponentColorModel.getDataElement_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -322,14 +340,14 @@ open class ComponentColorModel: ColorModel {
 
     /// public int java.awt.image.ComponentColorModel.getDataElement(float[],int)
 
-    private static var getDataElement_MethodID_11: jmethodID?
+    private static var getDataElement_MethodID_12: jmethodID?
 
     open func getDataElement( normComponents: [Float]?, normOffset: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: normComponents, locals: &__locals )
         __args[1] = JNIType.toJava( value: normOffset, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataElement", methodSig: "([FI)I", methodCache: &ComponentColorModel.getDataElement_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataElement", methodSig: "([FI)I", methodCache: &ComponentColorModel.getDataElement_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -339,14 +357,14 @@ open class ComponentColorModel: ColorModel {
 
     /// public java.awt.image.ColorModel java.awt.image.ComponentColorModel.coerceData(java.awt.image.WritableRaster,boolean)
 
-    private static var coerceData_MethodID_12: jmethodID?
+    private static var coerceData_MethodID_13: jmethodID?
 
     open func coerceData( raster: WritableRaster?, isAlphaPremultiplied: Bool ) -> ColorModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: raster != nil ? raster! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: raster, locals: &__locals )
         __args[1] = JNIType.toJava( value: isAlphaPremultiplied, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "coerceData", methodSig: "(Ljava/awt/image/WritableRaster;Z)Ljava/awt/image/ColorModel;", methodCache: &ComponentColorModel.coerceData_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "coerceData", methodSig: "(Ljava/awt/image/WritableRaster;Z)Ljava/awt/image/ColorModel;", methodCache: &ComponentColorModel.coerceData_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ColorModel( javaObject: __return ) : nil
     }
@@ -357,13 +375,13 @@ open class ComponentColorModel: ColorModel {
 
     /// public boolean java.awt.image.ComponentColorModel.isCompatibleRaster(java.awt.image.Raster)
 
-    private static var isCompatibleRaster_MethodID_13: jmethodID?
+    private static var isCompatibleRaster_MethodID_14: jmethodID?
 
     open func isCompatibleRaster( raster: Raster? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: raster != nil ? raster! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompatibleRaster", methodSig: "(Ljava/awt/image/Raster;)Z", methodCache: &ComponentColorModel.isCompatibleRaster_MethodID_13, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: raster, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompatibleRaster", methodSig: "(Ljava/awt/image/Raster;)Z", methodCache: &ComponentColorModel.isCompatibleRaster_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -373,14 +391,14 @@ open class ComponentColorModel: ColorModel {
 
     /// public java.awt.image.SampleModel java.awt.image.ComponentColorModel.createCompatibleSampleModel(int,int)
 
-    private static var createCompatibleSampleModel_MethodID_14: jmethodID?
+    private static var createCompatibleSampleModel_MethodID_15: jmethodID?
 
     open func createCompatibleSampleModel( w: Int, h: Int ) -> SampleModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: w, locals: &__locals )
         __args[1] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleSampleModel", methodSig: "(II)Ljava/awt/image/SampleModel;", methodCache: &ComponentColorModel.createCompatibleSampleModel_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleSampleModel", methodSig: "(II)Ljava/awt/image/SampleModel;", methodCache: &ComponentColorModel.createCompatibleSampleModel_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SampleModel( javaObject: __return ) : nil
     }
@@ -391,13 +409,13 @@ open class ComponentColorModel: ColorModel {
 
     /// public boolean java.awt.image.ComponentColorModel.isCompatibleSampleModel(java.awt.image.SampleModel)
 
-    private static var isCompatibleSampleModel_MethodID_15: jmethodID?
+    private static var isCompatibleSampleModel_MethodID_16: jmethodID?
 
     open func isCompatibleSampleModel( sm: SampleModel? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sm != nil ? sm! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompatibleSampleModel", methodSig: "(Ljava/awt/image/SampleModel;)Z", methodCache: &ComponentColorModel.isCompatibleSampleModel_MethodID_15, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sm, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompatibleSampleModel", methodSig: "(Ljava/awt/image/SampleModel;)Z", methodCache: &ComponentColorModel.isCompatibleSampleModel_MethodID_16, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -407,13 +425,13 @@ open class ComponentColorModel: ColorModel {
 
     /// public java.awt.image.WritableRaster java.awt.image.ComponentColorModel.getAlphaRaster(java.awt.image.WritableRaster)
 
-    private static var getAlphaRaster_MethodID_16: jmethodID?
+    private static var getAlphaRaster_MethodID_17: jmethodID?
 
     open func getAlphaRaster( raster: WritableRaster? ) -> WritableRaster! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: raster != nil ? raster! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAlphaRaster", methodSig: "(Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &ComponentColorModel.getAlphaRaster_MethodID_16, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: raster, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAlphaRaster", methodSig: "(Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &ComponentColorModel.getAlphaRaster_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -424,13 +442,13 @@ open class ComponentColorModel: ColorModel {
 
     /// public int java.awt.image.ComponentColorModel.getRed(int)
 
-    private static var getRed_MethodID_17: jmethodID?
+    private static var getRed_MethodID_18: jmethodID?
 
     open func getRed( pixel: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRed", methodSig: "(I)I", methodCache: &ComponentColorModel.getRed_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRed", methodSig: "(I)I", methodCache: &ComponentColorModel.getRed_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -440,13 +458,13 @@ open class ComponentColorModel: ColorModel {
 
     /// public int java.awt.image.ComponentColorModel.getRed(java.lang.Object)
 
-    private static var getRed_MethodID_18: jmethodID?
+    private static var getRed_MethodID_19: jmethodID?
 
     open func getRed( inData: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRed", methodSig: "(Ljava/lang/Object;)I", methodCache: &ComponentColorModel.getRed_MethodID_18, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: inData, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRed", methodSig: "(Ljava/lang/Object;)I", methodCache: &ComponentColorModel.getRed_MethodID_19, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -456,13 +474,13 @@ open class ComponentColorModel: ColorModel {
 
     /// public int java.awt.image.ComponentColorModel.getGreen(java.lang.Object)
 
-    private static var getGreen_MethodID_19: jmethodID?
+    private static var getGreen_MethodID_20: jmethodID?
 
     open func getGreen( inData: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreen", methodSig: "(Ljava/lang/Object;)I", methodCache: &ComponentColorModel.getGreen_MethodID_19, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: inData, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreen", methodSig: "(Ljava/lang/Object;)I", methodCache: &ComponentColorModel.getGreen_MethodID_20, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -472,13 +490,13 @@ open class ComponentColorModel: ColorModel {
 
     /// public int java.awt.image.ComponentColorModel.getGreen(int)
 
-    private static var getGreen_MethodID_20: jmethodID?
+    private static var getGreen_MethodID_21: jmethodID?
 
     open func getGreen( pixel: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreen", methodSig: "(I)I", methodCache: &ComponentColorModel.getGreen_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreen", methodSig: "(I)I", methodCache: &ComponentColorModel.getGreen_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -488,13 +506,13 @@ open class ComponentColorModel: ColorModel {
 
     /// public int java.awt.image.ComponentColorModel.getBlue(int)
 
-    private static var getBlue_MethodID_21: jmethodID?
+    private static var getBlue_MethodID_22: jmethodID?
 
     open func getBlue( pixel: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlue", methodSig: "(I)I", methodCache: &ComponentColorModel.getBlue_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlue", methodSig: "(I)I", methodCache: &ComponentColorModel.getBlue_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -504,34 +522,18 @@ open class ComponentColorModel: ColorModel {
 
     /// public int java.awt.image.ComponentColorModel.getBlue(java.lang.Object)
 
-    private static var getBlue_MethodID_22: jmethodID?
+    private static var getBlue_MethodID_23: jmethodID?
 
     open func getBlue( inData: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlue", methodSig: "(Ljava/lang/Object;)I", methodCache: &ComponentColorModel.getBlue_MethodID_22, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: inData, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlue", methodSig: "(Ljava/lang/Object;)I", methodCache: &ComponentColorModel.getBlue_MethodID_23, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
     override open func getBlue( _ _inData: java_swift.JavaObject? ) -> Int {
         return getBlue( inData: _inData )
-    }
-
-    /// public int java.awt.image.ComponentColorModel.getAlpha(java.lang.Object)
-
-    private static var getAlpha_MethodID_23: jmethodID?
-
-    open func getAlpha( inData: java_swift.JavaObject? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlpha", methodSig: "(Ljava/lang/Object;)I", methodCache: &ComponentColorModel.getAlpha_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getAlpha( _ _inData: java_swift.JavaObject? ) -> Int {
-        return getAlpha( inData: _inData )
     }
 
     /// public int java.awt.image.ComponentColorModel.getAlpha(int)
@@ -550,20 +552,20 @@ open class ComponentColorModel: ColorModel {
         return getAlpha( pixel: _pixel )
     }
 
-    /// public int java.awt.image.ComponentColorModel.getRGB(java.lang.Object)
+    /// public int java.awt.image.ComponentColorModel.getAlpha(java.lang.Object)
 
-    private static var getRGB_MethodID_25: jmethodID?
+    private static var getAlpha_MethodID_25: jmethodID?
 
-    open func getRGB( inData: java_swift.JavaObject? ) -> Int {
+    open func getAlpha( inData: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGB", methodSig: "(Ljava/lang/Object;)I", methodCache: &ComponentColorModel.getRGB_MethodID_25, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: inData, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlpha", methodSig: "(Ljava/lang/Object;)I", methodCache: &ComponentColorModel.getAlpha_MethodID_25, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
-    override open func getRGB( _ _inData: java_swift.JavaObject? ) -> Int {
-        return getRGB( inData: _inData )
+    override open func getAlpha( _ _inData: java_swift.JavaObject? ) -> Int {
+        return getAlpha( inData: _inData )
     }
 
     /// public int java.awt.image.ComponentColorModel.getRGB(int)
@@ -582,37 +584,21 @@ open class ComponentColorModel: ColorModel {
         return getRGB( pixel: _pixel )
     }
 
-    /// public java.awt.image.WritableRaster java.awt.image.ComponentColorModel.createCompatibleWritableRaster(int,int)
+    /// public int java.awt.image.ComponentColorModel.getRGB(java.lang.Object)
 
-    private static var createCompatibleWritableRaster_MethodID_27: jmethodID?
+    private static var getRGB_MethodID_27: jmethodID?
 
-    open func createCompatibleWritableRaster( w: Int, h: Int ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getRGB( inData: java_swift.JavaObject? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "(II)Ljava/awt/image/WritableRaster;", methodCache: &ComponentColorModel.createCompatibleWritableRaster_MethodID_27, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: inData, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGB", methodSig: "(Ljava/lang/Object;)I", methodCache: &ComponentColorModel.getRGB_MethodID_27, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
-    override open func createCompatibleWritableRaster( _ _w: Int, _ _h: Int ) -> WritableRaster! {
-        return createCompatibleWritableRaster( w: _w, h: _h )
+    override open func getRGB( _ _inData: java_swift.JavaObject? ) -> Int {
+        return getRGB( inData: _inData )
     }
-
-    /// private static int java.awt.image.ComponentColorModel.bitsHelper(int,java.awt.color.ColorSpace,boolean)
-
-    /// private static int[] java.awt.image.ComponentColorModel.bitsArrayHelper(int[],int,java.awt.color.ColorSpace,boolean)
-
-    /// private void java.awt.image.ComponentColorModel.setupLUTs()
-
-    /// private void java.awt.image.ComponentColorModel.initScale()
-
-    /// private int java.awt.image.ComponentColorModel.getRGBComponent(java.lang.Object,int)
-
-    /// private int java.awt.image.ComponentColorModel.getRGBComponent(int,int)
-
-    /// private int java.awt.image.ComponentColorModel.extractComponent(java.lang.Object,int,int)
 
     /// public int[] java.awt.image.ComponentColorModel.getComponents(int,int[],int)
 
@@ -639,7 +625,7 @@ open class ComponentColorModel: ColorModel {
     open func getComponents( pixel: java_swift.JavaObject?, components: [Int32]?, offset: Int ) -> [Int32]! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pixel != nil ? pixel! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
         __args[1] = JNIType.toJava( value: components, locals: &__locals )
         __args[2] = JNIType.toJava( value: offset, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponents", methodSig: "(Ljava/lang/Object;[II)[I", methodCache: &ComponentColorModel.getComponents_MethodID_29, args: &__args, locals: &__locals )
@@ -649,6 +635,20 @@ open class ComponentColorModel: ColorModel {
     override open func getComponents( _ _pixel: java_swift.JavaObject?, _ _components: [Int32]?, _ _offset: Int ) -> [Int32]! {
         return getComponents( pixel: _pixel, components: _components, offset: _offset )
     }
+
+    /// private static int java.awt.image.ComponentColorModel.bitsHelper(int,java.awt.color.ColorSpace,boolean)
+
+    /// private static int[] java.awt.image.ComponentColorModel.bitsArrayHelper(int[],int,java.awt.color.ColorSpace,boolean)
+
+    /// private void java.awt.image.ComponentColorModel.setupLUTs()
+
+    /// private void java.awt.image.ComponentColorModel.initScale()
+
+    /// private int java.awt.image.ComponentColorModel.getRGBComponent(java.lang.Object,int)
+
+    /// private int java.awt.image.ComponentColorModel.getRGBComponent(int,int)
+
+    /// private int java.awt.image.ComponentColorModel.extractComponent(java.lang.Object,int,int)
 
 }
 

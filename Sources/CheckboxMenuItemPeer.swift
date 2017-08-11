@@ -33,34 +33,34 @@ open class CheckboxMenuItemPeerForward: MenuItemPeerForward, CheckboxMenuItemPee
         setState( state: _state )
     }
 
-    /// public abstract void java.awt.peer.MenuItemPeer.setLabel(java.lang.String)
-
-    private static var setLabel_MethodID_3: jmethodID?
-
-    override open func setLabel( label: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &CheckboxMenuItemPeerForward.setLabel_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    override open func setLabel( _ _label: String? ) {
-        setLabel( label: _label )
-    }
-
     /// public abstract void java.awt.peer.MenuItemPeer.setEnabled(boolean)
 
-    private static var setEnabled_MethodID_4: jmethodID?
+    private static var setEnabled_MethodID_3: jmethodID?
 
     override open func setEnabled( e: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &CheckboxMenuItemPeerForward.setEnabled_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &CheckboxMenuItemPeerForward.setEnabled_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func setEnabled( _ _e: Bool ) {
         setEnabled( e: _e )
+    }
+
+    /// public abstract void java.awt.peer.MenuItemPeer.setLabel(java.lang.String)
+
+    private static var setLabel_MethodID_4: jmethodID?
+
+    override open func setLabel( label: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: label, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &CheckboxMenuItemPeerForward.setLabel_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    override open func setLabel( _ _label: String? ) {
+        setLabel( label: _label )
     }
 
     /// public abstract void java.awt.peer.MenuComponentPeer.setFont(java.awt.Font)
@@ -70,7 +70,7 @@ open class CheckboxMenuItemPeerForward: MenuItemPeerForward, CheckboxMenuItemPee
     override open func setFont( f: Font? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &CheckboxMenuItemPeerForward.setFont_MethodID_5, args: &__args, locals: &__locals )
     }
 

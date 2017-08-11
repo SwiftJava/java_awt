@@ -256,7 +256,7 @@ open class TextComponent: Component {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &TextComponent.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -297,27 +297,46 @@ open class TextComponent: Component {
     }
 
 
+    /// public void java.awt.TextComponent.enableInputMethods(boolean)
+
+    private static var enableInputMethods_MethodID_2: jmethodID?
+
+    open func enableInputMethods( enable: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: enable, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableInputMethods", methodSig: "(Z)V", methodCache: &TextComponent.enableInputMethods_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    override open func enableInputMethods( _ _enable: Bool ) {
+        enableInputMethods( enable: _enable )
+    }
+
+    /// boolean java.awt.TextComponent.areInputMethodsEnabled()
+
+    /// public java.awt.im.InputMethodRequests java.awt.TextComponent.getInputMethodRequests()
+
     /// public synchronized java.lang.String java.awt.TextComponent.getText()
 
-    private static var getText_MethodID_2: jmethodID?
+    private static var getText_MethodID_3: jmethodID?
 
     open func getText() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &TextComponent.getText_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &TextComponent.getText_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public synchronized void java.awt.TextComponent.setText(java.lang.String)
 
-    private static var setText_MethodID_3: jmethodID?
+    private static var setText_MethodID_4: jmethodID?
 
     open func setText( t: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: t, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &TextComponent.setText_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &TextComponent.setText_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setText( _ _t: String? ) {
@@ -326,13 +345,13 @@ open class TextComponent: Component {
 
     /// public void java.awt.TextComponent.setBackground(java.awt.Color)
 
-    private static var setBackground_MethodID_4: jmethodID?
+    private static var setBackground_MethodID_5: jmethodID?
 
     open func setBackground( c: Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &TextComponent.setBackground_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &TextComponent.setBackground_MethodID_5, args: &__args, locals: &__locals )
     }
 
     override open func setBackground( _ _c: Color? ) {
@@ -345,221 +364,41 @@ open class TextComponent: Component {
 
     /// public synchronized java.lang.String java.awt.TextComponent.getSelectedText()
 
-    private static var getSelectedText_MethodID_5: jmethodID?
+    private static var getSelectedText_MethodID_6: jmethodID?
 
     open func getSelectedText() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedText", methodSig: "()Ljava/lang/String;", methodCache: &TextComponent.getSelectedText_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedText", methodSig: "()Ljava/lang/String;", methodCache: &TextComponent.getSelectedText_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public synchronized void java.awt.TextComponent.select(int,int)
 
-    private static var select_MethodID_6: jmethodID?
+    private static var select_MethodID_7: jmethodID?
 
     open func select( selectionStart: Int, selectionEnd: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: selectionStart, locals: &__locals )
         __args[1] = JNIType.toJava( value: selectionEnd, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "select", methodSig: "(II)V", methodCache: &TextComponent.select_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "select", methodSig: "(II)V", methodCache: &TextComponent.select_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func select( _ _selectionStart: Int, _ _selectionEnd: Int ) {
         select( selectionStart: _selectionStart, selectionEnd: _selectionEnd )
     }
 
-    /// public synchronized int java.awt.TextComponent.getCaretPosition()
-
-    private static var getCaretPosition_MethodID_7: jmethodID?
-
-    open func getCaretPosition() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCaretPosition", methodSig: "()I", methodCache: &TextComponent.getCaretPosition_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public synchronized int java.awt.TextComponent.getSelectionStart()
-
-    private static var getSelectionStart_MethodID_8: jmethodID?
-
-    open func getSelectionStart() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionStart", methodSig: "()I", methodCache: &TextComponent.getSelectionStart_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public synchronized int java.awt.TextComponent.getSelectionEnd()
-
-    private static var getSelectionEnd_MethodID_9: jmethodID?
-
-    open func getSelectionEnd() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionEnd", methodSig: "()I", methodCache: &TextComponent.getSelectionEnd_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public synchronized void java.awt.TextComponent.addTextListener(java.awt.event.TextListener)
-
-    private static var addTextListener_MethodID_10: jmethodID?
-
-    open func addTextListener( l: TextListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTextListener", methodSig: "(Ljava/awt/event/TextListener;)V", methodCache: &TextComponent.addTextListener_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func addTextListener( _ _l: TextListener? ) {
-        addTextListener( l: _l )
-    }
-
-    /// public boolean java.awt.TextComponent.isEditable()
-
-    private static var isEditable_MethodID_11: jmethodID?
-
-    open func isEditable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditable", methodSig: "()Z", methodCache: &TextComponent.isEditable_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// private void java.awt.TextComponent.enableInputMethodsIfNecessary()
-
-    /// public synchronized void java.awt.TextComponent.setEditable(boolean)
-
-    private static var setEditable_MethodID_12: jmethodID?
-
-    open func setEditable( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditable", methodSig: "(Z)V", methodCache: &TextComponent.setEditable_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func setEditable( _ _b: Bool ) {
-        setEditable( b: _b )
-    }
-
-    /// public synchronized void java.awt.TextComponent.setSelectionStart(int)
-
-    private static var setSelectionStart_MethodID_13: jmethodID?
-
-    open func setSelectionStart( selectionStart: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: selectionStart, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionStart", methodSig: "(I)V", methodCache: &TextComponent.setSelectionStart_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectionStart( _ _selectionStart: Int ) {
-        setSelectionStart( selectionStart: _selectionStart )
-    }
-
-    /// public synchronized void java.awt.TextComponent.setSelectionEnd(int)
-
-    private static var setSelectionEnd_MethodID_14: jmethodID?
-
-    open func setSelectionEnd( selectionEnd: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: selectionEnd, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionEnd", methodSig: "(I)V", methodCache: &TextComponent.setSelectionEnd_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectionEnd( _ _selectionEnd: Int ) {
-        setSelectionEnd( selectionEnd: _selectionEnd )
-    }
-
-    /// public synchronized void java.awt.TextComponent.selectAll()
-
-    private static var selectAll_MethodID_15: jmethodID?
-
-    open func selectAll() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectAll", methodSig: "()V", methodCache: &TextComponent.selectAll_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-
-    /// public synchronized void java.awt.TextComponent.setCaretPosition(int)
-
-    private static var setCaretPosition_MethodID_16: jmethodID?
-
-    open func setCaretPosition( position: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: position, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCaretPosition", methodSig: "(I)V", methodCache: &TextComponent.setCaretPosition_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setCaretPosition( _ _position: Int ) {
-        setCaretPosition( position: _position )
-    }
-
-    /// public synchronized void java.awt.TextComponent.removeTextListener(java.awt.event.TextListener)
-
-    private static var removeTextListener_MethodID_17: jmethodID?
-
-    open func removeTextListener( l: TextListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeTextListener", methodSig: "(Ljava/awt/event/TextListener;)V", methodCache: &TextComponent.removeTextListener_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func removeTextListener( _ _l: TextListener? ) {
-        removeTextListener( l: _l )
-    }
-
-    /// public synchronized java.awt.event.TextListener[] java.awt.TextComponent.getTextListeners()
-
-    private static var getTextListeners_MethodID_18: jmethodID?
-
-    open func getTextListeners() -> [TextListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextListeners", methodSig: "()[Ljava/awt/event/TextListener;", methodCache: &TextComponent.getTextListeners_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [TextListenerForward](), from: __return )
-    }
-
-
-    /// protected void java.awt.TextComponent.processTextEvent(java.awt.event.TextEvent)
-
-    private static var processTextEvent_MethodID_19: jmethodID?
-
-    open func processTextEvent( e: TextEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processTextEvent", methodSig: "(Ljava/awt/event/TextEvent;)V", methodCache: &TextComponent.processTextEvent_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func processTextEvent( _ _e: TextEvent? ) {
-        processTextEvent( e: _e )
-    }
-
-    /// private boolean java.awt.TextComponent.canAccessClipboard()
-
     /// public java.util.EventListener[] java.awt.TextComponent.getListeners(java.lang.Class)
 
-    private static var getListeners_MethodID_20: jmethodID?
+    private static var getListeners_MethodID_8: jmethodID?
 
     open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &TextComponent.getListeners_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &TextComponent.getListeners_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [EventListenerForward](), from: __return )
     }
 
@@ -575,37 +414,198 @@ open class TextComponent: Component {
 
     /// protected void java.awt.TextComponent.processEvent(java.awt.AWTEvent)
 
-    private static var processEvent_MethodID_21: jmethodID?
+    private static var processEvent_MethodID_9: jmethodID?
 
     open func processEvent( e: AWTEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &TextComponent.processEvent_MethodID_21, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &TextComponent.processEvent_MethodID_9, args: &__args, locals: &__locals )
     }
 
     override open func processEvent( _ _e: AWTEvent? ) {
         processEvent( e: _e )
     }
 
-    /// public void java.awt.TextComponent.enableInputMethods(boolean)
+    /// public synchronized int java.awt.TextComponent.getCaretPosition()
 
-    private static var enableInputMethods_MethodID_22: jmethodID?
+    private static var getCaretPosition_MethodID_10: jmethodID?
 
-    open func enableInputMethods( enable: Bool ) {
+    open func getCaretPosition() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: enable, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableInputMethods", methodSig: "(Z)V", methodCache: &TextComponent.enableInputMethods_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCaretPosition", methodSig: "()I", methodCache: &TextComponent.getCaretPosition_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
-    override open func enableInputMethods( _ _enable: Bool ) {
-        enableInputMethods( enable: _enable )
+
+    /// public synchronized int java.awt.TextComponent.getSelectionStart()
+
+    private static var getSelectionStart_MethodID_11: jmethodID?
+
+    open func getSelectionStart() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionStart", methodSig: "()I", methodCache: &TextComponent.getSelectionStart_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
-    /// boolean java.awt.TextComponent.areInputMethodsEnabled()
 
-    /// public java.awt.im.InputMethodRequests java.awt.TextComponent.getInputMethodRequests()
+    /// public synchronized int java.awt.TextComponent.getSelectionEnd()
+
+    private static var getSelectionEnd_MethodID_12: jmethodID?
+
+    open func getSelectionEnd() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionEnd", methodSig: "()I", methodCache: &TextComponent.getSelectionEnd_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public synchronized void java.awt.TextComponent.addTextListener(java.awt.event.TextListener)
+
+    private static var addTextListener_MethodID_13: jmethodID?
+
+    open func addTextListener( l: TextListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTextListener", methodSig: "(Ljava/awt/event/TextListener;)V", methodCache: &TextComponent.addTextListener_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func addTextListener( _ _l: TextListener? ) {
+        addTextListener( l: _l )
+    }
+
+    /// public boolean java.awt.TextComponent.isEditable()
+
+    private static var isEditable_MethodID_14: jmethodID?
+
+    open func isEditable() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditable", methodSig: "()Z", methodCache: &TextComponent.isEditable_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// private void java.awt.TextComponent.enableInputMethodsIfNecessary()
+
+    /// public synchronized void java.awt.TextComponent.setEditable(boolean)
+
+    private static var setEditable_MethodID_15: jmethodID?
+
+    open func setEditable( b: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditable", methodSig: "(Z)V", methodCache: &TextComponent.setEditable_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func setEditable( _ _b: Bool ) {
+        setEditable( b: _b )
+    }
+
+    /// public synchronized void java.awt.TextComponent.setSelectionStart(int)
+
+    private static var setSelectionStart_MethodID_16: jmethodID?
+
+    open func setSelectionStart( selectionStart: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: selectionStart, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionStart", methodSig: "(I)V", methodCache: &TextComponent.setSelectionStart_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectionStart( _ _selectionStart: Int ) {
+        setSelectionStart( selectionStart: _selectionStart )
+    }
+
+    /// public synchronized void java.awt.TextComponent.setSelectionEnd(int)
+
+    private static var setSelectionEnd_MethodID_17: jmethodID?
+
+    open func setSelectionEnd( selectionEnd: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: selectionEnd, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionEnd", methodSig: "(I)V", methodCache: &TextComponent.setSelectionEnd_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectionEnd( _ _selectionEnd: Int ) {
+        setSelectionEnd( selectionEnd: _selectionEnd )
+    }
+
+    /// public synchronized void java.awt.TextComponent.selectAll()
+
+    private static var selectAll_MethodID_18: jmethodID?
+
+    open func selectAll() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectAll", methodSig: "()V", methodCache: &TextComponent.selectAll_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+
+    /// public synchronized void java.awt.TextComponent.setCaretPosition(int)
+
+    private static var setCaretPosition_MethodID_19: jmethodID?
+
+    open func setCaretPosition( position: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: position, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCaretPosition", methodSig: "(I)V", methodCache: &TextComponent.setCaretPosition_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func setCaretPosition( _ _position: Int ) {
+        setCaretPosition( position: _position )
+    }
+
+    /// public synchronized void java.awt.TextComponent.removeTextListener(java.awt.event.TextListener)
+
+    private static var removeTextListener_MethodID_20: jmethodID?
+
+    open func removeTextListener( l: TextListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeTextListener", methodSig: "(Ljava/awt/event/TextListener;)V", methodCache: &TextComponent.removeTextListener_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func removeTextListener( _ _l: TextListener? ) {
+        removeTextListener( l: _l )
+    }
+
+    /// public synchronized java.awt.event.TextListener[] java.awt.TextComponent.getTextListeners()
+
+    private static var getTextListeners_MethodID_21: jmethodID?
+
+    open func getTextListeners() -> [TextListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextListeners", methodSig: "()[Ljava/awt/event/TextListener;", methodCache: &TextComponent.getTextListeners_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [TextListenerForward](), from: __return )
+    }
+
+
+    /// protected void java.awt.TextComponent.processTextEvent(java.awt.event.TextEvent)
+
+    private static var processTextEvent_MethodID_22: jmethodID?
+
+    open func processTextEvent( e: TextEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processTextEvent", methodSig: "(Ljava/awt/event/TextEvent;)V", methodCache: &TextComponent.processTextEvent_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func processTextEvent( _ _e: TextEvent? ) {
+        processTextEvent( e: _e )
+    }
+
+    /// private boolean java.awt.TextComponent.canAccessClipboard()
 
     /// In declared protocol but not defined.. ///
 

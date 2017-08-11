@@ -50,7 +50,7 @@ open class Book: java_swift.JavaObject, Pageable {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: painter, locals: &__locals )
-        __args[1] = JNIType.toJava( value: page != nil ? page! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: page, locals: &__locals )
         __args[2] = JNIType.toJava( value: numPages, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "append", methodSig: "(Ljava/awt/print/Printable;Ljava/awt/print/PageFormat;I)V", methodCache: &Book.append_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -67,7 +67,7 @@ open class Book: java_swift.JavaObject, Pageable {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: painter, locals: &__locals )
-        __args[1] = JNIType.toJava( value: page != nil ? page! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: page, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "append", methodSig: "(Ljava/awt/print/Printable;Ljava/awt/print/PageFormat;)V", methodCache: &Book.append_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -136,7 +136,7 @@ open class Book: java_swift.JavaObject, Pageable {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pageIndex, locals: &__locals )
         __args[1] = JNIType.toJava( value: painter, locals: &__locals )
-        __args[2] = JNIType.toJava( value: page != nil ? page! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: page, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPage", methodSig: "(ILjava/awt/print/Printable;Ljava/awt/print/PageFormat;)V", methodCache: &Book.setPage_MethodID_7, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.IndexOutOfBoundsException( javaObject: throwable )

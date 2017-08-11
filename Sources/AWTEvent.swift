@@ -303,44 +303,44 @@ open class AWTEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &AWTEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// public java.awt.AWTEvent(java.awt.Event)
-
-    private static var new_MethodID_1: jmethodID?
-
-    public convenience init( arg0: Event? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/AWTEvent", classCache: &AWTEvent.AWTEventJNIClass, methodSig: "(Ljava/awt/Event;)V", methodCache: &AWTEvent.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _arg0: Event? ) {
-        self.init( arg0: _arg0 )
-    }
-
     /// public java.awt.AWTEvent(java.lang.Object,int)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( arg0: java_swift.JavaObject?, arg1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/AWTEvent", classCache: &AWTEvent.AWTEventJNIClass, methodSig: "(Ljava/lang/Object;I)V", methodCache: &AWTEvent.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/AWTEvent", classCache: &AWTEvent.AWTEventJNIClass, methodSig: "(Ljava/lang/Object;I)V", methodCache: &AWTEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
     public convenience init( _ _arg0: java_swift.JavaObject?, _ _arg1: Int ) {
         self.init( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public java.awt.AWTEvent(java.awt.Event)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( arg0: Event? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/AWTEvent", classCache: &AWTEvent.AWTEventJNIClass, methodSig: "(Ljava/awt/Event;)V", methodCache: &AWTEvent.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _arg0: Event? ) {
+        self.init( arg0: _arg0 )
     }
 
     /// public java.lang.String java.awt.AWTEvent.toString()
@@ -369,17 +369,35 @@ open class AWTEvent: java_util.EventObject {
 
     /// private static native void java.awt.AWTEvent.initIDs()
 
+    /// public int java.awt.AWTEvent.getID()
+
+    private static var getID_MethodID_4: jmethodID?
+
+    open func getID() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getID", methodSig: "()I", methodCache: &AWTEvent.getID_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// final java.security.AccessControlContext java.awt.AWTEvent.getAccessControlContext()
+
+    /// java.awt.Event java.awt.AWTEvent.convertToOld()
+
+    /// void java.awt.AWTEvent.copyPrivateDataInto(java.awt.AWTEvent)
+
     /// private static synchronized java.lang.reflect.Field java.awt.AWTEvent.get_InputEvent_CanAccessSystemClipboard()
 
     /// public void java.awt.AWTEvent.setSource(java.lang.Object)
 
-    private static var setSource_MethodID_4: jmethodID?
+    private static var setSource_MethodID_5: jmethodID?
 
     open func setSource( arg0: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSource", methodSig: "(Ljava/lang/Object;)V", methodCache: &AWTEvent.setSource_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSource", methodSig: "(Ljava/lang/Object;)V", methodCache: &AWTEvent.setSource_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func setSource( _ _arg0: java_swift.JavaObject? ) {
@@ -392,42 +410,24 @@ open class AWTEvent: java_util.EventObject {
 
     /// protected boolean java.awt.AWTEvent.isConsumed()
 
-    private static var isConsumed_MethodID_5: jmethodID?
+    private static var isConsumed_MethodID_6: jmethodID?
 
     open func isConsumed() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumed", methodSig: "()Z", methodCache: &AWTEvent.isConsumed_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumed", methodSig: "()Z", methodCache: &AWTEvent.isConsumed_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// protected void java.awt.AWTEvent.consume()
 
-    private static var consume_MethodID_6: jmethodID?
+    private static var consume_MethodID_7: jmethodID?
 
     open func consume() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "consume", methodSig: "()V", methodCache: &AWTEvent.consume_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// final java.security.AccessControlContext java.awt.AWTEvent.getAccessControlContext()
-
-    /// java.awt.Event java.awt.AWTEvent.convertToOld()
-
-    /// void java.awt.AWTEvent.copyPrivateDataInto(java.awt.AWTEvent)
-
-    /// public int java.awt.AWTEvent.getID()
-
-    private static var getID_MethodID_7: jmethodID?
-
-    open func getID() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getID", methodSig: "()I", methodCache: &AWTEvent.getID_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "consume", methodSig: "()V", methodCache: &AWTEvent.consume_MethodID_7, args: &__args, locals: &__locals )
     }
 
 

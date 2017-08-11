@@ -25,8 +25,8 @@ open class CompositeForward: JNIObjectForward, Composite {
     open func createContext( srcColorModel: ColorModel?, dstColorModel: ColorModel?, hints: RenderingHints? ) -> CompositeContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: srcColorModel != nil ? srcColorModel! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dstColorModel != nil ? dstColorModel! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: srcColorModel, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dstColorModel, locals: &__locals )
         __args[2] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContext", methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/image/ColorModel;Ljava/awt/RenderingHints;)Ljava/awt/CompositeContext;", methodCache: &CompositeForward.createContext_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }

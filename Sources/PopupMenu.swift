@@ -116,10 +116,6 @@ open class PopupMenu: Menu {
 
     /// public java.awt.MenuContainer java.awt.PopupMenu.getParent()
 
-    /// public javax.accessibility.AccessibleContext java.awt.PopupMenu.getAccessibleContext()
-
-    /// public void java.awt.PopupMenu.addNotify()
-
     /// java.lang.String java.awt.PopupMenu.constructComponentName()
 
     /// public void java.awt.PopupMenu.show(java.awt.Component,int,int)
@@ -129,7 +125,7 @@ open class PopupMenu: Menu {
     open func show( origin: Component?, x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: origin != nil ? origin! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: origin, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "show", methodSig: "(Ljava/awt/Component;II)V", methodCache: &PopupMenu.show_MethodID_3, args: &__args, locals: &__locals )
@@ -138,6 +134,10 @@ open class PopupMenu: Menu {
     open func show( _ _origin: Component?, _ _x: Int, _ _y: Int ) {
         show( origin: _origin, x: _x, y: _y )
     }
+
+    /// public javax.accessibility.AccessibleContext java.awt.PopupMenu.getAccessibleContext()
+
+    /// public void java.awt.PopupMenu.addNotify()
 
 }
 

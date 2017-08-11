@@ -31,14 +31,6 @@ public protocol Shape: JavaProtocol {
 
     func intersects( x: Double, y: Double, w: Double, h: Double ) -> Bool
 
-    /// public abstract java.awt.geom.Rectangle2D java.awt.Shape.getBounds2D()
-
-    func getBounds2D() -> Rectangle2D!
-
-    /// public abstract java.awt.Rectangle java.awt.Shape.getBounds()
-
-    func getBounds() -> Rectangle!
-
     /// public abstract java.awt.geom.PathIterator java.awt.Shape.getPathIterator(java.awt.geom.AffineTransform)
 
     func getPathIterator( at: AffineTransform? ) -> PathIterator!
@@ -46,6 +38,14 @@ public protocol Shape: JavaProtocol {
     /// public abstract java.awt.geom.PathIterator java.awt.Shape.getPathIterator(java.awt.geom.AffineTransform,double)
 
     func getPathIterator( at: AffineTransform?, flatness: Double ) -> PathIterator!
+
+    /// public abstract java.awt.geom.Rectangle2D java.awt.Shape.getBounds2D()
+
+    func getBounds2D() -> Rectangle2D!
+
+    /// public abstract java.awt.Rectangle java.awt.Shape.getBounds()
+
+    func getBounds() -> Rectangle!
 
 }
 
@@ -61,7 +61,7 @@ open class ShapeForward: JNIObjectForward, Shape {
     open func contains( r: Rectangle2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &ShapeForward.contains_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -113,7 +113,7 @@ open class ShapeForward: JNIObjectForward, Shape {
     open func contains( p: Point2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &ShapeForward.contains_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -129,7 +129,7 @@ open class ShapeForward: JNIObjectForward, Shape {
     open func intersects( r: Rectangle2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &ShapeForward.intersects_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -157,41 +157,15 @@ open class ShapeForward: JNIObjectForward, Shape {
         return intersects( x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public abstract java.awt.geom.Rectangle2D java.awt.Shape.getBounds2D()
-
-    private static var getBounds2D_MethodID_17: jmethodID?
-
-    open func getBounds2D() -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &ShapeForward.getBounds2D_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract java.awt.Rectangle java.awt.Shape.getBounds()
-
-    private static var getBounds_MethodID_18: jmethodID?
-
-    open func getBounds() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &ShapeForward.getBounds_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
-    }
-
-
     /// public abstract java.awt.geom.PathIterator java.awt.Shape.getPathIterator(java.awt.geom.AffineTransform)
 
-    private static var getPathIterator_MethodID_19: jmethodID?
+    private static var getPathIterator_MethodID_17: jmethodID?
 
     open func getPathIterator( at: AffineTransform? ) -> PathIterator! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &ShapeForward.getPathIterator_MethodID_19, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &ShapeForward.getPathIterator_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
     }
@@ -202,14 +176,14 @@ open class ShapeForward: JNIObjectForward, Shape {
 
     /// public abstract java.awt.geom.PathIterator java.awt.Shape.getPathIterator(java.awt.geom.AffineTransform,double)
 
-    private static var getPathIterator_MethodID_20: jmethodID?
+    private static var getPathIterator_MethodID_18: jmethodID?
 
     open func getPathIterator( at: AffineTransform?, flatness: Double ) -> PathIterator! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
         __args[1] = JNIType.toJava( value: flatness, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &ShapeForward.getPathIterator_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &ShapeForward.getPathIterator_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
     }
@@ -217,6 +191,32 @@ open class ShapeForward: JNIObjectForward, Shape {
     open func getPathIterator( _ _at: AffineTransform?, _ _flatness: Double ) -> PathIterator! {
         return getPathIterator( at: _at, flatness: _flatness )
     }
+
+    /// public abstract java.awt.geom.Rectangle2D java.awt.Shape.getBounds2D()
+
+    private static var getBounds2D_MethodID_19: jmethodID?
+
+    open func getBounds2D() -> Rectangle2D! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &ShapeForward.getBounds2D_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract java.awt.Rectangle java.awt.Shape.getBounds()
+
+    private static var getBounds_MethodID_20: jmethodID?
+
+    open func getBounds() -> Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &ShapeForward.getBounds_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
 
 }
 

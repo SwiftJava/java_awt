@@ -51,7 +51,7 @@ open class DefaultFocusTraversalPolicy: ContainerOrderFocusTraversalPolicy {
     open func accept( aComponent: Component? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aComponent != nil ? aComponent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aComponent, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "accept", methodSig: "(Ljava/awt/Component;)Z", methodCache: &DefaultFocusTraversalPolicy.accept_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

@@ -116,15 +116,301 @@ open class Toolkit: java_swift.JavaObject {
     }
 
 
+    /// static java.awt.EventQueue java.awt.Toolkit.getEventQueue()
+
+    /// static void java.awt.Toolkit.loadLibraries()
+
+    /// public abstract java.awt.image.ColorModel java.awt.Toolkit.getColorModel() throws java.awt.HeadlessException
+
+    private static var getColorModel_MethodID_4: jmethodID?
+
+    open func getColorModel() throws /* java.awt.HeadlessException */ -> ColorModel! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &Toolkit.getColorModel_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            throw HeadlessException( javaObject: throwable )
+        }
+        return __return != nil ? ColorModel( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Image java.awt.Toolkit.createImage(byte[])
+
+    private static var createImage_MethodID_5: jmethodID?
+
+    open func createImage( imagedata: [Int8]? ) -> Image! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: imagedata, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "([B)Ljava/awt/Image;", methodCache: &Toolkit.createImage_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Image( javaObject: __return ) : nil
+    }
+
+    open func createImage( _ _imagedata: [Int8]? ) -> Image! {
+        return createImage( imagedata: _imagedata )
+    }
+
+    /// public abstract java.awt.Image java.awt.Toolkit.createImage(java.lang.String)
+
+    private static var createImage_MethodID_6: jmethodID?
+
+    open func createImage( filename: String? ) -> Image! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: filename, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(Ljava/lang/String;)Ljava/awt/Image;", methodCache: &Toolkit.createImage_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Image( javaObject: __return ) : nil
+    }
+
+    open func createImage( _ _filename: String? ) -> Image! {
+        return createImage( filename: _filename )
+    }
+
+    /// public abstract java.awt.Image java.awt.Toolkit.createImage(java.net.URL)
+
+    private static var createImage_MethodID_7: jmethodID?
+
+    open func createImage( url: /* java.net.URL */ UnclassedObject? ) -> Image! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: url, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(Ljava/net/URL;)Ljava/awt/Image;", methodCache: &Toolkit.createImage_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Image( javaObject: __return ) : nil
+    }
+
+    open func createImage( _ _url: /* java.net.URL */ UnclassedObject? ) -> Image! {
+        return createImage( url: _url )
+    }
+
+    /// public abstract java.awt.Image java.awt.Toolkit.createImage(byte[],int,int)
+
+    private static var createImage_MethodID_8: jmethodID?
+
+    open func createImage( imagedata: [Int8]?, imageoffset: Int, imagelength: Int ) -> Image! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: imagedata, locals: &__locals )
+        __args[1] = JNIType.toJava( value: imageoffset, locals: &__locals )
+        __args[2] = JNIType.toJava( value: imagelength, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "([BII)Ljava/awt/Image;", methodCache: &Toolkit.createImage_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Image( javaObject: __return ) : nil
+    }
+
+    open func createImage( _ _imagedata: [Int8]?, _ _imageoffset: Int, _ _imagelength: Int ) -> Image! {
+        return createImage( imagedata: _imagedata, imageoffset: _imageoffset, imagelength: _imagelength )
+    }
+
+    /// public abstract java.awt.Image java.awt.Toolkit.createImage(java.awt.image.ImageProducer)
+
+    private static var createImage_MethodID_9: jmethodID?
+
+    open func createImage( producer: ImageProducer? ) -> Image! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: producer, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(Ljava/awt/image/ImageProducer;)Ljava/awt/Image;", methodCache: &Toolkit.createImage_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Image( javaObject: __return ) : nil
+    }
+
+    open func createImage( _ _producer: ImageProducer? ) -> Image! {
+        return createImage( producer: _producer )
+    }
+
+    /// public abstract boolean java.awt.Toolkit.prepareImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
+
+    private static var prepareImage_MethodID_10: jmethodID?
+
+    open func prepareImage( image: Image?, width: Int, height: Int, observer: ImageObserver? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
+        __args[1] = JNIType.toJava( value: width, locals: &__locals )
+        __args[2] = JNIType.toJava( value: height, locals: &__locals )
+        __args[3] = JNIType.toJava( value: observer, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "prepareImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)Z", methodCache: &Toolkit.prepareImage_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func prepareImage( _ _image: Image?, _ _width: Int, _ _height: Int, _ _observer: ImageObserver? ) -> Bool {
+        return prepareImage( image: _image, width: _width, height: _height, observer: _observer )
+    }
+
+    /// public abstract int java.awt.Toolkit.checkImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
+
+    private static var checkImage_MethodID_11: jmethodID?
+
+    open func checkImage( image: Image?, width: Int, height: Int, observer: ImageObserver? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
+        __args[1] = JNIType.toJava( value: width, locals: &__locals )
+        __args[2] = JNIType.toJava( value: height, locals: &__locals )
+        __args[3] = JNIType.toJava( value: observer, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)I", methodCache: &Toolkit.checkImage_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func checkImage( _ _image: Image?, _ _width: Int, _ _height: Int, _ _observer: ImageObserver? ) -> Int {
+        return checkImage( image: _image, width: _width, height: _height, observer: _observer )
+    }
+
+    /// public void java.awt.Toolkit.removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
+
+    private static var removePropertyChangeListener_MethodID_12: jmethodID?
+
+    open func removePropertyChangeListener( name: String?, pcl: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: pcl, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &Toolkit.removePropertyChangeListener_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func removePropertyChangeListener( _ _name: String?, _ _pcl: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
+        removePropertyChangeListener( name: _name, pcl: _pcl )
+    }
+
+    /// public static synchronized java.awt.Toolkit java.awt.Toolkit.getDefaultToolkit()
+
+    private static var getDefaultToolkit_MethodID_13: jmethodID?
+
+    open class func getDefaultToolkit() -> Toolkit! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Toolkit", classCache: &ToolkitJNIClass, methodName: "getDefaultToolkit", methodSig: "()Ljava/awt/Toolkit;", methodCache: &getDefaultToolkit_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Toolkit( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.peer.MouseInfoPeer java.awt.Toolkit.getMouseInfoPeer()
+
+    private static var getMouseInfoPeer_MethodID_14: jmethodID?
+
+    open func getMouseInfoPeer() -> MouseInfoPeer! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseInfoPeer", methodSig: "()Ljava/awt/peer/MouseInfoPeer;", methodCache: &Toolkit.getMouseInfoPeer_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MouseInfoPeerForward( javaObject: __return ) : nil
+    }
+
+
+    /// void java.awt.Toolkit.notifyAWTEventListeners(java.awt.AWTEvent)
+
+    /// protected java.awt.peer.LightweightPeer java.awt.Toolkit.createComponent(java.awt.Component)
+
+    private static var createComponent_MethodID_15: jmethodID?
+
+    open func createComponent( target: Component? ) -> LightweightPeer! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponent", methodSig: "(Ljava/awt/Component;)Ljava/awt/peer/LightweightPeer;", methodCache: &Toolkit.createComponent_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? LightweightPeerForward( javaObject: __return ) : nil
+    }
+
+    open func createComponent( _ _target: Component? ) -> LightweightPeer! {
+        return createComponent( target: _target )
+    }
+
+    /// public abstract java.awt.FontMetrics java.awt.Toolkit.getFontMetrics(java.awt.Font)
+
+    private static var getFontMetrics_MethodID_16: jmethodID?
+
+    open func getFontMetrics( font: Font? ) -> FontMetrics! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: font, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "(Ljava/awt/Font;)Ljava/awt/FontMetrics;", methodCache: &Toolkit.getFontMetrics_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? FontMetrics( javaObject: __return ) : nil
+    }
+
+    open func getFontMetrics( _ _font: Font? ) -> FontMetrics! {
+        return getFontMetrics( font: _font )
+    }
+
+    /// public java.beans.PropertyChangeListener[] java.awt.Toolkit.getPropertyChangeListeners(java.lang.String)
+
+    private static var getPropertyChangeListeners_MethodID_17: jmethodID?
+
+    open func getPropertyChangeListeners( propertyName: String? ) -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "(Ljava/lang/String;)[Ljava/beans/PropertyChangeListener;", methodCache: &Toolkit.getPropertyChangeListeners_MethodID_17, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
+    }
+
+    open func getPropertyChangeListeners( _ _propertyName: String? ) -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
+        return getPropertyChangeListeners( propertyName: _propertyName )
+    }
+
+    /// public java.beans.PropertyChangeListener[] java.awt.Toolkit.getPropertyChangeListeners()
+
+    private static var getPropertyChangeListeners_MethodID_18: jmethodID?
+
+    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &Toolkit.getPropertyChangeListeners_MethodID_18, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
+    }
+
+
+    /// public void java.awt.Toolkit.addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
+
+    private static var addPropertyChangeListener_MethodID_19: jmethodID?
+
+    open func addPropertyChangeListener( name: String?, pcl: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: pcl, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &Toolkit.addPropertyChangeListener_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func addPropertyChangeListener( _ _name: String?, _ _pcl: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
+        addPropertyChangeListener( name: _name, pcl: _pcl )
+    }
+
+    /// static boolean java.awt.Toolkit.enabledOnToolkit(long)
+
+    /// protected static java.awt.Container java.awt.Toolkit.getNativeContainer(java.awt.Component)
+
+    private static var getNativeContainer_MethodID_20: jmethodID?
+
+    open class func getNativeContainer( c: Component? ) -> Container! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Toolkit", classCache: &ToolkitJNIClass, methodName: "getNativeContainer", methodSig: "(Ljava/awt/Component;)Ljava/awt/Container;", methodCache: &getNativeContainer_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Container( javaObject: __return ) : nil
+    }
+
+    open class func getNativeContainer( _ _c: Component? ) -> Container! {
+        return getNativeContainer( c: _c )
+    }
+
     /// protected abstract java.awt.peer.ButtonPeer java.awt.Toolkit.createButton(java.awt.Button) throws java.awt.HeadlessException
 
-    private static var createButton_MethodID_4: jmethodID?
+    private static var createButton_MethodID_21: jmethodID?
 
     open func createButton( target: Button? ) throws /* java.awt.HeadlessException */ -> ButtonPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createButton", methodSig: "(Ljava/awt/Button;)Ljava/awt/peer/ButtonPeer;", methodCache: &Toolkit.createButton_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createButton", methodSig: "(Ljava/awt/Button;)Ljava/awt/peer/ButtonPeer;", methodCache: &Toolkit.createButton_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -138,13 +424,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.DesktopPeer java.awt.Toolkit.createDesktopPeer(java.awt.Desktop) throws java.awt.HeadlessException
 
-    private static var createDesktopPeer_MethodID_5: jmethodID?
+    private static var createDesktopPeer_MethodID_22: jmethodID?
 
     open func createDesktopPeer( target: Desktop? ) throws /* java.awt.HeadlessException */ -> DesktopPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDesktopPeer", methodSig: "(Ljava/awt/Desktop;)Ljava/awt/peer/DesktopPeer;", methodCache: &Toolkit.createDesktopPeer_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDesktopPeer", methodSig: "(Ljava/awt/Desktop;)Ljava/awt/peer/DesktopPeer;", methodCache: &Toolkit.createDesktopPeer_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -158,13 +444,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.TextFieldPeer java.awt.Toolkit.createTextField(java.awt.TextField) throws java.awt.HeadlessException
 
-    private static var createTextField_MethodID_6: jmethodID?
+    private static var createTextField_MethodID_23: jmethodID?
 
     open func createTextField( target: TextField? ) throws /* java.awt.HeadlessException */ -> TextFieldPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTextField", methodSig: "(Ljava/awt/TextField;)Ljava/awt/peer/TextFieldPeer;", methodCache: &Toolkit.createTextField_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTextField", methodSig: "(Ljava/awt/TextField;)Ljava/awt/peer/TextFieldPeer;", methodCache: &Toolkit.createTextField_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -178,13 +464,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.LabelPeer java.awt.Toolkit.createLabel(java.awt.Label) throws java.awt.HeadlessException
 
-    private static var createLabel_MethodID_7: jmethodID?
+    private static var createLabel_MethodID_24: jmethodID?
 
     open func createLabel( target: Label? ) throws /* java.awt.HeadlessException */ -> LabelPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLabel", methodSig: "(Ljava/awt/Label;)Ljava/awt/peer/LabelPeer;", methodCache: &Toolkit.createLabel_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLabel", methodSig: "(Ljava/awt/Label;)Ljava/awt/peer/LabelPeer;", methodCache: &Toolkit.createLabel_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -198,13 +484,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.ListPeer java.awt.Toolkit.createList(java.awt.List) throws java.awt.HeadlessException
 
-    private static var createList_MethodID_8: jmethodID?
+    private static var createList_MethodID_25: jmethodID?
 
     open func createList( target: List? ) throws /* java.awt.HeadlessException */ -> ListPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createList", methodSig: "(Ljava/awt/List;)Ljava/awt/peer/ListPeer;", methodCache: &Toolkit.createList_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createList", methodSig: "(Ljava/awt/List;)Ljava/awt/peer/ListPeer;", methodCache: &Toolkit.createList_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -218,13 +504,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.CheckboxPeer java.awt.Toolkit.createCheckbox(java.awt.Checkbox) throws java.awt.HeadlessException
 
-    private static var createCheckbox_MethodID_9: jmethodID?
+    private static var createCheckbox_MethodID_26: jmethodID?
 
     open func createCheckbox( target: Checkbox? ) throws /* java.awt.HeadlessException */ -> CheckboxPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCheckbox", methodSig: "(Ljava/awt/Checkbox;)Ljava/awt/peer/CheckboxPeer;", methodCache: &Toolkit.createCheckbox_MethodID_9, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCheckbox", methodSig: "(Ljava/awt/Checkbox;)Ljava/awt/peer/CheckboxPeer;", methodCache: &Toolkit.createCheckbox_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -238,13 +524,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.ScrollbarPeer java.awt.Toolkit.createScrollbar(java.awt.Scrollbar) throws java.awt.HeadlessException
 
-    private static var createScrollbar_MethodID_10: jmethodID?
+    private static var createScrollbar_MethodID_27: jmethodID?
 
     open func createScrollbar( target: Scrollbar? ) throws /* java.awt.HeadlessException */ -> ScrollbarPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollbar", methodSig: "(Ljava/awt/Scrollbar;)Ljava/awt/peer/ScrollbarPeer;", methodCache: &Toolkit.createScrollbar_MethodID_10, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollbar", methodSig: "(Ljava/awt/Scrollbar;)Ljava/awt/peer/ScrollbarPeer;", methodCache: &Toolkit.createScrollbar_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -258,13 +544,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.ScrollPanePeer java.awt.Toolkit.createScrollPane(java.awt.ScrollPane) throws java.awt.HeadlessException
 
-    private static var createScrollPane_MethodID_11: jmethodID?
+    private static var createScrollPane_MethodID_28: jmethodID?
 
     open func createScrollPane( target: ScrollPane? ) throws /* java.awt.HeadlessException */ -> ScrollPanePeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollPane", methodSig: "(Ljava/awt/ScrollPane;)Ljava/awt/peer/ScrollPanePeer;", methodCache: &Toolkit.createScrollPane_MethodID_11, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollPane", methodSig: "(Ljava/awt/ScrollPane;)Ljava/awt/peer/ScrollPanePeer;", methodCache: &Toolkit.createScrollPane_MethodID_28, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -278,13 +564,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.TextAreaPeer java.awt.Toolkit.createTextArea(java.awt.TextArea) throws java.awt.HeadlessException
 
-    private static var createTextArea_MethodID_12: jmethodID?
+    private static var createTextArea_MethodID_29: jmethodID?
 
     open func createTextArea( target: TextArea? ) throws /* java.awt.HeadlessException */ -> TextAreaPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTextArea", methodSig: "(Ljava/awt/TextArea;)Ljava/awt/peer/TextAreaPeer;", methodCache: &Toolkit.createTextArea_MethodID_12, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTextArea", methodSig: "(Ljava/awt/TextArea;)Ljava/awt/peer/TextAreaPeer;", methodCache: &Toolkit.createTextArea_MethodID_29, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -298,13 +584,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.ChoicePeer java.awt.Toolkit.createChoice(java.awt.Choice) throws java.awt.HeadlessException
 
-    private static var createChoice_MethodID_13: jmethodID?
+    private static var createChoice_MethodID_30: jmethodID?
 
     open func createChoice( target: Choice? ) throws /* java.awt.HeadlessException */ -> ChoicePeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChoice", methodSig: "(Ljava/awt/Choice;)Ljava/awt/peer/ChoicePeer;", methodCache: &Toolkit.createChoice_MethodID_13, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChoice", methodSig: "(Ljava/awt/Choice;)Ljava/awt/peer/ChoicePeer;", methodCache: &Toolkit.createChoice_MethodID_30, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -318,13 +604,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.FramePeer java.awt.Toolkit.createFrame(java.awt.Frame) throws java.awt.HeadlessException
 
-    private static var createFrame_MethodID_14: jmethodID?
+    private static var createFrame_MethodID_31: jmethodID?
 
     open func createFrame( target: Frame? ) throws /* java.awt.HeadlessException */ -> FramePeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFrame", methodSig: "(Ljava/awt/Frame;)Ljava/awt/peer/FramePeer;", methodCache: &Toolkit.createFrame_MethodID_14, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFrame", methodSig: "(Ljava/awt/Frame;)Ljava/awt/peer/FramePeer;", methodCache: &Toolkit.createFrame_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -338,13 +624,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.CanvasPeer java.awt.Toolkit.createCanvas(java.awt.Canvas)
 
-    private static var createCanvas_MethodID_15: jmethodID?
+    private static var createCanvas_MethodID_32: jmethodID?
 
     open func createCanvas( target: Canvas? ) -> CanvasPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCanvas", methodSig: "(Ljava/awt/Canvas;)Ljava/awt/peer/CanvasPeer;", methodCache: &Toolkit.createCanvas_MethodID_15, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCanvas", methodSig: "(Ljava/awt/Canvas;)Ljava/awt/peer/CanvasPeer;", methodCache: &Toolkit.createCanvas_MethodID_32, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? CanvasPeerForward( javaObject: __return ) : nil
     }
@@ -355,13 +641,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.PanelPeer java.awt.Toolkit.createPanel(java.awt.Panel)
 
-    private static var createPanel_MethodID_16: jmethodID?
+    private static var createPanel_MethodID_33: jmethodID?
 
     open func createPanel( target: Panel? ) -> PanelPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPanel", methodSig: "(Ljava/awt/Panel;)Ljava/awt/peer/PanelPeer;", methodCache: &Toolkit.createPanel_MethodID_16, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPanel", methodSig: "(Ljava/awt/Panel;)Ljava/awt/peer/PanelPeer;", methodCache: &Toolkit.createPanel_MethodID_33, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PanelPeerForward( javaObject: __return ) : nil
     }
@@ -372,13 +658,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.WindowPeer java.awt.Toolkit.createWindow(java.awt.Window) throws java.awt.HeadlessException
 
-    private static var createWindow_MethodID_17: jmethodID?
+    private static var createWindow_MethodID_34: jmethodID?
 
     open func createWindow( target: Window? ) throws /* java.awt.HeadlessException */ -> WindowPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createWindow", methodSig: "(Ljava/awt/Window;)Ljava/awt/peer/WindowPeer;", methodCache: &Toolkit.createWindow_MethodID_17, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createWindow", methodSig: "(Ljava/awt/Window;)Ljava/awt/peer/WindowPeer;", methodCache: &Toolkit.createWindow_MethodID_34, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -392,13 +678,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.DialogPeer java.awt.Toolkit.createDialog(java.awt.Dialog) throws java.awt.HeadlessException
 
-    private static var createDialog_MethodID_18: jmethodID?
+    private static var createDialog_MethodID_35: jmethodID?
 
     open func createDialog( target: Dialog? ) throws /* java.awt.HeadlessException */ -> DialogPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDialog", methodSig: "(Ljava/awt/Dialog;)Ljava/awt/peer/DialogPeer;", methodCache: &Toolkit.createDialog_MethodID_18, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDialog", methodSig: "(Ljava/awt/Dialog;)Ljava/awt/peer/DialogPeer;", methodCache: &Toolkit.createDialog_MethodID_35, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -412,13 +698,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.MenuBarPeer java.awt.Toolkit.createMenuBar(java.awt.MenuBar) throws java.awt.HeadlessException
 
-    private static var createMenuBar_MethodID_19: jmethodID?
+    private static var createMenuBar_MethodID_36: jmethodID?
 
     open func createMenuBar( target: MenuBar? ) throws /* java.awt.HeadlessException */ -> MenuBarPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenuBar", methodSig: "(Ljava/awt/MenuBar;)Ljava/awt/peer/MenuBarPeer;", methodCache: &Toolkit.createMenuBar_MethodID_19, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenuBar", methodSig: "(Ljava/awt/MenuBar;)Ljava/awt/peer/MenuBarPeer;", methodCache: &Toolkit.createMenuBar_MethodID_36, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -432,13 +718,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.MenuPeer java.awt.Toolkit.createMenu(java.awt.Menu) throws java.awt.HeadlessException
 
-    private static var createMenu_MethodID_20: jmethodID?
+    private static var createMenu_MethodID_37: jmethodID?
 
     open func createMenu( target: Menu? ) throws /* java.awt.HeadlessException */ -> MenuPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenu", methodSig: "(Ljava/awt/Menu;)Ljava/awt/peer/MenuPeer;", methodCache: &Toolkit.createMenu_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenu", methodSig: "(Ljava/awt/Menu;)Ljava/awt/peer/MenuPeer;", methodCache: &Toolkit.createMenu_MethodID_37, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -452,13 +738,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.PopupMenuPeer java.awt.Toolkit.createPopupMenu(java.awt.PopupMenu) throws java.awt.HeadlessException
 
-    private static var createPopupMenu_MethodID_21: jmethodID?
+    private static var createPopupMenu_MethodID_38: jmethodID?
 
     open func createPopupMenu( target: PopupMenu? ) throws /* java.awt.HeadlessException */ -> PopupMenuPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPopupMenu", methodSig: "(Ljava/awt/PopupMenu;)Ljava/awt/peer/PopupMenuPeer;", methodCache: &Toolkit.createPopupMenu_MethodID_21, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPopupMenu", methodSig: "(Ljava/awt/PopupMenu;)Ljava/awt/peer/PopupMenuPeer;", methodCache: &Toolkit.createPopupMenu_MethodID_38, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -472,13 +758,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.MenuItemPeer java.awt.Toolkit.createMenuItem(java.awt.MenuItem) throws java.awt.HeadlessException
 
-    private static var createMenuItem_MethodID_22: jmethodID?
+    private static var createMenuItem_MethodID_39: jmethodID?
 
     open func createMenuItem( target: MenuItem? ) throws /* java.awt.HeadlessException */ -> MenuItemPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenuItem", methodSig: "(Ljava/awt/MenuItem;)Ljava/awt/peer/MenuItemPeer;", methodCache: &Toolkit.createMenuItem_MethodID_22, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenuItem", methodSig: "(Ljava/awt/MenuItem;)Ljava/awt/peer/MenuItemPeer;", methodCache: &Toolkit.createMenuItem_MethodID_39, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -492,13 +778,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.FileDialogPeer java.awt.Toolkit.createFileDialog(java.awt.FileDialog) throws java.awt.HeadlessException
 
-    private static var createFileDialog_MethodID_23: jmethodID?
+    private static var createFileDialog_MethodID_40: jmethodID?
 
     open func createFileDialog( target: FileDialog? ) throws /* java.awt.HeadlessException */ -> FileDialogPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFileDialog", methodSig: "(Ljava/awt/FileDialog;)Ljava/awt/peer/FileDialogPeer;", methodCache: &Toolkit.createFileDialog_MethodID_23, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFileDialog", methodSig: "(Ljava/awt/FileDialog;)Ljava/awt/peer/FileDialogPeer;", methodCache: &Toolkit.createFileDialog_MethodID_40, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -512,13 +798,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.CheckboxMenuItemPeer java.awt.Toolkit.createCheckboxMenuItem(java.awt.CheckboxMenuItem) throws java.awt.HeadlessException
 
-    private static var createCheckboxMenuItem_MethodID_24: jmethodID?
+    private static var createCheckboxMenuItem_MethodID_41: jmethodID?
 
     open func createCheckboxMenuItem( target: CheckboxMenuItem? ) throws /* java.awt.HeadlessException */ -> CheckboxMenuItemPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCheckboxMenuItem", methodSig: "(Ljava/awt/CheckboxMenuItem;)Ljava/awt/peer/CheckboxMenuItemPeer;", methodCache: &Toolkit.createCheckboxMenuItem_MethodID_24, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCheckboxMenuItem", methodSig: "(Ljava/awt/CheckboxMenuItem;)Ljava/awt/peer/CheckboxMenuItemPeer;", methodCache: &Toolkit.createCheckboxMenuItem_MethodID_41, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -532,14 +818,14 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.peer.FontPeer java.awt.Toolkit.getFontPeer(java.lang.String,int)
 
-    private static var getFontPeer_MethodID_25: jmethodID?
+    private static var getFontPeer_MethodID_42: jmethodID?
 
     open func getFontPeer( name: String?, style: Int ) -> FontPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: style, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontPeer", methodSig: "(Ljava/lang/String;I)Ljava/awt/peer/FontPeer;", methodCache: &Toolkit.getFontPeer_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontPeer", methodSig: "(Ljava/lang/String;I)Ljava/awt/peer/FontPeer;", methodCache: &Toolkit.getFontPeer_MethodID_42, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? FontPeerForward( javaObject: __return ) : nil
     }
@@ -550,13 +836,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected void java.awt.Toolkit.loadSystemColors(int[]) throws java.awt.HeadlessException
 
-    private static var loadSystemColors_MethodID_26: jmethodID?
+    private static var loadSystemColors_MethodID_43: jmethodID?
 
     open func loadSystemColors( systemColors: [Int32]? ) throws /* java.awt.HeadlessException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: systemColors, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadSystemColors", methodSig: "([I)V", methodCache: &Toolkit.loadSystemColors_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadSystemColors", methodSig: "([I)V", methodCache: &Toolkit.loadSystemColors_MethodID_43, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -568,13 +854,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public void java.awt.Toolkit.setDynamicLayout(boolean) throws java.awt.HeadlessException
 
-    private static var setDynamicLayout_MethodID_27: jmethodID?
+    private static var setDynamicLayout_MethodID_44: jmethodID?
 
     open func setDynamicLayout( dynamic: Bool ) throws /* java.awt.HeadlessException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dynamic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDynamicLayout", methodSig: "(Z)V", methodCache: &Toolkit.setDynamicLayout_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDynamicLayout", methodSig: "(Z)V", methodCache: &Toolkit.setDynamicLayout_MethodID_44, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -586,12 +872,12 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected boolean java.awt.Toolkit.isDynamicLayoutSet() throws java.awt.HeadlessException
 
-    private static var isDynamicLayoutSet_MethodID_28: jmethodID?
+    private static var isDynamicLayoutSet_MethodID_45: jmethodID?
 
     open func isDynamicLayoutSet() throws /* java.awt.HeadlessException */ -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDynamicLayoutSet", methodSig: "()Z", methodCache: &Toolkit.isDynamicLayoutSet_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDynamicLayoutSet", methodSig: "()Z", methodCache: &Toolkit.isDynamicLayoutSet_MethodID_45, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -601,12 +887,12 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public boolean java.awt.Toolkit.isDynamicLayoutActive() throws java.awt.HeadlessException
 
-    private static var isDynamicLayoutActive_MethodID_29: jmethodID?
+    private static var isDynamicLayoutActive_MethodID_46: jmethodID?
 
     open func isDynamicLayoutActive() throws /* java.awt.HeadlessException */ -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDynamicLayoutActive", methodSig: "()Z", methodCache: &Toolkit.isDynamicLayoutActive_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDynamicLayoutActive", methodSig: "()Z", methodCache: &Toolkit.isDynamicLayoutActive_MethodID_46, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -616,12 +902,12 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public abstract java.awt.Dimension java.awt.Toolkit.getScreenSize() throws java.awt.HeadlessException
 
-    private static var getScreenSize_MethodID_30: jmethodID?
+    private static var getScreenSize_MethodID_47: jmethodID?
 
     open func getScreenSize() throws /* java.awt.HeadlessException */ -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScreenSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Toolkit.getScreenSize_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScreenSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Toolkit.getScreenSize_MethodID_47, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -632,12 +918,12 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public abstract int java.awt.Toolkit.getScreenResolution() throws java.awt.HeadlessException
 
-    private static var getScreenResolution_MethodID_31: jmethodID?
+    private static var getScreenResolution_MethodID_48: jmethodID?
 
     open func getScreenResolution() throws /* java.awt.HeadlessException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScreenResolution", methodSig: "()I", methodCache: &Toolkit.getScreenResolution_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScreenResolution", methodSig: "()I", methodCache: &Toolkit.getScreenResolution_MethodID_48, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -647,13 +933,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public java.awt.Insets java.awt.Toolkit.getScreenInsets(java.awt.GraphicsConfiguration) throws java.awt.HeadlessException
 
-    private static var getScreenInsets_MethodID_32: jmethodID?
+    private static var getScreenInsets_MethodID_49: jmethodID?
 
     open func getScreenInsets( gc: GraphicsConfiguration? ) throws /* java.awt.HeadlessException */ -> Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScreenInsets", methodSig: "(Ljava/awt/GraphicsConfiguration;)Ljava/awt/Insets;", methodCache: &Toolkit.getScreenInsets_MethodID_32, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: gc, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScreenInsets", methodSig: "(Ljava/awt/GraphicsConfiguration;)Ljava/awt/Insets;", methodCache: &Toolkit.getScreenInsets_MethodID_49, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -667,12 +953,12 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public abstract java.lang.String[] java.awt.Toolkit.getFontList()
 
-    private static var getFontList_MethodID_33: jmethodID?
+    private static var getFontList_MethodID_50: jmethodID?
 
     open func getFontList() -> [String]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontList", methodSig: "()[Ljava/lang/String;", methodCache: &Toolkit.getFontList_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontList", methodSig: "()[Ljava/lang/String;", methodCache: &Toolkit.getFontList_MethodID_50, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [String](), from: __return )
     }
 
@@ -681,32 +967,15 @@ open class Toolkit: java_swift.JavaObject {
 
     /// private static void java.awt.Toolkit.loadAssistiveTechnologies()
 
-    /// public abstract java.awt.Image java.awt.Toolkit.getImage(java.net.URL)
-
-    private static var getImage_MethodID_34: jmethodID?
-
-    open func getImage( url: /* java.net.URL */ UnclassedObject? ) -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: url != nil ? url! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "(Ljava/net/URL;)Ljava/awt/Image;", methodCache: &Toolkit.getImage_MethodID_34, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
-    }
-
-    open func getImage( _ _url: /* java.net.URL */ UnclassedObject? ) -> Image! {
-        return getImage( url: _url )
-    }
-
     /// public abstract java.awt.Image java.awt.Toolkit.getImage(java.lang.String)
 
-    private static var getImage_MethodID_35: jmethodID?
+    private static var getImage_MethodID_51: jmethodID?
 
     open func getImage( filename: String? ) -> Image! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: filename, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "(Ljava/lang/String;)Ljava/awt/Image;", methodCache: &Toolkit.getImage_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "(Ljava/lang/String;)Ljava/awt/Image;", methodCache: &Toolkit.getImage_MethodID_51, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Image( javaObject: __return ) : nil
     }
@@ -715,37 +984,34 @@ open class Toolkit: java_swift.JavaObject {
         return getImage( filename: _filename )
     }
 
-    /// public java.awt.PrintJob java.awt.Toolkit.getPrintJob(java.awt.Frame,java.lang.String,java.awt.JobAttributes,java.awt.PageAttributes)
+    /// public abstract java.awt.Image java.awt.Toolkit.getImage(java.net.URL)
 
-    private static var getPrintJob_MethodID_36: jmethodID?
+    private static var getImage_MethodID_52: jmethodID?
 
-    open func getPrintJob( frame: Frame?, jobtitle: String?, jobAttributes: JobAttributes?, pageAttributes: PageAttributes? ) -> PrintJob! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open func getImage( url: /* java.net.URL */ UnclassedObject? ) -> Image! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: frame != nil ? frame! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: jobtitle, locals: &__locals )
-        __args[2] = JNIType.toJava( value: jobAttributes != nil ? jobAttributes! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: pageAttributes != nil ? pageAttributes! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrintJob", methodSig: "(Ljava/awt/Frame;Ljava/lang/String;Ljava/awt/JobAttributes;Ljava/awt/PageAttributes;)Ljava/awt/PrintJob;", methodCache: &Toolkit.getPrintJob_MethodID_36, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: url, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "(Ljava/net/URL;)Ljava/awt/Image;", methodCache: &Toolkit.getImage_MethodID_52, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PrintJob( javaObject: __return ) : nil
+        return __return != nil ? Image( javaObject: __return ) : nil
     }
 
-    open func getPrintJob( _ _frame: Frame?, _ _jobtitle: String?, _ _jobAttributes: JobAttributes?, _ _pageAttributes: PageAttributes? ) -> PrintJob! {
-        return getPrintJob( frame: _frame, jobtitle: _jobtitle, jobAttributes: _jobAttributes, pageAttributes: _pageAttributes )
+    open func getImage( _ _url: /* java.net.URL */ UnclassedObject? ) -> Image! {
+        return getImage( url: _url )
     }
 
     /// public abstract java.awt.PrintJob java.awt.Toolkit.getPrintJob(java.awt.Frame,java.lang.String,java.util.Properties)
 
-    private static var getPrintJob_MethodID_37: jmethodID?
+    private static var getPrintJob_MethodID_53: jmethodID?
 
     open func getPrintJob( frame: Frame?, jobtitle: String?, props: java_util.Properties? ) -> PrintJob! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: frame != nil ? frame! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: frame, locals: &__locals )
         __args[1] = JNIType.toJava( value: jobtitle, locals: &__locals )
         __args[2] = JNIType.toJava( value: props, mapClass: "java/util/Properties", locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrintJob", methodSig: "(Ljava/awt/Frame;Ljava/lang/String;Ljava/util/Properties;)Ljava/awt/PrintJob;", methodCache: &Toolkit.getPrintJob_MethodID_37, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrintJob", methodSig: "(Ljava/awt/Frame;Ljava/lang/String;Ljava/util/Properties;)Ljava/awt/PrintJob;", methodCache: &Toolkit.getPrintJob_MethodID_53, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PrintJob( javaObject: __return ) : nil
     }
@@ -754,25 +1020,45 @@ open class Toolkit: java_swift.JavaObject {
         return getPrintJob( frame: _frame, jobtitle: _jobtitle, props: _props )
     }
 
+    /// public java.awt.PrintJob java.awt.Toolkit.getPrintJob(java.awt.Frame,java.lang.String,java.awt.JobAttributes,java.awt.PageAttributes)
+
+    private static var getPrintJob_MethodID_54: jmethodID?
+
+    open func getPrintJob( frame: Frame?, jobtitle: String?, jobAttributes: JobAttributes?, pageAttributes: PageAttributes? ) -> PrintJob! {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: frame, locals: &__locals )
+        __args[1] = JNIType.toJava( value: jobtitle, locals: &__locals )
+        __args[2] = JNIType.toJava( value: jobAttributes, locals: &__locals )
+        __args[3] = JNIType.toJava( value: pageAttributes, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrintJob", methodSig: "(Ljava/awt/Frame;Ljava/lang/String;Ljava/awt/JobAttributes;Ljava/awt/PageAttributes;)Ljava/awt/PrintJob;", methodCache: &Toolkit.getPrintJob_MethodID_54, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PrintJob( javaObject: __return ) : nil
+    }
+
+    open func getPrintJob( _ _frame: Frame?, _ _jobtitle: String?, _ _jobAttributes: JobAttributes?, _ _pageAttributes: PageAttributes? ) -> PrintJob! {
+        return getPrintJob( frame: _frame, jobtitle: _jobtitle, jobAttributes: _jobAttributes, pageAttributes: _pageAttributes )
+    }
+
     /// public abstract void java.awt.Toolkit.beep()
 
-    private static var beep_MethodID_38: jmethodID?
+    private static var beep_MethodID_55: jmethodID?
 
     open func beep() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "beep", methodSig: "()V", methodCache: &Toolkit.beep_MethodID_38, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "beep", methodSig: "()V", methodCache: &Toolkit.beep_MethodID_55, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract java.awt.datatransfer.Clipboard java.awt.Toolkit.getSystemClipboard() throws java.awt.HeadlessException
 
-    private static var getSystemClipboard_MethodID_39: jmethodID?
+    private static var getSystemClipboard_MethodID_56: jmethodID?
 
     open func getSystemClipboard() throws /* java.awt.HeadlessException */ -> Clipboard! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSystemClipboard", methodSig: "()Ljava/awt/datatransfer/Clipboard;", methodCache: &Toolkit.getSystemClipboard_MethodID_39, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSystemClipboard", methodSig: "()Ljava/awt/datatransfer/Clipboard;", methodCache: &Toolkit.getSystemClipboard_MethodID_56, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -783,12 +1069,12 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public java.awt.datatransfer.Clipboard java.awt.Toolkit.getSystemSelection() throws java.awt.HeadlessException
 
-    private static var getSystemSelection_MethodID_40: jmethodID?
+    private static var getSystemSelection_MethodID_57: jmethodID?
 
     open func getSystemSelection() throws /* java.awt.HeadlessException */ -> Clipboard! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSystemSelection", methodSig: "()Ljava/awt/datatransfer/Clipboard;", methodCache: &Toolkit.getSystemSelection_MethodID_40, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSystemSelection", methodSig: "()Ljava/awt/datatransfer/Clipboard;", methodCache: &Toolkit.getSystemSelection_MethodID_57, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -799,12 +1085,12 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public int java.awt.Toolkit.getMenuShortcutKeyMask() throws java.awt.HeadlessException
 
-    private static var getMenuShortcutKeyMask_MethodID_41: jmethodID?
+    private static var getMenuShortcutKeyMask_MethodID_58: jmethodID?
 
     open func getMenuShortcutKeyMask() throws /* java.awt.HeadlessException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMenuShortcutKeyMask", methodSig: "()I", methodCache: &Toolkit.getMenuShortcutKeyMask_MethodID_41, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMenuShortcutKeyMask", methodSig: "()I", methodCache: &Toolkit.getMenuShortcutKeyMask_MethodID_58, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -814,13 +1100,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public boolean java.awt.Toolkit.getLockingKeyState(int) throws java.lang.UnsupportedOperationException
 
-    private static var getLockingKeyState_MethodID_42: jmethodID?
+    private static var getLockingKeyState_MethodID_59: jmethodID?
 
     open func getLockingKeyState( keyCode: Int ) throws /* java.lang.UnsupportedOperationException */ -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: keyCode, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getLockingKeyState", methodSig: "(I)Z", methodCache: &Toolkit.getLockingKeyState_MethodID_42, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getLockingKeyState", methodSig: "(I)Z", methodCache: &Toolkit.getLockingKeyState_MethodID_59, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.UnsupportedOperationException( javaObject: throwable )
         }
@@ -833,14 +1119,14 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public void java.awt.Toolkit.setLockingKeyState(int,boolean) throws java.lang.UnsupportedOperationException
 
-    private static var setLockingKeyState_MethodID_43: jmethodID?
+    private static var setLockingKeyState_MethodID_60: jmethodID?
 
     open func setLockingKeyState( keyCode: Int, on: Bool ) throws /* java.lang.UnsupportedOperationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: keyCode, locals: &__locals )
         __args[1] = JNIType.toJava( value: on, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLockingKeyState", methodSig: "(IZ)V", methodCache: &Toolkit.setLockingKeyState_MethodID_43, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLockingKeyState", methodSig: "(IZ)V", methodCache: &Toolkit.setLockingKeyState_MethodID_60, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.UnsupportedOperationException( javaObject: throwable )
         }
@@ -852,15 +1138,15 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public java.awt.Cursor java.awt.Toolkit.createCustomCursor(java.awt.Image,java.awt.Point,java.lang.String) throws java.lang.IndexOutOfBoundsException,java.awt.HeadlessException
 
-    private static var createCustomCursor_MethodID_44: jmethodID?
+    private static var createCustomCursor_MethodID_61: jmethodID?
 
     open func createCustomCursor( cursor: Image?, hotSpot: Point?, name: String? ) throws /* java.lang.IndexOutOfBoundsException, java.awt.HeadlessException */ -> Cursor! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cursor != nil ? cursor! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: hotSpot != nil ? hotSpot! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: cursor, locals: &__locals )
+        __args[1] = JNIType.toJava( value: hotSpot, locals: &__locals )
         __args[2] = JNIType.toJava( value: name, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCustomCursor", methodSig: "(Ljava/awt/Image;Ljava/awt/Point;Ljava/lang/String;)Ljava/awt/Cursor;", methodCache: &Toolkit.createCustomCursor_MethodID_44, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCustomCursor", methodSig: "(Ljava/awt/Image;Ljava/awt/Point;Ljava/lang/String;)Ljava/awt/Cursor;", methodCache: &Toolkit.createCustomCursor_MethodID_61, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.IndexOutOfBoundsException( javaObject: throwable )
@@ -874,14 +1160,14 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public java.awt.Dimension java.awt.Toolkit.getBestCursorSize(int,int) throws java.awt.HeadlessException
 
-    private static var getBestCursorSize_MethodID_45: jmethodID?
+    private static var getBestCursorSize_MethodID_62: jmethodID?
 
     open func getBestCursorSize( preferredWidth: Int, preferredHeight: Int ) throws /* java.awt.HeadlessException */ -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: preferredWidth, locals: &__locals )
         __args[1] = JNIType.toJava( value: preferredHeight, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBestCursorSize", methodSig: "(II)Ljava/awt/Dimension;", methodCache: &Toolkit.getBestCursorSize_MethodID_45, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBestCursorSize", methodSig: "(II)Ljava/awt/Dimension;", methodCache: &Toolkit.getBestCursorSize_MethodID_62, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -895,12 +1181,12 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public int java.awt.Toolkit.getMaximumCursorColors() throws java.awt.HeadlessException
 
-    private static var getMaximumCursorColors_MethodID_46: jmethodID?
+    private static var getMaximumCursorColors_MethodID_63: jmethodID?
 
     open func getMaximumCursorColors() throws /* java.awt.HeadlessException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumCursorColors", methodSig: "()I", methodCache: &Toolkit.getMaximumCursorColors_MethodID_46, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumCursorColors", methodSig: "()I", methodCache: &Toolkit.getMaximumCursorColors_MethodID_63, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -910,13 +1196,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public boolean java.awt.Toolkit.isFrameStateSupported(int) throws java.awt.HeadlessException
 
-    private static var isFrameStateSupported_MethodID_47: jmethodID?
+    private static var isFrameStateSupported_MethodID_64: jmethodID?
 
     open func isFrameStateSupported( state: Int ) throws /* java.awt.HeadlessException */ -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: state, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFrameStateSupported", methodSig: "(I)Z", methodCache: &Toolkit.isFrameStateSupported_MethodID_47, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFrameStateSupported", methodSig: "(I)Z", methodCache: &Toolkit.isFrameStateSupported_MethodID_64, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -931,12 +1217,12 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public final java.awt.EventQueue java.awt.Toolkit.getSystemEventQueue()
 
-    private static var getSystemEventQueue_MethodID_48: jmethodID?
+    private static var getSystemEventQueue_MethodID_65: jmethodID?
 
     open func getSystemEventQueue() -> EventQueue! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSystemEventQueue", methodSig: "()Ljava/awt/EventQueue;", methodCache: &Toolkit.getSystemEventQueue_MethodID_48, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSystemEventQueue", methodSig: "()Ljava/awt/EventQueue;", methodCache: &Toolkit.getSystemEventQueue_MethodID_65, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? EventQueue( javaObject: __return ) : nil
     }
@@ -944,12 +1230,12 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected abstract java.awt.EventQueue java.awt.Toolkit.getSystemEventQueueImpl()
 
-    private static var getSystemEventQueueImpl_MethodID_49: jmethodID?
+    private static var getSystemEventQueueImpl_MethodID_66: jmethodID?
 
     open func getSystemEventQueueImpl() -> EventQueue! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSystemEventQueueImpl", methodSig: "()Ljava/awt/EventQueue;", methodCache: &Toolkit.getSystemEventQueueImpl_MethodID_49, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSystemEventQueueImpl", methodSig: "()Ljava/awt/EventQueue;", methodCache: &Toolkit.getSystemEventQueueImpl_MethodID_66, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? EventQueue( javaObject: __return ) : nil
     }
@@ -957,13 +1243,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public abstract java.awt.dnd.peer.DragSourceContextPeer java.awt.Toolkit.createDragSourceContextPeer(java.awt.dnd.DragGestureEvent) throws java.awt.dnd.InvalidDnDOperationException
 
-    private static var createDragSourceContextPeer_MethodID_50: jmethodID?
+    private static var createDragSourceContextPeer_MethodID_67: jmethodID?
 
     open func createDragSourceContextPeer( dge: DragGestureEvent? ) throws /* java.awt.dnd.InvalidDnDOperationException */ -> DragSourceContextPeer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dge != nil ? dge! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDragSourceContextPeer", methodSig: "(Ljava/awt/dnd/DragGestureEvent;)Ljava/awt/dnd/peer/DragSourceContextPeer;", methodCache: &Toolkit.createDragSourceContextPeer_MethodID_50, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dge, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDragSourceContextPeer", methodSig: "(Ljava/awt/dnd/DragGestureEvent;)Ljava/awt/dnd/peer/DragSourceContextPeer;", methodCache: &Toolkit.createDragSourceContextPeer_MethodID_67, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw InvalidDnDOperationException( javaObject: throwable )
@@ -977,17 +1263,17 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public java.awt.dnd.DragGestureRecognizer java.awt.Toolkit.createDragGestureRecognizer(java.lang.Class,java.awt.dnd.DragSource,java.awt.Component,int,java.awt.dnd.DragGestureListener)
 
-    private static var createDragGestureRecognizer_MethodID_51: jmethodID?
+    private static var createDragGestureRecognizer_MethodID_68: jmethodID?
 
     open func createDragGestureRecognizer( abstractRecognizerClass: java_swift.JavaClass?, ds: DragSource?, c: Component?, srcActions: Int, dgl: DragGestureListener? ) -> DragGestureRecognizer! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: abstractRecognizerClass != nil ? abstractRecognizerClass! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: ds != nil ? ds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: abstractRecognizerClass, locals: &__locals )
+        __args[1] = JNIType.toJava( value: ds, locals: &__locals )
+        __args[2] = JNIType.toJava( value: c, locals: &__locals )
         __args[3] = JNIType.toJava( value: srcActions, locals: &__locals )
         __args[4] = JNIType.toJava( value: dgl, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDragGestureRecognizer", methodSig: "(Ljava/lang/Class;Ljava/awt/dnd/DragSource;Ljava/awt/Component;ILjava/awt/dnd/DragGestureListener;)Ljava/awt/dnd/DragGestureRecognizer;", methodCache: &Toolkit.createDragGestureRecognizer_MethodID_51, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDragGestureRecognizer", methodSig: "(Ljava/lang/Class;Ljava/awt/dnd/DragSource;Ljava/awt/Component;ILjava/awt/dnd/DragGestureListener;)Ljava/awt/dnd/DragGestureRecognizer;", methodCache: &Toolkit.createDragGestureRecognizer_MethodID_68, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DragGestureRecognizer( javaObject: __return ) : nil
     }
@@ -998,13 +1284,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public final synchronized java.lang.Object java.awt.Toolkit.getDesktopProperty(java.lang.String)
 
-    private static var getDesktopProperty_MethodID_52: jmethodID?
+    private static var getDesktopProperty_MethodID_69: jmethodID?
 
     open func getDesktopProperty( propertyName: String? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopProperty", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &Toolkit.getDesktopProperty_MethodID_52, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopProperty", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &Toolkit.getDesktopProperty_MethodID_69, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -1015,14 +1301,14 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected final void java.awt.Toolkit.setDesktopProperty(java.lang.String,java.lang.Object)
 
-    private static var setDesktopProperty_MethodID_53: jmethodID?
+    private static var setDesktopProperty_MethodID_70: jmethodID?
 
     open func setDesktopProperty( name: String?, newValue: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDesktopProperty", methodSig: "(Ljava/lang/String;Ljava/lang/Object;)V", methodCache: &Toolkit.setDesktopProperty_MethodID_53, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDesktopProperty", methodSig: "(Ljava/lang/String;Ljava/lang/Object;)V", methodCache: &Toolkit.setDesktopProperty_MethodID_70, args: &__args, locals: &__locals )
     }
 
     open func setDesktopProperty( _ _name: String?, _ _newValue: java_swift.JavaObject? ) {
@@ -1031,13 +1317,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected java.lang.Object java.awt.Toolkit.lazilyLoadDesktopProperty(java.lang.String)
 
-    private static var lazilyLoadDesktopProperty_MethodID_54: jmethodID?
+    private static var lazilyLoadDesktopProperty_MethodID_71: jmethodID?
 
     open func lazilyLoadDesktopProperty( name: String? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "lazilyLoadDesktopProperty", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &Toolkit.lazilyLoadDesktopProperty_MethodID_54, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "lazilyLoadDesktopProperty", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &Toolkit.lazilyLoadDesktopProperty_MethodID_71, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -1048,36 +1334,36 @@ open class Toolkit: java_swift.JavaObject {
 
     /// protected void java.awt.Toolkit.initializeDesktopProperties()
 
-    private static var initializeDesktopProperties_MethodID_55: jmethodID?
+    private static var initializeDesktopProperties_MethodID_72: jmethodID?
 
     open func initializeDesktopProperties() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "initializeDesktopProperties", methodSig: "()V", methodCache: &Toolkit.initializeDesktopProperties_MethodID_55, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "initializeDesktopProperties", methodSig: "()V", methodCache: &Toolkit.initializeDesktopProperties_MethodID_72, args: &__args, locals: &__locals )
     }
 
 
     /// public boolean java.awt.Toolkit.isAlwaysOnTopSupported()
 
-    private static var isAlwaysOnTopSupported_MethodID_56: jmethodID?
+    private static var isAlwaysOnTopSupported_MethodID_73: jmethodID?
 
     open func isAlwaysOnTopSupported() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAlwaysOnTopSupported", methodSig: "()Z", methodCache: &Toolkit.isAlwaysOnTopSupported_MethodID_56, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAlwaysOnTopSupported", methodSig: "()Z", methodCache: &Toolkit.isAlwaysOnTopSupported_MethodID_73, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract boolean java.awt.Toolkit.isModalityTypeSupported(java.awt.Dialog$ModalityType)
 
-    private static var isModalityTypeSupported_MethodID_57: jmethodID?
+    private static var isModalityTypeSupported_MethodID_74: jmethodID?
 
     open func isModalityTypeSupported( modalityType: Dialog_ModalityType? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: modalityType != nil ? modalityType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isModalityTypeSupported", methodSig: "(Ljava/awt/Dialog$ModalityType;)Z", methodCache: &Toolkit.isModalityTypeSupported_MethodID_57, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: modalityType, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isModalityTypeSupported", methodSig: "(Ljava/awt/Dialog$ModalityType;)Z", methodCache: &Toolkit.isModalityTypeSupported_MethodID_74, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1087,13 +1373,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public abstract boolean java.awt.Toolkit.isModalExclusionTypeSupported(java.awt.Dialog$ModalExclusionType)
 
-    private static var isModalExclusionTypeSupported_MethodID_58: jmethodID?
+    private static var isModalExclusionTypeSupported_MethodID_75: jmethodID?
 
     open func isModalExclusionTypeSupported( modalExclusionType: Dialog_ModalExclusionType? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: modalExclusionType != nil ? modalExclusionType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isModalExclusionTypeSupported", methodSig: "(Ljava/awt/Dialog$ModalExclusionType;)Z", methodCache: &Toolkit.isModalExclusionTypeSupported_MethodID_58, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: modalExclusionType, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isModalExclusionTypeSupported", methodSig: "(Ljava/awt/Dialog$ModalExclusionType;)Z", methodCache: &Toolkit.isModalExclusionTypeSupported_MethodID_75, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1105,14 +1391,14 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public void java.awt.Toolkit.addAWTEventListener(java.awt.event.AWTEventListener,long)
 
-    private static var addAWTEventListener_MethodID_59: jmethodID?
+    private static var addAWTEventListener_MethodID_76: jmethodID?
 
     open func addAWTEventListener( listener: AWTEventListener?, eventMask: Int64 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
         __args[1] = JNIType.toJava( value: eventMask, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAWTEventListener", methodSig: "(Ljava/awt/event/AWTEventListener;J)V", methodCache: &Toolkit.addAWTEventListener_MethodID_59, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAWTEventListener", methodSig: "(Ljava/awt/event/AWTEventListener;J)V", methodCache: &Toolkit.addAWTEventListener_MethodID_76, args: &__args, locals: &__locals )
     }
 
     open func addAWTEventListener( _ _listener: AWTEventListener?, _ _eventMask: Int64 ) {
@@ -1121,13 +1407,13 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public void java.awt.Toolkit.removeAWTEventListener(java.awt.event.AWTEventListener)
 
-    private static var removeAWTEventListener_MethodID_60: jmethodID?
+    private static var removeAWTEventListener_MethodID_77: jmethodID?
 
     open func removeAWTEventListener( listener: AWTEventListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAWTEventListener", methodSig: "(Ljava/awt/event/AWTEventListener;)V", methodCache: &Toolkit.removeAWTEventListener_MethodID_60, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAWTEventListener", methodSig: "(Ljava/awt/event/AWTEventListener;)V", methodCache: &Toolkit.removeAWTEventListener_MethodID_77, args: &__args, locals: &__locals )
     }
 
     open func removeAWTEventListener( _ _listener: AWTEventListener? ) {
@@ -1136,27 +1422,15 @@ open class Toolkit: java_swift.JavaObject {
 
     /// synchronized int java.awt.Toolkit.countAWTEventListeners(long)
 
-    /// public java.awt.event.AWTEventListener[] java.awt.Toolkit.getAWTEventListeners()
-
-    private static var getAWTEventListeners_MethodID_61: jmethodID?
-
-    open func getAWTEventListeners() -> [AWTEventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAWTEventListeners", methodSig: "()[Ljava/awt/event/AWTEventListener;", methodCache: &Toolkit.getAWTEventListeners_MethodID_61, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [AWTEventListenerForward](), from: __return )
-    }
-
-
     /// public java.awt.event.AWTEventListener[] java.awt.Toolkit.getAWTEventListeners(long)
 
-    private static var getAWTEventListeners_MethodID_62: jmethodID?
+    private static var getAWTEventListeners_MethodID_78: jmethodID?
 
     open func getAWTEventListeners( eventMask: Int64 ) -> [AWTEventListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: eventMask, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAWTEventListeners", methodSig: "(J)[Ljava/awt/event/AWTEventListener;", methodCache: &Toolkit.getAWTEventListeners_MethodID_62, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAWTEventListeners", methodSig: "(J)[Ljava/awt/event/AWTEventListener;", methodCache: &Toolkit.getAWTEventListeners_MethodID_78, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [AWTEventListenerForward](), from: __return )
     }
 
@@ -1164,15 +1438,27 @@ open class Toolkit: java_swift.JavaObject {
         return getAWTEventListeners( eventMask: _eventMask )
     }
 
+    /// public java.awt.event.AWTEventListener[] java.awt.Toolkit.getAWTEventListeners()
+
+    private static var getAWTEventListeners_MethodID_79: jmethodID?
+
+    open func getAWTEventListeners() -> [AWTEventListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAWTEventListeners", methodSig: "()[Ljava/awt/event/AWTEventListener;", methodCache: &Toolkit.getAWTEventListeners_MethodID_79, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [AWTEventListenerForward](), from: __return )
+    }
+
+
     /// public abstract java.util.Map java.awt.Toolkit.mapInputMethodHighlight(java.awt.im.InputMethodHighlight) throws java.awt.HeadlessException
 
-    private static var mapInputMethodHighlight_MethodID_63: jmethodID?
+    private static var mapInputMethodHighlight_MethodID_80: jmethodID?
 
     open func mapInputMethodHighlight( highlight: InputMethodHighlight? ) throws /* java.awt.HeadlessException */ -> java_swift.JavaMap! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "mapInputMethodHighlight", methodSig: "(Ljava/awt/im/InputMethodHighlight;)Ljava/util/Map;", methodCache: &Toolkit.mapInputMethodHighlight_MethodID_63, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: highlight, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "mapInputMethodHighlight", methodSig: "(Ljava/awt/im/InputMethodHighlight;)Ljava/util/Map;", methodCache: &Toolkit.mapInputMethodHighlight_MethodID_80, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -1188,304 +1474,18 @@ open class Toolkit: java_swift.JavaObject {
 
     /// public boolean java.awt.Toolkit.areExtraMouseButtonsEnabled() throws java.awt.HeadlessException
 
-    private static var areExtraMouseButtonsEnabled_MethodID_64: jmethodID?
+    private static var areExtraMouseButtonsEnabled_MethodID_81: jmethodID?
 
     open func areExtraMouseButtonsEnabled() throws /* java.awt.HeadlessException */ -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "areExtraMouseButtonsEnabled", methodSig: "()Z", methodCache: &Toolkit.areExtraMouseButtonsEnabled_MethodID_64, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "areExtraMouseButtonsEnabled", methodSig: "()Z", methodCache: &Toolkit.areExtraMouseButtonsEnabled_MethodID_81, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-
-    /// public abstract java.awt.FontMetrics java.awt.Toolkit.getFontMetrics(java.awt.Font)
-
-    private static var getFontMetrics_MethodID_65: jmethodID?
-
-    open func getFontMetrics( font: Font? ) -> FontMetrics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: font != nil ? font! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "(Ljava/awt/Font;)Ljava/awt/FontMetrics;", methodCache: &Toolkit.getFontMetrics_MethodID_65, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? FontMetrics( javaObject: __return ) : nil
-    }
-
-    open func getFontMetrics( _ _font: Font? ) -> FontMetrics! {
-        return getFontMetrics( font: _font )
-    }
-
-    /// public java.beans.PropertyChangeListener[] java.awt.Toolkit.getPropertyChangeListeners(java.lang.String)
-
-    private static var getPropertyChangeListeners_MethodID_66: jmethodID?
-
-    open func getPropertyChangeListeners( propertyName: String? ) -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "(Ljava/lang/String;)[Ljava/beans/PropertyChangeListener;", methodCache: &Toolkit.getPropertyChangeListeners_MethodID_66, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
-    }
-
-    open func getPropertyChangeListeners( _ _propertyName: String? ) -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        return getPropertyChangeListeners( propertyName: _propertyName )
-    }
-
-    /// public java.beans.PropertyChangeListener[] java.awt.Toolkit.getPropertyChangeListeners()
-
-    private static var getPropertyChangeListeners_MethodID_67: jmethodID?
-
-    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &Toolkit.getPropertyChangeListeners_MethodID_67, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
-    }
-
-
-    /// public void java.awt.Toolkit.addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
-
-    private static var addPropertyChangeListener_MethodID_68: jmethodID?
-
-    open func addPropertyChangeListener( name: String?, pcl: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pcl, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &Toolkit.addPropertyChangeListener_MethodID_68, args: &__args, locals: &__locals )
-    }
-
-    open func addPropertyChangeListener( _ _name: String?, _ _pcl: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        addPropertyChangeListener( name: _name, pcl: _pcl )
-    }
-
-    /// static boolean java.awt.Toolkit.enabledOnToolkit(long)
-
-    /// protected static java.awt.Container java.awt.Toolkit.getNativeContainer(java.awt.Component)
-
-    private static var getNativeContainer_MethodID_69: jmethodID?
-
-    open class func getNativeContainer( c: Component? ) -> Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Toolkit", classCache: &ToolkitJNIClass, methodName: "getNativeContainer", methodSig: "(Ljava/awt/Component;)Ljava/awt/Container;", methodCache: &getNativeContainer_MethodID_69, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Container( javaObject: __return ) : nil
-    }
-
-    open class func getNativeContainer( _ _c: Component? ) -> Container! {
-        return getNativeContainer( c: _c )
-    }
-
-    /// static java.awt.EventQueue java.awt.Toolkit.getEventQueue()
-
-    /// static void java.awt.Toolkit.loadLibraries()
-
-    /// public abstract java.awt.image.ColorModel java.awt.Toolkit.getColorModel() throws java.awt.HeadlessException
-
-    private static var getColorModel_MethodID_70: jmethodID?
-
-    open func getColorModel() throws /* java.awt.HeadlessException */ -> ColorModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &Toolkit.getColorModel_MethodID_70, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw HeadlessException( javaObject: throwable )
-        }
-        return __return != nil ? ColorModel( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract java.awt.Image java.awt.Toolkit.createImage(java.net.URL)
-
-    private static var createImage_MethodID_71: jmethodID?
-
-    open func createImage( url: /* java.net.URL */ UnclassedObject? ) -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: url != nil ? url! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(Ljava/net/URL;)Ljava/awt/Image;", methodCache: &Toolkit.createImage_MethodID_71, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
-    }
-
-    open func createImage( _ _url: /* java.net.URL */ UnclassedObject? ) -> Image! {
-        return createImage( url: _url )
-    }
-
-    /// public abstract java.awt.Image java.awt.Toolkit.createImage(byte[],int,int)
-
-    private static var createImage_MethodID_72: jmethodID?
-
-    open func createImage( imagedata: [Int8]?, imageoffset: Int, imagelength: Int ) -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: imagedata, locals: &__locals )
-        __args[1] = JNIType.toJava( value: imageoffset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: imagelength, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "([BII)Ljava/awt/Image;", methodCache: &Toolkit.createImage_MethodID_72, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
-    }
-
-    open func createImage( _ _imagedata: [Int8]?, _ _imageoffset: Int, _ _imagelength: Int ) -> Image! {
-        return createImage( imagedata: _imagedata, imageoffset: _imageoffset, imagelength: _imagelength )
-    }
-
-    /// public abstract java.awt.Image java.awt.Toolkit.createImage(java.lang.String)
-
-    private static var createImage_MethodID_73: jmethodID?
-
-    open func createImage( filename: String? ) -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: filename, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(Ljava/lang/String;)Ljava/awt/Image;", methodCache: &Toolkit.createImage_MethodID_73, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
-    }
-
-    open func createImage( _ _filename: String? ) -> Image! {
-        return createImage( filename: _filename )
-    }
-
-    /// public abstract java.awt.Image java.awt.Toolkit.createImage(java.awt.image.ImageProducer)
-
-    private static var createImage_MethodID_74: jmethodID?
-
-    open func createImage( producer: ImageProducer? ) -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: producer, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(Ljava/awt/image/ImageProducer;)Ljava/awt/Image;", methodCache: &Toolkit.createImage_MethodID_74, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
-    }
-
-    open func createImage( _ _producer: ImageProducer? ) -> Image! {
-        return createImage( producer: _producer )
-    }
-
-    /// public java.awt.Image java.awt.Toolkit.createImage(byte[])
-
-    private static var createImage_MethodID_75: jmethodID?
-
-    open func createImage( imagedata: [Int8]? ) -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: imagedata, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "([B)Ljava/awt/Image;", methodCache: &Toolkit.createImage_MethodID_75, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
-    }
-
-    open func createImage( _ _imagedata: [Int8]? ) -> Image! {
-        return createImage( imagedata: _imagedata )
-    }
-
-    /// public abstract boolean java.awt.Toolkit.prepareImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
-
-    private static var prepareImage_MethodID_76: jmethodID?
-
-    open func prepareImage( image: Image?, width: Int, height: Int, observer: ImageObserver? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: width, locals: &__locals )
-        __args[2] = JNIType.toJava( value: height, locals: &__locals )
-        __args[3] = JNIType.toJava( value: observer, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "prepareImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)Z", methodCache: &Toolkit.prepareImage_MethodID_76, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func prepareImage( _ _image: Image?, _ _width: Int, _ _height: Int, _ _observer: ImageObserver? ) -> Bool {
-        return prepareImage( image: _image, width: _width, height: _height, observer: _observer )
-    }
-
-    /// public abstract int java.awt.Toolkit.checkImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
-
-    private static var checkImage_MethodID_77: jmethodID?
-
-    open func checkImage( image: Image?, width: Int, height: Int, observer: ImageObserver? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: width, locals: &__locals )
-        __args[2] = JNIType.toJava( value: height, locals: &__locals )
-        __args[3] = JNIType.toJava( value: observer, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)I", methodCache: &Toolkit.checkImage_MethodID_77, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func checkImage( _ _image: Image?, _ _width: Int, _ _height: Int, _ _observer: ImageObserver? ) -> Int {
-        return checkImage( image: _image, width: _width, height: _height, observer: _observer )
-    }
-
-    /// public void java.awt.Toolkit.removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
-
-    private static var removePropertyChangeListener_MethodID_78: jmethodID?
-
-    open func removePropertyChangeListener( name: String?, pcl: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pcl, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &Toolkit.removePropertyChangeListener_MethodID_78, args: &__args, locals: &__locals )
-    }
-
-    open func removePropertyChangeListener( _ _name: String?, _ _pcl: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        removePropertyChangeListener( name: _name, pcl: _pcl )
-    }
-
-    /// public static synchronized java.awt.Toolkit java.awt.Toolkit.getDefaultToolkit()
-
-    private static var getDefaultToolkit_MethodID_79: jmethodID?
-
-    open class func getDefaultToolkit() -> Toolkit! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Toolkit", classCache: &ToolkitJNIClass, methodName: "getDefaultToolkit", methodSig: "()Ljava/awt/Toolkit;", methodCache: &getDefaultToolkit_MethodID_79, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Toolkit( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.peer.MouseInfoPeer java.awt.Toolkit.getMouseInfoPeer()
-
-    private static var getMouseInfoPeer_MethodID_80: jmethodID?
-
-    open func getMouseInfoPeer() -> MouseInfoPeer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseInfoPeer", methodSig: "()Ljava/awt/peer/MouseInfoPeer;", methodCache: &Toolkit.getMouseInfoPeer_MethodID_80, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MouseInfoPeerForward( javaObject: __return ) : nil
-    }
-
-
-    /// void java.awt.Toolkit.notifyAWTEventListeners(java.awt.AWTEvent)
-
-    /// protected java.awt.peer.LightweightPeer java.awt.Toolkit.createComponent(java.awt.Component)
-
-    private static var createComponent_MethodID_81: jmethodID?
-
-    open func createComponent( target: Component? ) -> LightweightPeer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponent", methodSig: "(Ljava/awt/Component;)Ljava/awt/peer/LightweightPeer;", methodCache: &Toolkit.createComponent_MethodID_81, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? LightweightPeerForward( javaObject: __return ) : nil
-    }
-
-    open func createComponent( _ _target: Component? ) -> LightweightPeer! {
-        return createComponent( target: _target )
-    }
 
 }
 

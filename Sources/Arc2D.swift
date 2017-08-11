@@ -87,7 +87,7 @@ open class Arc2D: RectangularShape {
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &Arc2D.equals_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -102,11 +102,17 @@ open class Arc2D: RectangularShape {
 
     /// public boolean java.awt.geom.Arc2D.contains(double,double,double,double)
 
-    /// private boolean java.awt.geom.Arc2D.contains(double,double,double,double,java.awt.geom.Rectangle2D)
-
     /// public boolean java.awt.geom.Arc2D.contains(java.awt.geom.Rectangle2D)
 
+    /// private boolean java.awt.geom.Arc2D.contains(double,double,double,double,java.awt.geom.Rectangle2D)
+
     /// public boolean java.awt.geom.Arc2D.intersects(double,double,double,double)
+
+    /// public java.awt.geom.PathIterator java.awt.geom.Arc2D.getPathIterator(java.awt.geom.AffineTransform)
+
+    /// public java.awt.geom.Rectangle2D java.awt.geom.Arc2D.getBounds2D()
+
+    /// public void java.awt.geom.Arc2D.setFrame(double,double,double,double)
 
     /// public java.awt.geom.Point2D java.awt.geom.Arc2D.getStartPoint()
 
@@ -133,12 +139,6 @@ open class Arc2D: RectangularShape {
         return __return != nil ? Point2D( javaObject: __return ) : nil
     }
 
-
-    /// public java.awt.geom.Rectangle2D java.awt.geom.Arc2D.getBounds2D()
-
-    /// public void java.awt.geom.Arc2D.setFrame(double,double,double,double)
-
-    /// public java.awt.geom.PathIterator java.awt.geom.Arc2D.getPathIterator(java.awt.geom.AffineTransform)
 
     /// public abstract double java.awt.geom.Arc2D.getAngleStart()
 
@@ -171,7 +171,7 @@ open class Arc2D: RectangularShape {
     open func setArc( a: Arc2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArc", methodSig: "(Ljava/awt/geom/Arc2D;)V", methodCache: &Arc2D.setArc_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -186,7 +186,7 @@ open class Arc2D: RectangularShape {
     open func setArc( rect: Rectangle2D?, angSt: Double, angExt: Double, closure: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rect != nil ? rect! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: rect, locals: &__locals )
         __args[1] = JNIType.toJava( value: angSt, locals: &__locals )
         __args[2] = JNIType.toJava( value: angExt, locals: &__locals )
         __args[3] = JNIType.toJava( value: closure, locals: &__locals )
@@ -204,8 +204,8 @@ open class Arc2D: RectangularShape {
     open func setArc( loc: Point2D?, size: Dimension2D?, angSt: Double, angExt: Double, closure: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: loc != nil ? loc! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: size != nil ? size! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: loc, locals: &__locals )
+        __args[1] = JNIType.toJava( value: size, locals: &__locals )
         __args[2] = JNIType.toJava( value: angSt, locals: &__locals )
         __args[3] = JNIType.toJava( value: angExt, locals: &__locals )
         __args[4] = JNIType.toJava( value: closure, locals: &__locals )
@@ -244,7 +244,7 @@ open class Arc2D: RectangularShape {
     open func setAngleStart( p: Point2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngleStart", methodSig: "(Ljava/awt/geom/Point2D;)V", methodCache: &Arc2D.setAngleStart_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -356,9 +356,9 @@ open class Arc2D: RectangularShape {
     open func setArcByTangent( p1: Point2D?, p2: Point2D?, p3: Point2D?, radius: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p1 != nil ? p1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p2 != nil ? p2! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: p3 != nil ? p3! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p2, locals: &__locals )
+        __args[2] = JNIType.toJava( value: p3, locals: &__locals )
         __args[3] = JNIType.toJava( value: radius, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArcByTangent", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;D)V", methodCache: &Arc2D.setArcByTangent_MethodID_19, args: &__args, locals: &__locals )
     }
@@ -392,8 +392,8 @@ open class Arc2D: RectangularShape {
     open func setAngles( p1: Point2D?, p2: Point2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p1 != nil ? p1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p2 != nil ? p2! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p2, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngles", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &Arc2D.setAngles_MethodID_21, args: &__args, locals: &__locals )
     }
 

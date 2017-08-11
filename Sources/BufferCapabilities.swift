@@ -33,9 +33,9 @@ open class BufferCapabilities: java_swift.JavaObject, java_lang.Cloneable {
     public convenience init( frontCaps: ImageCapabilities?, backCaps: ImageCapabilities?, flipContents: BufferCapabilities_FlipContents? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: frontCaps != nil ? frontCaps! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: backCaps != nil ? backCaps! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: flipContents != nil ? flipContents! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: frontCaps, locals: &__locals )
+        __args[1] = JNIType.toJava( value: backCaps, locals: &__locals )
+        __args[2] = JNIType.toJava( value: flipContents, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/BufferCapabilities", classCache: &BufferCapabilities.BufferCapabilitiesJNIClass, methodSig: "(Ljava/awt/ImageCapabilities;Ljava/awt/ImageCapabilities;Ljava/awt/BufferCapabilities$FlipContents;)V", methodCache: &BufferCapabilities.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

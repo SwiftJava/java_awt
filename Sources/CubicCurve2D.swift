@@ -52,7 +52,7 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     open func contains( r: Rectangle2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &CubicCurve2D.contains_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -61,15 +61,34 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return contains( r: _r )
     }
 
-    /// public boolean java.awt.geom.CubicCurve2D.contains(java.awt.geom.Point2D)
+    /// public boolean java.awt.geom.CubicCurve2D.contains(double,double,double,double)
 
     private static var contains_MethodID_4: jmethodID?
+
+    open func contains( x: Double, y: Double, w: Double, h: Double ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        __args[2] = JNIType.toJava( value: w, locals: &__locals )
+        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DDDD)Z", methodCache: &CubicCurve2D.contains_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func contains( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Bool {
+        return contains( x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public boolean java.awt.geom.CubicCurve2D.contains(java.awt.geom.Point2D)
+
+    private static var contains_MethodID_5: jmethodID?
 
     open func contains( p: Point2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &CubicCurve2D.contains_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &CubicCurve2D.contains_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -79,38 +98,19 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public boolean java.awt.geom.CubicCurve2D.contains(double,double)
 
-    private static var contains_MethodID_5: jmethodID?
+    private static var contains_MethodID_6: jmethodID?
 
     open func contains( x: Double, y: Double ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DD)Z", methodCache: &CubicCurve2D.contains_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DD)Z", methodCache: &CubicCurve2D.contains_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
     open func contains( _ _x: Double, _ _y: Double ) -> Bool {
         return contains( x: _x, y: _y )
-    }
-
-    /// public boolean java.awt.geom.CubicCurve2D.contains(double,double,double,double)
-
-    private static var contains_MethodID_6: jmethodID?
-
-    open func contains( x: Double, y: Double, w: Double, h: Double ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DDDD)Z", methodCache: &CubicCurve2D.contains_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func contains( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Bool {
-        return contains( x: _x, y: _y, w: _w, h: _h )
     }
 
     /// public boolean java.awt.geom.CubicCurve2D.intersects(double,double,double,double)
@@ -139,7 +139,7 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     open func intersects( r: Rectangle2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &CubicCurve2D.intersects_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -148,94 +148,16 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return intersects( r: _r )
     }
 
-    /// public abstract double java.awt.geom.CubicCurve2D.getX1()
-
-    private static var getX1_MethodID_9: jmethodID?
-
-    open func getX1() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getX1", methodSig: "()D", methodCache: &CubicCurve2D.getX1_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public abstract double java.awt.geom.CubicCurve2D.getY1()
-
-    private static var getY1_MethodID_10: jmethodID?
-
-    open func getY1() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getY1", methodSig: "()D", methodCache: &CubicCurve2D.getY1_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public abstract double java.awt.geom.CubicCurve2D.getX2()
-
-    private static var getX2_MethodID_11: jmethodID?
-
-    open func getX2() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getX2", methodSig: "()D", methodCache: &CubicCurve2D.getX2_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public abstract double java.awt.geom.CubicCurve2D.getY2()
-
-    private static var getY2_MethodID_12: jmethodID?
-
-    open func getY2() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getY2", methodSig: "()D", methodCache: &CubicCurve2D.getY2_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public java.awt.Rectangle java.awt.geom.CubicCurve2D.getBounds()
-
-    private static var getBounds_MethodID_13: jmethodID?
-
-    open func getBounds() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &CubicCurve2D.getBounds_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.geom.PathIterator java.awt.geom.CubicCurve2D.getPathIterator(java.awt.geom.AffineTransform)
-
-    private static var getPathIterator_MethodID_14: jmethodID?
-
-    open func getPathIterator( at: AffineTransform? ) -> PathIterator! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &CubicCurve2D.getPathIterator_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
-    }
-
-    open func getPathIterator( _ _at: AffineTransform? ) -> PathIterator! {
-        return getPathIterator( at: _at )
-    }
-
     /// public java.awt.geom.PathIterator java.awt.geom.CubicCurve2D.getPathIterator(java.awt.geom.AffineTransform,double)
 
-    private static var getPathIterator_MethodID_15: jmethodID?
+    private static var getPathIterator_MethodID_9: jmethodID?
 
     open func getPathIterator( at: AffineTransform?, flatness: Double ) -> PathIterator! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
         __args[1] = JNIType.toJava( value: flatness, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &CubicCurve2D.getPathIterator_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &CubicCurve2D.getPathIterator_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
     }
@@ -244,7 +166,83 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return getPathIterator( at: _at, flatness: _flatness )
     }
 
-    /// private static double java.awt.geom.CubicCurve2D.getRootUpperBound(double[])
+    /// public java.awt.geom.PathIterator java.awt.geom.CubicCurve2D.getPathIterator(java.awt.geom.AffineTransform)
+
+    private static var getPathIterator_MethodID_10: jmethodID?
+
+    open func getPathIterator( at: AffineTransform? ) -> PathIterator! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &CubicCurve2D.getPathIterator_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
+    }
+
+    open func getPathIterator( _ _at: AffineTransform? ) -> PathIterator! {
+        return getPathIterator( at: _at )
+    }
+
+    /// public abstract double java.awt.geom.CubicCurve2D.getX1()
+
+    private static var getX1_MethodID_11: jmethodID?
+
+    open func getX1() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getX1", methodSig: "()D", methodCache: &CubicCurve2D.getX1_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+
+    /// public abstract double java.awt.geom.CubicCurve2D.getY1()
+
+    private static var getY1_MethodID_12: jmethodID?
+
+    open func getY1() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getY1", methodSig: "()D", methodCache: &CubicCurve2D.getY1_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+
+    /// public abstract double java.awt.geom.CubicCurve2D.getX2()
+
+    private static var getX2_MethodID_13: jmethodID?
+
+    open func getX2() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getX2", methodSig: "()D", methodCache: &CubicCurve2D.getX2_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+
+    /// public abstract double java.awt.geom.CubicCurve2D.getY2()
+
+    private static var getY2_MethodID_14: jmethodID?
+
+    open func getY2() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getY2", methodSig: "()D", methodCache: &CubicCurve2D.getY2_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+
+    /// public java.awt.Rectangle java.awt.geom.CubicCurve2D.getBounds()
+
+    private static var getBounds_MethodID_15: jmethodID?
+
+    open func getBounds() -> Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &CubicCurve2D.getBounds_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
 
     /// private int java.awt.geom.CubicCurve2D.rectCrossings(double,double,double,double)
 
@@ -348,9 +346,59 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     }
 
 
-    /// public abstract void java.awt.geom.CubicCurve2D.setCurve(double,double,double,double,double,double,double,double)
+    /// public void java.awt.geom.CubicCurve2D.setCurve(java.awt.geom.Point2D[],int)
 
     private static var setCurve_MethodID_24: jmethodID?
+
+    open func setCurve( pts: [Point2D]?, offset: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pts, locals: &__locals )
+        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurve", methodSig: "([Ljava/awt/geom/Point2D;I)V", methodCache: &CubicCurve2D.setCurve_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func setCurve( _ _pts: [Point2D]?, _ _offset: Int ) {
+        setCurve( pts: _pts, offset: _offset )
+    }
+
+    /// public void java.awt.geom.CubicCurve2D.setCurve(java.awt.geom.Point2D,java.awt.geom.Point2D,java.awt.geom.Point2D,java.awt.geom.Point2D)
+
+    private static var setCurve_MethodID_25: jmethodID?
+
+    open func setCurve( p1: Point2D?, cp1: Point2D?, cp2: Point2D?, p2: Point2D? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: cp1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: cp2, locals: &__locals )
+        __args[3] = JNIType.toJava( value: p2, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurve", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &CubicCurve2D.setCurve_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func setCurve( _ _p1: Point2D?, _ _cp1: Point2D?, _ _cp2: Point2D?, _ _p2: Point2D? ) {
+        setCurve( p1: _p1, cp1: _cp1, cp2: _cp2, p2: _p2 )
+    }
+
+    /// public void java.awt.geom.CubicCurve2D.setCurve(double[],int)
+
+    private static var setCurve_MethodID_26: jmethodID?
+
+    open func setCurve( coords: [Double]?, offset: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: coords, locals: &__locals )
+        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurve", methodSig: "([DI)V", methodCache: &CubicCurve2D.setCurve_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    open func setCurve( _ _coords: [Double]?, _ _offset: Int ) {
+        setCurve( coords: _coords, offset: _offset )
+    }
+
+    /// public abstract void java.awt.geom.CubicCurve2D.setCurve(double,double,double,double,double,double,double,double)
+
+    private static var setCurve_MethodID_27: jmethodID?
 
     open func setCurve( x1: Double, y1: Double, ctrlx1: Double, ctrly1: Double, ctrlx2: Double, ctrly2: Double, x2: Double, y2: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
@@ -363,88 +411,50 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[5] = JNIType.toJava( value: ctrly2, locals: &__locals )
         __args[6] = JNIType.toJava( value: x2, locals: &__locals )
         __args[7] = JNIType.toJava( value: y2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurve", methodSig: "(DDDDDDDD)V", methodCache: &CubicCurve2D.setCurve_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurve", methodSig: "(DDDDDDDD)V", methodCache: &CubicCurve2D.setCurve_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func setCurve( _ _x1: Double, _ _y1: Double, _ _ctrlx1: Double, _ _ctrly1: Double, _ _ctrlx2: Double, _ _ctrly2: Double, _ _x2: Double, _ _y2: Double ) {
         setCurve( x1: _x1, y1: _y1, ctrlx1: _ctrlx1, ctrly1: _ctrly1, ctrlx2: _ctrlx2, ctrly2: _ctrly2, x2: _x2, y2: _y2 )
     }
 
-    /// public void java.awt.geom.CubicCurve2D.setCurve(java.awt.geom.Point2D,java.awt.geom.Point2D,java.awt.geom.Point2D,java.awt.geom.Point2D)
-
-    private static var setCurve_MethodID_25: jmethodID?
-
-    open func setCurve( p1: Point2D?, cp1: Point2D?, cp2: Point2D?, p2: Point2D? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p1 != nil ? p1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: cp1 != nil ? cp1! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: cp2 != nil ? cp2! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: p2 != nil ? p2! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurve", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &CubicCurve2D.setCurve_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-    open func setCurve( _ _p1: Point2D?, _ _cp1: Point2D?, _ _cp2: Point2D?, _ _p2: Point2D? ) {
-        setCurve( p1: _p1, cp1: _cp1, cp2: _cp2, p2: _p2 )
-    }
-
     /// public void java.awt.geom.CubicCurve2D.setCurve(java.awt.geom.CubicCurve2D)
 
-    private static var setCurve_MethodID_26: jmethodID?
+    private static var setCurve_MethodID_28: jmethodID?
 
     open func setCurve( c: CubicCurve2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurve", methodSig: "(Ljava/awt/geom/CubicCurve2D;)V", methodCache: &CubicCurve2D.setCurve_MethodID_26, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurve", methodSig: "(Ljava/awt/geom/CubicCurve2D;)V", methodCache: &CubicCurve2D.setCurve_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func setCurve( _ _c: CubicCurve2D? ) {
         setCurve( c: _c )
     }
 
-    /// public void java.awt.geom.CubicCurve2D.setCurve(java.awt.geom.Point2D[],int)
+    /// public double java.awt.geom.CubicCurve2D.getFlatnessSq()
 
-    private static var setCurve_MethodID_27: jmethodID?
+    private static var getFlatnessSq_MethodID_29: jmethodID?
 
-    open func setCurve( pts: [Point2D]?, offset: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getFlatnessSq() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pts, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurve", methodSig: "([Ljava/awt/geom/Point2D;I)V", methodCache: &CubicCurve2D.setCurve_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getFlatnessSq", methodSig: "()D", methodCache: &CubicCurve2D.getFlatnessSq_MethodID_29, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
     }
 
-    open func setCurve( _ _pts: [Point2D]?, _ _offset: Int ) {
-        setCurve( pts: _pts, offset: _offset )
-    }
-
-    /// public void java.awt.geom.CubicCurve2D.setCurve(double[],int)
-
-    private static var setCurve_MethodID_28: jmethodID?
-
-    open func setCurve( coords: [Double]?, offset: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: coords, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurve", methodSig: "([DI)V", methodCache: &CubicCurve2D.setCurve_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-    open func setCurve( _ _coords: [Double]?, _ _offset: Int ) {
-        setCurve( coords: _coords, offset: _offset )
-    }
 
     /// public static double java.awt.geom.CubicCurve2D.getFlatnessSq(double[],int)
 
-    private static var getFlatnessSq_MethodID_29: jmethodID?
+    private static var getFlatnessSq_MethodID_30: jmethodID?
 
     open class func getFlatnessSq( coords: [Double]?, offset: Int ) -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: coords, locals: &__locals )
         __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/CubicCurve2D", classCache: &CubicCurve2DJNIClass, methodName: "getFlatnessSq", methodSig: "([DI)D", methodCache: &getFlatnessSq_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/CubicCurve2D", classCache: &CubicCurve2DJNIClass, methodName: "getFlatnessSq", methodSig: "([DI)D", methodCache: &getFlatnessSq_MethodID_30, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
@@ -454,7 +464,7 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public static double java.awt.geom.CubicCurve2D.getFlatnessSq(double,double,double,double,double,double,double,double)
 
-    private static var getFlatnessSq_MethodID_30: jmethodID?
+    private static var getFlatnessSq_MethodID_31: jmethodID?
 
     open class func getFlatnessSq( x1: Double, y1: Double, ctrlx1: Double, ctrly1: Double, ctrlx2: Double, ctrly2: Double, x2: Double, y2: Double ) -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
@@ -467,7 +477,7 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[5] = JNIType.toJava( value: ctrly2, locals: &__locals )
         __args[6] = JNIType.toJava( value: x2, locals: &__locals )
         __args[7] = JNIType.toJava( value: y2, locals: &__locals )
-        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/CubicCurve2D", classCache: &CubicCurve2DJNIClass, methodName: "getFlatnessSq", methodSig: "(DDDDDDDD)D", methodCache: &getFlatnessSq_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/CubicCurve2D", classCache: &CubicCurve2DJNIClass, methodName: "getFlatnessSq", methodSig: "(DDDDDDDD)D", methodCache: &getFlatnessSq_MethodID_31, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
@@ -475,39 +485,21 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return getFlatnessSq( x1: _x1, y1: _y1, ctrlx1: _ctrlx1, ctrly1: _ctrly1, ctrlx2: _ctrlx2, ctrly2: _ctrly2, x2: _x2, y2: _y2 )
     }
 
-    /// public double java.awt.geom.CubicCurve2D.getFlatnessSq()
-
-    private static var getFlatnessSq_MethodID_31: jmethodID?
-
-    open func getFlatnessSq() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getFlatnessSq", methodSig: "()D", methodCache: &CubicCurve2D.getFlatnessSq_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public static double java.awt.geom.CubicCurve2D.getFlatness(double,double,double,double,double,double,double,double)
+    /// public static double java.awt.geom.CubicCurve2D.getFlatness(double[],int)
 
     private static var getFlatness_MethodID_32: jmethodID?
 
-    open class func getFlatness( x1: Double, y1: Double, ctrlx1: Double, ctrly1: Double, ctrlx2: Double, ctrly2: Double, x2: Double, y2: Double ) -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+    open class func getFlatness( coords: [Double]?, offset: Int ) -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: ctrlx1, locals: &__locals )
-        __args[3] = JNIType.toJava( value: ctrly1, locals: &__locals )
-        __args[4] = JNIType.toJava( value: ctrlx2, locals: &__locals )
-        __args[5] = JNIType.toJava( value: ctrly2, locals: &__locals )
-        __args[6] = JNIType.toJava( value: x2, locals: &__locals )
-        __args[7] = JNIType.toJava( value: y2, locals: &__locals )
-        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/CubicCurve2D", classCache: &CubicCurve2DJNIClass, methodName: "getFlatness", methodSig: "(DDDDDDDD)D", methodCache: &getFlatness_MethodID_32, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: coords, locals: &__locals )
+        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
+        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/CubicCurve2D", classCache: &CubicCurve2DJNIClass, methodName: "getFlatness", methodSig: "([DI)D", methodCache: &getFlatness_MethodID_32, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
-    open class func getFlatness( _ _x1: Double, _ _y1: Double, _ _ctrlx1: Double, _ _ctrly1: Double, _ _ctrlx2: Double, _ _ctrly2: Double, _ _x2: Double, _ _y2: Double ) -> Double {
-        return getFlatness( x1: _x1, y1: _y1, ctrlx1: _ctrlx1, ctrly1: _ctrly1, ctrlx2: _ctrlx2, ctrly2: _ctrly2, x2: _x2, y2: _y2 )
+    open class func getFlatness( _ _coords: [Double]?, _ _offset: Int ) -> Double {
+        return getFlatness( coords: _coords, offset: _offset )
     }
 
     /// public double java.awt.geom.CubicCurve2D.getFlatness()
@@ -522,21 +514,27 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     }
 
 
-    /// public static double java.awt.geom.CubicCurve2D.getFlatness(double[],int)
+    /// public static double java.awt.geom.CubicCurve2D.getFlatness(double,double,double,double,double,double,double,double)
 
     private static var getFlatness_MethodID_34: jmethodID?
 
-    open class func getFlatness( coords: [Double]?, offset: Int ) -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func getFlatness( x1: Double, y1: Double, ctrlx1: Double, ctrly1: Double, ctrlx2: Double, ctrly2: Double, x2: Double, y2: Double ) -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: coords, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/CubicCurve2D", classCache: &CubicCurve2DJNIClass, methodName: "getFlatness", methodSig: "([DI)D", methodCache: &getFlatness_MethodID_34, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: x1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: y1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: ctrlx1, locals: &__locals )
+        __args[3] = JNIType.toJava( value: ctrly1, locals: &__locals )
+        __args[4] = JNIType.toJava( value: ctrlx2, locals: &__locals )
+        __args[5] = JNIType.toJava( value: ctrly2, locals: &__locals )
+        __args[6] = JNIType.toJava( value: x2, locals: &__locals )
+        __args[7] = JNIType.toJava( value: y2, locals: &__locals )
+        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/CubicCurve2D", classCache: &CubicCurve2DJNIClass, methodName: "getFlatness", methodSig: "(DDDDDDDD)D", methodCache: &getFlatness_MethodID_34, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
-    open class func getFlatness( _ _coords: [Double]?, _ _offset: Int ) -> Double {
-        return getFlatness( coords: _coords, offset: _offset )
+    open class func getFlatness( _ _x1: Double, _ _y1: Double, _ _ctrlx1: Double, _ _ctrly1: Double, _ _ctrlx2: Double, _ _ctrly2: Double, _ _x2: Double, _ _y2: Double ) -> Double {
+        return getFlatness( x1: _x1, y1: _y1, ctrlx1: _ctrlx1, ctrly1: _ctrly1, ctrlx2: _ctrlx2, ctrly2: _ctrly2, x2: _x2, y2: _y2 )
     }
 
     /// public static void java.awt.geom.CubicCurve2D.subdivide(java.awt.geom.CubicCurve2D,java.awt.geom.CubicCurve2D,java.awt.geom.CubicCurve2D)
@@ -546,9 +544,9 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     open class func subdivide( src: CubicCurve2D?, left: CubicCurve2D?, right: CubicCurve2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src != nil ? src! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: left != nil ? left! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: right != nil ? right! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: left, locals: &__locals )
+        __args[2] = JNIType.toJava( value: right, locals: &__locals )
         JNIMethod.CallStaticVoidMethod( className: "java/awt/geom/CubicCurve2D", classCache: &CubicCurve2DJNIClass, methodName: "subdivide", methodSig: "(Ljava/awt/geom/CubicCurve2D;Ljava/awt/geom/CubicCurve2D;Ljava/awt/geom/CubicCurve2D;)V", methodCache: &subdivide_MethodID_35, args: &__args, locals: &__locals )
     }
 
@@ -563,8 +561,8 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     open func subdivide( left: CubicCurve2D?, right: CubicCurve2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: left != nil ? left! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: right != nil ? right! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: left, locals: &__locals )
+        __args[1] = JNIType.toJava( value: right, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "subdivide", methodSig: "(Ljava/awt/geom/CubicCurve2D;Ljava/awt/geom/CubicCurve2D;)V", methodCache: &CubicCurve2D.subdivide_MethodID_36, args: &__args, locals: &__locals )
     }
 
@@ -642,6 +640,8 @@ open class CubicCurve2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     /// private static boolean java.awt.geom.CubicCurve2D.oppositeSigns(double,double)
 
     /// private static double java.awt.geom.CubicCurve2D.solveEqn(double[],int,double)
+
+    /// private static double java.awt.geom.CubicCurve2D.getRootUpperBound(double[])
 
     /// In declared protocol but not defined.. ///
 

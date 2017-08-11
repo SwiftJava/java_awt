@@ -145,7 +145,7 @@ open class DirectColorModel: PackedColorModel {
     public convenience init( space: ColorSpace?, bits: Int, rmask: Int, gmask: Int, bmask: Int, amask: Int, isAlphaPremultiplied: Bool, transferType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: space != nil ? space! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: space, locals: &__locals )
         __args[1] = JNIType.toJava( value: bits, locals: &__locals )
         __args[2] = JNIType.toJava( value: rmask, locals: &__locals )
         __args[3] = JNIType.toJava( value: gmask, locals: &__locals )
@@ -205,17 +205,35 @@ open class DirectColorModel: PackedColorModel {
 
     /// public java.lang.String java.awt.image.DirectColorModel.toString()
 
+    /// public final java.awt.image.WritableRaster java.awt.image.DirectColorModel.createCompatibleWritableRaster(int,int)
+
+    private static var createCompatibleWritableRaster_MethodID_4: jmethodID?
+
+    open func createCompatibleWritableRaster( w: Int, h: Int ) -> WritableRaster! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: w, locals: &__locals )
+        __args[1] = JNIType.toJava( value: h, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "(II)Ljava/awt/image/WritableRaster;", methodCache: &DirectColorModel.createCompatibleWritableRaster_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    override open func createCompatibleWritableRaster( _ _w: Int, _ _h: Int ) -> WritableRaster! {
+        return createCompatibleWritableRaster( w: _w, h: _h )
+    }
+
     /// public java.lang.Object java.awt.image.DirectColorModel.getDataElements(int[],int,java.lang.Object)
 
-    private static var getDataElements_MethodID_4: jmethodID?
+    private static var getDataElements_MethodID_5: jmethodID?
 
     open func getDataElements( components: [Int32]?, offset: Int, obj: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: components, locals: &__locals )
         __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "([IILjava/lang/Object;)Ljava/lang/Object;", methodCache: &DirectColorModel.getDataElements_MethodID_4, args: &__args, locals: &__locals )
+        __args[2] = JNIType.toJava( value: obj, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "([IILjava/lang/Object;)Ljava/lang/Object;", methodCache: &DirectColorModel.getDataElements_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -226,14 +244,14 @@ open class DirectColorModel: PackedColorModel {
 
     /// public java.lang.Object java.awt.image.DirectColorModel.getDataElements(int,java.lang.Object)
 
-    private static var getDataElements_MethodID_5: jmethodID?
+    private static var getDataElements_MethodID_6: jmethodID?
 
     open func getDataElements( rgb: Int, pixel: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: rgb, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pixel != nil ? pixel! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "(ILjava/lang/Object;)Ljava/lang/Object;", methodCache: &DirectColorModel.getDataElements_MethodID_5, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: pixel, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "(ILjava/lang/Object;)Ljava/lang/Object;", methodCache: &DirectColorModel.getDataElements_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -244,14 +262,14 @@ open class DirectColorModel: PackedColorModel {
 
     /// public int java.awt.image.DirectColorModel.getDataElement(int[],int)
 
-    private static var getDataElement_MethodID_6: jmethodID?
+    private static var getDataElement_MethodID_7: jmethodID?
 
     open func getDataElement( components: [Int32]?, offset: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: components, locals: &__locals )
         __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataElement", methodSig: "([II)I", methodCache: &DirectColorModel.getDataElement_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataElement", methodSig: "([II)I", methodCache: &DirectColorModel.getDataElement_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -261,14 +279,14 @@ open class DirectColorModel: PackedColorModel {
 
     /// public final java.awt.image.ColorModel java.awt.image.DirectColorModel.coerceData(java.awt.image.WritableRaster,boolean)
 
-    private static var coerceData_MethodID_7: jmethodID?
+    private static var coerceData_MethodID_8: jmethodID?
 
     open func coerceData( raster: WritableRaster?, isAlphaPremultiplied: Bool ) -> ColorModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: raster != nil ? raster! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: raster, locals: &__locals )
         __args[1] = JNIType.toJava( value: isAlphaPremultiplied, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "coerceData", methodSig: "(Ljava/awt/image/WritableRaster;Z)Ljava/awt/image/ColorModel;", methodCache: &DirectColorModel.coerceData_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "coerceData", methodSig: "(Ljava/awt/image/WritableRaster;Z)Ljava/awt/image/ColorModel;", methodCache: &DirectColorModel.coerceData_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ColorModel( javaObject: __return ) : nil
     }
@@ -279,13 +297,13 @@ open class DirectColorModel: PackedColorModel {
 
     /// public boolean java.awt.image.DirectColorModel.isCompatibleRaster(java.awt.image.Raster)
 
-    private static var isCompatibleRaster_MethodID_8: jmethodID?
+    private static var isCompatibleRaster_MethodID_9: jmethodID?
 
     open func isCompatibleRaster( raster: Raster? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: raster != nil ? raster! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompatibleRaster", methodSig: "(Ljava/awt/image/Raster;)Z", methodCache: &DirectColorModel.isCompatibleRaster_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: raster, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompatibleRaster", methodSig: "(Ljava/awt/image/Raster;)Z", methodCache: &DirectColorModel.isCompatibleRaster_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -293,210 +311,50 @@ open class DirectColorModel: PackedColorModel {
         return isCompatibleRaster( raster: _raster )
     }
 
-    /// public final int java.awt.image.DirectColorModel.getRed(int)
-
-    private static var getRed_MethodID_9: jmethodID?
-
-    open func getRed( pixel: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRed", methodSig: "(I)I", methodCache: &DirectColorModel.getRed_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getRed( _ _pixel: Int ) -> Int {
-        return getRed( pixel: _pixel )
-    }
-
-    /// public int java.awt.image.DirectColorModel.getRed(java.lang.Object)
-
-    private static var getRed_MethodID_10: jmethodID?
-
-    open func getRed( inData: java_swift.JavaObject? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRed", methodSig: "(Ljava/lang/Object;)I", methodCache: &DirectColorModel.getRed_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getRed( _ _inData: java_swift.JavaObject? ) -> Int {
-        return getRed( inData: _inData )
-    }
-
-    /// public int java.awt.image.DirectColorModel.getGreen(java.lang.Object)
-
-    private static var getGreen_MethodID_11: jmethodID?
-
-    open func getGreen( inData: java_swift.JavaObject? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreen", methodSig: "(Ljava/lang/Object;)I", methodCache: &DirectColorModel.getGreen_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getGreen( _ _inData: java_swift.JavaObject? ) -> Int {
-        return getGreen( inData: _inData )
-    }
-
-    /// public final int java.awt.image.DirectColorModel.getGreen(int)
-
-    private static var getGreen_MethodID_12: jmethodID?
-
-    open func getGreen( pixel: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreen", methodSig: "(I)I", methodCache: &DirectColorModel.getGreen_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getGreen( _ _pixel: Int ) -> Int {
-        return getGreen( pixel: _pixel )
-    }
-
-    /// public int java.awt.image.DirectColorModel.getBlue(java.lang.Object)
-
-    private static var getBlue_MethodID_13: jmethodID?
-
-    open func getBlue( inData: java_swift.JavaObject? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlue", methodSig: "(Ljava/lang/Object;)I", methodCache: &DirectColorModel.getBlue_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getBlue( _ _inData: java_swift.JavaObject? ) -> Int {
-        return getBlue( inData: _inData )
-    }
-
-    /// public final int java.awt.image.DirectColorModel.getBlue(int)
-
-    private static var getBlue_MethodID_14: jmethodID?
-
-    open func getBlue( pixel: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlue", methodSig: "(I)I", methodCache: &DirectColorModel.getBlue_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getBlue( _ _pixel: Int ) -> Int {
-        return getBlue( pixel: _pixel )
-    }
-
-    /// public final int java.awt.image.DirectColorModel.getAlpha(int)
-
-    private static var getAlpha_MethodID_15: jmethodID?
-
-    open func getAlpha( pixel: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlpha", methodSig: "(I)I", methodCache: &DirectColorModel.getAlpha_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getAlpha( _ _pixel: Int ) -> Int {
-        return getAlpha( pixel: _pixel )
-    }
-
-    /// public int java.awt.image.DirectColorModel.getAlpha(java.lang.Object)
-
-    private static var getAlpha_MethodID_16: jmethodID?
-
-    open func getAlpha( inData: java_swift.JavaObject? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlpha", methodSig: "(Ljava/lang/Object;)I", methodCache: &DirectColorModel.getAlpha_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getAlpha( _ _inData: java_swift.JavaObject? ) -> Int {
-        return getAlpha( inData: _inData )
-    }
-
-    /// public int java.awt.image.DirectColorModel.getRGB(java.lang.Object)
-
-    private static var getRGB_MethodID_17: jmethodID?
-
-    open func getRGB( inData: java_swift.JavaObject? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: inData != nil ? inData! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGB", methodSig: "(Ljava/lang/Object;)I", methodCache: &DirectColorModel.getRGB_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getRGB( _ _inData: java_swift.JavaObject? ) -> Int {
-        return getRGB( inData: _inData )
-    }
-
-    /// public final int java.awt.image.DirectColorModel.getRGB(int)
-
-    private static var getRGB_MethodID_18: jmethodID?
-
-    open func getRGB( pixel: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGB", methodSig: "(I)I", methodCache: &DirectColorModel.getRGB_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getRGB( _ _pixel: Int ) -> Int {
-        return getRGB( pixel: _pixel )
-    }
-
     /// public final int java.awt.image.DirectColorModel.getAlphaMask()
 
-    private static var getAlphaMask_MethodID_19: jmethodID?
+    private static var getAlphaMask_MethodID_10: jmethodID?
 
     open func getAlphaMask() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlphaMask", methodSig: "()I", methodCache: &DirectColorModel.getAlphaMask_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlphaMask", methodSig: "()I", methodCache: &DirectColorModel.getAlphaMask_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public final int java.awt.image.DirectColorModel.getRedMask()
 
-    private static var getRedMask_MethodID_20: jmethodID?
+    private static var getRedMask_MethodID_11: jmethodID?
 
     open func getRedMask() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRedMask", methodSig: "()I", methodCache: &DirectColorModel.getRedMask_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRedMask", methodSig: "()I", methodCache: &DirectColorModel.getRedMask_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public final int java.awt.image.DirectColorModel.getGreenMask()
 
-    private static var getGreenMask_MethodID_21: jmethodID?
+    private static var getGreenMask_MethodID_12: jmethodID?
 
     open func getGreenMask() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreenMask", methodSig: "()I", methodCache: &DirectColorModel.getGreenMask_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreenMask", methodSig: "()I", methodCache: &DirectColorModel.getGreenMask_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public final int java.awt.image.DirectColorModel.getBlueMask()
 
-    private static var getBlueMask_MethodID_22: jmethodID?
+    private static var getBlueMask_MethodID_13: jmethodID?
 
     open func getBlueMask() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlueMask", methodSig: "()I", methodCache: &DirectColorModel.getBlueMask_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlueMask", methodSig: "()I", methodCache: &DirectColorModel.getBlueMask_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -509,22 +367,164 @@ open class DirectColorModel: PackedColorModel {
 
     /// private void java.awt.image.DirectColorModel.setFields()
 
-    /// public final java.awt.image.WritableRaster java.awt.image.DirectColorModel.createCompatibleWritableRaster(int,int)
+    /// public int java.awt.image.DirectColorModel.getRed(java.lang.Object)
 
-    private static var createCompatibleWritableRaster_MethodID_23: jmethodID?
+    private static var getRed_MethodID_14: jmethodID?
 
-    open func createCompatibleWritableRaster( w: Int, h: Int ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getRed( inData: java_swift.JavaObject? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "(II)Ljava/awt/image/WritableRaster;", methodCache: &DirectColorModel.createCompatibleWritableRaster_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: inData, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRed", methodSig: "(Ljava/lang/Object;)I", methodCache: &DirectColorModel.getRed_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
-    override open func createCompatibleWritableRaster( _ _w: Int, _ _h: Int ) -> WritableRaster! {
-        return createCompatibleWritableRaster( w: _w, h: _h )
+    override open func getRed( _ _inData: java_swift.JavaObject? ) -> Int {
+        return getRed( inData: _inData )
+    }
+
+    /// public final int java.awt.image.DirectColorModel.getRed(int)
+
+    private static var getRed_MethodID_15: jmethodID?
+
+    open func getRed( pixel: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRed", methodSig: "(I)I", methodCache: &DirectColorModel.getRed_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getRed( _ _pixel: Int ) -> Int {
+        return getRed( pixel: _pixel )
+    }
+
+    /// public int java.awt.image.DirectColorModel.getGreen(java.lang.Object)
+
+    private static var getGreen_MethodID_16: jmethodID?
+
+    open func getGreen( inData: java_swift.JavaObject? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: inData, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreen", methodSig: "(Ljava/lang/Object;)I", methodCache: &DirectColorModel.getGreen_MethodID_16, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getGreen( _ _inData: java_swift.JavaObject? ) -> Int {
+        return getGreen( inData: _inData )
+    }
+
+    /// public final int java.awt.image.DirectColorModel.getGreen(int)
+
+    private static var getGreen_MethodID_17: jmethodID?
+
+    open func getGreen( pixel: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreen", methodSig: "(I)I", methodCache: &DirectColorModel.getGreen_MethodID_17, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getGreen( _ _pixel: Int ) -> Int {
+        return getGreen( pixel: _pixel )
+    }
+
+    /// public final int java.awt.image.DirectColorModel.getBlue(int)
+
+    private static var getBlue_MethodID_18: jmethodID?
+
+    open func getBlue( pixel: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlue", methodSig: "(I)I", methodCache: &DirectColorModel.getBlue_MethodID_18, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getBlue( _ _pixel: Int ) -> Int {
+        return getBlue( pixel: _pixel )
+    }
+
+    /// public int java.awt.image.DirectColorModel.getBlue(java.lang.Object)
+
+    private static var getBlue_MethodID_19: jmethodID?
+
+    open func getBlue( inData: java_swift.JavaObject? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: inData, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlue", methodSig: "(Ljava/lang/Object;)I", methodCache: &DirectColorModel.getBlue_MethodID_19, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getBlue( _ _inData: java_swift.JavaObject? ) -> Int {
+        return getBlue( inData: _inData )
+    }
+
+    /// public final int java.awt.image.DirectColorModel.getAlpha(int)
+
+    private static var getAlpha_MethodID_20: jmethodID?
+
+    open func getAlpha( pixel: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlpha", methodSig: "(I)I", methodCache: &DirectColorModel.getAlpha_MethodID_20, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getAlpha( _ _pixel: Int ) -> Int {
+        return getAlpha( pixel: _pixel )
+    }
+
+    /// public int java.awt.image.DirectColorModel.getAlpha(java.lang.Object)
+
+    private static var getAlpha_MethodID_21: jmethodID?
+
+    open func getAlpha( inData: java_swift.JavaObject? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: inData, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlpha", methodSig: "(Ljava/lang/Object;)I", methodCache: &DirectColorModel.getAlpha_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getAlpha( _ _inData: java_swift.JavaObject? ) -> Int {
+        return getAlpha( inData: _inData )
+    }
+
+    /// public int java.awt.image.DirectColorModel.getRGB(java.lang.Object)
+
+    private static var getRGB_MethodID_22: jmethodID?
+
+    open func getRGB( inData: java_swift.JavaObject? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: inData, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGB", methodSig: "(Ljava/lang/Object;)I", methodCache: &DirectColorModel.getRGB_MethodID_22, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getRGB( _ _inData: java_swift.JavaObject? ) -> Int {
+        return getRGB( inData: _inData )
+    }
+
+    /// public final int java.awt.image.DirectColorModel.getRGB(int)
+
+    private static var getRGB_MethodID_23: jmethodID?
+
+    open func getRGB( pixel: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGB", methodSig: "(I)I", methodCache: &DirectColorModel.getRGB_MethodID_23, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getRGB( _ _pixel: Int ) -> Int {
+        return getRGB( pixel: _pixel )
     }
 
     /// public final int[] java.awt.image.DirectColorModel.getComponents(java.lang.Object,int[],int)
@@ -534,7 +534,7 @@ open class DirectColorModel: PackedColorModel {
     open func getComponents( pixel: java_swift.JavaObject?, components: [Int32]?, offset: Int ) -> [Int32]! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pixel != nil ? pixel! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: pixel, locals: &__locals )
         __args[1] = JNIType.toJava( value: components, locals: &__locals )
         __args[2] = JNIType.toJava( value: offset, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponents", methodSig: "(Ljava/lang/Object;[II)[I", methodCache: &DirectColorModel.getComponents_MethodID_24, args: &__args, locals: &__locals )

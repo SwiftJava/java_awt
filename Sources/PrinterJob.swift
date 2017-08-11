@@ -173,7 +173,7 @@ open class PrinterJob: java_swift.JavaObject {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: painter, locals: &__locals )
-        __args[1] = JNIType.toJava( value: format != nil ? format! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: format, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrintable", methodSig: "(Ljava/awt/print/Printable;Ljava/awt/print/PageFormat;)V", methodCache: &PrinterJob.setPrintable_MethodID_11, args: &__args, locals: &__locals )
     }
 
@@ -226,7 +226,7 @@ open class PrinterJob: java_swift.JavaObject {
     open func pageDialog( page: PageFormat? ) throws /* java.awt.HeadlessException */ -> PageFormat! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: page != nil ? page! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: page, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "pageDialog", methodSig: "(Ljava/awt/print/PageFormat;)Ljava/awt/print/PageFormat;", methodCache: &PrinterJob.pageDialog_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
@@ -259,7 +259,7 @@ open class PrinterJob: java_swift.JavaObject {
     open func defaultPage( page: PageFormat? ) -> PageFormat! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: page != nil ? page! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: page, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defaultPage", methodSig: "(Ljava/awt/print/PageFormat;)Ljava/awt/print/PageFormat;", methodCache: &PrinterJob.defaultPage_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PageFormat( javaObject: __return ) : nil
@@ -276,7 +276,7 @@ open class PrinterJob: java_swift.JavaObject {
     open func validatePage( page: PageFormat? ) -> PageFormat! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: page != nil ? page! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: page, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "validatePage", methodSig: "(Ljava/awt/print/PageFormat;)Ljava/awt/print/PageFormat;", methodCache: &PrinterJob.validatePage_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PageFormat( javaObject: __return ) : nil
@@ -337,68 +337,15 @@ open class PrinterJob: java_swift.JavaObject {
     }
 
 
-    /// public abstract int java.awt.print.PrinterJob.getCopies()
-
-    private static var getCopies_MethodID_22: jmethodID?
-
-    open func getCopies() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCopies", methodSig: "()I", methodCache: &PrinterJob.getCopies_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract void java.awt.print.PrinterJob.setCopies(int)
-
-    private static var setCopies_MethodID_23: jmethodID?
-
-    open func setCopies( copies: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: copies, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCopies", methodSig: "(I)V", methodCache: &PrinterJob.setCopies_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func setCopies( _ _copies: Int ) {
-        setCopies( copies: _copies )
-    }
-
-    /// public abstract void java.awt.print.PrinterJob.cancel()
-
-    private static var cancel_MethodID_24: jmethodID?
-
-    open func cancel() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cancel", methodSig: "()V", methodCache: &PrinterJob.cancel_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-
-    /// public abstract boolean java.awt.print.PrinterJob.printDialog() throws java.awt.HeadlessException
-
-    private static var printDialog_MethodID_25: jmethodID?
-
-    open func printDialog() throws /* java.awt.HeadlessException */ -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "printDialog", methodSig: "()Z", methodCache: &PrinterJob.printDialog_MethodID_25, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw HeadlessException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public boolean java.awt.print.PrinterJob.printDialog(javax.print.attribute.PrintRequestAttributeSet) throws java.awt.HeadlessException
 
-    private static var printDialog_MethodID_26: jmethodID?
+    private static var printDialog_MethodID_22: jmethodID?
 
     open func printDialog( attributes: /* javax.print.attribute.PrintRequestAttributeSet */ UnclassedProtocol? ) throws /* java.awt.HeadlessException */ -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "printDialog", methodSig: "(Ljavax/print/attribute/PrintRequestAttributeSet;)Z", methodCache: &PrinterJob.printDialog_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "printDialog", methodSig: "(Ljavax/print/attribute/PrintRequestAttributeSet;)Z", methodCache: &PrinterJob.printDialog_MethodID_22, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -408,6 +355,59 @@ open class PrinterJob: java_swift.JavaObject {
     open func printDialog( _ _attributes: /* javax.print.attribute.PrintRequestAttributeSet */ UnclassedProtocol? ) throws /* java.awt.HeadlessException */ -> Bool {
         return try printDialog( attributes: _attributes )
     }
+
+    /// public abstract boolean java.awt.print.PrinterJob.printDialog() throws java.awt.HeadlessException
+
+    private static var printDialog_MethodID_23: jmethodID?
+
+    open func printDialog() throws /* java.awt.HeadlessException */ -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "printDialog", methodSig: "()Z", methodCache: &PrinterJob.printDialog_MethodID_23, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw HeadlessException( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public abstract int java.awt.print.PrinterJob.getCopies()
+
+    private static var getCopies_MethodID_24: jmethodID?
+
+    open func getCopies() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCopies", methodSig: "()I", methodCache: &PrinterJob.getCopies_MethodID_24, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public abstract void java.awt.print.PrinterJob.setCopies(int)
+
+    private static var setCopies_MethodID_25: jmethodID?
+
+    open func setCopies( copies: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: copies, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCopies", methodSig: "(I)V", methodCache: &PrinterJob.setCopies_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func setCopies( _ _copies: Int ) {
+        setCopies( copies: _copies )
+    }
+
+    /// public abstract void java.awt.print.PrinterJob.cancel()
+
+    private static var cancel_MethodID_26: jmethodID?
+
+    open func cancel() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cancel", methodSig: "()V", methodCache: &PrinterJob.cancel_MethodID_26, args: &__args, locals: &__locals )
+    }
+
 
 }
 

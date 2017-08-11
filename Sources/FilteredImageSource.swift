@@ -30,7 +30,7 @@ open class FilteredImageSource: java_swift.JavaObject, ImageProducer {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: orig, locals: &__locals )
-        __args[1] = JNIType.toJava( value: imgf != nil ? imgf! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: imgf, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/FilteredImageSource", classCache: &FilteredImageSource.FilteredImageSourceJNIClass, methodSig: "(Ljava/awt/image/ImageProducer;Ljava/awt/image/ImageFilter;)V", methodCache: &FilteredImageSource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

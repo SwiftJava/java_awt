@@ -118,28 +118,6 @@ open class DefaultKeyboardFocusManager: KeyboardFocusManager {
 
     /// static void java.awt.DefaultKeyboardFocusManager.access$000(java.awt.DefaultKeyboardFocusManager,java.awt.event.KeyEvent)
 
-    /// public boolean java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(java.awt.event.KeyEvent)
-
-    /// public void java.awt.DefaultKeyboardFocusManager.focusNextComponent(java.awt.Component)
-
-    /// public void java.awt.DefaultKeyboardFocusManager.focusPreviousComponent(java.awt.Component)
-
-    /// public void java.awt.DefaultKeyboardFocusManager.upFocusCycle(java.awt.Component)
-
-    /// public void java.awt.DefaultKeyboardFocusManager.downFocusCycle(java.awt.Container)
-
-    /// void java.awt.DefaultKeyboardFocusManager.clearMarkers()
-
-    /// static boolean java.awt.DefaultKeyboardFocusManager.sendMessage(java.awt.Component,java.awt.AWTEvent)
-
-    /// private void java.awt.DefaultKeyboardFocusManager.consumeNextKeyTyped(java.awt.event.KeyEvent)
-
-    /// public void java.awt.DefaultKeyboardFocusManager.processKeyEvent(java.awt.Component,java.awt.event.KeyEvent)
-
-    /// public boolean java.awt.DefaultKeyboardFocusManager.postProcessKeyEvent(java.awt.event.KeyEvent)
-
-    /// public boolean java.awt.DefaultKeyboardFocusManager.dispatchEvent(java.awt.AWTEvent)
-
     /// protected synchronized void java.awt.DefaultKeyboardFocusManager.enqueueKeyEvents(long,java.awt.Component)
 
     private static var enqueueKeyEvents_MethodID_2: jmethodID?
@@ -148,7 +126,7 @@ open class DefaultKeyboardFocusManager: KeyboardFocusManager {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "enqueueKeyEvents", methodSig: "(JLjava/awt/Component;)V", methodCache: &DefaultKeyboardFocusManager.enqueueKeyEvents_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -164,7 +142,7 @@ open class DefaultKeyboardFocusManager: KeyboardFocusManager {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dequeueKeyEvents", methodSig: "(JLjava/awt/Component;)V", methodCache: &DefaultKeyboardFocusManager.dequeueKeyEvents_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -179,13 +157,35 @@ open class DefaultKeyboardFocusManager: KeyboardFocusManager {
     override open func discardKeyEvents( arg0: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "discardKeyEvents", methodSig: "(Ljava/awt/Component;)V", methodCache: &DefaultKeyboardFocusManager.discardKeyEvents_MethodID_4, args: &__args, locals: &__locals )
     }
 
     override open func discardKeyEvents( _ _arg0: Component? ) {
         discardKeyEvents( arg0: _arg0 )
     }
+
+    /// static boolean java.awt.DefaultKeyboardFocusManager.sendMessage(java.awt.Component,java.awt.AWTEvent)
+
+    /// public boolean java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(java.awt.event.KeyEvent)
+
+    /// public void java.awt.DefaultKeyboardFocusManager.focusNextComponent(java.awt.Component)
+
+    /// public void java.awt.DefaultKeyboardFocusManager.focusPreviousComponent(java.awt.Component)
+
+    /// public void java.awt.DefaultKeyboardFocusManager.upFocusCycle(java.awt.Component)
+
+    /// public void java.awt.DefaultKeyboardFocusManager.downFocusCycle(java.awt.Container)
+
+    /// void java.awt.DefaultKeyboardFocusManager.clearMarkers()
+
+    /// public void java.awt.DefaultKeyboardFocusManager.processKeyEvent(java.awt.Component,java.awt.event.KeyEvent)
+
+    /// public boolean java.awt.DefaultKeyboardFocusManager.postProcessKeyEvent(java.awt.event.KeyEvent)
+
+    /// public boolean java.awt.DefaultKeyboardFocusManager.dispatchEvent(java.awt.AWTEvent)
+
+    /// private void java.awt.DefaultKeyboardFocusManager.consumeNextKeyTyped(java.awt.event.KeyEvent)
 
     /// static int java.awt.DefaultKeyboardFocusManager.access$108(java.awt.DefaultKeyboardFocusManager)
 

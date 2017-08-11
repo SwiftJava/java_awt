@@ -46,7 +46,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     public convenience init( c: Component?, ops: Int, dtl: DropTargetListener? ) throws {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: ops, locals: &__locals )
         __args[2] = JNIType.toJava( value: dtl, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DropTarget", classCache: &DropTarget.DropTargetJNIClass, methodSig: "(Ljava/awt/Component;ILjava/awt/dnd/DropTargetListener;)V", methodCache: &DropTarget.new_MethodID_1, args: &__args, locals: &__locals )
@@ -68,7 +68,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     public convenience init( c: Component?, dtl: DropTargetListener? ) throws {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: dtl, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DropTarget", classCache: &DropTarget.DropTargetJNIClass, methodSig: "(Ljava/awt/Component;Ljava/awt/dnd/DropTargetListener;)V", methodCache: &DropTarget.new_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
@@ -101,7 +101,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     public convenience init( c: Component?, ops: Int, dtl: DropTargetListener?, act: Bool ) throws {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: ops, locals: &__locals )
         __args[2] = JNIType.toJava( value: dtl, locals: &__locals )
         __args[3] = JNIType.toJava( value: act, locals: &__locals )
@@ -124,7 +124,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     public convenience init( c: Component?, ops: Int, dtl: DropTargetListener?, act: Bool, fm: FlavorMap? ) throws {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: ops, locals: &__locals )
         __args[2] = JNIType.toJava( value: dtl, locals: &__locals )
         __args[3] = JNIType.toJava( value: act, locals: &__locals )
@@ -241,7 +241,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     open func dragEnter( dtde: DropTargetDragEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtde != nil ? dtde! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragEnter", methodSig: "(Ljava/awt/dnd/DropTargetDragEvent;)V", methodCache: &DropTarget.dragEnter_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -256,7 +256,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     open func dragOver( dtde: DropTargetDragEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtde != nil ? dtde! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragOver", methodSig: "(Ljava/awt/dnd/DropTargetDragEvent;)V", methodCache: &DropTarget.dragOver_MethodID_13, args: &__args, locals: &__locals )
     }
 
@@ -271,7 +271,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     open func dropActionChanged( dtde: DropTargetDragEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtde != nil ? dtde! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dropActionChanged", methodSig: "(Ljava/awt/dnd/DropTargetDragEvent;)V", methodCache: &DropTarget.dropActionChanged_MethodID_14, args: &__args, locals: &__locals )
     }
 
@@ -286,7 +286,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     open func dragExit( dte: DropTargetEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dte != nil ? dte! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dte, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragExit", methodSig: "(Ljava/awt/dnd/DropTargetEvent;)V", methodCache: &DropTarget.dragExit_MethodID_15, args: &__args, locals: &__locals )
     }
 
@@ -301,7 +301,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     open func drop( dtde: DropTargetDropEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtde != nil ? dtde! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "drop", methodSig: "(Ljava/awt/dnd/DropTargetDropEvent;)V", methodCache: &DropTarget.drop_MethodID_16, args: &__args, locals: &__locals )
     }
 
@@ -370,8 +370,8 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     open func createDropTargetAutoScroller( c: Component?, p: Point? ) -> /* java.awt.dnd.DropTarget$DropTargetAutoScroller */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDropTargetAutoScroller", methodSig: "(Ljava/awt/Component;Ljava/awt/Point;)Ljava/awt/dnd/DropTarget$DropTargetAutoScroller;", methodCache: &DropTarget.createDropTargetAutoScroller_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.awt.dnd.DropTarget$DropTargetAutoScroller */ UnclassedObject( javaObject: __return ) : nil
@@ -388,7 +388,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     open func initializeAutoscrolling( p: Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "initializeAutoscrolling", methodSig: "(Ljava/awt/Point;)V", methodCache: &DropTarget.initializeAutoscrolling_MethodID_22, args: &__args, locals: &__locals )
     }
 
@@ -403,7 +403,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     open func updateAutoscroll( dragCursorLocn: Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dragCursorLocn != nil ? dragCursorLocn! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dragCursorLocn, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateAutoscroll", methodSig: "(Ljava/awt/Point;)V", methodCache: &DropTarget.updateAutoscroll_MethodID_23, args: &__args, locals: &__locals )
     }
 
@@ -472,7 +472,7 @@ open class DropTarget: java_swift.JavaObject, DropTargetListener, /* java.io.Ser
     open func setComponent( c: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &DropTarget.setComponent_MethodID_28, args: &__args, locals: &__locals )
     }
 

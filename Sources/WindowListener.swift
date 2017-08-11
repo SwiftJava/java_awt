@@ -50,7 +50,7 @@ open class WindowListenerForward: java_util.EventListenerForward, WindowListener
     open func windowOpened( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowOpened", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowListenerForward.windowOpened_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -65,7 +65,7 @@ open class WindowListenerForward: java_util.EventListenerForward, WindowListener
     open func windowClosing( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosing", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowListenerForward.windowClosing_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -80,7 +80,7 @@ open class WindowListenerForward: java_util.EventListenerForward, WindowListener
     open func windowClosed( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosed", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowListenerForward.windowClosed_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -95,7 +95,7 @@ open class WindowListenerForward: java_util.EventListenerForward, WindowListener
     open func windowIconified( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowIconified", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowListenerForward.windowIconified_MethodID_11, args: &__args, locals: &__locals )
     }
 
@@ -110,7 +110,7 @@ open class WindowListenerForward: java_util.EventListenerForward, WindowListener
     open func windowDeiconified( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowDeiconified", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowListenerForward.windowDeiconified_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -125,7 +125,7 @@ open class WindowListenerForward: java_util.EventListenerForward, WindowListener
     open func windowActivated( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowActivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowListenerForward.windowActivated_MethodID_13, args: &__args, locals: &__locals )
     }
 
@@ -140,7 +140,7 @@ open class WindowListenerForward: java_util.EventListenerForward, WindowListener
     open func windowDeactivated( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowDeactivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowListenerForward.windowDeactivated_MethodID_14, args: &__args, locals: &__locals )
     }
 

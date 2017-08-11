@@ -162,6 +162,14 @@ open class RoundRectangle2D_Float: RoundRectangle2D, /* java.io.Serializable */ 
 
     /// public java.awt.geom.Rectangle2D java.awt.geom.RoundRectangle2D$Float.getBounds2D()
 
+    /// public double java.awt.geom.RoundRectangle2D$Float.getX()
+
+    /// public double java.awt.geom.RoundRectangle2D$Float.getY()
+
+    /// public double java.awt.geom.RoundRectangle2D$Float.getWidth()
+
+    /// public double java.awt.geom.RoundRectangle2D$Float.getHeight()
+
     /// public double java.awt.geom.RoundRectangle2D$Float.getArcWidth()
 
     /// public double java.awt.geom.RoundRectangle2D$Float.getArcHeight()
@@ -186,6 +194,8 @@ open class RoundRectangle2D_Float: RoundRectangle2D, /* java.io.Serializable */ 
         setRoundRect( x: _x, y: _y, w: _w, h: _h, arcw: _arcw, arch: _arch )
     }
 
+    /// public void java.awt.geom.RoundRectangle2D$Float.setRoundRect(java.awt.geom.RoundRectangle2D)
+
     /// public void java.awt.geom.RoundRectangle2D$Float.setRoundRect(double,double,double,double,double,double)
 
     private static var setRoundRect_MethodID_4: jmethodID?
@@ -205,16 +215,6 @@ open class RoundRectangle2D_Float: RoundRectangle2D, /* java.io.Serializable */ 
     override open func setRoundRect( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double, _ _arcw: Double, _ _arch: Double ) {
         setRoundRect( x: _x, y: _y, w: _w, h: _h, arcw: _arcw, arch: _arch )
     }
-
-    /// public void java.awt.geom.RoundRectangle2D$Float.setRoundRect(java.awt.geom.RoundRectangle2D)
-
-    /// public double java.awt.geom.RoundRectangle2D$Float.getX()
-
-    /// public double java.awt.geom.RoundRectangle2D$Float.getY()
-
-    /// public double java.awt.geom.RoundRectangle2D$Float.getWidth()
-
-    /// public double java.awt.geom.RoundRectangle2D$Float.getHeight()
 
 }
 

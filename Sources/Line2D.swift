@@ -45,31 +45,15 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
     }
 
 
-    /// public boolean java.awt.geom.Line2D.contains(java.awt.geom.Point2D)
-
-    private static var contains_MethodID_3: jmethodID?
-
-    open func contains( p: Point2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &Line2D.contains_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func contains( _ _p: Point2D? ) -> Bool {
-        return contains( p: _p )
-    }
-
     /// public boolean java.awt.geom.Line2D.contains(java.awt.geom.Rectangle2D)
 
-    private static var contains_MethodID_4: jmethodID?
+    private static var contains_MethodID_3: jmethodID?
 
     open func contains( r: Rectangle2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Line2D.contains_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Line2D.contains_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -79,7 +63,7 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public boolean java.awt.geom.Line2D.contains(double,double,double,double)
 
-    private static var contains_MethodID_5: jmethodID?
+    private static var contains_MethodID_4: jmethodID?
 
     open func contains( x: Double, y: Double, w: Double, h: Double ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -88,7 +72,7 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: w, locals: &__locals )
         __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DDDD)Z", methodCache: &Line2D.contains_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DDDD)Z", methodCache: &Line2D.contains_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -98,14 +82,14 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public boolean java.awt.geom.Line2D.contains(double,double)
 
-    private static var contains_MethodID_6: jmethodID?
+    private static var contains_MethodID_5: jmethodID?
 
     open func contains( x: Double, y: Double ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DD)Z", methodCache: &Line2D.contains_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DD)Z", methodCache: &Line2D.contains_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -113,9 +97,41 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return contains( x: _x, y: _y )
     }
 
-    /// public boolean java.awt.geom.Line2D.intersects(double,double,double,double)
+    /// public boolean java.awt.geom.Line2D.contains(java.awt.geom.Point2D)
+
+    private static var contains_MethodID_6: jmethodID?
+
+    open func contains( p: Point2D? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &Line2D.contains_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func contains( _ _p: Point2D? ) -> Bool {
+        return contains( p: _p )
+    }
+
+    /// public boolean java.awt.geom.Line2D.intersects(java.awt.geom.Rectangle2D)
 
     private static var intersects_MethodID_7: jmethodID?
+
+    open func intersects( r: Rectangle2D? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Line2D.intersects_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func intersects( _ _r: Rectangle2D? ) -> Bool {
+        return intersects( r: _r )
+    }
+
+    /// public boolean java.awt.geom.Line2D.intersects(double,double,double,double)
+
+    private static var intersects_MethodID_8: jmethodID?
 
     open func intersects( x: Double, y: Double, w: Double, h: Double ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -124,7 +140,7 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: w, locals: &__locals )
         __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(DDDD)Z", methodCache: &Line2D.intersects_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(DDDD)Z", methodCache: &Line2D.intersects_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -132,128 +148,16 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return intersects( x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public boolean java.awt.geom.Line2D.intersects(java.awt.geom.Rectangle2D)
-
-    private static var intersects_MethodID_8: jmethodID?
-
-    open func intersects( r: Rectangle2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Line2D.intersects_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func intersects( _ _r: Rectangle2D? ) -> Bool {
-        return intersects( r: _r )
-    }
-
-    /// public boolean java.awt.geom.Line2D.intersectsLine(java.awt.geom.Line2D)
-
-    private static var intersectsLine_MethodID_9: jmethodID?
-
-    open func intersectsLine( l: Line2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l != nil ? l! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersectsLine", methodSig: "(Ljava/awt/geom/Line2D;)Z", methodCache: &Line2D.intersectsLine_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func intersectsLine( _ _l: Line2D? ) -> Bool {
-        return intersectsLine( l: _l )
-    }
-
-    /// public boolean java.awt.geom.Line2D.intersectsLine(double,double,double,double)
-
-    private static var intersectsLine_MethodID_10: jmethodID?
-
-    open func intersectsLine( x1: Double, y1: Double, x2: Double, y2: Double ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y2, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersectsLine", methodSig: "(DDDD)Z", methodCache: &Line2D.intersectsLine_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func intersectsLine( _ _x1: Double, _ _y1: Double, _ _x2: Double, _ _y2: Double ) -> Bool {
-        return intersectsLine( x1: _x1, y1: _y1, x2: _x2, y2: _y2 )
-    }
-
-    /// public abstract double java.awt.geom.Line2D.getX1()
-
-    private static var getX1_MethodID_11: jmethodID?
-
-    open func getX1() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getX1", methodSig: "()D", methodCache: &Line2D.getX1_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public abstract double java.awt.geom.Line2D.getY1()
-
-    private static var getY1_MethodID_12: jmethodID?
-
-    open func getY1() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getY1", methodSig: "()D", methodCache: &Line2D.getY1_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public abstract double java.awt.geom.Line2D.getX2()
-
-    private static var getX2_MethodID_13: jmethodID?
-
-    open func getX2() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getX2", methodSig: "()D", methodCache: &Line2D.getX2_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public abstract double java.awt.geom.Line2D.getY2()
-
-    private static var getY2_MethodID_14: jmethodID?
-
-    open func getY2() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getY2", methodSig: "()D", methodCache: &Line2D.getY2_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public java.awt.Rectangle java.awt.geom.Line2D.getBounds()
-
-    private static var getBounds_MethodID_15: jmethodID?
-
-    open func getBounds() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Line2D.getBounds_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
-    }
-
-
     /// public java.awt.geom.PathIterator java.awt.geom.Line2D.getPathIterator(java.awt.geom.AffineTransform,double)
 
-    private static var getPathIterator_MethodID_16: jmethodID?
+    private static var getPathIterator_MethodID_9: jmethodID?
 
     open func getPathIterator( at: AffineTransform?, flatness: Double ) -> PathIterator! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
         __args[1] = JNIType.toJava( value: flatness, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &Line2D.getPathIterator_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &Line2D.getPathIterator_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
     }
@@ -264,13 +168,13 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public java.awt.geom.PathIterator java.awt.geom.Line2D.getPathIterator(java.awt.geom.AffineTransform)
 
-    private static var getPathIterator_MethodID_17: jmethodID?
+    private static var getPathIterator_MethodID_10: jmethodID?
 
     open func getPathIterator( at: AffineTransform? ) -> PathIterator! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &Line2D.getPathIterator_MethodID_17, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &Line2D.getPathIterator_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
     }
@@ -279,63 +183,105 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return getPathIterator( at: _at )
     }
 
-    /// public double java.awt.geom.Line2D.ptSegDistSq(double,double)
+    /// public boolean java.awt.geom.Line2D.intersectsLine(java.awt.geom.Line2D)
 
-    private static var ptSegDistSq_MethodID_18: jmethodID?
+    private static var intersectsLine_MethodID_11: jmethodID?
 
-    open func ptSegDistSq( px: Double, py: Double ) -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: px, locals: &__locals )
-        __args[1] = JNIType.toJava( value: py, locals: &__locals )
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptSegDistSq", methodSig: "(DD)D", methodCache: &Line2D.ptSegDistSq_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-    open func ptSegDistSq( _ _px: Double, _ _py: Double ) -> Double {
-        return ptSegDistSq( px: _px, py: _py )
-    }
-
-    /// public double java.awt.geom.Line2D.ptSegDistSq(java.awt.geom.Point2D)
-
-    private static var ptSegDistSq_MethodID_19: jmethodID?
-
-    open func ptSegDistSq( pt: Point2D? ) -> Double {
+    open func intersectsLine( l: Line2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pt != nil ? pt! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptSegDistSq", methodSig: "(Ljava/awt/geom/Point2D;)D", methodCache: &Line2D.ptSegDistSq_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersectsLine", methodSig: "(Ljava/awt/geom/Line2D;)Z", methodCache: &Line2D.intersectsLine_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-    open func ptSegDistSq( _ _pt: Point2D? ) -> Double {
-        return ptSegDistSq( pt: _pt )
+    open func intersectsLine( _ _l: Line2D? ) -> Bool {
+        return intersectsLine( l: _l )
     }
 
-    /// public static double java.awt.geom.Line2D.ptSegDistSq(double,double,double,double,double,double)
+    /// public boolean java.awt.geom.Line2D.intersectsLine(double,double,double,double)
 
-    private static var ptSegDistSq_MethodID_20: jmethodID?
+    private static var intersectsLine_MethodID_12: jmethodID?
 
-    open class func ptSegDistSq( x1: Double, y1: Double, x2: Double, y2: Double, px: Double, py: Double ) -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    open func intersectsLine( x1: Double, y1: Double, x2: Double, y2: Double ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x1, locals: &__locals )
         __args[1] = JNIType.toJava( value: y1, locals: &__locals )
         __args[2] = JNIType.toJava( value: x2, locals: &__locals )
         __args[3] = JNIType.toJava( value: y2, locals: &__locals )
-        __args[4] = JNIType.toJava( value: px, locals: &__locals )
-        __args[5] = JNIType.toJava( value: py, locals: &__locals )
-        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "ptSegDistSq", methodSig: "(DDDDDD)D", methodCache: &ptSegDistSq_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersectsLine", methodSig: "(DDDD)Z", methodCache: &Line2D.intersectsLine_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func intersectsLine( _ _x1: Double, _ _y1: Double, _ _x2: Double, _ _y2: Double ) -> Bool {
+        return intersectsLine( x1: _x1, y1: _y1, x2: _x2, y2: _y2 )
+    }
+
+    /// public abstract double java.awt.geom.Line2D.getX1()
+
+    private static var getX1_MethodID_13: jmethodID?
+
+    open func getX1() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getX1", methodSig: "()D", methodCache: &Line2D.getX1_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
-    open class func ptSegDistSq( _ _x1: Double, _ _y1: Double, _ _x2: Double, _ _y2: Double, _ _px: Double, _ _py: Double ) -> Double {
-        return ptSegDistSq( x1: _x1, y1: _y1, x2: _x2, y2: _y2, px: _px, py: _py )
+
+    /// public abstract double java.awt.geom.Line2D.getY1()
+
+    private static var getY1_MethodID_14: jmethodID?
+
+    open func getY1() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getY1", methodSig: "()D", methodCache: &Line2D.getY1_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
     }
+
+
+    /// public abstract double java.awt.geom.Line2D.getX2()
+
+    private static var getX2_MethodID_15: jmethodID?
+
+    open func getX2() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getX2", methodSig: "()D", methodCache: &Line2D.getX2_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+
+    /// public abstract double java.awt.geom.Line2D.getY2()
+
+    private static var getY2_MethodID_16: jmethodID?
+
+    open func getY2() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getY2", methodSig: "()D", methodCache: &Line2D.getY2_MethodID_16, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+
+    /// public java.awt.Rectangle java.awt.geom.Line2D.getBounds()
+
+    private static var getBounds_MethodID_17: jmethodID?
+
+    open func getBounds() -> Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Line2D.getBounds_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
 
     /// public static boolean java.awt.geom.Line2D.linesIntersect(double,double,double,double,double,double,double,double)
 
-    private static var linesIntersect_MethodID_21: jmethodID?
+    private static var linesIntersect_MethodID_18: jmethodID?
 
     open class func linesIntersect( x1: Double, y1: Double, x2: Double, y2: Double, x3: Double, y3: Double, x4: Double, y4: Double ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
@@ -348,7 +294,7 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[5] = JNIType.toJava( value: y3, locals: &__locals )
         __args[6] = JNIType.toJava( value: x4, locals: &__locals )
         __args[7] = JNIType.toJava( value: y4, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "linesIntersect", methodSig: "(DDDDDDDD)Z", methodCache: &linesIntersect_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "linesIntersect", methodSig: "(DDDDDDDD)Z", methodCache: &linesIntersect_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -356,9 +302,42 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return linesIntersect( x1: _x1, y1: _y1, x2: _x2, y2: _y2, x3: _x3, y3: _y3, x4: _x4, y4: _y4 )
     }
 
+    /// public double java.awt.geom.Line2D.ptSegDist(double,double)
+
+    private static var ptSegDist_MethodID_19: jmethodID?
+
+    open func ptSegDist( px: Double, py: Double ) -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: px, locals: &__locals )
+        __args[1] = JNIType.toJava( value: py, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptSegDist", methodSig: "(DD)D", methodCache: &Line2D.ptSegDist_MethodID_19, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+    open func ptSegDist( _ _px: Double, _ _py: Double ) -> Double {
+        return ptSegDist( px: _px, py: _py )
+    }
+
+    /// public double java.awt.geom.Line2D.ptSegDist(java.awt.geom.Point2D)
+
+    private static var ptSegDist_MethodID_20: jmethodID?
+
+    open func ptSegDist( pt: Point2D? ) -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pt, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptSegDist", methodSig: "(Ljava/awt/geom/Point2D;)D", methodCache: &Line2D.ptSegDist_MethodID_20, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+    open func ptSegDist( _ _pt: Point2D? ) -> Double {
+        return ptSegDist( pt: _pt )
+    }
+
     /// public static double java.awt.geom.Line2D.ptSegDist(double,double,double,double,double,double)
 
-    private static var ptSegDist_MethodID_22: jmethodID?
+    private static var ptSegDist_MethodID_21: jmethodID?
 
     open class func ptSegDist( x1: Double, y1: Double, x2: Double, y2: Double, px: Double, py: Double ) -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -369,7 +348,7 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[3] = JNIType.toJava( value: y2, locals: &__locals )
         __args[4] = JNIType.toJava( value: px, locals: &__locals )
         __args[5] = JNIType.toJava( value: py, locals: &__locals )
-        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "ptSegDist", methodSig: "(DDDDDD)D", methodCache: &ptSegDist_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "ptSegDist", methodSig: "(DDDDDD)D", methodCache: &ptSegDist_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
@@ -377,42 +356,25 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return ptSegDist( x1: _x1, y1: _y1, x2: _x2, y2: _y2, px: _px, py: _py )
     }
 
-    /// public double java.awt.geom.Line2D.ptSegDist(double,double)
+    /// public double java.awt.geom.Line2D.ptLineDistSq(java.awt.geom.Point2D)
 
-    private static var ptSegDist_MethodID_23: jmethodID?
+    private static var ptLineDistSq_MethodID_22: jmethodID?
 
-    open func ptSegDist( px: Double, py: Double ) -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: px, locals: &__locals )
-        __args[1] = JNIType.toJava( value: py, locals: &__locals )
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptSegDist", methodSig: "(DD)D", methodCache: &Line2D.ptSegDist_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-    open func ptSegDist( _ _px: Double, _ _py: Double ) -> Double {
-        return ptSegDist( px: _px, py: _py )
-    }
-
-    /// public double java.awt.geom.Line2D.ptSegDist(java.awt.geom.Point2D)
-
-    private static var ptSegDist_MethodID_24: jmethodID?
-
-    open func ptSegDist( pt: Point2D? ) -> Double {
+    open func ptLineDistSq( pt: Point2D? ) -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pt != nil ? pt! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptSegDist", methodSig: "(Ljava/awt/geom/Point2D;)D", methodCache: &Line2D.ptSegDist_MethodID_24, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: pt, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptLineDistSq", methodSig: "(Ljava/awt/geom/Point2D;)D", methodCache: &Line2D.ptLineDistSq_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
-    open func ptSegDist( _ _pt: Point2D? ) -> Double {
-        return ptSegDist( pt: _pt )
+    open func ptLineDistSq( _ _pt: Point2D? ) -> Double {
+        return ptLineDistSq( pt: _pt )
     }
 
     /// public static double java.awt.geom.Line2D.ptLineDistSq(double,double,double,double,double,double)
 
-    private static var ptLineDistSq_MethodID_25: jmethodID?
+    private static var ptLineDistSq_MethodID_23: jmethodID?
 
     open class func ptLineDistSq( x1: Double, y1: Double, x2: Double, y2: Double, px: Double, py: Double ) -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -423,7 +385,7 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[3] = JNIType.toJava( value: y2, locals: &__locals )
         __args[4] = JNIType.toJava( value: px, locals: &__locals )
         __args[5] = JNIType.toJava( value: py, locals: &__locals )
-        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "ptLineDistSq", methodSig: "(DDDDDD)D", methodCache: &ptLineDistSq_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "ptLineDistSq", methodSig: "(DDDDDD)D", methodCache: &ptLineDistSq_MethodID_23, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
@@ -431,32 +393,16 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return ptLineDistSq( x1: _x1, y1: _y1, x2: _x2, y2: _y2, px: _px, py: _py )
     }
 
-    /// public double java.awt.geom.Line2D.ptLineDistSq(java.awt.geom.Point2D)
-
-    private static var ptLineDistSq_MethodID_26: jmethodID?
-
-    open func ptLineDistSq( pt: Point2D? ) -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pt != nil ? pt! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptLineDistSq", methodSig: "(Ljava/awt/geom/Point2D;)D", methodCache: &Line2D.ptLineDistSq_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-    open func ptLineDistSq( _ _pt: Point2D? ) -> Double {
-        return ptLineDistSq( pt: _pt )
-    }
-
     /// public double java.awt.geom.Line2D.ptLineDistSq(double,double)
 
-    private static var ptLineDistSq_MethodID_27: jmethodID?
+    private static var ptLineDistSq_MethodID_24: jmethodID?
 
     open func ptLineDistSq( px: Double, py: Double ) -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: px, locals: &__locals )
         __args[1] = JNIType.toJava( value: py, locals: &__locals )
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptLineDistSq", methodSig: "(DD)D", methodCache: &Line2D.ptLineDistSq_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptLineDistSq", methodSig: "(DD)D", methodCache: &Line2D.ptLineDistSq_MethodID_24, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
@@ -464,9 +410,42 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return ptLineDistSq( px: _px, py: _py )
     }
 
+    /// public double java.awt.geom.Line2D.ptLineDist(double,double)
+
+    private static var ptLineDist_MethodID_25: jmethodID?
+
+    open func ptLineDist( px: Double, py: Double ) -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: px, locals: &__locals )
+        __args[1] = JNIType.toJava( value: py, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptLineDist", methodSig: "(DD)D", methodCache: &Line2D.ptLineDist_MethodID_25, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+    open func ptLineDist( _ _px: Double, _ _py: Double ) -> Double {
+        return ptLineDist( px: _px, py: _py )
+    }
+
+    /// public double java.awt.geom.Line2D.ptLineDist(java.awt.geom.Point2D)
+
+    private static var ptLineDist_MethodID_26: jmethodID?
+
+    open func ptLineDist( pt: Point2D? ) -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pt, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptLineDist", methodSig: "(Ljava/awt/geom/Point2D;)D", methodCache: &Line2D.ptLineDist_MethodID_26, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+    open func ptLineDist( _ _pt: Point2D? ) -> Double {
+        return ptLineDist( pt: _pt )
+    }
+
     /// public static double java.awt.geom.Line2D.ptLineDist(double,double,double,double,double,double)
 
-    private static var ptLineDist_MethodID_28: jmethodID?
+    private static var ptLineDist_MethodID_27: jmethodID?
 
     open class func ptLineDist( x1: Double, y1: Double, x2: Double, y2: Double, px: Double, py: Double ) -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -477,7 +456,7 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[3] = JNIType.toJava( value: y2, locals: &__locals )
         __args[4] = JNIType.toJava( value: px, locals: &__locals )
         __args[5] = JNIType.toJava( value: py, locals: &__locals )
-        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "ptLineDist", methodSig: "(DDDDDD)D", methodCache: &ptLineDist_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "ptLineDist", methodSig: "(DDDDDD)D", methodCache: &ptLineDist_MethodID_27, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
@@ -485,73 +464,9 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return ptLineDist( x1: _x1, y1: _y1, x2: _x2, y2: _y2, px: _px, py: _py )
     }
 
-    /// public double java.awt.geom.Line2D.ptLineDist(double,double)
-
-    private static var ptLineDist_MethodID_29: jmethodID?
-
-    open func ptLineDist( px: Double, py: Double ) -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: px, locals: &__locals )
-        __args[1] = JNIType.toJava( value: py, locals: &__locals )
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptLineDist", methodSig: "(DD)D", methodCache: &Line2D.ptLineDist_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-    open func ptLineDist( _ _px: Double, _ _py: Double ) -> Double {
-        return ptLineDist( px: _px, py: _py )
-    }
-
-    /// public double java.awt.geom.Line2D.ptLineDist(java.awt.geom.Point2D)
-
-    private static var ptLineDist_MethodID_30: jmethodID?
-
-    open func ptLineDist( pt: Point2D? ) -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pt != nil ? pt! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptLineDist", methodSig: "(Ljava/awt/geom/Point2D;)D", methodCache: &Line2D.ptLineDist_MethodID_30, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-    open func ptLineDist( _ _pt: Point2D? ) -> Double {
-        return ptLineDist( pt: _pt )
-    }
-
-    /// public void java.awt.geom.Line2D.setLine(java.awt.geom.Line2D)
-
-    private static var setLine_MethodID_31: jmethodID?
-
-    open func setLine( l: Line2D? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l != nil ? l! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLine", methodSig: "(Ljava/awt/geom/Line2D;)V", methodCache: &Line2D.setLine_MethodID_31, args: &__args, locals: &__locals )
-    }
-
-    open func setLine( _ _l: Line2D? ) {
-        setLine( l: _l )
-    }
-
-    /// public void java.awt.geom.Line2D.setLine(java.awt.geom.Point2D,java.awt.geom.Point2D)
-
-    private static var setLine_MethodID_32: jmethodID?
-
-    open func setLine( p1: Point2D?, p2: Point2D? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p1 != nil ? p1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p2 != nil ? p2! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLine", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &Line2D.setLine_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-    open func setLine( _ _p1: Point2D?, _ _p2: Point2D? ) {
-        setLine( p1: _p1, p2: _p2 )
-    }
-
     /// public abstract void java.awt.geom.Line2D.setLine(double,double,double,double)
 
-    private static var setLine_MethodID_33: jmethodID?
+    private static var setLine_MethodID_28: jmethodID?
 
     open func setLine( x1: Double, y1: Double, x2: Double, y2: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -560,39 +475,53 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[1] = JNIType.toJava( value: y1, locals: &__locals )
         __args[2] = JNIType.toJava( value: x2, locals: &__locals )
         __args[3] = JNIType.toJava( value: y2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLine", methodSig: "(DDDD)V", methodCache: &Line2D.setLine_MethodID_33, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLine", methodSig: "(DDDD)V", methodCache: &Line2D.setLine_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func setLine( _ _x1: Double, _ _y1: Double, _ _x2: Double, _ _y2: Double ) {
         setLine( x1: _x1, y1: _y1, x2: _x2, y2: _y2 )
     }
 
-    /// public int java.awt.geom.Line2D.relativeCCW(double,double)
+    /// public void java.awt.geom.Line2D.setLine(java.awt.geom.Line2D)
 
-    private static var relativeCCW_MethodID_34: jmethodID?
+    private static var setLine_MethodID_29: jmethodID?
 
-    open func relativeCCW( px: Double, py: Double ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func setLine( l: Line2D? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: px, locals: &__locals )
-        __args[1] = JNIType.toJava( value: py, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "relativeCCW", methodSig: "(DD)I", methodCache: &Line2D.relativeCCW_MethodID_34, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLine", methodSig: "(Ljava/awt/geom/Line2D;)V", methodCache: &Line2D.setLine_MethodID_29, args: &__args, locals: &__locals )
     }
 
-    open func relativeCCW( _ _px: Double, _ _py: Double ) -> Int {
-        return relativeCCW( px: _px, py: _py )
+    open func setLine( _ _l: Line2D? ) {
+        setLine( l: _l )
+    }
+
+    /// public void java.awt.geom.Line2D.setLine(java.awt.geom.Point2D,java.awt.geom.Point2D)
+
+    private static var setLine_MethodID_30: jmethodID?
+
+    open func setLine( p1: Point2D?, p2: Point2D? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p2, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLine", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &Line2D.setLine_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func setLine( _ _p1: Point2D?, _ _p2: Point2D? ) {
+        setLine( p1: _p1, p2: _p2 )
     }
 
     /// public int java.awt.geom.Line2D.relativeCCW(java.awt.geom.Point2D)
 
-    private static var relativeCCW_MethodID_35: jmethodID?
+    private static var relativeCCW_MethodID_31: jmethodID?
 
     open func relativeCCW( p: Point2D? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "relativeCCW", methodSig: "(Ljava/awt/geom/Point2D;)I", methodCache: &Line2D.relativeCCW_MethodID_35, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "relativeCCW", methodSig: "(Ljava/awt/geom/Point2D;)I", methodCache: &Line2D.relativeCCW_MethodID_31, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -600,9 +529,26 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return relativeCCW( p: _p )
     }
 
+    /// public int java.awt.geom.Line2D.relativeCCW(double,double)
+
+    private static var relativeCCW_MethodID_32: jmethodID?
+
+    open func relativeCCW( px: Double, py: Double ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: px, locals: &__locals )
+        __args[1] = JNIType.toJava( value: py, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "relativeCCW", methodSig: "(DD)I", methodCache: &Line2D.relativeCCW_MethodID_32, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func relativeCCW( _ _px: Double, _ _py: Double ) -> Int {
+        return relativeCCW( px: _px, py: _py )
+    }
+
     /// public static int java.awt.geom.Line2D.relativeCCW(double,double,double,double,double,double)
 
-    private static var relativeCCW_MethodID_36: jmethodID?
+    private static var relativeCCW_MethodID_33: jmethodID?
 
     open class func relativeCCW( x1: Double, y1: Double, x2: Double, y2: Double, px: Double, py: Double ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -613,7 +559,7 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[3] = JNIType.toJava( value: y2, locals: &__locals )
         __args[4] = JNIType.toJava( value: px, locals: &__locals )
         __args[5] = JNIType.toJava( value: py, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "relativeCCW", methodSig: "(DDDDDD)I", methodCache: &relativeCCW_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "relativeCCW", methodSig: "(DDDDDD)I", methodCache: &relativeCCW_MethodID_33, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -623,12 +569,12 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public abstract java.awt.geom.Point2D java.awt.geom.Line2D.getP1()
 
-    private static var getP1_MethodID_37: jmethodID?
+    private static var getP1_MethodID_34: jmethodID?
 
     open func getP1() -> Point2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getP1", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &Line2D.getP1_MethodID_37, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getP1", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &Line2D.getP1_MethodID_34, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point2D( javaObject: __return ) : nil
     }
@@ -636,16 +582,70 @@ open class Line2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public abstract java.awt.geom.Point2D java.awt.geom.Line2D.getP2()
 
-    private static var getP2_MethodID_38: jmethodID?
+    private static var getP2_MethodID_35: jmethodID?
 
     open func getP2() -> Point2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getP2", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &Line2D.getP2_MethodID_38, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getP2", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &Line2D.getP2_MethodID_35, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point2D( javaObject: __return ) : nil
     }
 
+
+    /// public double java.awt.geom.Line2D.ptSegDistSq(java.awt.geom.Point2D)
+
+    private static var ptSegDistSq_MethodID_36: jmethodID?
+
+    open func ptSegDistSq( pt: Point2D? ) -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pt, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptSegDistSq", methodSig: "(Ljava/awt/geom/Point2D;)D", methodCache: &Line2D.ptSegDistSq_MethodID_36, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+    open func ptSegDistSq( _ _pt: Point2D? ) -> Double {
+        return ptSegDistSq( pt: _pt )
+    }
+
+    /// public double java.awt.geom.Line2D.ptSegDistSq(double,double)
+
+    private static var ptSegDistSq_MethodID_37: jmethodID?
+
+    open func ptSegDistSq( px: Double, py: Double ) -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: px, locals: &__locals )
+        __args[1] = JNIType.toJava( value: py, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "ptSegDistSq", methodSig: "(DD)D", methodCache: &Line2D.ptSegDistSq_MethodID_37, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+    open func ptSegDistSq( _ _px: Double, _ _py: Double ) -> Double {
+        return ptSegDistSq( px: _px, py: _py )
+    }
+
+    /// public static double java.awt.geom.Line2D.ptSegDistSq(double,double,double,double,double,double)
+
+    private static var ptSegDistSq_MethodID_38: jmethodID?
+
+    open class func ptSegDistSq( x1: Double, y1: Double, x2: Double, y2: Double, px: Double, py: Double ) -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: y1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x2, locals: &__locals )
+        __args[3] = JNIType.toJava( value: y2, locals: &__locals )
+        __args[4] = JNIType.toJava( value: px, locals: &__locals )
+        __args[5] = JNIType.toJava( value: py, locals: &__locals )
+        let __return = JNIMethod.CallStaticDoubleMethod( className: "java/awt/geom/Line2D", classCache: &Line2DJNIClass, methodName: "ptSegDistSq", methodSig: "(DDDDDD)D", methodCache: &ptSegDistSq_MethodID_38, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+    open class func ptSegDistSq( _ _x1: Double, _ _y1: Double, _ _x2: Double, _ _y2: Double, _ _px: Double, _ _py: Double ) -> Double {
+        return ptSegDistSq( x1: _x1, y1: _y1, x2: _x2, y2: _y2, px: _px, py: _py )
+    }
 
     /// In declared protocol but not defined.. ///
 

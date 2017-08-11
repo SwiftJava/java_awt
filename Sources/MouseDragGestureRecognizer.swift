@@ -33,7 +33,7 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dragSource", fieldType: "Ljava/awt/dnd/DragSource;", fieldCache: &MouseDragGestureRecognizer.dragSource_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -50,7 +50,7 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "component", fieldType: "Ljava/awt/Component;", fieldCache: &MouseDragGestureRecognizer.component_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -101,7 +101,7 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "events", fieldType: "Ljava/util/ArrayList;", fieldCache: &MouseDragGestureRecognizer.events_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -113,7 +113,7 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
     public convenience init( ds: DragSource? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ds != nil ? ds! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ds, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/MouseDragGestureRecognizer", classCache: &MouseDragGestureRecognizer.MouseDragGestureRecognizerJNIClass, methodSig: "(Ljava/awt/dnd/DragSource;)V", methodCache: &MouseDragGestureRecognizer.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -130,8 +130,8 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
     public convenience init( ds: DragSource?, c: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ds != nil ? ds! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ds, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/MouseDragGestureRecognizer", classCache: &MouseDragGestureRecognizer.MouseDragGestureRecognizerJNIClass, methodSig: "(Ljava/awt/dnd/DragSource;Ljava/awt/Component;)V", methodCache: &MouseDragGestureRecognizer.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -148,8 +148,8 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
     public convenience init( ds: DragSource?, c: Component?, act: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ds != nil ? ds! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ds, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c, locals: &__locals )
         __args[2] = JNIType.toJava( value: act, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/MouseDragGestureRecognizer", classCache: &MouseDragGestureRecognizer.MouseDragGestureRecognizerJNIClass, methodSig: "(Ljava/awt/dnd/DragSource;Ljava/awt/Component;I)V", methodCache: &MouseDragGestureRecognizer.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -167,8 +167,8 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
     public convenience init( ds: DragSource?, c: Component?, act: Int, dgl: DragGestureListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ds != nil ? ds! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ds, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c, locals: &__locals )
         __args[2] = JNIType.toJava( value: act, locals: &__locals )
         __args[3] = JNIType.toJava( value: dgl, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/MouseDragGestureRecognizer", classCache: &MouseDragGestureRecognizer.MouseDragGestureRecognizerJNIClass, methodSig: "(Ljava/awt/dnd/DragSource;Ljava/awt/Component;ILjava/awt/dnd/DragGestureListener;)V", methodCache: &MouseDragGestureRecognizer.new_MethodID_4, args: &__args, locals: &__locals )
@@ -187,7 +187,7 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
     open func mousePressed( e: MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseDragGestureRecognizer.mousePressed_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -202,7 +202,7 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
     open func mouseReleased( e: MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseDragGestureRecognizer.mouseReleased_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -217,7 +217,7 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
     open func mouseClicked( e: MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseDragGestureRecognizer.mouseClicked_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -232,7 +232,7 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
     open func mouseExited( e: MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseExited", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseDragGestureRecognizer.mouseExited_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -247,7 +247,7 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
     open func mouseEntered( e: MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseDragGestureRecognizer.mouseEntered_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -262,7 +262,7 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
     open func mouseMoved( e: MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseDragGestureRecognizer.mouseMoved_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -277,7 +277,7 @@ open class MouseDragGestureRecognizer: DragGestureRecognizer, MouseListener, Mou
     open func mouseDragged( e: MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseDragGestureRecognizer.mouseDragged_MethodID_11, args: &__args, locals: &__locals )
     }
 

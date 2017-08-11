@@ -184,7 +184,7 @@ open class PaintEvent: ComponentEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &PaintEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -196,9 +196,9 @@ open class PaintEvent: ComponentEvent {
     public convenience init( source: Component?, id: Int, updateRect: Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: updateRect != nil ? updateRect! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: updateRect, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/PaintEvent", classCache: &PaintEvent.PaintEventJNIClass, methodSig: "(Ljava/awt/Component;ILjava/awt/Rectangle;)V", methodCache: &PaintEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -217,7 +217,7 @@ open class PaintEvent: ComponentEvent {
     open func setUpdateRect( updateRect: Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: updateRect != nil ? updateRect! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: updateRect, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUpdateRect", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &PaintEvent.setUpdateRect_MethodID_2, args: &__args, locals: &__locals )
     }
 

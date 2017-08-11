@@ -58,16 +58,16 @@ open class JobAttributes: java_swift.JavaObject, java_lang.Cloneable {
         var __args = [jvalue]( repeating: jvalue(), count: 11 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: copies, locals: &__locals )
-        __args[1] = JNIType.toJava( value: defaultSelection != nil ? defaultSelection! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: destination != nil ? destination! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: dialog != nil ? dialog! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: defaultSelection, locals: &__locals )
+        __args[2] = JNIType.toJava( value: destination, locals: &__locals )
+        __args[3] = JNIType.toJava( value: dialog, locals: &__locals )
         __args[4] = JNIType.toJava( value: fileName, locals: &__locals )
         __args[5] = JNIType.toJava( value: maxPage, locals: &__locals )
         __args[6] = JNIType.toJava( value: minPage, locals: &__locals )
-        __args[7] = JNIType.toJava( value: multipleDocumentHandling != nil ? multipleDocumentHandling! as JNIObject : nil, locals: &__locals )
+        __args[7] = JNIType.toJava( value: multipleDocumentHandling, locals: &__locals )
         __args[8] = JNIType.toJava( value: pageRanges, locals: &__locals )
         __args[9] = JNIType.toJava( value: printer, locals: &__locals )
-        __args[10] = JNIType.toJava( value: sides != nil ? sides! as JNIObject : nil, locals: &__locals )
+        __args[10] = JNIType.toJava( value: sides, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/JobAttributes", classCache: &JobAttributes.JobAttributesJNIClass, methodSig: "(ILjava/awt/JobAttributes$DefaultSelectionType;Ljava/awt/JobAttributes$DestinationType;Ljava/awt/JobAttributes$DialogType;Ljava/lang/String;IILjava/awt/JobAttributes$MultipleDocumentHandlingType;[[ILjava/lang/String;Ljava/awt/JobAttributes$SidesType;)V", methodCache: &JobAttributes.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -84,7 +84,7 @@ open class JobAttributes: java_swift.JavaObject, java_lang.Cloneable {
     public convenience init( obj: JobAttributes? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/JobAttributes", classCache: &JobAttributes.JobAttributesJNIClass, methodSig: "(Ljava/awt/JobAttributes;)V", methodCache: &JobAttributes.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -113,7 +113,7 @@ open class JobAttributes: java_swift.JavaObject, java_lang.Cloneable {
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &JobAttributes.equals_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -146,7 +146,7 @@ open class JobAttributes: java_swift.JavaObject, java_lang.Cloneable {
     open func set( obj: JobAttributes? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "set", methodSig: "(Ljava/awt/JobAttributes;)V", methodCache: &JobAttributes.set_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -224,7 +224,7 @@ open class JobAttributes: java_swift.JavaObject, java_lang.Cloneable {
     open func setDefaultSelection( defaultSelection: JobAttributes_DefaultSelectionType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: defaultSelection != nil ? defaultSelection! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: defaultSelection, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultSelection", methodSig: "(Ljava/awt/JobAttributes$DefaultSelectionType;)V", methodCache: &JobAttributes.setDefaultSelection_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -252,7 +252,7 @@ open class JobAttributes: java_swift.JavaObject, java_lang.Cloneable {
     open func setDestination( destination: JobAttributes_DestinationType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: destination != nil ? destination! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: destination, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDestination", methodSig: "(Ljava/awt/JobAttributes$DestinationType;)V", methodCache: &JobAttributes.setDestination_MethodID_14, args: &__args, locals: &__locals )
     }
 
@@ -280,7 +280,7 @@ open class JobAttributes: java_swift.JavaObject, java_lang.Cloneable {
     open func setDialog( dialog: JobAttributes_DialogType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dialog != nil ? dialog! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dialog, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDialog", methodSig: "(Ljava/awt/JobAttributes$DialogType;)V", methodCache: &JobAttributes.setDialog_MethodID_16, args: &__args, locals: &__locals )
     }
 
@@ -404,7 +404,7 @@ open class JobAttributes: java_swift.JavaObject, java_lang.Cloneable {
     open func setMultipleDocumentHandling( multipleDocumentHandling: JobAttributes_MultipleDocumentHandlingType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: multipleDocumentHandling != nil ? multipleDocumentHandling! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: multipleDocumentHandling, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMultipleDocumentHandling", methodSig: "(Ljava/awt/JobAttributes$MultipleDocumentHandlingType;)V", methodCache: &JobAttributes.setMultipleDocumentHandling_MethodID_25, args: &__args, locals: &__locals )
     }
 
@@ -497,7 +497,7 @@ open class JobAttributes: java_swift.JavaObject, java_lang.Cloneable {
     open func setSides( sides: JobAttributes_SidesType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sides != nil ? sides! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sides, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSides", methodSig: "(Ljava/awt/JobAttributes$SidesType;)V", methodCache: &JobAttributes.setSides_MethodID_32, args: &__args, locals: &__locals )
     }
 

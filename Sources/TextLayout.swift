@@ -71,7 +71,7 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        __args[1] = JNIType.toJava( value: frc != nil ? frc! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: frc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/font/TextLayout", classCache: &TextLayout.TextLayoutJNIClass, methodSig: "(Ljava/text/AttributedCharacterIterator;Ljava/awt/font/FontRenderContext;)V", methodCache: &TextLayout.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -92,7 +92,7 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: string, locals: &__locals )
         __args[1] = JNIType.toJava( value: attributes, mapClass: "java/util/Map", locals: &__locals )
-        __args[2] = JNIType.toJava( value: frc != nil ? frc! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: frc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/font/TextLayout", classCache: &TextLayout.TextLayoutJNIClass, methodSig: "(Ljava/lang/String;Ljava/util/Map;Ljava/awt/font/FontRenderContext;)V", methodCache: &TextLayout.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -110,8 +110,8 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: string, locals: &__locals )
-        __args[1] = JNIType.toJava( value: font != nil ? font! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: frc != nil ? frc! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: font, locals: &__locals )
+        __args[2] = JNIType.toJava( value: frc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/font/TextLayout", classCache: &TextLayout.TextLayoutJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/Font;Ljava/awt/font/FontRenderContext;)V", methodCache: &TextLayout.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -128,7 +128,7 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
     open func equals( rhs: TextLayout? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rhs != nil ? rhs! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/font/TextLayout;)Z", methodCache: &TextLayout.equals_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -144,7 +144,7 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &TextLayout.equals_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -172,63 +172,88 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// static java.awt.font.TextHitInfo java.awt.font.TextLayout.access$000(java.awt.font.TextLayout,java.awt.font.TextHitInfo,java.awt.font.TextHitInfo)
 
+    /// public boolean java.awt.font.TextLayout.isLeftToRight()
+
+    private static var isLeftToRight_MethodID_7: jmethodID?
+
+    open func isLeftToRight() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeftToRight", methodSig: "()Z", methodCache: &TextLayout.isLeftToRight_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public java.awt.geom.Rectangle2D java.awt.font.TextLayout.getBounds()
+
+    private static var getBounds_MethodID_8: jmethodID?
+
+    open func getBounds() -> Rectangle2D! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &TextLayout.getBounds_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+
     /// public float java.awt.font.TextLayout.getAscent()
 
-    private static var getAscent_MethodID_7: jmethodID?
+    private static var getAscent_MethodID_9: jmethodID?
 
     open func getAscent() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAscent", methodSig: "()F", methodCache: &TextLayout.getAscent_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAscent", methodSig: "()F", methodCache: &TextLayout.getAscent_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public float java.awt.font.TextLayout.getAdvance()
 
-    private static var getAdvance_MethodID_8: jmethodID?
+    private static var getAdvance_MethodID_10: jmethodID?
 
     open func getAdvance() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAdvance", methodSig: "()F", methodCache: &TextLayout.getAdvance_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAdvance", methodSig: "()F", methodCache: &TextLayout.getAdvance_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public float java.awt.font.TextLayout.getDescent()
 
-    private static var getDescent_MethodID_9: jmethodID?
+    private static var getDescent_MethodID_11: jmethodID?
 
     open func getDescent() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getDescent", methodSig: "()F", methodCache: &TextLayout.getDescent_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getDescent", methodSig: "()F", methodCache: &TextLayout.getDescent_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public float java.awt.font.TextLayout.getLeading()
 
-    private static var getLeading_MethodID_10: jmethodID?
+    private static var getLeading_MethodID_12: jmethodID?
 
     open func getLeading() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLeading", methodSig: "()F", methodCache: &TextLayout.getLeading_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLeading", methodSig: "()F", methodCache: &TextLayout.getLeading_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public java.awt.Shape java.awt.font.TextLayout.getOutline(java.awt.geom.AffineTransform)
 
-    private static var getOutline_MethodID_11: jmethodID?
+    private static var getOutline_MethodID_13: jmethodID?
 
     open func getOutline( tx: AffineTransform? ) -> Shape! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tx != nil ? tx! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOutline", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/Shape;", methodCache: &TextLayout.getOutline_MethodID_11, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tx, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOutline", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/Shape;", methodCache: &TextLayout.getOutline_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ShapeForward( javaObject: __return ) : nil
     }
@@ -239,15 +264,15 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public void java.awt.font.TextLayout.draw(java.awt.Graphics2D,float,float)
 
-    private static var draw_MethodID_12: jmethodID?
+    private static var draw_MethodID_14: jmethodID?
 
     open func draw( g2: Graphics2D?, x: Float, y: Float ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g2 != nil ? g2! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g2, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "draw", methodSig: "(Ljava/awt/Graphics2D;FF)V", methodCache: &TextLayout.draw_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "draw", methodSig: "(Ljava/awt/Graphics2D;FF)V", methodCache: &TextLayout.draw_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func draw( _ _g2: Graphics2D?, _ _x: Float, _ _y: Float ) {
@@ -256,12 +281,12 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public float[] java.awt.font.TextLayout.getBaselineOffsets()
 
-    private static var getBaselineOffsets_MethodID_13: jmethodID?
+    private static var getBaselineOffsets_MethodID_15: jmethodID?
 
     open func getBaselineOffsets() -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBaselineOffsets", methodSig: "()[F", methodCache: &TextLayout.getBaselineOffsets_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBaselineOffsets", methodSig: "()[F", methodCache: &TextLayout.getBaselineOffsets_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Float](), from: __return )
     }
 
@@ -286,13 +311,13 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public java.awt.font.TextLayout java.awt.font.TextLayout.getJustifiedLayout(float)
 
-    private static var getJustifiedLayout_MethodID_14: jmethodID?
+    private static var getJustifiedLayout_MethodID_16: jmethodID?
 
     open func getJustifiedLayout( justificationWidth: Float ) -> TextLayout! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: justificationWidth, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getJustifiedLayout", methodSig: "(F)Ljava/awt/font/TextLayout;", methodCache: &TextLayout.getJustifiedLayout_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getJustifiedLayout", methodSig: "(F)Ljava/awt/font/TextLayout;", methodCache: &TextLayout.getJustifiedLayout_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextLayout( javaObject: __return ) : nil
     }
@@ -303,13 +328,13 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// protected void java.awt.font.TextLayout.handleJustify(float)
 
-    private static var handleJustify_MethodID_15: jmethodID?
+    private static var handleJustify_MethodID_17: jmethodID?
 
     open func handleJustify( justificationWidth: Float ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: justificationWidth, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleJustify", methodSig: "(F)V", methodCache: &TextLayout.handleJustify_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleJustify", methodSig: "(F)V", methodCache: &TextLayout.handleJustify_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func handleJustify( _ _justificationWidth: Float ) {
@@ -318,27 +343,27 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public float java.awt.font.TextLayout.getVisibleAdvance()
 
-    private static var getVisibleAdvance_MethodID_16: jmethodID?
+    private static var getVisibleAdvance_MethodID_18: jmethodID?
 
     open func getVisibleAdvance() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getVisibleAdvance", methodSig: "()F", methodCache: &TextLayout.getVisibleAdvance_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getVisibleAdvance", methodSig: "()F", methodCache: &TextLayout.getVisibleAdvance_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public java.awt.Rectangle java.awt.font.TextLayout.getPixelBounds(java.awt.font.FontRenderContext,float,float)
 
-    private static var getPixelBounds_MethodID_17: jmethodID?
+    private static var getPixelBounds_MethodID_19: jmethodID?
 
     open func getPixelBounds( frc: FontRenderContext?, x: Float, y: Float ) -> Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: frc != nil ? frc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: frc, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixelBounds", methodSig: "(Ljava/awt/font/FontRenderContext;FF)Ljava/awt/Rectangle;", methodCache: &TextLayout.getPixelBounds_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixelBounds", methodSig: "(Ljava/awt/font/FontRenderContext;FF)Ljava/awt/Rectangle;", methodCache: &TextLayout.getPixelBounds_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
@@ -349,40 +374,38 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public boolean java.awt.font.TextLayout.isVertical()
 
-    private static var isVertical_MethodID_18: jmethodID?
+    private static var isVertical_MethodID_20: jmethodID?
 
     open func isVertical() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVertical", methodSig: "()Z", methodCache: &TextLayout.isVertical_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVertical", methodSig: "()Z", methodCache: &TextLayout.isVertical_MethodID_20, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public int java.awt.font.TextLayout.getCharacterCount()
 
-    private static var getCharacterCount_MethodID_19: jmethodID?
+    private static var getCharacterCount_MethodID_21: jmethodID?
 
     open func getCharacterCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCharacterCount", methodSig: "()I", methodCache: &TextLayout.getCharacterCount_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCharacterCount", methodSig: "()I", methodCache: &TextLayout.getCharacterCount_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
-    /// private float[] java.awt.font.TextLayout.getCaretInfo(int,java.awt.geom.Rectangle2D,float[])
-
     /// public float[] java.awt.font.TextLayout.getCaretInfo(java.awt.font.TextHitInfo,java.awt.geom.Rectangle2D)
 
-    private static var getCaretInfo_MethodID_20: jmethodID?
+    private static var getCaretInfo_MethodID_22: jmethodID?
 
     open func getCaretInfo( hit: TextHitInfo?, bounds: Rectangle2D? ) -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hit != nil ? hit! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretInfo", methodSig: "(Ljava/awt/font/TextHitInfo;Ljava/awt/geom/Rectangle2D;)[F", methodCache: &TextLayout.getCaretInfo_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: hit, locals: &__locals )
+        __args[1] = JNIType.toJava( value: bounds, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretInfo", methodSig: "(Ljava/awt/font/TextHitInfo;Ljava/awt/geom/Rectangle2D;)[F", methodCache: &TextLayout.getCaretInfo_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Float](), from: __return )
     }
 
@@ -390,15 +413,17 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
         return getCaretInfo( hit: _hit, bounds: _bounds )
     }
 
+    /// private float[] java.awt.font.TextLayout.getCaretInfo(int,java.awt.geom.Rectangle2D,float[])
+
     /// public float[] java.awt.font.TextLayout.getCaretInfo(java.awt.font.TextHitInfo)
 
-    private static var getCaretInfo_MethodID_21: jmethodID?
+    private static var getCaretInfo_MethodID_23: jmethodID?
 
     open func getCaretInfo( hit: TextHitInfo? ) -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hit != nil ? hit! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretInfo", methodSig: "(Ljava/awt/font/TextHitInfo;)[F", methodCache: &TextLayout.getCaretInfo_MethodID_21, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: hit, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretInfo", methodSig: "(Ljava/awt/font/TextHitInfo;)[F", methodCache: &TextLayout.getCaretInfo_MethodID_23, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Float](), from: __return )
     }
 
@@ -416,13 +441,13 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public java.awt.font.TextHitInfo java.awt.font.TextLayout.getNextRightHit(java.awt.font.TextHitInfo)
 
-    private static var getNextRightHit_MethodID_22: jmethodID?
+    private static var getNextRightHit_MethodID_24: jmethodID?
 
     open func getNextRightHit( hit: TextHitInfo? ) -> TextHitInfo! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hit != nil ? hit! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextRightHit", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getNextRightHit_MethodID_22, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: hit, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextRightHit", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getNextRightHit_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
     }
@@ -433,14 +458,14 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public java.awt.font.TextHitInfo java.awt.font.TextLayout.getNextRightHit(int,java.awt.font.TextLayout$CaretPolicy)
 
-    private static var getNextRightHit_MethodID_23: jmethodID?
+    private static var getNextRightHit_MethodID_25: jmethodID?
 
     open func getNextRightHit( offset: Int, policy: TextLayout_CaretPolicy? ) -> TextHitInfo! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: policy != nil ? policy! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextRightHit", methodSig: "(ILjava/awt/font/TextLayout$CaretPolicy;)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getNextRightHit_MethodID_23, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: policy, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextRightHit", methodSig: "(ILjava/awt/font/TextLayout$CaretPolicy;)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getNextRightHit_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
     }
@@ -451,54 +476,19 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public java.awt.font.TextHitInfo java.awt.font.TextLayout.getNextRightHit(int)
 
-    private static var getNextRightHit_MethodID_24: jmethodID?
+    private static var getNextRightHit_MethodID_26: jmethodID?
 
     open func getNextRightHit( offset: Int ) -> TextHitInfo! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextRightHit", methodSig: "(I)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getNextRightHit_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextRightHit", methodSig: "(I)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getNextRightHit_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
     }
 
     open func getNextRightHit( _ _offset: Int ) -> TextHitInfo! {
         return getNextRightHit( offset: _offset )
-    }
-
-    /// public java.awt.font.TextHitInfo java.awt.font.TextLayout.getNextLeftHit(int,java.awt.font.TextLayout$CaretPolicy)
-
-    private static var getNextLeftHit_MethodID_25: jmethodID?
-
-    open func getNextLeftHit( offset: Int, policy: TextLayout_CaretPolicy? ) -> TextHitInfo! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: policy != nil ? policy! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextLeftHit", methodSig: "(ILjava/awt/font/TextLayout$CaretPolicy;)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getNextLeftHit_MethodID_25, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TextHitInfo( javaObject: __return ) : nil
-    }
-
-    open func getNextLeftHit( _ _offset: Int, _ _policy: TextLayout_CaretPolicy? ) -> TextHitInfo! {
-        return getNextLeftHit( offset: _offset, policy: _policy )
-    }
-
-    /// public java.awt.font.TextHitInfo java.awt.font.TextLayout.getNextLeftHit(java.awt.font.TextHitInfo)
-
-    private static var getNextLeftHit_MethodID_26: jmethodID?
-
-    open func getNextLeftHit( hit: TextHitInfo? ) -> TextHitInfo! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hit != nil ? hit! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextLeftHit", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getNextLeftHit_MethodID_26, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TextHitInfo( javaObject: __return ) : nil
-    }
-
-    open func getNextLeftHit( _ _hit: TextHitInfo? ) -> TextHitInfo! {
-        return getNextLeftHit( hit: _hit )
     }
 
     /// public java.awt.font.TextHitInfo java.awt.font.TextLayout.getNextLeftHit(int)
@@ -518,15 +508,50 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
         return getNextLeftHit( offset: _offset )
     }
 
+    /// public java.awt.font.TextHitInfo java.awt.font.TextLayout.getNextLeftHit(java.awt.font.TextHitInfo)
+
+    private static var getNextLeftHit_MethodID_28: jmethodID?
+
+    open func getNextLeftHit( hit: TextHitInfo? ) -> TextHitInfo! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: hit, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextLeftHit", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getNextLeftHit_MethodID_28, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TextHitInfo( javaObject: __return ) : nil
+    }
+
+    open func getNextLeftHit( _ _hit: TextHitInfo? ) -> TextHitInfo! {
+        return getNextLeftHit( hit: _hit )
+    }
+
+    /// public java.awt.font.TextHitInfo java.awt.font.TextLayout.getNextLeftHit(int,java.awt.font.TextLayout$CaretPolicy)
+
+    private static var getNextLeftHit_MethodID_29: jmethodID?
+
+    open func getNextLeftHit( offset: Int, policy: TextLayout_CaretPolicy? ) -> TextHitInfo! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[1] = JNIType.toJava( value: policy, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextLeftHit", methodSig: "(ILjava/awt/font/TextLayout$CaretPolicy;)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getNextLeftHit_MethodID_29, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TextHitInfo( javaObject: __return ) : nil
+    }
+
+    open func getNextLeftHit( _ _offset: Int, _ _policy: TextLayout_CaretPolicy? ) -> TextHitInfo! {
+        return getNextLeftHit( offset: _offset, policy: _policy )
+    }
+
     /// public java.awt.font.TextHitInfo java.awt.font.TextLayout.getVisualOtherHit(java.awt.font.TextHitInfo)
 
-    private static var getVisualOtherHit_MethodID_28: jmethodID?
+    private static var getVisualOtherHit_MethodID_30: jmethodID?
 
     open func getVisualOtherHit( hit: TextHitInfo? ) -> TextHitInfo! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hit != nil ? hit! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisualOtherHit", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getVisualOtherHit_MethodID_28, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: hit, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisualOtherHit", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.getVisualOtherHit_MethodID_30, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
     }
@@ -541,33 +566,15 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// private static java.awt.geom.GeneralPath java.awt.font.TextLayout.pathToShape(double[],boolean,sun.font.LayoutPathImpl)
 
-    /// public java.awt.Shape java.awt.font.TextLayout.getCaretShape(java.awt.font.TextHitInfo,java.awt.geom.Rectangle2D)
-
-    private static var getCaretShape_MethodID_29: jmethodID?
-
-    open func getCaretShape( hit: TextHitInfo?, bounds: Rectangle2D? ) -> Shape! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hit != nil ? hit! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretShape", methodSig: "(Ljava/awt/font/TextHitInfo;Ljava/awt/geom/Rectangle2D;)Ljava/awt/Shape;", methodCache: &TextLayout.getCaretShape_MethodID_29, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ShapeForward( javaObject: __return ) : nil
-    }
-
-    open func getCaretShape( _ _hit: TextHitInfo?, _ _bounds: Rectangle2D? ) -> Shape! {
-        return getCaretShape( hit: _hit, bounds: _bounds )
-    }
-
     /// public java.awt.Shape java.awt.font.TextLayout.getCaretShape(java.awt.font.TextHitInfo)
 
-    private static var getCaretShape_MethodID_30: jmethodID?
+    private static var getCaretShape_MethodID_31: jmethodID?
 
     open func getCaretShape( hit: TextHitInfo? ) -> Shape! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hit != nil ? hit! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretShape", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/Shape;", methodCache: &TextLayout.getCaretShape_MethodID_30, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: hit, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretShape", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/Shape;", methodCache: &TextLayout.getCaretShape_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ShapeForward( javaObject: __return ) : nil
     }
@@ -576,17 +583,35 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
         return getCaretShape( hit: _hit )
     }
 
+    /// public java.awt.Shape java.awt.font.TextLayout.getCaretShape(java.awt.font.TextHitInfo,java.awt.geom.Rectangle2D)
+
+    private static var getCaretShape_MethodID_32: jmethodID?
+
+    open func getCaretShape( hit: TextHitInfo?, bounds: Rectangle2D? ) -> Shape! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: hit, locals: &__locals )
+        __args[1] = JNIType.toJava( value: bounds, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretShape", methodSig: "(Ljava/awt/font/TextHitInfo;Ljava/awt/geom/Rectangle2D;)Ljava/awt/Shape;", methodCache: &TextLayout.getCaretShape_MethodID_32, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ShapeForward( javaObject: __return ) : nil
+    }
+
+    open func getCaretShape( _ _hit: TextHitInfo?, _ _bounds: Rectangle2D? ) -> Shape! {
+        return getCaretShape( hit: _hit, bounds: _bounds )
+    }
+
     /// private final java.awt.font.TextHitInfo java.awt.font.TextLayout.getStrongHit(java.awt.font.TextHitInfo,java.awt.font.TextHitInfo)
 
     /// public byte java.awt.font.TextLayout.getCharacterLevel(int)
 
-    private static var getCharacterLevel_MethodID_31: jmethodID?
+    private static var getCharacterLevel_MethodID_33: jmethodID?
 
     open func getCharacterLevel( index: Int ) -> Int8 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallByteMethod( object: javaObject, methodName: "getCharacterLevel", methodSig: "(I)B", methodCache: &TextLayout.getCharacterLevel_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallByteMethod( object: javaObject, methodName: "getCharacterLevel", methodSig: "(I)B", methodCache: &TextLayout.getCharacterLevel_MethodID_33, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int8(), from: __return )
     }
 
@@ -596,15 +621,15 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public java.awt.Shape[] java.awt.font.TextLayout.getCaretShapes(int,java.awt.geom.Rectangle2D,java.awt.font.TextLayout$CaretPolicy)
 
-    private static var getCaretShapes_MethodID_32: jmethodID?
+    private static var getCaretShapes_MethodID_34: jmethodID?
 
     open func getCaretShapes( offset: Int, bounds: Rectangle2D?, policy: TextLayout_CaretPolicy? ) -> [Shape]! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: policy != nil ? policy! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretShapes", methodSig: "(ILjava/awt/geom/Rectangle2D;Ljava/awt/font/TextLayout$CaretPolicy;)[Ljava/awt/Shape;", methodCache: &TextLayout.getCaretShapes_MethodID_32, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: bounds, locals: &__locals )
+        __args[2] = JNIType.toJava( value: policy, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretShapes", methodSig: "(ILjava/awt/geom/Rectangle2D;Ljava/awt/font/TextLayout$CaretPolicy;)[Ljava/awt/Shape;", methodCache: &TextLayout.getCaretShapes_MethodID_34, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [ShapeForward](), from: __return )
     }
 
@@ -612,37 +637,37 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
         return getCaretShapes( offset: _offset, bounds: _bounds, policy: _policy )
     }
 
-    /// public java.awt.Shape[] java.awt.font.TextLayout.getCaretShapes(int,java.awt.geom.Rectangle2D)
-
-    private static var getCaretShapes_MethodID_33: jmethodID?
-
-    open func getCaretShapes( offset: Int, bounds: Rectangle2D? ) -> [Shape]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretShapes", methodSig: "(ILjava/awt/geom/Rectangle2D;)[Ljava/awt/Shape;", methodCache: &TextLayout.getCaretShapes_MethodID_33, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ShapeForward](), from: __return )
-    }
-
-    open func getCaretShapes( _ _offset: Int, _ _bounds: Rectangle2D? ) -> [Shape]! {
-        return getCaretShapes( offset: _offset, bounds: _bounds )
-    }
-
     /// public java.awt.Shape[] java.awt.font.TextLayout.getCaretShapes(int)
 
-    private static var getCaretShapes_MethodID_34: jmethodID?
+    private static var getCaretShapes_MethodID_35: jmethodID?
 
     open func getCaretShapes( offset: Int ) -> [Shape]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretShapes", methodSig: "(I)[Ljava/awt/Shape;", methodCache: &TextLayout.getCaretShapes_MethodID_34, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretShapes", methodSig: "(I)[Ljava/awt/Shape;", methodCache: &TextLayout.getCaretShapes_MethodID_35, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [ShapeForward](), from: __return )
     }
 
     open func getCaretShapes( _ _offset: Int ) -> [Shape]! {
         return getCaretShapes( offset: _offset )
+    }
+
+    /// public java.awt.Shape[] java.awt.font.TextLayout.getCaretShapes(int,java.awt.geom.Rectangle2D)
+
+    private static var getCaretShapes_MethodID_36: jmethodID?
+
+    open func getCaretShapes( offset: Int, bounds: Rectangle2D? ) -> [Shape]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[1] = JNIType.toJava( value: bounds, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretShapes", methodSig: "(ILjava/awt/geom/Rectangle2D;)[Ljava/awt/Shape;", methodCache: &TextLayout.getCaretShapes_MethodID_36, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ShapeForward](), from: __return )
+    }
+
+    open func getCaretShapes( _ _offset: Int, _ _bounds: Rectangle2D? ) -> [Shape]! {
+        return getCaretShapes( offset: _offset, bounds: _bounds )
     }
 
     /// private java.awt.geom.GeneralPath java.awt.font.TextLayout.boundingShape(double[],double[])
@@ -655,14 +680,14 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public int[] java.awt.font.TextLayout.getLogicalRangesForVisualSelection(java.awt.font.TextHitInfo,java.awt.font.TextHitInfo)
 
-    private static var getLogicalRangesForVisualSelection_MethodID_35: jmethodID?
+    private static var getLogicalRangesForVisualSelection_MethodID_37: jmethodID?
 
     open func getLogicalRangesForVisualSelection( firstEndpoint: TextHitInfo?, secondEndpoint: TextHitInfo? ) -> [Int32]! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: firstEndpoint != nil ? firstEndpoint! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: secondEndpoint != nil ? secondEndpoint! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLogicalRangesForVisualSelection", methodSig: "(Ljava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;)[I", methodCache: &TextLayout.getLogicalRangesForVisualSelection_MethodID_35, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: firstEndpoint, locals: &__locals )
+        __args[1] = JNIType.toJava( value: secondEndpoint, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLogicalRangesForVisualSelection", methodSig: "(Ljava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;)[I", methodCache: &TextLayout.getLogicalRangesForVisualSelection_MethodID_37, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Int32](), from: __return )
     }
 
@@ -670,53 +695,16 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
         return getLogicalRangesForVisualSelection( firstEndpoint: _firstEndpoint, secondEndpoint: _secondEndpoint )
     }
 
-    /// public java.awt.geom.Rectangle2D java.awt.font.TextLayout.getBounds()
-
-    private static var getBounds_MethodID_36: jmethodID?
-
-    open func getBounds() -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &TextLayout.getBounds_MethodID_36, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-
-    /// public byte java.awt.font.TextLayout.getBaseline()
-
-    private static var getBaseline_MethodID_37: jmethodID?
-
-    open func getBaseline() -> Int8 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallByteMethod( object: javaObject, methodName: "getBaseline", methodSig: "()B", methodCache: &TextLayout.getBaseline_MethodID_37, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int8(), from: __return )
-    }
-
-
-    /// public boolean java.awt.font.TextLayout.isLeftToRight()
-
-    private static var isLeftToRight_MethodID_38: jmethodID?
-
-    open func isLeftToRight() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeftToRight", methodSig: "()Z", methodCache: &TextLayout.isLeftToRight_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public java.awt.Shape java.awt.font.TextLayout.getVisualHighlightShape(java.awt.font.TextHitInfo,java.awt.font.TextHitInfo)
 
-    private static var getVisualHighlightShape_MethodID_39: jmethodID?
+    private static var getVisualHighlightShape_MethodID_38: jmethodID?
 
     open func getVisualHighlightShape( firstEndpoint: TextHitInfo?, secondEndpoint: TextHitInfo? ) -> Shape! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: firstEndpoint != nil ? firstEndpoint! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: secondEndpoint != nil ? secondEndpoint! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisualHighlightShape", methodSig: "(Ljava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;)Ljava/awt/Shape;", methodCache: &TextLayout.getVisualHighlightShape_MethodID_39, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: firstEndpoint, locals: &__locals )
+        __args[1] = JNIType.toJava( value: secondEndpoint, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisualHighlightShape", methodSig: "(Ljava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;)Ljava/awt/Shape;", methodCache: &TextLayout.getVisualHighlightShape_MethodID_38, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ShapeForward( javaObject: __return ) : nil
     }
@@ -727,21 +715,40 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public java.awt.Shape java.awt.font.TextLayout.getVisualHighlightShape(java.awt.font.TextHitInfo,java.awt.font.TextHitInfo,java.awt.geom.Rectangle2D)
 
-    private static var getVisualHighlightShape_MethodID_40: jmethodID?
+    private static var getVisualHighlightShape_MethodID_39: jmethodID?
 
     open func getVisualHighlightShape( firstEndpoint: TextHitInfo?, secondEndpoint: TextHitInfo?, bounds: Rectangle2D? ) -> Shape! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: firstEndpoint != nil ? firstEndpoint! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: secondEndpoint != nil ? secondEndpoint! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisualHighlightShape", methodSig: "(Ljava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;Ljava/awt/geom/Rectangle2D;)Ljava/awt/Shape;", methodCache: &TextLayout.getVisualHighlightShape_MethodID_40, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: firstEndpoint, locals: &__locals )
+        __args[1] = JNIType.toJava( value: secondEndpoint, locals: &__locals )
+        __args[2] = JNIType.toJava( value: bounds, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisualHighlightShape", methodSig: "(Ljava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;Ljava/awt/geom/Rectangle2D;)Ljava/awt/Shape;", methodCache: &TextLayout.getVisualHighlightShape_MethodID_39, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ShapeForward( javaObject: __return ) : nil
     }
 
     open func getVisualHighlightShape( _ _firstEndpoint: TextHitInfo?, _ _secondEndpoint: TextHitInfo?, _ _bounds: Rectangle2D? ) -> Shape! {
         return getVisualHighlightShape( firstEndpoint: _firstEndpoint, secondEndpoint: _secondEndpoint, bounds: _bounds )
+    }
+
+    /// public java.awt.Shape java.awt.font.TextLayout.getLogicalHighlightShape(int,int,java.awt.geom.Rectangle2D)
+
+    private static var getLogicalHighlightShape_MethodID_40: jmethodID?
+
+    open func getLogicalHighlightShape( firstEndpoint: Int, secondEndpoint: Int, bounds: Rectangle2D? ) -> Shape! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: firstEndpoint, locals: &__locals )
+        __args[1] = JNIType.toJava( value: secondEndpoint, locals: &__locals )
+        __args[2] = JNIType.toJava( value: bounds, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLogicalHighlightShape", methodSig: "(IILjava/awt/geom/Rectangle2D;)Ljava/awt/Shape;", methodCache: &TextLayout.getLogicalHighlightShape_MethodID_40, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ShapeForward( javaObject: __return ) : nil
+    }
+
+    open func getLogicalHighlightShape( _ _firstEndpoint: Int, _ _secondEndpoint: Int, _ _bounds: Rectangle2D? ) -> Shape! {
+        return getLogicalHighlightShape( firstEndpoint: _firstEndpoint, secondEndpoint: _secondEndpoint, bounds: _bounds )
     }
 
     /// public java.awt.Shape java.awt.font.TextLayout.getLogicalHighlightShape(int,int)
@@ -762,24 +769,17 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
         return getLogicalHighlightShape( firstEndpoint: _firstEndpoint, secondEndpoint: _secondEndpoint )
     }
 
-    /// public java.awt.Shape java.awt.font.TextLayout.getLogicalHighlightShape(int,int,java.awt.geom.Rectangle2D)
+    /// public byte java.awt.font.TextLayout.getBaseline()
 
-    private static var getLogicalHighlightShape_MethodID_42: jmethodID?
+    private static var getBaseline_MethodID_42: jmethodID?
 
-    open func getLogicalHighlightShape( firstEndpoint: Int, secondEndpoint: Int, bounds: Rectangle2D? ) -> Shape! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open func getBaseline() -> Int8 {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: firstEndpoint, locals: &__locals )
-        __args[1] = JNIType.toJava( value: secondEndpoint, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLogicalHighlightShape", methodSig: "(IILjava/awt/geom/Rectangle2D;)Ljava/awt/Shape;", methodCache: &TextLayout.getLogicalHighlightShape_MethodID_42, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ShapeForward( javaObject: __return ) : nil
+        let __return = JNIMethod.CallByteMethod( object: javaObject, methodName: "getBaseline", methodSig: "()B", methodCache: &TextLayout.getBaseline_MethodID_42, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int8(), from: __return )
     }
 
-    open func getLogicalHighlightShape( _ _firstEndpoint: Int, _ _secondEndpoint: Int, _ _bounds: Rectangle2D? ) -> Shape! {
-        return getLogicalHighlightShape( firstEndpoint: _firstEndpoint, secondEndpoint: _secondEndpoint, bounds: _bounds )
-    }
 
     /// public java.awt.Shape java.awt.font.TextLayout.getBlackBoxBounds(int,int)
 
@@ -810,7 +810,7 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: bounds, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "hitTestChar", methodSig: "(FFLjava/awt/geom/Rectangle2D;)Ljava/awt/font/TextHitInfo;", methodCache: &TextLayout.hitTestChar_MethodID_44, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
@@ -862,8 +862,8 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
     open func hitToPoint( hit: TextHitInfo?, point: Point2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hit != nil ? hit! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: point != nil ? point! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: hit, locals: &__locals )
+        __args[1] = JNIType.toJava( value: point, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "hitToPoint", methodSig: "(Ljava/awt/font/TextHitInfo;Ljava/awt/geom/Point2D;)V", methodCache: &TextLayout.hitToPoint_MethodID_47, args: &__args, locals: &__locals )
     }
 

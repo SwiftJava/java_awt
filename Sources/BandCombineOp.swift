@@ -49,8 +49,8 @@ open class BandCombineOp: java_swift.JavaObject, RasterOp {
     open func filter( src: Raster?, dest: WritableRaster? ) -> WritableRaster! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src != nil ? src! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest != nil ? dest! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &BandCombineOp.filter_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
@@ -60,15 +60,27 @@ open class BandCombineOp: java_swift.JavaObject, RasterOp {
         return filter( src: _src, dest: _dest )
     }
 
+    /// public final float[][] java.awt.image.BandCombineOp.getMatrix()
+
+    private static var getMatrix_MethodID_3: jmethodID?
+
+    open func getMatrix() -> [[Float]]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMatrix", methodSig: "()[[F", methodCache: &BandCombineOp.getMatrix_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [[Float]](), from: __return )
+    }
+
+
     /// public final java.awt.geom.Rectangle2D java.awt.image.BandCombineOp.getBounds2D(java.awt.image.Raster)
 
-    private static var getBounds2D_MethodID_3: jmethodID?
+    private static var getBounds2D_MethodID_4: jmethodID?
 
     open func getBounds2D( src: Raster? ) -> Rectangle2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src != nil ? src! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &BandCombineOp.getBounds2D_MethodID_3, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &BandCombineOp.getBounds2D_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
     }
@@ -79,26 +91,14 @@ open class BandCombineOp: java_swift.JavaObject, RasterOp {
 
     /// public final java.awt.RenderingHints java.awt.image.BandCombineOp.getRenderingHints()
 
-    private static var getRenderingHints_MethodID_4: jmethodID?
+    private static var getRenderingHints_MethodID_5: jmethodID?
 
     open func getRenderingHints() -> RenderingHints! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &BandCombineOp.getRenderingHints_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &BandCombineOp.getRenderingHints_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return JNIType.toSwift( type: RenderingHints(), from: __return )
-    }
-
-
-    /// public final float[][] java.awt.image.BandCombineOp.getMatrix()
-
-    private static var getMatrix_MethodID_5: jmethodID?
-
-    open func getMatrix() -> [[Float]]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMatrix", methodSig: "()[[F", methodCache: &BandCombineOp.getMatrix_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [[Float]](), from: __return )
     }
 
 
@@ -109,7 +109,7 @@ open class BandCombineOp: java_swift.JavaObject, RasterOp {
     open func createCompatibleDestRaster( src: Raster? ) -> WritableRaster! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src != nil ? src! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestRaster", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;", methodCache: &BandCombineOp.createCompatibleDestRaster_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
@@ -126,8 +126,8 @@ open class BandCombineOp: java_swift.JavaObject, RasterOp {
     open func getPoint2D( srcPt: Point2D?, dstPt: Point2D? ) -> Point2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: srcPt != nil ? srcPt! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dstPt != nil ? dstPt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: srcPt, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dstPt, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &BandCombineOp.getPoint2D_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point2D( javaObject: __return ) : nil

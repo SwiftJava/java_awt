@@ -55,8 +55,8 @@ open class PrintableForward: JNIObjectForward, Printable {
     open func print( graphics: Graphics?, pageFormat: PageFormat?, pageIndex: Int ) throws /* java.awt.print.PrinterException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: graphics != nil ? graphics! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pageFormat != nil ? pageFormat! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: graphics, locals: &__locals )
+        __args[1] = JNIType.toJava( value: pageFormat, locals: &__locals )
         __args[2] = JNIType.toJava( value: pageIndex, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "print", methodSig: "(Ljava/awt/Graphics;Ljava/awt/print/PageFormat;I)I", methodCache: &PrintableForward.print_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {

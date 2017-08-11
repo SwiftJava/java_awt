@@ -291,15 +291,27 @@ open class DataBuffer: java_swift.JavaObject {
     }
 
 
+    /// public int[] java.awt.image.DataBuffer.getOffsets()
+
+    private static var getOffsets_MethodID_7: jmethodID?
+
+    open func getOffsets() -> [Int32]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOffsets", methodSig: "()[I", methodCache: &DataBuffer.getOffsets_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32](), from: __return )
+    }
+
+
     /// public static int java.awt.image.DataBuffer.getDataTypeSize(int)
 
-    private static var getDataTypeSize_MethodID_7: jmethodID?
+    private static var getDataTypeSize_MethodID_8: jmethodID?
 
     open class func getDataTypeSize( type: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "java/awt/image/DataBuffer", classCache: &DataBufferJNIClass, methodName: "getDataTypeSize", methodSig: "(I)I", methodCache: &getDataTypeSize_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "java/awt/image/DataBuffer", classCache: &DataBufferJNIClass, methodName: "getDataTypeSize", methodSig: "(I)I", methodCache: &getDataTypeSize_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -309,37 +321,25 @@ open class DataBuffer: java_swift.JavaObject {
 
     /// public int java.awt.image.DataBuffer.getDataType()
 
-    private static var getDataType_MethodID_8: jmethodID?
+    private static var getDataType_MethodID_9: jmethodID?
 
     open func getDataType() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataType", methodSig: "()I", methodCache: &DataBuffer.getDataType_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataType", methodSig: "()I", methodCache: &DataBuffer.getDataType_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.image.DataBuffer.getNumBanks()
 
-    private static var getNumBanks_MethodID_9: jmethodID?
+    private static var getNumBanks_MethodID_10: jmethodID?
 
     open func getNumBanks() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumBanks", methodSig: "()I", methodCache: &DataBuffer.getNumBanks_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumBanks", methodSig: "()I", methodCache: &DataBuffer.getNumBanks_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int[] java.awt.image.DataBuffer.getOffsets()
-
-    private static var getOffsets_MethodID_10: jmethodID?
-
-    open func getOffsets() -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOffsets", methodSig: "()[I", methodCache: &DataBuffer.getOffsets_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
     }
 
 

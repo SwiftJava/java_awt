@@ -186,7 +186,7 @@ open class FocusEvent: ComponentEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &FocusEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -198,7 +198,7 @@ open class FocusEvent: ComponentEvent {
     public convenience init( source: Component?, id: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/FocusEvent", classCache: &FocusEvent.FocusEventJNIClass, methodSig: "(Ljava/awt/Component;I)V", methodCache: &FocusEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -216,7 +216,7 @@ open class FocusEvent: ComponentEvent {
     public convenience init( source: Component?, id: Int, temporary: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: temporary, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/FocusEvent", classCache: &FocusEvent.FocusEventJNIClass, methodSig: "(Ljava/awt/Component;IZ)V", methodCache: &FocusEvent.new_MethodID_2, args: &__args, locals: &__locals )
@@ -235,10 +235,10 @@ open class FocusEvent: ComponentEvent {
     public convenience init( source: Component?, id: Int, temporary: Bool, opposite: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: temporary, locals: &__locals )
-        __args[3] = JNIType.toJava( value: opposite != nil ? opposite! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: opposite, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/FocusEvent", classCache: &FocusEvent.FocusEventJNIClass, methodSig: "(Ljava/awt/Component;IZLjava/awt/Component;)V", methodCache: &FocusEvent.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

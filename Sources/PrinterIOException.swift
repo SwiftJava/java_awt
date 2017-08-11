@@ -55,7 +55,7 @@ open class PrinterIOException: PrinterException {
     public convenience init( exception: /* java.io.IOException */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: exception != nil ? exception! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: exception, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/print/PrinterIOException", classCache: &PrinterIOException.PrinterIOExceptionJNIClass, methodSig: "(Ljava/io/IOException;)V", methodCache: &PrinterIOException.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

@@ -370,7 +370,7 @@ open class Window: Container {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Window.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -402,7 +402,7 @@ open class Window: Container {
     public convenience init( arg0: Window? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Window", classCache: &Window.WindowJNIClass, methodSig: "(Ljava/awt/Window;)V", methodCache: &Window.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -419,8 +419,8 @@ open class Window: Container {
     public convenience init( arg0: Window?, arg1: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Window", classCache: &Window.WindowJNIClass, methodSig: "(Ljava/awt/Window;Ljava/awt/GraphicsConfiguration;)V", methodCache: &Window.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -477,30 +477,121 @@ open class Window: Container {
 
     /// private static native void java.awt.Window.initIDs()
 
-    /// public java.awt.Window java.awt.Window.getOwner()
+    /// static int java.awt.Window.access$700(java.awt.Window)
 
-    private static var getOwner_MethodID_4: jmethodID?
+    /// public boolean java.awt.Window.postEvent(java.awt.Event)
 
-    open func getOwner() -> Window! {
+    /// boolean java.awt.Window.isRecursivelyVisible()
+
+    /// public java.awt.Component java.awt.Window.getMostRecentFocusOwner()
+
+    private static var getMostRecentFocusOwner_MethodID_4: jmethodID?
+
+    open func getMostRecentFocusOwner() -> Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOwner", methodSig: "()Ljava/awt/Window;", methodCache: &Window.getOwner_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMostRecentFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &Window.getMostRecentFocusOwner_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Window( javaObject: __return ) : nil
+        return __return != nil ? Component( javaObject: __return ) : nil
     }
 
 
-    /// public boolean java.awt.Window.isAlwaysOnTopSupported()
+    /// java.awt.Component java.awt.Window.getTemporaryLostComponent()
 
-    private static var isAlwaysOnTopSupported_MethodID_5: jmethodID?
+    /// java.awt.Component java.awt.Window.setTemporaryLostComponent(java.awt.Component)
 
-    open func isAlwaysOnTopSupported() -> Bool {
+    /// final java.awt.Container java.awt.Window.getContainer()
+
+    /// final void java.awt.Window.applyCurrentShape()
+
+    /// java.lang.String java.awt.Window.constructComponentName()
+
+    /// public java.awt.Toolkit java.awt.Window.getToolkit()
+
+    /// public void java.awt.Window.show()
+
+    /// public java.util.Locale java.awt.Window.getLocale()
+
+    /// public void java.awt.Window.setCursor(java.awt.Cursor)
+
+    /// public void java.awt.Window.createBufferStrategy(int,java.awt.BufferCapabilities) throws java.awt.AWTException
+
+    private static var createBufferStrategy_MethodID_5: jmethodID?
+
+    open func createBufferStrategy( arg0: Int, arg1: BufferCapabilities? ) throws /* java.awt.AWTException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createBufferStrategy", methodSig: "(ILjava/awt/BufferCapabilities;)V", methodCache: &Window.createBufferStrategy_MethodID_5, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw AWTException( javaObject: throwable )
+        }
+    }
+
+    open func createBufferStrategy( _ _arg0: Int, _ _arg1: BufferCapabilities? ) throws /* java.awt.AWTException */ {
+        try createBufferStrategy( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.Window.createBufferStrategy(int)
+
+    private static var createBufferStrategy_MethodID_6: jmethodID?
+
+    open func createBufferStrategy( arg0: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAlwaysOnTopSupported", methodSig: "()Z", methodCache: &Window.isAlwaysOnTopSupported_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createBufferStrategy", methodSig: "(I)V", methodCache: &Window.createBufferStrategy_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func createBufferStrategy( _ _arg0: Int ) {
+        createBufferStrategy( arg0: _arg0 )
+    }
+
+    /// public java.awt.image.BufferStrategy java.awt.Window.getBufferStrategy()
+
+    private static var getBufferStrategy_MethodID_7: jmethodID?
+
+    open func getBufferStrategy() -> BufferStrategy! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBufferStrategy", methodSig: "()Ljava/awt/image/BufferStrategy;", methodCache: &Window.getBufferStrategy_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BufferStrategy( javaObject: __return ) : nil
+    }
+
+
+    /// boolean java.awt.Window.dispatchMouseWheelToAncestor(java.awt.event.MouseWheelEvent)
+
+    /// public java.awt.im.InputContext java.awt.Window.getInputContext()
+
+    /// final void java.awt.Window.applyCompoundShape(sun.java2d.pipe.Region)
+
+    /// final java.awt.Point java.awt.Window.getLocationOnWindow()
+
+    /// public final boolean java.awt.Window.isFocusableWindow()
+
+    private static var isFocusableWindow_MethodID_8: jmethodID?
+
+    open func isFocusableWindow() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusableWindow", methodSig: "()Z", methodCache: &Window.isFocusableWindow_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
+
+    /// boolean java.awt.Window.isDisposing()
+
+    /// public void java.awt.Window.setBackground(java.awt.Color)
+
+    /// public java.awt.Color java.awt.Window.getBackground()
+
+    /// public javax.accessibility.AccessibleContext java.awt.Window.getAccessibleContext()
+
+    /// public boolean java.awt.Window.isShowing()
+
+    /// public void java.awt.Window.paint(java.awt.Graphics)
 
     /// static float java.awt.Window.access$1002(java.awt.Window,float)
 
@@ -510,24 +601,24 @@ open class Window: Container {
 
     /// public void java.awt.Window.toBack()
 
-    private static var toBack_MethodID_6: jmethodID?
+    private static var toBack_MethodID_9: jmethodID?
 
     open func toBack() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toBack", methodSig: "()V", methodCache: &Window.toBack_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toBack", methodSig: "()V", methodCache: &Window.toBack_MethodID_9, args: &__args, locals: &__locals )
     }
 
 
     /// public void java.awt.Window.setOpacity(float)
 
-    private static var setOpacity_MethodID_7: jmethodID?
+    private static var setOpacity_MethodID_10: jmethodID?
 
     open func setOpacity( arg0: Float ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpacity", methodSig: "(F)V", methodCache: &Window.setOpacity_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpacity", methodSig: "(F)V", methodCache: &Window.setOpacity_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setOpacity( _ _arg0: Float ) {
@@ -536,13 +627,13 @@ open class Window: Container {
 
     /// public void java.awt.Window.setShape(java.awt.Shape)
 
-    private static var setShape_MethodID_8: jmethodID?
+    private static var setShape_MethodID_11: jmethodID?
 
     open func setShape( arg0: Shape? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setShape", methodSig: "(Ljava/awt/Shape;)V", methodCache: &Window.setShape_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setShape", methodSig: "(Ljava/awt/Shape;)V", methodCache: &Window.setShape_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setShape( _ _arg0: Shape? ) {
@@ -555,13 +646,13 @@ open class Window: Container {
 
     /// public void java.awt.Window.setLocationByPlatform(boolean)
 
-    private static var setLocationByPlatform_MethodID_9: jmethodID?
+    private static var setLocationByPlatform_MethodID_12: jmethodID?
 
     open func setLocationByPlatform( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocationByPlatform", methodSig: "(Z)V", methodCache: &Window.setLocationByPlatform_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocationByPlatform", methodSig: "(Z)V", methodCache: &Window.setLocationByPlatform_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func setLocationByPlatform( _ _arg0: Bool ) {
@@ -578,24 +669,24 @@ open class Window: Container {
 
     /// public float java.awt.Window.getOpacity()
 
-    private static var getOpacity_MethodID_10: jmethodID?
+    private static var getOpacity_MethodID_13: jmethodID?
 
     open func getOpacity() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getOpacity", methodSig: "()F", methodCache: &Window.getOpacity_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getOpacity", methodSig: "()F", methodCache: &Window.getOpacity_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public java.awt.Shape java.awt.Window.getShape()
 
-    private static var getShape_MethodID_11: jmethodID?
+    private static var getShape_MethodID_14: jmethodID?
 
     open func getShape() -> Shape! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShape", methodSig: "()Ljava/awt/Shape;", methodCache: &Window.getShape_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShape", methodSig: "()Ljava/awt/Shape;", methodCache: &Window.getShape_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ShapeForward( javaObject: __return ) : nil
     }
@@ -623,12 +714,12 @@ open class Window: Container {
 
     /// public java.util.List java.awt.Window.getIconImages()
 
-    private static var getIconImages_MethodID_12: jmethodID?
+    private static var getIconImages_MethodID_15: jmethodID?
 
     open func getIconImages() -> java_util.List! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIconImages", methodSig: "()Ljava/util/List;", methodCache: &Window.getIconImages_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIconImages", methodSig: "()Ljava/util/List;", methodCache: &Window.getIconImages_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
     }
@@ -636,13 +727,13 @@ open class Window: Container {
 
     /// public synchronized void java.awt.Window.setIconImages(java.util.List)
 
-    private static var setIconImages_MethodID_13: jmethodID?
+    private static var setIconImages_MethodID_16: jmethodID?
 
     open func setIconImages( arg0: java_util.List? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconImages", methodSig: "(Ljava/util/List;)V", methodCache: &Window.setIconImages_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconImages", methodSig: "(Ljava/util/List;)V", methodCache: &Window.setIconImages_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setIconImages( _ _arg0: java_util.List? ) {
@@ -651,13 +742,13 @@ open class Window: Container {
 
     /// public void java.awt.Window.setIconImage(java.awt.Image)
 
-    private static var setIconImage_MethodID_14: jmethodID?
+    private static var setIconImage_MethodID_17: jmethodID?
 
     open func setIconImage( arg0: Image? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &Window.setIconImage_MethodID_14, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &Window.setIconImage_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setIconImage( _ _arg0: Image? ) {
@@ -670,12 +761,12 @@ open class Window: Container {
 
     /// public final java.lang.String java.awt.Window.getWarningString()
 
-    private static var getWarningString_MethodID_15: jmethodID?
+    private static var getWarningString_MethodID_18: jmethodID?
 
     open func getWarningString() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWarningString", methodSig: "()Ljava/lang/String;", methodCache: &Window.getWarningString_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWarningString", methodSig: "()Ljava/lang/String;", methodCache: &Window.getWarningString_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -684,12 +775,12 @@ open class Window: Container {
 
     /// public java.awt.Window[] java.awt.Window.getOwnedWindows()
 
-    private static var getOwnedWindows_MethodID_16: jmethodID?
+    private static var getOwnedWindows_MethodID_19: jmethodID?
 
     open func getOwnedWindows() -> [Window]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOwnedWindows", methodSig: "()[Ljava/awt/Window;", methodCache: &Window.getOwnedWindows_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOwnedWindows", methodSig: "()[Ljava/awt/Window;", methodCache: &Window.getOwnedWindows_MethodID_19, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Window](), from: __return )
     }
 
@@ -698,12 +789,12 @@ open class Window: Container {
 
     /// public static java.awt.Window[] java.awt.Window.getWindows()
 
-    private static var getWindows_MethodID_17: jmethodID?
+    private static var getWindows_MethodID_20: jmethodID?
 
     open class func getWindows() -> [Window]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Window", classCache: &WindowJNIClass, methodName: "getWindows", methodSig: "()[Ljava/awt/Window;", methodCache: &getWindows_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Window", classCache: &WindowJNIClass, methodName: "getWindows", methodSig: "()[Ljava/awt/Window;", methodCache: &getWindows_MethodID_20, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Window](), from: __return )
     }
 
@@ -712,25 +803,25 @@ open class Window: Container {
 
     /// public static java.awt.Window[] java.awt.Window.getOwnerlessWindows()
 
-    private static var getOwnerlessWindows_MethodID_18: jmethodID?
+    private static var getOwnerlessWindows_MethodID_21: jmethodID?
 
     open class func getOwnerlessWindows() -> [Window]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Window", classCache: &WindowJNIClass, methodName: "getOwnerlessWindows", methodSig: "()[Ljava/awt/Window;", methodCache: &getOwnerlessWindows_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Window", classCache: &WindowJNIClass, methodName: "getOwnerlessWindows", methodSig: "()[Ljava/awt/Window;", methodCache: &getOwnerlessWindows_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Window](), from: __return )
     }
 
 
     /// public void java.awt.Window.setModalExclusionType(java.awt.Dialog$ModalExclusionType)
 
-    private static var setModalExclusionType_MethodID_19: jmethodID?
+    private static var setModalExclusionType_MethodID_22: jmethodID?
 
     open func setModalExclusionType( arg0: Dialog_ModalExclusionType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModalExclusionType", methodSig: "(Ljava/awt/Dialog$ModalExclusionType;)V", methodCache: &Window.setModalExclusionType_MethodID_19, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModalExclusionType", methodSig: "(Ljava/awt/Dialog$ModalExclusionType;)V", methodCache: &Window.setModalExclusionType_MethodID_22, args: &__args, locals: &__locals )
     }
 
     open func setModalExclusionType( _ _arg0: Dialog_ModalExclusionType? ) {
@@ -739,12 +830,12 @@ open class Window: Container {
 
     /// public java.awt.Dialog$ModalExclusionType java.awt.Window.getModalExclusionType()
 
-    private static var getModalExclusionType_MethodID_20: jmethodID?
+    private static var getModalExclusionType_MethodID_23: jmethodID?
 
     open func getModalExclusionType() -> Dialog_ModalExclusionType! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModalExclusionType", methodSig: "()Ljava/awt/Dialog$ModalExclusionType;", methodCache: &Window.getModalExclusionType_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModalExclusionType", methodSig: "()Ljava/awt/Dialog$ModalExclusionType;", methodCache: &Window.getModalExclusionType_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dialog_ModalExclusionType( javaObject: __return ) : nil
     }
@@ -752,13 +843,13 @@ open class Window: Container {
 
     /// public synchronized void java.awt.Window.addWindowListener(java.awt.event.WindowListener)
 
-    private static var addWindowListener_MethodID_21: jmethodID?
+    private static var addWindowListener_MethodID_24: jmethodID?
 
     open func addWindowListener( arg0: WindowListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addWindowListener", methodSig: "(Ljava/awt/event/WindowListener;)V", methodCache: &Window.addWindowListener_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addWindowListener", methodSig: "(Ljava/awt/event/WindowListener;)V", methodCache: &Window.addWindowListener_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func addWindowListener( _ _arg0: WindowListener? ) {
@@ -767,13 +858,13 @@ open class Window: Container {
 
     /// public synchronized void java.awt.Window.addWindowStateListener(java.awt.event.WindowStateListener)
 
-    private static var addWindowStateListener_MethodID_22: jmethodID?
+    private static var addWindowStateListener_MethodID_25: jmethodID?
 
     open func addWindowStateListener( arg0: WindowStateListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addWindowStateListener", methodSig: "(Ljava/awt/event/WindowStateListener;)V", methodCache: &Window.addWindowStateListener_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addWindowStateListener", methodSig: "(Ljava/awt/event/WindowStateListener;)V", methodCache: &Window.addWindowStateListener_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open func addWindowStateListener( _ _arg0: WindowStateListener? ) {
@@ -782,13 +873,13 @@ open class Window: Container {
 
     /// public synchronized void java.awt.Window.addWindowFocusListener(java.awt.event.WindowFocusListener)
 
-    private static var addWindowFocusListener_MethodID_23: jmethodID?
+    private static var addWindowFocusListener_MethodID_26: jmethodID?
 
     open func addWindowFocusListener( arg0: WindowFocusListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addWindowFocusListener", methodSig: "(Ljava/awt/event/WindowFocusListener;)V", methodCache: &Window.addWindowFocusListener_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addWindowFocusListener", methodSig: "(Ljava/awt/event/WindowFocusListener;)V", methodCache: &Window.addWindowFocusListener_MethodID_26, args: &__args, locals: &__locals )
     }
 
     open func addWindowFocusListener( _ _arg0: WindowFocusListener? ) {
@@ -797,13 +888,13 @@ open class Window: Container {
 
     /// public synchronized void java.awt.Window.removeWindowListener(java.awt.event.WindowListener)
 
-    private static var removeWindowListener_MethodID_24: jmethodID?
+    private static var removeWindowListener_MethodID_27: jmethodID?
 
     open func removeWindowListener( arg0: WindowListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeWindowListener", methodSig: "(Ljava/awt/event/WindowListener;)V", methodCache: &Window.removeWindowListener_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeWindowListener", methodSig: "(Ljava/awt/event/WindowListener;)V", methodCache: &Window.removeWindowListener_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func removeWindowListener( _ _arg0: WindowListener? ) {
@@ -812,13 +903,13 @@ open class Window: Container {
 
     /// public synchronized void java.awt.Window.removeWindowStateListener(java.awt.event.WindowStateListener)
 
-    private static var removeWindowStateListener_MethodID_25: jmethodID?
+    private static var removeWindowStateListener_MethodID_28: jmethodID?
 
     open func removeWindowStateListener( arg0: WindowStateListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeWindowStateListener", methodSig: "(Ljava/awt/event/WindowStateListener;)V", methodCache: &Window.removeWindowStateListener_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeWindowStateListener", methodSig: "(Ljava/awt/event/WindowStateListener;)V", methodCache: &Window.removeWindowStateListener_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func removeWindowStateListener( _ _arg0: WindowStateListener? ) {
@@ -827,13 +918,13 @@ open class Window: Container {
 
     /// public synchronized void java.awt.Window.removeWindowFocusListener(java.awt.event.WindowFocusListener)
 
-    private static var removeWindowFocusListener_MethodID_26: jmethodID?
+    private static var removeWindowFocusListener_MethodID_29: jmethodID?
 
     open func removeWindowFocusListener( arg0: WindowFocusListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeWindowFocusListener", methodSig: "(Ljava/awt/event/WindowFocusListener;)V", methodCache: &Window.removeWindowFocusListener_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeWindowFocusListener", methodSig: "(Ljava/awt/event/WindowFocusListener;)V", methodCache: &Window.removeWindowFocusListener_MethodID_29, args: &__args, locals: &__locals )
     }
 
     open func removeWindowFocusListener( _ _arg0: WindowFocusListener? ) {
@@ -842,49 +933,49 @@ open class Window: Container {
 
     /// public synchronized java.awt.event.WindowListener[] java.awt.Window.getWindowListeners()
 
-    private static var getWindowListeners_MethodID_27: jmethodID?
+    private static var getWindowListeners_MethodID_30: jmethodID?
 
     open func getWindowListeners() -> [WindowListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWindowListeners", methodSig: "()[Ljava/awt/event/WindowListener;", methodCache: &Window.getWindowListeners_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWindowListeners", methodSig: "()[Ljava/awt/event/WindowListener;", methodCache: &Window.getWindowListeners_MethodID_30, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [WindowListenerForward](), from: __return )
     }
 
 
     /// public synchronized java.awt.event.WindowFocusListener[] java.awt.Window.getWindowFocusListeners()
 
-    private static var getWindowFocusListeners_MethodID_28: jmethodID?
+    private static var getWindowFocusListeners_MethodID_31: jmethodID?
 
     open func getWindowFocusListeners() -> [WindowFocusListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWindowFocusListeners", methodSig: "()[Ljava/awt/event/WindowFocusListener;", methodCache: &Window.getWindowFocusListeners_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWindowFocusListeners", methodSig: "()[Ljava/awt/event/WindowFocusListener;", methodCache: &Window.getWindowFocusListeners_MethodID_31, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [WindowFocusListenerForward](), from: __return )
     }
 
 
     /// public synchronized java.awt.event.WindowStateListener[] java.awt.Window.getWindowStateListeners()
 
-    private static var getWindowStateListeners_MethodID_29: jmethodID?
+    private static var getWindowStateListeners_MethodID_32: jmethodID?
 
     open func getWindowStateListeners() -> [WindowStateListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWindowStateListeners", methodSig: "()[Ljava/awt/event/WindowStateListener;", methodCache: &Window.getWindowStateListeners_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWindowStateListeners", methodSig: "()[Ljava/awt/event/WindowStateListener;", methodCache: &Window.getWindowStateListeners_MethodID_32, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [WindowStateListenerForward](), from: __return )
     }
 
 
     /// protected void java.awt.Window.processWindowEvent(java.awt.event.WindowEvent)
 
-    private static var processWindowEvent_MethodID_30: jmethodID?
+    private static var processWindowEvent_MethodID_33: jmethodID?
 
     open func processWindowEvent( arg0: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processWindowEvent", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &Window.processWindowEvent_MethodID_30, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processWindowEvent", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &Window.processWindowEvent_MethodID_33, args: &__args, locals: &__locals )
     }
 
     open func processWindowEvent( _ _arg0: WindowEvent? ) {
@@ -893,13 +984,13 @@ open class Window: Container {
 
     /// protected void java.awt.Window.processWindowFocusEvent(java.awt.event.WindowEvent)
 
-    private static var processWindowFocusEvent_MethodID_31: jmethodID?
+    private static var processWindowFocusEvent_MethodID_34: jmethodID?
 
     open func processWindowFocusEvent( arg0: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processWindowFocusEvent", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &Window.processWindowFocusEvent_MethodID_31, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processWindowFocusEvent", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &Window.processWindowFocusEvent_MethodID_34, args: &__args, locals: &__locals )
     }
 
     open func processWindowFocusEvent( _ _arg0: WindowEvent? ) {
@@ -908,13 +999,13 @@ open class Window: Container {
 
     /// protected void java.awt.Window.processWindowStateEvent(java.awt.event.WindowEvent)
 
-    private static var processWindowStateEvent_MethodID_32: jmethodID?
+    private static var processWindowStateEvent_MethodID_35: jmethodID?
 
     open func processWindowStateEvent( arg0: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processWindowStateEvent", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &Window.processWindowStateEvent_MethodID_32, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processWindowStateEvent", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &Window.processWindowStateEvent_MethodID_35, args: &__args, locals: &__locals )
     }
 
     open func processWindowStateEvent( _ _arg0: WindowEvent? ) {
@@ -923,13 +1014,13 @@ open class Window: Container {
 
     /// public final void java.awt.Window.setAlwaysOnTop(boolean) throws java.lang.SecurityException
 
-    private static var setAlwaysOnTop_MethodID_33: jmethodID?
+    private static var setAlwaysOnTop_MethodID_36: jmethodID?
 
     open func setAlwaysOnTop( arg0: Bool ) throws /* java.lang.SecurityException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAlwaysOnTop", methodSig: "(Z)V", methodCache: &Window.setAlwaysOnTop_MethodID_33, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAlwaysOnTop", methodSig: "(Z)V", methodCache: &Window.setAlwaysOnTop_MethodID_36, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.JavaSecurityException( javaObject: throwable )
         }
@@ -943,49 +1034,49 @@ open class Window: Container {
 
     /// public final boolean java.awt.Window.isAlwaysOnTop()
 
-    private static var isAlwaysOnTop_MethodID_34: jmethodID?
+    private static var isAlwaysOnTop_MethodID_37: jmethodID?
 
     open func isAlwaysOnTop() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAlwaysOnTop", methodSig: "()Z", methodCache: &Window.isAlwaysOnTop_MethodID_34, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAlwaysOnTop", methodSig: "()Z", methodCache: &Window.isAlwaysOnTop_MethodID_37, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public boolean java.awt.Window.isFocused()
 
-    private static var isFocused_MethodID_35: jmethodID?
+    private static var isFocused_MethodID_38: jmethodID?
 
     open func isFocused() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocused", methodSig: "()Z", methodCache: &Window.isFocused_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocused", methodSig: "()Z", methodCache: &Window.isFocused_MethodID_38, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public boolean java.awt.Window.getFocusableWindowState()
 
-    private static var getFocusableWindowState_MethodID_36: jmethodID?
+    private static var getFocusableWindowState_MethodID_39: jmethodID?
 
     open func getFocusableWindowState() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getFocusableWindowState", methodSig: "()Z", methodCache: &Window.getFocusableWindowState_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getFocusableWindowState", methodSig: "()Z", methodCache: &Window.getFocusableWindowState_MethodID_39, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void java.awt.Window.setFocusableWindowState(boolean)
 
-    private static var setFocusableWindowState_MethodID_37: jmethodID?
+    private static var setFocusableWindowState_MethodID_40: jmethodID?
 
     open func setFocusableWindowState( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusableWindowState", methodSig: "(Z)V", methodCache: &Window.setFocusableWindowState_MethodID_37, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusableWindowState", methodSig: "(Z)V", methodCache: &Window.setFocusableWindowState_MethodID_40, args: &__args, locals: &__locals )
     }
 
     open func setFocusableWindowState( _ _arg0: Bool ) {
@@ -994,13 +1085,13 @@ open class Window: Container {
 
     /// public void java.awt.Window.setAutoRequestFocus(boolean)
 
-    private static var setAutoRequestFocus_MethodID_38: jmethodID?
+    private static var setAutoRequestFocus_MethodID_41: jmethodID?
 
     open func setAutoRequestFocus( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAutoRequestFocus", methodSig: "(Z)V", methodCache: &Window.setAutoRequestFocus_MethodID_38, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAutoRequestFocus", methodSig: "(Z)V", methodCache: &Window.setAutoRequestFocus_MethodID_41, args: &__args, locals: &__locals )
     }
 
     open func setAutoRequestFocus( _ _arg0: Bool ) {
@@ -1009,25 +1100,25 @@ open class Window: Container {
 
     /// public boolean java.awt.Window.isAutoRequestFocus()
 
-    private static var isAutoRequestFocus_MethodID_39: jmethodID?
+    private static var isAutoRequestFocus_MethodID_42: jmethodID?
 
     open func isAutoRequestFocus() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAutoRequestFocus", methodSig: "()Z", methodCache: &Window.isAutoRequestFocus_MethodID_39, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAutoRequestFocus", methodSig: "()Z", methodCache: &Window.isAutoRequestFocus_MethodID_42, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void java.awt.Window.applyResourceBundle(java.lang.String)
 
-    private static var applyResourceBundle_MethodID_40: jmethodID?
+    private static var applyResourceBundle_MethodID_43: jmethodID?
 
     open func applyResourceBundle( arg0: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "applyResourceBundle", methodSig: "(Ljava/lang/String;)V", methodCache: &Window.applyResourceBundle_MethodID_40, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "applyResourceBundle", methodSig: "(Ljava/lang/String;)V", methodCache: &Window.applyResourceBundle_MethodID_43, args: &__args, locals: &__locals )
     }
 
     open func applyResourceBundle( _ _arg0: String? ) {
@@ -1036,13 +1127,13 @@ open class Window: Container {
 
     /// public void java.awt.Window.applyResourceBundle(java.util.ResourceBundle)
 
-    private static var applyResourceBundle_MethodID_41: jmethodID?
+    private static var applyResourceBundle_MethodID_44: jmethodID?
 
     open func applyResourceBundle( arg0: java_util.ResourceBundle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "applyResourceBundle", methodSig: "(Ljava/util/ResourceBundle;)V", methodCache: &Window.applyResourceBundle_MethodID_41, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "applyResourceBundle", methodSig: "(Ljava/util/ResourceBundle;)V", methodCache: &Window.applyResourceBundle_MethodID_44, args: &__args, locals: &__locals )
     }
 
     open func applyResourceBundle( _ _arg0: java_util.ResourceBundle? ) {
@@ -1057,19 +1148,19 @@ open class Window: Container {
 
     /// private void java.awt.Window.addToWindowList()
 
-    /// private static void java.awt.Window.removeFromWindowList(sun.awt.AppContext,java.lang.ref.WeakReference)
-
     /// private void java.awt.Window.removeFromWindowList()
+
+    /// private static void java.awt.Window.removeFromWindowList(sun.awt.AppContext,java.lang.ref.WeakReference)
 
     /// public void java.awt.Window.setType(java.awt.Window$Type)
 
-    private static var setType_MethodID_42: jmethodID?
+    private static var setType_MethodID_45: jmethodID?
 
     open func setType( arg0: Window_Type? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setType", methodSig: "(Ljava/awt/Window$Type;)V", methodCache: &Window.setType_MethodID_42, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setType", methodSig: "(Ljava/awt/Window$Type;)V", methodCache: &Window.setType_MethodID_45, args: &__args, locals: &__locals )
     }
 
     open func setType( _ _arg0: Window_Type? ) {
@@ -1082,13 +1173,13 @@ open class Window: Container {
 
     /// public void java.awt.Window.setLocationRelativeTo(java.awt.Component)
 
-    private static var setLocationRelativeTo_MethodID_43: jmethodID?
+    private static var setLocationRelativeTo_MethodID_46: jmethodID?
 
     open func setLocationRelativeTo( arg0: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocationRelativeTo", methodSig: "(Ljava/awt/Component;)V", methodCache: &Window.setLocationRelativeTo_MethodID_43, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocationRelativeTo", methodSig: "(Ljava/awt/Component;)V", methodCache: &Window.setLocationRelativeTo_MethodID_46, args: &__args, locals: &__locals )
     }
 
     open func setLocationRelativeTo( _ _arg0: Component? ) {
@@ -1099,12 +1190,12 @@ open class Window: Container {
 
     /// public boolean java.awt.Window.isLocationByPlatform()
 
-    private static var isLocationByPlatform_MethodID_44: jmethodID?
+    private static var isLocationByPlatform_MethodID_47: jmethodID?
 
     open func isLocationByPlatform() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLocationByPlatform", methodSig: "()Z", methodCache: &Window.isLocationByPlatform_MethodID_44, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLocationByPlatform", methodSig: "()Z", methodCache: &Window.isLocationByPlatform_MethodID_47, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1117,44 +1208,28 @@ open class Window: Container {
 
     /// static double java.awt.Window.access$902(java.awt.Window,double)
 
-    /// public void java.awt.Window.setBackground(java.awt.Color)
-
-    /// public java.awt.Color java.awt.Window.getBackground()
-
-    /// public javax.accessibility.AccessibleContext java.awt.Window.getAccessibleContext()
-
-    /// public boolean java.awt.Window.isShowing()
-
-    /// public void java.awt.Window.paint(java.awt.Graphics)
-
-    /// public void java.awt.Window.toFront()
-
-    private static var toFront_MethodID_45: jmethodID?
-
-    open func toFront() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toFront", methodSig: "()V", methodCache: &Window.toFront_MethodID_45, args: &__args, locals: &__locals )
-    }
-
-
-    /// static java.awt.geom.Point2D java.awt.Window.access$1200(java.awt.Window,double,double,double,double)
-
-    /// static boolean java.awt.Window.access$1300(java.awt.Window)
-
-    /// static int java.awt.Window.access$602(java.awt.Window,int)
-
-    /// static double java.awt.Window.access$802(java.awt.Window,double)
-
     /// public boolean java.awt.Window.isActive()
 
-    private static var isActive_MethodID_46: jmethodID?
+    private static var isActive_MethodID_48: jmethodID?
 
     open func isActive() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isActive", methodSig: "()Z", methodCache: &Window.isActive_MethodID_46, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isActive", methodSig: "()Z", methodCache: &Window.isActive_MethodID_48, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public java.awt.Window java.awt.Window.getOwner()
+
+    private static var getOwner_MethodID_49: jmethodID?
+
+    open func getOwner() -> Window! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOwner", methodSig: "()Ljava/awt/Window;", methodCache: &Window.getOwner_MethodID_49, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Window( javaObject: __return ) : nil
     }
 
 
@@ -1162,12 +1237,12 @@ open class Window: Container {
 
     /// public void java.awt.Window.pack()
 
-    private static var pack_MethodID_47: jmethodID?
+    private static var pack_MethodID_50: jmethodID?
 
     open func pack() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "pack", methodSig: "()V", methodCache: &Window.pack_MethodID_47, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "pack", methodSig: "()V", methodCache: &Window.pack_MethodID_50, args: &__args, locals: &__locals )
     }
 
 
@@ -1189,12 +1264,12 @@ open class Window: Container {
 
     /// public void java.awt.Window.dispose()
 
-    private static var dispose_MethodID_48: jmethodID?
+    private static var dispose_MethodID_51: jmethodID?
 
     open func dispose() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &Window.dispose_MethodID_48, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &Window.dispose_MethodID_51, args: &__args, locals: &__locals )
     }
 
 
@@ -1202,9 +1277,9 @@ open class Window: Container {
 
     /// public final java.awt.Container java.awt.Window.getFocusCycleRootAncestor()
 
-    /// public void java.awt.Window.setBounds(java.awt.Rectangle)
-
     /// public void java.awt.Window.setBounds(int,int,int,int)
+
+    /// public void java.awt.Window.setBounds(java.awt.Rectangle)
 
     /// public void java.awt.Window.setLocation(int,int)
 
@@ -1218,13 +1293,13 @@ open class Window: Container {
 
     /// protected void java.awt.Window.processEvent(java.awt.AWTEvent)
 
-    private static var processEvent_MethodID_49: jmethodID?
+    private static var processEvent_MethodID_52: jmethodID?
 
     override open func processEvent( arg0: AWTEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Window.processEvent_MethodID_49, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Window.processEvent_MethodID_52, args: &__args, locals: &__locals )
     }
 
     override open func processEvent( _ _arg0: AWTEvent? ) {
@@ -1255,12 +1330,12 @@ open class Window: Container {
 
     /// public java.awt.Component java.awt.Window.getFocusOwner()
 
-    private static var getFocusOwner_MethodID_50: jmethodID?
+    private static var getFocusOwner_MethodID_53: jmethodID?
 
     open func getFocusOwner() -> Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &Window.getFocusOwner_MethodID_50, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &Window.getFocusOwner_MethodID_53, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
     }
@@ -1268,111 +1343,36 @@ open class Window: Container {
 
     /// void java.awt.Window.adjustListeningChildrenOnParent(long,int)
 
-    /// public boolean java.awt.Window.postEvent(java.awt.Event)
+    /// public boolean java.awt.Window.isAlwaysOnTopSupported()
 
-    /// boolean java.awt.Window.isRecursivelyVisible()
+    private static var isAlwaysOnTopSupported_MethodID_54: jmethodID?
 
-    /// public java.awt.Component java.awt.Window.getMostRecentFocusOwner()
-
-    private static var getMostRecentFocusOwner_MethodID_51: jmethodID?
-
-    open func getMostRecentFocusOwner() -> Component! {
+    open func isAlwaysOnTopSupported() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMostRecentFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &Window.getMostRecentFocusOwner_MethodID_51, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-
-    /// java.awt.Component java.awt.Window.getTemporaryLostComponent()
-
-    /// java.awt.Component java.awt.Window.setTemporaryLostComponent(java.awt.Component)
-
-    /// final java.awt.Container java.awt.Window.getContainer()
-
-    /// final void java.awt.Window.applyCurrentShape()
-
-    /// java.lang.String java.awt.Window.constructComponentName()
-
-    /// public java.awt.Toolkit java.awt.Window.getToolkit()
-
-    /// public void java.awt.Window.show()
-
-    /// public java.util.Locale java.awt.Window.getLocale()
-
-    /// public void java.awt.Window.setCursor(java.awt.Cursor)
-
-    /// public void java.awt.Window.createBufferStrategy(int,java.awt.BufferCapabilities) throws java.awt.AWTException
-
-    private static var createBufferStrategy_MethodID_52: jmethodID?
-
-    open func createBufferStrategy( arg0: Int, arg1: BufferCapabilities? ) throws /* java.awt.AWTException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createBufferStrategy", methodSig: "(ILjava/awt/BufferCapabilities;)V", methodCache: &Window.createBufferStrategy_MethodID_52, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw AWTException( javaObject: throwable )
-        }
-    }
-
-    open func createBufferStrategy( _ _arg0: Int, _ _arg1: BufferCapabilities? ) throws /* java.awt.AWTException */ {
-        try createBufferStrategy( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public void java.awt.Window.createBufferStrategy(int)
-
-    private static var createBufferStrategy_MethodID_53: jmethodID?
-
-    open func createBufferStrategy( arg0: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createBufferStrategy", methodSig: "(I)V", methodCache: &Window.createBufferStrategy_MethodID_53, args: &__args, locals: &__locals )
-    }
-
-    open func createBufferStrategy( _ _arg0: Int ) {
-        createBufferStrategy( arg0: _arg0 )
-    }
-
-    /// public java.awt.image.BufferStrategy java.awt.Window.getBufferStrategy()
-
-    private static var getBufferStrategy_MethodID_54: jmethodID?
-
-    open func getBufferStrategy() -> BufferStrategy! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBufferStrategy", methodSig: "()Ljava/awt/image/BufferStrategy;", methodCache: &Window.getBufferStrategy_MethodID_54, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BufferStrategy( javaObject: __return ) : nil
-    }
-
-
-    /// boolean java.awt.Window.dispatchMouseWheelToAncestor(java.awt.event.MouseWheelEvent)
-
-    /// public java.awt.im.InputContext java.awt.Window.getInputContext()
-
-    /// final void java.awt.Window.applyCompoundShape(sun.java2d.pipe.Region)
-
-    /// final java.awt.Point java.awt.Window.getLocationOnWindow()
-
-    /// public final boolean java.awt.Window.isFocusableWindow()
-
-    private static var isFocusableWindow_MethodID_55: jmethodID?
-
-    open func isFocusableWindow() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusableWindow", methodSig: "()Z", methodCache: &Window.isFocusableWindow_MethodID_55, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAlwaysOnTopSupported", methodSig: "()Z", methodCache: &Window.isAlwaysOnTopSupported_MethodID_54, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
-    /// boolean java.awt.Window.isDisposing()
+    /// public void java.awt.Window.toFront()
 
-    /// static int java.awt.Window.access$700(java.awt.Window)
+    private static var toFront_MethodID_55: jmethodID?
+
+    open func toFront() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toFront", methodSig: "()V", methodCache: &Window.toFront_MethodID_55, args: &__args, locals: &__locals )
+    }
+
+
+    /// static java.awt.geom.Point2D java.awt.Window.access$1200(java.awt.Window,double,double,double,double)
+
+    /// static boolean java.awt.Window.access$1300(java.awt.Window)
+
+    /// static int java.awt.Window.access$602(java.awt.Window,int)
+
+    /// static double java.awt.Window.access$802(java.awt.Window,double)
 
     /// In declared protocol but not defined.. ///
 
@@ -1441,7 +1441,7 @@ open class WindowBase: Window {
     public convenience init( arg0: Window? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[1] = __local!.swiftValue()
@@ -1462,8 +1462,8 @@ open class WindowBase: Window {
     public convenience init( arg0: Window?, arg1: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[2] = __local!.swiftValue()

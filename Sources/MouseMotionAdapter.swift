@@ -35,7 +35,7 @@ open class MouseMotionAdapter: java_swift.JavaObject, MouseMotionListener {
     open func mouseMoved( e: MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseMotionAdapter.mouseMoved_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -50,7 +50,7 @@ open class MouseMotionAdapter: java_swift.JavaObject, MouseMotionListener {
     open func mouseDragged( e: MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseMotionAdapter.mouseDragged_MethodID_3, args: &__args, locals: &__locals )
     }
 

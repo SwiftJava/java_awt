@@ -43,7 +43,7 @@ open class InputMethodRequestsForward: JNIObjectForward, InputMethodRequests {
     open func getTextLocation( offset: TextHitInfo? ) -> Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset != nil ? offset! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextLocation", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/Rectangle;", methodCache: &InputMethodRequestsForward.getTextLocation_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle( javaObject: __return ) : nil

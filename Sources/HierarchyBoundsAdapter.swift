@@ -35,7 +35,7 @@ open class HierarchyBoundsAdapter: java_swift.JavaObject, HierarchyBoundsListene
     open func ancestorMoved( e: HierarchyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "ancestorMoved", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &HierarchyBoundsAdapter.ancestorMoved_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -50,7 +50,7 @@ open class HierarchyBoundsAdapter: java_swift.JavaObject, HierarchyBoundsListene
     open func ancestorResized( e: HierarchyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "ancestorResized", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &HierarchyBoundsAdapter.ancestorResized_MethodID_3, args: &__args, locals: &__locals )
     }
 

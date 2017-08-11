@@ -111,7 +111,7 @@ open class PackedColorModel: ColorModel {
     public convenience init( space: ColorSpace?, bits: Int, colorMaskArray: [Int32]?, alphaMask: Int, isAlphaPremultiplied: Bool, trans: Int, transferType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: space != nil ? space! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: space, locals: &__locals )
         __args[1] = JNIType.toJava( value: bits, locals: &__locals )
         __args[2] = JNIType.toJava( value: colorMaskArray, locals: &__locals )
         __args[3] = JNIType.toJava( value: alphaMask, locals: &__locals )
@@ -134,7 +134,7 @@ open class PackedColorModel: ColorModel {
     public convenience init( space: ColorSpace?, bits: Int, rmask: Int, gmask: Int, bmask: Int, amask: Int, isAlphaPremultiplied: Bool, trans: Int, transferType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 9 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: space != nil ? space! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: space, locals: &__locals )
         __args[1] = JNIType.toJava( value: bits, locals: &__locals )
         __args[2] = JNIType.toJava( value: rmask, locals: &__locals )
         __args[3] = JNIType.toJava( value: gmask, locals: &__locals )
@@ -159,7 +159,7 @@ open class PackedColorModel: ColorModel {
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &PackedColorModel.equals_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -193,7 +193,7 @@ open class PackedColorModel: ColorModel {
     open func isCompatibleSampleModel( sm: SampleModel? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sm != nil ? sm! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sm, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompatibleSampleModel", methodSig: "(Ljava/awt/image/SampleModel;)Z", methodCache: &PackedColorModel.isCompatibleSampleModel_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -209,7 +209,7 @@ open class PackedColorModel: ColorModel {
     open func getAlphaRaster( raster: WritableRaster? ) -> WritableRaster! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: raster != nil ? raster! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: raster, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAlphaRaster", methodSig: "(Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &PackedColorModel.getAlphaRaster_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
@@ -219,41 +219,41 @@ open class PackedColorModel: ColorModel {
         return getAlphaRaster( raster: _raster )
     }
 
-    /// public final int java.awt.image.PackedColorModel.getMask(int)
-
-    private static var getMask_MethodID_7: jmethodID?
-
-    open func getMask( index: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMask", methodSig: "(I)I", methodCache: &PackedColorModel.getMask_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getMask( _ _index: Int ) -> Int {
-        return getMask( index: _index )
-    }
-
     /// public final int[] java.awt.image.PackedColorModel.getMasks()
 
-    private static var getMasks_MethodID_8: jmethodID?
+    private static var getMasks_MethodID_7: jmethodID?
 
     open func getMasks() -> [Int32]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMasks", methodSig: "()[I", methodCache: &PackedColorModel.getMasks_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMasks", methodSig: "()[I", methodCache: &PackedColorModel.getMasks_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Int32](), from: __return )
     }
 
 
     /// private void java.awt.image.PackedColorModel.DecomposeMask(int,int,java.lang.String)
 
-    /// private static final int[] java.awt.image.PackedColorModel.createBitsArray(int[],int)
-
     /// private static final int[] java.awt.image.PackedColorModel.createBitsArray(int,int,int,int)
 
+    /// private static final int[] java.awt.image.PackedColorModel.createBitsArray(int[],int)
+
     /// private static final int java.awt.image.PackedColorModel.countBits(int)
+
+    /// public final int java.awt.image.PackedColorModel.getMask(int)
+
+    private static var getMask_MethodID_8: jmethodID?
+
+    open func getMask( index: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: index, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMask", methodSig: "(I)I", methodCache: &PackedColorModel.getMask_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func getMask( _ _index: Int ) -> Int {
+        return getMask( index: _index )
+    }
 
 }
 

@@ -25,7 +25,7 @@ open class ClipboardOwnerForward: JNIObjectForward, ClipboardOwner {
     open func lostOwnership( clipboard: Clipboard?, contents: Transferable? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: clipboard != nil ? clipboard! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: clipboard, locals: &__locals )
         __args[1] = JNIType.toJava( value: contents, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "lostOwnership", methodSig: "(Ljava/awt/datatransfer/Clipboard;Ljava/awt/datatransfer/Transferable;)V", methodCache: &ClipboardOwnerForward.lostOwnership_MethodID_2, args: &__args, locals: &__locals )
     }

@@ -188,7 +188,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: w, locals: &__locals )
         __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: model != nil ? model! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: model, locals: &__locals )
         __args[5] = JNIType.toJava( value: pixels, locals: &__locals )
         __args[6] = JNIType.toJava( value: off, locals: &__locals )
         __args[7] = JNIType.toJava( value: scansize, locals: &__locals )
@@ -210,7 +210,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: w, locals: &__locals )
         __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: model != nil ? model! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: model, locals: &__locals )
         __args[5] = JNIType.toJava( value: pixels, locals: &__locals )
         __args[6] = JNIType.toJava( value: off, locals: &__locals )
         __args[7] = JNIType.toJava( value: scansize, locals: &__locals )
@@ -276,7 +276,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
     open func setColorModel( model: ColorModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: model != nil ? model! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: model, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColorModel", methodSig: "(Ljava/awt/image/ColorModel;)V", methodCache: &ImageFilter.setColorModel_MethodID_9, args: &__args, locals: &__locals )
     }
 

@@ -82,7 +82,7 @@ open class ShapeGraphicAttribute: GraphicAttribute {
     open func equals( rhs: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rhs != nil ? rhs! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &ShapeGraphicAttribute.equals_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -98,7 +98,7 @@ open class ShapeGraphicAttribute: GraphicAttribute {
     open func equals( rhs: ShapeGraphicAttribute? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rhs != nil ? rhs! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/font/ShapeGraphicAttribute;)Z", methodCache: &ShapeGraphicAttribute.equals_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -109,6 +109,8 @@ open class ShapeGraphicAttribute: GraphicAttribute {
 
     /// public int java.awt.font.ShapeGraphicAttribute.hashCode()
 
+    /// public java.awt.geom.Rectangle2D java.awt.font.ShapeGraphicAttribute.getBounds()
+
     /// public float java.awt.font.ShapeGraphicAttribute.getAscent()
 
     /// public float java.awt.font.ShapeGraphicAttribute.getAdvance()
@@ -118,8 +120,6 @@ open class ShapeGraphicAttribute: GraphicAttribute {
     /// public java.awt.Shape java.awt.font.ShapeGraphicAttribute.getOutline(java.awt.geom.AffineTransform)
 
     /// public void java.awt.font.ShapeGraphicAttribute.draw(java.awt.Graphics2D,float,float)
-
-    /// public java.awt.geom.Rectangle2D java.awt.font.ShapeGraphicAttribute.getBounds()
 
 }
 

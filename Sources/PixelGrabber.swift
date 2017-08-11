@@ -152,7 +152,7 @@ open class PixelGrabber: java_swift.JavaObject, ImageConsumer {
     public convenience init( img: Image?, x: Int, y: Int, w: Int, h: Int, forceRGB: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img != nil ? img! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: w, locals: &__locals )
@@ -198,7 +198,7 @@ open class PixelGrabber: java_swift.JavaObject, ImageConsumer {
     public convenience init( img: Image?, x: Int, y: Int, w: Int, h: Int, pix: [Int32]?, off: Int, scansize: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img != nil ? img! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: w, locals: &__locals )
@@ -242,93 +242,36 @@ open class PixelGrabber: java_swift.JavaObject, ImageConsumer {
     }
 
 
-    /// public void java.awt.image.PixelGrabber.setPixels(int,int,int,int,java.awt.image.ColorModel,byte[],int,int)
-
-    private static var setPixels_MethodID_6: jmethodID?
-
-    open func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int8]?, off: Int, scansize: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: model != nil ? model! as JNIObject : nil, locals: &__locals )
-        __args[5] = JNIType.toJava( value: pixels, locals: &__locals )
-        __args[6] = JNIType.toJava( value: off, locals: &__locals )
-        __args[7] = JNIType.toJava( value: scansize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIIILjava/awt/image/ColorModel;[BII)V", methodCache: &PixelGrabber.setPixels_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _model: ColorModel?, _ _pixels: [Int8]?, _ _off: Int, _ _scansize: Int ) {
-        setPixels( x: _x, y: _y, w: _w, h: _h, model: _model, pixels: _pixels, off: _off, scansize: _scansize )
-    }
-
-    /// public void java.awt.image.PixelGrabber.setPixels(int,int,int,int,java.awt.image.ColorModel,int[],int,int)
-
-    private static var setPixels_MethodID_7: jmethodID?
-
-    open func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int32]?, off: Int, scansize: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: model != nil ? model! as JNIObject : nil, locals: &__locals )
-        __args[5] = JNIType.toJava( value: pixels, locals: &__locals )
-        __args[6] = JNIType.toJava( value: off, locals: &__locals )
-        __args[7] = JNIType.toJava( value: scansize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIIILjava/awt/image/ColorModel;[III)V", methodCache: &PixelGrabber.setPixels_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _model: ColorModel?, _ _pixels: [Int32]?, _ _off: Int, _ _scansize: Int ) {
-        setPixels( x: _x, y: _y, w: _w, h: _h, model: _model, pixels: _pixels, off: _off, scansize: _scansize )
-    }
-
-    /// public synchronized java.lang.Object java.awt.image.PixelGrabber.getPixels()
-
-    private static var getPixels_MethodID_8: jmethodID?
-
-    open func getPixels() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "()Ljava/lang/Object;", methodCache: &PixelGrabber.getPixels_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
     /// public synchronized void java.awt.image.PixelGrabber.startGrabbing()
 
-    private static var startGrabbing_MethodID_9: jmethodID?
+    private static var startGrabbing_MethodID_6: jmethodID?
 
     open func startGrabbing() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startGrabbing", methodSig: "()V", methodCache: &PixelGrabber.startGrabbing_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startGrabbing", methodSig: "()V", methodCache: &PixelGrabber.startGrabbing_MethodID_6, args: &__args, locals: &__locals )
     }
 
 
     /// public synchronized void java.awt.image.PixelGrabber.abortGrabbing()
 
-    private static var abortGrabbing_MethodID_10: jmethodID?
+    private static var abortGrabbing_MethodID_7: jmethodID?
 
     open func abortGrabbing() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "abortGrabbing", methodSig: "()V", methodCache: &PixelGrabber.abortGrabbing_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "abortGrabbing", methodSig: "()V", methodCache: &PixelGrabber.abortGrabbing_MethodID_7, args: &__args, locals: &__locals )
     }
 
 
     /// public boolean java.awt.image.PixelGrabber.grabPixels() throws java.lang.InterruptedException
 
-    private static var grabPixels_MethodID_11: jmethodID?
+    private static var grabPixels_MethodID_8: jmethodID?
 
     open func grabPixels() throws /* java.lang.InterruptedException */ -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "grabPixels", methodSig: "()Z", methodCache: &PixelGrabber.grabPixels_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "grabPixels", methodSig: "()Z", methodCache: &PixelGrabber.grabPixels_MethodID_8, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.InterruptedException( javaObject: throwable )
         }
@@ -338,13 +281,13 @@ open class PixelGrabber: java_swift.JavaObject, ImageConsumer {
 
     /// public synchronized boolean java.awt.image.PixelGrabber.grabPixels(long) throws java.lang.InterruptedException
 
-    private static var grabPixels_MethodID_12: jmethodID?
+    private static var grabPixels_MethodID_9: jmethodID?
 
     open func grabPixels( ms: Int64 ) throws /* java.lang.InterruptedException */ -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: ms, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "grabPixels", methodSig: "(J)Z", methodCache: &PixelGrabber.grabPixels_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "grabPixels", methodSig: "(J)Z", methodCache: &PixelGrabber.grabPixels_MethodID_9, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.InterruptedException( javaObject: throwable )
         }
@@ -357,25 +300,119 @@ open class PixelGrabber: java_swift.JavaObject, ImageConsumer {
 
     /// public synchronized int java.awt.image.PixelGrabber.getStatus()
 
-    private static var getStatus_MethodID_13: jmethodID?
+    private static var getStatus_MethodID_10: jmethodID?
 
     open func getStatus() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getStatus", methodSig: "()I", methodCache: &PixelGrabber.getStatus_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getStatus", methodSig: "()I", methodCache: &PixelGrabber.getStatus_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public synchronized java.awt.image.ColorModel java.awt.image.PixelGrabber.getColorModel()
+
+    private static var getColorModel_MethodID_11: jmethodID?
+
+    open func getColorModel() -> ColorModel! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &PixelGrabber.getColorModel_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ColorModel( javaObject: __return ) : nil
+    }
+
+
+    /// public void java.awt.image.PixelGrabber.setPixels(int,int,int,int,java.awt.image.ColorModel,byte[],int,int)
+
+    private static var setPixels_MethodID_12: jmethodID?
+
+    open func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int8]?, off: Int, scansize: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        __args[2] = JNIType.toJava( value: w, locals: &__locals )
+        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        __args[4] = JNIType.toJava( value: model, locals: &__locals )
+        __args[5] = JNIType.toJava( value: pixels, locals: &__locals )
+        __args[6] = JNIType.toJava( value: off, locals: &__locals )
+        __args[7] = JNIType.toJava( value: scansize, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIIILjava/awt/image/ColorModel;[BII)V", methodCache: &PixelGrabber.setPixels_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _model: ColorModel?, _ _pixels: [Int8]?, _ _off: Int, _ _scansize: Int ) {
+        setPixels( x: _x, y: _y, w: _w, h: _h, model: _model, pixels: _pixels, off: _off, scansize: _scansize )
+    }
+
+    /// public void java.awt.image.PixelGrabber.setPixels(int,int,int,int,java.awt.image.ColorModel,int[],int,int)
+
+    private static var setPixels_MethodID_13: jmethodID?
+
+    open func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int32]?, off: Int, scansize: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        __args[2] = JNIType.toJava( value: w, locals: &__locals )
+        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        __args[4] = JNIType.toJava( value: model, locals: &__locals )
+        __args[5] = JNIType.toJava( value: pixels, locals: &__locals )
+        __args[6] = JNIType.toJava( value: off, locals: &__locals )
+        __args[7] = JNIType.toJava( value: scansize, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIIILjava/awt/image/ColorModel;[III)V", methodCache: &PixelGrabber.setPixels_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _model: ColorModel?, _ _pixels: [Int32]?, _ _off: Int, _ _scansize: Int ) {
+        setPixels( x: _x, y: _y, w: _w, h: _h, model: _model, pixels: _pixels, off: _off, scansize: _scansize )
+    }
+
+    /// public synchronized java.lang.Object java.awt.image.PixelGrabber.getPixels()
+
+    private static var getPixels_MethodID_14: jmethodID?
+
+    open func getPixels() -> java_swift.JavaObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "()Ljava/lang/Object;", methodCache: &PixelGrabber.getPixels_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
+    /// public synchronized int java.awt.image.PixelGrabber.getWidth()
+
+    private static var getWidth_MethodID_15: jmethodID?
+
+    open func getWidth() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &PixelGrabber.getWidth_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public synchronized int java.awt.image.PixelGrabber.getHeight()
+
+    private static var getHeight_MethodID_16: jmethodID?
+
+    open func getHeight() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &PixelGrabber.getHeight_MethodID_16, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void java.awt.image.PixelGrabber.setHints(int)
 
-    private static var setHints_MethodID_14: jmethodID?
+    private static var setHints_MethodID_17: jmethodID?
 
     open func setHints( hintflags: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: hintflags, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHints", methodSig: "(I)V", methodCache: &PixelGrabber.setHints_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHints", methodSig: "(I)V", methodCache: &PixelGrabber.setHints_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setHints( _ _hintflags: Int ) {
@@ -384,14 +421,14 @@ open class PixelGrabber: java_swift.JavaObject, ImageConsumer {
 
     /// public void java.awt.image.PixelGrabber.setDimensions(int,int)
 
-    private static var setDimensions_MethodID_15: jmethodID?
+    private static var setDimensions_MethodID_18: jmethodID?
 
     open func setDimensions( width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: width, locals: &__locals )
         __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDimensions", methodSig: "(II)V", methodCache: &PixelGrabber.setDimensions_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDimensions", methodSig: "(II)V", methodCache: &PixelGrabber.setDimensions_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setDimensions( _ _width: Int, _ _height: Int ) {
@@ -400,13 +437,13 @@ open class PixelGrabber: java_swift.JavaObject, ImageConsumer {
 
     /// public void java.awt.image.PixelGrabber.setColorModel(java.awt.image.ColorModel)
 
-    private static var setColorModel_MethodID_16: jmethodID?
+    private static var setColorModel_MethodID_19: jmethodID?
 
     open func setColorModel( model: ColorModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: model != nil ? model! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColorModel", methodSig: "(Ljava/awt/image/ColorModel;)V", methodCache: &PixelGrabber.setColorModel_MethodID_16, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: model, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColorModel", methodSig: "(Ljava/awt/image/ColorModel;)V", methodCache: &PixelGrabber.setColorModel_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func setColorModel( _ _model: ColorModel? ) {
@@ -415,13 +452,13 @@ open class PixelGrabber: java_swift.JavaObject, ImageConsumer {
 
     /// public synchronized void java.awt.image.PixelGrabber.imageComplete(int)
 
-    private static var imageComplete_MethodID_17: jmethodID?
+    private static var imageComplete_MethodID_20: jmethodID?
 
     open func imageComplete( status: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: status, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "imageComplete", methodSig: "(I)V", methodCache: &PixelGrabber.imageComplete_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "imageComplete", methodSig: "(I)V", methodCache: &PixelGrabber.imageComplete_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func imageComplete( _ _status: Int ) {
@@ -429,43 +466,6 @@ open class PixelGrabber: java_swift.JavaObject, ImageConsumer {
     }
 
     /// private void java.awt.image.PixelGrabber.convertToRGB()
-
-    /// public synchronized int java.awt.image.PixelGrabber.getWidth()
-
-    private static var getWidth_MethodID_18: jmethodID?
-
-    open func getWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &PixelGrabber.getWidth_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public synchronized int java.awt.image.PixelGrabber.getHeight()
-
-    private static var getHeight_MethodID_19: jmethodID?
-
-    open func getHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &PixelGrabber.getHeight_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public synchronized java.awt.image.ColorModel java.awt.image.PixelGrabber.getColorModel()
-
-    private static var getColorModel_MethodID_20: jmethodID?
-
-    open func getColorModel() -> ColorModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &PixelGrabber.getColorModel_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ColorModel( javaObject: __return ) : nil
-    }
-
 
 }
 

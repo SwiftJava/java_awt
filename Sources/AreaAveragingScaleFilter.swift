@@ -148,7 +148,7 @@ open class AreaAveragingScaleFilter: ReplicateScaleFilter {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "outpixbuf", fieldType: "Ljava/lang/Object;", fieldCache: &AreaAveragingScaleFilter.outpixbuf_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }

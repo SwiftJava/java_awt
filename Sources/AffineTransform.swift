@@ -269,7 +269,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
     public convenience init( Tx: AffineTransform? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: Tx != nil ? Tx! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: Tx, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/AffineTransform", classCache: &AffineTransform.AffineTransformJNIClass, methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &AffineTransform.new_MethodID_6, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -286,7 +286,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &AffineTransform.equals_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -340,9 +340,25 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
     }
 
 
-    /// public void java.awt.geom.AffineTransform.rotate(double,double,double,double)
+    /// public void java.awt.geom.AffineTransform.rotate(double,double)
 
     private static var rotate_MethodID_11: jmethodID?
+
+    open func rotate( vecx: Double, vecy: Double ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: vecx, locals: &__locals )
+        __args[1] = JNIType.toJava( value: vecy, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rotate", methodSig: "(DD)V", methodCache: &AffineTransform.rotate_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func rotate( _ _vecx: Double, _ _vecy: Double ) {
+        rotate( vecx: _vecx, vecy: _vecy )
+    }
+
+    /// public void java.awt.geom.AffineTransform.rotate(double,double,double,double)
+
+    private static var rotate_MethodID_12: jmethodID?
 
     open func rotate( vecx: Double, vecy: Double, anchorx: Double, anchory: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -351,27 +367,11 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         __args[1] = JNIType.toJava( value: vecy, locals: &__locals )
         __args[2] = JNIType.toJava( value: anchorx, locals: &__locals )
         __args[3] = JNIType.toJava( value: anchory, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rotate", methodSig: "(DDDD)V", methodCache: &AffineTransform.rotate_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rotate", methodSig: "(DDDD)V", methodCache: &AffineTransform.rotate_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func rotate( _ _vecx: Double, _ _vecy: Double, _ _anchorx: Double, _ _anchory: Double ) {
         rotate( vecx: _vecx, vecy: _vecy, anchorx: _anchorx, anchory: _anchory )
-    }
-
-    /// public void java.awt.geom.AffineTransform.rotate(double,double)
-
-    private static var rotate_MethodID_12: jmethodID?
-
-    open func rotate( vecx: Double, vecy: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: vecx, locals: &__locals )
-        __args[1] = JNIType.toJava( value: vecy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rotate", methodSig: "(DD)V", methodCache: &AffineTransform.rotate_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func rotate( _ _vecx: Double, _ _vecy: Double ) {
-        rotate( vecx: _vecx, vecy: _vecy )
     }
 
     /// public void java.awt.geom.AffineTransform.rotate(double,double,double)
@@ -422,132 +422,31 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         scale( sx: _sx, sy: _sy )
     }
 
-    /// public static java.awt.geom.AffineTransform java.awt.geom.AffineTransform.getTranslateInstance(double,double)
+    /// public void java.awt.geom.AffineTransform.translate(double,double)
 
-    private static var getTranslateInstance_MethodID_16: jmethodID?
+    private static var translate_MethodID_16: jmethodID?
 
-    open class func getTranslateInstance( tx: Double, ty: Double ) -> AffineTransform! {
+    open func translate( tx: Double, ty: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tx, locals: &__locals )
         __args[1] = JNIType.toJava( value: ty, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getTranslateInstance", methodSig: "(DD)Ljava/awt/geom/AffineTransform;", methodCache: &getTranslateInstance_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AffineTransform( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(DD)V", methodCache: &AffineTransform.translate_MethodID_16, args: &__args, locals: &__locals )
     }
 
-    open class func getTranslateInstance( _ _tx: Double, _ _ty: Double ) -> AffineTransform! {
-        return getTranslateInstance( tx: _tx, ty: _ty )
-    }
-
-    /// public void java.awt.geom.AffineTransform.preConcatenate(java.awt.geom.AffineTransform)
-
-    private static var preConcatenate_MethodID_17: jmethodID?
-
-    open func preConcatenate( Tx: AffineTransform? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: Tx != nil ? Tx! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "preConcatenate", methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &AffineTransform.preConcatenate_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func preConcatenate( _ _Tx: AffineTransform? ) {
-        preConcatenate( Tx: _Tx )
-    }
-
-    /// public double java.awt.geom.AffineTransform.getTranslateY()
-
-    private static var getTranslateY_MethodID_18: jmethodID?
-
-    open func getTranslateY() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getTranslateY", methodSig: "()D", methodCache: &AffineTransform.getTranslateY_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public void java.awt.geom.AffineTransform.deltaTransform(double[],int,double[],int,int)
-
-    private static var deltaTransform_MethodID_19: jmethodID?
-
-    open func deltaTransform( srcPts: [Double]?, srcOff: Int, dstPts: [Double]?, dstOff: Int, numPts: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: srcPts, locals: &__locals )
-        __args[1] = JNIType.toJava( value: srcOff, locals: &__locals )
-        __args[2] = JNIType.toJava( value: dstPts, locals: &__locals )
-        __args[3] = JNIType.toJava( value: dstOff, locals: &__locals )
-        __args[4] = JNIType.toJava( value: numPts, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deltaTransform", methodSig: "([DI[DII)V", methodCache: &AffineTransform.deltaTransform_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func deltaTransform( _ _srcPts: [Double]?, _ _srcOff: Int, _ _dstPts: [Double]?, _ _dstOff: Int, _ _numPts: Int ) {
-        deltaTransform( srcPts: _srcPts, srcOff: _srcOff, dstPts: _dstPts, dstOff: _dstOff, numPts: _numPts )
-    }
-
-    /// public java.awt.geom.Point2D java.awt.geom.AffineTransform.deltaTransform(java.awt.geom.Point2D,java.awt.geom.Point2D)
-
-    private static var deltaTransform_MethodID_20: jmethodID?
-
-    open func deltaTransform( ptSrc: Point2D?, ptDst: Point2D? ) -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ptSrc != nil ? ptSrc! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: ptDst != nil ? ptDst! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "deltaTransform", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &AffineTransform.deltaTransform_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point2D( javaObject: __return ) : nil
-    }
-
-    open func deltaTransform( _ _ptSrc: Point2D?, _ _ptDst: Point2D? ) -> Point2D! {
-        return deltaTransform( ptSrc: _ptSrc, ptDst: _ptDst )
-    }
-
-    /// public void java.awt.geom.AffineTransform.setTransform(double,double,double,double,double,double)
-
-    private static var setTransform_MethodID_21: jmethodID?
-
-    open func setTransform( m00: Double, m10: Double, m01: Double, m11: Double, m02: Double, m12: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m00, locals: &__locals )
-        __args[1] = JNIType.toJava( value: m10, locals: &__locals )
-        __args[2] = JNIType.toJava( value: m01, locals: &__locals )
-        __args[3] = JNIType.toJava( value: m11, locals: &__locals )
-        __args[4] = JNIType.toJava( value: m02, locals: &__locals )
-        __args[5] = JNIType.toJava( value: m12, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTransform", methodSig: "(DDDDDD)V", methodCache: &AffineTransform.setTransform_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open func setTransform( _ _m00: Double, _ _m10: Double, _ _m01: Double, _ _m11: Double, _ _m02: Double, _ _m12: Double ) {
-        setTransform( m00: _m00, m10: _m10, m01: _m01, m11: _m11, m02: _m02, m12: _m12 )
-    }
-
-    /// public void java.awt.geom.AffineTransform.setTransform(java.awt.geom.AffineTransform)
-
-    private static var setTransform_MethodID_22: jmethodID?
-
-    open func setTransform( Tx: AffineTransform? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: Tx != nil ? Tx! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTransform", methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &AffineTransform.setTransform_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func setTransform( _ _Tx: AffineTransform? ) {
-        setTransform( Tx: _Tx )
+    open func translate( _ _tx: Double, _ _ty: Double ) {
+        translate( tx: _tx, ty: _ty )
     }
 
     /// public static java.awt.geom.AffineTransform java.awt.geom.AffineTransform.getRotateInstance(double)
 
-    private static var getRotateInstance_MethodID_23: jmethodID?
+    private static var getRotateInstance_MethodID_17: jmethodID?
 
     open class func getRotateInstance( theta: Double ) -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: theta, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getRotateInstance", methodSig: "(D)Ljava/awt/geom/AffineTransform;", methodCache: &getRotateInstance_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getRotateInstance", methodSig: "(D)Ljava/awt/geom/AffineTransform;", methodCache: &getRotateInstance_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AffineTransform( javaObject: __return ) : nil
     }
@@ -558,7 +457,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public static java.awt.geom.AffineTransform java.awt.geom.AffineTransform.getRotateInstance(double,double,double)
 
-    private static var getRotateInstance_MethodID_24: jmethodID?
+    private static var getRotateInstance_MethodID_18: jmethodID?
 
     open class func getRotateInstance( theta: Double, anchorx: Double, anchory: Double ) -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -566,7 +465,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         __args[0] = JNIType.toJava( value: theta, locals: &__locals )
         __args[1] = JNIType.toJava( value: anchorx, locals: &__locals )
         __args[2] = JNIType.toJava( value: anchory, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getRotateInstance", methodSig: "(DDD)Ljava/awt/geom/AffineTransform;", methodCache: &getRotateInstance_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getRotateInstance", methodSig: "(DDD)Ljava/awt/geom/AffineTransform;", methodCache: &getRotateInstance_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AffineTransform( javaObject: __return ) : nil
     }
@@ -577,7 +476,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public static java.awt.geom.AffineTransform java.awt.geom.AffineTransform.getRotateInstance(double,double,double,double)
 
-    private static var getRotateInstance_MethodID_25: jmethodID?
+    private static var getRotateInstance_MethodID_19: jmethodID?
 
     open class func getRotateInstance( vecx: Double, vecy: Double, anchorx: Double, anchory: Double ) -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -586,7 +485,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         __args[1] = JNIType.toJava( value: vecy, locals: &__locals )
         __args[2] = JNIType.toJava( value: anchorx, locals: &__locals )
         __args[3] = JNIType.toJava( value: anchory, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getRotateInstance", methodSig: "(DDDD)Ljava/awt/geom/AffineTransform;", methodCache: &getRotateInstance_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getRotateInstance", methodSig: "(DDDD)Ljava/awt/geom/AffineTransform;", methodCache: &getRotateInstance_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AffineTransform( javaObject: __return ) : nil
     }
@@ -597,14 +496,14 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public static java.awt.geom.AffineTransform java.awt.geom.AffineTransform.getRotateInstance(double,double)
 
-    private static var getRotateInstance_MethodID_26: jmethodID?
+    private static var getRotateInstance_MethodID_20: jmethodID?
 
     open class func getRotateInstance( vecx: Double, vecy: Double ) -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: vecx, locals: &__locals )
         __args[1] = JNIType.toJava( value: vecy, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getRotateInstance", methodSig: "(DD)Ljava/awt/geom/AffineTransform;", methodCache: &getRotateInstance_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getRotateInstance", methodSig: "(DD)Ljava/awt/geom/AffineTransform;", methodCache: &getRotateInstance_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AffineTransform( javaObject: __return ) : nil
     }
@@ -615,7 +514,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public static java.awt.geom.AffineTransform java.awt.geom.AffineTransform.getQuadrantRotateInstance(int,double,double)
 
-    private static var getQuadrantRotateInstance_MethodID_27: jmethodID?
+    private static var getQuadrantRotateInstance_MethodID_21: jmethodID?
 
     open class func getQuadrantRotateInstance( numquadrants: Int, anchorx: Double, anchory: Double ) -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -623,7 +522,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         __args[0] = JNIType.toJava( value: numquadrants, locals: &__locals )
         __args[1] = JNIType.toJava( value: anchorx, locals: &__locals )
         __args[2] = JNIType.toJava( value: anchory, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getQuadrantRotateInstance", methodSig: "(IDD)Ljava/awt/geom/AffineTransform;", methodCache: &getQuadrantRotateInstance_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getQuadrantRotateInstance", methodSig: "(IDD)Ljava/awt/geom/AffineTransform;", methodCache: &getQuadrantRotateInstance_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AffineTransform( javaObject: __return ) : nil
     }
@@ -634,13 +533,13 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public static java.awt.geom.AffineTransform java.awt.geom.AffineTransform.getQuadrantRotateInstance(int)
 
-    private static var getQuadrantRotateInstance_MethodID_28: jmethodID?
+    private static var getQuadrantRotateInstance_MethodID_22: jmethodID?
 
     open class func getQuadrantRotateInstance( numquadrants: Int ) -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: numquadrants, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getQuadrantRotateInstance", methodSig: "(I)Ljava/awt/geom/AffineTransform;", methodCache: &getQuadrantRotateInstance_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getQuadrantRotateInstance", methodSig: "(I)Ljava/awt/geom/AffineTransform;", methodCache: &getQuadrantRotateInstance_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AffineTransform( javaObject: __return ) : nil
     }
@@ -651,14 +550,14 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public static java.awt.geom.AffineTransform java.awt.geom.AffineTransform.getScaleInstance(double,double)
 
-    private static var getScaleInstance_MethodID_29: jmethodID?
+    private static var getScaleInstance_MethodID_23: jmethodID?
 
     open class func getScaleInstance( sx: Double, sy: Double ) -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: sx, locals: &__locals )
         __args[1] = JNIType.toJava( value: sy, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getScaleInstance", methodSig: "(DD)Ljava/awt/geom/AffineTransform;", methodCache: &getScaleInstance_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getScaleInstance", methodSig: "(DD)Ljava/awt/geom/AffineTransform;", methodCache: &getScaleInstance_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AffineTransform( javaObject: __return ) : nil
     }
@@ -669,14 +568,14 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public static java.awt.geom.AffineTransform java.awt.geom.AffineTransform.getShearInstance(double,double)
 
-    private static var getShearInstance_MethodID_30: jmethodID?
+    private static var getShearInstance_MethodID_24: jmethodID?
 
     open class func getShearInstance( shx: Double, shy: Double ) -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: shx, locals: &__locals )
         __args[1] = JNIType.toJava( value: shy, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getShearInstance", methodSig: "(DD)Ljava/awt/geom/AffineTransform;", methodCache: &getShearInstance_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getShearInstance", methodSig: "(DD)Ljava/awt/geom/AffineTransform;", methodCache: &getShearInstance_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AffineTransform( javaObject: __return ) : nil
     }
@@ -689,12 +588,12 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public double java.awt.geom.AffineTransform.getDeterminant()
 
-    private static var getDeterminant_MethodID_31: jmethodID?
+    private static var getDeterminant_MethodID_25: jmethodID?
 
     open func getDeterminant() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getDeterminant", methodSig: "()D", methodCache: &AffineTransform.getDeterminant_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getDeterminant", methodSig: "()D", methodCache: &AffineTransform.getDeterminant_MethodID_25, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
@@ -705,13 +604,13 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.getMatrix(double[])
 
-    private static var getMatrix_MethodID_32: jmethodID?
+    private static var getMatrix_MethodID_26: jmethodID?
 
     open func getMatrix( flatmatrix: [Double]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: flatmatrix, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getMatrix", methodSig: "([D)V", methodCache: &AffineTransform.getMatrix_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getMatrix", methodSig: "([D)V", methodCache: &AffineTransform.getMatrix_MethodID_26, args: &__args, locals: &__locals )
     }
 
     open func getMatrix( _ _flatmatrix: [Double]? ) {
@@ -720,60 +619,60 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public double java.awt.geom.AffineTransform.getScaleX()
 
-    private static var getScaleX_MethodID_33: jmethodID?
+    private static var getScaleX_MethodID_27: jmethodID?
 
     open func getScaleX() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getScaleX", methodSig: "()D", methodCache: &AffineTransform.getScaleX_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getScaleX", methodSig: "()D", methodCache: &AffineTransform.getScaleX_MethodID_27, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
 
     /// public double java.awt.geom.AffineTransform.getScaleY()
 
-    private static var getScaleY_MethodID_34: jmethodID?
+    private static var getScaleY_MethodID_28: jmethodID?
 
     open func getScaleY() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getScaleY", methodSig: "()D", methodCache: &AffineTransform.getScaleY_MethodID_34, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getScaleY", methodSig: "()D", methodCache: &AffineTransform.getScaleY_MethodID_28, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
 
     /// public double java.awt.geom.AffineTransform.getShearX()
 
-    private static var getShearX_MethodID_35: jmethodID?
+    private static var getShearX_MethodID_29: jmethodID?
 
     open func getShearX() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getShearX", methodSig: "()D", methodCache: &AffineTransform.getShearX_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getShearX", methodSig: "()D", methodCache: &AffineTransform.getShearX_MethodID_29, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
 
     /// public double java.awt.geom.AffineTransform.getShearY()
 
-    private static var getShearY_MethodID_36: jmethodID?
+    private static var getShearY_MethodID_30: jmethodID?
 
     open func getShearY() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getShearY", methodSig: "()D", methodCache: &AffineTransform.getShearY_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getShearY", methodSig: "()D", methodCache: &AffineTransform.getShearY_MethodID_30, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
 
     /// public double java.awt.geom.AffineTransform.getTranslateX()
 
-    private static var getTranslateX_MethodID_37: jmethodID?
+    private static var getTranslateX_MethodID_31: jmethodID?
 
     open func getTranslateX() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getTranslateX", methodSig: "()D", methodCache: &AffineTransform.getTranslateX_MethodID_37, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getTranslateX", methodSig: "()D", methodCache: &AffineTransform.getTranslateX_MethodID_31, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
@@ -786,13 +685,13 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.quadrantRotate(int)
 
-    private static var quadrantRotate_MethodID_38: jmethodID?
+    private static var quadrantRotate_MethodID_32: jmethodID?
 
     open func quadrantRotate( numquadrants: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: numquadrants, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "quadrantRotate", methodSig: "(I)V", methodCache: &AffineTransform.quadrantRotate_MethodID_38, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "quadrantRotate", methodSig: "(I)V", methodCache: &AffineTransform.quadrantRotate_MethodID_32, args: &__args, locals: &__locals )
     }
 
     open func quadrantRotate( _ _numquadrants: Int ) {
@@ -801,7 +700,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.quadrantRotate(int,double,double)
 
-    private static var quadrantRotate_MethodID_39: jmethodID?
+    private static var quadrantRotate_MethodID_33: jmethodID?
 
     open func quadrantRotate( numquadrants: Int, anchorx: Double, anchory: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -809,7 +708,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         __args[0] = JNIType.toJava( value: numquadrants, locals: &__locals )
         __args[1] = JNIType.toJava( value: anchorx, locals: &__locals )
         __args[2] = JNIType.toJava( value: anchory, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "quadrantRotate", methodSig: "(IDD)V", methodCache: &AffineTransform.quadrantRotate_MethodID_39, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "quadrantRotate", methodSig: "(IDD)V", methodCache: &AffineTransform.quadrantRotate_MethodID_33, args: &__args, locals: &__locals )
     }
 
     open func quadrantRotate( _ _numquadrants: Int, _ _anchorx: Double, _ _anchory: Double ) {
@@ -818,14 +717,14 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.shear(double,double)
 
-    private static var shear_MethodID_40: jmethodID?
+    private static var shear_MethodID_34: jmethodID?
 
     open func shear( shx: Double, shy: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: shx, locals: &__locals )
         __args[1] = JNIType.toJava( value: shy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shear", methodSig: "(DD)V", methodCache: &AffineTransform.shear_MethodID_40, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shear", methodSig: "(DD)V", methodCache: &AffineTransform.shear_MethodID_34, args: &__args, locals: &__locals )
     }
 
     open func shear( _ _shx: Double, _ _shy: Double ) {
@@ -834,59 +733,56 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.setToIdentity()
 
-    private static var setToIdentity_MethodID_41: jmethodID?
+    private static var setToIdentity_MethodID_35: jmethodID?
 
     open func setToIdentity() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToIdentity", methodSig: "()V", methodCache: &AffineTransform.setToIdentity_MethodID_41, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToIdentity", methodSig: "()V", methodCache: &AffineTransform.setToIdentity_MethodID_35, args: &__args, locals: &__locals )
     }
 
 
     /// public void java.awt.geom.AffineTransform.setToTranslation(double,double)
 
-    private static var setToTranslation_MethodID_42: jmethodID?
+    private static var setToTranslation_MethodID_36: jmethodID?
 
     open func setToTranslation( tx: Double, ty: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tx, locals: &__locals )
         __args[1] = JNIType.toJava( value: ty, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToTranslation", methodSig: "(DD)V", methodCache: &AffineTransform.setToTranslation_MethodID_42, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToTranslation", methodSig: "(DD)V", methodCache: &AffineTransform.setToTranslation_MethodID_36, args: &__args, locals: &__locals )
     }
 
     open func setToTranslation( _ _tx: Double, _ _ty: Double ) {
         setToTranslation( tx: _tx, ty: _ty )
     }
 
-    /// public void java.awt.geom.AffineTransform.setToRotation(double,double,double,double)
+    /// public void java.awt.geom.AffineTransform.setToRotation(double)
 
-    private static var setToRotation_MethodID_43: jmethodID?
+    private static var setToRotation_MethodID_37: jmethodID?
 
-    open func setToRotation( vecx: Double, vecy: Double, anchorx: Double, anchory: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open func setToRotation( theta: Double ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: vecx, locals: &__locals )
-        __args[1] = JNIType.toJava( value: vecy, locals: &__locals )
-        __args[2] = JNIType.toJava( value: anchorx, locals: &__locals )
-        __args[3] = JNIType.toJava( value: anchory, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToRotation", methodSig: "(DDDD)V", methodCache: &AffineTransform.setToRotation_MethodID_43, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: theta, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToRotation", methodSig: "(D)V", methodCache: &AffineTransform.setToRotation_MethodID_37, args: &__args, locals: &__locals )
     }
 
-    open func setToRotation( _ _vecx: Double, _ _vecy: Double, _ _anchorx: Double, _ _anchory: Double ) {
-        setToRotation( vecx: _vecx, vecy: _vecy, anchorx: _anchorx, anchory: _anchory )
+    open func setToRotation( _ _theta: Double ) {
+        setToRotation( theta: _theta )
     }
 
     /// public void java.awt.geom.AffineTransform.setToRotation(double,double)
 
-    private static var setToRotation_MethodID_44: jmethodID?
+    private static var setToRotation_MethodID_38: jmethodID?
 
     open func setToRotation( vecx: Double, vecy: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: vecx, locals: &__locals )
         __args[1] = JNIType.toJava( value: vecy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToRotation", methodSig: "(DD)V", methodCache: &AffineTransform.setToRotation_MethodID_44, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToRotation", methodSig: "(DD)V", methodCache: &AffineTransform.setToRotation_MethodID_38, args: &__args, locals: &__locals )
     }
 
     open func setToRotation( _ _vecx: Double, _ _vecy: Double ) {
@@ -895,7 +791,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.setToRotation(double,double,double)
 
-    private static var setToRotation_MethodID_45: jmethodID?
+    private static var setToRotation_MethodID_39: jmethodID?
 
     open func setToRotation( theta: Double, anchorx: Double, anchory: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -903,31 +799,34 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         __args[0] = JNIType.toJava( value: theta, locals: &__locals )
         __args[1] = JNIType.toJava( value: anchorx, locals: &__locals )
         __args[2] = JNIType.toJava( value: anchory, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToRotation", methodSig: "(DDD)V", methodCache: &AffineTransform.setToRotation_MethodID_45, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToRotation", methodSig: "(DDD)V", methodCache: &AffineTransform.setToRotation_MethodID_39, args: &__args, locals: &__locals )
     }
 
     open func setToRotation( _ _theta: Double, _ _anchorx: Double, _ _anchory: Double ) {
         setToRotation( theta: _theta, anchorx: _anchorx, anchory: _anchory )
     }
 
-    /// public void java.awt.geom.AffineTransform.setToRotation(double)
+    /// public void java.awt.geom.AffineTransform.setToRotation(double,double,double,double)
 
-    private static var setToRotation_MethodID_46: jmethodID?
+    private static var setToRotation_MethodID_40: jmethodID?
 
-    open func setToRotation( theta: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setToRotation( vecx: Double, vecy: Double, anchorx: Double, anchory: Double ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: theta, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToRotation", methodSig: "(D)V", methodCache: &AffineTransform.setToRotation_MethodID_46, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: vecx, locals: &__locals )
+        __args[1] = JNIType.toJava( value: vecy, locals: &__locals )
+        __args[2] = JNIType.toJava( value: anchorx, locals: &__locals )
+        __args[3] = JNIType.toJava( value: anchory, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToRotation", methodSig: "(DDDD)V", methodCache: &AffineTransform.setToRotation_MethodID_40, args: &__args, locals: &__locals )
     }
 
-    open func setToRotation( _ _theta: Double ) {
-        setToRotation( theta: _theta )
+    open func setToRotation( _ _vecx: Double, _ _vecy: Double, _ _anchorx: Double, _ _anchory: Double ) {
+        setToRotation( vecx: _vecx, vecy: _vecy, anchorx: _anchorx, anchory: _anchory )
     }
 
     /// public void java.awt.geom.AffineTransform.setToQuadrantRotation(int,double,double)
 
-    private static var setToQuadrantRotation_MethodID_47: jmethodID?
+    private static var setToQuadrantRotation_MethodID_41: jmethodID?
 
     open func setToQuadrantRotation( numquadrants: Int, anchorx: Double, anchory: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -935,7 +834,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         __args[0] = JNIType.toJava( value: numquadrants, locals: &__locals )
         __args[1] = JNIType.toJava( value: anchorx, locals: &__locals )
         __args[2] = JNIType.toJava( value: anchory, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToQuadrantRotation", methodSig: "(IDD)V", methodCache: &AffineTransform.setToQuadrantRotation_MethodID_47, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToQuadrantRotation", methodSig: "(IDD)V", methodCache: &AffineTransform.setToQuadrantRotation_MethodID_41, args: &__args, locals: &__locals )
     }
 
     open func setToQuadrantRotation( _ _numquadrants: Int, _ _anchorx: Double, _ _anchory: Double ) {
@@ -944,13 +843,13 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.setToQuadrantRotation(int)
 
-    private static var setToQuadrantRotation_MethodID_48: jmethodID?
+    private static var setToQuadrantRotation_MethodID_42: jmethodID?
 
     open func setToQuadrantRotation( numquadrants: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: numquadrants, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToQuadrantRotation", methodSig: "(I)V", methodCache: &AffineTransform.setToQuadrantRotation_MethodID_48, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToQuadrantRotation", methodSig: "(I)V", methodCache: &AffineTransform.setToQuadrantRotation_MethodID_42, args: &__args, locals: &__locals )
     }
 
     open func setToQuadrantRotation( _ _numquadrants: Int ) {
@@ -959,14 +858,14 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.setToScale(double,double)
 
-    private static var setToScale_MethodID_49: jmethodID?
+    private static var setToScale_MethodID_43: jmethodID?
 
     open func setToScale( sx: Double, sy: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: sx, locals: &__locals )
         __args[1] = JNIType.toJava( value: sy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToScale", methodSig: "(DD)V", methodCache: &AffineTransform.setToScale_MethodID_49, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToScale", methodSig: "(DD)V", methodCache: &AffineTransform.setToScale_MethodID_43, args: &__args, locals: &__locals )
     }
 
     open func setToScale( _ _sx: Double, _ _sy: Double ) {
@@ -975,14 +874,14 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.setToShear(double,double)
 
-    private static var setToShear_MethodID_50: jmethodID?
+    private static var setToShear_MethodID_44: jmethodID?
 
     open func setToShear( shx: Double, shy: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: shx, locals: &__locals )
         __args[1] = JNIType.toJava( value: shy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToShear", methodSig: "(DD)V", methodCache: &AffineTransform.setToShear_MethodID_50, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToShear", methodSig: "(DD)V", methodCache: &AffineTransform.setToShear_MethodID_44, args: &__args, locals: &__locals )
     }
 
     open func setToShear( _ _shx: Double, _ _shy: Double ) {
@@ -991,13 +890,13 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.concatenate(java.awt.geom.AffineTransform)
 
-    private static var concatenate_MethodID_51: jmethodID?
+    private static var concatenate_MethodID_45: jmethodID?
 
     open func concatenate( Tx: AffineTransform? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: Tx != nil ? Tx! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "concatenate", methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &AffineTransform.concatenate_MethodID_51, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: Tx, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "concatenate", methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &AffineTransform.concatenate_MethodID_45, args: &__args, locals: &__locals )
     }
 
     open func concatenate( _ _Tx: AffineTransform? ) {
@@ -1006,12 +905,12 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public java.awt.geom.AffineTransform java.awt.geom.AffineTransform.createInverse() throws java.awt.geom.NoninvertibleTransformException
 
-    private static var createInverse_MethodID_52: jmethodID?
+    private static var createInverse_MethodID_46: jmethodID?
 
     open func createInverse() throws /* java.awt.geom.NoninvertibleTransformException */ -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createInverse", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &AffineTransform.createInverse_MethodID_52, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createInverse", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &AffineTransform.createInverse_MethodID_46, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw NoninvertibleTransformException( javaObject: throwable )
@@ -1022,96 +921,21 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.invert() throws java.awt.geom.NoninvertibleTransformException
 
-    private static var invert_MethodID_53: jmethodID?
+    private static var invert_MethodID_47: jmethodID?
 
     open func invert() throws /* java.awt.geom.NoninvertibleTransformException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invert", methodSig: "()V", methodCache: &AffineTransform.invert_MethodID_53, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invert", methodSig: "()V", methodCache: &AffineTransform.invert_MethodID_47, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw NoninvertibleTransformException( javaObject: throwable )
         }
     }
 
 
-    /// public void java.awt.geom.AffineTransform.transform(float[],int,float[],int,int)
-
-    private static var transform_MethodID_54: jmethodID?
-
-    open func transform( srcPts: [Float]?, srcOff: Int, dstPts: [Float]?, dstOff: Int, numPts: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: srcPts, locals: &__locals )
-        __args[1] = JNIType.toJava( value: srcOff, locals: &__locals )
-        __args[2] = JNIType.toJava( value: dstPts, locals: &__locals )
-        __args[3] = JNIType.toJava( value: dstOff, locals: &__locals )
-        __args[4] = JNIType.toJava( value: numPts, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "([FI[FII)V", methodCache: &AffineTransform.transform_MethodID_54, args: &__args, locals: &__locals )
-    }
-
-    open func transform( _ _srcPts: [Float]?, _ _srcOff: Int, _ _dstPts: [Float]?, _ _dstOff: Int, _ _numPts: Int ) {
-        transform( srcPts: _srcPts, srcOff: _srcOff, dstPts: _dstPts, dstOff: _dstOff, numPts: _numPts )
-    }
-
-    /// public void java.awt.geom.AffineTransform.transform(double[],int,double[],int,int)
-
-    private static var transform_MethodID_55: jmethodID?
-
-    open func transform( srcPts: [Double]?, srcOff: Int, dstPts: [Double]?, dstOff: Int, numPts: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: srcPts, locals: &__locals )
-        __args[1] = JNIType.toJava( value: srcOff, locals: &__locals )
-        __args[2] = JNIType.toJava( value: dstPts, locals: &__locals )
-        __args[3] = JNIType.toJava( value: dstOff, locals: &__locals )
-        __args[4] = JNIType.toJava( value: numPts, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "([DI[DII)V", methodCache: &AffineTransform.transform_MethodID_55, args: &__args, locals: &__locals )
-    }
-
-    open func transform( _ _srcPts: [Double]?, _ _srcOff: Int, _ _dstPts: [Double]?, _ _dstOff: Int, _ _numPts: Int ) {
-        transform( srcPts: _srcPts, srcOff: _srcOff, dstPts: _dstPts, dstOff: _dstOff, numPts: _numPts )
-    }
-
-    /// public void java.awt.geom.AffineTransform.transform(java.awt.geom.Point2D[],int,java.awt.geom.Point2D[],int,int)
-
-    private static var transform_MethodID_56: jmethodID?
-
-    open func transform( ptSrc: [Point2D]?, srcOff: Int, ptDst: [Point2D]?, dstOff: Int, numPts: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ptSrc, locals: &__locals )
-        __args[1] = JNIType.toJava( value: srcOff, locals: &__locals )
-        __args[2] = JNIType.toJava( value: ptDst, locals: &__locals )
-        __args[3] = JNIType.toJava( value: dstOff, locals: &__locals )
-        __args[4] = JNIType.toJava( value: numPts, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "([Ljava/awt/geom/Point2D;I[Ljava/awt/geom/Point2D;II)V", methodCache: &AffineTransform.transform_MethodID_56, args: &__args, locals: &__locals )
-    }
-
-    open func transform( _ _ptSrc: [Point2D]?, _ _srcOff: Int, _ _ptDst: [Point2D]?, _ _dstOff: Int, _ _numPts: Int ) {
-        transform( ptSrc: _ptSrc, srcOff: _srcOff, ptDst: _ptDst, dstOff: _dstOff, numPts: _numPts )
-    }
-
-    /// public java.awt.geom.Point2D java.awt.geom.AffineTransform.transform(java.awt.geom.Point2D,java.awt.geom.Point2D)
-
-    private static var transform_MethodID_57: jmethodID?
-
-    open func transform( ptSrc: Point2D?, ptDst: Point2D? ) -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ptSrc != nil ? ptSrc! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: ptDst != nil ? ptDst! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "transform", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &AffineTransform.transform_MethodID_57, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point2D( javaObject: __return ) : nil
-    }
-
-    open func transform( _ _ptSrc: Point2D?, _ _ptDst: Point2D? ) -> Point2D! {
-        return transform( ptSrc: _ptSrc, ptDst: _ptDst )
-    }
-
     /// public void java.awt.geom.AffineTransform.transform(double[],int,float[],int,int)
 
-    private static var transform_MethodID_58: jmethodID?
+    private static var transform_MethodID_48: jmethodID?
 
     open func transform( srcPts: [Double]?, srcOff: Int, dstPts: [Float]?, dstOff: Int, numPts: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -1121,7 +945,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         __args[2] = JNIType.toJava( value: dstPts, locals: &__locals )
         __args[3] = JNIType.toJava( value: dstOff, locals: &__locals )
         __args[4] = JNIType.toJava( value: numPts, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "([DI[FII)V", methodCache: &AffineTransform.transform_MethodID_58, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "([DI[FII)V", methodCache: &AffineTransform.transform_MethodID_48, args: &__args, locals: &__locals )
     }
 
     open func transform( _ _srcPts: [Double]?, _ _srcOff: Int, _ _dstPts: [Float]?, _ _dstOff: Int, _ _numPts: Int ) {
@@ -1130,7 +954,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// public void java.awt.geom.AffineTransform.transform(float[],int,double[],int,int)
 
-    private static var transform_MethodID_59: jmethodID?
+    private static var transform_MethodID_49: jmethodID?
 
     open func transform( srcPts: [Float]?, srcOff: Int, dstPts: [Double]?, dstOff: Int, numPts: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -1140,18 +964,55 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         __args[2] = JNIType.toJava( value: dstPts, locals: &__locals )
         __args[3] = JNIType.toJava( value: dstOff, locals: &__locals )
         __args[4] = JNIType.toJava( value: numPts, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "([FI[DII)V", methodCache: &AffineTransform.transform_MethodID_59, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "([FI[DII)V", methodCache: &AffineTransform.transform_MethodID_49, args: &__args, locals: &__locals )
     }
 
     open func transform( _ _srcPts: [Float]?, _ _srcOff: Int, _ _dstPts: [Double]?, _ _dstOff: Int, _ _numPts: Int ) {
         transform( srcPts: _srcPts, srcOff: _srcOff, dstPts: _dstPts, dstOff: _dstOff, numPts: _numPts )
     }
 
-    /// public void java.awt.geom.AffineTransform.inverseTransform(double[],int,double[],int,int) throws java.awt.geom.NoninvertibleTransformException
+    /// public java.awt.geom.Point2D java.awt.geom.AffineTransform.transform(java.awt.geom.Point2D,java.awt.geom.Point2D)
 
-    private static var inverseTransform_MethodID_60: jmethodID?
+    private static var transform_MethodID_50: jmethodID?
 
-    open func inverseTransform( srcPts: [Double]?, srcOff: Int, dstPts: [Double]?, dstOff: Int, numPts: Int ) throws /* java.awt.geom.NoninvertibleTransformException */ {
+    open func transform( ptSrc: Point2D?, ptDst: Point2D? ) -> Point2D! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ptSrc, locals: &__locals )
+        __args[1] = JNIType.toJava( value: ptDst, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "transform", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &AffineTransform.transform_MethodID_50, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point2D( javaObject: __return ) : nil
+    }
+
+    open func transform( _ _ptSrc: Point2D?, _ _ptDst: Point2D? ) -> Point2D! {
+        return transform( ptSrc: _ptSrc, ptDst: _ptDst )
+    }
+
+    /// public void java.awt.geom.AffineTransform.transform(java.awt.geom.Point2D[],int,java.awt.geom.Point2D[],int,int)
+
+    private static var transform_MethodID_51: jmethodID?
+
+    open func transform( ptSrc: [Point2D]?, srcOff: Int, ptDst: [Point2D]?, dstOff: Int, numPts: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ptSrc, locals: &__locals )
+        __args[1] = JNIType.toJava( value: srcOff, locals: &__locals )
+        __args[2] = JNIType.toJava( value: ptDst, locals: &__locals )
+        __args[3] = JNIType.toJava( value: dstOff, locals: &__locals )
+        __args[4] = JNIType.toJava( value: numPts, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "([Ljava/awt/geom/Point2D;I[Ljava/awt/geom/Point2D;II)V", methodCache: &AffineTransform.transform_MethodID_51, args: &__args, locals: &__locals )
+    }
+
+    open func transform( _ _ptSrc: [Point2D]?, _ _srcOff: Int, _ _ptDst: [Point2D]?, _ _dstOff: Int, _ _numPts: Int ) {
+        transform( ptSrc: _ptSrc, srcOff: _srcOff, ptDst: _ptDst, dstOff: _dstOff, numPts: _numPts )
+    }
+
+    /// public void java.awt.geom.AffineTransform.transform(float[],int,float[],int,int)
+
+    private static var transform_MethodID_52: jmethodID?
+
+    open func transform( srcPts: [Float]?, srcOff: Int, dstPts: [Float]?, dstOff: Int, numPts: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: srcPts, locals: &__locals )
@@ -1159,26 +1020,42 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         __args[2] = JNIType.toJava( value: dstPts, locals: &__locals )
         __args[3] = JNIType.toJava( value: dstOff, locals: &__locals )
         __args[4] = JNIType.toJava( value: numPts, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "inverseTransform", methodSig: "([DI[DII)V", methodCache: &AffineTransform.inverseTransform_MethodID_60, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw NoninvertibleTransformException( javaObject: throwable )
-        }
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "([FI[FII)V", methodCache: &AffineTransform.transform_MethodID_52, args: &__args, locals: &__locals )
     }
 
-    open func inverseTransform( _ _srcPts: [Double]?, _ _srcOff: Int, _ _dstPts: [Double]?, _ _dstOff: Int, _ _numPts: Int ) throws /* java.awt.geom.NoninvertibleTransformException */ {
-        try inverseTransform( srcPts: _srcPts, srcOff: _srcOff, dstPts: _dstPts, dstOff: _dstOff, numPts: _numPts )
+    open func transform( _ _srcPts: [Float]?, _ _srcOff: Int, _ _dstPts: [Float]?, _ _dstOff: Int, _ _numPts: Int ) {
+        transform( srcPts: _srcPts, srcOff: _srcOff, dstPts: _dstPts, dstOff: _dstOff, numPts: _numPts )
+    }
+
+    /// public void java.awt.geom.AffineTransform.transform(double[],int,double[],int,int)
+
+    private static var transform_MethodID_53: jmethodID?
+
+    open func transform( srcPts: [Double]?, srcOff: Int, dstPts: [Double]?, dstOff: Int, numPts: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: srcPts, locals: &__locals )
+        __args[1] = JNIType.toJava( value: srcOff, locals: &__locals )
+        __args[2] = JNIType.toJava( value: dstPts, locals: &__locals )
+        __args[3] = JNIType.toJava( value: dstOff, locals: &__locals )
+        __args[4] = JNIType.toJava( value: numPts, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "([DI[DII)V", methodCache: &AffineTransform.transform_MethodID_53, args: &__args, locals: &__locals )
+    }
+
+    open func transform( _ _srcPts: [Double]?, _ _srcOff: Int, _ _dstPts: [Double]?, _ _dstOff: Int, _ _numPts: Int ) {
+        transform( srcPts: _srcPts, srcOff: _srcOff, dstPts: _dstPts, dstOff: _dstOff, numPts: _numPts )
     }
 
     /// public java.awt.geom.Point2D java.awt.geom.AffineTransform.inverseTransform(java.awt.geom.Point2D,java.awt.geom.Point2D) throws java.awt.geom.NoninvertibleTransformException
 
-    private static var inverseTransform_MethodID_61: jmethodID?
+    private static var inverseTransform_MethodID_54: jmethodID?
 
     open func inverseTransform( ptSrc: Point2D?, ptDst: Point2D? ) throws /* java.awt.geom.NoninvertibleTransformException */ -> Point2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ptSrc != nil ? ptSrc! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: ptDst != nil ? ptDst! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "inverseTransform", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &AffineTransform.inverseTransform_MethodID_61, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ptSrc, locals: &__locals )
+        __args[1] = JNIType.toJava( value: ptDst, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "inverseTransform", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &AffineTransform.inverseTransform_MethodID_54, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw NoninvertibleTransformException( javaObject: throwable )
@@ -1190,15 +1067,37 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
         return try inverseTransform( ptSrc: _ptSrc, ptDst: _ptDst )
     }
 
+    /// public void java.awt.geom.AffineTransform.inverseTransform(double[],int,double[],int,int) throws java.awt.geom.NoninvertibleTransformException
+
+    private static var inverseTransform_MethodID_55: jmethodID?
+
+    open func inverseTransform( srcPts: [Double]?, srcOff: Int, dstPts: [Double]?, dstOff: Int, numPts: Int ) throws /* java.awt.geom.NoninvertibleTransformException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: srcPts, locals: &__locals )
+        __args[1] = JNIType.toJava( value: srcOff, locals: &__locals )
+        __args[2] = JNIType.toJava( value: dstPts, locals: &__locals )
+        __args[3] = JNIType.toJava( value: dstOff, locals: &__locals )
+        __args[4] = JNIType.toJava( value: numPts, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "inverseTransform", methodSig: "([DI[DII)V", methodCache: &AffineTransform.inverseTransform_MethodID_55, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw NoninvertibleTransformException( javaObject: throwable )
+        }
+    }
+
+    open func inverseTransform( _ _srcPts: [Double]?, _ _srcOff: Int, _ _dstPts: [Double]?, _ _dstOff: Int, _ _numPts: Int ) throws /* java.awt.geom.NoninvertibleTransformException */ {
+        try inverseTransform( srcPts: _srcPts, srcOff: _srcOff, dstPts: _dstPts, dstOff: _dstOff, numPts: _numPts )
+    }
+
     /// public java.awt.Shape java.awt.geom.AffineTransform.createTransformedShape(java.awt.Shape)
 
-    private static var createTransformedShape_MethodID_62: jmethodID?
+    private static var createTransformedShape_MethodID_56: jmethodID?
 
     open func createTransformedShape( pSrc: Shape? ) -> Shape! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pSrc, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTransformedShape", methodSig: "(Ljava/awt/Shape;)Ljava/awt/Shape;", methodCache: &AffineTransform.createTransformedShape_MethodID_62, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTransformedShape", methodSig: "(Ljava/awt/Shape;)Ljava/awt/Shape;", methodCache: &AffineTransform.createTransformedShape_MethodID_56, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ShapeForward( javaObject: __return ) : nil
     }
@@ -1209,20 +1108,121 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* java.
 
     /// private static double java.awt.geom.AffineTransform._matround(double)
 
-    /// public void java.awt.geom.AffineTransform.translate(double,double)
+    /// public static java.awt.geom.AffineTransform java.awt.geom.AffineTransform.getTranslateInstance(double,double)
 
-    private static var translate_MethodID_63: jmethodID?
+    private static var getTranslateInstance_MethodID_57: jmethodID?
 
-    open func translate( tx: Double, ty: Double ) {
+    open class func getTranslateInstance( tx: Double, ty: Double ) -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tx, locals: &__locals )
         __args[1] = JNIType.toJava( value: ty, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(DD)V", methodCache: &AffineTransform.translate_MethodID_63, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass, methodName: "getTranslateInstance", methodSig: "(DD)Ljava/awt/geom/AffineTransform;", methodCache: &getTranslateInstance_MethodID_57, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AffineTransform( javaObject: __return ) : nil
     }
 
-    open func translate( _ _tx: Double, _ _ty: Double ) {
-        translate( tx: _tx, ty: _ty )
+    open class func getTranslateInstance( _ _tx: Double, _ _ty: Double ) -> AffineTransform! {
+        return getTranslateInstance( tx: _tx, ty: _ty )
+    }
+
+    /// public void java.awt.geom.AffineTransform.preConcatenate(java.awt.geom.AffineTransform)
+
+    private static var preConcatenate_MethodID_58: jmethodID?
+
+    open func preConcatenate( Tx: AffineTransform? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: Tx, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "preConcatenate", methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &AffineTransform.preConcatenate_MethodID_58, args: &__args, locals: &__locals )
+    }
+
+    open func preConcatenate( _ _Tx: AffineTransform? ) {
+        preConcatenate( Tx: _Tx )
+    }
+
+    /// public double java.awt.geom.AffineTransform.getTranslateY()
+
+    private static var getTranslateY_MethodID_59: jmethodID?
+
+    open func getTranslateY() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getTranslateY", methodSig: "()D", methodCache: &AffineTransform.getTranslateY_MethodID_59, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+
+    /// public java.awt.geom.Point2D java.awt.geom.AffineTransform.deltaTransform(java.awt.geom.Point2D,java.awt.geom.Point2D)
+
+    private static var deltaTransform_MethodID_60: jmethodID?
+
+    open func deltaTransform( ptSrc: Point2D?, ptDst: Point2D? ) -> Point2D! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ptSrc, locals: &__locals )
+        __args[1] = JNIType.toJava( value: ptDst, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "deltaTransform", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &AffineTransform.deltaTransform_MethodID_60, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point2D( javaObject: __return ) : nil
+    }
+
+    open func deltaTransform( _ _ptSrc: Point2D?, _ _ptDst: Point2D? ) -> Point2D! {
+        return deltaTransform( ptSrc: _ptSrc, ptDst: _ptDst )
+    }
+
+    /// public void java.awt.geom.AffineTransform.deltaTransform(double[],int,double[],int,int)
+
+    private static var deltaTransform_MethodID_61: jmethodID?
+
+    open func deltaTransform( srcPts: [Double]?, srcOff: Int, dstPts: [Double]?, dstOff: Int, numPts: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: srcPts, locals: &__locals )
+        __args[1] = JNIType.toJava( value: srcOff, locals: &__locals )
+        __args[2] = JNIType.toJava( value: dstPts, locals: &__locals )
+        __args[3] = JNIType.toJava( value: dstOff, locals: &__locals )
+        __args[4] = JNIType.toJava( value: numPts, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deltaTransform", methodSig: "([DI[DII)V", methodCache: &AffineTransform.deltaTransform_MethodID_61, args: &__args, locals: &__locals )
+    }
+
+    open func deltaTransform( _ _srcPts: [Double]?, _ _srcOff: Int, _ _dstPts: [Double]?, _ _dstOff: Int, _ _numPts: Int ) {
+        deltaTransform( srcPts: _srcPts, srcOff: _srcOff, dstPts: _dstPts, dstOff: _dstOff, numPts: _numPts )
+    }
+
+    /// public void java.awt.geom.AffineTransform.setTransform(double,double,double,double,double,double)
+
+    private static var setTransform_MethodID_62: jmethodID?
+
+    open func setTransform( m00: Double, m10: Double, m01: Double, m11: Double, m02: Double, m12: Double ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: m00, locals: &__locals )
+        __args[1] = JNIType.toJava( value: m10, locals: &__locals )
+        __args[2] = JNIType.toJava( value: m01, locals: &__locals )
+        __args[3] = JNIType.toJava( value: m11, locals: &__locals )
+        __args[4] = JNIType.toJava( value: m02, locals: &__locals )
+        __args[5] = JNIType.toJava( value: m12, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTransform", methodSig: "(DDDDDD)V", methodCache: &AffineTransform.setTransform_MethodID_62, args: &__args, locals: &__locals )
+    }
+
+    open func setTransform( _ _m00: Double, _ _m10: Double, _ _m01: Double, _ _m11: Double, _ _m02: Double, _ _m12: Double ) {
+        setTransform( m00: _m00, m10: _m10, m01: _m01, m11: _m11, m02: _m02, m12: _m12 )
+    }
+
+    /// public void java.awt.geom.AffineTransform.setTransform(java.awt.geom.AffineTransform)
+
+    private static var setTransform_MethodID_63: jmethodID?
+
+    open func setTransform( Tx: AffineTransform? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: Tx, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTransform", methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &AffineTransform.setTransform_MethodID_63, args: &__args, locals: &__locals )
+    }
+
+    open func setTransform( _ _Tx: AffineTransform? ) {
+        setTransform( Tx: _Tx )
     }
 
 }

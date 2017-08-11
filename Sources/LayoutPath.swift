@@ -35,8 +35,8 @@ open class LayoutPath: java_swift.JavaObject {
     open func pointToPath( point: Point2D?, location: Point2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: point != nil ? point! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: location != nil ? location! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: point, locals: &__locals )
+        __args[1] = JNIType.toJava( value: location, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "pointToPath", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Z", methodCache: &LayoutPath.pointToPath_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -52,9 +52,9 @@ open class LayoutPath: java_swift.JavaObject {
     open func pathToPoint( location: Point2D?, preceding: Bool, point: Point2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: location != nil ? location! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: location, locals: &__locals )
         __args[1] = JNIType.toJava( value: preceding, locals: &__locals )
-        __args[2] = JNIType.toJava( value: point != nil ? point! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: point, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "pathToPoint", methodSig: "(Ljava/awt/geom/Point2D;ZLjava/awt/geom/Point2D;)V", methodCache: &LayoutPath.pathToPoint_MethodID_3, args: &__args, locals: &__locals )
     }
 

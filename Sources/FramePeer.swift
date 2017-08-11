@@ -11,22 +11,6 @@ public protocol FramePeer: WindowPeer {
 
     func getState() -> Int
 
-    /// public abstract void java.awt.peer.FramePeer.setResizable(boolean)
-
-    func setResizable( resizeable: Bool )
-
-    /// public abstract void java.awt.peer.FramePeer.setMenuBar(java.awt.MenuBar)
-
-    func setMenuBar( mb: MenuBar? )
-
-    /// public abstract void java.awt.peer.FramePeer.setMaximizedBounds(java.awt.Rectangle)
-
-    func setMaximizedBounds( bounds: Rectangle? )
-
-    /// public abstract void java.awt.peer.FramePeer.setState(int)
-
-    func setState( state: Int )
-
     /// public abstract void java.awt.peer.FramePeer.setBoundsPrivate(int,int,int,int)
 
     func setBoundsPrivate( x: Int, y: Int, width: Int, height: Int )
@@ -42,6 +26,22 @@ public protocol FramePeer: WindowPeer {
     /// public abstract void java.awt.peer.FramePeer.setTitle(java.lang.String)
 
     func setTitle( title: String? )
+
+    /// public abstract void java.awt.peer.FramePeer.setResizable(boolean)
+
+    func setResizable( resizeable: Bool )
+
+    /// public abstract void java.awt.peer.FramePeer.setMenuBar(java.awt.MenuBar)
+
+    func setMenuBar( mb: MenuBar? )
+
+    /// public abstract void java.awt.peer.FramePeer.setMaximizedBounds(java.awt.Rectangle)
+
+    func setMaximizedBounds( bounds: Rectangle? )
+
+    /// public abstract void java.awt.peer.FramePeer.setState(int)
+
+    func setState( state: Int )
 
 }
 
@@ -62,69 +62,9 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
     }
 
 
-    /// public abstract void java.awt.peer.FramePeer.setResizable(boolean)
-
-    private static var setResizable_MethodID_11: jmethodID?
-
-    open func setResizable( resizeable: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: resizeable, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &FramePeerForward.setResizable_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setResizable( _ _resizeable: Bool ) {
-        setResizable( resizeable: _resizeable )
-    }
-
-    /// public abstract void java.awt.peer.FramePeer.setMenuBar(java.awt.MenuBar)
-
-    private static var setMenuBar_MethodID_12: jmethodID?
-
-    open func setMenuBar( mb: MenuBar? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mb != nil ? mb! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMenuBar", methodSig: "(Ljava/awt/MenuBar;)V", methodCache: &FramePeerForward.setMenuBar_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func setMenuBar( _ _mb: MenuBar? ) {
-        setMenuBar( mb: _mb )
-    }
-
-    /// public abstract void java.awt.peer.FramePeer.setMaximizedBounds(java.awt.Rectangle)
-
-    private static var setMaximizedBounds_MethodID_13: jmethodID?
-
-    open func setMaximizedBounds( bounds: Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximizedBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &FramePeerForward.setMaximizedBounds_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setMaximizedBounds( _ _bounds: Rectangle? ) {
-        setMaximizedBounds( bounds: _bounds )
-    }
-
-    /// public abstract void java.awt.peer.FramePeer.setState(int)
-
-    private static var setState_MethodID_14: jmethodID?
-
-    open func setState( state: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: state, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setState", methodSig: "(I)V", methodCache: &FramePeerForward.setState_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setState( _ _state: Int ) {
-        setState( state: _state )
-    }
-
     /// public abstract void java.awt.peer.FramePeer.setBoundsPrivate(int,int,int,int)
 
-    private static var setBoundsPrivate_MethodID_15: jmethodID?
+    private static var setBoundsPrivate_MethodID_11: jmethodID?
 
     open func setBoundsPrivate( x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -133,7 +73,7 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: width, locals: &__locals )
         __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBoundsPrivate", methodSig: "(IIII)V", methodCache: &FramePeerForward.setBoundsPrivate_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBoundsPrivate", methodSig: "(IIII)V", methodCache: &FramePeerForward.setBoundsPrivate_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setBoundsPrivate( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
@@ -142,12 +82,12 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract java.awt.Rectangle java.awt.peer.FramePeer.getBoundsPrivate()
 
-    private static var getBoundsPrivate_MethodID_16: jmethodID?
+    private static var getBoundsPrivate_MethodID_12: jmethodID?
 
     open func getBoundsPrivate() -> Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBoundsPrivate", methodSig: "()Ljava/awt/Rectangle;", methodCache: &FramePeerForward.getBoundsPrivate_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBoundsPrivate", methodSig: "()Ljava/awt/Rectangle;", methodCache: &FramePeerForward.getBoundsPrivate_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
@@ -155,13 +95,13 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.FramePeer.emulateActivation(boolean)
 
-    private static var emulateActivation_MethodID_17: jmethodID?
+    private static var emulateActivation_MethodID_13: jmethodID?
 
     open func emulateActivation( activate: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: activate, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "emulateActivation", methodSig: "(Z)V", methodCache: &FramePeerForward.emulateActivation_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "emulateActivation", methodSig: "(Z)V", methodCache: &FramePeerForward.emulateActivation_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func emulateActivation( _ _activate: Bool ) {
@@ -170,39 +110,114 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.FramePeer.setTitle(java.lang.String)
 
-    private static var setTitle_MethodID_18: jmethodID?
+    private static var setTitle_MethodID_14: jmethodID?
 
     open func setTitle( title: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &FramePeerForward.setTitle_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &FramePeerForward.setTitle_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setTitle( _ _title: String? ) {
         setTitle( title: _title )
     }
 
+    /// public abstract void java.awt.peer.FramePeer.setResizable(boolean)
+
+    private static var setResizable_MethodID_15: jmethodID?
+
+    open func setResizable( resizeable: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: resizeable, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &FramePeerForward.setResizable_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func setResizable( _ _resizeable: Bool ) {
+        setResizable( resizeable: _resizeable )
+    }
+
+    /// public abstract void java.awt.peer.FramePeer.setMenuBar(java.awt.MenuBar)
+
+    private static var setMenuBar_MethodID_16: jmethodID?
+
+    open func setMenuBar( mb: MenuBar? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: mb, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMenuBar", methodSig: "(Ljava/awt/MenuBar;)V", methodCache: &FramePeerForward.setMenuBar_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func setMenuBar( _ _mb: MenuBar? ) {
+        setMenuBar( mb: _mb )
+    }
+
+    /// public abstract void java.awt.peer.FramePeer.setMaximizedBounds(java.awt.Rectangle)
+
+    private static var setMaximizedBounds_MethodID_17: jmethodID?
+
+    open func setMaximizedBounds( bounds: Rectangle? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: bounds, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximizedBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &FramePeerForward.setMaximizedBounds_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func setMaximizedBounds( _ _bounds: Rectangle? ) {
+        setMaximizedBounds( bounds: _bounds )
+    }
+
+    /// public abstract void java.awt.peer.FramePeer.setState(int)
+
+    private static var setState_MethodID_18: jmethodID?
+
+    open func setState( state: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: state, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setState", methodSig: "(I)V", methodCache: &FramePeerForward.setState_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setState( _ _state: Int ) {
+        setState( state: _state )
+    }
+
+    /// public abstract void java.awt.peer.WindowPeer.setOpaque(boolean)
+
+    private static var setOpaque_MethodID_19: jmethodID?
+
+    override open func setOpaque( isOpaque: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: isOpaque, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpaque", methodSig: "(Z)V", methodCache: &FramePeerForward.setOpaque_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    override open func setOpaque( _ _isOpaque: Bool ) {
+        setOpaque( isOpaque: _isOpaque )
+    }
+
     /// public abstract void java.awt.peer.WindowPeer.toBack()
 
-    private static var toBack_MethodID_19: jmethodID?
+    private static var toBack_MethodID_20: jmethodID?
 
     override open func toBack() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toBack", methodSig: "()V", methodCache: &FramePeerForward.toBack_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toBack", methodSig: "()V", methodCache: &FramePeerForward.toBack_MethodID_20, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract void java.awt.peer.WindowPeer.setOpacity(float)
 
-    private static var setOpacity_MethodID_20: jmethodID?
+    private static var setOpacity_MethodID_21: jmethodID?
 
     override open func setOpacity( opacity: Float ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: opacity, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpacity", methodSig: "(F)V", methodCache: &FramePeerForward.setOpacity_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpacity", methodSig: "(F)V", methodCache: &FramePeerForward.setOpacity_MethodID_21, args: &__args, locals: &__locals )
     }
 
     override open func setOpacity( _ _opacity: Float ) {
@@ -211,14 +226,14 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.WindowPeer.setModalBlocked(java.awt.Dialog,boolean)
 
-    private static var setModalBlocked_MethodID_21: jmethodID?
+    private static var setModalBlocked_MethodID_22: jmethodID?
 
     override open func setModalBlocked( blocker: Dialog?, blocked: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: blocker != nil ? blocker! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: blocker, locals: &__locals )
         __args[1] = JNIType.toJava( value: blocked, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModalBlocked", methodSig: "(Ljava/awt/Dialog;Z)V", methodCache: &FramePeerForward.setModalBlocked_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModalBlocked", methodSig: "(Ljava/awt/Dialog;Z)V", methodCache: &FramePeerForward.setModalBlocked_MethodID_22, args: &__args, locals: &__locals )
     }
 
     override open func setModalBlocked( _ _blocker: Dialog?, _ _blocked: Bool ) {
@@ -227,84 +242,69 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.WindowPeer.updateWindow()
 
-    private static var updateWindow_MethodID_22: jmethodID?
+    private static var updateWindow_MethodID_23: jmethodID?
 
     override open func updateWindow() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateWindow", methodSig: "()V", methodCache: &FramePeerForward.updateWindow_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateWindow", methodSig: "()V", methodCache: &FramePeerForward.updateWindow_MethodID_23, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract void java.awt.peer.WindowPeer.updateIconImages()
 
-    private static var updateIconImages_MethodID_23: jmethodID?
+    private static var updateIconImages_MethodID_24: jmethodID?
 
     override open func updateIconImages() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateIconImages", methodSig: "()V", methodCache: &FramePeerForward.updateIconImages_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateIconImages", methodSig: "()V", methodCache: &FramePeerForward.updateIconImages_MethodID_24, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract void java.awt.peer.WindowPeer.updateMinimumSize()
 
-    private static var updateMinimumSize_MethodID_24: jmethodID?
+    private static var updateMinimumSize_MethodID_25: jmethodID?
 
     override open func updateMinimumSize() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateMinimumSize", methodSig: "()V", methodCache: &FramePeerForward.updateMinimumSize_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateMinimumSize", methodSig: "()V", methodCache: &FramePeerForward.updateMinimumSize_MethodID_25, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract void java.awt.peer.WindowPeer.updateFocusableWindowState()
 
-    private static var updateFocusableWindowState_MethodID_25: jmethodID?
+    private static var updateFocusableWindowState_MethodID_26: jmethodID?
 
     override open func updateFocusableWindowState() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateFocusableWindowState", methodSig: "()V", methodCache: &FramePeerForward.updateFocusableWindowState_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateFocusableWindowState", methodSig: "()V", methodCache: &FramePeerForward.updateFocusableWindowState_MethodID_26, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract void java.awt.peer.WindowPeer.updateAlwaysOnTopState()
 
-    private static var updateAlwaysOnTopState_MethodID_26: jmethodID?
+    private static var updateAlwaysOnTopState_MethodID_27: jmethodID?
 
     override open func updateAlwaysOnTopState() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateAlwaysOnTopState", methodSig: "()V", methodCache: &FramePeerForward.updateAlwaysOnTopState_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateAlwaysOnTopState", methodSig: "()V", methodCache: &FramePeerForward.updateAlwaysOnTopState_MethodID_27, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract void java.awt.peer.WindowPeer.repositionSecurityWarning()
 
-    private static var repositionSecurityWarning_MethodID_27: jmethodID?
+    private static var repositionSecurityWarning_MethodID_28: jmethodID?
 
     override open func repositionSecurityWarning() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repositionSecurityWarning", methodSig: "()V", methodCache: &FramePeerForward.repositionSecurityWarning_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repositionSecurityWarning", methodSig: "()V", methodCache: &FramePeerForward.repositionSecurityWarning_MethodID_28, args: &__args, locals: &__locals )
     }
 
-
-    /// public abstract void java.awt.peer.WindowPeer.setOpaque(boolean)
-
-    private static var setOpaque_MethodID_28: jmethodID?
-
-    override open func setOpaque( isOpaque: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: isOpaque, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpaque", methodSig: "(Z)V", methodCache: &FramePeerForward.setOpaque_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-    override open func setOpaque( _ _isOpaque: Bool ) {
-        setOpaque( isOpaque: _isOpaque )
-    }
 
     /// public abstract void java.awt.peer.WindowPeer.toFront()
 
@@ -381,7 +381,7 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
     override open func print( g: Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "print", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &FramePeerForward.print_MethodID_35, args: &__args, locals: &__locals )
     }
 
@@ -400,7 +400,7 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
         __args[1] = JNIType.toJava( value: y1, locals: &__locals )
         __args[2] = JNIType.toJava( value: x2, locals: &__locals )
         __args[3] = JNIType.toJava( value: y2, locals: &__locals )
-        __args[4] = JNIType.toJava( value: flipAction != nil ? flipAction! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: flipAction, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "flip", methodSig: "(IIIILjava/awt/BufferCapabilities$FlipContents;)V", methodCache: &FramePeerForward.flip_MethodID_36, args: &__args, locals: &__locals )
     }
 
@@ -408,14 +408,212 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
         flip( x1: _x1, y1: _y1, x2: _x2, y2: _y2, flipAction: _flipAction )
     }
 
+    /// public abstract void java.awt.peer.ComponentPeer.handleEvent(java.awt.AWTEvent)
+
+    private static var handleEvent_MethodID_37: jmethodID?
+
+    override open func handleEvent( e: AWTEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &FramePeerForward.handleEvent_MethodID_37, args: &__args, locals: &__locals )
+    }
+
+    override open func handleEvent( _ _e: AWTEvent? ) {
+        handleEvent( e: _e )
+    }
+
+    /// public abstract java.awt.image.ColorModel java.awt.peer.ComponentPeer.getColorModel()
+
+    private static var getColorModel_MethodID_38: jmethodID?
+
+    override open func getColorModel() -> ColorModel! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &FramePeerForward.getColorModel_MethodID_38, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ColorModel( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract java.awt.Point java.awt.peer.ComponentPeer.getLocationOnScreen()
+
+    private static var getLocationOnScreen_MethodID_39: jmethodID?
+
+    override open func getLocationOnScreen() -> Point! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocationOnScreen", methodSig: "()Ljava/awt/Point;", methodCache: &FramePeerForward.getLocationOnScreen_MethodID_39, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract java.awt.Image java.awt.peer.ComponentPeer.createImage(int,int)
+
+    private static var createImage_MethodID_40: jmethodID?
+
+    override open func createImage( width: Int, height: Int ) -> Image! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: width, locals: &__locals )
+        __args[1] = JNIType.toJava( value: height, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(II)Ljava/awt/Image;", methodCache: &FramePeerForward.createImage_MethodID_40, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Image( javaObject: __return ) : nil
+    }
+
+    override open func createImage( _ _width: Int, _ _height: Int ) -> Image! {
+        return createImage( width: _width, height: _height )
+    }
+
+    /// public abstract java.awt.Image java.awt.peer.ComponentPeer.createImage(java.awt.image.ImageProducer)
+
+    private static var createImage_MethodID_41: jmethodID?
+
+    override open func createImage( producer: ImageProducer? ) -> Image! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: producer, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(Ljava/awt/image/ImageProducer;)Ljava/awt/Image;", methodCache: &FramePeerForward.createImage_MethodID_41, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Image( javaObject: __return ) : nil
+    }
+
+    override open func createImage( _ _producer: ImageProducer? ) -> Image! {
+        return createImage( producer: _producer )
+    }
+
+    /// public abstract java.awt.image.VolatileImage java.awt.peer.ComponentPeer.createVolatileImage(int,int)
+
+    private static var createVolatileImage_MethodID_42: jmethodID?
+
+    override open func createVolatileImage( width: Int, height: Int ) -> VolatileImage! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: width, locals: &__locals )
+        __args[1] = JNIType.toJava( value: height, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createVolatileImage", methodSig: "(II)Ljava/awt/image/VolatileImage;", methodCache: &FramePeerForward.createVolatileImage_MethodID_42, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? VolatileImage( javaObject: __return ) : nil
+    }
+
+    override open func createVolatileImage( _ _width: Int, _ _height: Int ) -> VolatileImage! {
+        return createVolatileImage( width: _width, height: _height )
+    }
+
+    /// public abstract boolean java.awt.peer.ComponentPeer.prepareImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
+
+    private static var prepareImage_MethodID_43: jmethodID?
+
+    override open func prepareImage( img: Image?, w: Int, h: Int, o: ImageObserver? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
+        __args[1] = JNIType.toJava( value: w, locals: &__locals )
+        __args[2] = JNIType.toJava( value: h, locals: &__locals )
+        __args[3] = JNIType.toJava( value: o, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "prepareImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)Z", methodCache: &FramePeerForward.prepareImage_MethodID_43, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    override open func prepareImage( _ _img: Image?, _ _w: Int, _ _h: Int, _ _o: ImageObserver? ) -> Bool {
+        return prepareImage( img: _img, w: _w, h: _h, o: _o )
+    }
+
+    /// public abstract int java.awt.peer.ComponentPeer.checkImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
+
+    private static var checkImage_MethodID_44: jmethodID?
+
+    override open func checkImage( img: Image?, w: Int, h: Int, o: ImageObserver? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
+        __args[1] = JNIType.toJava( value: w, locals: &__locals )
+        __args[2] = JNIType.toJava( value: h, locals: &__locals )
+        __args[3] = JNIType.toJava( value: o, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)I", methodCache: &FramePeerForward.checkImage_MethodID_44, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func checkImage( _ _img: Image?, _ _w: Int, _ _h: Int, _ _o: ImageObserver? ) -> Int {
+        return checkImage( img: _img, w: _w, h: _h, o: _o )
+    }
+
+    /// public abstract java.awt.Image java.awt.peer.ComponentPeer.getBackBuffer()
+
+    private static var getBackBuffer_MethodID_45: jmethodID?
+
+    override open func getBackBuffer() -> Image! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackBuffer", methodSig: "()Ljava/awt/Image;", methodCache: &FramePeerForward.getBackBuffer_MethodID_45, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Image( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract boolean java.awt.peer.ComponentPeer.handlesWheelScrolling()
+
+    private static var handlesWheelScrolling_MethodID_46: jmethodID?
+
+    override open func handlesWheelScrolling() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "handlesWheelScrolling", methodSig: "()Z", methodCache: &FramePeerForward.handlesWheelScrolling_MethodID_46, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public abstract void java.awt.peer.ComponentPeer.destroyBuffers()
+
+    private static var destroyBuffers_MethodID_47: jmethodID?
+
+    override open func destroyBuffers() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "destroyBuffers", methodSig: "()V", methodCache: &FramePeerForward.destroyBuffers_MethodID_47, args: &__args, locals: &__locals )
+    }
+
+
+    /// public abstract void java.awt.peer.ComponentPeer.applyShape(sun.java2d.pipe.Region)
+
+    private static var applyShape_MethodID_48: jmethodID?
+
+    override open func applyShape( shape: /* sun.java2d.pipe.Region */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: shape, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "applyShape", methodSig: "(Lsun/java2d/pipe/Region;)V", methodCache: &FramePeerForward.applyShape_MethodID_48, args: &__args, locals: &__locals )
+    }
+
+    override open func applyShape( _ _shape: /* sun.java2d.pipe.Region */ UnclassedObject? ) {
+        applyShape( shape: _shape )
+    }
+
+    /// public abstract void java.awt.peer.ComponentPeer.setZOrder(java.awt.peer.ComponentPeer)
+
+    private static var setZOrder_MethodID_49: jmethodID?
+
+    override open func setZOrder( above: ComponentPeer? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: above, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setZOrder", methodSig: "(Ljava/awt/peer/ComponentPeer;)V", methodCache: &FramePeerForward.setZOrder_MethodID_49, args: &__args, locals: &__locals )
+    }
+
+    override open func setZOrder( _ _above: ComponentPeer? ) {
+        setZOrder( above: _above )
+    }
+
     /// public abstract java.awt.Dimension java.awt.peer.ComponentPeer.getPreferredSize()
 
-    private static var getPreferredSize_MethodID_37: jmethodID?
+    private static var getPreferredSize_MethodID_50: jmethodID?
 
     override open func getPreferredSize() -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &FramePeerForward.getPreferredSize_MethodID_37, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &FramePeerForward.getPreferredSize_MethodID_50, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -423,13 +621,13 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.ComponentPeer.setBackground(java.awt.Color)
 
-    private static var setBackground_MethodID_38: jmethodID?
+    private static var setBackground_MethodID_51: jmethodID?
 
     override open func setBackground( c: Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &FramePeerForward.setBackground_MethodID_38, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &FramePeerForward.setBackground_MethodID_51, args: &__args, locals: &__locals )
     }
 
     override open func setBackground( _ _c: Color? ) {
@@ -438,13 +636,13 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.ComponentPeer.setForeground(java.awt.Color)
 
-    private static var setForeground_MethodID_39: jmethodID?
+    private static var setForeground_MethodID_52: jmethodID?
 
     override open func setForeground( c: Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setForeground", methodSig: "(Ljava/awt/Color;)V", methodCache: &FramePeerForward.setForeground_MethodID_39, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setForeground", methodSig: "(Ljava/awt/Color;)V", methodCache: &FramePeerForward.setForeground_MethodID_52, args: &__args, locals: &__locals )
     }
 
     override open func setForeground( _ _c: Color? ) {
@@ -453,13 +651,13 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.ComponentPeer.setFont(java.awt.Font)
 
-    private static var setFont_MethodID_40: jmethodID?
+    private static var setFont_MethodID_53: jmethodID?
 
     override open func setFont( f: Font? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &FramePeerForward.setFont_MethodID_40, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &FramePeerForward.setFont_MethodID_53, args: &__args, locals: &__locals )
     }
 
     override open func setFont( _ _f: Font? ) {
@@ -468,13 +666,13 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.ComponentPeer.paint(java.awt.Graphics)
 
-    private static var paint_MethodID_41: jmethodID?
+    private static var paint_MethodID_54: jmethodID?
 
     override open func paint( g: Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &FramePeerForward.paint_MethodID_41, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &FramePeerForward.paint_MethodID_54, args: &__args, locals: &__locals )
     }
 
     override open func paint( _ _g: Graphics? ) {
@@ -483,37 +681,37 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract boolean java.awt.peer.ComponentPeer.isObscured()
 
-    private static var isObscured_MethodID_42: jmethodID?
+    private static var isObscured_MethodID_55: jmethodID?
 
     override open func isObscured() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isObscured", methodSig: "()Z", methodCache: &FramePeerForward.isObscured_MethodID_42, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isObscured", methodSig: "()Z", methodCache: &FramePeerForward.isObscured_MethodID_55, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract boolean java.awt.peer.ComponentPeer.canDetermineObscurity()
 
-    private static var canDetermineObscurity_MethodID_43: jmethodID?
+    private static var canDetermineObscurity_MethodID_56: jmethodID?
 
     override open func canDetermineObscurity() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canDetermineObscurity", methodSig: "()Z", methodCache: &FramePeerForward.canDetermineObscurity_MethodID_43, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canDetermineObscurity", methodSig: "()Z", methodCache: &FramePeerForward.canDetermineObscurity_MethodID_56, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract void java.awt.peer.ComponentPeer.coalescePaintEvent(java.awt.event.PaintEvent)
 
-    private static var coalescePaintEvent_MethodID_44: jmethodID?
+    private static var coalescePaintEvent_MethodID_57: jmethodID?
 
     override open func coalescePaintEvent( e: PaintEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "coalescePaintEvent", methodSig: "(Ljava/awt/event/PaintEvent;)V", methodCache: &FramePeerForward.coalescePaintEvent_MethodID_44, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "coalescePaintEvent", methodSig: "(Ljava/awt/event/PaintEvent;)V", methodCache: &FramePeerForward.coalescePaintEvent_MethodID_57, args: &__args, locals: &__locals )
     }
 
     override open func coalescePaintEvent( _ _e: PaintEvent? ) {
@@ -522,14 +720,14 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.ComponentPeer.createBuffers(int,java.awt.BufferCapabilities) throws java.awt.AWTException
 
-    private static var createBuffers_MethodID_45: jmethodID?
+    private static var createBuffers_MethodID_58: jmethodID?
 
     override open func createBuffers( numBuffers: Int, caps: BufferCapabilities? ) throws /* java.awt.AWTException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: numBuffers, locals: &__locals )
-        __args[1] = JNIType.toJava( value: caps != nil ? caps! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createBuffers", methodSig: "(ILjava/awt/BufferCapabilities;)V", methodCache: &FramePeerForward.createBuffers_MethodID_45, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: caps, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createBuffers", methodSig: "(ILjava/awt/BufferCapabilities;)V", methodCache: &FramePeerForward.createBuffers_MethodID_58, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw AWTException( javaObject: throwable )
         }
@@ -541,17 +739,17 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract boolean java.awt.peer.ComponentPeer.requestFocus(java.awt.Component,boolean,boolean,long,sun.awt.CausedFocusEvent$Cause)
 
-    private static var requestFocus_MethodID_46: jmethodID?
+    private static var requestFocus_MethodID_59: jmethodID?
 
     override open func requestFocus( lightweightChild: Component?, temporary: Bool, focusedWindowChangeAllowed: Bool, time: Int64, cause: /* sun.awt.CausedFocusEvent$Cause */ UnclassedObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: lightweightChild != nil ? lightweightChild! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: lightweightChild, locals: &__locals )
         __args[1] = JNIType.toJava( value: temporary, locals: &__locals )
         __args[2] = JNIType.toJava( value: focusedWindowChangeAllowed, locals: &__locals )
         __args[3] = JNIType.toJava( value: time, locals: &__locals )
-        __args[4] = JNIType.toJava( value: cause != nil ? cause! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "requestFocus", methodSig: "(Ljava/awt/Component;ZZJLsun/awt/CausedFocusEvent$Cause;)Z", methodCache: &FramePeerForward.requestFocus_MethodID_46, args: &__args, locals: &__locals )
+        __args[4] = JNIType.toJava( value: cause, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "requestFocus", methodSig: "(Ljava/awt/Component;ZZJLsun/awt/CausedFocusEvent$Cause;)Z", methodCache: &FramePeerForward.requestFocus_MethodID_59, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -561,13 +759,13 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract java.awt.FontMetrics java.awt.peer.ComponentPeer.getFontMetrics(java.awt.Font)
 
-    private static var getFontMetrics_MethodID_47: jmethodID?
+    private static var getFontMetrics_MethodID_60: jmethodID?
 
     override open func getFontMetrics( font: Font? ) -> FontMetrics! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: font != nil ? font! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "(Ljava/awt/Font;)Ljava/awt/FontMetrics;", methodCache: &FramePeerForward.getFontMetrics_MethodID_47, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: font, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "(Ljava/awt/Font;)Ljava/awt/FontMetrics;", methodCache: &FramePeerForward.getFontMetrics_MethodID_60, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? FontMetrics( javaObject: __return ) : nil
     }
@@ -578,12 +776,12 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract java.awt.Dimension java.awt.peer.ComponentPeer.getMinimumSize()
 
-    private static var getMinimumSize_MethodID_48: jmethodID?
+    private static var getMinimumSize_MethodID_61: jmethodID?
 
     override open func getMinimumSize() -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &FramePeerForward.getMinimumSize_MethodID_48, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &FramePeerForward.getMinimumSize_MethodID_61, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -591,12 +789,12 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract java.awt.Graphics java.awt.peer.ComponentPeer.getGraphics()
 
-    private static var getGraphics_MethodID_49: jmethodID?
+    private static var getGraphics_MethodID_62: jmethodID?
 
     override open func getGraphics() -> Graphics! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphics", methodSig: "()Ljava/awt/Graphics;", methodCache: &FramePeerForward.getGraphics_MethodID_49, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphics", methodSig: "()Ljava/awt/Graphics;", methodCache: &FramePeerForward.getGraphics_MethodID_62, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Graphics( javaObject: __return ) : nil
     }
@@ -604,13 +802,13 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.ComponentPeer.setVisible(boolean)
 
-    private static var setVisible_MethodID_50: jmethodID?
+    private static var setVisible_MethodID_63: jmethodID?
 
     override open func setVisible( v: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: v, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisible", methodSig: "(Z)V", methodCache: &FramePeerForward.setVisible_MethodID_50, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisible", methodSig: "(Z)V", methodCache: &FramePeerForward.setVisible_MethodID_63, args: &__args, locals: &__locals )
     }
 
     override open func setVisible( _ _v: Bool ) {
@@ -619,13 +817,13 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.ComponentPeer.setEnabled(boolean)
 
-    private static var setEnabled_MethodID_51: jmethodID?
+    private static var setEnabled_MethodID_64: jmethodID?
 
     override open func setEnabled( e: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &FramePeerForward.setEnabled_MethodID_51, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &FramePeerForward.setEnabled_MethodID_64, args: &__args, locals: &__locals )
     }
 
     override open func setEnabled( _ _e: Bool ) {
@@ -634,18 +832,18 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.ComponentPeer.dispose()
 
-    private static var dispose_MethodID_52: jmethodID?
+    private static var dispose_MethodID_65: jmethodID?
 
     override open func dispose() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &FramePeerForward.dispose_MethodID_52, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &FramePeerForward.dispose_MethodID_65, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract void java.awt.peer.ComponentPeer.setBounds(int,int,int,int,int)
 
-    private static var setBounds_MethodID_53: jmethodID?
+    private static var setBounds_MethodID_66: jmethodID?
 
     override open func setBounds( x: Int, y: Int, width: Int, height: Int, op: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -655,7 +853,7 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
         __args[2] = JNIType.toJava( value: width, locals: &__locals )
         __args[3] = JNIType.toJava( value: height, locals: &__locals )
         __args[4] = JNIType.toJava( value: op, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBounds", methodSig: "(IIIII)V", methodCache: &FramePeerForward.setBounds_MethodID_53, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBounds", methodSig: "(IIIII)V", methodCache: &FramePeerForward.setBounds_MethodID_66, args: &__args, locals: &__locals )
     }
 
     override open func setBounds( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _op: Int ) {
@@ -664,13 +862,13 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract boolean java.awt.peer.ComponentPeer.updateGraphicsData(java.awt.GraphicsConfiguration)
 
-    private static var updateGraphicsData_MethodID_54: jmethodID?
+    private static var updateGraphicsData_MethodID_67: jmethodID?
 
     override open func updateGraphicsData( gc: GraphicsConfiguration? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "updateGraphicsData", methodSig: "(Ljava/awt/GraphicsConfiguration;)Z", methodCache: &FramePeerForward.updateGraphicsData_MethodID_54, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: gc, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "updateGraphicsData", methodSig: "(Ljava/awt/GraphicsConfiguration;)Z", methodCache: &FramePeerForward.updateGraphicsData_MethodID_67, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -680,23 +878,23 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.ComponentPeer.layout()
 
-    private static var layout_MethodID_55: jmethodID?
+    private static var layout_MethodID_68: jmethodID?
 
     override open func layout() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "()V", methodCache: &FramePeerForward.layout_MethodID_55, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "()V", methodCache: &FramePeerForward.layout_MethodID_68, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract java.awt.GraphicsConfiguration java.awt.peer.ComponentPeer.getGraphicsConfiguration()
 
-    private static var getGraphicsConfiguration_MethodID_56: jmethodID?
+    private static var getGraphicsConfiguration_MethodID_69: jmethodID?
 
     override open func getGraphicsConfiguration() -> GraphicsConfiguration! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphicsConfiguration", methodSig: "()Ljava/awt/GraphicsConfiguration;", methodCache: &FramePeerForward.getGraphicsConfiguration_MethodID_56, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphicsConfiguration", methodSig: "()Ljava/awt/GraphicsConfiguration;", methodCache: &FramePeerForward.getGraphicsConfiguration_MethodID_69, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GraphicsConfiguration( javaObject: __return ) : nil
     }
@@ -704,250 +902,52 @@ open class FramePeerForward: WindowPeerForward, FramePeer {
 
     /// public abstract void java.awt.peer.ComponentPeer.updateCursorImmediately()
 
-    private static var updateCursorImmediately_MethodID_57: jmethodID?
+    private static var updateCursorImmediately_MethodID_70: jmethodID?
 
     override open func updateCursorImmediately() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateCursorImmediately", methodSig: "()V", methodCache: &FramePeerForward.updateCursorImmediately_MethodID_57, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateCursorImmediately", methodSig: "()V", methodCache: &FramePeerForward.updateCursorImmediately_MethodID_70, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract boolean java.awt.peer.ComponentPeer.isFocusable()
 
-    private static var isFocusable_MethodID_58: jmethodID?
+    private static var isFocusable_MethodID_71: jmethodID?
 
     override open func isFocusable() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusable", methodSig: "()Z", methodCache: &FramePeerForward.isFocusable_MethodID_58, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusable", methodSig: "()Z", methodCache: &FramePeerForward.isFocusable_MethodID_71, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract boolean java.awt.peer.ComponentPeer.isReparentSupported()
 
-    private static var isReparentSupported_MethodID_59: jmethodID?
+    private static var isReparentSupported_MethodID_72: jmethodID?
 
     override open func isReparentSupported() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isReparentSupported", methodSig: "()Z", methodCache: &FramePeerForward.isReparentSupported_MethodID_59, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isReparentSupported", methodSig: "()Z", methodCache: &FramePeerForward.isReparentSupported_MethodID_72, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract void java.awt.peer.ComponentPeer.reparent(java.awt.peer.ContainerPeer)
 
-    private static var reparent_MethodID_60: jmethodID?
+    private static var reparent_MethodID_73: jmethodID?
 
     override open func reparent( newContainer: ContainerPeer? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newContainer, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reparent", methodSig: "(Ljava/awt/peer/ContainerPeer;)V", methodCache: &FramePeerForward.reparent_MethodID_60, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reparent", methodSig: "(Ljava/awt/peer/ContainerPeer;)V", methodCache: &FramePeerForward.reparent_MethodID_73, args: &__args, locals: &__locals )
     }
 
     override open func reparent( _ _newContainer: ContainerPeer? ) {
         reparent( newContainer: _newContainer )
-    }
-
-    /// public abstract void java.awt.peer.ComponentPeer.handleEvent(java.awt.AWTEvent)
-
-    private static var handleEvent_MethodID_61: jmethodID?
-
-    override open func handleEvent( e: AWTEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &FramePeerForward.handleEvent_MethodID_61, args: &__args, locals: &__locals )
-    }
-
-    override open func handleEvent( _ _e: AWTEvent? ) {
-        handleEvent( e: _e )
-    }
-
-    /// public abstract java.awt.image.ColorModel java.awt.peer.ComponentPeer.getColorModel()
-
-    private static var getColorModel_MethodID_62: jmethodID?
-
-    override open func getColorModel() -> ColorModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &FramePeerForward.getColorModel_MethodID_62, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ColorModel( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract java.awt.Point java.awt.peer.ComponentPeer.getLocationOnScreen()
-
-    private static var getLocationOnScreen_MethodID_63: jmethodID?
-
-    override open func getLocationOnScreen() -> Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocationOnScreen", methodSig: "()Ljava/awt/Point;", methodCache: &FramePeerForward.getLocationOnScreen_MethodID_63, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract java.awt.Image java.awt.peer.ComponentPeer.createImage(int,int)
-
-    private static var createImage_MethodID_64: jmethodID?
-
-    override open func createImage( width: Int, height: Int ) -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(II)Ljava/awt/Image;", methodCache: &FramePeerForward.createImage_MethodID_64, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
-    }
-
-    override open func createImage( _ _width: Int, _ _height: Int ) -> Image! {
-        return createImage( width: _width, height: _height )
-    }
-
-    /// public abstract java.awt.Image java.awt.peer.ComponentPeer.createImage(java.awt.image.ImageProducer)
-
-    private static var createImage_MethodID_65: jmethodID?
-
-    override open func createImage( producer: ImageProducer? ) -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: producer, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(Ljava/awt/image/ImageProducer;)Ljava/awt/Image;", methodCache: &FramePeerForward.createImage_MethodID_65, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
-    }
-
-    override open func createImage( _ _producer: ImageProducer? ) -> Image! {
-        return createImage( producer: _producer )
-    }
-
-    /// public abstract java.awt.image.VolatileImage java.awt.peer.ComponentPeer.createVolatileImage(int,int)
-
-    private static var createVolatileImage_MethodID_66: jmethodID?
-
-    override open func createVolatileImage( width: Int, height: Int ) -> VolatileImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createVolatileImage", methodSig: "(II)Ljava/awt/image/VolatileImage;", methodCache: &FramePeerForward.createVolatileImage_MethodID_66, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? VolatileImage( javaObject: __return ) : nil
-    }
-
-    override open func createVolatileImage( _ _width: Int, _ _height: Int ) -> VolatileImage! {
-        return createVolatileImage( width: _width, height: _height )
-    }
-
-    /// public abstract boolean java.awt.peer.ComponentPeer.prepareImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
-
-    private static var prepareImage_MethodID_67: jmethodID?
-
-    override open func prepareImage( img: Image?, w: Int, h: Int, o: ImageObserver? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img != nil ? img! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: o, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "prepareImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)Z", methodCache: &FramePeerForward.prepareImage_MethodID_67, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func prepareImage( _ _img: Image?, _ _w: Int, _ _h: Int, _ _o: ImageObserver? ) -> Bool {
-        return prepareImage( img: _img, w: _w, h: _h, o: _o )
-    }
-
-    /// public abstract int java.awt.peer.ComponentPeer.checkImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
-
-    private static var checkImage_MethodID_68: jmethodID?
-
-    override open func checkImage( img: Image?, w: Int, h: Int, o: ImageObserver? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img != nil ? img! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: o, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)I", methodCache: &FramePeerForward.checkImage_MethodID_68, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func checkImage( _ _img: Image?, _ _w: Int, _ _h: Int, _ _o: ImageObserver? ) -> Int {
-        return checkImage( img: _img, w: _w, h: _h, o: _o )
-    }
-
-    /// public abstract java.awt.Image java.awt.peer.ComponentPeer.getBackBuffer()
-
-    private static var getBackBuffer_MethodID_69: jmethodID?
-
-    override open func getBackBuffer() -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackBuffer", methodSig: "()Ljava/awt/Image;", methodCache: &FramePeerForward.getBackBuffer_MethodID_69, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract boolean java.awt.peer.ComponentPeer.handlesWheelScrolling()
-
-    private static var handlesWheelScrolling_MethodID_70: jmethodID?
-
-    override open func handlesWheelScrolling() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "handlesWheelScrolling", methodSig: "()Z", methodCache: &FramePeerForward.handlesWheelScrolling_MethodID_70, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public abstract void java.awt.peer.ComponentPeer.destroyBuffers()
-
-    private static var destroyBuffers_MethodID_71: jmethodID?
-
-    override open func destroyBuffers() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "destroyBuffers", methodSig: "()V", methodCache: &FramePeerForward.destroyBuffers_MethodID_71, args: &__args, locals: &__locals )
-    }
-
-
-    /// public abstract void java.awt.peer.ComponentPeer.applyShape(sun.java2d.pipe.Region)
-
-    private static var applyShape_MethodID_72: jmethodID?
-
-    override open func applyShape( shape: /* sun.java2d.pipe.Region */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: shape != nil ? shape! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "applyShape", methodSig: "(Lsun/java2d/pipe/Region;)V", methodCache: &FramePeerForward.applyShape_MethodID_72, args: &__args, locals: &__locals )
-    }
-
-    override open func applyShape( _ _shape: /* sun.java2d.pipe.Region */ UnclassedObject? ) {
-        applyShape( shape: _shape )
-    }
-
-    /// public abstract void java.awt.peer.ComponentPeer.setZOrder(java.awt.peer.ComponentPeer)
-
-    private static var setZOrder_MethodID_73: jmethodID?
-
-    override open func setZOrder( above: ComponentPeer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: above, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setZOrder", methodSig: "(Ljava/awt/peer/ComponentPeer;)V", methodCache: &FramePeerForward.setZOrder_MethodID_73, args: &__args, locals: &__locals )
-    }
-
-    override open func setZOrder( _ _above: ComponentPeer? ) {
-        setZOrder( above: _above )
     }
 
 }

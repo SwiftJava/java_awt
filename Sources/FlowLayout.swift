@@ -139,27 +139,15 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
 
     /// private void java.awt.FlowLayout.readObject(java.io.ObjectInputStream) throws java.io.IOException,java.lang.ClassNotFoundException
 
-    /// public int java.awt.FlowLayout.getAlignment()
-
-    private static var getAlignment_MethodID_4: jmethodID?
-
-    open func getAlignment() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlignment", methodSig: "()I", methodCache: &FlowLayout.getAlignment_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public void java.awt.FlowLayout.setAlignment(int)
 
-    private static var setAlignment_MethodID_5: jmethodID?
+    private static var setAlignment_MethodID_4: jmethodID?
 
     open func setAlignment( align: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: align, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAlignment", methodSig: "(I)V", methodCache: &FlowLayout.setAlignment_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAlignment", methodSig: "(I)V", methodCache: &FlowLayout.setAlignment_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setAlignment( _ _align: Int ) {
@@ -168,25 +156,25 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
 
     /// public int java.awt.FlowLayout.getHgap()
 
-    private static var getHgap_MethodID_6: jmethodID?
+    private static var getHgap_MethodID_5: jmethodID?
 
     open func getHgap() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHgap", methodSig: "()I", methodCache: &FlowLayout.getHgap_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHgap", methodSig: "()I", methodCache: &FlowLayout.getHgap_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void java.awt.FlowLayout.setHgap(int)
 
-    private static var setHgap_MethodID_7: jmethodID?
+    private static var setHgap_MethodID_6: jmethodID?
 
     open func setHgap( hgap: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: hgap, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHgap", methodSig: "(I)V", methodCache: &FlowLayout.setHgap_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHgap", methodSig: "(I)V", methodCache: &FlowLayout.setHgap_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func setHgap( _ _hgap: Int ) {
@@ -195,30 +183,42 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
 
     /// public int java.awt.FlowLayout.getVgap()
 
-    private static var getVgap_MethodID_8: jmethodID?
+    private static var getVgap_MethodID_7: jmethodID?
 
     open func getVgap() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVgap", methodSig: "()I", methodCache: &FlowLayout.getVgap_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVgap", methodSig: "()I", methodCache: &FlowLayout.getVgap_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void java.awt.FlowLayout.setVgap(int)
 
-    private static var setVgap_MethodID_9: jmethodID?
+    private static var setVgap_MethodID_8: jmethodID?
 
     open func setVgap( vgap: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: vgap, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVgap", methodSig: "(I)V", methodCache: &FlowLayout.setVgap_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVgap", methodSig: "(I)V", methodCache: &FlowLayout.setVgap_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setVgap( _ _vgap: Int ) {
         setVgap( vgap: _vgap )
     }
+
+    /// public int java.awt.FlowLayout.getAlignment()
+
+    private static var getAlignment_MethodID_9: jmethodID?
+
+    open func getAlignment() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlignment", methodSig: "()I", methodCache: &FlowLayout.getAlignment_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
 
     /// public void java.awt.FlowLayout.removeLayoutComponent(java.awt.Component)
 
@@ -227,7 +227,7 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
     open func removeLayoutComponent( comp: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &FlowLayout.removeLayoutComponent_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -243,7 +243,7 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &FlowLayout.addLayoutComponent_MethodID_11, args: &__args, locals: &__locals )
     }
 
@@ -258,7 +258,7 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
     open func layoutContainer( parent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &FlowLayout.layoutContainer_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -273,7 +273,7 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
     open func preferredLayoutSize( parent: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &FlowLayout.preferredLayoutSize_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
@@ -290,7 +290,7 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* java.io.Serializ
     open func minimumLayoutSize( parent: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &FlowLayout.minimumLayoutSize_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil

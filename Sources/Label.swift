@@ -265,7 +265,7 @@ open class Label: Component {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Label.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -357,27 +357,44 @@ open class Label: Component {
 
     /// private static native void java.awt.Label.initIDs()
 
+    /// public synchronized void java.awt.Label.setAlignment(int)
+
+    private static var setAlignment_MethodID_5: jmethodID?
+
+    open func setAlignment( alignment: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: alignment, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAlignment", methodSig: "(I)V", methodCache: &Label.setAlignment_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func setAlignment( _ _alignment: Int ) {
+        setAlignment( alignment: _alignment )
+    }
+
+    /// java.lang.String java.awt.Label.constructComponentName()
+
     /// public java.lang.String java.awt.Label.getText()
 
-    private static var getText_MethodID_5: jmethodID?
+    private static var getText_MethodID_6: jmethodID?
 
     open func getText() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &Label.getText_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &Label.getText_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public void java.awt.Label.setText(java.lang.String)
 
-    private static var setText_MethodID_6: jmethodID?
+    private static var setText_MethodID_7: jmethodID?
 
     open func setText( text: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &Label.setText_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &Label.setText_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setText( _ _text: String? ) {
@@ -388,34 +405,17 @@ open class Label: Component {
 
     /// public int java.awt.Label.getAlignment()
 
-    private static var getAlignment_MethodID_7: jmethodID?
+    private static var getAlignment_MethodID_8: jmethodID?
 
     open func getAlignment() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlignment", methodSig: "()I", methodCache: &Label.getAlignment_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlignment", methodSig: "()I", methodCache: &Label.getAlignment_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
-    /// public synchronized void java.awt.Label.setAlignment(int)
-
-    private static var setAlignment_MethodID_8: jmethodID?
-
-    open func setAlignment( alignment: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: alignment, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAlignment", methodSig: "(I)V", methodCache: &Label.setAlignment_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setAlignment( _ _alignment: Int ) {
-        setAlignment( alignment: _alignment )
-    }
-
     /// public void java.awt.Label.addNotify()
-
-    /// java.lang.String java.awt.Label.constructComponentName()
 
     /// In declared protocol but not defined.. ///
 

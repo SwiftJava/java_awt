@@ -409,7 +409,7 @@ open class Dialog: Window {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Dialog.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -439,7 +439,7 @@ open class Dialog: Window {
     public convenience init( arg0: Window?, arg1: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Window;Ljava/lang/String;)V", methodCache: &Dialog.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -459,10 +459,10 @@ open class Dialog: Window {
     public convenience init( arg0: Dialog?, arg1: String?, arg2: Bool, arg3: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3 != nil ? arg3! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Dialog;Ljava/lang/String;ZLjava/awt/GraphicsConfiguration;)V", methodCache: &Dialog.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -479,7 +479,7 @@ open class Dialog: Window {
     public convenience init( arg0: Dialog?, arg1: String?, arg2: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Dialog;Ljava/lang/String;Z)V", methodCache: &Dialog.new_MethodID_3, args: &__args, locals: &__locals )
@@ -498,8 +498,8 @@ open class Dialog: Window {
     public convenience init( arg0: Window?, arg1: Dialog_ModalityType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Window;Ljava/awt/Dialog$ModalityType;)V", methodCache: &Dialog.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -516,9 +516,9 @@ open class Dialog: Window {
     public convenience init( arg0: Window?, arg1: String?, arg2: Dialog_ModalityType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2 != nil ? arg2! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Window;Ljava/lang/String;Ljava/awt/Dialog$ModalityType;)V", methodCache: &Dialog.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -535,10 +535,10 @@ open class Dialog: Window {
     public convenience init( arg0: Window?, arg1: String?, arg2: Dialog_ModalityType?, arg3: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2 != nil ? arg2! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3 != nil ? arg3! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Window;Ljava/lang/String;Ljava/awt/Dialog$ModalityType;Ljava/awt/GraphicsConfiguration;)V", methodCache: &Dialog.new_MethodID_6, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -555,7 +555,7 @@ open class Dialog: Window {
     public convenience init( arg0: Frame?, arg1: String?, arg2: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Frame;Ljava/lang/String;Z)V", methodCache: &Dialog.new_MethodID_7, args: &__args, locals: &__locals )
@@ -574,7 +574,7 @@ open class Dialog: Window {
     public convenience init( arg0: Frame?, arg1: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Frame;Ljava/lang/String;)V", methodCache: &Dialog.new_MethodID_8, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -592,7 +592,7 @@ open class Dialog: Window {
     public convenience init( arg0: Frame?, arg1: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Frame;Z)V", methodCache: &Dialog.new_MethodID_9, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -610,7 +610,7 @@ open class Dialog: Window {
     public convenience init( arg0: Frame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Frame;)V", methodCache: &Dialog.new_MethodID_10, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -627,7 +627,7 @@ open class Dialog: Window {
     public convenience init( arg0: Dialog?, arg1: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Dialog;Ljava/lang/String;)V", methodCache: &Dialog.new_MethodID_11, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -645,7 +645,7 @@ open class Dialog: Window {
     public convenience init( arg0: Dialog? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Dialog;)V", methodCache: &Dialog.new_MethodID_12, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -662,10 +662,10 @@ open class Dialog: Window {
     public convenience init( arg0: Frame?, arg1: String?, arg2: Bool, arg3: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3 != nil ? arg3! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Dialog", classCache: &Dialog.DialogJNIClass, methodSig: "(Ljava/awt/Frame;Ljava/lang/String;ZLjava/awt/GraphicsConfiguration;)V", methodCache: &Dialog.new_MethodID_13, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -691,26 +691,63 @@ open class Dialog: Window {
 
     /// private static native void java.awt.Dialog.initIDs()
 
+    /// java.lang.String java.awt.Dialog.constructComponentName()
+
+    /// public void java.awt.Dialog.show()
+
+    /// void java.awt.Dialog.interruptBlocking()
+
+    /// public java.lang.String java.awt.Dialog.getTitle()
+
+    private static var getTitle_MethodID_15: jmethodID?
+
+    open func getTitle() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitle", methodSig: "()Ljava/lang/String;", methodCache: &Dialog.getTitle_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
+    /// public void java.awt.Dialog.setTitle(java.lang.String)
+
+    private static var setTitle_MethodID_16: jmethodID?
+
+    open func setTitle( arg0: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &Dialog.setTitle_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func setTitle( _ _arg0: String? ) {
+        setTitle( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Dialog.setBackground(java.awt.Color)
+
+    /// public javax.accessibility.AccessibleContext java.awt.Dialog.getAccessibleContext()
+
     /// public boolean java.awt.Dialog.isModal()
 
-    private static var isModal_MethodID_15: jmethodID?
+    private static var isModal_MethodID_17: jmethodID?
 
     open func isModal() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isModal", methodSig: "()Z", methodCache: &Dialog.isModal_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isModal", methodSig: "()Z", methodCache: &Dialog.isModal_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public boolean java.awt.Dialog.isResizable()
 
-    private static var isResizable_MethodID_16: jmethodID?
+    private static var isResizable_MethodID_18: jmethodID?
 
     open func isResizable() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isResizable", methodSig: "()Z", methodCache: &Dialog.isResizable_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isResizable", methodSig: "()Z", methodCache: &Dialog.isResizable_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -719,13 +756,13 @@ open class Dialog: Window {
 
     /// public void java.awt.Dialog.setModal(boolean)
 
-    private static var setModal_MethodID_17: jmethodID?
+    private static var setModal_MethodID_19: jmethodID?
 
     open func setModal( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModal", methodSig: "(Z)V", methodCache: &Dialog.setModal_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModal", methodSig: "(Z)V", methodCache: &Dialog.setModal_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func setModal( _ _arg0: Bool ) {
@@ -734,12 +771,12 @@ open class Dialog: Window {
 
     /// public java.awt.Dialog$ModalityType java.awt.Dialog.getModalityType()
 
-    private static var getModalityType_MethodID_18: jmethodID?
+    private static var getModalityType_MethodID_20: jmethodID?
 
     open func getModalityType() -> Dialog_ModalityType! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModalityType", methodSig: "()Ljava/awt/Dialog$ModalityType;", methodCache: &Dialog.getModalityType_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModalityType", methodSig: "()Ljava/awt/Dialog$ModalityType;", methodCache: &Dialog.getModalityType_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dialog_ModalityType( javaObject: __return ) : nil
     }
@@ -747,13 +784,13 @@ open class Dialog: Window {
 
     /// public void java.awt.Dialog.setModalityType(java.awt.Dialog$ModalityType)
 
-    private static var setModalityType_MethodID_19: jmethodID?
+    private static var setModalityType_MethodID_21: jmethodID?
 
     open func setModalityType( arg0: Dialog_ModalityType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModalityType", methodSig: "(Ljava/awt/Dialog$ModalityType;)V", methodCache: &Dialog.setModalityType_MethodID_19, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModalityType", methodSig: "(Ljava/awt/Dialog$ModalityType;)V", methodCache: &Dialog.setModalityType_MethodID_21, args: &__args, locals: &__locals )
     }
 
     open func setModalityType( _ _arg0: Dialog_ModalityType? ) {
@@ -776,13 +813,13 @@ open class Dialog: Window {
 
     /// public void java.awt.Dialog.setResizable(boolean)
 
-    private static var setResizable_MethodID_20: jmethodID?
+    private static var setResizable_MethodID_22: jmethodID?
 
     open func setResizable( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &Dialog.setResizable_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &Dialog.setResizable_MethodID_22, args: &__args, locals: &__locals )
     }
 
     open func setResizable( _ _arg0: Bool ) {
@@ -791,12 +828,12 @@ open class Dialog: Window {
 
     /// public boolean java.awt.Dialog.isUndecorated()
 
-    private static var isUndecorated_MethodID_21: jmethodID?
+    private static var isUndecorated_MethodID_23: jmethodID?
 
     open func isUndecorated() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isUndecorated", methodSig: "()Z", methodCache: &Dialog.isUndecorated_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isUndecorated", methodSig: "()Z", methodCache: &Dialog.isUndecorated_MethodID_23, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -821,62 +858,25 @@ open class Dialog: Window {
 
     /// private void java.awt.Dialog.checkModalityPermission(java.awt.Dialog$ModalityType)
 
-    /// public void java.awt.Dialog.setBackground(java.awt.Color)
-
-    /// public javax.accessibility.AccessibleContext java.awt.Dialog.getAccessibleContext()
-
-    /// public void java.awt.Dialog.setUndecorated(boolean)
-
-    private static var setUndecorated_MethodID_22: jmethodID?
-
-    open func setUndecorated( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUndecorated", methodSig: "(Z)V", methodCache: &Dialog.setUndecorated_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func setUndecorated( _ _arg0: Bool ) {
-        setUndecorated( arg0: _arg0 )
-    }
-
     /// public void java.awt.Dialog.setVisible(boolean)
 
     /// public void java.awt.Dialog.addNotify()
 
     /// public void java.awt.Dialog.hide()
 
-    /// java.lang.String java.awt.Dialog.constructComponentName()
+    /// public void java.awt.Dialog.setUndecorated(boolean)
 
-    /// public void java.awt.Dialog.show()
+    private static var setUndecorated_MethodID_24: jmethodID?
 
-    /// void java.awt.Dialog.interruptBlocking()
-
-    /// public java.lang.String java.awt.Dialog.getTitle()
-
-    private static var getTitle_MethodID_23: jmethodID?
-
-    open func getTitle() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitle", methodSig: "()Ljava/lang/String;", methodCache: &Dialog.getTitle_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public void java.awt.Dialog.setTitle(java.lang.String)
-
-    private static var setTitle_MethodID_24: jmethodID?
-
-    open func setTitle( arg0: String? ) {
+    open func setUndecorated( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &Dialog.setTitle_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUndecorated", methodSig: "(Z)V", methodCache: &Dialog.setUndecorated_MethodID_24, args: &__args, locals: &__locals )
     }
 
-    open func setTitle( _ _arg0: String? ) {
-        setTitle( arg0: _arg0 )
+    open func setUndecorated( _ _arg0: Bool ) {
+        setUndecorated( arg0: _arg0 )
     }
 
 }
@@ -940,7 +940,7 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Window?, arg1: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -964,10 +964,10 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Dialog?, arg1: String?, arg2: Bool, arg3: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3 != nil ? arg3! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[4] = __local!.swiftValue()
@@ -988,7 +988,7 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Dialog?, arg1: String?, arg2: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
 
@@ -1011,8 +1011,8 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Window?, arg1: Dialog_ModalityType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[2] = __local!.swiftValue()
@@ -1033,9 +1033,9 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Window?, arg1: String?, arg2: Dialog_ModalityType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2 != nil ? arg2! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[3] = __local!.swiftValue()
@@ -1056,10 +1056,10 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Window?, arg1: String?, arg2: Dialog_ModalityType?, arg3: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2 != nil ? arg2! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3 != nil ? arg3! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[4] = __local!.swiftValue()
@@ -1080,7 +1080,7 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Frame?, arg1: String?, arg2: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
 
@@ -1103,7 +1103,7 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Frame?, arg1: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -1125,7 +1125,7 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Frame?, arg1: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -1147,7 +1147,7 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Frame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[1] = __local!.swiftValue()
@@ -1168,7 +1168,7 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Dialog?, arg1: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -1190,7 +1190,7 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Dialog? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[1] = __local!.swiftValue()
@@ -1211,10 +1211,10 @@ open class DialogBase: Dialog {
     public convenience init( arg0: Frame?, arg1: String?, arg2: Bool, arg3: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3 != nil ? arg3! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[4] = __local!.swiftValue()

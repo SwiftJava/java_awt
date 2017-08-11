@@ -41,7 +41,7 @@ open class CheckboxGroup: java_swift.JavaObject, /* java.io.Serializable */ Uncl
     open func setSelectedCheckbox( box: Checkbox? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: box != nil ? box! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: box, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedCheckbox", methodSig: "(Ljava/awt/Checkbox;)V", methodCache: &CheckboxGroup.setSelectedCheckbox_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -82,7 +82,7 @@ open class CheckboxGroup: java_swift.JavaObject, /* java.io.Serializable */ Uncl
     open func setCurrent( box: Checkbox? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: box != nil ? box! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: box, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurrent", methodSig: "(Ljava/awt/Checkbox;)V", methodCache: &CheckboxGroup.setCurrent_MethodID_5, args: &__args, locals: &__locals )
     }
 

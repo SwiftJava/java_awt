@@ -26,7 +26,7 @@ open class FlavorListenerForward: java_util.EventListenerForward, FlavorListener
     open func flavorsChanged( e: FlavorEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "flavorsChanged", methodSig: "(Ljava/awt/datatransfer/FlavorEvent;)V", methodCache: &FlavorListenerForward.flavorsChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

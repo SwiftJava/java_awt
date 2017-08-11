@@ -440,7 +440,7 @@ open class FileDialog: Dialog {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &FileDialog.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -470,7 +470,7 @@ open class FileDialog: Dialog {
     public convenience init( parent: Dialog?, title: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/FileDialog", classCache: &FileDialog.FileDialogJNIClass, methodSig: "(Ljava/awt/Dialog;Ljava/lang/String;)V", methodCache: &FileDialog.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -488,7 +488,7 @@ open class FileDialog: Dialog {
     public convenience init( parent: Dialog? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/FileDialog", classCache: &FileDialog.FileDialogJNIClass, methodSig: "(Ljava/awt/Dialog;)V", methodCache: &FileDialog.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -505,7 +505,7 @@ open class FileDialog: Dialog {
     public convenience init( parent: Frame?, title: String?, mode: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: mode, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/FileDialog", classCache: &FileDialog.FileDialogJNIClass, methodSig: "(Ljava/awt/Frame;Ljava/lang/String;I)V", methodCache: &FileDialog.new_MethodID_3, args: &__args, locals: &__locals )
@@ -524,7 +524,7 @@ open class FileDialog: Dialog {
     public convenience init( parent: Dialog?, title: String?, mode: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: mode, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/FileDialog", classCache: &FileDialog.FileDialogJNIClass, methodSig: "(Ljava/awt/Dialog;Ljava/lang/String;I)V", methodCache: &FileDialog.new_MethodID_4, args: &__args, locals: &__locals )
@@ -543,7 +543,7 @@ open class FileDialog: Dialog {
     public convenience init( parent: Frame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/FileDialog", classCache: &FileDialog.FileDialogJNIClass, methodSig: "(Ljava/awt/Frame;)V", methodCache: &FileDialog.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -560,7 +560,7 @@ open class FileDialog: Dialog {
     public convenience init( parent: Frame?, title: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/FileDialog", classCache: &FileDialog.FileDialogJNIClass, methodSig: "(Ljava/awt/Frame;Ljava/lang/String;)V", methodCache: &FileDialog.new_MethodID_6, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -602,6 +602,8 @@ open class FileDialog: Dialog {
 
 
     /// private static native void java.awt.FileDialog.initIDs()
+
+    /// java.lang.String java.awt.FileDialog.constructComponentName()
 
     /// private void java.awt.FileDialog.setFiles(java.io.File[])
 
@@ -745,8 +747,6 @@ open class FileDialog: Dialog {
 
     /// boolean java.awt.FileDialog.postsOldMouseEvents()
 
-    /// java.lang.String java.awt.FileDialog.constructComponentName()
-
 }
 
 private typealias FileDialog_paint_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
@@ -808,7 +808,7 @@ open class FileDialogBase: FileDialog {
     public convenience init( parent: Dialog?, title: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -830,7 +830,7 @@ open class FileDialogBase: FileDialog {
     public convenience init( parent: Dialog? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[1] = __local!.swiftValue()
@@ -851,7 +851,7 @@ open class FileDialogBase: FileDialog {
     public convenience init( parent: Frame?, title: String?, mode: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: mode, locals: &__locals )
 
@@ -874,7 +874,7 @@ open class FileDialogBase: FileDialog {
     public convenience init( parent: Dialog?, title: String?, mode: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: mode, locals: &__locals )
 
@@ -897,7 +897,7 @@ open class FileDialogBase: FileDialog {
     public convenience init( parent: Frame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[1] = __local!.swiftValue()
@@ -918,7 +918,7 @@ open class FileDialogBase: FileDialog {
     public convenience init( parent: Frame?, title: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
 
         self.init( javaObject: nil )

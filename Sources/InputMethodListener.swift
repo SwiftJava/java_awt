@@ -30,7 +30,7 @@ open class InputMethodListenerForward: java_util.EventListenerForward, InputMeth
     open func inputMethodTextChanged( event: InputMethodEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "inputMethodTextChanged", methodSig: "(Ljava/awt/event/InputMethodEvent;)V", methodCache: &InputMethodListenerForward.inputMethodTextChanged_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -45,7 +45,7 @@ open class InputMethodListenerForward: java_util.EventListenerForward, InputMeth
     open func caretPositionChanged( event: InputMethodEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "caretPositionChanged", methodSig: "(Ljava/awt/event/InputMethodEvent;)V", methodCache: &InputMethodListenerForward.caretPositionChanged_MethodID_4, args: &__args, locals: &__locals )
     }
 

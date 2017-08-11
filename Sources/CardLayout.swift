@@ -67,7 +67,7 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
     open func first( parent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "first", methodSig: "(Ljava/awt/Container;)V", methodCache: &CardLayout.first_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -82,7 +82,7 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
     open func next( parent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "next", methodSig: "(Ljava/awt/Container;)V", methodCache: &CardLayout.next_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -101,7 +101,7 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
     open func last( parent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "last", methodSig: "(Ljava/awt/Container;)V", methodCache: &CardLayout.last_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -116,7 +116,7 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
     open func previous( parent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "previous", methodSig: "(Ljava/awt/Container;)V", methodCache: &CardLayout.previous_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -124,27 +124,43 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
         previous( parent: _parent )
     }
 
+    /// public void java.awt.CardLayout.show(java.awt.Container,java.lang.String)
+
+    private static var show_MethodID_7: jmethodID?
+
+    open func show( parent: Container?, name: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: name, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "show", methodSig: "(Ljava/awt/Container;Ljava/lang/String;)V", methodCache: &CardLayout.show_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func show( _ _parent: Container?, _ _name: String? ) {
+        show( parent: _parent, name: _name )
+    }
+
     /// public int java.awt.CardLayout.getHgap()
 
-    private static var getHgap_MethodID_7: jmethodID?
+    private static var getHgap_MethodID_8: jmethodID?
 
     open func getHgap() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHgap", methodSig: "()I", methodCache: &CardLayout.getHgap_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHgap", methodSig: "()I", methodCache: &CardLayout.getHgap_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void java.awt.CardLayout.setHgap(int)
 
-    private static var setHgap_MethodID_8: jmethodID?
+    private static var setHgap_MethodID_9: jmethodID?
 
     open func setHgap( hgap: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: hgap, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHgap", methodSig: "(I)V", methodCache: &CardLayout.setHgap_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHgap", methodSig: "(I)V", methodCache: &CardLayout.setHgap_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setHgap( _ _hgap: Int ) {
@@ -153,25 +169,25 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
 
     /// public int java.awt.CardLayout.getVgap()
 
-    private static var getVgap_MethodID_9: jmethodID?
+    private static var getVgap_MethodID_10: jmethodID?
 
     open func getVgap() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVgap", methodSig: "()I", methodCache: &CardLayout.getVgap_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVgap", methodSig: "()I", methodCache: &CardLayout.getVgap_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void java.awt.CardLayout.setVgap(int)
 
-    private static var setVgap_MethodID_10: jmethodID?
+    private static var setVgap_MethodID_11: jmethodID?
 
     open func setVgap( vgap: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: vgap, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVgap", methodSig: "(I)V", methodCache: &CardLayout.setVgap_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVgap", methodSig: "(I)V", methodCache: &CardLayout.setVgap_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setVgap( _ _vgap: Int ) {
@@ -180,13 +196,13 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
 
     /// public void java.awt.CardLayout.removeLayoutComponent(java.awt.Component)
 
-    private static var removeLayoutComponent_MethodID_11: jmethodID?
+    private static var removeLayoutComponent_MethodID_12: jmethodID?
 
     open func removeLayoutComponent( comp: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &CardLayout.removeLayoutComponent_MethodID_11, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &CardLayout.removeLayoutComponent_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func removeLayoutComponent( _ _comp: Component? ) {
@@ -195,14 +211,14 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
 
     /// public void java.awt.CardLayout.addLayoutComponent(java.awt.Component,java.lang.Object)
 
-    private static var addLayoutComponent_MethodID_12: jmethodID?
+    private static var addLayoutComponent_MethodID_13: jmethodID?
 
     open func addLayoutComponent( comp: Component?, constraints: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &CardLayout.addLayoutComponent_MethodID_12, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &CardLayout.addLayoutComponent_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func addLayoutComponent( _ _comp: Component?, _ _constraints: java_swift.JavaObject? ) {
@@ -211,14 +227,14 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
 
     /// public void java.awt.CardLayout.addLayoutComponent(java.lang.String,java.awt.Component)
 
-    private static var addLayoutComponent_MethodID_13: jmethodID?
+    private static var addLayoutComponent_MethodID_14: jmethodID?
 
     open func addLayoutComponent( name: String?, comp: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &CardLayout.addLayoutComponent_MethodID_13, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &CardLayout.addLayoutComponent_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func addLayoutComponent( _ _name: String?, _ _comp: Component? ) {
@@ -227,13 +243,13 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
 
     /// public void java.awt.CardLayout.layoutContainer(java.awt.Container)
 
-    private static var layoutContainer_MethodID_14: jmethodID?
+    private static var layoutContainer_MethodID_15: jmethodID?
 
     open func layoutContainer( parent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &CardLayout.layoutContainer_MethodID_14, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &CardLayout.layoutContainer_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func layoutContainer( _ _parent: Container? ) {
@@ -242,13 +258,13 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
 
     /// public void java.awt.CardLayout.invalidateLayout(java.awt.Container)
 
-    private static var invalidateLayout_MethodID_15: jmethodID?
+    private static var invalidateLayout_MethodID_16: jmethodID?
 
     open func invalidateLayout( target: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidateLayout", methodSig: "(Ljava/awt/Container;)V", methodCache: &CardLayout.invalidateLayout_MethodID_15, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidateLayout", methodSig: "(Ljava/awt/Container;)V", methodCache: &CardLayout.invalidateLayout_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func invalidateLayout( _ _target: Container? ) {
@@ -257,13 +273,13 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
 
     /// public java.awt.Dimension java.awt.CardLayout.preferredLayoutSize(java.awt.Container)
 
-    private static var preferredLayoutSize_MethodID_16: jmethodID?
+    private static var preferredLayoutSize_MethodID_17: jmethodID?
 
     open func preferredLayoutSize( parent: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &CardLayout.preferredLayoutSize_MethodID_16, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &CardLayout.preferredLayoutSize_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -274,13 +290,13 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
 
     /// public java.awt.Dimension java.awt.CardLayout.minimumLayoutSize(java.awt.Container)
 
-    private static var minimumLayoutSize_MethodID_17: jmethodID?
+    private static var minimumLayoutSize_MethodID_18: jmethodID?
 
     open func minimumLayoutSize( parent: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &CardLayout.minimumLayoutSize_MethodID_17, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &CardLayout.minimumLayoutSize_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -291,13 +307,13 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
 
     /// public java.awt.Dimension java.awt.CardLayout.maximumLayoutSize(java.awt.Container)
 
-    private static var maximumLayoutSize_MethodID_18: jmethodID?
+    private static var maximumLayoutSize_MethodID_19: jmethodID?
 
     open func maximumLayoutSize( target: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "maximumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &CardLayout.maximumLayoutSize_MethodID_18, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "maximumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &CardLayout.maximumLayoutSize_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -308,13 +324,13 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
 
     /// public float java.awt.CardLayout.getLayoutAlignmentX(java.awt.Container)
 
-    private static var getLayoutAlignmentX_MethodID_19: jmethodID?
+    private static var getLayoutAlignmentX_MethodID_20: jmethodID?
 
     open func getLayoutAlignmentX( target: Container? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentX", methodSig: "(Ljava/awt/Container;)F", methodCache: &CardLayout.getLayoutAlignmentX_MethodID_19, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentX", methodSig: "(Ljava/awt/Container;)F", methodCache: &CardLayout.getLayoutAlignmentX_MethodID_20, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -324,34 +340,18 @@ open class CardLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seriali
 
     /// public float java.awt.CardLayout.getLayoutAlignmentY(java.awt.Container)
 
-    private static var getLayoutAlignmentY_MethodID_20: jmethodID?
+    private static var getLayoutAlignmentY_MethodID_21: jmethodID?
 
     open func getLayoutAlignmentY( target: Container? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentY", methodSig: "(Ljava/awt/Container;)F", methodCache: &CardLayout.getLayoutAlignmentY_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentY", methodSig: "(Ljava/awt/Container;)F", methodCache: &CardLayout.getLayoutAlignmentY_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
     open func getLayoutAlignmentY( _ _target: Container? ) -> Float {
         return getLayoutAlignmentY( target: _target )
-    }
-
-    /// public void java.awt.CardLayout.show(java.awt.Container,java.lang.String)
-
-    private static var show_MethodID_21: jmethodID?
-
-    open func show( parent: Container?, name: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: name, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "show", methodSig: "(Ljava/awt/Container;Ljava/lang/String;)V", methodCache: &CardLayout.show_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open func show( _ _parent: Container?, _ _name: String? ) {
-        show( parent: _parent, name: _name )
     }
 
     /// void java.awt.CardLayout.checkLayout(java.awt.Container)

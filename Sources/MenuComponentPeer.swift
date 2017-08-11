@@ -29,7 +29,7 @@ open class MenuComponentPeerForward: JNIObjectForward, MenuComponentPeer {
     open func setFont( f: Font? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &MenuComponentPeerForward.setFont_MethodID_3, args: &__args, locals: &__locals )
     }
 

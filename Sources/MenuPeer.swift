@@ -44,7 +44,7 @@ open class MenuPeerForward: MenuItemPeerForward, MenuPeer {
     open func addItem( item: MenuItem? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: item != nil ? item! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: item, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItem", methodSig: "(Ljava/awt/MenuItem;)V", methodCache: &MenuPeerForward.addItem_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -67,34 +67,34 @@ open class MenuPeerForward: MenuItemPeerForward, MenuPeer {
         delItem( index: _index )
     }
 
-    /// public abstract void java.awt.peer.MenuItemPeer.setLabel(java.lang.String)
-
-    private static var setLabel_MethodID_7: jmethodID?
-
-    override open func setLabel( label: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &MenuPeerForward.setLabel_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    override open func setLabel( _ _label: String? ) {
-        setLabel( label: _label )
-    }
-
     /// public abstract void java.awt.peer.MenuItemPeer.setEnabled(boolean)
 
-    private static var setEnabled_MethodID_8: jmethodID?
+    private static var setEnabled_MethodID_7: jmethodID?
 
     override open func setEnabled( e: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &MenuPeerForward.setEnabled_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &MenuPeerForward.setEnabled_MethodID_7, args: &__args, locals: &__locals )
     }
 
     override open func setEnabled( _ _e: Bool ) {
         setEnabled( e: _e )
+    }
+
+    /// public abstract void java.awt.peer.MenuItemPeer.setLabel(java.lang.String)
+
+    private static var setLabel_MethodID_8: jmethodID?
+
+    override open func setLabel( label: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: label, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &MenuPeerForward.setLabel_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    override open func setLabel( _ _label: String? ) {
+        setLabel( label: _label )
     }
 
     /// public abstract void java.awt.peer.MenuComponentPeer.setFont(java.awt.Font)
@@ -104,7 +104,7 @@ open class MenuPeerForward: MenuItemPeerForward, MenuPeer {
     override open func setFont( f: Font? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &MenuPeerForward.setFont_MethodID_9, args: &__args, locals: &__locals )
     }
 

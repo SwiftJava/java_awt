@@ -12,6 +12,10 @@ public protocol RenderedImage: JavaProtocol {
 
     func getProperty( name: String? ) -> java_swift.JavaObject!
 
+    /// public abstract java.awt.image.ColorModel java.awt.image.RenderedImage.getColorModel()
+
+    func getColorModel() -> ColorModel!
+
     /// public abstract int java.awt.image.RenderedImage.getMinX()
 
     func getMinX() -> Int
@@ -31,6 +35,14 @@ public protocol RenderedImage: JavaProtocol {
     /// public abstract java.awt.image.SampleModel java.awt.image.RenderedImage.getSampleModel()
 
     func getSampleModel() -> SampleModel!
+
+    /// public abstract int java.awt.image.RenderedImage.getWidth()
+
+    func getWidth() -> Int
+
+    /// public abstract int java.awt.image.RenderedImage.getHeight()
+
+    func getHeight() -> Int
 
     /// public abstract java.util.Vector java.awt.image.RenderedImage.getSources()
 
@@ -80,18 +92,6 @@ public protocol RenderedImage: JavaProtocol {
 
     func copyData( raster: WritableRaster? ) -> WritableRaster!
 
-    /// public abstract int java.awt.image.RenderedImage.getWidth()
-
-    func getWidth() -> Int
-
-    /// public abstract int java.awt.image.RenderedImage.getHeight()
-
-    func getHeight() -> Int
-
-    /// public abstract java.awt.image.ColorModel java.awt.image.RenderedImage.getColorModel()
-
-    func getColorModel() -> ColorModel!
-
 }
 
 
@@ -116,38 +116,51 @@ open class RenderedImageForward: JNIObjectForward, RenderedImage {
         return getProperty( name: _name )
     }
 
+    /// public abstract java.awt.image.ColorModel java.awt.image.RenderedImage.getColorModel()
+
+    private static var getColorModel_MethodID_23: jmethodID?
+
+    open func getColorModel() -> ColorModel! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &RenderedImageForward.getColorModel_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ColorModel( javaObject: __return ) : nil
+    }
+
+
     /// public abstract int java.awt.image.RenderedImage.getMinX()
 
-    private static var getMinX_MethodID_23: jmethodID?
+    private static var getMinX_MethodID_24: jmethodID?
 
     open func getMinX() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinX", methodSig: "()I", methodCache: &RenderedImageForward.getMinX_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinX", methodSig: "()I", methodCache: &RenderedImageForward.getMinX_MethodID_24, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract int java.awt.image.RenderedImage.getMinY()
 
-    private static var getMinY_MethodID_24: jmethodID?
+    private static var getMinY_MethodID_25: jmethodID?
 
     open func getMinY() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinY", methodSig: "()I", methodCache: &RenderedImageForward.getMinY_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinY", methodSig: "()I", methodCache: &RenderedImageForward.getMinY_MethodID_25, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract java.awt.image.Raster java.awt.image.RenderedImage.getData()
 
-    private static var getData_MethodID_25: jmethodID?
+    private static var getData_MethodID_26: jmethodID?
 
     open func getData() -> Raster! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "()Ljava/awt/image/Raster;", methodCache: &RenderedImageForward.getData_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "()Ljava/awt/image/Raster;", methodCache: &RenderedImageForward.getData_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Raster( javaObject: __return ) : nil
     }
@@ -155,13 +168,13 @@ open class RenderedImageForward: JNIObjectForward, RenderedImage {
 
     /// public abstract java.awt.image.Raster java.awt.image.RenderedImage.getData(java.awt.Rectangle)
 
-    private static var getData_MethodID_26: jmethodID?
+    private static var getData_MethodID_27: jmethodID?
 
     open func getData( rect: Rectangle? ) -> Raster! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rect != nil ? rect! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/image/Raster;", methodCache: &RenderedImageForward.getData_MethodID_26, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: rect, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/image/Raster;", methodCache: &RenderedImageForward.getData_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Raster( javaObject: __return ) : nil
     }
@@ -172,25 +185,49 @@ open class RenderedImageForward: JNIObjectForward, RenderedImage {
 
     /// public abstract java.awt.image.SampleModel java.awt.image.RenderedImage.getSampleModel()
 
-    private static var getSampleModel_MethodID_27: jmethodID?
+    private static var getSampleModel_MethodID_28: jmethodID?
 
     open func getSampleModel() -> SampleModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSampleModel", methodSig: "()Ljava/awt/image/SampleModel;", methodCache: &RenderedImageForward.getSampleModel_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSampleModel", methodSig: "()Ljava/awt/image/SampleModel;", methodCache: &RenderedImageForward.getSampleModel_MethodID_28, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SampleModel( javaObject: __return ) : nil
     }
 
 
+    /// public abstract int java.awt.image.RenderedImage.getWidth()
+
+    private static var getWidth_MethodID_29: jmethodID?
+
+    open func getWidth() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &RenderedImageForward.getWidth_MethodID_29, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public abstract int java.awt.image.RenderedImage.getHeight()
+
+    private static var getHeight_MethodID_30: jmethodID?
+
+    open func getHeight() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &RenderedImageForward.getHeight_MethodID_30, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
     /// public abstract java.util.Vector java.awt.image.RenderedImage.getSources()
 
-    private static var getSources_MethodID_28: jmethodID?
+    private static var getSources_MethodID_31: jmethodID?
 
     open func getSources() -> java_util.Vector! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSources", methodSig: "()Ljava/util/Vector;", methodCache: &RenderedImageForward.getSources_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSources", methodSig: "()Ljava/util/Vector;", methodCache: &RenderedImageForward.getSources_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.Vector( javaObject: __return ) : nil
     }
@@ -198,122 +235,122 @@ open class RenderedImageForward: JNIObjectForward, RenderedImage {
 
     /// public abstract java.lang.String[] java.awt.image.RenderedImage.getPropertyNames()
 
-    private static var getPropertyNames_MethodID_29: jmethodID?
+    private static var getPropertyNames_MethodID_32: jmethodID?
 
     open func getPropertyNames() -> [String]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyNames", methodSig: "()[Ljava/lang/String;", methodCache: &RenderedImageForward.getPropertyNames_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyNames", methodSig: "()[Ljava/lang/String;", methodCache: &RenderedImageForward.getPropertyNames_MethodID_32, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [String](), from: __return )
     }
 
 
     /// public abstract int java.awt.image.RenderedImage.getNumXTiles()
 
-    private static var getNumXTiles_MethodID_30: jmethodID?
+    private static var getNumXTiles_MethodID_33: jmethodID?
 
     open func getNumXTiles() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumXTiles", methodSig: "()I", methodCache: &RenderedImageForward.getNumXTiles_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumXTiles", methodSig: "()I", methodCache: &RenderedImageForward.getNumXTiles_MethodID_33, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract int java.awt.image.RenderedImage.getNumYTiles()
 
-    private static var getNumYTiles_MethodID_31: jmethodID?
+    private static var getNumYTiles_MethodID_34: jmethodID?
 
     open func getNumYTiles() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumYTiles", methodSig: "()I", methodCache: &RenderedImageForward.getNumYTiles_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumYTiles", methodSig: "()I", methodCache: &RenderedImageForward.getNumYTiles_MethodID_34, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract int java.awt.image.RenderedImage.getMinTileX()
 
-    private static var getMinTileX_MethodID_32: jmethodID?
+    private static var getMinTileX_MethodID_35: jmethodID?
 
     open func getMinTileX() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinTileX", methodSig: "()I", methodCache: &RenderedImageForward.getMinTileX_MethodID_32, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinTileX", methodSig: "()I", methodCache: &RenderedImageForward.getMinTileX_MethodID_35, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract int java.awt.image.RenderedImage.getMinTileY()
 
-    private static var getMinTileY_MethodID_33: jmethodID?
+    private static var getMinTileY_MethodID_36: jmethodID?
 
     open func getMinTileY() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinTileY", methodSig: "()I", methodCache: &RenderedImageForward.getMinTileY_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinTileY", methodSig: "()I", methodCache: &RenderedImageForward.getMinTileY_MethodID_36, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract int java.awt.image.RenderedImage.getTileWidth()
 
-    private static var getTileWidth_MethodID_34: jmethodID?
+    private static var getTileWidth_MethodID_37: jmethodID?
 
     open func getTileWidth() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileWidth", methodSig: "()I", methodCache: &RenderedImageForward.getTileWidth_MethodID_34, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileWidth", methodSig: "()I", methodCache: &RenderedImageForward.getTileWidth_MethodID_37, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract int java.awt.image.RenderedImage.getTileHeight()
 
-    private static var getTileHeight_MethodID_35: jmethodID?
+    private static var getTileHeight_MethodID_38: jmethodID?
 
     open func getTileHeight() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileHeight", methodSig: "()I", methodCache: &RenderedImageForward.getTileHeight_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileHeight", methodSig: "()I", methodCache: &RenderedImageForward.getTileHeight_MethodID_38, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract int java.awt.image.RenderedImage.getTileGridXOffset()
 
-    private static var getTileGridXOffset_MethodID_36: jmethodID?
+    private static var getTileGridXOffset_MethodID_39: jmethodID?
 
     open func getTileGridXOffset() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileGridXOffset", methodSig: "()I", methodCache: &RenderedImageForward.getTileGridXOffset_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileGridXOffset", methodSig: "()I", methodCache: &RenderedImageForward.getTileGridXOffset_MethodID_39, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract int java.awt.image.RenderedImage.getTileGridYOffset()
 
-    private static var getTileGridYOffset_MethodID_37: jmethodID?
+    private static var getTileGridYOffset_MethodID_40: jmethodID?
 
     open func getTileGridYOffset() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileGridYOffset", methodSig: "()I", methodCache: &RenderedImageForward.getTileGridYOffset_MethodID_37, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileGridYOffset", methodSig: "()I", methodCache: &RenderedImageForward.getTileGridYOffset_MethodID_40, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract java.awt.image.Raster java.awt.image.RenderedImage.getTile(int,int)
 
-    private static var getTile_MethodID_38: jmethodID?
+    private static var getTile_MethodID_41: jmethodID?
 
     open func getTile( tileX: Int, tileY: Int ) -> Raster! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tileX, locals: &__locals )
         __args[1] = JNIType.toJava( value: tileY, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTile", methodSig: "(II)Ljava/awt/image/Raster;", methodCache: &RenderedImageForward.getTile_MethodID_38, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTile", methodSig: "(II)Ljava/awt/image/Raster;", methodCache: &RenderedImageForward.getTile_MethodID_41, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Raster( javaObject: __return ) : nil
     }
@@ -324,13 +361,13 @@ open class RenderedImageForward: JNIObjectForward, RenderedImage {
 
     /// public abstract java.awt.image.WritableRaster java.awt.image.RenderedImage.copyData(java.awt.image.WritableRaster)
 
-    private static var copyData_MethodID_39: jmethodID?
+    private static var copyData_MethodID_42: jmethodID?
 
     open func copyData( raster: WritableRaster? ) -> WritableRaster! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: raster != nil ? raster! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "copyData", methodSig: "(Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &RenderedImageForward.copyData_MethodID_39, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: raster, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "copyData", methodSig: "(Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &RenderedImageForward.copyData_MethodID_42, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -338,43 +375,6 @@ open class RenderedImageForward: JNIObjectForward, RenderedImage {
     open func copyData( _ _raster: WritableRaster? ) -> WritableRaster! {
         return copyData( raster: _raster )
     }
-
-    /// public abstract int java.awt.image.RenderedImage.getWidth()
-
-    private static var getWidth_MethodID_40: jmethodID?
-
-    open func getWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &RenderedImageForward.getWidth_MethodID_40, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract int java.awt.image.RenderedImage.getHeight()
-
-    private static var getHeight_MethodID_41: jmethodID?
-
-    open func getHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &RenderedImageForward.getHeight_MethodID_41, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract java.awt.image.ColorModel java.awt.image.RenderedImage.getColorModel()
-
-    private static var getColorModel_MethodID_42: jmethodID?
-
-    open func getColorModel() -> ColorModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &RenderedImageForward.getColorModel_MethodID_42, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ColorModel( javaObject: __return ) : nil
-    }
-
 
 }
 

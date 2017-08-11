@@ -462,13 +462,13 @@ open class NumericShaper_Range: java_lang.Enum {
 
     /// static java.util.Set java.awt.font.NumericShaper$Range.access$600(int)
 
-    /// static int java.awt.font.NumericShaper$Range.access$900(java.util.Set)
-
     /// static int java.awt.font.NumericShaper$Range.access$700(java.awt.font.NumericShaper$Range)
 
     /// static java.awt.font.NumericShaper$Range java.awt.font.NumericShaper$Range.access$800(int)
 
     /// private boolean java.awt.font.NumericShaper$Range.inRange(int)
+
+    /// static int java.awt.font.NumericShaper$Range.access$900(java.util.Set)
 
     /// char java.awt.font.NumericShaper$Range.getNumericBase()
 

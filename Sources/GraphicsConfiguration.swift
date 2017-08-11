@@ -34,68 +34,48 @@ open class GraphicsConfiguration: java_swift.JavaObject {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public java.awt.image.BufferedImage java.awt.GraphicsConfiguration.createCompatibleImage(int,int)
+    /// public abstract java.awt.image.ColorModel java.awt.GraphicsConfiguration.getColorModel()
 
-    private static var createCompatibleImage_MethodID_2: jmethodID?
+    private static var getColorModel_MethodID_2: jmethodID?
 
-    open func createCompatibleImage( width: Int, height: Int ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleImage", methodSig: "(II)Ljava/awt/image/BufferedImage;", methodCache: &GraphicsConfiguration.createCompatibleImage_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BufferedImage( javaObject: __return ) : nil
-    }
-
-    open func createCompatibleImage( _ _width: Int, _ _height: Int ) -> BufferedImage! {
-        return createCompatibleImage( width: _width, height: _height )
-    }
-
-    /// public java.awt.image.BufferedImage java.awt.GraphicsConfiguration.createCompatibleImage(int,int,int)
-
-    private static var createCompatibleImage_MethodID_3: jmethodID?
-
-    open func createCompatibleImage( width: Int, height: Int, transparency: Int ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        __args[2] = JNIType.toJava( value: transparency, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleImage", methodSig: "(III)Ljava/awt/image/BufferedImage;", methodCache: &GraphicsConfiguration.createCompatibleImage_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BufferedImage( javaObject: __return ) : nil
-    }
-
-    open func createCompatibleImage( _ _width: Int, _ _height: Int, _ _transparency: Int ) -> BufferedImage! {
-        return createCompatibleImage( width: _width, height: _height, transparency: _transparency )
-    }
-
-    /// public abstract java.awt.Rectangle java.awt.GraphicsConfiguration.getBounds()
-
-    private static var getBounds_MethodID_4: jmethodID?
-
-    open func getBounds() -> Rectangle! {
+    open func getColorModel() -> ColorModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &GraphicsConfiguration.getBounds_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &GraphicsConfiguration.getColorModel_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
+        return __return != nil ? ColorModel( javaObject: __return ) : nil
     }
 
+
+    /// public abstract java.awt.image.ColorModel java.awt.GraphicsConfiguration.getColorModel(int)
+
+    private static var getColorModel_MethodID_3: jmethodID?
+
+    open func getColorModel( transparency: Int ) -> ColorModel! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: transparency, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "(I)Ljava/awt/image/ColorModel;", methodCache: &GraphicsConfiguration.getColorModel_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ColorModel( javaObject: __return ) : nil
+    }
+
+    open func getColorModel( _ _transparency: Int ) -> ColorModel! {
+        return getColorModel( transparency: _transparency )
+    }
 
     /// public java.awt.image.VolatileImage java.awt.GraphicsConfiguration.createCompatibleVolatileImage(int,int,java.awt.ImageCapabilities,int) throws java.awt.AWTException
 
-    private static var createCompatibleVolatileImage_MethodID_5: jmethodID?
+    private static var createCompatibleVolatileImage_MethodID_4: jmethodID?
 
     open func createCompatibleVolatileImage( width: Int, height: Int, caps: ImageCapabilities?, transparency: Int ) throws /* java.awt.AWTException */ -> VolatileImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: width, locals: &__locals )
         __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        __args[2] = JNIType.toJava( value: caps != nil ? caps! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: caps, locals: &__locals )
         __args[3] = JNIType.toJava( value: transparency, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleVolatileImage", methodSig: "(IILjava/awt/ImageCapabilities;I)Ljava/awt/image/VolatileImage;", methodCache: &GraphicsConfiguration.createCompatibleVolatileImage_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleVolatileImage", methodSig: "(IILjava/awt/ImageCapabilities;I)Ljava/awt/image/VolatileImage;", methodCache: &GraphicsConfiguration.createCompatibleVolatileImage_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw AWTException( javaObject: throwable )
@@ -107,35 +87,17 @@ open class GraphicsConfiguration: java_swift.JavaObject {
         return try createCompatibleVolatileImage( width: _width, height: _height, caps: _caps, transparency: _transparency )
     }
 
-    /// public java.awt.image.VolatileImage java.awt.GraphicsConfiguration.createCompatibleVolatileImage(int,int)
-
-    private static var createCompatibleVolatileImage_MethodID_6: jmethodID?
-
-    open func createCompatibleVolatileImage( width: Int, height: Int ) -> VolatileImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleVolatileImage", methodSig: "(II)Ljava/awt/image/VolatileImage;", methodCache: &GraphicsConfiguration.createCompatibleVolatileImage_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? VolatileImage( javaObject: __return ) : nil
-    }
-
-    open func createCompatibleVolatileImage( _ _width: Int, _ _height: Int ) -> VolatileImage! {
-        return createCompatibleVolatileImage( width: _width, height: _height )
-    }
-
     /// public java.awt.image.VolatileImage java.awt.GraphicsConfiguration.createCompatibleVolatileImage(int,int,java.awt.ImageCapabilities) throws java.awt.AWTException
 
-    private static var createCompatibleVolatileImage_MethodID_7: jmethodID?
+    private static var createCompatibleVolatileImage_MethodID_5: jmethodID?
 
     open func createCompatibleVolatileImage( width: Int, height: Int, caps: ImageCapabilities? ) throws /* java.awt.AWTException */ -> VolatileImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: width, locals: &__locals )
         __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        __args[2] = JNIType.toJava( value: caps != nil ? caps! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleVolatileImage", methodSig: "(IILjava/awt/ImageCapabilities;)Ljava/awt/image/VolatileImage;", methodCache: &GraphicsConfiguration.createCompatibleVolatileImage_MethodID_7, args: &__args, locals: &__locals )
+        __args[2] = JNIType.toJava( value: caps, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleVolatileImage", methodSig: "(IILjava/awt/ImageCapabilities;)Ljava/awt/image/VolatileImage;", methodCache: &GraphicsConfiguration.createCompatibleVolatileImage_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw AWTException( javaObject: throwable )
@@ -149,7 +111,7 @@ open class GraphicsConfiguration: java_swift.JavaObject {
 
     /// public java.awt.image.VolatileImage java.awt.GraphicsConfiguration.createCompatibleVolatileImage(int,int,int)
 
-    private static var createCompatibleVolatileImage_MethodID_8: jmethodID?
+    private static var createCompatibleVolatileImage_MethodID_6: jmethodID?
 
     open func createCompatibleVolatileImage( width: Int, height: Int, transparency: Int ) -> VolatileImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -157,7 +119,7 @@ open class GraphicsConfiguration: java_swift.JavaObject {
         __args[0] = JNIType.toJava( value: width, locals: &__locals )
         __args[1] = JNIType.toJava( value: height, locals: &__locals )
         __args[2] = JNIType.toJava( value: transparency, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleVolatileImage", methodSig: "(III)Ljava/awt/image/VolatileImage;", methodCache: &GraphicsConfiguration.createCompatibleVolatileImage_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleVolatileImage", methodSig: "(III)Ljava/awt/image/VolatileImage;", methodCache: &GraphicsConfiguration.createCompatibleVolatileImage_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? VolatileImage( javaObject: __return ) : nil
     }
@@ -166,14 +128,32 @@ open class GraphicsConfiguration: java_swift.JavaObject {
         return createCompatibleVolatileImage( width: _width, height: _height, transparency: _transparency )
     }
 
+    /// public java.awt.image.VolatileImage java.awt.GraphicsConfiguration.createCompatibleVolatileImage(int,int)
+
+    private static var createCompatibleVolatileImage_MethodID_7: jmethodID?
+
+    open func createCompatibleVolatileImage( width: Int, height: Int ) -> VolatileImage! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: width, locals: &__locals )
+        __args[1] = JNIType.toJava( value: height, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleVolatileImage", methodSig: "(II)Ljava/awt/image/VolatileImage;", methodCache: &GraphicsConfiguration.createCompatibleVolatileImage_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? VolatileImage( javaObject: __return ) : nil
+    }
+
+    open func createCompatibleVolatileImage( _ _width: Int, _ _height: Int ) -> VolatileImage! {
+        return createCompatibleVolatileImage( width: _width, height: _height )
+    }
+
     /// public abstract java.awt.geom.AffineTransform java.awt.GraphicsConfiguration.getDefaultTransform()
 
-    private static var getDefaultTransform_MethodID_9: jmethodID?
+    private static var getDefaultTransform_MethodID_8: jmethodID?
 
     open func getDefaultTransform() -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultTransform", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &GraphicsConfiguration.getDefaultTransform_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultTransform", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &GraphicsConfiguration.getDefaultTransform_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AffineTransform( javaObject: __return ) : nil
     }
@@ -181,12 +161,12 @@ open class GraphicsConfiguration: java_swift.JavaObject {
 
     /// public abstract java.awt.geom.AffineTransform java.awt.GraphicsConfiguration.getNormalizingTransform()
 
-    private static var getNormalizingTransform_MethodID_10: jmethodID?
+    private static var getNormalizingTransform_MethodID_9: jmethodID?
 
     open func getNormalizingTransform() -> AffineTransform! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNormalizingTransform", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &GraphicsConfiguration.getNormalizingTransform_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNormalizingTransform", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &GraphicsConfiguration.getNormalizingTransform_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AffineTransform( javaObject: __return ) : nil
     }
@@ -194,12 +174,12 @@ open class GraphicsConfiguration: java_swift.JavaObject {
 
     /// public java.awt.BufferCapabilities java.awt.GraphicsConfiguration.getBufferCapabilities()
 
-    private static var getBufferCapabilities_MethodID_11: jmethodID?
+    private static var getBufferCapabilities_MethodID_10: jmethodID?
 
     open func getBufferCapabilities() -> BufferCapabilities! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBufferCapabilities", methodSig: "()Ljava/awt/BufferCapabilities;", methodCache: &GraphicsConfiguration.getBufferCapabilities_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBufferCapabilities", methodSig: "()Ljava/awt/BufferCapabilities;", methodCache: &GraphicsConfiguration.getBufferCapabilities_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferCapabilities( javaObject: __return ) : nil
     }
@@ -207,12 +187,12 @@ open class GraphicsConfiguration: java_swift.JavaObject {
 
     /// public java.awt.ImageCapabilities java.awt.GraphicsConfiguration.getImageCapabilities()
 
-    private static var getImageCapabilities_MethodID_12: jmethodID?
+    private static var getImageCapabilities_MethodID_11: jmethodID?
 
     open func getImageCapabilities() -> ImageCapabilities! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImageCapabilities", methodSig: "()Ljava/awt/ImageCapabilities;", methodCache: &GraphicsConfiguration.getImageCapabilities_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImageCapabilities", methodSig: "()Ljava/awt/ImageCapabilities;", methodCache: &GraphicsConfiguration.getImageCapabilities_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ImageCapabilities( javaObject: __return ) : nil
     }
@@ -220,58 +200,78 @@ open class GraphicsConfiguration: java_swift.JavaObject {
 
     /// public boolean java.awt.GraphicsConfiguration.isTranslucencyCapable()
 
-    private static var isTranslucencyCapable_MethodID_13: jmethodID?
+    private static var isTranslucencyCapable_MethodID_12: jmethodID?
 
     open func isTranslucencyCapable() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTranslucencyCapable", methodSig: "()Z", methodCache: &GraphicsConfiguration.isTranslucencyCapable_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTranslucencyCapable", methodSig: "()Z", methodCache: &GraphicsConfiguration.isTranslucencyCapable_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
+    /// public abstract java.awt.Rectangle java.awt.GraphicsConfiguration.getBounds()
+
+    private static var getBounds_MethodID_13: jmethodID?
+
+    open func getBounds() -> Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &GraphicsConfiguration.getBounds_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.image.BufferedImage java.awt.GraphicsConfiguration.createCompatibleImage(int,int)
+
+    private static var createCompatibleImage_MethodID_14: jmethodID?
+
+    open func createCompatibleImage( width: Int, height: Int ) -> BufferedImage! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: width, locals: &__locals )
+        __args[1] = JNIType.toJava( value: height, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleImage", methodSig: "(II)Ljava/awt/image/BufferedImage;", methodCache: &GraphicsConfiguration.createCompatibleImage_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BufferedImage( javaObject: __return ) : nil
+    }
+
+    open func createCompatibleImage( _ _width: Int, _ _height: Int ) -> BufferedImage! {
+        return createCompatibleImage( width: _width, height: _height )
+    }
+
+    /// public java.awt.image.BufferedImage java.awt.GraphicsConfiguration.createCompatibleImage(int,int,int)
+
+    private static var createCompatibleImage_MethodID_15: jmethodID?
+
+    open func createCompatibleImage( width: Int, height: Int, transparency: Int ) -> BufferedImage! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: width, locals: &__locals )
+        __args[1] = JNIType.toJava( value: height, locals: &__locals )
+        __args[2] = JNIType.toJava( value: transparency, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleImage", methodSig: "(III)Ljava/awt/image/BufferedImage;", methodCache: &GraphicsConfiguration.createCompatibleImage_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BufferedImage( javaObject: __return ) : nil
+    }
+
+    open func createCompatibleImage( _ _width: Int, _ _height: Int, _ _transparency: Int ) -> BufferedImage! {
+        return createCompatibleImage( width: _width, height: _height, transparency: _transparency )
+    }
+
     /// public abstract java.awt.GraphicsDevice java.awt.GraphicsConfiguration.getDevice()
 
-    private static var getDevice_MethodID_14: jmethodID?
+    private static var getDevice_MethodID_16: jmethodID?
 
     open func getDevice() -> GraphicsDevice! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDevice", methodSig: "()Ljava/awt/GraphicsDevice;", methodCache: &GraphicsConfiguration.getDevice_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDevice", methodSig: "()Ljava/awt/GraphicsDevice;", methodCache: &GraphicsConfiguration.getDevice_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GraphicsDevice( javaObject: __return ) : nil
     }
 
-
-    /// public abstract java.awt.image.ColorModel java.awt.GraphicsConfiguration.getColorModel()
-
-    private static var getColorModel_MethodID_15: jmethodID?
-
-    open func getColorModel() -> ColorModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &GraphicsConfiguration.getColorModel_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ColorModel( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract java.awt.image.ColorModel java.awt.GraphicsConfiguration.getColorModel(int)
-
-    private static var getColorModel_MethodID_16: jmethodID?
-
-    open func getColorModel( transparency: Int ) -> ColorModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: transparency, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "(I)Ljava/awt/image/ColorModel;", methodCache: &GraphicsConfiguration.getColorModel_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ColorModel( javaObject: __return ) : nil
-    }
-
-    open func getColorModel( _ _transparency: Int ) -> ColorModel! {
-        return getColorModel( transparency: _transparency )
-    }
 
 }
 

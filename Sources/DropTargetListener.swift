@@ -42,7 +42,7 @@ open class DropTargetListenerForward: java_util.EventListenerForward, DropTarget
     open func dragEnter( dtde: DropTargetDragEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtde != nil ? dtde! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragEnter", methodSig: "(Ljava/awt/dnd/DropTargetDragEvent;)V", methodCache: &DropTargetListenerForward.dragEnter_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -57,7 +57,7 @@ open class DropTargetListenerForward: java_util.EventListenerForward, DropTarget
     open func dragOver( dtde: DropTargetDragEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtde != nil ? dtde! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragOver", methodSig: "(Ljava/awt/dnd/DropTargetDragEvent;)V", methodCache: &DropTargetListenerForward.dragOver_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -72,7 +72,7 @@ open class DropTargetListenerForward: java_util.EventListenerForward, DropTarget
     open func dropActionChanged( dtde: DropTargetDragEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtde != nil ? dtde! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dropActionChanged", methodSig: "(Ljava/awt/dnd/DropTargetDragEvent;)V", methodCache: &DropTargetListenerForward.dropActionChanged_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -87,7 +87,7 @@ open class DropTargetListenerForward: java_util.EventListenerForward, DropTarget
     open func dragExit( dte: DropTargetEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dte != nil ? dte! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dte, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragExit", methodSig: "(Ljava/awt/dnd/DropTargetEvent;)V", methodCache: &DropTargetListenerForward.dragExit_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -102,7 +102,7 @@ open class DropTargetListenerForward: java_util.EventListenerForward, DropTarget
     open func drop( dtde: DropTargetDropEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtde != nil ? dtde! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "drop", methodSig: "(Ljava/awt/dnd/DropTargetDropEvent;)V", methodCache: &DropTargetListenerForward.drop_MethodID_10, args: &__args, locals: &__locals )
     }
 

@@ -7,10 +7,6 @@ import java_swift
 
 public protocol InputMethodContext: InputMethodRequests {
 
-    /// public abstract java.awt.Window java.awt.im.spi.InputMethodContext.createInputMethodWindow(java.lang.String,boolean)
-
-    func createInputMethodWindow( title: String?, attachToInputContext: Bool ) -> Window!
-
     /// public abstract void java.awt.im.spi.InputMethodContext.dispatchInputMethodEvent(int,java.text.AttributedCharacterIterator,int,java.awt.font.TextHitInfo,java.awt.font.TextHitInfo)
 
     func dispatchInputMethodEvent( id: Int, text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, committedCharacterCount: Int, caret: TextHitInfo?, visiblePosition: TextHitInfo? )
@@ -21,6 +17,10 @@ public protocol InputMethodContext: InputMethodRequests {
 
     func enableClientWindowNotification( inputMethod: InputMethod?, enable: Bool )
 
+    /// public abstract java.awt.Window java.awt.im.spi.InputMethodContext.createInputMethodWindow(java.lang.String,boolean)
+
+    func createInputMethodWindow( title: String?, attachToInputContext: Bool ) -> Window!
+
 }
 
 
@@ -28,27 +28,9 @@ open class InputMethodContextForward: InputMethodRequestsForward, InputMethodCon
 
     private static var InputMethodContextJNIClass: jclass?
 
-    /// public abstract java.awt.Window java.awt.im.spi.InputMethodContext.createInputMethodWindow(java.lang.String,boolean)
-
-    private static var createInputMethodWindow_MethodID_4: jmethodID?
-
-    open func createInputMethodWindow( title: String?, attachToInputContext: Bool ) -> Window! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: attachToInputContext, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createInputMethodWindow", methodSig: "(Ljava/lang/String;Z)Ljava/awt/Window;", methodCache: &InputMethodContextForward.createInputMethodWindow_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Window( javaObject: __return ) : nil
-    }
-
-    open func createInputMethodWindow( _ _title: String?, _ _attachToInputContext: Bool ) -> Window! {
-        return createInputMethodWindow( title: _title, attachToInputContext: _attachToInputContext )
-    }
-
     /// public abstract void java.awt.im.spi.InputMethodContext.dispatchInputMethodEvent(int,java.text.AttributedCharacterIterator,int,java.awt.font.TextHitInfo,java.awt.font.TextHitInfo)
 
-    private static var dispatchInputMethodEvent_MethodID_5: jmethodID?
+    private static var dispatchInputMethodEvent_MethodID_4: jmethodID?
 
     open func dispatchInputMethodEvent( id: Int, text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, committedCharacterCount: Int, caret: TextHitInfo?, visiblePosition: TextHitInfo? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -56,9 +38,9 @@ open class InputMethodContextForward: InputMethodRequestsForward, InputMethodCon
         __args[0] = JNIType.toJava( value: id, locals: &__locals )
         __args[1] = JNIType.toJava( value: text, locals: &__locals )
         __args[2] = JNIType.toJava( value: committedCharacterCount, locals: &__locals )
-        __args[3] = JNIType.toJava( value: caret != nil ? caret! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: visiblePosition != nil ? visiblePosition! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispatchInputMethodEvent", methodSig: "(ILjava/text/AttributedCharacterIterator;ILjava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;)V", methodCache: &InputMethodContextForward.dispatchInputMethodEvent_MethodID_5, args: &__args, locals: &__locals )
+        __args[3] = JNIType.toJava( value: caret, locals: &__locals )
+        __args[4] = JNIType.toJava( value: visiblePosition, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispatchInputMethodEvent", methodSig: "(ILjava/text/AttributedCharacterIterator;ILjava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;)V", methodCache: &InputMethodContextForward.dispatchInputMethodEvent_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func dispatchInputMethodEvent( _ _id: Int, _ _text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, _ _committedCharacterCount: Int, _ _caret: TextHitInfo?, _ _visiblePosition: TextHitInfo? ) {
@@ -69,18 +51,36 @@ open class InputMethodContextForward: InputMethodRequestsForward, InputMethodCon
 
     /// public abstract void java.awt.im.spi.InputMethodContext.enableClientWindowNotification(java.awt.im.spi.InputMethod,boolean)
 
-    private static var enableClientWindowNotification_MethodID_6: jmethodID?
+    private static var enableClientWindowNotification_MethodID_5: jmethodID?
 
     open func enableClientWindowNotification( inputMethod: InputMethod?, enable: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: inputMethod, locals: &__locals )
         __args[1] = JNIType.toJava( value: enable, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableClientWindowNotification", methodSig: "(Ljava/awt/im/spi/InputMethod;Z)V", methodCache: &InputMethodContextForward.enableClientWindowNotification_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableClientWindowNotification", methodSig: "(Ljava/awt/im/spi/InputMethod;Z)V", methodCache: &InputMethodContextForward.enableClientWindowNotification_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func enableClientWindowNotification( _ _inputMethod: InputMethod?, _ _enable: Bool ) {
         enableClientWindowNotification( inputMethod: _inputMethod, enable: _enable )
+    }
+
+    /// public abstract java.awt.Window java.awt.im.spi.InputMethodContext.createInputMethodWindow(java.lang.String,boolean)
+
+    private static var createInputMethodWindow_MethodID_6: jmethodID?
+
+    open func createInputMethodWindow( title: String?, attachToInputContext: Bool ) -> Window! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: title, locals: &__locals )
+        __args[1] = JNIType.toJava( value: attachToInputContext, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createInputMethodWindow", methodSig: "(Ljava/lang/String;Z)Ljava/awt/Window;", methodCache: &InputMethodContextForward.createInputMethodWindow_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Window( javaObject: __return ) : nil
+    }
+
+    open func createInputMethodWindow( _ _title: String?, _ _attachToInputContext: Bool ) -> Window! {
+        return createInputMethodWindow( title: _title, attachToInputContext: _attachToInputContext )
     }
 
     /// public abstract java.awt.Rectangle java.awt.im.InputMethodRequests.getTextLocation(java.awt.font.TextHitInfo)
@@ -90,7 +90,7 @@ open class InputMethodContextForward: InputMethodRequestsForward, InputMethodCon
     override open func getTextLocation( offset: TextHitInfo? ) -> Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset != nil ? offset! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextLocation", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/Rectangle;", methodCache: &InputMethodContextForward.getTextLocation_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle( javaObject: __return ) : nil

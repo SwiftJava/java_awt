@@ -123,7 +123,7 @@ open class ICC_ColorSpace: ColorSpace {
     public convenience init( arg0: ICC_Profile? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/color/ICC_ColorSpace", classCache: &ICC_ColorSpace.ICC_ColorSpaceJNIClass, methodSig: "(Ljava/awt/color/ICC_Profile;)V", methodCache: &ICC_ColorSpace.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -146,12 +146,6 @@ open class ICC_ColorSpace: ColorSpace {
     }
 
 
-    /// public float[] java.awt.color.ICC_ColorSpace.toRGB(float[])
-
-    /// public float[] java.awt.color.ICC_ColorSpace.toCIEXYZ(float[])
-
-    /// public float[] java.awt.color.ICC_ColorSpace.fromCIEXYZ(float[])
-
     /// public float java.awt.color.ICC_ColorSpace.getMinValue(int)
 
     /// public float java.awt.color.ICC_ColorSpace.getMaxValue(int)
@@ -161,6 +155,12 @@ open class ICC_ColorSpace: ColorSpace {
     /// private void java.awt.color.ICC_ColorSpace.setMinMax()
 
     /// private void java.awt.color.ICC_ColorSpace.setComponentScaling()
+
+    /// public float[] java.awt.color.ICC_ColorSpace.toRGB(float[])
+
+    /// public float[] java.awt.color.ICC_ColorSpace.toCIEXYZ(float[])
+
+    /// public float[] java.awt.color.ICC_ColorSpace.fromCIEXYZ(float[])
 
 }
 

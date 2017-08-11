@@ -228,7 +228,7 @@ open class Canvas: Component {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Canvas.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -270,7 +270,7 @@ open class Canvas: Component {
     public convenience init( config: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: config != nil ? config! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: config, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Canvas", classCache: &Canvas.CanvasJNIClass, methodSig: "(Ljava/awt/GraphicsConfiguration;)V", methodCache: &Canvas.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -287,7 +287,7 @@ open class Canvas: Component {
     open func update( g: Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Canvas.update_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -295,40 +295,17 @@ open class Canvas: Component {
         update( g: _g )
     }
 
-    /// public javax.accessibility.AccessibleContext java.awt.Canvas.getAccessibleContext()
-
-    /// public void java.awt.Canvas.paint(java.awt.Graphics)
-
-    private static var paint_MethodID_4: jmethodID?
-
-    open func paint( g: Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Canvas.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _g: Graphics? ) {
-        paint( g: _g )
-    }
-
-    /// public void java.awt.Canvas.addNotify()
-
-    /// boolean java.awt.Canvas.postsOldMouseEvents()
-
-    /// void java.awt.Canvas.setGraphicsConfiguration(java.awt.GraphicsConfiguration)
-
     /// java.lang.String java.awt.Canvas.constructComponentName()
 
     /// public void java.awt.Canvas.createBufferStrategy(int)
 
-    private static var createBufferStrategy_MethodID_5: jmethodID?
+    private static var createBufferStrategy_MethodID_4: jmethodID?
 
     open func createBufferStrategy( numBuffers: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: numBuffers, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createBufferStrategy", methodSig: "(I)V", methodCache: &Canvas.createBufferStrategy_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createBufferStrategy", methodSig: "(I)V", methodCache: &Canvas.createBufferStrategy_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func createBufferStrategy( _ _numBuffers: Int ) {
@@ -337,14 +314,14 @@ open class Canvas: Component {
 
     /// public void java.awt.Canvas.createBufferStrategy(int,java.awt.BufferCapabilities) throws java.awt.AWTException
 
-    private static var createBufferStrategy_MethodID_6: jmethodID?
+    private static var createBufferStrategy_MethodID_5: jmethodID?
 
     open func createBufferStrategy( numBuffers: Int, caps: BufferCapabilities? ) throws /* java.awt.AWTException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: numBuffers, locals: &__locals )
-        __args[1] = JNIType.toJava( value: caps != nil ? caps! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createBufferStrategy", methodSig: "(ILjava/awt/BufferCapabilities;)V", methodCache: &Canvas.createBufferStrategy_MethodID_6, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: caps, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createBufferStrategy", methodSig: "(ILjava/awt/BufferCapabilities;)V", methodCache: &Canvas.createBufferStrategy_MethodID_5, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw AWTException( javaObject: throwable )
         }
@@ -356,16 +333,39 @@ open class Canvas: Component {
 
     /// public java.awt.image.BufferStrategy java.awt.Canvas.getBufferStrategy()
 
-    private static var getBufferStrategy_MethodID_7: jmethodID?
+    private static var getBufferStrategy_MethodID_6: jmethodID?
 
     open func getBufferStrategy() -> BufferStrategy! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBufferStrategy", methodSig: "()Ljava/awt/image/BufferStrategy;", methodCache: &Canvas.getBufferStrategy_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBufferStrategy", methodSig: "()Ljava/awt/image/BufferStrategy;", methodCache: &Canvas.getBufferStrategy_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferStrategy( javaObject: __return ) : nil
     }
 
+
+    /// public javax.accessibility.AccessibleContext java.awt.Canvas.getAccessibleContext()
+
+    /// public void java.awt.Canvas.paint(java.awt.Graphics)
+
+    private static var paint_MethodID_7: jmethodID?
+
+    open func paint( g: Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Canvas.paint_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: Graphics? ) {
+        paint( g: _g )
+    }
+
+    /// public void java.awt.Canvas.addNotify()
+
+    /// boolean java.awt.Canvas.postsOldMouseEvents()
+
+    /// void java.awt.Canvas.setGraphicsConfiguration(java.awt.GraphicsConfiguration)
 
     /// In declared protocol but not defined.. ///
 
@@ -459,7 +459,7 @@ open class CanvasBase: Canvas {
     public convenience init( config: GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: config != nil ? config! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: config, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[1] = __local!.swiftValue()

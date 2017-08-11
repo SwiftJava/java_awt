@@ -142,7 +142,7 @@ open class SinglePixelPackedSampleModel: SampleModel {
     open func equals( o: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: o != nil ? o! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &SinglePixelPackedSampleModel.equals_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -172,9 +172,21 @@ open class SinglePixelPackedSampleModel: SampleModel {
 
     /// private static native void java.awt.image.SinglePixelPackedSampleModel.initIDs()
 
-    /// public int[] java.awt.image.SinglePixelPackedSampleModel.getSampleSize()
+    /// public int[] java.awt.image.SinglePixelPackedSampleModel.getBitOffsets()
+
+    private static var getBitOffsets_MethodID_5: jmethodID?
+
+    open func getBitOffsets() -> [Int32]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBitOffsets", methodSig: "()[I", methodCache: &SinglePixelPackedSampleModel.getBitOffsets_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32](), from: __return )
+    }
+
 
     /// public int java.awt.image.SinglePixelPackedSampleModel.getSampleSize(int)
+
+    /// public int[] java.awt.image.SinglePixelPackedSampleModel.getSampleSize()
 
     /// public java.awt.image.DataBuffer java.awt.image.SinglePixelPackedSampleModel.createDataBuffer()
 
@@ -203,18 +215,6 @@ open class SinglePixelPackedSampleModel: SampleModel {
     /// public int java.awt.image.SinglePixelPackedSampleModel.getSample(int,int,int,java.awt.image.DataBuffer)
 
     /// public int[] java.awt.image.SinglePixelPackedSampleModel.getSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
-
-    /// public int[] java.awt.image.SinglePixelPackedSampleModel.getBitOffsets()
-
-    private static var getBitOffsets_MethodID_5: jmethodID?
-
-    open func getBitOffsets() -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBitOffsets", methodSig: "()[I", methodCache: &SinglePixelPackedSampleModel.getBitOffsets_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
-    }
-
 
     /// public int java.awt.image.SinglePixelPackedSampleModel.getScanlineStride()
 

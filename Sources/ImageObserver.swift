@@ -145,7 +145,7 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
     open func imageUpdate( img: Image?, infoflags: Int, x: Int, y: Int, width: Int, height: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img != nil ? img! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
         __args[1] = JNIType.toJava( value: infoflags, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )

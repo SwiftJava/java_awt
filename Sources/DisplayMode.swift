@@ -71,7 +71,7 @@ open class DisplayMode: java_swift.JavaObject {
     open func equals( dm: DisplayMode? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dm != nil ? dm! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dm, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/DisplayMode;)Z", methodCache: &DisplayMode.equals_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -87,7 +87,7 @@ open class DisplayMode: java_swift.JavaObject {
     open func equals( dm: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dm != nil ? dm! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dm, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &DisplayMode.equals_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

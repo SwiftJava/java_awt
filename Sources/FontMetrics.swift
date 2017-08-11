@@ -30,7 +30,7 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "font", fieldType: "Ljava/awt/Font;", fieldCache: &FontMetrics.font_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -44,7 +44,7 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
     public convenience init( font: Font? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: font != nil ? font! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: font, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/FontMetrics", classCache: &FontMetrics.FontMetricsJNIClass, methodSig: "(Ljava/awt/Font;)V", methodCache: &FontMetrics.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -252,7 +252,7 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         __args[0] = JNIType.toJava( value: ci, locals: &__locals )
         __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: limit, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: context, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "(Ljava/text/CharacterIterator;IILjava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? LineMetrics( javaObject: __return ) : nil
@@ -272,7 +272,7 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         __args[0] = JNIType.toJava( value: chars, locals: &__locals )
         __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: limit, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: context, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "([CIILjava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? LineMetrics( javaObject: __return ) : nil
@@ -292,7 +292,7 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         __args[0] = JNIType.toJava( value: str, locals: &__locals )
         __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: limit, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: context, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "(Ljava/lang/String;IILjava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? LineMetrics( javaObject: __return ) : nil
@@ -310,7 +310,7 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        __args[1] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: context, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "(Ljava/lang/String;Ljava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? LineMetrics( javaObject: __return ) : nil
@@ -330,7 +330,7 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         __args[0] = JNIType.toJava( value: chars, locals: &__locals )
         __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: limit, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: context, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "([CIILjava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
@@ -350,7 +350,7 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         __args[0] = JNIType.toJava( value: ci, locals: &__locals )
         __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: limit, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: context, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "(Ljava/text/CharacterIterator;IILjava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
@@ -370,7 +370,7 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         __args[0] = JNIType.toJava( value: str, locals: &__locals )
         __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: limit, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: context, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "(Ljava/lang/String;IILjava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
@@ -388,7 +388,7 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        __args[1] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: context, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "(Ljava/lang/String;Ljava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
@@ -405,7 +405,7 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
     open func getMaxCharBounds( context: Graphics? ) -> Rectangle2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaxCharBounds", methodSig: "(Ljava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getMaxCharBounds_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil

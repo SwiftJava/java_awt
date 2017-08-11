@@ -50,14 +50,27 @@ open class PrintJob: java_swift.JavaObject {
     }
 
 
+    /// public abstract java.awt.Graphics java.awt.PrintJob.getGraphics()
+
+    private static var getGraphics_MethodID_4: jmethodID?
+
+    open func getGraphics() -> Graphics! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphics", methodSig: "()Ljava/awt/Graphics;", methodCache: &PrintJob.getGraphics_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Graphics( javaObject: __return ) : nil
+    }
+
+
     /// public abstract java.awt.Dimension java.awt.PrintJob.getPageDimension()
 
-    private static var getPageDimension_MethodID_4: jmethodID?
+    private static var getPageDimension_MethodID_5: jmethodID?
 
     open func getPageDimension() -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPageDimension", methodSig: "()Ljava/awt/Dimension;", methodCache: &PrintJob.getPageDimension_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPageDimension", methodSig: "()Ljava/awt/Dimension;", methodCache: &PrintJob.getPageDimension_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
     }
@@ -65,38 +78,25 @@ open class PrintJob: java_swift.JavaObject {
 
     /// public abstract int java.awt.PrintJob.getPageResolution()
 
-    private static var getPageResolution_MethodID_5: jmethodID?
+    private static var getPageResolution_MethodID_6: jmethodID?
 
     open func getPageResolution() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPageResolution", methodSig: "()I", methodCache: &PrintJob.getPageResolution_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPageResolution", methodSig: "()I", methodCache: &PrintJob.getPageResolution_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract boolean java.awt.PrintJob.lastPageFirst()
 
-    private static var lastPageFirst_MethodID_6: jmethodID?
+    private static var lastPageFirst_MethodID_7: jmethodID?
 
     open func lastPageFirst() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "lastPageFirst", methodSig: "()Z", methodCache: &PrintJob.lastPageFirst_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "lastPageFirst", methodSig: "()Z", methodCache: &PrintJob.lastPageFirst_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public abstract java.awt.Graphics java.awt.PrintJob.getGraphics()
-
-    private static var getGraphics_MethodID_7: jmethodID?
-
-    open func getGraphics() -> Graphics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphics", methodSig: "()Ljava/awt/Graphics;", methodCache: &PrintJob.getGraphics_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Graphics( javaObject: __return ) : nil
     }
 
 

@@ -239,7 +239,7 @@ open class Checkbox: Component, ItemSelectable {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Checkbox.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -271,7 +271,7 @@ open class Checkbox: Component, ItemSelectable {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: label, locals: &__locals )
         __args[1] = JNIType.toJava( value: state, locals: &__locals )
-        __args[2] = JNIType.toJava( value: group != nil ? group! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: group, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;ZLjava/awt/CheckboxGroup;)V", methodCache: &Checkbox.new_MethodID_1, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
@@ -284,16 +284,17 @@ open class Checkbox: Component, ItemSelectable {
         try self.init( label: _label, state: _state, group: _group )
     }
 
-    /// public java.awt.Checkbox(java.lang.String,boolean) throws java.awt.HeadlessException
+    /// public java.awt.Checkbox(java.lang.String,java.awt.CheckboxGroup,boolean) throws java.awt.HeadlessException
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( label: String?, state: Bool ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( label: String?, group: CheckboxGroup?, state: Bool ) throws {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        __args[1] = JNIType.toJava( value: state, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;Z)V", methodCache: &Checkbox.new_MethodID_2, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: group, locals: &__locals )
+        __args[2] = JNIType.toJava( value: state, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/CheckboxGroup;Z)V", methodCache: &Checkbox.new_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -301,8 +302,8 @@ open class Checkbox: Component, ItemSelectable {
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _label: String?, _ _state: Bool ) throws {
-        try self.init( label: _label, state: _state )
+    public convenience init( _ _label: String?, _ _group: CheckboxGroup?, _ _state: Bool ) throws {
+        try self.init( label: _label, group: _group, state: _state )
     }
 
     /// public java.awt.Checkbox(java.lang.String) throws java.awt.HeadlessException
@@ -337,17 +338,16 @@ open class Checkbox: Component, ItemSelectable {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public java.awt.Checkbox(java.lang.String,java.awt.CheckboxGroup,boolean) throws java.awt.HeadlessException
+    /// public java.awt.Checkbox(java.lang.String,boolean) throws java.awt.HeadlessException
 
     private static var new_MethodID_5: jmethodID?
 
-    public convenience init( label: String?, group: CheckboxGroup?, state: Bool ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    public convenience init( label: String?, state: Bool ) throws {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        __args[1] = JNIType.toJava( value: group != nil ? group! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: state, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/CheckboxGroup;Z)V", methodCache: &Checkbox.new_MethodID_5, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: state, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;Z)V", methodCache: &Checkbox.new_MethodID_5, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw HeadlessException( javaObject: throwable )
         }
@@ -355,8 +355,8 @@ open class Checkbox: Component, ItemSelectable {
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _label: String?, _ _group: CheckboxGroup?, _ _state: Bool ) throws {
-        try self.init( label: _label, group: _group, state: _state )
+    public convenience init( _ _label: String?, _ _state: Bool ) throws {
+        try self.init( label: _label, state: _state )
     }
 
     /// private void java.awt.Checkbox.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
@@ -389,20 +389,19 @@ open class Checkbox: Component, ItemSelectable {
 
     /// private static native void java.awt.Checkbox.initIDs()
 
-    /// public void java.awt.Checkbox.setLabel(java.lang.String)
+    /// java.lang.String java.awt.Checkbox.constructComponentName()
 
-    private static var setLabel_MethodID_8: jmethodID?
+    /// public java.lang.String java.awt.Checkbox.getLabel()
 
-    open func setLabel( label: String? ) {
+    private static var getLabel_MethodID_8: jmethodID?
+
+    open func getLabel() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &Checkbox.setLabel_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabel", methodSig: "()Ljava/lang/String;", methodCache: &Checkbox.getLabel_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
     }
 
-    open func setLabel( _ _label: String? ) {
-        setLabel( label: _label )
-    }
 
     /// public javax.accessibility.AccessibleContext java.awt.Checkbox.getAccessibleContext()
 
@@ -470,7 +469,7 @@ open class Checkbox: Component, ItemSelectable {
     open func setCheckboxGroup( g: CheckboxGroup? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCheckboxGroup", methodSig: "(Ljava/awt/CheckboxGroup;)V", methodCache: &Checkbox.setCheckboxGroup_MethodID_13, args: &__args, locals: &__locals )
     }
 
@@ -512,7 +511,7 @@ open class Checkbox: Component, ItemSelectable {
     open func processItemEvent( e: ItemEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "processItemEvent", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &Checkbox.processItemEvent_MethodID_16, args: &__args, locals: &__locals )
     }
 
@@ -527,7 +526,7 @@ open class Checkbox: Component, ItemSelectable {
     open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &Checkbox.getListeners_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [EventListenerForward](), from: __return )
     }
@@ -547,7 +546,7 @@ open class Checkbox: Component, ItemSelectable {
     open func processEvent( e: AWTEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Checkbox.processEvent_MethodID_18, args: &__args, locals: &__locals )
     }
 
@@ -555,19 +554,20 @@ open class Checkbox: Component, ItemSelectable {
         processEvent( e: _e )
     }
 
-    /// java.lang.String java.awt.Checkbox.constructComponentName()
+    /// public void java.awt.Checkbox.setLabel(java.lang.String)
 
-    /// public java.lang.String java.awt.Checkbox.getLabel()
+    private static var setLabel_MethodID_19: jmethodID?
 
-    private static var getLabel_MethodID_19: jmethodID?
-
-    open func getLabel() -> String! {
+    open func setLabel( label: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabel", methodSig: "()Ljava/lang/String;", methodCache: &Checkbox.getLabel_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        __args[0] = JNIType.toJava( value: label, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &Checkbox.setLabel_MethodID_19, args: &__args, locals: &__locals )
     }
 
+    open func setLabel( _ _label: String? ) {
+        setLabel( label: _label )
+    }
 
     /// In declared protocol but not defined.. ///
 

@@ -30,7 +30,7 @@ open class FlavorTableForward: FlavorMapForward, FlavorTable {
     open func getNativesForFlavor( flav: DataFlavor? ) -> java_util.List! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: flav != nil ? flav! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: flav, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNativesForFlavor", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Ljava/util/List;", methodCache: &FlavorTableForward.getNativesForFlavor_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.ListForward( javaObject: __return ) : nil

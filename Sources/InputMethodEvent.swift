@@ -178,7 +178,7 @@ open class InputMethodEvent: AWTEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &InputMethodEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -190,10 +190,10 @@ open class InputMethodEvent: AWTEvent {
     public convenience init( source: Component?, id: Int, caret: TextHitInfo?, visiblePosition: TextHitInfo? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: caret != nil ? caret! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: visiblePosition != nil ? visiblePosition! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: caret, locals: &__locals )
+        __args[3] = JNIType.toJava( value: visiblePosition, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/InputMethodEvent", classCache: &InputMethodEvent.InputMethodEventJNIClass, methodSig: "(Ljava/awt/Component;ILjava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;)V", methodCache: &InputMethodEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -210,12 +210,12 @@ open class InputMethodEvent: AWTEvent {
     public convenience init( source: Component?, id: Int, text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, committedCharacterCount: Int, caret: TextHitInfo?, visiblePosition: TextHitInfo? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: text, locals: &__locals )
         __args[3] = JNIType.toJava( value: committedCharacterCount, locals: &__locals )
-        __args[4] = JNIType.toJava( value: caret != nil ? caret! as JNIObject : nil, locals: &__locals )
-        __args[5] = JNIType.toJava( value: visiblePosition != nil ? visiblePosition! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: caret, locals: &__locals )
+        __args[5] = JNIType.toJava( value: visiblePosition, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/InputMethodEvent", classCache: &InputMethodEvent.InputMethodEventJNIClass, methodSig: "(Ljava/awt/Component;ILjava/text/AttributedCharacterIterator;ILjava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;)V", methodCache: &InputMethodEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -232,13 +232,13 @@ open class InputMethodEvent: AWTEvent {
     public convenience init( source: Component?, id: Int, when: Int64, text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, committedCharacterCount: Int, caret: TextHitInfo?, visiblePosition: TextHitInfo? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: text, locals: &__locals )
         __args[4] = JNIType.toJava( value: committedCharacterCount, locals: &__locals )
-        __args[5] = JNIType.toJava( value: caret != nil ? caret! as JNIObject : nil, locals: &__locals )
-        __args[6] = JNIType.toJava( value: visiblePosition != nil ? visiblePosition! as JNIObject : nil, locals: &__locals )
+        __args[5] = JNIType.toJava( value: caret, locals: &__locals )
+        __args[6] = JNIType.toJava( value: visiblePosition, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/InputMethodEvent", classCache: &InputMethodEvent.InputMethodEventJNIClass, methodSig: "(Ljava/awt/Component;IJLjava/text/AttributedCharacterIterator;ILjava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;)V", methodCache: &InputMethodEvent.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -252,14 +252,26 @@ open class InputMethodEvent: AWTEvent {
 
     /// public java.lang.String java.awt.event.InputMethodEvent.paramString()
 
+    /// public long java.awt.event.InputMethodEvent.getWhen()
+
+    private static var getWhen_MethodID_4: jmethodID?
+
+    open func getWhen() -> Int64 {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getWhen", methodSig: "()J", methodCache: &InputMethodEvent.getWhen_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int64(), from: __return )
+    }
+
+
     /// public java.text.AttributedCharacterIterator java.awt.event.InputMethodEvent.getText()
 
-    private static var getText_MethodID_4: jmethodID?
+    private static var getText_MethodID_5: jmethodID?
 
     open func getText() -> /* java.text.AttributedCharacterIterator */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/text/AttributedCharacterIterator;", methodCache: &InputMethodEvent.getText_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/text/AttributedCharacterIterator;", methodCache: &InputMethodEvent.getText_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.text.AttributedCharacterIterator */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -267,24 +279,24 @@ open class InputMethodEvent: AWTEvent {
 
     /// public int java.awt.event.InputMethodEvent.getCommittedCharacterCount()
 
-    private static var getCommittedCharacterCount_MethodID_5: jmethodID?
+    private static var getCommittedCharacterCount_MethodID_6: jmethodID?
 
     open func getCommittedCharacterCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCommittedCharacterCount", methodSig: "()I", methodCache: &InputMethodEvent.getCommittedCharacterCount_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCommittedCharacterCount", methodSig: "()I", methodCache: &InputMethodEvent.getCommittedCharacterCount_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public java.awt.font.TextHitInfo java.awt.event.InputMethodEvent.getCaret()
 
-    private static var getCaret_MethodID_6: jmethodID?
+    private static var getCaret_MethodID_7: jmethodID?
 
     open func getCaret() -> TextHitInfo! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaret", methodSig: "()Ljava/awt/font/TextHitInfo;", methodCache: &InputMethodEvent.getCaret_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaret", methodSig: "()Ljava/awt/font/TextHitInfo;", methodCache: &InputMethodEvent.getCaret_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
     }
@@ -292,12 +304,12 @@ open class InputMethodEvent: AWTEvent {
 
     /// public java.awt.font.TextHitInfo java.awt.event.InputMethodEvent.getVisiblePosition()
 
-    private static var getVisiblePosition_MethodID_7: jmethodID?
+    private static var getVisiblePosition_MethodID_8: jmethodID?
 
     open func getVisiblePosition() -> TextHitInfo! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisiblePosition", methodSig: "()Ljava/awt/font/TextHitInfo;", methodCache: &InputMethodEvent.getVisiblePosition_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisiblePosition", methodSig: "()Ljava/awt/font/TextHitInfo;", methodCache: &InputMethodEvent.getVisiblePosition_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
     }
@@ -307,36 +319,24 @@ open class InputMethodEvent: AWTEvent {
 
     /// public boolean java.awt.event.InputMethodEvent.isConsumed()
 
-    private static var isConsumed_MethodID_8: jmethodID?
+    private static var isConsumed_MethodID_9: jmethodID?
 
     override open func isConsumed() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumed", methodSig: "()Z", methodCache: &InputMethodEvent.isConsumed_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumed", methodSig: "()Z", methodCache: &InputMethodEvent.isConsumed_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void java.awt.event.InputMethodEvent.consume()
 
-    private static var consume_MethodID_9: jmethodID?
+    private static var consume_MethodID_10: jmethodID?
 
     override open func consume() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "consume", methodSig: "()V", methodCache: &InputMethodEvent.consume_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// public long java.awt.event.InputMethodEvent.getWhen()
-
-    private static var getWhen_MethodID_10: jmethodID?
-
-    open func getWhen() -> Int64 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getWhen", methodSig: "()J", methodCache: &InputMethodEvent.getWhen_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int64(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "consume", methodSig: "()V", methodCache: &InputMethodEvent.consume_MethodID_10, args: &__args, locals: &__locals )
     }
 
 

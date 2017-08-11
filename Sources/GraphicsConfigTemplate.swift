@@ -87,7 +87,7 @@ open class GraphicsConfigTemplate: java_swift.JavaObject, /* java.io.Serializabl
     open func isGraphicsConfigSupported( gc: GraphicsConfiguration? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: gc, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isGraphicsConfigSupported", methodSig: "(Ljava/awt/GraphicsConfiguration;)Z", methodCache: &GraphicsConfigTemplate.isGraphicsConfigSupported_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

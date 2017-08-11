@@ -30,7 +30,7 @@ open class MouseMotionListenerForward: java_util.EventListenerForward, MouseMoti
     open func mouseMoved( e: MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseMotionListenerForward.mouseMoved_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -45,7 +45,7 @@ open class MouseMotionListenerForward: java_util.EventListenerForward, MouseMoti
     open func mouseDragged( e: MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseMotionListenerForward.mouseDragged_MethodID_4, args: &__args, locals: &__locals )
     }
 

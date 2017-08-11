@@ -450,7 +450,7 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
     public convenience init( cspace: ColorSpace?, components: [Float]?, alpha: Float ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cspace != nil ? cspace! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: cspace, locals: &__locals )
         __args[1] = JNIType.toJava( value: components, locals: &__locals )
         __args[2] = JNIType.toJava( value: alpha, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Color", classCache: &Color.ColorJNIClass, methodSig: "(Ljava/awt/color/ColorSpace;[FF)V", methodCache: &Color.new_MethodID_6, args: &__args, locals: &__locals )
@@ -489,7 +489,7 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &Color.equals_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -524,78 +524,131 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// private static native void java.awt.Color.initIDs()
 
-    /// private static void java.awt.Color.testColorValueRange(float,float,float,float)
+    /// public static java.awt.Color java.awt.Color.getColor(java.lang.String,java.awt.Color)
+
+    private static var getColor_MethodID_10: jmethodID?
+
+    open class func getColor( nm: String?, v: Color? ) -> Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
+        __args[1] = JNIType.toJava( value: v, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "getColor", methodSig: "(Ljava/lang/String;Ljava/awt/Color;)Ljava/awt/Color;", methodCache: &getColor_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Color( javaObject: __return ) : nil
+    }
+
+    open class func getColor( _ _nm: String?, _ _v: Color? ) -> Color! {
+        return getColor( nm: _nm, v: _v )
+    }
+
+    /// public static java.awt.Color java.awt.Color.getColor(java.lang.String,int)
+
+    private static var getColor_MethodID_11: jmethodID?
+
+    open class func getColor( nm: String?, v: Int ) -> Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
+        __args[1] = JNIType.toJava( value: v, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "getColor", methodSig: "(Ljava/lang/String;I)Ljava/awt/Color;", methodCache: &getColor_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Color( javaObject: __return ) : nil
+    }
+
+    open class func getColor( _ _nm: String?, _ _v: Int ) -> Color! {
+        return getColor( nm: _nm, v: _v )
+    }
+
+    /// public static java.awt.Color java.awt.Color.getColor(java.lang.String)
+
+    private static var getColor_MethodID_12: jmethodID?
+
+    open class func getColor( nm: String? ) -> Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "getColor", methodSig: "(Ljava/lang/String;)Ljava/awt/Color;", methodCache: &getColor_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Color( javaObject: __return ) : nil
+    }
+
+    open class func getColor( _ _nm: String? ) -> Color! {
+        return getColor( nm: _nm )
+    }
 
     /// private static void java.awt.Color.testColorValueRange(int,int,int,int)
 
+    /// private static void java.awt.Color.testColorValueRange(float,float,float,float)
+
     /// public int java.awt.Color.getRed()
 
-    private static var getRed_MethodID_10: jmethodID?
+    private static var getRed_MethodID_13: jmethodID?
 
     open func getRed() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRed", methodSig: "()I", methodCache: &Color.getRed_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRed", methodSig: "()I", methodCache: &Color.getRed_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.Color.getGreen()
 
-    private static var getGreen_MethodID_11: jmethodID?
+    private static var getGreen_MethodID_14: jmethodID?
 
     open func getGreen() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreen", methodSig: "()I", methodCache: &Color.getGreen_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGreen", methodSig: "()I", methodCache: &Color.getGreen_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.Color.getBlue()
 
-    private static var getBlue_MethodID_12: jmethodID?
+    private static var getBlue_MethodID_15: jmethodID?
 
     open func getBlue() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlue", methodSig: "()I", methodCache: &Color.getBlue_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlue", methodSig: "()I", methodCache: &Color.getBlue_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.Color.getAlpha()
 
-    private static var getAlpha_MethodID_13: jmethodID?
+    private static var getAlpha_MethodID_16: jmethodID?
 
     open func getAlpha() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlpha", methodSig: "()I", methodCache: &Color.getAlpha_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlpha", methodSig: "()I", methodCache: &Color.getAlpha_MethodID_16, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int java.awt.Color.getRGB()
 
-    private static var getRGB_MethodID_14: jmethodID?
+    private static var getRGB_MethodID_17: jmethodID?
 
     open func getRGB() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGB", methodSig: "()I", methodCache: &Color.getRGB_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGB", methodSig: "()I", methodCache: &Color.getRGB_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public java.awt.Color java.awt.Color.brighter()
 
-    private static var brighter_MethodID_15: jmethodID?
+    private static var brighter_MethodID_18: jmethodID?
 
     open func brighter() -> Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "brighter", methodSig: "()Ljava/awt/Color;", methodCache: &Color.brighter_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "brighter", methodSig: "()Ljava/awt/Color;", methodCache: &Color.brighter_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Color( javaObject: __return ) : nil
     }
@@ -603,12 +656,12 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// public java.awt.Color java.awt.Color.darker()
 
-    private static var darker_MethodID_16: jmethodID?
+    private static var darker_MethodID_19: jmethodID?
 
     open func darker() -> Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "darker", methodSig: "()Ljava/awt/Color;", methodCache: &Color.darker_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "darker", methodSig: "()Ljava/awt/Color;", methodCache: &Color.darker_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Color( javaObject: __return ) : nil
     }
@@ -616,7 +669,7 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// public static int java.awt.Color.HSBtoRGB(float,float,float)
 
-    private static var HSBtoRGB_MethodID_17: jmethodID?
+    private static var HSBtoRGB_MethodID_20: jmethodID?
 
     open class func HSBtoRGB( hue: Float, saturation: Float, brightness: Float ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -624,7 +677,7 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
         __args[0] = JNIType.toJava( value: hue, locals: &__locals )
         __args[1] = JNIType.toJava( value: saturation, locals: &__locals )
         __args[2] = JNIType.toJava( value: brightness, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "HSBtoRGB", methodSig: "(FFF)I", methodCache: &HSBtoRGB_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "HSBtoRGB", methodSig: "(FFF)I", methodCache: &HSBtoRGB_MethodID_20, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -634,7 +687,7 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// public static float[] java.awt.Color.RGBtoHSB(int,int,int,float[])
 
-    private static var RGBtoHSB_MethodID_18: jmethodID?
+    private static var RGBtoHSB_MethodID_21: jmethodID?
 
     open class func RGBtoHSB( r: Int, g: Int, b: Int, hsbvals: [Float]? ) -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -643,7 +696,7 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: b, locals: &__locals )
         __args[3] = JNIType.toJava( value: hsbvals, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "RGBtoHSB", methodSig: "(III[F)[F", methodCache: &RGBtoHSB_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "RGBtoHSB", methodSig: "(III[F)[F", methodCache: &RGBtoHSB_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Float](), from: __return )
     }
 
@@ -653,7 +706,7 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// public static java.awt.Color java.awt.Color.getHSBColor(float,float,float)
 
-    private static var getHSBColor_MethodID_19: jmethodID?
+    private static var getHSBColor_MethodID_22: jmethodID?
 
     open class func getHSBColor( h: Float, s: Float, b: Float ) -> Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -661,7 +714,7 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
         __args[0] = JNIType.toJava( value: h, locals: &__locals )
         __args[1] = JNIType.toJava( value: s, locals: &__locals )
         __args[2] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "getHSBColor", methodSig: "(FFF)Ljava/awt/Color;", methodCache: &getHSBColor_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "getHSBColor", methodSig: "(FFF)Ljava/awt/Color;", methodCache: &getHSBColor_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Color( javaObject: __return ) : nil
     }
@@ -672,13 +725,13 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// public float[] java.awt.Color.getRGBComponents(float[])
 
-    private static var getRGBComponents_MethodID_20: jmethodID?
+    private static var getRGBComponents_MethodID_23: jmethodID?
 
     open func getRGBComponents( compArray: [Float]? ) -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: compArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRGBComponents", methodSig: "([F)[F", methodCache: &Color.getRGBComponents_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRGBComponents", methodSig: "([F)[F", methodCache: &Color.getRGBComponents_MethodID_23, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Float](), from: __return )
     }
 
@@ -688,13 +741,13 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// public float[] java.awt.Color.getRGBColorComponents(float[])
 
-    private static var getRGBColorComponents_MethodID_21: jmethodID?
+    private static var getRGBColorComponents_MethodID_24: jmethodID?
 
     open func getRGBColorComponents( compArray: [Float]? ) -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: compArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRGBColorComponents", methodSig: "([F)[F", methodCache: &Color.getRGBColorComponents_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRGBColorComponents", methodSig: "([F)[F", methodCache: &Color.getRGBColorComponents_MethodID_24, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Float](), from: __return )
     }
 
@@ -704,14 +757,14 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// public float[] java.awt.Color.getColorComponents(java.awt.color.ColorSpace,float[])
 
-    private static var getColorComponents_MethodID_22: jmethodID?
+    private static var getColorComponents_MethodID_25: jmethodID?
 
     open func getColorComponents( cspace: ColorSpace?, compArray: [Float]? ) -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cspace != nil ? cspace! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: cspace, locals: &__locals )
         __args[1] = JNIType.toJava( value: compArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorComponents", methodSig: "(Ljava/awt/color/ColorSpace;[F)[F", methodCache: &Color.getColorComponents_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorComponents", methodSig: "(Ljava/awt/color/ColorSpace;[F)[F", methodCache: &Color.getColorComponents_MethodID_25, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Float](), from: __return )
     }
 
@@ -721,13 +774,13 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// public float[] java.awt.Color.getColorComponents(float[])
 
-    private static var getColorComponents_MethodID_23: jmethodID?
+    private static var getColorComponents_MethodID_26: jmethodID?
 
     open func getColorComponents( compArray: [Float]? ) -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: compArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorComponents", methodSig: "([F)[F", methodCache: &Color.getColorComponents_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorComponents", methodSig: "([F)[F", methodCache: &Color.getColorComponents_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Float](), from: __return )
     }
 
@@ -737,12 +790,12 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// public java.awt.color.ColorSpace java.awt.Color.getColorSpace()
 
-    private static var getColorSpace_MethodID_24: jmethodID?
+    private static var getColorSpace_MethodID_27: jmethodID?
 
     open func getColorSpace() -> ColorSpace! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorSpace", methodSig: "()Ljava/awt/color/ColorSpace;", methodCache: &Color.getColorSpace_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorSpace", methodSig: "()Ljava/awt/color/ColorSpace;", methodCache: &Color.getColorSpace_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ColorSpace( javaObject: __return ) : nil
     }
@@ -750,17 +803,17 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// public synchronized java.awt.PaintContext java.awt.Color.createContext(java.awt.image.ColorModel,java.awt.Rectangle,java.awt.geom.Rectangle2D,java.awt.geom.AffineTransform,java.awt.RenderingHints)
 
-    private static var createContext_MethodID_25: jmethodID?
+    private static var createContext_MethodID_28: jmethodID?
 
     open func createContext( cm: ColorModel?, deviceBounds: Rectangle?, userBounds: Rectangle2D?, xform: AffineTransform?, hints: RenderingHints? ) -> PaintContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cm != nil ? cm! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: deviceBounds != nil ? deviceBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: userBounds != nil ? userBounds! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: xform != nil ? xform! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: cm, locals: &__locals )
+        __args[1] = JNIType.toJava( value: deviceBounds, locals: &__locals )
+        __args[2] = JNIType.toJava( value: userBounds, locals: &__locals )
+        __args[3] = JNIType.toJava( value: xform, locals: &__locals )
         __args[4] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContext", methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/Rectangle;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)Ljava/awt/PaintContext;", methodCache: &Color.createContext_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContext", methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/Rectangle;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)Ljava/awt/PaintContext;", methodCache: &Color.createContext_MethodID_28, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PaintContextForward( javaObject: __return ) : nil
     }
@@ -771,42 +824,25 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
 
     /// public int java.awt.Color.getTransparency()
 
-    private static var getTransparency_MethodID_26: jmethodID?
+    private static var getTransparency_MethodID_29: jmethodID?
 
     open func getTransparency() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &Color.getTransparency_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &Color.getTransparency_MethodID_29, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
-    /// public float[] java.awt.Color.getComponents(java.awt.color.ColorSpace,float[])
-
-    private static var getComponents_MethodID_27: jmethodID?
-
-    open func getComponents( cspace: ColorSpace?, compArray: [Float]? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cspace != nil ? cspace! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: compArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponents", methodSig: "(Ljava/awt/color/ColorSpace;[F)[F", methodCache: &Color.getComponents_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
-    }
-
-    open func getComponents( _ _cspace: ColorSpace?, _ _compArray: [Float]? ) -> [Float]! {
-        return getComponents( cspace: _cspace, compArray: _compArray )
-    }
-
     /// public float[] java.awt.Color.getComponents(float[])
 
-    private static var getComponents_MethodID_28: jmethodID?
+    private static var getComponents_MethodID_30: jmethodID?
 
     open func getComponents( compArray: [Float]? ) -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: compArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponents", methodSig: "([F)[F", methodCache: &Color.getComponents_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponents", methodSig: "([F)[F", methodCache: &Color.getComponents_MethodID_30, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Float](), from: __return )
     }
 
@@ -814,57 +850,21 @@ open class Color: java_swift.JavaObject, Paint, /* java.io.Serializable */ Uncla
         return getComponents( compArray: _compArray )
     }
 
-    /// public static java.awt.Color java.awt.Color.getColor(java.lang.String,int)
+    /// public float[] java.awt.Color.getComponents(java.awt.color.ColorSpace,float[])
 
-    private static var getColor_MethodID_29: jmethodID?
+    private static var getComponents_MethodID_31: jmethodID?
 
-    open class func getColor( nm: String?, v: Int ) -> Color! {
+    open func getComponents( cspace: ColorSpace?, compArray: [Float]? ) -> [Float]! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
-        __args[1] = JNIType.toJava( value: v, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "getColor", methodSig: "(Ljava/lang/String;I)Ljava/awt/Color;", methodCache: &getColor_MethodID_29, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Color( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: cspace, locals: &__locals )
+        __args[1] = JNIType.toJava( value: compArray, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponents", methodSig: "(Ljava/awt/color/ColorSpace;[F)[F", methodCache: &Color.getComponents_MethodID_31, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float](), from: __return )
     }
 
-    open class func getColor( _ _nm: String?, _ _v: Int ) -> Color! {
-        return getColor( nm: _nm, v: _v )
-    }
-
-    /// public static java.awt.Color java.awt.Color.getColor(java.lang.String,java.awt.Color)
-
-    private static var getColor_MethodID_30: jmethodID?
-
-    open class func getColor( nm: String?, v: Color? ) -> Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
-        __args[1] = JNIType.toJava( value: v != nil ? v! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "getColor", methodSig: "(Ljava/lang/String;Ljava/awt/Color;)Ljava/awt/Color;", methodCache: &getColor_MethodID_30, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Color( javaObject: __return ) : nil
-    }
-
-    open class func getColor( _ _nm: String?, _ _v: Color? ) -> Color! {
-        return getColor( nm: _nm, v: _v )
-    }
-
-    /// public static java.awt.Color java.awt.Color.getColor(java.lang.String)
-
-    private static var getColor_MethodID_31: jmethodID?
-
-    open class func getColor( nm: String? ) -> Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Color", classCache: &ColorJNIClass, methodName: "getColor", methodSig: "(Ljava/lang/String;)Ljava/awt/Color;", methodCache: &getColor_MethodID_31, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Color( javaObject: __return ) : nil
-    }
-
-    open class func getColor( _ _nm: String? ) -> Color! {
-        return getColor( nm: _nm )
+    open func getComponents( _ _cspace: ColorSpace?, _ _compArray: [Float]? ) -> [Float]! {
+        return getComponents( cspace: _cspace, compArray: _compArray )
     }
 
 }

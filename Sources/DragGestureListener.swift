@@ -26,7 +26,7 @@ open class DragGestureListenerForward: java_util.EventListenerForward, DragGestu
     open func dragGestureRecognized( dge: DragGestureEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dge != nil ? dge! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dge, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragGestureRecognized", methodSig: "(Ljava/awt/dnd/DragGestureEvent;)V", methodCache: &DragGestureListenerForward.dragGestureRecognized_MethodID_2, args: &__args, locals: &__locals )
     }
 

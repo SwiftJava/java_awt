@@ -150,7 +150,7 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
     open func setPaper( paper: Paper? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: paper != nil ? paper! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: paper, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPaper", methodSig: "(Ljava/awt/print/Paper;)V", methodCache: &PageFormat.setPaper_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -182,15 +182,39 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
     }
 
 
+    /// public double java.awt.print.PageFormat.getWidth()
+
+    private static var getWidth_MethodID_11: jmethodID?
+
+    open func getWidth() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getWidth", methodSig: "()D", methodCache: &PageFormat.getWidth_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+
+    /// public double java.awt.print.PageFormat.getHeight()
+
+    private static var getHeight_MethodID_12: jmethodID?
+
+    open func getHeight() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getHeight", methodSig: "()D", methodCache: &PageFormat.getHeight_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+
     /// public void java.awt.print.PageFormat.setOrientation(int) throws java.lang.IllegalArgumentException
 
-    private static var setOrientation_MethodID_11: jmethodID?
+    private static var setOrientation_MethodID_13: jmethodID?
 
     open func setOrientation( orientation: Int ) throws /* java.lang.IllegalArgumentException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &PageFormat.setOrientation_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &PageFormat.setOrientation_MethodID_13, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.IllegalArgumentException( javaObject: throwable )
         }
@@ -199,30 +223,6 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
     open func setOrientation( _ _orientation: Int ) throws /* java.lang.IllegalArgumentException */ {
         try setOrientation( orientation: _orientation )
     }
-
-    /// public double java.awt.print.PageFormat.getWidth()
-
-    private static var getWidth_MethodID_12: jmethodID?
-
-    open func getWidth() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getWidth", methodSig: "()D", methodCache: &PageFormat.getWidth_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public double java.awt.print.PageFormat.getHeight()
-
-    private static var getHeight_MethodID_13: jmethodID?
-
-    open func getHeight() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getHeight", methodSig: "()D", methodCache: &PageFormat.getHeight_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
 
 }
 

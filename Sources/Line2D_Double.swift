@@ -97,8 +97,8 @@ open class Line2D_Double: Line2D, /* java.io.Serializable */ UnclassedProtocol {
     public convenience init( p1: Point2D?, p2: Point2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p1 != nil ? p1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p2 != nil ? p2! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p2, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Line2D$Double", classCache: &Line2D_Double.Line2D_DoubleJNIClass, methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &Line2D_Double.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

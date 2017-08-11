@@ -57,36 +57,36 @@ open class RectangularShape: java_swift.JavaObject, Shape, java_lang.Cloneable {
     }
 
 
-    /// public boolean java.awt.geom.RectangularShape.contains(java.awt.geom.Rectangle2D)
-
-    private static var contains_MethodID_4: jmethodID?
-
-    open func contains( r: Rectangle2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &RectangularShape.contains_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func contains( _ _r: Rectangle2D? ) -> Bool {
-        return contains( r: _r )
-    }
-
     /// public boolean java.awt.geom.RectangularShape.contains(java.awt.geom.Point2D)
 
-    private static var contains_MethodID_5: jmethodID?
+    private static var contains_MethodID_4: jmethodID?
 
     open func contains( p: Point2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &RectangularShape.contains_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &RectangularShape.contains_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
     open func contains( _ _p: Point2D? ) -> Bool {
         return contains( p: _p )
+    }
+
+    /// public boolean java.awt.geom.RectangularShape.contains(java.awt.geom.Rectangle2D)
+
+    private static var contains_MethodID_5: jmethodID?
+
+    open func contains( r: Rectangle2D? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &RectangularShape.contains_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func contains( _ _r: Rectangle2D? ) -> Bool {
+        return contains( r: _r )
     }
 
     /// public boolean java.awt.geom.RectangularShape.intersects(java.awt.geom.Rectangle2D)
@@ -96,7 +96,7 @@ open class RectangularShape: java_swift.JavaObject, Shape, java_lang.Cloneable {
     open func intersects( r: Rectangle2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &RectangularShape.intersects_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -105,9 +105,27 @@ open class RectangularShape: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return intersects( r: _r )
     }
 
+    /// public java.awt.geom.PathIterator java.awt.geom.RectangularShape.getPathIterator(java.awt.geom.AffineTransform,double)
+
+    private static var getPathIterator_MethodID_7: jmethodID?
+
+    open func getPathIterator( at: AffineTransform?, flatness: Double ) -> PathIterator! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
+        __args[1] = JNIType.toJava( value: flatness, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &RectangularShape.getPathIterator_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
+    }
+
+    open func getPathIterator( _ _at: AffineTransform?, _ _flatness: Double ) -> PathIterator! {
+        return getPathIterator( at: _at, flatness: _flatness )
+    }
+
     /// public abstract void java.awt.geom.RectangularShape.setFrame(double,double,double,double)
 
-    private static var setFrame_MethodID_7: jmethodID?
+    private static var setFrame_MethodID_8: jmethodID?
 
     open func setFrame( x: Double, y: Double, w: Double, h: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -116,7 +134,7 @@ open class RectangularShape: java_swift.JavaObject, Shape, java_lang.Cloneable {
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: w, locals: &__locals )
         __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrame", methodSig: "(DDDD)V", methodCache: &RectangularShape.setFrame_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrame", methodSig: "(DDDD)V", methodCache: &RectangularShape.setFrame_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setFrame( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) {
@@ -125,13 +143,13 @@ open class RectangularShape: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public void java.awt.geom.RectangularShape.setFrame(java.awt.geom.Rectangle2D)
 
-    private static var setFrame_MethodID_8: jmethodID?
+    private static var setFrame_MethodID_9: jmethodID?
 
     open func setFrame( r: Rectangle2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrame", methodSig: "(Ljava/awt/geom/Rectangle2D;)V", methodCache: &RectangularShape.setFrame_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrame", methodSig: "(Ljava/awt/geom/Rectangle2D;)V", methodCache: &RectangularShape.setFrame_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setFrame( _ _r: Rectangle2D? ) {
@@ -140,14 +158,14 @@ open class RectangularShape: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public void java.awt.geom.RectangularShape.setFrame(java.awt.geom.Point2D,java.awt.geom.Dimension2D)
 
-    private static var setFrame_MethodID_9: jmethodID?
+    private static var setFrame_MethodID_10: jmethodID?
 
     open func setFrame( loc: Point2D?, size: Dimension2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: loc != nil ? loc! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: size != nil ? size! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrame", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Dimension2D;)V", methodCache: &RectangularShape.setFrame_MethodID_9, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: loc, locals: &__locals )
+        __args[1] = JNIType.toJava( value: size, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrame", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Dimension2D;)V", methodCache: &RectangularShape.setFrame_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setFrame( _ _loc: Point2D?, _ _size: Dimension2D? ) {
@@ -156,67 +174,51 @@ open class RectangularShape: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// public double java.awt.geom.RectangularShape.getMinX()
 
-    private static var getMinX_MethodID_10: jmethodID?
+    private static var getMinX_MethodID_11: jmethodID?
 
     open func getMinX() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getMinX", methodSig: "()D", methodCache: &RectangularShape.getMinX_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getMinX", methodSig: "()D", methodCache: &RectangularShape.getMinX_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
 
     /// public double java.awt.geom.RectangularShape.getMinY()
 
-    private static var getMinY_MethodID_11: jmethodID?
+    private static var getMinY_MethodID_12: jmethodID?
 
     open func getMinY() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getMinY", methodSig: "()D", methodCache: &RectangularShape.getMinY_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getMinY", methodSig: "()D", methodCache: &RectangularShape.getMinY_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
 
     /// public double java.awt.geom.RectangularShape.getMaxX()
 
-    private static var getMaxX_MethodID_12: jmethodID?
+    private static var getMaxX_MethodID_13: jmethodID?
 
     open func getMaxX() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getMaxX", methodSig: "()D", methodCache: &RectangularShape.getMaxX_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getMaxX", methodSig: "()D", methodCache: &RectangularShape.getMaxX_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
 
     /// public double java.awt.geom.RectangularShape.getMaxY()
 
-    private static var getMaxY_MethodID_13: jmethodID?
+    private static var getMaxY_MethodID_14: jmethodID?
 
     open func getMaxY() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getMaxY", methodSig: "()D", methodCache: &RectangularShape.getMaxY_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getMaxY", methodSig: "()D", methodCache: &RectangularShape.getMaxY_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
-
-    /// public void java.awt.geom.RectangularShape.setFrameFromDiagonal(java.awt.geom.Point2D,java.awt.geom.Point2D)
-
-    private static var setFrameFromDiagonal_MethodID_14: jmethodID?
-
-    open func setFrameFromDiagonal( p1: Point2D?, p2: Point2D? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p1 != nil ? p1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p2 != nil ? p2! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrameFromDiagonal", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &RectangularShape.setFrameFromDiagonal_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setFrameFromDiagonal( _ _p1: Point2D?, _ _p2: Point2D? ) {
-        setFrameFromDiagonal( p1: _p1, p2: _p2 )
-    }
 
     /// public void java.awt.geom.RectangularShape.setFrameFromDiagonal(double,double,double,double)
 
@@ -236,58 +238,58 @@ open class RectangularShape: java_swift.JavaObject, Shape, java_lang.Cloneable {
         setFrameFromDiagonal( x1: _x1, y1: _y1, x2: _x2, y2: _y2 )
     }
 
+    /// public void java.awt.geom.RectangularShape.setFrameFromDiagonal(java.awt.geom.Point2D,java.awt.geom.Point2D)
+
+    private static var setFrameFromDiagonal_MethodID_16: jmethodID?
+
+    open func setFrameFromDiagonal( p1: Point2D?, p2: Point2D? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p2, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrameFromDiagonal", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &RectangularShape.setFrameFromDiagonal_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func setFrameFromDiagonal( _ _p1: Point2D?, _ _p2: Point2D? ) {
+        setFrameFromDiagonal( p1: _p1, p2: _p2 )
+    }
+
     /// public double java.awt.geom.RectangularShape.getCenterX()
 
-    private static var getCenterX_MethodID_16: jmethodID?
+    private static var getCenterX_MethodID_17: jmethodID?
 
     open func getCenterX() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getCenterX", methodSig: "()D", methodCache: &RectangularShape.getCenterX_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getCenterX", methodSig: "()D", methodCache: &RectangularShape.getCenterX_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
 
     /// public double java.awt.geom.RectangularShape.getCenterY()
 
-    private static var getCenterY_MethodID_17: jmethodID?
+    private static var getCenterY_MethodID_18: jmethodID?
 
     open func getCenterY() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getCenterY", methodSig: "()D", methodCache: &RectangularShape.getCenterY_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getCenterY", methodSig: "()D", methodCache: &RectangularShape.getCenterY_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
 
     /// public java.awt.geom.Rectangle2D java.awt.geom.RectangularShape.getFrame()
 
-    private static var getFrame_MethodID_18: jmethodID?
+    private static var getFrame_MethodID_19: jmethodID?
 
     open func getFrame() -> Rectangle2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFrame", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &RectangularShape.getFrame_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFrame", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &RectangularShape.getFrame_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
     }
 
-
-    /// public void java.awt.geom.RectangularShape.setFrameFromCenter(java.awt.geom.Point2D,java.awt.geom.Point2D)
-
-    private static var setFrameFromCenter_MethodID_19: jmethodID?
-
-    open func setFrameFromCenter( center: Point2D?, corner: Point2D? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: center != nil ? center! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: corner != nil ? corner! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrameFromCenter", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &RectangularShape.setFrameFromCenter_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setFrameFromCenter( _ _center: Point2D?, _ _corner: Point2D? ) {
-        setFrameFromCenter( center: _center, corner: _corner )
-    }
 
     /// public void java.awt.geom.RectangularShape.setFrameFromCenter(double,double,double,double)
 
@@ -307,36 +309,34 @@ open class RectangularShape: java_swift.JavaObject, Shape, java_lang.Cloneable {
         setFrameFromCenter( centerX: _centerX, centerY: _centerY, cornerX: _cornerX, cornerY: _cornerY )
     }
 
+    /// public void java.awt.geom.RectangularShape.setFrameFromCenter(java.awt.geom.Point2D,java.awt.geom.Point2D)
+
+    private static var setFrameFromCenter_MethodID_21: jmethodID?
+
+    open func setFrameFromCenter( center: Point2D?, corner: Point2D? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: center, locals: &__locals )
+        __args[1] = JNIType.toJava( value: corner, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrameFromCenter", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &RectangularShape.setFrameFromCenter_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func setFrameFromCenter( _ _center: Point2D?, _ _corner: Point2D? ) {
+        setFrameFromCenter( center: _center, corner: _corner )
+    }
+
     /// public java.awt.Rectangle java.awt.geom.RectangularShape.getBounds()
 
-    private static var getBounds_MethodID_21: jmethodID?
+    private static var getBounds_MethodID_22: jmethodID?
 
     open func getBounds() -> Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &RectangularShape.getBounds_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &RectangularShape.getBounds_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
 
-
-    /// public java.awt.geom.PathIterator java.awt.geom.RectangularShape.getPathIterator(java.awt.geom.AffineTransform,double)
-
-    private static var getPathIterator_MethodID_22: jmethodID?
-
-    open func getPathIterator( at: AffineTransform?, flatness: Double ) -> PathIterator! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: flatness, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &RectangularShape.getPathIterator_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
-    }
-
-    open func getPathIterator( _ _at: AffineTransform?, _ _flatness: Double ) -> PathIterator! {
-        return getPathIterator( at: _at, flatness: _flatness )
-    }
 
     /// public abstract double java.awt.geom.RectangularShape.getX()
 
@@ -405,28 +405,15 @@ open class RectangularShape: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return contains( x: _x, y: _y )
     }
 
-    /// public abstract java.awt.geom.Rectangle2D java.awt.Shape.getBounds2D()
-
-    private static var getBounds2D_MethodID_28: jmethodID?
-
-    open func getBounds2D() -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &RectangularShape.getBounds2D_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-
     /// public abstract java.awt.geom.PathIterator java.awt.Shape.getPathIterator(java.awt.geom.AffineTransform)
 
-    private static var getPathIterator_MethodID_29: jmethodID?
+    private static var getPathIterator_MethodID_28: jmethodID?
 
     open func getPathIterator( at: AffineTransform? ) -> PathIterator! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at != nil ? at! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &RectangularShape.getPathIterator_MethodID_29, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &RectangularShape.getPathIterator_MethodID_28, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
     }
@@ -434,6 +421,19 @@ open class RectangularShape: java_swift.JavaObject, Shape, java_lang.Cloneable {
     open func getPathIterator( _ _at: AffineTransform? ) -> PathIterator! {
         return getPathIterator( at: _at )
     }
+
+    /// public abstract java.awt.geom.Rectangle2D java.awt.Shape.getBounds2D()
+
+    private static var getBounds2D_MethodID_29: jmethodID?
+
+    open func getBounds2D() -> Rectangle2D! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &RectangularShape.getBounds2D_MethodID_29, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
 
     /// public abstract boolean java.awt.Shape.contains(double,double,double,double)
 

@@ -139,7 +139,7 @@ open class Arc2D_Double: Arc2D, /* java.io.Serializable */ UnclassedProtocol {
     public convenience init( ellipseBounds: Rectangle2D?, start: Double, extent: Double, type: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ellipseBounds != nil ? ellipseBounds! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ellipseBounds, locals: &__locals )
         __args[1] = JNIType.toJava( value: start, locals: &__locals )
         __args[2] = JNIType.toJava( value: extent, locals: &__locals )
         __args[3] = JNIType.toJava( value: type, locals: &__locals )

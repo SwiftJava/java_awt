@@ -26,7 +26,7 @@ open class ActionListenerForward: java_util.EventListenerForward, ActionListener
     open func actionPerformed( e: ActionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &ActionListenerForward.actionPerformed_MethodID_2, args: &__args, locals: &__locals )
     }
 

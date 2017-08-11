@@ -45,7 +45,7 @@ open class ImageGraphicAttribute: GraphicAttribute {
     public convenience init( image: Image?, alignment: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
         __args[1] = JNIType.toJava( value: alignment, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/font/ImageGraphicAttribute", classCache: &ImageGraphicAttribute.ImageGraphicAttributeJNIClass, methodSig: "(Ljava/awt/Image;I)V", methodCache: &ImageGraphicAttribute.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -63,7 +63,7 @@ open class ImageGraphicAttribute: GraphicAttribute {
     public convenience init( image: Image?, alignment: Int, originX: Float, originY: Float ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
         __args[1] = JNIType.toJava( value: alignment, locals: &__locals )
         __args[2] = JNIType.toJava( value: originX, locals: &__locals )
         __args[3] = JNIType.toJava( value: originY, locals: &__locals )
@@ -83,7 +83,7 @@ open class ImageGraphicAttribute: GraphicAttribute {
     open func equals( rhs: ImageGraphicAttribute? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rhs != nil ? rhs! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/font/ImageGraphicAttribute;)Z", methodCache: &ImageGraphicAttribute.equals_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -99,7 +99,7 @@ open class ImageGraphicAttribute: GraphicAttribute {
     open func equals( rhs: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rhs != nil ? rhs! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &ImageGraphicAttribute.equals_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -110,6 +110,8 @@ open class ImageGraphicAttribute: GraphicAttribute {
 
     /// public int java.awt.font.ImageGraphicAttribute.hashCode()
 
+    /// public java.awt.geom.Rectangle2D java.awt.font.ImageGraphicAttribute.getBounds()
+
     /// public float java.awt.font.ImageGraphicAttribute.getAscent()
 
     /// public float java.awt.font.ImageGraphicAttribute.getAdvance()
@@ -117,8 +119,6 @@ open class ImageGraphicAttribute: GraphicAttribute {
     /// public float java.awt.font.ImageGraphicAttribute.getDescent()
 
     /// public void java.awt.font.ImageGraphicAttribute.draw(java.awt.Graphics2D,float,float)
-
-    /// public java.awt.geom.Rectangle2D java.awt.font.ImageGraphicAttribute.getBounds()
 
 }
 

@@ -306,19 +306,36 @@ open class Cursor: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPr
 
     /// private static native void java.awt.Cursor.initIDs()
 
+    /// public static java.awt.Cursor java.awt.Cursor.getPredefinedCursor(int)
+
+    private static var getPredefinedCursor_MethodID_5: jmethodID?
+
+    open class func getPredefinedCursor( arg0: Int ) -> Cursor! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Cursor", classCache: &CursorJNIClass, methodName: "getPredefinedCursor", methodSig: "(I)Ljava/awt/Cursor;", methodCache: &getPredefinedCursor_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Cursor( javaObject: __return ) : nil
+    }
+
+    open class func getPredefinedCursor( _ _arg0: Int ) -> Cursor! {
+        return getPredefinedCursor( arg0: _arg0 )
+    }
+
     /// private static java.lang.String java.awt.Cursor.initCursorDir()
 
     /// private void java.awt.Cursor.setPData(long)
 
     /// public static java.awt.Cursor java.awt.Cursor.getSystemCustomCursor(java.lang.String) throws java.awt.AWTException,java.awt.HeadlessException
 
-    private static var getSystemCustomCursor_MethodID_5: jmethodID?
+    private static var getSystemCustomCursor_MethodID_6: jmethodID?
 
     open class func getSystemCustomCursor( arg0: String? ) throws /* java.awt.AWTException, java.awt.HeadlessException */ -> Cursor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Cursor", classCache: &CursorJNIClass, methodName: "getSystemCustomCursor", methodSig: "(Ljava/lang/String;)Ljava/awt/Cursor;", methodCache: &getSystemCustomCursor_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Cursor", classCache: &CursorJNIClass, methodName: "getSystemCustomCursor", methodSig: "(Ljava/lang/String;)Ljava/awt/Cursor;", methodCache: &getSystemCustomCursor_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw AWTException( javaObject: throwable )
@@ -332,12 +349,12 @@ open class Cursor: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPr
 
     /// public static java.awt.Cursor java.awt.Cursor.getDefaultCursor()
 
-    private static var getDefaultCursor_MethodID_6: jmethodID?
+    private static var getDefaultCursor_MethodID_7: jmethodID?
 
     open class func getDefaultCursor() -> Cursor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Cursor", classCache: &CursorJNIClass, methodName: "getDefaultCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &getDefaultCursor_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Cursor", classCache: &CursorJNIClass, methodName: "getDefaultCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &getDefaultCursor_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Cursor( javaObject: __return ) : nil
     }
@@ -346,23 +363,6 @@ open class Cursor: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPr
     /// private static void java.awt.Cursor.loadSystemCustomCursorProperties() throws java.awt.AWTException
 
     /// private static native void java.awt.Cursor.finalizeImpl(long)
-
-    /// public static java.awt.Cursor java.awt.Cursor.getPredefinedCursor(int)
-
-    private static var getPredefinedCursor_MethodID_7: jmethodID?
-
-    open class func getPredefinedCursor( arg0: Int ) -> Cursor! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Cursor", classCache: &CursorJNIClass, methodName: "getPredefinedCursor", methodSig: "(I)Ljava/awt/Cursor;", methodCache: &getPredefinedCursor_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Cursor( javaObject: __return ) : nil
-    }
-
-    open class func getPredefinedCursor( _ _arg0: Int ) -> Cursor! {
-        return getPredefinedCursor( arg0: _arg0 )
-    }
 
 }
 

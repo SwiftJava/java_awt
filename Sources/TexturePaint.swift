@@ -66,8 +66,8 @@ open class TexturePaint: java_swift.JavaObject, Paint {
     public convenience init( txtr: BufferedImage?, anchor: Rectangle2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: txtr != nil ? txtr! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: anchor != nil ? anchor! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: txtr, locals: &__locals )
+        __args[1] = JNIType.toJava( value: anchor, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/TexturePaint", classCache: &TexturePaint.TexturePaintJNIClass, methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/geom/Rectangle2D;)V", methodCache: &TexturePaint.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -77,32 +77,19 @@ open class TexturePaint: java_swift.JavaObject, Paint {
         self.init( txtr: _txtr, anchor: _anchor )
     }
 
-    /// public java.awt.image.BufferedImage java.awt.TexturePaint.getImage()
-
-    private static var getImage_MethodID_2: jmethodID?
-
-    open func getImage() -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "()Ljava/awt/image/BufferedImage;", methodCache: &TexturePaint.getImage_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BufferedImage( javaObject: __return ) : nil
-    }
-
-
     /// public java.awt.PaintContext java.awt.TexturePaint.createContext(java.awt.image.ColorModel,java.awt.Rectangle,java.awt.geom.Rectangle2D,java.awt.geom.AffineTransform,java.awt.RenderingHints)
 
-    private static var createContext_MethodID_3: jmethodID?
+    private static var createContext_MethodID_2: jmethodID?
 
     open func createContext( cm: ColorModel?, deviceBounds: Rectangle?, userBounds: Rectangle2D?, xform: AffineTransform?, hints: RenderingHints? ) -> PaintContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cm != nil ? cm! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: deviceBounds != nil ? deviceBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: userBounds != nil ? userBounds! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: xform != nil ? xform! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: cm, locals: &__locals )
+        __args[1] = JNIType.toJava( value: deviceBounds, locals: &__locals )
+        __args[2] = JNIType.toJava( value: userBounds, locals: &__locals )
+        __args[3] = JNIType.toJava( value: xform, locals: &__locals )
         __args[4] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContext", methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/Rectangle;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)Ljava/awt/PaintContext;", methodCache: &TexturePaint.createContext_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContext", methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/Rectangle;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)Ljava/awt/PaintContext;", methodCache: &TexturePaint.createContext_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PaintContextForward( javaObject: __return ) : nil
     }
@@ -113,13 +100,26 @@ open class TexturePaint: java_swift.JavaObject, Paint {
 
     /// public int java.awt.TexturePaint.getTransparency()
 
-    private static var getTransparency_MethodID_4: jmethodID?
+    private static var getTransparency_MethodID_3: jmethodID?
 
     open func getTransparency() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &TexturePaint.getTransparency_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &TexturePaint.getTransparency_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public java.awt.image.BufferedImage java.awt.TexturePaint.getImage()
+
+    private static var getImage_MethodID_4: jmethodID?
+
+    open func getImage() -> BufferedImage! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "()Ljava/awt/image/BufferedImage;", methodCache: &TexturePaint.getImage_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BufferedImage( javaObject: __return ) : nil
     }
 
 

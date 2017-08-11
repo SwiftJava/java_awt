@@ -41,8 +41,8 @@ open class LayoutManager2Forward: LayoutManagerForward, LayoutManager2 {
     open func addLayoutComponent( comp: Component?, constraints: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &LayoutManager2Forward.addLayoutComponent_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -57,7 +57,7 @@ open class LayoutManager2Forward: LayoutManagerForward, LayoutManager2 {
     open func invalidateLayout( target: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidateLayout", methodSig: "(Ljava/awt/Container;)V", methodCache: &LayoutManager2Forward.invalidateLayout_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -72,7 +72,7 @@ open class LayoutManager2Forward: LayoutManagerForward, LayoutManager2 {
     open func maximumLayoutSize( target: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "maximumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &LayoutManager2Forward.maximumLayoutSize_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
@@ -89,7 +89,7 @@ open class LayoutManager2Forward: LayoutManagerForward, LayoutManager2 {
     open func getLayoutAlignmentX( target: Container? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentX", methodSig: "(Ljava/awt/Container;)F", methodCache: &LayoutManager2Forward.getLayoutAlignmentX_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
@@ -105,7 +105,7 @@ open class LayoutManager2Forward: LayoutManagerForward, LayoutManager2 {
     open func getLayoutAlignmentY( target: Container? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentY", methodSig: "(Ljava/awt/Container;)F", methodCache: &LayoutManager2Forward.getLayoutAlignmentY_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
@@ -121,7 +121,7 @@ open class LayoutManager2Forward: LayoutManagerForward, LayoutManager2 {
     override open func removeLayoutComponent( comp: Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &LayoutManager2Forward.removeLayoutComponent_MethodID_11, args: &__args, locals: &__locals )
     }
 
@@ -137,7 +137,7 @@ open class LayoutManager2Forward: LayoutManagerForward, LayoutManager2 {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &LayoutManager2Forward.addLayoutComponent_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -152,7 +152,7 @@ open class LayoutManager2Forward: LayoutManagerForward, LayoutManager2 {
     override open func layoutContainer( parent: Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &LayoutManager2Forward.layoutContainer_MethodID_13, args: &__args, locals: &__locals )
     }
 
@@ -167,7 +167,7 @@ open class LayoutManager2Forward: LayoutManagerForward, LayoutManager2 {
     override open func preferredLayoutSize( parent: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &LayoutManager2Forward.preferredLayoutSize_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
@@ -184,7 +184,7 @@ open class LayoutManager2Forward: LayoutManagerForward, LayoutManager2 {
     override open func minimumLayoutSize( parent: Container? ) -> Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &LayoutManager2Forward.minimumLayoutSize_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
