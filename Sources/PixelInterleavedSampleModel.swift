@@ -22,9 +22,8 @@ open class PixelInterleavedSampleModel: ComponentSampleModel {
 
     override open var bandOffsets: [Int32]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "bandOffsets", fieldType: "[I", fieldCache: &PixelInterleavedSampleModel.bandOffsets_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "bandOffsets", fieldType: "[I", fieldCache: &PixelInterleavedSampleModel.bandOffsets_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -39,9 +38,8 @@ open class PixelInterleavedSampleModel: ComponentSampleModel {
 
     override open var bankIndices: [Int32]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "bankIndices", fieldType: "[I", fieldCache: &PixelInterleavedSampleModel.bankIndices_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "bankIndices", fieldType: "[I", fieldCache: &PixelInterleavedSampleModel.bankIndices_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -56,13 +54,12 @@ open class PixelInterleavedSampleModel: ComponentSampleModel {
 
     override open var numBands: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.numBands_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.numBands_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.numBands_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -73,31 +70,13 @@ open class PixelInterleavedSampleModel: ComponentSampleModel {
 
     override open var numBanks: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "numBanks", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.numBanks_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "numBanks", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.numBanks_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "numBanks", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.numBanks_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int java.awt.image.ComponentSampleModel.scanlineStride
-
-    private static var scanlineStride_FieldID: jfieldID?
-
-    override open var scanlineStride: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.scanlineStride_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.scanlineStride_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -107,31 +86,45 @@ open class PixelInterleavedSampleModel: ComponentSampleModel {
 
     override open var pixelStride: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "pixelStride", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.pixelStride_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "pixelStride", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.pixelStride_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "pixelStride", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.pixelStride_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// protected int java.awt.image.SampleModel.width
+    /// protected int java.awt.image.ComponentSampleModel.scanlineStride
 
-    private static var width_FieldID: jfieldID?
+    private static var scanlineStride_FieldID: jfieldID?
 
-    override open var width: Int {
+    override open var scanlineStride: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.scanlineStride_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.scanlineStride_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected int java.awt.image.SampleModel.dataType
+
+    private static var dataType_FieldID: jfieldID?
+
+    override open var dataType: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.dataType_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -141,33 +134,33 @@ open class PixelInterleavedSampleModel: ComponentSampleModel {
 
     override open var height: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.height_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.height_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "height", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.height_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
     /// protected int java.awt.image.SampleModel.numBands
 
-    /// protected int java.awt.image.SampleModel.dataType
+    // Skipping field: false false true false false false 
 
-    private static var dataType_FieldID: jfieldID?
+    /// protected int java.awt.image.SampleModel.width
 
-    override open var dataType: Int {
+    private static var width_FieldID: jfieldID?
+
+    override open var width: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.dataType_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.width_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &PixelInterleavedSampleModel.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -176,13 +169,13 @@ open class PixelInterleavedSampleModel: ComponentSampleModel {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( dataType: Int, w: Int, h: Int, pixelStride: Int, scanlineStride: Int, bandOffsets: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: pixelStride, locals: &__locals )
-        __args[4] = JNIType.toJava( value: scanlineStride, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(pixelStride) )
+        __args[4] = jvalue( i: jint(scanlineStride) )
         __args[5] = JNIType.toJava( value: bandOffsets, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/PixelInterleavedSampleModel", classCache: &PixelInterleavedSampleModel.PixelInterleavedSampleModelJNIClass, methodSig: "(IIIII[I)V", methodCache: &PixelInterleavedSampleModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -193,11 +186,17 @@ open class PixelInterleavedSampleModel: ComponentSampleModel {
         self.init( dataType: _dataType, w: _w, h: _h, pixelStride: _pixelStride, scanlineStride: _scanlineStride, bandOffsets: _bandOffsets )
     }
 
-    /// public int java.awt.image.PixelInterleavedSampleModel.hashCode()
+    /// public java.awt.image.SampleModel java.awt.image.PixelInterleavedSampleModel.createCompatibleSampleModel(int,int)
+
+    // Skipping method: false true false false false 
 
     /// public java.awt.image.SampleModel java.awt.image.PixelInterleavedSampleModel.createSubsetSampleModel(int[])
 
-    /// public java.awt.image.SampleModel java.awt.image.PixelInterleavedSampleModel.createCompatibleSampleModel(int,int)
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.image.PixelInterleavedSampleModel.hashCode()
+
+    // Skipping method: false true false false false 
 
 }
 

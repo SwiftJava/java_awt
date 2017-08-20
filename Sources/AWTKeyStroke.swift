@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.AWTKeyStroke ///
 
-open class AWTKeyStroke: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class AWTKeyStroke: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -17,15 +17,21 @@ open class AWTKeyStroke: java_swift.JavaObject, /* java.io.Serializable */ Uncla
 
     private static var AWTKeyStrokeJNIClass: jclass?
 
-    /// static final long java.awt.AWTKeyStroke.serialVersionUID
+    /// static final boolean java.awt.AWTKeyStroke.$assertionsDisabled
 
-    /// private static java.util.Map java.awt.AWTKeyStroke.modifierKeywords
-
-    /// private static java.awt.VKCollection java.awt.AWTKeyStroke.vks
+    // Skipping field: true false false false false false 
 
     /// private static java.lang.Object java.awt.AWTKeyStroke.APP_CONTEXT_CACHE_KEY
 
     /// private static java.awt.AWTKeyStroke java.awt.AWTKeyStroke.APP_CONTEXT_KEYSTROKE_KEY
+
+    /// private static java.util.Map java.awt.AWTKeyStroke.modifierKeywords
+
+    /// static final long java.awt.AWTKeyStroke.serialVersionUID
+
+    // Skipping field: true true false false false false 
+
+    /// private static java.awt.VKCollection java.awt.AWTKeyStroke.vks
 
     /// private char java.awt.AWTKeyStroke.keyChar
 
@@ -35,20 +41,30 @@ open class AWTKeyStroke: java_swift.JavaObject, /* java.io.Serializable */ Uncla
 
     /// private boolean java.awt.AWTKeyStroke.onKeyRelease
 
-    /// static final boolean java.awt.AWTKeyStroke.$assertionsDisabled
-
-    /// protected java.awt.AWTKeyStroke(char,int,int,boolean)
+    /// protected java.awt.AWTKeyStroke()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( keyChar: UInt16, keyCode: Int, modifiers: Int, onKeyRelease: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keyChar, locals: &__locals )
-        __args[1] = JNIType.toJava( value: keyCode, locals: &__locals )
-        __args[2] = JNIType.toJava( value: modifiers, locals: &__locals )
-        __args[3] = JNIType.toJava( value: onKeyRelease, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStroke.AWTKeyStrokeJNIClass, methodSig: "(CIIZ)V", methodCache: &AWTKeyStroke.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStroke.AWTKeyStrokeJNIClass, methodSig: "()V", methodCache: &AWTKeyStroke.new_MethodID_1, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    /// protected java.awt.AWTKeyStroke(char,int,int,boolean)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( keyChar: UInt16, keyCode: Int, modifiers: Int, onKeyRelease: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( c: keyChar )
+        __args[1] = jvalue( i: jint(keyCode) )
+        __args[2] = jvalue( i: jint(modifiers) )
+        __args[3] = jvalue( z: jboolean(onKeyRelease ? JNI_TRUE : JNI_FALSE) )
+        let __object = JNIMethod.NewObject( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStroke.AWTKeyStrokeJNIClass, methodSig: "(CIIZ)V", methodCache: &AWTKeyStroke.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -57,76 +73,16 @@ open class AWTKeyStroke: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         self.init( keyChar: _keyChar, keyCode: _keyCode, modifiers: _modifiers, onKeyRelease: _onKeyRelease )
     }
 
-    /// protected java.awt.AWTKeyStroke()
-
-    private static var new_MethodID_2: jmethodID?
-
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStroke.AWTKeyStrokeJNIClass, methodSig: "()V", methodCache: &AWTKeyStroke.new_MethodID_2, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    /// public final boolean java.awt.AWTKeyStroke.equals(java.lang.Object)
-
-    private static var equals_MethodID_3: jmethodID?
-
-    open func equals( anObject: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anObject, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &AWTKeyStroke.equals_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func equals( _ _anObject: java_swift.JavaObject? ) -> Bool {
-        return equals( anObject: _anObject )
-    }
-
-    /// public java.lang.String java.awt.AWTKeyStroke.toString()
-
-    /// public int java.awt.AWTKeyStroke.hashCode()
-
-    /// public final int java.awt.AWTKeyStroke.getModifiers()
-
-    private static var getModifiers_MethodID_4: jmethodID?
-
-    open func getModifiers() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getModifiers", methodSig: "()I", methodCache: &AWTKeyStroke.getModifiers_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected java.lang.Object java.awt.AWTKeyStroke.readResolve() throws java.io.ObjectStreamException
-
-    private static var readResolve_MethodID_5: jmethodID?
-
-    open func readResolve() throws /* java.io.ObjectStreamException */ -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "readResolve", methodSig: "()Ljava/lang/Object;", methodCache: &AWTKeyStroke.readResolve_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.ObjectStreamException */ UnclassedObject( javaObject: throwable )
-        }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
     /// public static java.awt.AWTKeyStroke java.awt.AWTKeyStroke.getAWTKeyStroke(int,int)
 
-    private static var getAWTKeyStroke_MethodID_6: jmethodID?
+    private static var getAWTKeyStroke_MethodID_3: jmethodID?
 
     open class func getAWTKeyStroke( keyCode: Int, modifiers: Int ) -> AWTKeyStroke! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keyCode, locals: &__locals )
-        __args[1] = JNIType.toJava( value: modifiers, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStroke", methodSig: "(II)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStroke_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(keyCode) )
+        __args[1] = jvalue( i: jint(modifiers) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStroke", methodSig: "(II)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStroke_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AWTKeyStroke( javaObject: __return ) : nil
     }
@@ -135,15 +91,34 @@ open class AWTKeyStroke: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         return getAWTKeyStroke( keyCode: _keyCode, modifiers: _modifiers )
     }
 
+    /// public static java.awt.AWTKeyStroke java.awt.AWTKeyStroke.getAWTKeyStroke(int,int,boolean)
+
+    private static var getAWTKeyStroke_MethodID_4: jmethodID?
+
+    open class func getAWTKeyStroke( keyCode: Int, modifiers: Int, onKeyRelease: Bool ) -> AWTKeyStroke! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(keyCode) )
+        __args[1] = jvalue( i: jint(modifiers) )
+        __args[2] = jvalue( z: jboolean(onKeyRelease ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStroke", methodSig: "(IIZ)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStroke_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AWTKeyStroke( javaObject: __return ) : nil
+    }
+
+    open class func getAWTKeyStroke( _ _keyCode: Int, _ _modifiers: Int, _ _onKeyRelease: Bool ) -> AWTKeyStroke! {
+        return getAWTKeyStroke( keyCode: _keyCode, modifiers: _modifiers, onKeyRelease: _onKeyRelease )
+    }
+
     /// public static java.awt.AWTKeyStroke java.awt.AWTKeyStroke.getAWTKeyStroke(java.lang.String)
 
-    private static var getAWTKeyStroke_MethodID_7: jmethodID?
+    private static var getAWTKeyStroke_MethodID_5: jmethodID?
 
     open class func getAWTKeyStroke( s: String? ) -> AWTKeyStroke! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStroke", methodSig: "(Ljava/lang/String;)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStroke_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStroke", methodSig: "(Ljava/lang/String;)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStroke_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AWTKeyStroke( javaObject: __return ) : nil
     }
@@ -154,13 +129,13 @@ open class AWTKeyStroke: java_swift.JavaObject, /* java.io.Serializable */ Uncla
 
     /// public static java.awt.AWTKeyStroke java.awt.AWTKeyStroke.getAWTKeyStroke(char)
 
-    private static var getAWTKeyStroke_MethodID_8: jmethodID?
+    private static var getAWTKeyStroke_MethodID_6: jmethodID?
 
     open class func getAWTKeyStroke( keyChar: UInt16 ) -> AWTKeyStroke! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keyChar, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStroke", methodSig: "(C)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStroke_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( c: keyChar )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStroke", methodSig: "(C)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStroke_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AWTKeyStroke( javaObject: __return ) : nil
     }
@@ -171,14 +146,14 @@ open class AWTKeyStroke: java_swift.JavaObject, /* java.io.Serializable */ Uncla
 
     /// public static java.awt.AWTKeyStroke java.awt.AWTKeyStroke.getAWTKeyStroke(java.lang.Character,int)
 
-    private static var getAWTKeyStroke_MethodID_9: jmethodID?
+    private static var getAWTKeyStroke_MethodID_7: jmethodID?
 
     open class func getAWTKeyStroke( keyChar: java_lang.Character?, modifiers: Int ) -> AWTKeyStroke! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: keyChar, locals: &__locals )
-        __args[1] = JNIType.toJava( value: modifiers, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStroke", methodSig: "(Ljava/lang/Character;I)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStroke_MethodID_9, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(modifiers) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStroke", methodSig: "(Ljava/lang/Character;I)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStroke_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AWTKeyStroke( javaObject: __return ) : nil
     }
@@ -187,79 +162,17 @@ open class AWTKeyStroke: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         return getAWTKeyStroke( keyChar: _keyChar, modifiers: _modifiers )
     }
 
-    /// public static java.awt.AWTKeyStroke java.awt.AWTKeyStroke.getAWTKeyStroke(int,int,boolean)
-
-    private static var getAWTKeyStroke_MethodID_10: jmethodID?
-
-    open class func getAWTKeyStroke( keyCode: Int, modifiers: Int, onKeyRelease: Bool ) -> AWTKeyStroke! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keyCode, locals: &__locals )
-        __args[1] = JNIType.toJava( value: modifiers, locals: &__locals )
-        __args[2] = JNIType.toJava( value: onKeyRelease, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStroke", methodSig: "(IIZ)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStroke_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AWTKeyStroke( javaObject: __return ) : nil
-    }
-
-    open class func getAWTKeyStroke( _ _keyCode: Int, _ _modifiers: Int, _ _onKeyRelease: Bool ) -> AWTKeyStroke! {
-        return getAWTKeyStroke( keyCode: _keyCode, modifiers: _modifiers, onKeyRelease: _onKeyRelease )
-    }
-
-    /// public final char java.awt.AWTKeyStroke.getKeyChar()
-
-    private static var getKeyChar_MethodID_11: jmethodID?
-
-    open func getKeyChar() -> UInt16 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getKeyChar", methodSig: "()C", methodCache: &AWTKeyStroke.getKeyChar_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: UInt16(), from: __return )
-    }
-
-
-    /// public final int java.awt.AWTKeyStroke.getKeyCode()
-
-    private static var getKeyCode_MethodID_12: jmethodID?
-
-    open func getKeyCode() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getKeyCode", methodSig: "()I", methodCache: &AWTKeyStroke.getKeyCode_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// private static java.lang.Class java.awt.AWTKeyStroke.getAWTKeyStrokeClass()
-
-    /// protected static void java.awt.AWTKeyStroke.registerSubclass(java.lang.Class)
-
-    private static var registerSubclass_MethodID_13: jmethodID?
-
-    open class func registerSubclass( subclass: java_swift.JavaClass? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: subclass, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "registerSubclass", methodSig: "(Ljava/lang/Class;)V", methodCache: &registerSubclass_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open class func registerSubclass( _ _subclass: java_swift.JavaClass? ) {
-        registerSubclass( subclass: _subclass )
-    }
-
-    /// private static java.lang.reflect.Constructor java.awt.AWTKeyStroke.getCtor(java.lang.Class)
-
-    /// private static synchronized java.awt.AWTKeyStroke java.awt.AWTKeyStroke.getCachedStroke(char,int,int,boolean)
 
     /// public static java.awt.AWTKeyStroke java.awt.AWTKeyStroke.getAWTKeyStrokeForEvent(java.awt.event.KeyEvent)
 
-    private static var getAWTKeyStrokeForEvent_MethodID_14: jmethodID?
+    private static var getAWTKeyStrokeForEvent_MethodID_8: jmethodID?
 
     open class func getAWTKeyStrokeForEvent( anEvent: KeyEvent? ) -> AWTKeyStroke! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: anEvent, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStrokeForEvent", methodSig: "(Ljava/awt/event/KeyEvent;)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStrokeForEvent_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "getAWTKeyStrokeForEvent", methodSig: "(Ljava/awt/event/KeyEvent;)Ljava/awt/AWTKeyStroke;", methodCache: &getAWTKeyStrokeForEvent_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AWTKeyStroke( javaObject: __return ) : nil
     }
@@ -268,41 +181,141 @@ open class AWTKeyStroke: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         return getAWTKeyStrokeForEvent( anEvent: _anEvent )
     }
 
+    /// private static synchronized java.awt.AWTKeyStroke java.awt.AWTKeyStroke.getCachedStroke(char,int,int,boolean)
+
+    /// private static java.lang.reflect.Constructor java.awt.AWTKeyStroke.getCtor(java.lang.Class)
+
+    /// static java.lang.String java.awt.AWTKeyStroke.getModifiersText(int)
+
+    // Skipping method: true false false false false 
+
     /// private static java.awt.VKCollection java.awt.AWTKeyStroke.getVKCollection()
 
+    /// static java.lang.String java.awt.AWTKeyStroke.getVKText(int)
+
+    // Skipping method: true false false false false 
+
     /// private static int java.awt.AWTKeyStroke.getVKValue(java.lang.String)
+
+    /// private static int java.awt.AWTKeyStroke.mapNewModifiers(int)
+
+    /// private static int java.awt.AWTKeyStroke.mapOldModifiers(int)
+
+    /// protected static void java.awt.AWTKeyStroke.registerSubclass(java.lang.Class)
+
+    private static var registerSubclass_MethodID_9: jmethodID?
+
+    open class func registerSubclass( subclass: java_swift.JavaClass? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: subclass, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "java/awt/AWTKeyStroke", classCache: &AWTKeyStrokeJNIClass, methodName: "registerSubclass", methodSig: "(Ljava/lang/Class;)V", methodCache: &registerSubclass_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open class func registerSubclass( _ _subclass: java_swift.JavaClass? ) {
+        registerSubclass( subclass: _subclass )
+    }
+
+    /// public final boolean java.awt.AWTKeyStroke.equals(java.lang.Object)
+
+    private static var equals_MethodID_10: jmethodID?
+
+    open func equals( anObject: java_swift.JavaObject? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: anObject, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &AWTKeyStroke.equals_MethodID_10, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    override open func equals( _ _anObject: java_swift.JavaObject? ) -> Bool {
+        return equals( anObject: _anObject )
+    }
+
+    /// public final char java.awt.AWTKeyStroke.getKeyChar()
+
+    private static var getKeyChar_MethodID_11: jmethodID?
+
+    open func getKeyChar() -> UInt16 {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getKeyChar", methodSig: "()C", methodCache: &AWTKeyStroke.getKeyChar_MethodID_11, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public final int java.awt.AWTKeyStroke.getKeyCode()
+
+    private static var getKeyCode_MethodID_12: jmethodID?
+
+    open func getKeyCode() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getKeyCode", methodSig: "()I", methodCache: &AWTKeyStroke.getKeyCode_MethodID_12, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public final int java.awt.AWTKeyStroke.getKeyEventType()
+
+    private static var getKeyEventType_MethodID_13: jmethodID?
+
+    open func getKeyEventType() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getKeyEventType", methodSig: "()I", methodCache: &AWTKeyStroke.getKeyEventType_MethodID_13, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public final int java.awt.AWTKeyStroke.getModifiers()
+
+    private static var getModifiers_MethodID_14: jmethodID?
+
+    open func getModifiers() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getModifiers", methodSig: "()I", methodCache: &AWTKeyStroke.getModifiers_MethodID_14, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.AWTKeyStroke.hashCode()
+
+    // Skipping method: false true false false false 
 
     /// public final boolean java.awt.AWTKeyStroke.isOnKeyRelease()
 
     private static var isOnKeyRelease_MethodID_15: jmethodID?
 
     open func isOnKeyRelease() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isOnKeyRelease", methodSig: "()Z", methodCache: &AWTKeyStroke.isOnKeyRelease_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// public final int java.awt.AWTKeyStroke.getKeyEventType()
+    /// protected java.lang.Object java.awt.AWTKeyStroke.readResolve() throws java.io.ObjectStreamException
 
-    private static var getKeyEventType_MethodID_16: jmethodID?
+    private static var readResolve_MethodID_16: jmethodID?
 
-    open func getKeyEventType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func readResolve() throws /* java.io.ObjectStreamException */ -> java_swift.JavaObject! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getKeyEventType", methodSig: "()I", methodCache: &AWTKeyStroke.getKeyEventType_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "readResolve", methodSig: "()Ljava/lang/Object;", methodCache: &AWTKeyStroke.readResolve_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.ObjectStreamException */ UnavailableObject( javaObject: throwable )
+        }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
 
-    /// static java.lang.String java.awt.AWTKeyStroke.getModifiersText(int)
+    /// public java.lang.String java.awt.AWTKeyStroke.toString()
 
-    /// static java.lang.String java.awt.AWTKeyStroke.getVKText(int)
-
-    /// private static int java.awt.AWTKeyStroke.mapOldModifiers(int)
-
-    /// private static int java.awt.AWTKeyStroke.mapNewModifiers(int)
+    // Skipping method: false true false false false 
 
 }
 

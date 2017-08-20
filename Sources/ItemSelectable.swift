@@ -31,8 +31,8 @@ open class ItemSelectableForward: JNIObjectForward, ItemSelectable {
     private static var addItemListener_MethodID_4: jmethodID?
 
     open func addItemListener( l: ItemListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &ItemSelectableForward.addItemListener_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -46,10 +46,10 @@ open class ItemSelectableForward: JNIObjectForward, ItemSelectable {
     private static var getSelectedObjects_MethodID_5: jmethodID?
 
     open func getSelectedObjects() -> [JavaObject]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedObjects", methodSig: "()[Ljava/lang/Object;", methodCache: &ItemSelectableForward.getSelectedObjects_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [JavaObject](), from: __return )
+        return JNIType.toSwift( type: [JavaObject].self, from: __return )
     }
 
 
@@ -58,8 +58,8 @@ open class ItemSelectableForward: JNIObjectForward, ItemSelectable {
     private static var removeItemListener_MethodID_6: jmethodID?
 
     open func removeItemListener( l: ItemListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &ItemSelectableForward.removeItemListener_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -69,5 +69,4 @@ open class ItemSelectableForward: JNIObjectForward, ItemSelectable {
     }
 
 }
-
 

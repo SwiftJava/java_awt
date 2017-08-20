@@ -16,32 +16,43 @@ open class MultiPixelPackedSampleModel: SampleModel {
 
     private static var MultiPixelPackedSampleModelJNIClass: jclass?
 
-    /// int java.awt.image.MultiPixelPackedSampleModel.pixelBitStride
-
     /// int java.awt.image.MultiPixelPackedSampleModel.bitMask
 
-    /// int java.awt.image.MultiPixelPackedSampleModel.pixelsPerDataElement
-
-    /// int java.awt.image.MultiPixelPackedSampleModel.dataElementSize
+    // Skipping field: true false false false false false 
 
     /// int java.awt.image.MultiPixelPackedSampleModel.dataBitOffset
 
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.image.MultiPixelPackedSampleModel.dataElementSize
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.image.MultiPixelPackedSampleModel.pixelBitStride
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.image.MultiPixelPackedSampleModel.pixelsPerDataElement
+
+    // Skipping field: true false false false false false 
+
     /// int java.awt.image.MultiPixelPackedSampleModel.scanlineStride
 
-    /// protected int java.awt.image.SampleModel.width
+    // Skipping field: true false false false false false 
 
-    private static var width_FieldID: jfieldID?
+    /// protected int java.awt.image.SampleModel.dataType
 
-    override open var width: Int {
+    private static var dataType_FieldID: jfieldID?
+
+    override open var dataType: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.dataType_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -51,13 +62,12 @@ open class MultiPixelPackedSampleModel: SampleModel {
 
     override open var height: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.height_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.height_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "height", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.height_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -68,31 +78,29 @@ open class MultiPixelPackedSampleModel: SampleModel {
 
     override open var numBands: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.numBands_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.numBands_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.numBands_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// protected int java.awt.image.SampleModel.dataType
+    /// protected int java.awt.image.SampleModel.width
 
-    private static var dataType_FieldID: jfieldID?
+    private static var width_FieldID: jfieldID?
 
-    override open var dataType: Int {
+    override open var width: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.dataType_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.width_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &MultiPixelPackedSampleModel.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -101,12 +109,12 @@ open class MultiPixelPackedSampleModel: SampleModel {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( dataType: Int, w: Int, h: Int, numberOfBits: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: numberOfBits, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(numberOfBits) )
         let __object = JNIMethod.NewObject( className: "java/awt/image/MultiPixelPackedSampleModel", classCache: &MultiPixelPackedSampleModel.MultiPixelPackedSampleModelJNIClass, methodSig: "(IIII)V", methodCache: &MultiPixelPackedSampleModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -121,14 +129,14 @@ open class MultiPixelPackedSampleModel: SampleModel {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( dataType: Int, w: Int, h: Int, numberOfBits: Int, scanlineStride: Int, dataBitOffset: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: numberOfBits, locals: &__locals )
-        __args[4] = JNIType.toJava( value: scanlineStride, locals: &__locals )
-        __args[5] = JNIType.toJava( value: dataBitOffset, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(numberOfBits) )
+        __args[4] = jvalue( i: jint(scanlineStride) )
+        __args[5] = jvalue( i: jint(dataBitOffset) )
         let __object = JNIMethod.NewObject( className: "java/awt/image/MultiPixelPackedSampleModel", classCache: &MultiPixelPackedSampleModel.MultiPixelPackedSampleModelJNIClass, methodSig: "(IIIIII)V", methodCache: &MultiPixelPackedSampleModel.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -138,118 +146,146 @@ open class MultiPixelPackedSampleModel: SampleModel {
         self.init( dataType: _dataType, w: _w, h: _h, numberOfBits: _numberOfBits, scanlineStride: _scanlineStride, dataBitOffset: _dataBitOffset )
     }
 
+    /// public java.awt.image.SampleModel java.awt.image.MultiPixelPackedSampleModel.createCompatibleSampleModel(int,int)
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.image.DataBuffer java.awt.image.MultiPixelPackedSampleModel.createDataBuffer()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.image.SampleModel java.awt.image.MultiPixelPackedSampleModel.createSubsetSampleModel(int[])
+
+    // Skipping method: false true false false false 
+
     /// public boolean java.awt.image.MultiPixelPackedSampleModel.equals(java.lang.Object)
 
     private static var equals_MethodID_3: jmethodID?
 
     open func equals( o: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &MultiPixelPackedSampleModel.equals_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _o: java_swift.JavaObject? ) -> Bool {
         return equals( o: _o )
     }
 
-    /// public int java.awt.image.MultiPixelPackedSampleModel.hashCode()
-
-    /// public int java.awt.image.MultiPixelPackedSampleModel.getOffset(int,int)
-
-    private static var getOffset_MethodID_4: jmethodID?
-
-    open func getOffset( x: Int, y: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "(II)I", methodCache: &MultiPixelPackedSampleModel.getOffset_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getOffset( _ _x: Int, _ _y: Int ) -> Int {
-        return getOffset( x: _x, y: _y )
-    }
-
     /// public int java.awt.image.MultiPixelPackedSampleModel.getBitOffset(int)
 
-    private static var getBitOffset_MethodID_5: jmethodID?
+    private static var getBitOffset_MethodID_4: jmethodID?
 
     open func getBitOffset( x: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBitOffset", methodSig: "(I)I", methodCache: &MultiPixelPackedSampleModel.getBitOffset_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(x) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBitOffset", methodSig: "(I)I", methodCache: &MultiPixelPackedSampleModel.getBitOffset_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getBitOffset( _ _x: Int ) -> Int {
         return getBitOffset( x: _x )
     }
 
-    /// public int java.awt.image.MultiPixelPackedSampleModel.getPixelBitStride()
-
-    private static var getPixelBitStride_MethodID_6: jmethodID?
-
-    open func getPixelBitStride() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPixelBitStride", methodSig: "()I", methodCache: &MultiPixelPackedSampleModel.getPixelBitStride_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public int java.awt.image.MultiPixelPackedSampleModel.getDataBitOffset()
 
-    private static var getDataBitOffset_MethodID_7: jmethodID?
+    private static var getDataBitOffset_MethodID_5: jmethodID?
 
     open func getDataBitOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataBitOffset", methodSig: "()I", methodCache: &MultiPixelPackedSampleModel.getDataBitOffset_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataBitOffset", methodSig: "()I", methodCache: &MultiPixelPackedSampleModel.getDataBitOffset_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-
-    /// public int[] java.awt.image.MultiPixelPackedSampleModel.getSampleSize()
-
-    /// public int java.awt.image.MultiPixelPackedSampleModel.getSampleSize(int)
-
-    /// public java.awt.image.DataBuffer java.awt.image.MultiPixelPackedSampleModel.createDataBuffer()
-
-    /// public java.awt.image.SampleModel java.awt.image.MultiPixelPackedSampleModel.createSubsetSampleModel(int[])
-
-    /// public void java.awt.image.MultiPixelPackedSampleModel.setDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.MultiPixelPackedSampleModel.setPixel(int,int,int[],java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.MultiPixelPackedSampleModel.setSample(int,int,int,int,java.awt.image.DataBuffer)
-
-    /// public int java.awt.image.MultiPixelPackedSampleModel.getTransferType()
 
     /// public java.lang.Object java.awt.image.MultiPixelPackedSampleModel.getDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
 
-    /// public java.awt.image.SampleModel java.awt.image.MultiPixelPackedSampleModel.createCompatibleSampleModel(int,int)
+    // Skipping method: false true false false false 
 
     /// public int java.awt.image.MultiPixelPackedSampleModel.getNumDataElements()
 
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.image.MultiPixelPackedSampleModel.getOffset(int,int)
+
+    private static var getOffset_MethodID_6: jmethodID?
+
+    open func getOffset( x: Int, y: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "(II)I", methodCache: &MultiPixelPackedSampleModel.getOffset_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getOffset( _ _x: Int, _ _y: Int ) -> Int {
+        return getOffset( x: _x, y: _y )
+    }
+
     /// public int[] java.awt.image.MultiPixelPackedSampleModel.getPixel(int,int,int[],java.awt.image.DataBuffer)
 
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.image.MultiPixelPackedSampleModel.getPixelBitStride()
+
+    private static var getPixelBitStride_MethodID_7: jmethodID?
+
+    open func getPixelBitStride() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPixelBitStride", methodSig: "()I", methodCache: &MultiPixelPackedSampleModel.getPixelBitStride_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public int java.awt.image.MultiPixelPackedSampleModel.getSample(int,int,int,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.image.MultiPixelPackedSampleModel.getSampleSize(int)
+
+    // Skipping method: false true false false false 
+
+    /// public int[] java.awt.image.MultiPixelPackedSampleModel.getSampleSize()
+
+    // Skipping method: false true false false false 
 
     /// public int java.awt.image.MultiPixelPackedSampleModel.getScanlineStride()
 
     private static var getScanlineStride_MethodID_8: jmethodID?
 
     open func getScanlineStride() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScanlineStride", methodSig: "()I", methodCache: &MultiPixelPackedSampleModel.getScanlineStride_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
+
+    /// public int java.awt.image.MultiPixelPackedSampleModel.getTransferType()
+
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.image.MultiPixelPackedSampleModel.hashCode()
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.MultiPixelPackedSampleModel.setDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.MultiPixelPackedSampleModel.setPixel(int,int,int[],java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.MultiPixelPackedSampleModel.setSample(int,int,int,int,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
 
 }
 

@@ -18,40 +18,30 @@ open class ShortLookupTable: LookupTable {
 
     /// short[][] java.awt.image.ShortLookupTable.data
 
+    // Skipping field: true false false false false false 
+
     /// int java.awt.image.LookupTable.numComponents
 
-    /// int java.awt.image.LookupTable.offset
+    // Skipping field: true false false false false false 
 
     /// int java.awt.image.LookupTable.numEntries
 
-    /// public java.awt.image.ShortLookupTable(int,short[][])
+    // Skipping field: true false false false false false 
 
-    private static var new_MethodID_1: jmethodID?
+    /// int java.awt.image.LookupTable.offset
 
-    public convenience init( offset: Int, data: [[Int16]]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: data, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/ShortLookupTable", classCache: &ShortLookupTable.ShortLookupTableJNIClass, methodSig: "(I[[S)V", methodCache: &ShortLookupTable.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _offset: Int, _ _data: [[Int16]]? ) {
-        self.init( offset: _offset, data: _data )
-    }
+    // Skipping field: true false false false false false 
 
     /// public java.awt.image.ShortLookupTable(int,short[])
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( offset: Int, data: [Int16]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(offset) )
         __args[1] = JNIType.toJava( value: data, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/ShortLookupTable", classCache: &ShortLookupTable.ShortLookupTableJNIClass, methodSig: "(I[S)V", methodCache: &ShortLookupTable.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/ShortLookupTable", classCache: &ShortLookupTable.ShortLookupTableJNIClass, methodSig: "(I[S)V", methodCache: &ShortLookupTable.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -60,49 +50,67 @@ open class ShortLookupTable: LookupTable {
         self.init( offset: _offset, data: _data )
     }
 
+    /// public java.awt.image.ShortLookupTable(int,short[][])
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( offset: Int, data: [[Int16]]? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = JNIType.toJava( value: data, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/ShortLookupTable", classCache: &ShortLookupTable.ShortLookupTableJNIClass, methodSig: "(I[[S)V", methodCache: &ShortLookupTable.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _offset: Int, _ _data: [[Int16]]? ) {
+        self.init( offset: _offset, data: _data )
+    }
+
     /// public final short[][] java.awt.image.ShortLookupTable.getTable()
 
     private static var getTable_MethodID_3: jmethodID?
 
     open func getTable() -> [[Int16]]! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTable", methodSig: "()[[S", methodCache: &ShortLookupTable.getTable_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [[Int16]](), from: __return )
+        return JNIType.toSwift( type: [[Int16]].self, from: __return )
     }
 
-
-    /// public int[] java.awt.image.ShortLookupTable.lookupPixel(int[],int[])
-
-    private static var lookupPixel_MethodID_4: jmethodID?
-
-    open func lookupPixel( src: [Int32]?, dst: [Int32]? ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dst, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "lookupPixel", methodSig: "([I[I)[I", methodCache: &ShortLookupTable.lookupPixel_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
-    }
-
-    override open func lookupPixel( _ _src: [Int32]?, _ _dst: [Int32]? ) -> [Int32]! {
-        return lookupPixel( src: _src, dst: _dst )
-    }
 
     /// public short[] java.awt.image.ShortLookupTable.lookupPixel(short[],short[])
 
-    private static var lookupPixel_MethodID_5: jmethodID?
+    private static var lookupPixel_MethodID_4: jmethodID?
 
     open func lookupPixel( src: [Int16]?, dst: [Int16]? ) -> [Int16]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
         __args[1] = JNIType.toJava( value: dst, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "lookupPixel", methodSig: "([S[S)[S", methodCache: &ShortLookupTable.lookupPixel_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int16](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "lookupPixel", methodSig: "([S[S)[S", methodCache: &ShortLookupTable.lookupPixel_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int16].self, from: __return )
     }
 
     open func lookupPixel( _ _src: [Int16]?, _ _dst: [Int16]? ) -> [Int16]! {
+        return lookupPixel( src: _src, dst: _dst )
+    }
+
+    /// public int[] java.awt.image.ShortLookupTable.lookupPixel(int[],int[])
+
+    private static var lookupPixel_MethodID_5: jmethodID?
+
+    open func lookupPixel( src: [Int32]?, dst: [Int32]? ) -> [Int32]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dst, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "lookupPixel", methodSig: "([I[I)[I", methodCache: &ShortLookupTable.lookupPixel_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
+    }
+
+    override open func lookupPixel( _ _src: [Int32]?, _ _dst: [Int32]? ) -> [Int32]! {
         return lookupPixel( src: _src, dst: _dst )
     }
 

@@ -21,8 +21,8 @@ open class FocusTraversalPolicy: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/FocusTraversalPolicy", classCache: &FocusTraversalPolicy.FocusTraversalPolicyJNIClass, methodSig: "()V", methodCache: &FocusTraversalPolicy.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -33,8 +33,8 @@ open class FocusTraversalPolicy: java_swift.JavaObject {
     private static var getComponentAfter_MethodID_2: jmethodID?
 
     open func getComponentAfter( aContainer: Container?, aComponent: Component? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
         __args[1] = JNIType.toJava( value: aComponent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAfter", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &FocusTraversalPolicy.getComponentAfter_MethodID_2, args: &__args, locals: &__locals )
@@ -51,8 +51,8 @@ open class FocusTraversalPolicy: java_swift.JavaObject {
     private static var getComponentBefore_MethodID_3: jmethodID?
 
     open func getComponentBefore( aContainer: Container?, aComponent: Component? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
         __args[1] = JNIType.toJava( value: aComponent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentBefore", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &FocusTraversalPolicy.getComponentBefore_MethodID_3, args: &__args, locals: &__locals )
@@ -64,21 +64,21 @@ open class FocusTraversalPolicy: java_swift.JavaObject {
         return getComponentBefore( aContainer: _aContainer, aComponent: _aComponent )
     }
 
-    /// public java.awt.Component java.awt.FocusTraversalPolicy.getInitialComponent(java.awt.Window)
+    /// public abstract java.awt.Component java.awt.FocusTraversalPolicy.getDefaultComponent(java.awt.Container)
 
-    private static var getInitialComponent_MethodID_4: jmethodID?
+    private static var getDefaultComponent_MethodID_4: jmethodID?
 
-    open func getInitialComponent( window: Window? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getDefaultComponent( aContainer: Container? ) -> Component! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: window, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInitialComponent", methodSig: "(Ljava/awt/Window;)Ljava/awt/Component;", methodCache: &FocusTraversalPolicy.getInitialComponent_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &FocusTraversalPolicy.getDefaultComponent_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
     }
 
-    open func getInitialComponent( _ _window: Window? ) -> Component! {
-        return getInitialComponent( window: _window )
+    open func getDefaultComponent( _ _aContainer: Container? ) -> Component! {
+        return getDefaultComponent( aContainer: _aContainer )
     }
 
     /// public abstract java.awt.Component java.awt.FocusTraversalPolicy.getFirstComponent(java.awt.Container)
@@ -86,8 +86,8 @@ open class FocusTraversalPolicy: java_swift.JavaObject {
     private static var getFirstComponent_MethodID_5: jmethodID?
 
     open func getFirstComponent( aContainer: Container? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFirstComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &FocusTraversalPolicy.getFirstComponent_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -98,38 +98,38 @@ open class FocusTraversalPolicy: java_swift.JavaObject {
         return getFirstComponent( aContainer: _aContainer )
     }
 
+    /// public java.awt.Component java.awt.FocusTraversalPolicy.getInitialComponent(java.awt.Window)
+
+    private static var getInitialComponent_MethodID_6: jmethodID?
+
+    open func getInitialComponent( window: Window? ) -> Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: window, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInitialComponent", methodSig: "(Ljava/awt/Window;)Ljava/awt/Component;", methodCache: &FocusTraversalPolicy.getInitialComponent_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component( javaObject: __return ) : nil
+    }
+
+    open func getInitialComponent( _ _window: Window? ) -> Component! {
+        return getInitialComponent( window: _window )
+    }
+
     /// public abstract java.awt.Component java.awt.FocusTraversalPolicy.getLastComponent(java.awt.Container)
 
-    private static var getLastComponent_MethodID_6: jmethodID?
+    private static var getLastComponent_MethodID_7: jmethodID?
 
     open func getLastComponent( aContainer: Container? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &FocusTraversalPolicy.getLastComponent_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &FocusTraversalPolicy.getLastComponent_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
     }
 
     open func getLastComponent( _ _aContainer: Container? ) -> Component! {
         return getLastComponent( aContainer: _aContainer )
-    }
-
-    /// public abstract java.awt.Component java.awt.FocusTraversalPolicy.getDefaultComponent(java.awt.Container)
-
-    private static var getDefaultComponent_MethodID_7: jmethodID?
-
-    open func getDefaultComponent( aContainer: Container? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &FocusTraversalPolicy.getDefaultComponent_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-    open func getDefaultComponent( _ _aContainer: Container? ) -> Component! {
-        return getDefaultComponent( aContainer: _aContainer )
     }
 
 }

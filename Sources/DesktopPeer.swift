@@ -7,29 +7,29 @@ import java_swift
 
 public protocol DesktopPeer: JavaProtocol {
 
-    /// public abstract void java.awt.peer.DesktopPeer.print(java.io.File) throws java.io.IOException
+    /// public abstract void java.awt.peer.DesktopPeer.browse(java.net.URI) throws java.io.IOException
 
-    func print( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */
+    func browse( uri: /* class java.net.URI */ UnavailableObject? ) throws /* java.io.IOException */
+
+    /// public abstract void java.awt.peer.DesktopPeer.edit(java.io.File) throws java.io.IOException
+
+    func edit( file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */
 
     /// public abstract boolean java.awt.peer.DesktopPeer.isSupported(java.awt.Desktop$Action)
 
     func isSupported( action: Desktop_Action? ) -> Bool
 
-    /// public abstract void java.awt.peer.DesktopPeer.open(java.io.File) throws java.io.IOException
-
-    func open( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */
-
-    /// public abstract void java.awt.peer.DesktopPeer.edit(java.io.File) throws java.io.IOException
-
-    func edit( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */
-
-    /// public abstract void java.awt.peer.DesktopPeer.browse(java.net.URI) throws java.io.IOException
-
-    func browse( uri: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */
-
     /// public abstract void java.awt.peer.DesktopPeer.mail(java.net.URI) throws java.io.IOException
 
-    func mail( mailtoURL: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */
+    func mail( mailtoURL: /* class java.net.URI */ UnavailableObject? ) throws /* java.io.IOException */
+
+    /// public abstract void java.awt.peer.DesktopPeer.open(java.io.File) throws java.io.IOException
+
+    func open( file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */
+
+    /// public abstract void java.awt.peer.DesktopPeer.print(java.io.File) throws java.io.IOException
+
+    func print( file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */
 
 }
 
@@ -38,112 +38,116 @@ open class DesktopPeerForward: JNIObjectForward, DesktopPeer {
 
     private static var DesktopPeerJNIClass: jclass?
 
-    /// public abstract void java.awt.peer.DesktopPeer.print(java.io.File) throws java.io.IOException
+    /// public abstract void java.awt.peer.DesktopPeer.browse(java.net.URI) throws java.io.IOException
 
-    private static var print_MethodID_7: jmethodID?
+    private static var browse_MethodID_7: jmethodID?
 
-    open func print( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func browse( uri: /* class java.net.URI */ UnavailableObject? ) throws /* java.io.IOException */ {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: file, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "print", methodSig: "(Ljava/io/File;)V", methodCache: &DesktopPeerForward.print_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: uri, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "browse", methodSig: "(Ljava/net/URI;)V", methodCache: &DesktopPeerForward.browse_MethodID_7, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
-    open func print( _ _file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
-        try print( file: _file )
+    open func browse( _ _uri: /* class java.net.URI */ UnavailableObject? ) throws /* java.io.IOException */ {
+        try browse( uri: _uri )
+    }
+
+    /// public abstract void java.awt.peer.DesktopPeer.edit(java.io.File) throws java.io.IOException
+
+    private static var edit_MethodID_8: jmethodID?
+
+    open func edit( file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: file, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "edit", methodSig: "(Ljava/io/File;)V", methodCache: &DesktopPeerForward.edit_MethodID_8, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func edit( _ _file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        try edit( file: _file )
     }
 
     /// public abstract boolean java.awt.peer.DesktopPeer.isSupported(java.awt.Desktop$Action)
 
-    private static var isSupported_MethodID_8: jmethodID?
+    private static var isSupported_MethodID_9: jmethodID?
 
     open func isSupported( action: Desktop_Action? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: action, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSupported", methodSig: "(Ljava/awt/Desktop$Action;)Z", methodCache: &DesktopPeerForward.isSupported_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSupported", methodSig: "(Ljava/awt/Desktop$Action;)Z", methodCache: &DesktopPeerForward.isSupported_MethodID_9, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isSupported( _ _action: Desktop_Action? ) -> Bool {
         return isSupported( action: _action )
     }
 
-    /// public abstract void java.awt.peer.DesktopPeer.open(java.io.File) throws java.io.IOException
-
-    private static var open_MethodID_9: jmethodID?
-
-    open func open( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: file, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "open", methodSig: "(Ljava/io/File;)V", methodCache: &DesktopPeerForward.open_MethodID_9, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func open( _ _file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
-        try open( file: _file )
-    }
-
-    /// public abstract void java.awt.peer.DesktopPeer.edit(java.io.File) throws java.io.IOException
-
-    private static var edit_MethodID_10: jmethodID?
-
-    open func edit( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: file, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "edit", methodSig: "(Ljava/io/File;)V", methodCache: &DesktopPeerForward.edit_MethodID_10, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func edit( _ _file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
-        try edit( file: _file )
-    }
-
-    /// public abstract void java.awt.peer.DesktopPeer.browse(java.net.URI) throws java.io.IOException
-
-    private static var browse_MethodID_11: jmethodID?
-
-    open func browse( uri: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: uri, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "browse", methodSig: "(Ljava/net/URI;)V", methodCache: &DesktopPeerForward.browse_MethodID_11, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func browse( _ _uri: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */ {
-        try browse( uri: _uri )
-    }
-
     /// public abstract void java.awt.peer.DesktopPeer.mail(java.net.URI) throws java.io.IOException
 
-    private static var mail_MethodID_12: jmethodID?
+    private static var mail_MethodID_10: jmethodID?
 
-    open func mail( mailtoURL: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func mail( mailtoURL: /* class java.net.URI */ UnavailableObject? ) throws /* java.io.IOException */ {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: mailtoURL, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mail", methodSig: "(Ljava/net/URI;)V", methodCache: &DesktopPeerForward.mail_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mail", methodSig: "(Ljava/net/URI;)V", methodCache: &DesktopPeerForward.mail_MethodID_10, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
-    open func mail( _ _mailtoURL: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */ {
+    open func mail( _ _mailtoURL: /* class java.net.URI */ UnavailableObject? ) throws /* java.io.IOException */ {
         try mail( mailtoURL: _mailtoURL )
     }
 
-}
+    /// public abstract void java.awt.peer.DesktopPeer.open(java.io.File) throws java.io.IOException
 
+    private static var open_MethodID_11: jmethodID?
+
+    open func open( file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: file, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "open", methodSig: "(Ljava/io/File;)V", methodCache: &DesktopPeerForward.open_MethodID_11, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func open( _ _file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        try open( file: _file )
+    }
+
+    /// public abstract void java.awt.peer.DesktopPeer.print(java.io.File) throws java.io.IOException
+
+    private static var print_MethodID_12: jmethodID?
+
+    open func print( file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: file, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "print", methodSig: "(Ljava/io/File;)V", methodCache: &DesktopPeerForward.print_MethodID_12, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func print( _ _file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        try print( file: _file )
+    }
+
+}
 

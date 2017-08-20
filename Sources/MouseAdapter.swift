@@ -21,56 +21,56 @@ open class MouseAdapter: java_swift.JavaObject, MouseListener, MouseWheelListene
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/event/MouseAdapter", classCache: &MouseAdapter.MouseAdapterJNIClass, methodSig: "()V", methodCache: &MouseAdapter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void java.awt.event.MouseAdapter.mousePressed(java.awt.event.MouseEvent)
-
-    private static var mousePressed_MethodID_2: jmethodID?
-
-    open func mousePressed( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mousePressed_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func mousePressed( _ _e: MouseEvent? ) {
-        mousePressed( e: _e )
-    }
-
-    /// public void java.awt.event.MouseAdapter.mouseReleased(java.awt.event.MouseEvent)
-
-    private static var mouseReleased_MethodID_3: jmethodID?
-
-    open func mouseReleased( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mouseReleased_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func mouseReleased( _ _e: MouseEvent? ) {
-        mouseReleased( e: _e )
-    }
-
     /// public void java.awt.event.MouseAdapter.mouseClicked(java.awt.event.MouseEvent)
 
-    private static var mouseClicked_MethodID_4: jmethodID?
+    private static var mouseClicked_MethodID_2: jmethodID?
 
     open func mouseClicked( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mouseClicked_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mouseClicked_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func mouseClicked( _ _e: MouseEvent? ) {
         mouseClicked( e: _e )
+    }
+
+    /// public void java.awt.event.MouseAdapter.mouseDragged(java.awt.event.MouseEvent)
+
+    private static var mouseDragged_MethodID_3: jmethodID?
+
+    open func mouseDragged( e: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mouseDragged_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func mouseDragged( _ _e: MouseEvent? ) {
+        mouseDragged( e: _e )
+    }
+
+    /// public void java.awt.event.MouseAdapter.mouseEntered(java.awt.event.MouseEvent)
+
+    private static var mouseEntered_MethodID_4: jmethodID?
+
+    open func mouseEntered( e: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mouseEntered_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func mouseEntered( _ _e: MouseEvent? ) {
+        mouseEntered( e: _e )
     }
 
     /// public void java.awt.event.MouseAdapter.mouseExited(java.awt.event.MouseEvent)
@@ -78,8 +78,8 @@ open class MouseAdapter: java_swift.JavaObject, MouseListener, MouseWheelListene
     private static var mouseExited_MethodID_5: jmethodID?
 
     open func mouseExited( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseExited", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mouseExited_MethodID_5, args: &__args, locals: &__locals )
     }
@@ -88,49 +88,49 @@ open class MouseAdapter: java_swift.JavaObject, MouseListener, MouseWheelListene
         mouseExited( e: _e )
     }
 
-    /// public void java.awt.event.MouseAdapter.mouseEntered(java.awt.event.MouseEvent)
-
-    private static var mouseEntered_MethodID_6: jmethodID?
-
-    open func mouseEntered( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mouseEntered_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func mouseEntered( _ _e: MouseEvent? ) {
-        mouseEntered( e: _e )
-    }
-
     /// public void java.awt.event.MouseAdapter.mouseMoved(java.awt.event.MouseEvent)
 
-    private static var mouseMoved_MethodID_7: jmethodID?
+    private static var mouseMoved_MethodID_6: jmethodID?
 
     open func mouseMoved( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mouseMoved_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mouseMoved_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func mouseMoved( _ _e: MouseEvent? ) {
         mouseMoved( e: _e )
     }
 
-    /// public void java.awt.event.MouseAdapter.mouseDragged(java.awt.event.MouseEvent)
+    /// public void java.awt.event.MouseAdapter.mousePressed(java.awt.event.MouseEvent)
 
-    private static var mouseDragged_MethodID_8: jmethodID?
+    private static var mousePressed_MethodID_7: jmethodID?
 
-    open func mouseDragged( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func mousePressed( e: MouseEvent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mouseDragged_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mousePressed_MethodID_7, args: &__args, locals: &__locals )
     }
 
-    open func mouseDragged( _ _e: MouseEvent? ) {
-        mouseDragged( e: _e )
+    open func mousePressed( _ _e: MouseEvent? ) {
+        mousePressed( e: _e )
+    }
+
+    /// public void java.awt.event.MouseAdapter.mouseReleased(java.awt.event.MouseEvent)
+
+    private static var mouseReleased_MethodID_8: jmethodID?
+
+    open func mouseReleased( e: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseAdapter.mouseReleased_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func mouseReleased( _ _e: MouseEvent? ) {
+        mouseReleased( e: _e )
     }
 
     /// public void java.awt.event.MouseAdapter.mouseWheelMoved(java.awt.event.MouseWheelEvent)
@@ -138,8 +138,8 @@ open class MouseAdapter: java_swift.JavaObject, MouseListener, MouseWheelListene
     private static var mouseWheelMoved_MethodID_9: jmethodID?
 
     open func mouseWheelMoved( e: MouseWheelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseWheelMoved", methodSig: "(Ljava/awt/event/MouseWheelEvent;)V", methodCache: &MouseAdapter.mouseWheelMoved_MethodID_9, args: &__args, locals: &__locals )
     }
@@ -150,98 +150,76 @@ open class MouseAdapter: java_swift.JavaObject, MouseListener, MouseWheelListene
 
 }
 
-private typealias MouseAdapter_mousePressed_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias MouseAdapter_equals_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
 
-private func MouseAdapter_mousePressed_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mousePressed( e: e != nil ? MouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias MouseAdapter_mouseReleased_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MouseAdapter_mouseReleased_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseReleased( e: e != nil ? MouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias MouseAdapter_mouseClicked_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MouseAdapter_mouseClicked_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseClicked( e: e != nil ? MouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias MouseAdapter_mouseExited_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MouseAdapter_mouseExited_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseExited( e: e != nil ? MouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias MouseAdapter_mouseEntered_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MouseAdapter_mouseEntered_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseEntered( e: e != nil ? MouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias MouseAdapter_mouseMoved_5_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MouseAdapter_mouseMoved_5( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseMoved( e: e != nil ? MouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias MouseAdapter_mouseDragged_6_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MouseAdapter_mouseDragged_6( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseDragged( e: e != nil ? MouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias MouseAdapter_mouseWheelMoved_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MouseAdapter_mouseWheelMoved_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseWheelMoved( e: e != nil ? MouseWheelEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias MouseAdapter_equals_11_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
-
-private func MouseAdapter_equals_11( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
-    JNI.inNative = true;
+private func MouseAdapter_equals_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
     let __return = MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).equals( arg0: arg0 != nil ? java_swift.JavaObject( javaObject: arg0 ) : nil )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).z, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( z: jboolean(__return ? JNI_TRUE : JNI_FALSE) ).z, &__locals, removeLast: true )
 }
 
-private typealias MouseAdapter_toString_12_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+private typealias MouseAdapter_hashCode_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
 
-private func MouseAdapter_toString_12( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
-    JNI.inNative = true;
-    let __return = MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).l, &locals, removeLast: true )
-}
-
-private typealias MouseAdapter_hashCode_13_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
-
-private func MouseAdapter_hashCode_13( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
-    JNI.inNative = true;
+private func MouseAdapter_hashCode_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
     let __return = MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).hashCode( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).i, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( i: jint(__return) ).i, &__locals, removeLast: true )
+}
+
+private typealias MouseAdapter_mouseClicked_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func MouseAdapter_mouseClicked_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseClicked( e: e != nil ? MouseEvent( javaObject: e ) : nil )
+}
+
+private typealias MouseAdapter_mouseDragged_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func MouseAdapter_mouseDragged_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseDragged( e: e != nil ? MouseEvent( javaObject: e ) : nil )
+}
+
+private typealias MouseAdapter_mouseEntered_5_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func MouseAdapter_mouseEntered_5( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseEntered( e: e != nil ? MouseEvent( javaObject: e ) : nil )
+}
+
+private typealias MouseAdapter_mouseExited_6_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func MouseAdapter_mouseExited_6( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseExited( e: e != nil ? MouseEvent( javaObject: e ) : nil )
+}
+
+private typealias MouseAdapter_mouseMoved_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func MouseAdapter_mouseMoved_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseMoved( e: e != nil ? MouseEvent( javaObject: e ) : nil )
+}
+
+private typealias MouseAdapter_mousePressed_8_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func MouseAdapter_mousePressed_8( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mousePressed( e: e != nil ? MouseEvent( javaObject: e ) : nil )
+}
+
+private typealias MouseAdapter_mouseReleased_9_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func MouseAdapter_mouseReleased_9( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseReleased( e: e != nil ? MouseEvent( javaObject: e ) : nil )
+}
+
+private typealias MouseAdapter_mouseWheelMoved_10_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func MouseAdapter_mouseWheelMoved_10( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseWheelMoved( e: e != nil ? MouseWheelEvent( javaObject: e ) : nil )
+}
+
+private typealias MouseAdapter_toString_13_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+
+private func MouseAdapter_toString_13( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
+    let __return = MouseAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
+    var __locals = [jobject]()
+    return JNI.check( JNIType.toJava( value: __return, locals: &__locals ).l, &__locals, removeLast: true )
 }
 
 fileprivate class MouseAdapterLocal_: JNIObjectProxy<MouseAdapter> {
@@ -249,38 +227,38 @@ fileprivate class MouseAdapterLocal_: JNIObjectProxy<MouseAdapter> {
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let MouseAdapter_mousePressed_0_thunk: MouseAdapter_mousePressed_0_type = MouseAdapter_mousePressed_0
-        natives.append( JNINativeMethod( name: strdup("__mousePressed"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mousePressed_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseAdapter_equals_0_thunk: MouseAdapter_equals_0_type = MouseAdapter_equals_0
+        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( MouseAdapter_equals_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MouseAdapter_mouseReleased_1_thunk: MouseAdapter_mouseReleased_1_type = MouseAdapter_mouseReleased_1
-        natives.append( JNINativeMethod( name: strdup("__mouseReleased"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseReleased_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseAdapter_hashCode_2_thunk: MouseAdapter_hashCode_2_type = MouseAdapter_hashCode_2
+        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( MouseAdapter_hashCode_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MouseAdapter_mouseClicked_2_thunk: MouseAdapter_mouseClicked_2_type = MouseAdapter_mouseClicked_2
-        natives.append( JNINativeMethod( name: strdup("__mouseClicked"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseClicked_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseAdapter_mouseClicked_3_thunk: MouseAdapter_mouseClicked_3_type = MouseAdapter_mouseClicked_3
+        natives.append( JNINativeMethod( name: strdup("__mouseClicked"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseClicked_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MouseAdapter_mouseExited_3_thunk: MouseAdapter_mouseExited_3_type = MouseAdapter_mouseExited_3
-        natives.append( JNINativeMethod( name: strdup("__mouseExited"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseExited_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseAdapter_mouseDragged_4_thunk: MouseAdapter_mouseDragged_4_type = MouseAdapter_mouseDragged_4
+        natives.append( JNINativeMethod( name: strdup("__mouseDragged"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseDragged_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MouseAdapter_mouseEntered_4_thunk: MouseAdapter_mouseEntered_4_type = MouseAdapter_mouseEntered_4
-        natives.append( JNINativeMethod( name: strdup("__mouseEntered"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseEntered_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseAdapter_mouseEntered_5_thunk: MouseAdapter_mouseEntered_5_type = MouseAdapter_mouseEntered_5
+        natives.append( JNINativeMethod( name: strdup("__mouseEntered"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseEntered_5_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MouseAdapter_mouseMoved_5_thunk: MouseAdapter_mouseMoved_5_type = MouseAdapter_mouseMoved_5
-        natives.append( JNINativeMethod( name: strdup("__mouseMoved"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseMoved_5_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseAdapter_mouseExited_6_thunk: MouseAdapter_mouseExited_6_type = MouseAdapter_mouseExited_6
+        natives.append( JNINativeMethod( name: strdup("__mouseExited"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseExited_6_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MouseAdapter_mouseDragged_6_thunk: MouseAdapter_mouseDragged_6_type = MouseAdapter_mouseDragged_6
-        natives.append( JNINativeMethod( name: strdup("__mouseDragged"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseDragged_6_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseAdapter_mouseMoved_7_thunk: MouseAdapter_mouseMoved_7_type = MouseAdapter_mouseMoved_7
+        natives.append( JNINativeMethod( name: strdup("__mouseMoved"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseMoved_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MouseAdapter_mouseWheelMoved_7_thunk: MouseAdapter_mouseWheelMoved_7_type = MouseAdapter_mouseWheelMoved_7
-        natives.append( JNINativeMethod( name: strdup("__mouseWheelMoved"), signature: strdup("(JLjava/awt/event/MouseWheelEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseWheelMoved_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseAdapter_mousePressed_8_thunk: MouseAdapter_mousePressed_8_type = MouseAdapter_mousePressed_8
+        natives.append( JNINativeMethod( name: strdup("__mousePressed"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mousePressed_8_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MouseAdapter_equals_11_thunk: MouseAdapter_equals_11_type = MouseAdapter_equals_11
-        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( MouseAdapter_equals_11_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseAdapter_mouseReleased_9_thunk: MouseAdapter_mouseReleased_9_type = MouseAdapter_mouseReleased_9
+        natives.append( JNINativeMethod( name: strdup("__mouseReleased"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseReleased_9_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MouseAdapter_toString_12_thunk: MouseAdapter_toString_12_type = MouseAdapter_toString_12
-        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( MouseAdapter_toString_12_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseAdapter_mouseWheelMoved_10_thunk: MouseAdapter_mouseWheelMoved_10_type = MouseAdapter_mouseWheelMoved_10
+        natives.append( JNINativeMethod( name: strdup("__mouseWheelMoved"), signature: strdup("(JLjava/awt/event/MouseWheelEvent;)V"), fnPtr: unsafeBitCast( MouseAdapter_mouseWheelMoved_10_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MouseAdapter_hashCode_13_thunk: MouseAdapter_hashCode_13_type = MouseAdapter_hashCode_13
-        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( MouseAdapter_hashCode_13_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseAdapter_toString_13_thunk: MouseAdapter_toString_13_type = MouseAdapter_toString_13
+        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( MouseAdapter_toString_13_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -323,8 +301,8 @@ open class MouseAdapterBase: MouseAdapter {
     private static var new_MethodID_10: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
 
         self.init( javaObject: nil )
         __args[0] = __local!.swiftValue()

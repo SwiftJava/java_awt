@@ -23,7 +23,7 @@ open class AdjustmentEvent: AWTEvent {
     open static var ADJUSTMENT_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ADJUSTMENT_FIRST", fieldType: "I", fieldCache: &ADJUSTMENT_FIRST_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -34,7 +34,7 @@ open class AdjustmentEvent: AWTEvent {
     open static var ADJUSTMENT_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ADJUSTMENT_LAST", fieldType: "I", fieldCache: &ADJUSTMENT_LAST_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -45,29 +45,7 @@ open class AdjustmentEvent: AWTEvent {
     open static var ADJUSTMENT_VALUE_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ADJUSTMENT_VALUE_CHANGED", fieldType: "I", fieldCache: &ADJUSTMENT_VALUE_CHANGED_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.event.AdjustmentEvent.UNIT_INCREMENT
-
-    private static var UNIT_INCREMENT_FieldID: jfieldID?
-
-    open static var UNIT_INCREMENT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "UNIT_INCREMENT", fieldType: "I", fieldCache: &UNIT_INCREMENT_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.event.AdjustmentEvent.UNIT_DECREMENT
-
-    private static var UNIT_DECREMENT_FieldID: jfieldID?
-
-    open static var UNIT_DECREMENT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "UNIT_DECREMENT", fieldType: "I", fieldCache: &UNIT_DECREMENT_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -78,7 +56,7 @@ open class AdjustmentEvent: AWTEvent {
     open static var BLOCK_DECREMENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BLOCK_DECREMENT", fieldType: "I", fieldCache: &BLOCK_DECREMENT_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -89,7 +67,7 @@ open class AdjustmentEvent: AWTEvent {
     open static var BLOCK_INCREMENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BLOCK_INCREMENT", fieldType: "I", fieldCache: &BLOCK_INCREMENT_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -100,40 +78,143 @@ open class AdjustmentEvent: AWTEvent {
     open static var TRACK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRACK", fieldType: "I", fieldCache: &TRACK_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// java.awt.Adjustable java.awt.event.AdjustmentEvent.adjustable
+    /// public static final int java.awt.event.AdjustmentEvent.UNIT_DECREMENT
 
-    /// int java.awt.event.AdjustmentEvent.value
+    private static var UNIT_DECREMENT_FieldID: jfieldID?
 
-    /// int java.awt.event.AdjustmentEvent.adjustmentType
+    open static var UNIT_DECREMENT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "UNIT_DECREMENT", fieldType: "I", fieldCache: &UNIT_DECREMENT_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
+            return Int(__value)
+        }
+    }
 
-    /// boolean java.awt.event.AdjustmentEvent.isAdjusting
+    /// public static final int java.awt.event.AdjustmentEvent.UNIT_INCREMENT
+
+    private static var UNIT_INCREMENT_FieldID: jfieldID?
+
+    open static var UNIT_INCREMENT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "UNIT_INCREMENT", fieldType: "I", fieldCache: &UNIT_INCREMENT_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
+            return Int(__value)
+        }
+    }
 
     /// private static final long java.awt.event.AdjustmentEvent.serialVersionUID
 
+    /// java.awt.Adjustable java.awt.event.AdjustmentEvent.adjustable
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.event.AdjustmentEvent.adjustmentType
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.event.AdjustmentEvent.isAdjusting
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.event.AdjustmentEvent.value
+
+    // Skipping field: true false false false false false 
+
+    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
+
+    // Skipping field: true false false false false false 
+
+    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
+
     /// private static final sun.util.logging.PlatformLogger java.awt.AWTEvent.log
 
+    /// private static final long java.awt.AWTEvent.serialVersionUID
+
+    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
+
     /// private byte[] java.awt.AWTEvent.bdata
-
-    /// protected int java.awt.AWTEvent.id
-
-    private static var id_FieldID: jfieldID?
-
-    override open var id: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &AdjustmentEvent.id_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &AdjustmentEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
 
     /// protected boolean java.awt.AWTEvent.consumed
 
@@ -141,70 +222,41 @@ open class AdjustmentEvent: AWTEvent {
 
     override open var consumed: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &AdjustmentEvent.consumed_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &AdjustmentEvent.consumed_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &AdjustmentEvent.consumed_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
-
     /// transient boolean java.awt.AWTEvent.focusManagerIsDispatching
+
+    // Skipping field: true false false false false false 
+
+    /// protected int java.awt.AWTEvent.id
+
+    private static var id_FieldID: jfieldID?
+
+    override open var id: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &AdjustmentEvent.id_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &AdjustmentEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
     /// transient boolean java.awt.AWTEvent.isPosted
 
+    // Skipping field: true false false false false false 
+
     /// private transient boolean java.awt.AWTEvent.isSystemGenerated
-
-    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
-
-    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
-
-    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
-
-    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
-
-    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
-
-    /// private static final long java.awt.AWTEvent.serialVersionUID
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -214,8 +266,8 @@ open class AdjustmentEvent: AWTEvent {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &AdjustmentEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &AdjustmentEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -230,12 +282,12 @@ open class AdjustmentEvent: AWTEvent {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: Adjustable?, id: Int, type: Int, value: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: type, locals: &__locals )
-        __args[3] = JNIType.toJava( value: value, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
+        __args[2] = jvalue( i: jint(type) )
+        __args[3] = jvalue( i: jint(value) )
         let __object = JNIMethod.NewObject( className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEvent.AdjustmentEventJNIClass, methodSig: "(Ljava/awt/Adjustable;III)V", methodCache: &AdjustmentEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -250,13 +302,13 @@ open class AdjustmentEvent: AWTEvent {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( source: Adjustable?, id: Int, type: Int, value: Int, isAdjusting: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: type, locals: &__locals )
-        __args[3] = JNIType.toJava( value: value, locals: &__locals )
-        __args[4] = JNIType.toJava( value: isAdjusting, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
+        __args[2] = jvalue( i: jint(type) )
+        __args[3] = jvalue( i: jint(value) )
+        __args[4] = jvalue( z: jboolean(isAdjusting ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEvent.AdjustmentEventJNIClass, methodSig: "(Ljava/awt/Adjustable;IIIZ)V", methodCache: &AdjustmentEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -266,56 +318,58 @@ open class AdjustmentEvent: AWTEvent {
         self.init( source: _source, id: _id, type: _type, value: _value, isAdjusting: _isAdjusting )
     }
 
-    /// public int java.awt.event.AdjustmentEvent.getValue()
+    /// public java.awt.Adjustable java.awt.event.AdjustmentEvent.getAdjustable()
 
-    private static var getValue_MethodID_3: jmethodID?
+    private static var getAdjustable_MethodID_3: jmethodID?
 
-    open func getValue() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getAdjustable() -> Adjustable! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getValue", methodSig: "()I", methodCache: &AdjustmentEvent.getValue_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAdjustable", methodSig: "()Ljava/awt/Adjustable;", methodCache: &AdjustmentEvent.getAdjustable_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AdjustableForward( javaObject: __return ) : nil
     }
 
-
-    /// public java.lang.String java.awt.event.AdjustmentEvent.paramString()
 
     /// public int java.awt.event.AdjustmentEvent.getAdjustmentType()
 
     private static var getAdjustmentType_MethodID_4: jmethodID?
 
     open func getAdjustmentType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAdjustmentType", methodSig: "()I", methodCache: &AdjustmentEvent.getAdjustmentType_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.event.AdjustmentEvent.getValue()
+
+    private static var getValue_MethodID_5: jmethodID?
+
+    open func getValue() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getValue", methodSig: "()I", methodCache: &AdjustmentEvent.getValue_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
     /// public boolean java.awt.event.AdjustmentEvent.getValueIsAdjusting()
 
-    private static var getValueIsAdjusting_MethodID_5: jmethodID?
+    private static var getValueIsAdjusting_MethodID_6: jmethodID?
 
     open func getValueIsAdjusting() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &AdjustmentEvent.getValueIsAdjusting_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &AdjustmentEvent.getValueIsAdjusting_MethodID_6, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// public java.awt.Adjustable java.awt.event.AdjustmentEvent.getAdjustable()
+    /// public java.lang.String java.awt.event.AdjustmentEvent.paramString()
 
-    private static var getAdjustable_MethodID_6: jmethodID?
-
-    open func getAdjustable() -> Adjustable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAdjustable", methodSig: "()Ljava/awt/Adjustable;", methodCache: &AdjustmentEvent.getAdjustable_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AdjustableForward( javaObject: __return ) : nil
-    }
-
+    // Skipping method: false true false false false 
 
 }
 

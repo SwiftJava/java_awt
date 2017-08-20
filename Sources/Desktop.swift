@@ -20,68 +20,16 @@ open class Desktop: java_swift.JavaObject {
 
     /// private java.awt.Desktop()
 
-    /// private void java.awt.Desktop.checkExec() throws java.lang.SecurityException
-
-    /// public void java.awt.Desktop.print(java.io.File) throws java.io.IOException
-
-    private static var print_MethodID_1: jmethodID?
-
-    open func print( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: file, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "print", methodSig: "(Ljava/io/File;)V", methodCache: &Desktop.print_MethodID_1, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func print( _ _file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
-        try print( file: _file )
-    }
-
-    /// public boolean java.awt.Desktop.isSupported(java.awt.Desktop$Action)
-
-    private static var isSupported_MethodID_2: jmethodID?
-
-    open func isSupported( action: Desktop_Action? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: action, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSupported", methodSig: "(Ljava/awt/Desktop$Action;)Z", methodCache: &Desktop.isSupported_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isSupported( _ _action: Desktop_Action? ) -> Bool {
-        return isSupported( action: _action )
-    }
-
-    /// public void java.awt.Desktop.open(java.io.File) throws java.io.IOException
-
-    private static var open_MethodID_3: jmethodID?
-
-    open func open( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: file, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "open", methodSig: "(Ljava/io/File;)V", methodCache: &Desktop.open_MethodID_3, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func open( _ _file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
-        try open( file: _file )
-    }
+    /// private static void java.awt.Desktop.checkFileValidation(java.io.File)
 
     /// public static synchronized java.awt.Desktop java.awt.Desktop.getDesktop()
 
-    private static var getDesktop_MethodID_4: jmethodID?
+    private static var getDesktop_MethodID_1: jmethodID?
 
     open class func getDesktop() -> Desktop! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Desktop", classCache: &DesktopJNIClass, methodName: "getDesktop", methodSig: "()Ljava/awt/Desktop;", methodCache: &getDesktop_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Desktop", classCache: &DesktopJNIClass, methodName: "getDesktop", methodSig: "()Ljava/awt/Desktop;", methodCache: &getDesktop_MethodID_1, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Desktop( javaObject: __return ) : nil
     }
@@ -89,89 +37,147 @@ open class Desktop: java_swift.JavaObject {
 
     /// public static boolean java.awt.Desktop.isDesktopSupported()
 
-    private static var isDesktopSupported_MethodID_5: jmethodID?
+    private static var isDesktopSupported_MethodID_2: jmethodID?
 
     open class func isDesktopSupported() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/Desktop", classCache: &DesktopJNIClass, methodName: "isDesktopSupported", methodSig: "()Z", methodCache: &isDesktopSupported_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// private static void java.awt.Desktop.checkFileValidation(java.io.File)
-
-    /// private void java.awt.Desktop.checkActionSupport(java.awt.Desktop$Action)
-
-    /// private void java.awt.Desktop.checkAWTPermission()
-
-    /// public void java.awt.Desktop.edit(java.io.File) throws java.io.IOException
-
-    private static var edit_MethodID_6: jmethodID?
-
-    open func edit( file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: file, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "edit", methodSig: "(Ljava/io/File;)V", methodCache: &Desktop.edit_MethodID_6, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/Desktop", classCache: &DesktopJNIClass, methodName: "isDesktopSupported", methodSig: "()Z", methodCache: &isDesktopSupported_MethodID_2, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    open func edit( _ _file: /* java.io.File */ UnclassedObject? ) throws /* java.io.IOException */ {
-        try edit( file: _file )
-    }
 
     /// public void java.awt.Desktop.browse(java.net.URI) throws java.io.IOException
 
-    private static var browse_MethodID_7: jmethodID?
+    private static var browse_MethodID_3: jmethodID?
 
-    open func browse( uri: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func browse( uri: /* class java.net.URI */ UnavailableObject? ) throws /* java.io.IOException */ {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: uri, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "browse", methodSig: "(Ljava/net/URI;)V", methodCache: &Desktop.browse_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "browse", methodSig: "(Ljava/net/URI;)V", methodCache: &Desktop.browse_MethodID_3, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
-    open func browse( _ _uri: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */ {
+    open func browse( _ _uri: /* class java.net.URI */ UnavailableObject? ) throws /* java.io.IOException */ {
         try browse( uri: _uri )
+    }
+
+    /// private void java.awt.Desktop.checkAWTPermission()
+
+    /// private void java.awt.Desktop.checkActionSupport(java.awt.Desktop$Action)
+
+    /// private void java.awt.Desktop.checkExec() throws java.lang.SecurityException
+
+    /// public void java.awt.Desktop.edit(java.io.File) throws java.io.IOException
+
+    private static var edit_MethodID_4: jmethodID?
+
+    open func edit( file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: file, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "edit", methodSig: "(Ljava/io/File;)V", methodCache: &Desktop.edit_MethodID_4, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func edit( _ _file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        try edit( file: _file )
+    }
+
+    /// public boolean java.awt.Desktop.isSupported(java.awt.Desktop$Action)
+
+    private static var isSupported_MethodID_5: jmethodID?
+
+    open func isSupported( action: Desktop_Action? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: action, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSupported", methodSig: "(Ljava/awt/Desktop$Action;)Z", methodCache: &Desktop.isSupported_MethodID_5, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func isSupported( _ _action: Desktop_Action? ) -> Bool {
+        return isSupported( action: _action )
     }
 
     /// public void java.awt.Desktop.mail(java.net.URI) throws java.io.IOException
 
-    private static var mail_MethodID_8: jmethodID?
+    private static var mail_MethodID_6: jmethodID?
 
-    open func mail( mailtoURI: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func mail( mailtoURI: /* class java.net.URI */ UnavailableObject? ) throws /* java.io.IOException */ {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: mailtoURI, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mail", methodSig: "(Ljava/net/URI;)V", methodCache: &Desktop.mail_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mail", methodSig: "(Ljava/net/URI;)V", methodCache: &Desktop.mail_MethodID_6, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
-    open func mail( _ _mailtoURI: /* java.net.URI */ UnclassedObject? ) throws /* java.io.IOException */ {
+    open func mail( _ _mailtoURI: /* class java.net.URI */ UnavailableObject? ) throws /* java.io.IOException */ {
         try mail( mailtoURI: _mailtoURI )
     }
 
     /// public void java.awt.Desktop.mail() throws java.io.IOException
 
-    private static var mail_MethodID_9: jmethodID?
+    private static var mail_MethodID_7: jmethodID?
 
     open func mail() throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mail", methodSig: "()V", methodCache: &Desktop.mail_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mail", methodSig: "()V", methodCache: &Desktop.mail_MethodID_7, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
+
+    /// public void java.awt.Desktop.open(java.io.File) throws java.io.IOException
+
+    private static var open_MethodID_8: jmethodID?
+
+    open func open( file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: file, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "open", methodSig: "(Ljava/io/File;)V", methodCache: &Desktop.open_MethodID_8, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func open( _ _file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        try open( file: _file )
+    }
+
+    /// public void java.awt.Desktop.print(java.io.File) throws java.io.IOException
+
+    private static var print_MethodID_9: jmethodID?
+
+    open func print( file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: file, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "print", methodSig: "(Ljava/io/File;)V", methodCache: &Desktop.print_MethodID_9, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func print( _ _file: /* class java.io.File */ UnavailableObject? ) throws /* java.io.IOException */ {
+        try print( file: _file )
+    }
 
 }
 

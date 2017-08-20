@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.FontMetrics ///
 
-open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class FontMetrics: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -18,14 +18,16 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     /// private static final java.awt.font.FontRenderContext java.awt.FontMetrics.DEFAULT_FRC
 
+    /// private static final long java.awt.FontMetrics.serialVersionUID
+
     /// protected java.awt.Font java.awt.FontMetrics.font
 
     private static var font_FieldID: jfieldID?
 
     open var font: Font! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "font", fieldType: "Ljava/awt/Font;", fieldCache: &FontMetrics.font_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "font", fieldType: "Ljava/awt/Font;", fieldCache: &FontMetrics.font_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? Font( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -35,15 +37,13 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         }
     }
 
-    /// private static final long java.awt.FontMetrics.serialVersionUID
-
     /// protected java.awt.FontMetrics(java.awt.Font)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( font: Font? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: font, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/FontMetrics", classCache: &FontMetrics.FontMetricsJNIClass, methodSig: "(Ljava/awt/Font;)V", methodCache: &FontMetrics.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -54,18 +54,108 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         self.init( font: _font )
     }
 
-    /// public java.lang.String java.awt.FontMetrics.toString()
-
     /// private static native void java.awt.FontMetrics.initIDs()
+
+    /// public int java.awt.FontMetrics.bytesWidth(byte[],int,int)
+
+    private static var bytesWidth_MethodID_2: jmethodID?
+
+    open func bytesWidth( data: [Int8]?, off: Int, len: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: data, locals: &__locals )
+        __args[1] = jvalue( i: jint(off) )
+        __args[2] = jvalue( i: jint(len) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "bytesWidth", methodSig: "([BII)I", methodCache: &FontMetrics.bytesWidth_MethodID_2, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func bytesWidth( _ _data: [Int8]?, _ _off: Int, _ _len: Int ) -> Int {
+        return bytesWidth( data: _data, off: _off, len: _len )
+    }
+
+    /// public int java.awt.FontMetrics.charWidth(int)
+
+    private static var charWidth_MethodID_3: jmethodID?
+
+    open func charWidth( codePoint: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(codePoint) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "charWidth", methodSig: "(I)I", methodCache: &FontMetrics.charWidth_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func charWidth( _ _codePoint: Int ) -> Int {
+        return charWidth( codePoint: _codePoint )
+    }
+
+    /// public int java.awt.FontMetrics.charWidth(char)
+
+    private static var charWidth_MethodID_4: jmethodID?
+
+    open func charWidth( ch: UInt16 ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( c: ch )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "charWidth", methodSig: "(C)I", methodCache: &FontMetrics.charWidth_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func charWidth( _ _ch: UInt16 ) -> Int {
+        return charWidth( ch: _ch )
+    }
+
+    /// public int java.awt.FontMetrics.charsWidth(char[],int,int)
+
+    private static var charsWidth_MethodID_5: jmethodID?
+
+    open func charsWidth( data: [UInt16]?, off: Int, len: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: data, locals: &__locals )
+        __args[1] = jvalue( i: jint(off) )
+        __args[2] = jvalue( i: jint(len) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "charsWidth", methodSig: "([CII)I", methodCache: &FontMetrics.charsWidth_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func charsWidth( _ _data: [UInt16]?, _ _off: Int, _ _len: Int ) -> Int {
+        return charsWidth( data: _data, off: _off, len: _len )
+    }
+
+    /// public int java.awt.FontMetrics.getAscent()
+
+    private static var getAscent_MethodID_6: jmethodID?
+
+    open func getAscent() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAscent", methodSig: "()I", methodCache: &FontMetrics.getAscent_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.FontMetrics.getDescent()
+
+    private static var getDescent_MethodID_7: jmethodID?
+
+    open func getDescent() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDescent", methodSig: "()I", methodCache: &FontMetrics.getDescent_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
 
     /// public java.awt.Font java.awt.FontMetrics.getFont()
 
-    private static var getFont_MethodID_2: jmethodID?
+    private static var getFont_MethodID_8: jmethodID?
 
     open func getFont() -> Font! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &FontMetrics.getFont_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &FontMetrics.getFont_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Font( javaObject: __return ) : nil
     }
@@ -73,245 +163,51 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     /// public java.awt.font.FontRenderContext java.awt.FontMetrics.getFontRenderContext()
 
-    private static var getFontRenderContext_MethodID_3: jmethodID?
+    private static var getFontRenderContext_MethodID_9: jmethodID?
 
     open func getFontRenderContext() -> FontRenderContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontRenderContext", methodSig: "()Ljava/awt/font/FontRenderContext;", methodCache: &FontMetrics.getFontRenderContext_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontRenderContext", methodSig: "()Ljava/awt/font/FontRenderContext;", methodCache: &FontMetrics.getFontRenderContext_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? FontRenderContext( javaObject: __return ) : nil
     }
 
 
-    /// public int java.awt.FontMetrics.getMaxAscent()
+    /// public int java.awt.FontMetrics.getHeight()
 
-    private static var getMaxAscent_MethodID_4: jmethodID?
+    private static var getHeight_MethodID_10: jmethodID?
 
-    open func getMaxAscent() -> Int {
+    open func getHeight() -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxAscent", methodSig: "()I", methodCache: &FontMetrics.getMaxAscent_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &FontMetrics.getHeight_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public int java.awt.FontMetrics.getMaxDescent()
+    /// public int java.awt.FontMetrics.getLeading()
 
-    private static var getMaxDescent_MethodID_5: jmethodID?
+    private static var getLeading_MethodID_11: jmethodID?
 
-    open func getMaxDescent() -> Int {
+    open func getLeading() -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxDescent", methodSig: "()I", methodCache: &FontMetrics.getMaxDescent_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeading", methodSig: "()I", methodCache: &FontMetrics.getLeading_MethodID_11, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-
-    /// public int java.awt.FontMetrics.getMaxDecent()
-
-    private static var getMaxDecent_MethodID_6: jmethodID?
-
-    open func getMaxDecent() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxDecent", methodSig: "()I", methodCache: &FontMetrics.getMaxDecent_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.FontMetrics.getMaxAdvance()
-
-    private static var getMaxAdvance_MethodID_7: jmethodID?
-
-    open func getMaxAdvance() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxAdvance", methodSig: "()I", methodCache: &FontMetrics.getMaxAdvance_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.FontMetrics.charWidth(char)
-
-    private static var charWidth_MethodID_8: jmethodID?
-
-    open func charWidth( ch: UInt16 ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ch, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "charWidth", methodSig: "(C)I", methodCache: &FontMetrics.charWidth_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func charWidth( _ _ch: UInt16 ) -> Int {
-        return charWidth( ch: _ch )
-    }
-
-    /// public int java.awt.FontMetrics.charWidth(int)
-
-    private static var charWidth_MethodID_9: jmethodID?
-
-    open func charWidth( codePoint: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: codePoint, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "charWidth", methodSig: "(I)I", methodCache: &FontMetrics.charWidth_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func charWidth( _ _codePoint: Int ) -> Int {
-        return charWidth( codePoint: _codePoint )
-    }
-
-    /// public int java.awt.FontMetrics.stringWidth(java.lang.String)
-
-    private static var stringWidth_MethodID_10: jmethodID?
-
-    open func stringWidth( str: String? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "stringWidth", methodSig: "(Ljava/lang/String;)I", methodCache: &FontMetrics.stringWidth_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func stringWidth( _ _str: String? ) -> Int {
-        return stringWidth( str: _str )
-    }
-
-    /// public int java.awt.FontMetrics.charsWidth(char[],int,int)
-
-    private static var charsWidth_MethodID_11: jmethodID?
-
-    open func charsWidth( data: [UInt16]?, off: Int, len: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: data, locals: &__locals )
-        __args[1] = JNIType.toJava( value: off, locals: &__locals )
-        __args[2] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "charsWidth", methodSig: "([CII)I", methodCache: &FontMetrics.charsWidth_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func charsWidth( _ _data: [UInt16]?, _ _off: Int, _ _len: Int ) -> Int {
-        return charsWidth( data: _data, off: _off, len: _len )
-    }
-
-    /// public int java.awt.FontMetrics.bytesWidth(byte[],int,int)
-
-    private static var bytesWidth_MethodID_12: jmethodID?
-
-    open func bytesWidth( data: [Int8]?, off: Int, len: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: data, locals: &__locals )
-        __args[1] = JNIType.toJava( value: off, locals: &__locals )
-        __args[2] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "bytesWidth", methodSig: "([BII)I", methodCache: &FontMetrics.bytesWidth_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func bytesWidth( _ _data: [Int8]?, _ _off: Int, _ _len: Int ) -> Int {
-        return bytesWidth( data: _data, off: _off, len: _len )
-    }
-
-    /// public int[] java.awt.FontMetrics.getWidths()
-
-    private static var getWidths_MethodID_13: jmethodID?
-
-    open func getWidths() -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWidths", methodSig: "()[I", methodCache: &FontMetrics.getWidths_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
-    }
-
-
-    /// private java.awt.font.FontRenderContext java.awt.FontMetrics.myFRC(java.awt.Graphics)
-
-    /// public boolean java.awt.FontMetrics.hasUniformLineMetrics()
-
-    private static var hasUniformLineMetrics_MethodID_14: jmethodID?
-
-    open func hasUniformLineMetrics() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "hasUniformLineMetrics", methodSig: "()Z", methodCache: &FontMetrics.hasUniformLineMetrics_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public java.awt.font.LineMetrics java.awt.FontMetrics.getLineMetrics(java.text.CharacterIterator,int,int,java.awt.Graphics)
-
-    private static var getLineMetrics_MethodID_15: jmethodID?
-
-    open func getLineMetrics( ci: /* java.text.CharacterIterator */ UnclassedProtocol?, beginIndex: Int, limit: Int, context: Graphics? ) -> LineMetrics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ci, locals: &__locals )
-        __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: limit, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "(Ljava/text/CharacterIterator;IILjava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? LineMetrics( javaObject: __return ) : nil
-    }
-
-    open func getLineMetrics( _ _ci: /* java.text.CharacterIterator */ UnclassedProtocol?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> LineMetrics! {
-        return getLineMetrics( ci: _ci, beginIndex: _beginIndex, limit: _limit, context: _context )
-    }
-
-    /// public java.awt.font.LineMetrics java.awt.FontMetrics.getLineMetrics(char[],int,int,java.awt.Graphics)
-
-    private static var getLineMetrics_MethodID_16: jmethodID?
-
-    open func getLineMetrics( chars: [UInt16]?, beginIndex: Int, limit: Int, context: Graphics? ) -> LineMetrics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: chars, locals: &__locals )
-        __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: limit, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "([CIILjava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? LineMetrics( javaObject: __return ) : nil
-    }
-
-    open func getLineMetrics( _ _chars: [UInt16]?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> LineMetrics! {
-        return getLineMetrics( chars: _chars, beginIndex: _beginIndex, limit: _limit, context: _context )
-    }
-
-    /// public java.awt.font.LineMetrics java.awt.FontMetrics.getLineMetrics(java.lang.String,int,int,java.awt.Graphics)
-
-    private static var getLineMetrics_MethodID_17: jmethodID?
-
-    open func getLineMetrics( str: String?, beginIndex: Int, limit: Int, context: Graphics? ) -> LineMetrics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: limit, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "(Ljava/lang/String;IILjava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? LineMetrics( javaObject: __return ) : nil
-    }
-
-    open func getLineMetrics( _ _str: String?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> LineMetrics! {
-        return getLineMetrics( str: _str, beginIndex: _beginIndex, limit: _limit, context: _context )
-    }
 
     /// public java.awt.font.LineMetrics java.awt.FontMetrics.getLineMetrics(java.lang.String,java.awt.Graphics)
 
-    private static var getLineMetrics_MethodID_18: jmethodID?
+    private static var getLineMetrics_MethodID_12: jmethodID?
 
     open func getLineMetrics( str: String?, context: Graphics? ) -> LineMetrics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: str, locals: &__locals )
         __args[1] = JNIType.toJava( value: context, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "(Ljava/lang/String;Ljava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "(Ljava/lang/String;Ljava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? LineMetrics( javaObject: __return ) : nil
     }
@@ -320,93 +216,99 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         return getLineMetrics( str: _str, context: _context )
     }
 
-    /// public java.awt.geom.Rectangle2D java.awt.FontMetrics.getStringBounds(char[],int,int,java.awt.Graphics)
+    /// public java.awt.font.LineMetrics java.awt.FontMetrics.getLineMetrics(java.lang.String,int,int,java.awt.Graphics)
 
-    private static var getStringBounds_MethodID_19: jmethodID?
+    private static var getLineMetrics_MethodID_13: jmethodID?
 
-    open func getStringBounds( chars: [UInt16]?, beginIndex: Int, limit: Int, context: Graphics? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open func getLineMetrics( str: String?, beginIndex: Int, limit: Int, context: Graphics? ) -> LineMetrics! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: chars, locals: &__locals )
-        __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: limit, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: str, locals: &__locals )
+        __args[1] = jvalue( i: jint(beginIndex) )
+        __args[2] = jvalue( i: jint(limit) )
         __args[3] = JNIType.toJava( value: context, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "([CIILjava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "(Ljava/lang/String;IILjava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+        return __return != nil ? LineMetrics( javaObject: __return ) : nil
     }
 
-    open func getStringBounds( _ _chars: [UInt16]?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> Rectangle2D! {
-        return getStringBounds( chars: _chars, beginIndex: _beginIndex, limit: _limit, context: _context )
+    open func getLineMetrics( _ _str: String?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> LineMetrics! {
+        return getLineMetrics( str: _str, beginIndex: _beginIndex, limit: _limit, context: _context )
     }
 
-    /// public java.awt.geom.Rectangle2D java.awt.FontMetrics.getStringBounds(java.text.CharacterIterator,int,int,java.awt.Graphics)
+    /// public java.awt.font.LineMetrics java.awt.FontMetrics.getLineMetrics(java.text.CharacterIterator,int,int,java.awt.Graphics)
 
-    private static var getStringBounds_MethodID_20: jmethodID?
+    private static var getLineMetrics_MethodID_14: jmethodID?
 
-    open func getStringBounds( ci: /* java.text.CharacterIterator */ UnclassedProtocol?, beginIndex: Int, limit: Int, context: Graphics? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open func getLineMetrics( ci: /* interface java.text.CharacterIterator */ UnavailableProtocol?, beginIndex: Int, limit: Int, context: Graphics? ) -> LineMetrics! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: ci, locals: &__locals )
-        __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: limit, locals: &__locals )
+        __args[1] = jvalue( i: jint(beginIndex) )
+        __args[2] = jvalue( i: jint(limit) )
         __args[3] = JNIType.toJava( value: context, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "(Ljava/text/CharacterIterator;IILjava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "(Ljava/text/CharacterIterator;IILjava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+        return __return != nil ? LineMetrics( javaObject: __return ) : nil
     }
 
-    open func getStringBounds( _ _ci: /* java.text.CharacterIterator */ UnclassedProtocol?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> Rectangle2D! {
-        return getStringBounds( ci: _ci, beginIndex: _beginIndex, limit: _limit, context: _context )
+    open func getLineMetrics( _ _ci: /* interface java.text.CharacterIterator */ UnavailableProtocol?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> LineMetrics! {
+        return getLineMetrics( ci: _ci, beginIndex: _beginIndex, limit: _limit, context: _context )
     }
 
-    /// public java.awt.geom.Rectangle2D java.awt.FontMetrics.getStringBounds(java.lang.String,int,int,java.awt.Graphics)
+    /// public java.awt.font.LineMetrics java.awt.FontMetrics.getLineMetrics(char[],int,int,java.awt.Graphics)
 
-    private static var getStringBounds_MethodID_21: jmethodID?
+    private static var getLineMetrics_MethodID_15: jmethodID?
 
-    open func getStringBounds( str: String?, beginIndex: Int, limit: Int, context: Graphics? ) -> Rectangle2D! {
+    open func getLineMetrics( chars: [UInt16]?, beginIndex: Int, limit: Int, context: Graphics? ) -> LineMetrics! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        __args[1] = JNIType.toJava( value: beginIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: limit, locals: &__locals )
+        __args[0] = JNIType.toJava( value: chars, locals: &__locals )
+        __args[1] = jvalue( i: jint(beginIndex) )
+        __args[2] = jvalue( i: jint(limit) )
         __args[3] = JNIType.toJava( value: context, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "(Ljava/lang/String;IILjava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineMetrics", methodSig: "([CIILjava/awt/Graphics;)Ljava/awt/font/LineMetrics;", methodCache: &FontMetrics.getLineMetrics_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+        return __return != nil ? LineMetrics( javaObject: __return ) : nil
     }
 
-    open func getStringBounds( _ _str: String?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> Rectangle2D! {
-        return getStringBounds( str: _str, beginIndex: _beginIndex, limit: _limit, context: _context )
+    open func getLineMetrics( _ _chars: [UInt16]?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> LineMetrics! {
+        return getLineMetrics( chars: _chars, beginIndex: _beginIndex, limit: _limit, context: _context )
     }
 
-    /// public java.awt.geom.Rectangle2D java.awt.FontMetrics.getStringBounds(java.lang.String,java.awt.Graphics)
+    /// public int java.awt.FontMetrics.getMaxAdvance()
 
-    private static var getStringBounds_MethodID_22: jmethodID?
+    private static var getMaxAdvance_MethodID_16: jmethodID?
 
-    open func getStringBounds( str: String?, context: Graphics? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getMaxAdvance() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        __args[1] = JNIType.toJava( value: context, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "(Ljava/lang/String;Ljava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxAdvance", methodSig: "()I", methodCache: &FontMetrics.getMaxAdvance_MethodID_16, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func getStringBounds( _ _str: String?, _ _context: Graphics? ) -> Rectangle2D! {
-        return getStringBounds( str: _str, context: _context )
+
+    /// public int java.awt.FontMetrics.getMaxAscent()
+
+    private static var getMaxAscent_MethodID_17: jmethodID?
+
+    open func getMaxAscent() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxAscent", methodSig: "()I", methodCache: &FontMetrics.getMaxAscent_MethodID_17, args: &__args, locals: &__locals )
+        return Int(__return)
     }
+
 
     /// public java.awt.geom.Rectangle2D java.awt.FontMetrics.getMaxCharBounds(java.awt.Graphics)
 
-    private static var getMaxCharBounds_MethodID_23: jmethodID?
+    private static var getMaxCharBounds_MethodID_18: jmethodID?
 
     open func getMaxCharBounds( context: Graphics? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaxCharBounds", methodSig: "(Ljava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getMaxCharBounds_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaxCharBounds", methodSig: "(Ljava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getMaxCharBounds_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
     }
@@ -415,53 +317,153 @@ open class FontMetrics: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         return getMaxCharBounds( context: _context )
     }
 
-    /// public int java.awt.FontMetrics.getAscent()
+    /// public int java.awt.FontMetrics.getMaxDecent()
 
-    private static var getAscent_MethodID_24: jmethodID?
+    private static var getMaxDecent_MethodID_19: jmethodID?
 
-    open func getAscent() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getMaxDecent() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAscent", methodSig: "()I", methodCache: &FontMetrics.getAscent_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxDecent", methodSig: "()I", methodCache: &FontMetrics.getMaxDecent_MethodID_19, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public int java.awt.FontMetrics.getDescent()
+    /// public int java.awt.FontMetrics.getMaxDescent()
 
-    private static var getDescent_MethodID_25: jmethodID?
+    private static var getMaxDescent_MethodID_20: jmethodID?
 
-    open func getDescent() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getMaxDescent() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDescent", methodSig: "()I", methodCache: &FontMetrics.getDescent_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxDescent", methodSig: "()I", methodCache: &FontMetrics.getMaxDescent_MethodID_20, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public int java.awt.FontMetrics.getLeading()
+    /// public java.awt.geom.Rectangle2D java.awt.FontMetrics.getStringBounds(java.lang.String,java.awt.Graphics)
 
-    private static var getLeading_MethodID_26: jmethodID?
+    private static var getStringBounds_MethodID_21: jmethodID?
 
-    open func getLeading() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getStringBounds( str: String?, context: Graphics? ) -> Rectangle2D! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeading", methodSig: "()I", methodCache: &FontMetrics.getLeading_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: str, locals: &__locals )
+        __args[1] = JNIType.toJava( value: context, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "(Ljava/lang/String;Ljava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getStringBounds( _ _str: String?, _ _context: Graphics? ) -> Rectangle2D! {
+        return getStringBounds( str: _str, context: _context )
+    }
+
+    /// public java.awt.geom.Rectangle2D java.awt.FontMetrics.getStringBounds(java.lang.String,int,int,java.awt.Graphics)
+
+    private static var getStringBounds_MethodID_22: jmethodID?
+
+    open func getStringBounds( str: String?, beginIndex: Int, limit: Int, context: Graphics? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: str, locals: &__locals )
+        __args[1] = jvalue( i: jint(beginIndex) )
+        __args[2] = jvalue( i: jint(limit) )
+        __args[3] = JNIType.toJava( value: context, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "(Ljava/lang/String;IILjava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getStringBounds( _ _str: String?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> Rectangle2D! {
+        return getStringBounds( str: _str, beginIndex: _beginIndex, limit: _limit, context: _context )
+    }
+
+    /// public java.awt.geom.Rectangle2D java.awt.FontMetrics.getStringBounds(java.text.CharacterIterator,int,int,java.awt.Graphics)
+
+    private static var getStringBounds_MethodID_23: jmethodID?
+
+    open func getStringBounds( ci: /* interface java.text.CharacterIterator */ UnavailableProtocol?, beginIndex: Int, limit: Int, context: Graphics? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: ci, locals: &__locals )
+        __args[1] = jvalue( i: jint(beginIndex) )
+        __args[2] = jvalue( i: jint(limit) )
+        __args[3] = JNIType.toJava( value: context, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "(Ljava/text/CharacterIterator;IILjava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getStringBounds( _ _ci: /* interface java.text.CharacterIterator */ UnavailableProtocol?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> Rectangle2D! {
+        return getStringBounds( ci: _ci, beginIndex: _beginIndex, limit: _limit, context: _context )
+    }
+
+    /// public java.awt.geom.Rectangle2D java.awt.FontMetrics.getStringBounds(char[],int,int,java.awt.Graphics)
+
+    private static var getStringBounds_MethodID_24: jmethodID?
+
+    open func getStringBounds( chars: [UInt16]?, beginIndex: Int, limit: Int, context: Graphics? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: chars, locals: &__locals )
+        __args[1] = jvalue( i: jint(beginIndex) )
+        __args[2] = jvalue( i: jint(limit) )
+        __args[3] = JNIType.toJava( value: context, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringBounds", methodSig: "([CIILjava/awt/Graphics;)Ljava/awt/geom/Rectangle2D;", methodCache: &FontMetrics.getStringBounds_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getStringBounds( _ _chars: [UInt16]?, _ _beginIndex: Int, _ _limit: Int, _ _context: Graphics? ) -> Rectangle2D! {
+        return getStringBounds( chars: _chars, beginIndex: _beginIndex, limit: _limit, context: _context )
+    }
+
+    /// public int[] java.awt.FontMetrics.getWidths()
+
+    private static var getWidths_MethodID_25: jmethodID?
+
+    open func getWidths() -> [Int32]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWidths", methodSig: "()[I", methodCache: &FontMetrics.getWidths_MethodID_25, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
     }
 
 
-    /// public int java.awt.FontMetrics.getHeight()
+    /// public boolean java.awt.FontMetrics.hasUniformLineMetrics()
 
-    private static var getHeight_MethodID_27: jmethodID?
+    private static var hasUniformLineMetrics_MethodID_26: jmethodID?
 
-    open func getHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func hasUniformLineMetrics() -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &FontMetrics.getHeight_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "hasUniformLineMetrics", methodSig: "()Z", methodCache: &FontMetrics.hasUniformLineMetrics_MethodID_26, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
+
+    /// private java.awt.font.FontRenderContext java.awt.FontMetrics.myFRC(java.awt.Graphics)
+
+    /// public int java.awt.FontMetrics.stringWidth(java.lang.String)
+
+    private static var stringWidth_MethodID_27: jmethodID?
+
+    open func stringWidth( str: String? ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: str, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "stringWidth", methodSig: "(Ljava/lang/String;)I", methodCache: &FontMetrics.stringWidth_MethodID_27, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func stringWidth( _ _str: String? ) -> Int {
+        return stringWidth( str: _str )
+    }
+
+    /// public java.lang.String java.awt.FontMetrics.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

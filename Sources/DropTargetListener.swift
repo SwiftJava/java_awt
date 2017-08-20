@@ -12,21 +12,21 @@ public protocol DropTargetListener: java_util.EventListener {
 
     func dragEnter( dtde: DropTargetDragEvent? )
 
-    /// public abstract void java.awt.dnd.DropTargetListener.dragOver(java.awt.dnd.DropTargetDragEvent)
-
-    func dragOver( dtde: DropTargetDragEvent? )
-
-    /// public abstract void java.awt.dnd.DropTargetListener.dropActionChanged(java.awt.dnd.DropTargetDragEvent)
-
-    func dropActionChanged( dtde: DropTargetDragEvent? )
-
     /// public abstract void java.awt.dnd.DropTargetListener.dragExit(java.awt.dnd.DropTargetEvent)
 
     func dragExit( dte: DropTargetEvent? )
 
+    /// public abstract void java.awt.dnd.DropTargetListener.dragOver(java.awt.dnd.DropTargetDragEvent)
+
+    func dragOver( dtde: DropTargetDragEvent? )
+
     /// public abstract void java.awt.dnd.DropTargetListener.drop(java.awt.dnd.DropTargetDropEvent)
 
     func drop( dtde: DropTargetDropEvent? )
+
+    /// public abstract void java.awt.dnd.DropTargetListener.dropActionChanged(java.awt.dnd.DropTargetDragEvent)
+
+    func dropActionChanged( dtde: DropTargetDragEvent? )
 
 }
 
@@ -40,8 +40,8 @@ open class DropTargetListenerForward: java_util.EventListenerForward, DropTarget
     private static var dragEnter_MethodID_6: jmethodID?
 
     open func dragEnter( dtde: DropTargetDragEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragEnter", methodSig: "(Ljava/awt/dnd/DropTargetDragEvent;)V", methodCache: &DropTargetListenerForward.dragEnter_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -50,107 +50,96 @@ open class DropTargetListenerForward: java_util.EventListenerForward, DropTarget
         dragEnter( dtde: _dtde )
     }
 
-    /// public abstract void java.awt.dnd.DropTargetListener.dragOver(java.awt.dnd.DropTargetDragEvent)
-
-    private static var dragOver_MethodID_7: jmethodID?
-
-    open func dragOver( dtde: DropTargetDragEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragOver", methodSig: "(Ljava/awt/dnd/DropTargetDragEvent;)V", methodCache: &DropTargetListenerForward.dragOver_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func dragOver( _ _dtde: DropTargetDragEvent? ) {
-        dragOver( dtde: _dtde )
-    }
-
-    /// public abstract void java.awt.dnd.DropTargetListener.dropActionChanged(java.awt.dnd.DropTargetDragEvent)
-
-    private static var dropActionChanged_MethodID_8: jmethodID?
-
-    open func dropActionChanged( dtde: DropTargetDragEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dropActionChanged", methodSig: "(Ljava/awt/dnd/DropTargetDragEvent;)V", methodCache: &DropTargetListenerForward.dropActionChanged_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func dropActionChanged( _ _dtde: DropTargetDragEvent? ) {
-        dropActionChanged( dtde: _dtde )
-    }
-
     /// public abstract void java.awt.dnd.DropTargetListener.dragExit(java.awt.dnd.DropTargetEvent)
 
-    private static var dragExit_MethodID_9: jmethodID?
+    private static var dragExit_MethodID_7: jmethodID?
 
     open func dragExit( dte: DropTargetEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dte, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragExit", methodSig: "(Ljava/awt/dnd/DropTargetEvent;)V", methodCache: &DropTargetListenerForward.dragExit_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragExit", methodSig: "(Ljava/awt/dnd/DropTargetEvent;)V", methodCache: &DropTargetListenerForward.dragExit_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func dragExit( _ _dte: DropTargetEvent? ) {
         dragExit( dte: _dte )
     }
 
+    /// public abstract void java.awt.dnd.DropTargetListener.dragOver(java.awt.dnd.DropTargetDragEvent)
+
+    private static var dragOver_MethodID_8: jmethodID?
+
+    open func dragOver( dtde: DropTargetDragEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragOver", methodSig: "(Ljava/awt/dnd/DropTargetDragEvent;)V", methodCache: &DropTargetListenerForward.dragOver_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func dragOver( _ _dtde: DropTargetDragEvent? ) {
+        dragOver( dtde: _dtde )
+    }
+
     /// public abstract void java.awt.dnd.DropTargetListener.drop(java.awt.dnd.DropTargetDropEvent)
 
-    private static var drop_MethodID_10: jmethodID?
+    private static var drop_MethodID_9: jmethodID?
 
     open func drop( dtde: DropTargetDropEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drop", methodSig: "(Ljava/awt/dnd/DropTargetDropEvent;)V", methodCache: &DropTargetListenerForward.drop_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drop", methodSig: "(Ljava/awt/dnd/DropTargetDropEvent;)V", methodCache: &DropTargetListenerForward.drop_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func drop( _ _dtde: DropTargetDropEvent? ) {
         drop( dtde: _dtde )
     }
 
-}
+    /// public abstract void java.awt.dnd.DropTargetListener.dropActionChanged(java.awt.dnd.DropTargetDragEvent)
 
+    private static var dropActionChanged_MethodID_10: jmethodID?
+
+    open func dropActionChanged( dtde: DropTargetDragEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: dtde, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dropActionChanged", methodSig: "(Ljava/awt/dnd/DropTargetDragEvent;)V", methodCache: &DropTargetListenerForward.dropActionChanged_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func dropActionChanged( _ _dtde: DropTargetDragEvent? ) {
+        dropActionChanged( dtde: _dtde )
+    }
+
+}
 
 private typealias DropTargetListener_dragEnter_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func DropTargetListener_dragEnter_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dtde: jobject? ) -> () {
-    JNI.inNative = true;
     DropTargetListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragEnter( dtde: dtde != nil ? DropTargetDragEvent( javaObject: dtde ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias DropTargetListener_dragOver_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias DropTargetListener_dragExit_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func DropTargetListener_dragOver_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dtde: jobject? ) -> () {
-    JNI.inNative = true;
-    DropTargetListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragOver( dtde: dtde != nil ? DropTargetDragEvent( javaObject: dtde ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias DropTargetListener_dropActionChanged_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DropTargetListener_dropActionChanged_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dtde: jobject? ) -> () {
-    JNI.inNative = true;
-    DropTargetListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dropActionChanged( dtde: dtde != nil ? DropTargetDragEvent( javaObject: dtde ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias DropTargetListener_dragExit_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DropTargetListener_dragExit_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dte: jobject? ) -> () {
-    JNI.inNative = true;
+private func DropTargetListener_dragExit_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dte: jobject? ) -> () {
     DropTargetListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragExit( dte: dte != nil ? DropTargetEvent( javaObject: dte ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias DropTargetListener_drop_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias DropTargetListener_dragOver_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func DropTargetListener_drop_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dtde: jobject? ) -> () {
-    JNI.inNative = true;
+private func DropTargetListener_dragOver_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dtde: jobject? ) -> () {
+    DropTargetListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragOver( dtde: dtde != nil ? DropTargetDragEvent( javaObject: dtde ) : nil )
+}
+
+private typealias DropTargetListener_drop_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func DropTargetListener_drop_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dtde: jobject? ) -> () {
     DropTargetListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).drop( dtde: dtde != nil ? DropTargetDropEvent( javaObject: dtde ) : nil )
-    JNI.inNative = false;
+}
+
+private typealias DropTargetListener_dropActionChanged_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func DropTargetListener_dropActionChanged_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dtde: jobject? ) -> () {
+    DropTargetListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dropActionChanged( dtde: dtde != nil ? DropTargetDragEvent( javaObject: dtde ) : nil )
 }
 
 fileprivate class DropTargetListenerLocal_: JNILocalProxy<DropTargetListener, Any> {
@@ -161,17 +150,17 @@ fileprivate class DropTargetListenerLocal_: JNILocalProxy<DropTargetListener, An
         let DropTargetListener_dragEnter_0_thunk: DropTargetListener_dragEnter_0_type = DropTargetListener_dragEnter_0
         natives.append( JNINativeMethod( name: strdup("__dragEnter"), signature: strdup("(JLjava/awt/dnd/DropTargetDragEvent;)V"), fnPtr: unsafeBitCast( DropTargetListener_dragEnter_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DropTargetListener_dragOver_1_thunk: DropTargetListener_dragOver_1_type = DropTargetListener_dragOver_1
-        natives.append( JNINativeMethod( name: strdup("__dragOver"), signature: strdup("(JLjava/awt/dnd/DropTargetDragEvent;)V"), fnPtr: unsafeBitCast( DropTargetListener_dragOver_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DropTargetListener_dragExit_1_thunk: DropTargetListener_dragExit_1_type = DropTargetListener_dragExit_1
+        natives.append( JNINativeMethod( name: strdup("__dragExit"), signature: strdup("(JLjava/awt/dnd/DropTargetEvent;)V"), fnPtr: unsafeBitCast( DropTargetListener_dragExit_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DropTargetListener_dropActionChanged_2_thunk: DropTargetListener_dropActionChanged_2_type = DropTargetListener_dropActionChanged_2
-        natives.append( JNINativeMethod( name: strdup("__dropActionChanged"), signature: strdup("(JLjava/awt/dnd/DropTargetDragEvent;)V"), fnPtr: unsafeBitCast( DropTargetListener_dropActionChanged_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DropTargetListener_dragOver_2_thunk: DropTargetListener_dragOver_2_type = DropTargetListener_dragOver_2
+        natives.append( JNINativeMethod( name: strdup("__dragOver"), signature: strdup("(JLjava/awt/dnd/DropTargetDragEvent;)V"), fnPtr: unsafeBitCast( DropTargetListener_dragOver_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DropTargetListener_dragExit_3_thunk: DropTargetListener_dragExit_3_type = DropTargetListener_dragExit_3
-        natives.append( JNINativeMethod( name: strdup("__dragExit"), signature: strdup("(JLjava/awt/dnd/DropTargetEvent;)V"), fnPtr: unsafeBitCast( DropTargetListener_dragExit_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DropTargetListener_drop_3_thunk: DropTargetListener_drop_3_type = DropTargetListener_drop_3
+        natives.append( JNINativeMethod( name: strdup("__drop"), signature: strdup("(JLjava/awt/dnd/DropTargetDropEvent;)V"), fnPtr: unsafeBitCast( DropTargetListener_drop_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DropTargetListener_drop_4_thunk: DropTargetListener_drop_4_type = DropTargetListener_drop_4
-        natives.append( JNINativeMethod( name: strdup("__drop"), signature: strdup("(JLjava/awt/dnd/DropTargetDropEvent;)V"), fnPtr: unsafeBitCast( DropTargetListener_drop_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DropTargetListener_dropActionChanged_4_thunk: DropTargetListener_dropActionChanged_4_type = DropTargetListener_dropActionChanged_4
+        natives.append( JNINativeMethod( name: strdup("__dropActionChanged"), signature: strdup("(JLjava/awt/dnd/DropTargetDragEvent;)V"), fnPtr: unsafeBitCast( DropTargetListener_dropActionChanged_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -209,44 +198,29 @@ open class DropTargetListenerBase: DropTargetListener {
     open func dragEnter( dtde: DropTargetDragEvent? ) /**/ {
     }
 
-    open func dragEnter( _ _dtde: DropTargetDragEvent? ) /**/ {
-        dragEnter( dtde: _dtde )
-    }
-
-    /// public abstract void java.awt.dnd.DropTargetListener.dragOver(java.awt.dnd.DropTargetDragEvent)
-
-    open func dragOver( dtde: DropTargetDragEvent? ) /**/ {
-    }
-
-    open func dragOver( _ _dtde: DropTargetDragEvent? ) /**/ {
-        dragOver( dtde: _dtde )
-    }
-
-    /// public abstract void java.awt.dnd.DropTargetListener.dropActionChanged(java.awt.dnd.DropTargetDragEvent)
-
-    open func dropActionChanged( dtde: DropTargetDragEvent? ) /**/ {
-    }
-
-    open func dropActionChanged( _ _dtde: DropTargetDragEvent? ) /**/ {
-        dropActionChanged( dtde: _dtde )
-    }
 
     /// public abstract void java.awt.dnd.DropTargetListener.dragExit(java.awt.dnd.DropTargetEvent)
 
     open func dragExit( dte: DropTargetEvent? ) /**/ {
     }
 
-    open func dragExit( _ _dte: DropTargetEvent? ) /**/ {
-        dragExit( dte: _dte )
+
+    /// public abstract void java.awt.dnd.DropTargetListener.dragOver(java.awt.dnd.DropTargetDragEvent)
+
+    open func dragOver( dtde: DropTargetDragEvent? ) /**/ {
     }
+
 
     /// public abstract void java.awt.dnd.DropTargetListener.drop(java.awt.dnd.DropTargetDropEvent)
 
     open func drop( dtde: DropTargetDropEvent? ) /**/ {
     }
 
-    open func drop( _ _dtde: DropTargetDropEvent? ) /**/ {
-        drop( dtde: _dtde )
+
+    /// public abstract void java.awt.dnd.DropTargetListener.dropActionChanged(java.awt.dnd.DropTargetDragEvent)
+
+    open func dropActionChanged( dtde: DropTargetDragEvent? ) /**/ {
     }
+
 
 }

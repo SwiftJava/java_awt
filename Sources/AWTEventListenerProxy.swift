@@ -26,9 +26,9 @@ open class AWTEventListenerProxy: java_util.EventListenerProxy, AWTEventListener
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( eventMask: Int64, listener: AWTEventListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: eventMask, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( j: eventMask )
         __args[1] = JNIType.toJava( value: listener, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/AWTEventListenerProxy", classCache: &AWTEventListenerProxy.AWTEventListenerProxyJNIClass, methodSig: "(JLjava/awt/event/AWTEventListener;)V", methodCache: &AWTEventListenerProxy.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -39,32 +39,32 @@ open class AWTEventListenerProxy: java_util.EventListenerProxy, AWTEventListener
         self.init( eventMask: _eventMask, listener: _listener )
     }
 
-    /// public long java.awt.event.AWTEventListenerProxy.getEventMask()
-
-    private static var getEventMask_MethodID_2: jmethodID?
-
-    open func getEventMask() -> Int64 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getEventMask", methodSig: "()J", methodCache: &AWTEventListenerProxy.getEventMask_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int64(), from: __return )
-    }
-
-
     /// public void java.awt.event.AWTEventListenerProxy.eventDispatched(java.awt.AWTEvent)
 
-    private static var eventDispatched_MethodID_3: jmethodID?
+    private static var eventDispatched_MethodID_2: jmethodID?
 
     open func eventDispatched( event: AWTEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: event, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "eventDispatched", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &AWTEventListenerProxy.eventDispatched_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "eventDispatched", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &AWTEventListenerProxy.eventDispatched_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func eventDispatched( _ _event: AWTEvent? ) {
         eventDispatched( event: _event )
     }
+
+    /// public long java.awt.event.AWTEventListenerProxy.getEventMask()
+
+    private static var getEventMask_MethodID_3: jmethodID?
+
+    open func getEventMask() -> Int64 {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getEventMask", methodSig: "()J", methodCache: &AWTEventListenerProxy.getEventMask_MethodID_3, args: &__args, locals: &__locals )
+        return __return
+    }
+
 
 }
 

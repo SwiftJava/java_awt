@@ -16,48 +16,37 @@ open class RescaleOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     private static var RescaleOpJNIClass: jclass?
 
-    /// float[] java.awt.image.RescaleOp.scaleFactors
-
-    /// float[] java.awt.image.RescaleOp.offsets
-
-    /// int java.awt.image.RescaleOp.length
+    /// private int java.awt.image.RescaleOp.dstNbits
 
     /// java.awt.RenderingHints java.awt.image.RescaleOp.hints
 
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.image.RescaleOp.length
+
+    // Skipping field: true false false false false false 
+
+    /// float[] java.awt.image.RescaleOp.offsets
+
+    // Skipping field: true false false false false false 
+
+    /// float[] java.awt.image.RescaleOp.scaleFactors
+
+    // Skipping field: true false false false false false 
+
     /// private int java.awt.image.RescaleOp.srcNbits
-
-    /// private int java.awt.image.RescaleOp.dstNbits
-
-    /// public java.awt.image.RescaleOp(float[],float[],java.awt.RenderingHints)
-
-    private static var new_MethodID_1: jmethodID?
-
-    public convenience init( scaleFactors: [Float]?, offsets: [Float]?, hints: RenderingHints? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: scaleFactors, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offsets, locals: &__locals )
-        __args[2] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/RescaleOp", classCache: &RescaleOp.RescaleOpJNIClass, methodSig: "([F[FLjava/awt/RenderingHints;)V", methodCache: &RescaleOp.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _scaleFactors: [Float]?, _ _offsets: [Float]?, _ _hints: RenderingHints? ) {
-        self.init( scaleFactors: _scaleFactors, offsets: _offsets, hints: _hints )
-    }
 
     /// public java.awt.image.RescaleOp(float,float,java.awt.RenderingHints)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( scaleFactor: Float, offset: Float, hints: RenderingHints? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: scaleFactor, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( f: scaleFactor )
+        __args[1] = jvalue( f: offset )
         __args[2] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/RescaleOp", classCache: &RescaleOp.RescaleOpJNIClass, methodSig: "(FFLjava/awt/RenderingHints;)V", methodCache: &RescaleOp.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/RescaleOp", classCache: &RescaleOp.RescaleOpJNIClass, methodSig: "(FFLjava/awt/RenderingHints;)V", methodCache: &RescaleOp.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -66,149 +55,39 @@ open class RescaleOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         self.init( scaleFactor: _scaleFactor, offset: _offset, hints: _hints )
     }
 
-    /// public final java.awt.image.BufferedImage java.awt.image.RescaleOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
+    /// public java.awt.image.RescaleOp(float[],float[],java.awt.RenderingHints)
 
-    private static var filter_MethodID_3: jmethodID?
+    private static var new_MethodID_2: jmethodID?
 
-    open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( scaleFactors: [Float]?, offsets: [Float]?, hints: RenderingHints? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &RescaleOp.filter_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BufferedImage( javaObject: __return ) : nil
-    }
-
-    open func filter( _ _src: BufferedImage?, _ _dest: BufferedImage? ) -> BufferedImage! {
-        return filter( src: _src, dest: _dest )
-    }
-
-    /// public final java.awt.image.WritableRaster java.awt.image.RescaleOp.filter(java.awt.image.Raster,java.awt.image.WritableRaster)
-
-    private static var filter_MethodID_4: jmethodID?
-
-    open func filter( src: Raster?, dest: WritableRaster? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &RescaleOp.filter_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open func filter( _ _src: Raster?, _ _dest: WritableRaster? ) -> WritableRaster! {
-        return filter( src: _src, dest: _dest )
-    }
-
-    /// public final float[] java.awt.image.RescaleOp.getScaleFactors(float[])
-
-    private static var getScaleFactors_MethodID_5: jmethodID?
-
-    open func getScaleFactors( scaleFactors: [Float]? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: scaleFactors, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScaleFactors", methodSig: "([F)[F", methodCache: &RescaleOp.getScaleFactors_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        __args[1] = JNIType.toJava( value: offsets, locals: &__locals )
+        __args[2] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/RescaleOp", classCache: &RescaleOp.RescaleOpJNIClass, methodSig: "([F[FLjava/awt/RenderingHints;)V", methodCache: &RescaleOp.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
     }
 
-    open func getScaleFactors( _ _scaleFactors: [Float]? ) -> [Float]! {
-        return getScaleFactors( scaleFactors: _scaleFactors )
+    public convenience init( _ _scaleFactors: [Float]?, _ _offsets: [Float]?, _ _hints: RenderingHints? ) {
+        self.init( scaleFactors: _scaleFactors, offsets: _offsets, hints: _hints )
     }
-
-    /// public final int java.awt.image.RescaleOp.getNumFactors()
-
-    private static var getNumFactors_MethodID_6: jmethodID?
-
-    open func getNumFactors() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumFactors", methodSig: "()I", methodCache: &RescaleOp.getNumFactors_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// private java.awt.image.ByteLookupTable java.awt.image.RescaleOp.createByteLut(float[],float[],int,int)
-
-    /// private java.awt.image.ShortLookupTable java.awt.image.RescaleOp.createShortLut(float[],float[],int,int)
 
     /// private boolean java.awt.image.RescaleOp.canUseLookup(java.awt.image.Raster,java.awt.image.Raster)
 
-    /// public final float[] java.awt.image.RescaleOp.getOffsets(float[])
-
-    private static var getOffsets_MethodID_7: jmethodID?
-
-    open func getOffsets( offsets: [Float]? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offsets, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOffsets", methodSig: "([F)[F", methodCache: &RescaleOp.getOffsets_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
-    }
-
-    open func getOffsets( _ _offsets: [Float]? ) -> [Float]! {
-        return getOffsets( offsets: _offsets )
-    }
-
-    /// public final java.awt.geom.Rectangle2D java.awt.image.RescaleOp.getBounds2D(java.awt.image.Raster)
-
-    private static var getBounds2D_MethodID_8: jmethodID?
-
-    open func getBounds2D( src: Raster? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &RescaleOp.getBounds2D_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-    open func getBounds2D( _ _src: Raster? ) -> Rectangle2D! {
-        return getBounds2D( src: _src )
-    }
-
-    /// public final java.awt.geom.Rectangle2D java.awt.image.RescaleOp.getBounds2D(java.awt.image.BufferedImage)
-
-    private static var getBounds2D_MethodID_9: jmethodID?
-
-    open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &RescaleOp.getBounds2D_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-    open func getBounds2D( _ _src: BufferedImage? ) -> Rectangle2D! {
-        return getBounds2D( src: _src )
-    }
-
-    /// public final java.awt.RenderingHints java.awt.image.RescaleOp.getRenderingHints()
-
-    private static var getRenderingHints_MethodID_10: jmethodID?
-
-    open func getRenderingHints() -> RenderingHints! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &RescaleOp.getRenderingHints_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: RenderingHints(), from: __return )
-    }
-
+    /// private java.awt.image.ByteLookupTable java.awt.image.RescaleOp.createByteLut(float[],float[],int,int)
 
     /// public java.awt.image.BufferedImage java.awt.image.RescaleOp.createCompatibleDestImage(java.awt.image.BufferedImage,java.awt.image.ColorModel)
 
-    private static var createCompatibleDestImage_MethodID_11: jmethodID?
+    private static var createCompatibleDestImage_MethodID_3: jmethodID?
 
     open func createCompatibleDestImage( src: BufferedImage?, destCM: ColorModel? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
         __args[1] = JNIType.toJava( value: destCM, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &RescaleOp.createCompatibleDestImage_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &RescaleOp.createCompatibleDestImage_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImage( javaObject: __return ) : nil
     }
@@ -219,13 +98,13 @@ open class RescaleOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     /// public java.awt.image.WritableRaster java.awt.image.RescaleOp.createCompatibleDestRaster(java.awt.image.Raster)
 
-    private static var createCompatibleDestRaster_MethodID_12: jmethodID?
+    private static var createCompatibleDestRaster_MethodID_4: jmethodID?
 
     open func createCompatibleDestRaster( src: Raster? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestRaster", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;", methodCache: &RescaleOp.createCompatibleDestRaster_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestRaster", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;", methodCache: &RescaleOp.createCompatibleDestRaster_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -234,22 +113,150 @@ open class RescaleOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         return createCompatibleDestRaster( src: _src )
     }
 
+    /// private java.awt.image.ShortLookupTable java.awt.image.RescaleOp.createShortLut(float[],float[],int,int)
+
+    /// public final java.awt.image.BufferedImage java.awt.image.RescaleOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
+
+    private static var filter_MethodID_5: jmethodID?
+
+    open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &RescaleOp.filter_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BufferedImage( javaObject: __return ) : nil
+    }
+
+    open func filter( _ _src: BufferedImage?, _ _dest: BufferedImage? ) -> BufferedImage! {
+        return filter( src: _src, dest: _dest )
+    }
+
+    /// public final java.awt.image.WritableRaster java.awt.image.RescaleOp.filter(java.awt.image.Raster,java.awt.image.WritableRaster)
+
+    private static var filter_MethodID_6: jmethodID?
+
+    open func filter( src: Raster?, dest: WritableRaster? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &RescaleOp.filter_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open func filter( _ _src: Raster?, _ _dest: WritableRaster? ) -> WritableRaster! {
+        return filter( src: _src, dest: _dest )
+    }
+
+    /// public final java.awt.geom.Rectangle2D java.awt.image.RescaleOp.getBounds2D(java.awt.image.BufferedImage)
+
+    private static var getBounds2D_MethodID_7: jmethodID?
+
+    open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &RescaleOp.getBounds2D_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getBounds2D( _ _src: BufferedImage? ) -> Rectangle2D! {
+        return getBounds2D( src: _src )
+    }
+
+    /// public final java.awt.geom.Rectangle2D java.awt.image.RescaleOp.getBounds2D(java.awt.image.Raster)
+
+    private static var getBounds2D_MethodID_8: jmethodID?
+
+    open func getBounds2D( src: Raster? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &RescaleOp.getBounds2D_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getBounds2D( _ _src: Raster? ) -> Rectangle2D! {
+        return getBounds2D( src: _src )
+    }
+
+    /// public final int java.awt.image.RescaleOp.getNumFactors()
+
+    private static var getNumFactors_MethodID_9: jmethodID?
+
+    open func getNumFactors() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumFactors", methodSig: "()I", methodCache: &RescaleOp.getNumFactors_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public final float[] java.awt.image.RescaleOp.getOffsets(float[])
+
+    private static var getOffsets_MethodID_10: jmethodID?
+
+    open func getOffsets( offsets: [Float]? ) -> [Float]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: offsets, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOffsets", methodSig: "([F)[F", methodCache: &RescaleOp.getOffsets_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
+    }
+
+    open func getOffsets( _ _offsets: [Float]? ) -> [Float]! {
+        return getOffsets( offsets: _offsets )
+    }
+
     /// public final java.awt.geom.Point2D java.awt.image.RescaleOp.getPoint2D(java.awt.geom.Point2D,java.awt.geom.Point2D)
 
-    private static var getPoint2D_MethodID_13: jmethodID?
+    private static var getPoint2D_MethodID_11: jmethodID?
 
     open func getPoint2D( srcPt: Point2D?, dstPt: Point2D? ) -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: srcPt, locals: &__locals )
         __args[1] = JNIType.toJava( value: dstPt, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &RescaleOp.getPoint2D_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &RescaleOp.getPoint2D_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point2D( javaObject: __return ) : nil
     }
 
     open func getPoint2D( _ _srcPt: Point2D?, _ _dstPt: Point2D? ) -> Point2D! {
         return getPoint2D( srcPt: _srcPt, dstPt: _dstPt )
+    }
+
+    /// public final java.awt.RenderingHints java.awt.image.RescaleOp.getRenderingHints()
+
+    private static var getRenderingHints_MethodID_12: jmethodID?
+
+    open func getRenderingHints() -> RenderingHints! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &RescaleOp.getRenderingHints_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: RenderingHints.self, from: __return )
+    }
+
+
+    /// public final float[] java.awt.image.RescaleOp.getScaleFactors(float[])
+
+    private static var getScaleFactors_MethodID_13: jmethodID?
+
+    open func getScaleFactors( scaleFactors: [Float]? ) -> [Float]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: scaleFactors, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScaleFactors", methodSig: "([F)[F", methodCache: &RescaleOp.getScaleFactors_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
+    }
+
+    open func getScaleFactors( _ _scaleFactors: [Float]? ) -> [Float]! {
+        return getScaleFactors( scaleFactors: _scaleFactors )
     }
 
 }

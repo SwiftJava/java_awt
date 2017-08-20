@@ -23,8 +23,8 @@ open class CompositeForward: JNIObjectForward, Composite {
     private static var createContext_MethodID_2: jmethodID?
 
     open func createContext( srcColorModel: ColorModel?, dstColorModel: ColorModel?, hints: RenderingHints? ) -> CompositeContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: srcColorModel, locals: &__locals )
         __args[1] = JNIType.toJava( value: dstColorModel, locals: &__locals )
         __args[2] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
@@ -38,5 +38,4 @@ open class CompositeForward: JNIObjectForward, Composite {
     }
 
 }
-
 

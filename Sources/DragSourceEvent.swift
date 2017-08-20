@@ -33,8 +33,8 @@ open class DragSourceEvent: java_util.EventObject {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &DragSourceEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &DragSourceEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -49,8 +49,8 @@ open class DragSourceEvent: java_util.EventObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( dsc: DragSourceContext? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dsc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DragSourceEvent", classCache: &DragSourceEvent.DragSourceEventJNIClass, methodSig: "(Ljava/awt/dnd/DragSourceContext;)V", methodCache: &DragSourceEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -66,11 +66,11 @@ open class DragSourceEvent: java_util.EventObject {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( dsc: DragSourceContext?, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: dsc, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DragSourceEvent", classCache: &DragSourceEvent.DragSourceEventJNIClass, methodSig: "(Ljava/awt/dnd/DragSourceContext;II)V", methodCache: &DragSourceEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -80,29 +80,29 @@ open class DragSourceEvent: java_util.EventObject {
         self.init( dsc: _dsc, x: _x, y: _y )
     }
 
-    /// public java.awt.Point java.awt.dnd.DragSourceEvent.getLocation()
+    /// public java.awt.dnd.DragSourceContext java.awt.dnd.DragSourceEvent.getDragSourceContext()
 
-    private static var getLocation_MethodID_3: jmethodID?
+    private static var getDragSourceContext_MethodID_3: jmethodID?
 
-    open func getLocation() -> Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getDragSourceContext() -> DragSourceContext! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocation", methodSig: "()Ljava/awt/Point;", methodCache: &DragSourceEvent.getLocation_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDragSourceContext", methodSig: "()Ljava/awt/dnd/DragSourceContext;", methodCache: &DragSourceEvent.getDragSourceContext_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point( javaObject: __return ) : nil
+        return __return != nil ? DragSourceContext( javaObject: __return ) : nil
     }
 
 
-    /// public java.awt.dnd.DragSourceContext java.awt.dnd.DragSourceEvent.getDragSourceContext()
+    /// public java.awt.Point java.awt.dnd.DragSourceEvent.getLocation()
 
-    private static var getDragSourceContext_MethodID_4: jmethodID?
+    private static var getLocation_MethodID_4: jmethodID?
 
-    open func getDragSourceContext() -> DragSourceContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getLocation() -> Point! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDragSourceContext", methodSig: "()Ljava/awt/dnd/DragSourceContext;", methodCache: &DragSourceEvent.getDragSourceContext_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocation", methodSig: "()Ljava/awt/Point;", methodCache: &DragSourceEvent.getLocation_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DragSourceContext( javaObject: __return ) : nil
+        return __return != nil ? Point( javaObject: __return ) : nil
     }
 
 
@@ -111,10 +111,10 @@ open class DragSourceEvent: java_util.EventObject {
     private static var getX_MethodID_5: jmethodID?
 
     open func getX() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getX", methodSig: "()I", methodCache: &DragSourceEvent.getX_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
@@ -123,10 +123,10 @@ open class DragSourceEvent: java_util.EventObject {
     private static var getY_MethodID_6: jmethodID?
 
     open func getY() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getY", methodSig: "()I", methodCache: &DragSourceEvent.getY_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 

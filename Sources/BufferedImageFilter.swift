@@ -22,15 +22,27 @@ open class BufferedImageFilter: ImageFilter {
 
     /// java.awt.image.BufferedImageOp java.awt.image.BufferedImageFilter.bufferedImageOp
 
-    /// java.awt.image.ColorModel java.awt.image.BufferedImageFilter.model
-
-    /// int java.awt.image.BufferedImageFilter.width
-
-    /// int java.awt.image.BufferedImageFilter.height
+    // Skipping field: true false false false false false 
 
     /// byte[] java.awt.image.BufferedImageFilter.bytePixels
 
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.image.BufferedImageFilter.height
+
+    // Skipping field: true false false false false false 
+
     /// int[] java.awt.image.BufferedImageFilter.intPixels
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.image.ColorModel java.awt.image.BufferedImageFilter.model
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.image.BufferedImageFilter.width
+
+    // Skipping field: true false false false false false 
 
     /// protected java.awt.image.ImageConsumer java.awt.image.ImageFilter.consumer
 
@@ -38,8 +50,8 @@ open class BufferedImageFilter: ImageFilter {
 
     override open var consumer: ImageConsumer! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "consumer", fieldType: "Ljava/awt/image/ImageConsumer;", fieldCache: &BufferedImageFilter.consumer_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "consumer", fieldType: "Ljava/awt/image/ImageConsumer;", fieldCache: &BufferedImageFilter.consumer_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ImageConsumerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -49,31 +61,49 @@ open class BufferedImageFilter: ImageFilter {
         }
     }
 
-    /// public static final int java.awt.image.ImageConsumer.RANDOMPIXELORDER
-
-    /// public static final int java.awt.image.ImageConsumer.TOPDOWNLEFTRIGHT
-
     /// public static final int java.awt.image.ImageConsumer.COMPLETESCANLINES
 
-    /// public static final int java.awt.image.ImageConsumer.SINGLEPASS
+    // Skipping field: false true false false false false 
 
-    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAME
+    /// public static final int java.awt.image.ImageConsumer.IMAGEABORTED
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.image.ImageConsumer.IMAGEERROR
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageConsumer.RANDOMPIXELORDER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAME
+
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.image.ImageConsumer.SINGLEFRAMEDONE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageConsumer.SINGLEPASS
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.image.ImageConsumer.STATICIMAGEDONE
 
-    /// public static final int java.awt.image.ImageConsumer.IMAGEABORTED
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageConsumer.TOPDOWNLEFTRIGHT
+
+    // Skipping field: false true false false false false 
 
     /// public java.awt.image.BufferedImageFilter(java.awt.image.BufferedImageOp)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( op: BufferedImageOp? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: op, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/BufferedImageFilter", classCache: &BufferedImageFilter.BufferedImageFilterJNIClass, methodSig: "(Ljava/awt/image/BufferedImageOp;)V", methodCache: &BufferedImageFilter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -84,32 +114,42 @@ open class BufferedImageFilter: ImageFilter {
         self.init( op: _op )
     }
 
-    /// public void java.awt.image.BufferedImageFilter.setPixels(int,int,int,int,java.awt.image.ColorModel,byte[],int,int)
+    /// private void java.awt.image.BufferedImageFilter.convertToRGB()
 
-    /// public void java.awt.image.BufferedImageFilter.setPixels(int,int,int,int,java.awt.image.ColorModel,int[],int,int)
-
-    /// public void java.awt.image.BufferedImageFilter.setDimensions(int,int)
-
-    /// public void java.awt.image.BufferedImageFilter.setColorModel(java.awt.image.ColorModel)
-
-    /// public void java.awt.image.BufferedImageFilter.imageComplete(int)
+    /// private final java.awt.image.WritableRaster java.awt.image.BufferedImageFilter.createDCMraster()
 
     /// public java.awt.image.BufferedImageOp java.awt.image.BufferedImageFilter.getBufferedImageOp()
 
     private static var getBufferedImageOp_MethodID_2: jmethodID?
 
     open func getBufferedImageOp() -> BufferedImageOp! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBufferedImageOp", methodSig: "()Ljava/awt/image/BufferedImageOp;", methodCache: &BufferedImageFilter.getBufferedImageOp_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImageOpForward( javaObject: __return ) : nil
     }
 
 
-    /// private void java.awt.image.BufferedImageFilter.convertToRGB()
+    /// public void java.awt.image.BufferedImageFilter.imageComplete(int)
 
-    /// private final java.awt.image.WritableRaster java.awt.image.BufferedImageFilter.createDCMraster()
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.BufferedImageFilter.setColorModel(java.awt.image.ColorModel)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.BufferedImageFilter.setDimensions(int,int)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.BufferedImageFilter.setPixels(int,int,int,int,java.awt.image.ColorModel,int[],int,int)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.BufferedImageFilter.setPixels(int,int,int,int,java.awt.image.ColorModel,byte[],int,int)
+
+    // Skipping method: false true false false false 
 
 }
 

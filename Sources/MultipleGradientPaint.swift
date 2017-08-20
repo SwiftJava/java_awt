@@ -16,40 +16,53 @@ open class MultipleGradientPaint: java_swift.JavaObject, Paint {
 
     private static var MultipleGradientPaintJNIClass: jclass?
 
-    /// final int java.awt.MultipleGradientPaint.transparency
+    /// final java.awt.MultipleGradientPaint$ColorSpaceType java.awt.MultipleGradientPaint.colorSpace
 
-    /// final float[] java.awt.MultipleGradientPaint.fractions
+    // Skipping field: true false false false false false 
 
     /// final java.awt.Color[] java.awt.MultipleGradientPaint.colors
 
-    /// final java.awt.geom.AffineTransform java.awt.MultipleGradientPaint.gradientTransform
+    // Skipping field: true false false false false false 
 
     /// final java.awt.MultipleGradientPaint$CycleMethod java.awt.MultipleGradientPaint.cycleMethod
 
-    /// final java.awt.MultipleGradientPaint$ColorSpaceType java.awt.MultipleGradientPaint.colorSpace
-
-    /// java.awt.image.ColorModel java.awt.MultipleGradientPaint.model
-
-    /// float[] java.awt.MultipleGradientPaint.normalizedIntervals
-
-    /// boolean java.awt.MultipleGradientPaint.isSimpleLookup
-
-    /// java.lang.ref.SoftReference java.awt.MultipleGradientPaint.gradients
-
-    /// java.lang.ref.SoftReference java.awt.MultipleGradientPaint.gradient
+    // Skipping field: true false false false false false 
 
     /// int java.awt.MultipleGradientPaint.fastGradientArraySize
 
-    /// public static final int java.awt.Transparency.OPAQUE
+    // Skipping field: true false false false false false 
 
-    private static var OPAQUE_FieldID: jfieldID?
+    /// final float[] java.awt.MultipleGradientPaint.fractions
 
-    open static var OPAQUE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/MultipleGradientPaint", classCache: &MultipleGradientPaintJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    // Skipping field: true false false false false false 
+
+    /// java.lang.ref.SoftReference java.awt.MultipleGradientPaint.gradient
+
+    // Skipping field: true false false false false false 
+
+    /// final java.awt.geom.AffineTransform java.awt.MultipleGradientPaint.gradientTransform
+
+    // Skipping field: true false false false false false 
+
+    /// java.lang.ref.SoftReference java.awt.MultipleGradientPaint.gradients
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.MultipleGradientPaint.isSimpleLookup
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.image.ColorModel java.awt.MultipleGradientPaint.model
+
+    // Skipping field: true false false false false false 
+
+    /// float[] java.awt.MultipleGradientPaint.normalizedIntervals
+
+    // Skipping field: true false false false false false 
+
+    /// final int java.awt.MultipleGradientPaint.transparency
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.Transparency.BITMASK
 
@@ -58,7 +71,18 @@ open class MultipleGradientPaint: java_swift.JavaObject, Paint {
     open static var BITMASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BITMASK", fieldType: "I", fieldCache: &BITMASK_FieldID, className: "java/awt/MultipleGradientPaint", classCache: &MultipleGradientPaintJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Transparency.OPAQUE
+
+    private static var OPAQUE_FieldID: jfieldID?
+
+    open static var OPAQUE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/MultipleGradientPaint", classCache: &MultipleGradientPaintJNIClass )
+            return Int(__value)
         }
     }
 
@@ -69,21 +93,24 @@ open class MultipleGradientPaint: java_swift.JavaObject, Paint {
     open static var TRANSLUCENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRANSLUCENT", fieldType: "I", fieldCache: &TRANSLUCENT_FieldID, className: "java/awt/MultipleGradientPaint", classCache: &MultipleGradientPaintJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
     /// java.awt.MultipleGradientPaint(float[],java.awt.Color[],java.awt.MultipleGradientPaint$CycleMethod,java.awt.MultipleGradientPaint$ColorSpaceType,java.awt.geom.AffineTransform)
 
-    /// public final float[] java.awt.MultipleGradientPaint.getFractions()
+    // Skipping init: true false false 
 
-    private static var getFractions_MethodID_1: jmethodID?
+    /// public final java.awt.MultipleGradientPaint$ColorSpaceType java.awt.MultipleGradientPaint.getColorSpace()
 
-    open func getFractions() -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var getColorSpace_MethodID_1: jmethodID?
+
+    open func getColorSpace() -> MultipleGradientPaint_ColorSpaceType! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFractions", methodSig: "()[F", methodCache: &MultipleGradientPaint.getFractions_MethodID_1, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorSpace", methodSig: "()Ljava/awt/MultipleGradientPaint$ColorSpaceType;", methodCache: &MultipleGradientPaint.getColorSpace_MethodID_1, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MultipleGradientPaint_ColorSpaceType( javaObject: __return ) : nil
     }
 
 
@@ -92,10 +119,10 @@ open class MultipleGradientPaint: java_swift.JavaObject, Paint {
     private static var getColors_MethodID_2: jmethodID?
 
     open func getColors() -> [Color]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColors", methodSig: "()[Ljava/awt/Color;", methodCache: &MultipleGradientPaint.getColors_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Color](), from: __return )
+        return JNIType.toSwift( type: [Color].self, from: __return )
     }
 
 
@@ -104,49 +131,48 @@ open class MultipleGradientPaint: java_swift.JavaObject, Paint {
     private static var getCycleMethod_MethodID_3: jmethodID?
 
     open func getCycleMethod() -> MultipleGradientPaint_CycleMethod! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCycleMethod", methodSig: "()Ljava/awt/MultipleGradientPaint$CycleMethod;", methodCache: &MultipleGradientPaint.getCycleMethod_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MultipleGradientPaint_CycleMethod( javaObject: __return ) : nil
     }
 
 
-    /// public final java.awt.MultipleGradientPaint$ColorSpaceType java.awt.MultipleGradientPaint.getColorSpace()
+    /// public final float[] java.awt.MultipleGradientPaint.getFractions()
 
-    private static var getColorSpace_MethodID_4: jmethodID?
+    private static var getFractions_MethodID_4: jmethodID?
 
-    open func getColorSpace() -> MultipleGradientPaint_ColorSpaceType! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getFractions() -> [Float]! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorSpace", methodSig: "()Ljava/awt/MultipleGradientPaint$ColorSpaceType;", methodCache: &MultipleGradientPaint.getColorSpace_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MultipleGradientPaint_ColorSpaceType( javaObject: __return ) : nil
-    }
-
-
-    /// public final int java.awt.MultipleGradientPaint.getTransparency()
-
-    private static var getTransparency_MethodID_5: jmethodID?
-
-    open func getTransparency() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &MultipleGradientPaint.getTransparency_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFractions", methodSig: "()[F", methodCache: &MultipleGradientPaint.getFractions_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
 
     /// public final java.awt.geom.AffineTransform java.awt.MultipleGradientPaint.getTransform()
 
-    private static var getTransform_MethodID_6: jmethodID?
+    private static var getTransform_MethodID_5: jmethodID?
 
     open func getTransform() -> AffineTransform! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransform", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &MultipleGradientPaint.getTransform_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransform", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &MultipleGradientPaint.getTransform_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AffineTransform( javaObject: __return ) : nil
+    }
+
+
+    /// public final int java.awt.MultipleGradientPaint.getTransparency()
+
+    private static var getTransparency_MethodID_6: jmethodID?
+
+    open func getTransparency() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &MultipleGradientPaint.getTransparency_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
@@ -157,8 +183,8 @@ open class MultipleGradientPaint: java_swift.JavaObject, Paint {
     private static var createContext_MethodID_7: jmethodID?
 
     open func createContext( cm: ColorModel?, deviceBounds: Rectangle?, userBounds: Rectangle2D?, xform: AffineTransform?, hints: RenderingHints? ) -> PaintContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: cm, locals: &__locals )
         __args[1] = JNIType.toJava( value: deviceBounds, locals: &__locals )
         __args[2] = JNIType.toJava( value: userBounds, locals: &__locals )

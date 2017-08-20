@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.MenuShortcut ///
 
-open class MenuShortcut: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class MenuShortcut: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,20 +16,24 @@ open class MenuShortcut: java_swift.JavaObject, /* java.io.Serializable */ Uncla
 
     private static var MenuShortcutJNIClass: jclass?
 
+    /// private static final long java.awt.MenuShortcut.serialVersionUID
+
     /// int java.awt.MenuShortcut.key
+
+    // Skipping field: true false false false false false 
 
     /// boolean java.awt.MenuShortcut.usesShift
 
-    /// private static final long java.awt.MenuShortcut.serialVersionUID
+    // Skipping field: true false false false false false 
 
     /// public java.awt.MenuShortcut(int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( key: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(key) )
         let __object = JNIMethod.NewObject( className: "java/awt/MenuShortcut", classCache: &MenuShortcut.MenuShortcutJNIClass, methodSig: "(I)V", methodCache: &MenuShortcut.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -44,10 +48,10 @@ open class MenuShortcut: java_swift.JavaObject, /* java.io.Serializable */ Uncla
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( key: Int, useShiftModifier: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: useShiftModifier, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(key) )
+        __args[1] = jvalue( z: jboolean(useShiftModifier ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "java/awt/MenuShortcut", classCache: &MenuShortcut.MenuShortcutJNIClass, methodSig: "(IZ)V", methodCache: &MenuShortcut.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -62,11 +66,11 @@ open class MenuShortcut: java_swift.JavaObject, /* java.io.Serializable */ Uncla
     private static var equals_MethodID_3: jmethodID?
 
     open func equals( s: MenuShortcut? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/MenuShortcut;)Z", methodCache: &MenuShortcut.equals_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func equals( _ _s: MenuShortcut? ) -> Bool {
@@ -78,54 +82,59 @@ open class MenuShortcut: java_swift.JavaObject, /* java.io.Serializable */ Uncla
     private static var equals_MethodID_4: jmethodID?
 
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &MenuShortcut.equals_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _obj: java_swift.JavaObject? ) -> Bool {
         return equals( obj: _obj )
     }
 
-    /// public java.lang.String java.awt.MenuShortcut.toString()
-
-    /// public int java.awt.MenuShortcut.hashCode()
-
     /// public int java.awt.MenuShortcut.getKey()
 
     private static var getKey_MethodID_5: jmethodID?
 
     open func getKey() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getKey", methodSig: "()I", methodCache: &MenuShortcut.getKey_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
+
+    /// public int java.awt.MenuShortcut.hashCode()
+
+    // Skipping method: false true false false false 
 
     /// protected java.lang.String java.awt.MenuShortcut.paramString()
 
     private static var paramString_MethodID_6: jmethodID?
 
     open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &MenuShortcut.paramString_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
+
+    /// public java.lang.String java.awt.MenuShortcut.toString()
+
+    // Skipping method: false true false false false 
 
     /// public boolean java.awt.MenuShortcut.usesShiftModifier()
 
     private static var usesShiftModifier_MethodID_7: jmethodID?
 
     open func usesShiftModifier() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "usesShiftModifier", methodSig: "()Z", methodCache: &MenuShortcut.usesShiftModifier_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 

@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.geom.CubicCurve2D$Float ///
 
-open class CubicCurve2D_Float: CubicCurve2D, /* java.io.Serializable */ UnclassedProtocol {
+open class CubicCurve2D_Float: CubicCurve2D, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -20,39 +20,7 @@ open class CubicCurve2D_Float: CubicCurve2D, /* java.io.Serializable */ Unclasse
 
     private static var CubicCurve2D_FloatJNIClass: jclass?
 
-    /// public float java.awt.geom.CubicCurve2D$Float.x1
-
-    private static var x1_FieldID: jfieldID?
-
-    open var x1: Float {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "x1", fieldType: "F", fieldCache: &CubicCurve2D_Float.x1_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetFloatField( fieldName: "x1", fieldType: "F", fieldCache: &CubicCurve2D_Float.x1_FieldID, object: javaObject, value: __value.f, locals: &__locals )
-        }
-    }
-
-    /// public float java.awt.geom.CubicCurve2D$Float.y1
-
-    private static var y1_FieldID: jfieldID?
-
-    open var y1: Float {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "y1", fieldType: "F", fieldCache: &CubicCurve2D_Float.y1_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetFloatField( fieldName: "y1", fieldType: "F", fieldCache: &CubicCurve2D_Float.y1_FieldID, object: javaObject, value: __value.f, locals: &__locals )
-        }
-    }
+    /// private static final long java.awt.geom.CubicCurve2D$Float.serialVersionUID
 
     /// public float java.awt.geom.CubicCurve2D$Float.ctrlx1
 
@@ -60,31 +28,13 @@ open class CubicCurve2D_Float: CubicCurve2D, /* java.io.Serializable */ Unclasse
 
     open var ctrlx1: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "ctrlx1", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrlx1_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "ctrlx1", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrlx1_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "ctrlx1", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrlx1_FieldID, object: javaObject, value: __value.f, locals: &__locals )
-        }
-    }
-
-    /// public float java.awt.geom.CubicCurve2D$Float.ctrly1
-
-    private static var ctrly1_FieldID: jfieldID?
-
-    open var ctrly1: Float {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "ctrly1", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrly1_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetFloatField( fieldName: "ctrly1", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrly1_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
 
@@ -94,14 +44,29 @@ open class CubicCurve2D_Float: CubicCurve2D, /* java.io.Serializable */ Unclasse
 
     open var ctrlx2: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "ctrlx2", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrlx2_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "ctrlx2", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrlx2_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "ctrlx2", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrlx2_FieldID, object: javaObject, value: __value.f, locals: &__locals )
+        }
+    }
+
+    /// public float java.awt.geom.CubicCurve2D$Float.ctrly1
+
+    private static var ctrly1_FieldID: jfieldID?
+
+    open var ctrly1: Float {
+        get {
+            let __value = JNIField.GetFloatField( fieldName: "ctrly1", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrly1_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( f: newValue )
+            JNIField.SetFloatField( fieldName: "ctrly1", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrly1_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
 
@@ -111,14 +76,29 @@ open class CubicCurve2D_Float: CubicCurve2D, /* java.io.Serializable */ Unclasse
 
     open var ctrly2: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "ctrly2", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrly2_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "ctrly2", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrly2_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "ctrly2", fieldType: "F", fieldCache: &CubicCurve2D_Float.ctrly2_FieldID, object: javaObject, value: __value.f, locals: &__locals )
+        }
+    }
+
+    /// public float java.awt.geom.CubicCurve2D$Float.x1
+
+    private static var x1_FieldID: jfieldID?
+
+    open var x1: Float {
+        get {
+            let __value = JNIField.GetFloatField( fieldName: "x1", fieldType: "F", fieldCache: &CubicCurve2D_Float.x1_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( f: newValue )
+            JNIField.SetFloatField( fieldName: "x1", fieldType: "F", fieldCache: &CubicCurve2D_Float.x1_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
 
@@ -128,14 +108,29 @@ open class CubicCurve2D_Float: CubicCurve2D, /* java.io.Serializable */ Unclasse
 
     open var x2: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "x2", fieldType: "F", fieldCache: &CubicCurve2D_Float.x2_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "x2", fieldType: "F", fieldCache: &CubicCurve2D_Float.x2_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "x2", fieldType: "F", fieldCache: &CubicCurve2D_Float.x2_FieldID, object: javaObject, value: __value.f, locals: &__locals )
+        }
+    }
+
+    /// public float java.awt.geom.CubicCurve2D$Float.y1
+
+    private static var y1_FieldID: jfieldID?
+
+    open var y1: Float {
+        get {
+            let __value = JNIField.GetFloatField( fieldName: "y1", fieldType: "F", fieldCache: &CubicCurve2D_Float.y1_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( f: newValue )
+            JNIField.SetFloatField( fieldName: "y1", fieldType: "F", fieldCache: &CubicCurve2D_Float.y1_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
 
@@ -145,26 +140,23 @@ open class CubicCurve2D_Float: CubicCurve2D, /* java.io.Serializable */ Unclasse
 
     open var y2: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "y2", fieldType: "F", fieldCache: &CubicCurve2D_Float.y2_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "y2", fieldType: "F", fieldCache: &CubicCurve2D_Float.y2_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "y2", fieldType: "F", fieldCache: &CubicCurve2D_Float.y2_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
-
-    /// private static final long java.awt.geom.CubicCurve2D$Float.serialVersionUID
 
     /// public java.awt.geom.CubicCurve2D$Float()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/CubicCurve2D$Float", classCache: &CubicCurve2D_Float.CubicCurve2D_FloatJNIClass, methodSig: "()V", methodCache: &CubicCurve2D_Float.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -175,16 +167,16 @@ open class CubicCurve2D_Float: CubicCurve2D, /* java.io.Serializable */ Unclasse
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( x1: Float, y1: Float, ctrlx1: Float, ctrly1: Float, ctrlx2: Float, ctrly2: Float, x2: Float, y2: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: ctrlx1, locals: &__locals )
-        __args[3] = JNIType.toJava( value: ctrly1, locals: &__locals )
-        __args[4] = JNIType.toJava( value: ctrlx2, locals: &__locals )
-        __args[5] = JNIType.toJava( value: ctrly2, locals: &__locals )
-        __args[6] = JNIType.toJava( value: x2, locals: &__locals )
-        __args[7] = JNIType.toJava( value: y2, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        __args[0] = jvalue( f: x1 )
+        __args[1] = jvalue( f: y1 )
+        __args[2] = jvalue( f: ctrlx1 )
+        __args[3] = jvalue( f: ctrly1 )
+        __args[4] = jvalue( f: ctrlx2 )
+        __args[5] = jvalue( f: ctrly2 )
+        __args[6] = jvalue( f: x2 )
+        __args[7] = jvalue( f: y2 )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/CubicCurve2D$Float", classCache: &CubicCurve2D_Float.CubicCurve2D_FloatJNIClass, methodSig: "(FFFFFFFF)V", methodCache: &CubicCurve2D_Float.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -196,53 +188,81 @@ open class CubicCurve2D_Float: CubicCurve2D, /* java.io.Serializable */ Unclasse
 
     /// public java.awt.geom.Rectangle2D java.awt.geom.CubicCurve2D$Float.getBounds2D()
 
-    /// public double java.awt.geom.CubicCurve2D$Float.getX1()
-
-    /// public double java.awt.geom.CubicCurve2D$Float.getY1()
-
-    /// public double java.awt.geom.CubicCurve2D$Float.getX2()
-
-    /// public double java.awt.geom.CubicCurve2D$Float.getY2()
-
-    /// public java.awt.geom.Point2D java.awt.geom.CubicCurve2D$Float.getP1()
-
-    /// public double java.awt.geom.CubicCurve2D$Float.getCtrlX1()
-
-    /// public double java.awt.geom.CubicCurve2D$Float.getCtrlY1()
+    // Skipping method: false true false false false 
 
     /// public java.awt.geom.Point2D java.awt.geom.CubicCurve2D$Float.getCtrlP1()
 
-    /// public double java.awt.geom.CubicCurve2D$Float.getCtrlX2()
-
-    /// public double java.awt.geom.CubicCurve2D$Float.getCtrlY2()
+    // Skipping method: false true false false false 
 
     /// public java.awt.geom.Point2D java.awt.geom.CubicCurve2D$Float.getCtrlP2()
 
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.CubicCurve2D$Float.getCtrlX1()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.CubicCurve2D$Float.getCtrlX2()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.CubicCurve2D$Float.getCtrlY1()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.CubicCurve2D$Float.getCtrlY2()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.geom.Point2D java.awt.geom.CubicCurve2D$Float.getP1()
+
+    // Skipping method: false true false false false 
+
     /// public java.awt.geom.Point2D java.awt.geom.CubicCurve2D$Float.getP2()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.CubicCurve2D$Float.getX1()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.CubicCurve2D$Float.getX2()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.CubicCurve2D$Float.getY1()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.CubicCurve2D$Float.getY2()
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.geom.CubicCurve2D$Float.setCurve(double,double,double,double,double,double,double,double)
+
+    // Skipping method: false true false false false 
 
     /// public void java.awt.geom.CubicCurve2D$Float.setCurve(float,float,float,float,float,float,float,float)
 
     private static var setCurve_MethodID_3: jmethodID?
 
     open func setCurve( x1: Float, y1: Float, ctrlx1: Float, ctrly1: Float, ctrlx2: Float, ctrly2: Float, x2: Float, y2: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: ctrlx1, locals: &__locals )
-        __args[3] = JNIType.toJava( value: ctrly1, locals: &__locals )
-        __args[4] = JNIType.toJava( value: ctrlx2, locals: &__locals )
-        __args[5] = JNIType.toJava( value: ctrly2, locals: &__locals )
-        __args[6] = JNIType.toJava( value: x2, locals: &__locals )
-        __args[7] = JNIType.toJava( value: y2, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        __args[0] = jvalue( f: x1 )
+        __args[1] = jvalue( f: y1 )
+        __args[2] = jvalue( f: ctrlx1 )
+        __args[3] = jvalue( f: ctrly1 )
+        __args[4] = jvalue( f: ctrlx2 )
+        __args[5] = jvalue( f: ctrly2 )
+        __args[6] = jvalue( f: x2 )
+        __args[7] = jvalue( f: y2 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurve", methodSig: "(FFFFFFFF)V", methodCache: &CubicCurve2D_Float.setCurve_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func setCurve( _ _x1: Float, _ _y1: Float, _ _ctrlx1: Float, _ _ctrly1: Float, _ _ctrlx2: Float, _ _ctrly2: Float, _ _x2: Float, _ _y2: Float ) {
         setCurve( x1: _x1, y1: _y1, ctrlx1: _ctrlx1, ctrly1: _ctrly1, ctrlx2: _ctrlx2, ctrly2: _ctrly2, x2: _x2, y2: _y2 )
     }
-
-    /// public void java.awt.geom.CubicCurve2D$Float.setCurve(double,double,double,double,double,double,double,double)
 
 }
 

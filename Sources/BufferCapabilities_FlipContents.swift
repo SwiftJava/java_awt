@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.BufferCapabilities$FlipContents ///
 
-open class BufferCapabilities_FlipContents: /* java.awt.AttributeValue */ UnclassedObject {
+open class BufferCapabilities_FlipContents: /* class java.awt.AttributeValue */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,27 +16,6 @@ open class BufferCapabilities_FlipContents: /* java.awt.AttributeValue */ Unclas
 
     private static var BufferCapabilities_FlipContentsJNIClass: jclass?
 
-    /// private static int java.awt.BufferCapabilities$FlipContents.I_UNDEFINED
-
-    /// private static int java.awt.BufferCapabilities$FlipContents.I_BACKGROUND
-
-    /// private static int java.awt.BufferCapabilities$FlipContents.I_PRIOR
-
-    /// private static int java.awt.BufferCapabilities$FlipContents.I_COPIED
-
-    /// private static final java.lang.String[] java.awt.BufferCapabilities$FlipContents.NAMES
-
-    /// public static final java.awt.BufferCapabilities$FlipContents java.awt.BufferCapabilities$FlipContents.UNDEFINED
-
-    private static var UNDEFINED_FieldID: jfieldID?
-
-    open static var UNDEFINED: BufferCapabilities_FlipContents! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "UNDEFINED", fieldType: "Ljava/awt/BufferCapabilities$FlipContents;", fieldCache: &UNDEFINED_FieldID, className: "java/awt/BufferCapabilities$FlipContents", classCache: &BufferCapabilities_FlipContentsJNIClass )
-            return __value != nil ? BufferCapabilities_FlipContents( javaObject: __value ) : nil
-        }
-    }
-
     /// public static final java.awt.BufferCapabilities$FlipContents java.awt.BufferCapabilities$FlipContents.BACKGROUND
 
     private static var BACKGROUND_FieldID: jfieldID?
@@ -44,17 +23,7 @@ open class BufferCapabilities_FlipContents: /* java.awt.AttributeValue */ Unclas
     open static var BACKGROUND: BufferCapabilities_FlipContents! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BACKGROUND", fieldType: "Ljava/awt/BufferCapabilities$FlipContents;", fieldCache: &BACKGROUND_FieldID, className: "java/awt/BufferCapabilities$FlipContents", classCache: &BufferCapabilities_FlipContentsJNIClass )
-            return __value != nil ? BufferCapabilities_FlipContents( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.BufferCapabilities$FlipContents java.awt.BufferCapabilities$FlipContents.PRIOR
-
-    private static var PRIOR_FieldID: jfieldID?
-
-    open static var PRIOR: BufferCapabilities_FlipContents! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "PRIOR", fieldType: "Ljava/awt/BufferCapabilities$FlipContents;", fieldCache: &PRIOR_FieldID, className: "java/awt/BufferCapabilities$FlipContents", classCache: &BufferCapabilities_FlipContentsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? BufferCapabilities_FlipContents( javaObject: __value ) : nil
         }
     }
@@ -66,21 +35,77 @@ open class BufferCapabilities_FlipContents: /* java.awt.AttributeValue */ Unclas
     open static var COPIED: BufferCapabilities_FlipContents! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COPIED", fieldType: "Ljava/awt/BufferCapabilities$FlipContents;", fieldCache: &COPIED_FieldID, className: "java/awt/BufferCapabilities$FlipContents", classCache: &BufferCapabilities_FlipContentsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? BufferCapabilities_FlipContents( javaObject: __value ) : nil
+        }
+    }
+
+    /// private static int java.awt.BufferCapabilities$FlipContents.I_BACKGROUND
+
+    /// private static int java.awt.BufferCapabilities$FlipContents.I_COPIED
+
+    /// private static int java.awt.BufferCapabilities$FlipContents.I_PRIOR
+
+    /// private static int java.awt.BufferCapabilities$FlipContents.I_UNDEFINED
+
+    /// private static final java.lang.String[] java.awt.BufferCapabilities$FlipContents.NAMES
+
+    /// public static final java.awt.BufferCapabilities$FlipContents java.awt.BufferCapabilities$FlipContents.PRIOR
+
+    private static var PRIOR_FieldID: jfieldID?
+
+    open static var PRIOR: BufferCapabilities_FlipContents! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "PRIOR", fieldType: "Ljava/awt/BufferCapabilities$FlipContents;", fieldCache: &PRIOR_FieldID, className: "java/awt/BufferCapabilities$FlipContents", classCache: &BufferCapabilities_FlipContentsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? BufferCapabilities_FlipContents( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.BufferCapabilities$FlipContents java.awt.BufferCapabilities$FlipContents.UNDEFINED
+
+    private static var UNDEFINED_FieldID: jfieldID?
+
+    open static var UNDEFINED: BufferCapabilities_FlipContents! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "UNDEFINED", fieldType: "Ljava/awt/BufferCapabilities$FlipContents;", fieldCache: &UNDEFINED_FieldID, className: "java/awt/BufferCapabilities$FlipContents", classCache: &BufferCapabilities_FlipContentsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? BufferCapabilities_FlipContents( javaObject: __value ) : nil
         }
     }
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AttributeValue.log
 
-    /// private final int java.awt.AttributeValue.value
-
     /// private final java.lang.String[] java.awt.AttributeValue.names
+
+    /// private final int java.awt.AttributeValue.value
 
     /// private java.awt.BufferCapabilities$FlipContents(int)
 
+    /// public int java.awt.BufferCapabilities$FlipContents.hashCode()
+
+    private static var hashCode_MethodID_1: jmethodID?
+
+    override open func hashCode() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "hashCode", methodSig: "()I", methodCache: &BufferCapabilities_FlipContents.hashCode_MethodID_1, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public java.lang.String java.awt.BufferCapabilities$FlipContents.toString()
 
-    /// public int java.awt.BufferCapabilities$FlipContents.hashCode()
+    private static var toString_MethodID_2: jmethodID?
+
+    override open func toString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toString", methodSig: "()Ljava/lang/String;", methodCache: &BufferCapabilities_FlipContents.toString_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
 }
 

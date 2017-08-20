@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.geom.Point2D$Float ///
 
-open class Point2D_Float: Point2D, /* java.io.Serializable */ UnclassedProtocol {
+open class Point2D_Float: Point2D, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -20,19 +20,20 @@ open class Point2D_Float: Point2D, /* java.io.Serializable */ UnclassedProtocol 
 
     private static var Point2D_FloatJNIClass: jclass?
 
+    /// private static final long java.awt.geom.Point2D$Float.serialVersionUID
+
     /// public float java.awt.geom.Point2D$Float.x
 
     private static var x_FieldID: jfieldID?
 
     open var x: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "x", fieldType: "F", fieldCache: &Point2D_Float.x_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "x", fieldType: "F", fieldCache: &Point2D_Float.x_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "x", fieldType: "F", fieldCache: &Point2D_Float.x_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
@@ -43,26 +44,23 @@ open class Point2D_Float: Point2D, /* java.io.Serializable */ UnclassedProtocol 
 
     open var y: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "y", fieldType: "F", fieldCache: &Point2D_Float.y_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "y", fieldType: "F", fieldCache: &Point2D_Float.y_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "y", fieldType: "F", fieldCache: &Point2D_Float.y_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
-
-    /// private static final long java.awt.geom.Point2D$Float.serialVersionUID
 
     /// public java.awt.geom.Point2D$Float()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Point2D$Float", classCache: &Point2D_Float.Point2D_FloatJNIClass, methodSig: "()V", methodCache: &Point2D_Float.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -73,10 +71,10 @@ open class Point2D_Float: Point2D, /* java.io.Serializable */ UnclassedProtocol 
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( x: Float, y: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( f: y )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Point2D$Float", classCache: &Point2D_Float.Point2D_FloatJNIClass, methodSig: "(FF)V", methodCache: &Point2D_Float.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -86,29 +84,37 @@ open class Point2D_Float: Point2D, /* java.io.Serializable */ UnclassedProtocol 
         self.init( x: _x, y: _y )
     }
 
-    /// public java.lang.String java.awt.geom.Point2D$Float.toString()
-
     /// public double java.awt.geom.Point2D$Float.getX()
+
+    // Skipping method: false true false false false 
 
     /// public double java.awt.geom.Point2D$Float.getY()
 
+    // Skipping method: false true false false false 
+
     /// public void java.awt.geom.Point2D$Float.setLocation(double,double)
+
+    // Skipping method: false true false false false 
 
     /// public void java.awt.geom.Point2D$Float.setLocation(float,float)
 
     private static var setLocation_MethodID_3: jmethodID?
 
     open func setLocation( x: Float, y: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( f: y )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(FF)V", methodCache: &Point2D_Float.setLocation_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func setLocation( _ _x: Float, _ _y: Float ) {
         setLocation( x: _x, y: _y )
     }
+
+    /// public java.lang.String java.awt.geom.Point2D$Float.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

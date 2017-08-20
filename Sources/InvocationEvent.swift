@@ -16,17 +16,6 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
 
     private static var InvocationEventJNIClass: jclass?
 
-    /// public static final int java.awt.event.InvocationEvent.INVOCATION_FIRST
-
-    private static var INVOCATION_FIRST_FieldID: jfieldID?
-
-    open static var INVOCATION_FIRST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "INVOCATION_FIRST", fieldType: "I", fieldCache: &INVOCATION_FIRST_FieldID, className: "java/awt/event/InvocationEvent", classCache: &InvocationEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.event.InvocationEvent.INVOCATION_DEFAULT
 
     private static var INVOCATION_DEFAULT_FieldID: jfieldID?
@@ -34,7 +23,18 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
     open static var INVOCATION_DEFAULT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INVOCATION_DEFAULT", fieldType: "I", fieldCache: &INVOCATION_DEFAULT_FieldID, className: "java/awt/event/InvocationEvent", classCache: &InvocationEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.event.InvocationEvent.INVOCATION_FIRST
+
+    private static var INVOCATION_FIRST_FieldID: jfieldID?
+
+    open static var INVOCATION_FIRST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "INVOCATION_FIRST", fieldType: "I", fieldCache: &INVOCATION_FIRST_FieldID, className: "java/awt/event/InvocationEvent", classCache: &InvocationEventJNIClass )
+            return Int(__value)
         }
     }
 
@@ -45,26 +45,33 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
     open static var INVOCATION_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INVOCATION_LAST", fieldType: "I", fieldCache: &INVOCATION_LAST_FieldID, className: "java/awt/event/InvocationEvent", classCache: &InvocationEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// protected java.lang.Runnable java.awt.event.InvocationEvent.runnable
+    /// private static final long java.awt.event.InvocationEvent.serialVersionUID
 
-    private static var runnable_FieldID: jfieldID?
+    /// protected boolean java.awt.event.InvocationEvent.catchExceptions
 
-    open var runnable: java_swift.Runnable! {
+    private static var catchExceptions_FieldID: jfieldID?
+
+    open var catchExceptions: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "runnable", fieldType: "Ljava/lang/Runnable;", fieldCache: &InvocationEvent.runnable_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_swift.RunnableForward( javaObject: __value ) : nil
+            let __value = JNIField.GetBooleanField( fieldName: "catchExceptions", fieldType: "Z", fieldCache: &InvocationEvent.catchExceptions_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "runnable", fieldType: "Ljava/lang/Runnable;", fieldCache: &InvocationEvent.runnable_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "catchExceptions", fieldType: "Z", fieldCache: &InvocationEvent.catchExceptions_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
+
+    /// private volatile boolean java.awt.event.InvocationEvent.dispatched
+
+    /// private java.lang.Exception java.awt.event.InvocationEvent.exception
+
+    /// private final java.lang.Runnable java.awt.event.InvocationEvent.listener
 
     /// protected volatile java.lang.Object java.awt.event.InvocationEvent.notifier
 
@@ -72,8 +79,8 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
 
     open var notifier: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "notifier", fieldType: "Ljava/lang/Object;", fieldCache: &InvocationEvent.notifier_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "notifier", fieldType: "Ljava/lang/Object;", fieldCache: &InvocationEvent.notifier_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -83,55 +90,120 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
         }
     }
 
-    /// private final java.lang.Runnable java.awt.event.InvocationEvent.listener
+    /// protected java.lang.Runnable java.awt.event.InvocationEvent.runnable
 
-    /// private volatile boolean java.awt.event.InvocationEvent.dispatched
+    private static var runnable_FieldID: jfieldID?
 
-    /// protected boolean java.awt.event.InvocationEvent.catchExceptions
-
-    private static var catchExceptions_FieldID: jfieldID?
-
-    open var catchExceptions: Bool {
+    open var runnable: java_swift.Runnable! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "catchExceptions", fieldType: "Z", fieldCache: &InvocationEvent.catchExceptions_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "runnable", fieldType: "Ljava/lang/Runnable;", fieldCache: &InvocationEvent.runnable_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.RunnableForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "catchExceptions", fieldType: "Z", fieldCache: &InvocationEvent.catchExceptions_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "runnable", fieldType: "Ljava/lang/Runnable;", fieldCache: &InvocationEvent.runnable_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
-
-    /// private java.lang.Exception java.awt.event.InvocationEvent.exception
 
     /// private java.lang.Throwable java.awt.event.InvocationEvent.throwable
 
     /// private long java.awt.event.InvocationEvent.when
 
-    /// private static final long java.awt.event.InvocationEvent.serialVersionUID
+    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
+
+    // Skipping field: true false false false false false 
+
+    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AWTEvent.log
 
+    /// private static final long java.awt.AWTEvent.serialVersionUID
+
+    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
+
     /// private byte[] java.awt.AWTEvent.bdata
-
-    /// protected int java.awt.AWTEvent.id
-
-    private static var id_FieldID: jfieldID?
-
-    override open var id: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &InvocationEvent.id_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &InvocationEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
 
     /// protected boolean java.awt.AWTEvent.consumed
 
@@ -139,70 +211,41 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
 
     override open var consumed: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &InvocationEvent.consumed_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &InvocationEvent.consumed_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &InvocationEvent.consumed_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
-
     /// transient boolean java.awt.AWTEvent.focusManagerIsDispatching
+
+    // Skipping field: true false false false false false 
+
+    /// protected int java.awt.AWTEvent.id
+
+    private static var id_FieldID: jfieldID?
+
+    override open var id: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &InvocationEvent.id_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &InvocationEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
     /// transient boolean java.awt.AWTEvent.isPosted
 
+    // Skipping field: true false false false false false 
+
     /// private transient boolean java.awt.AWTEvent.isSystemGenerated
-
-    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
-
-    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
-
-    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
-
-    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
-
-    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
-
-    /// private static final long java.awt.AWTEvent.serialVersionUID
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -212,8 +255,8 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &InvocationEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &InvocationEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -223,20 +266,18 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
         }
     }
 
-    /// private java.awt.event.InvocationEvent(java.lang.Object,int,java.lang.Runnable,java.lang.Object,java.lang.Runnable,boolean)
-
     /// protected java.awt.event.InvocationEvent(java.lang.Object,int,java.lang.Runnable,java.lang.Object,boolean)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: java_swift.JavaObject?, id: Int, runnable: java_swift.Runnable?, notifier: java_swift.JavaObject?, catchThrowables: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
         __args[2] = JNIType.toJava( value: runnable, locals: &__locals )
         __args[3] = JNIType.toJava( value: notifier, locals: &__locals )
-        __args[4] = JNIType.toJava( value: catchThrowables, locals: &__locals )
+        __args[4] = jvalue( z: jboolean(catchThrowables ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "java/awt/event/InvocationEvent", classCache: &InvocationEvent.InvocationEventJNIClass, methodSig: "(Ljava/lang/Object;ILjava/lang/Runnable;Ljava/lang/Object;Z)V", methodCache: &InvocationEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -246,24 +287,24 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
         self.init( source: _source, id: _id, runnable: _runnable, notifier: _notifier, catchThrowables: _catchThrowables )
     }
 
-    /// public java.awt.event.InvocationEvent(java.lang.Object,java.lang.Runnable,java.lang.Runnable,boolean)
+    /// private java.awt.event.InvocationEvent(java.lang.Object,int,java.lang.Runnable,java.lang.Object,java.lang.Runnable,boolean)
+
+    /// public java.awt.event.InvocationEvent(java.lang.Object,java.lang.Runnable)
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( source: java_swift.JavaObject?, runnable: java_swift.Runnable?, listener: java_swift.Runnable?, catchThrowables: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init( source: java_swift.JavaObject?, runnable: java_swift.Runnable? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: runnable, locals: &__locals )
-        __args[2] = JNIType.toJava( value: listener, locals: &__locals )
-        __args[3] = JNIType.toJava( value: catchThrowables, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/event/InvocationEvent", classCache: &InvocationEvent.InvocationEventJNIClass, methodSig: "(Ljava/lang/Object;Ljava/lang/Runnable;Ljava/lang/Runnable;Z)V", methodCache: &InvocationEvent.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/event/InvocationEvent", classCache: &InvocationEvent.InvocationEventJNIClass, methodSig: "(Ljava/lang/Object;Ljava/lang/Runnable;)V", methodCache: &InvocationEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _source: java_swift.JavaObject?, _ _runnable: java_swift.Runnable?, _ _listener: java_swift.Runnable?, _ _catchThrowables: Bool ) {
-        self.init( source: _source, runnable: _runnable, listener: _listener, catchThrowables: _catchThrowables )
+    public convenience init( _ _source: java_swift.JavaObject?, _ _runnable: java_swift.Runnable? ) {
+        self.init( source: _source, runnable: _runnable )
     }
 
     /// public java.awt.event.InvocationEvent(java.lang.Object,java.lang.Runnable,java.lang.Object,boolean)
@@ -271,12 +312,12 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( source: java_swift.JavaObject?, runnable: java_swift.Runnable?, notifier: java_swift.JavaObject?, catchThrowables: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: runnable, locals: &__locals )
         __args[2] = JNIType.toJava( value: notifier, locals: &__locals )
-        __args[3] = JNIType.toJava( value: catchThrowables, locals: &__locals )
+        __args[3] = jvalue( z: jboolean(catchThrowables ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "java/awt/event/InvocationEvent", classCache: &InvocationEvent.InvocationEventJNIClass, methodSig: "(Ljava/lang/Object;Ljava/lang/Runnable;Ljava/lang/Object;Z)V", methodCache: &InvocationEvent.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -286,90 +327,96 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
         self.init( source: _source, runnable: _runnable, notifier: _notifier, catchThrowables: _catchThrowables )
     }
 
-    /// public java.awt.event.InvocationEvent(java.lang.Object,java.lang.Runnable)
+    /// public java.awt.event.InvocationEvent(java.lang.Object,java.lang.Runnable,java.lang.Runnable,boolean)
 
     private static var new_MethodID_4: jmethodID?
 
-    public convenience init( source: java_swift.JavaObject?, runnable: java_swift.Runnable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( source: java_swift.JavaObject?, runnable: java_swift.Runnable?, listener: java_swift.Runnable?, catchThrowables: Bool ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: runnable, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/event/InvocationEvent", classCache: &InvocationEvent.InvocationEventJNIClass, methodSig: "(Ljava/lang/Object;Ljava/lang/Runnable;)V", methodCache: &InvocationEvent.new_MethodID_4, args: &__args, locals: &__locals )
+        __args[2] = JNIType.toJava( value: listener, locals: &__locals )
+        __args[3] = jvalue( z: jboolean(catchThrowables ? JNI_TRUE : JNI_FALSE) )
+        let __object = JNIMethod.NewObject( className: "java/awt/event/InvocationEvent", classCache: &InvocationEvent.InvocationEventJNIClass, methodSig: "(Ljava/lang/Object;Ljava/lang/Runnable;Ljava/lang/Runnable;Z)V", methodCache: &InvocationEvent.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _source: java_swift.JavaObject?, _ _runnable: java_swift.Runnable? ) {
-        self.init( source: _source, runnable: _runnable )
+    public convenience init( _ _source: java_swift.JavaObject?, _ _runnable: java_swift.Runnable?, _ _listener: java_swift.Runnable?, _ _catchThrowables: Bool ) {
+        self.init( source: _source, runnable: _runnable, listener: _listener, catchThrowables: _catchThrowables )
     }
+
+    /// static void java.awt.event.InvocationEvent.access$000(java.awt.event.InvocationEvent,boolean)
+
+    // Skipping method: true false false false false 
 
     /// public void java.awt.event.InvocationEvent.dispatch()
 
     private static var dispatch_MethodID_5: jmethodID?
 
     open func dispatch() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispatch", methodSig: "()V", methodCache: &InvocationEvent.dispatch_MethodID_5, args: &__args, locals: &__locals )
     }
 
 
-    /// static void java.awt.event.InvocationEvent.access$000(java.awt.event.InvocationEvent,boolean)
+    /// private void java.awt.event.InvocationEvent.finishedDispatching(boolean)
 
     /// public java.lang.Exception java.awt.event.InvocationEvent.getException()
 
     private static var getException_MethodID_6: jmethodID?
 
     open func getException() -> java_swift.Exception! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getException", methodSig: "()Ljava/lang/Exception;", methodCache: &InvocationEvent.getException_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.Exception( javaObject: __return ) : nil
     }
 
 
-    /// public java.lang.String java.awt.event.InvocationEvent.paramString()
-
-    /// public long java.awt.event.InvocationEvent.getWhen()
-
-    private static var getWhen_MethodID_7: jmethodID?
-
-    open func getWhen() -> Int64 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getWhen", methodSig: "()J", methodCache: &InvocationEvent.getWhen_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int64(), from: __return )
-    }
-
-
-    /// private void java.awt.event.InvocationEvent.finishedDispatching(boolean)
-
-    /// public boolean java.awt.event.InvocationEvent.isDispatched()
-
-    private static var isDispatched_MethodID_8: jmethodID?
-
-    open func isDispatched() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDispatched", methodSig: "()Z", methodCache: &InvocationEvent.isDispatched_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public java.lang.Throwable java.awt.event.InvocationEvent.getThrowable()
 
-    private static var getThrowable_MethodID_9: jmethodID?
+    private static var getThrowable_MethodID_7: jmethodID?
 
     open func getThrowable() -> java_swift.Throwable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getThrowable", methodSig: "()Ljava/lang/Throwable;", methodCache: &InvocationEvent.getThrowable_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getThrowable", methodSig: "()Ljava/lang/Throwable;", methodCache: &InvocationEvent.getThrowable_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.Throwable( javaObject: __return ) : nil
     }
 
+
+    /// public long java.awt.event.InvocationEvent.getWhen()
+
+    private static var getWhen_MethodID_8: jmethodID?
+
+    open func getWhen() -> Int64 {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getWhen", methodSig: "()J", methodCache: &InvocationEvent.getWhen_MethodID_8, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public boolean java.awt.event.InvocationEvent.isDispatched()
+
+    private static var isDispatched_MethodID_9: jmethodID?
+
+    open func isDispatched() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDispatched", methodSig: "()Z", methodCache: &InvocationEvent.isDispatched_MethodID_9, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public java.lang.String java.awt.event.InvocationEvent.paramString()
+
+    // Skipping method: false true false false false 
 
 }
 

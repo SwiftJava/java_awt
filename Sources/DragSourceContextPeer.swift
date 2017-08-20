@@ -7,13 +7,13 @@ import java_swift
 
 public protocol DragSourceContextPeer: JavaProtocol {
 
-    /// public abstract void java.awt.dnd.peer.DragSourceContextPeer.setCursor(java.awt.Cursor) throws java.awt.dnd.InvalidDnDOperationException
-
-    func setCursor( c: Cursor? ) throws /* java.awt.dnd.InvalidDnDOperationException */
-
     /// public abstract java.awt.Cursor java.awt.dnd.peer.DragSourceContextPeer.getCursor()
 
     func getCursor() -> Cursor!
+
+    /// public abstract void java.awt.dnd.peer.DragSourceContextPeer.setCursor(java.awt.Cursor) throws java.awt.dnd.InvalidDnDOperationException
+
+    func setCursor( c: Cursor? ) throws /* java.awt.dnd.InvalidDnDOperationException */
 
     /// public abstract void java.awt.dnd.peer.DragSourceContextPeer.startDrag(java.awt.dnd.DragSourceContext,java.awt.Cursor,java.awt.Image,java.awt.Point) throws java.awt.dnd.InvalidDnDOperationException
 
@@ -30,16 +30,30 @@ open class DragSourceContextPeerForward: JNIObjectForward, DragSourceContextPeer
 
     private static var DragSourceContextPeerJNIClass: jclass?
 
+    /// public abstract java.awt.Cursor java.awt.dnd.peer.DragSourceContextPeer.getCursor()
+
+    private static var getCursor_MethodID_5: jmethodID?
+
+    open func getCursor() -> Cursor! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &DragSourceContextPeerForward.getCursor_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Cursor( javaObject: __return ) : nil
+    }
+
+
     /// public abstract void java.awt.dnd.peer.DragSourceContextPeer.setCursor(java.awt.Cursor) throws java.awt.dnd.InvalidDnDOperationException
 
-    private static var setCursor_MethodID_5: jmethodID?
+    private static var setCursor_MethodID_6: jmethodID?
 
     open func setCursor( c: Cursor? ) throws /* java.awt.dnd.InvalidDnDOperationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &DragSourceContextPeerForward.setCursor_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &DragSourceContextPeerForward.setCursor_MethodID_6, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw InvalidDnDOperationException( javaObject: throwable )
         }
     }
@@ -48,32 +62,20 @@ open class DragSourceContextPeerForward: JNIObjectForward, DragSourceContextPeer
         try setCursor( c: _c )
     }
 
-    /// public abstract java.awt.Cursor java.awt.dnd.peer.DragSourceContextPeer.getCursor()
-
-    private static var getCursor_MethodID_6: jmethodID?
-
-    open func getCursor() -> Cursor! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &DragSourceContextPeerForward.getCursor_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Cursor( javaObject: __return ) : nil
-    }
-
-
     /// public abstract void java.awt.dnd.peer.DragSourceContextPeer.startDrag(java.awt.dnd.DragSourceContext,java.awt.Cursor,java.awt.Image,java.awt.Point) throws java.awt.dnd.InvalidDnDOperationException
 
     private static var startDrag_MethodID_7: jmethodID?
 
     open func startDrag( dsc: DragSourceContext?, c: Cursor?, dragImage: Image?, imageOffset: Point? ) throws /* java.awt.dnd.InvalidDnDOperationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: dsc, locals: &__locals )
         __args[1] = JNIType.toJava( value: c, locals: &__locals )
         __args[2] = JNIType.toJava( value: dragImage, locals: &__locals )
         __args[3] = JNIType.toJava( value: imageOffset, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "startDrag", methodSig: "(Ljava/awt/dnd/DragSourceContext;Ljava/awt/Cursor;Ljava/awt/Image;Ljava/awt/Point;)V", methodCache: &DragSourceContextPeerForward.startDrag_MethodID_7, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw InvalidDnDOperationException( javaObject: throwable )
         }
     }
@@ -87,12 +89,11 @@ open class DragSourceContextPeerForward: JNIObjectForward, DragSourceContextPeer
     private static var transferablesFlavorsChanged_MethodID_8: jmethodID?
 
     open func transferablesFlavorsChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "transferablesFlavorsChanged", methodSig: "()V", methodCache: &DragSourceContextPeerForward.transferablesFlavorsChanged_MethodID_8, args: &__args, locals: &__locals )
     }
 
 
 }
-
 

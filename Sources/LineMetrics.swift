@@ -21,142 +21,142 @@ open class LineMetrics: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/font/LineMetrics", classCache: &LineMetrics.LineMetricsJNIClass, methodSig: "()V", methodCache: &LineMetrics.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public abstract float java.awt.font.LineMetrics.getStrikethroughOffset()
-
-    private static var getStrikethroughOffset_MethodID_2: jmethodID?
-
-    open func getStrikethroughOffset() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getStrikethroughOffset", methodSig: "()F", methodCache: &LineMetrics.getStrikethroughOffset_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
-    /// public abstract float java.awt.font.LineMetrics.getStrikethroughThickness()
-
-    private static var getStrikethroughThickness_MethodID_3: jmethodID?
-
-    open func getStrikethroughThickness() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getStrikethroughThickness", methodSig: "()F", methodCache: &LineMetrics.getStrikethroughThickness_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
-    /// public abstract float java.awt.font.LineMetrics.getUnderlineOffset()
-
-    private static var getUnderlineOffset_MethodID_4: jmethodID?
-
-    open func getUnderlineOffset() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getUnderlineOffset", methodSig: "()F", methodCache: &LineMetrics.getUnderlineOffset_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
-    /// public abstract float java.awt.font.LineMetrics.getUnderlineThickness()
-
-    private static var getUnderlineThickness_MethodID_5: jmethodID?
-
-    open func getUnderlineThickness() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getUnderlineThickness", methodSig: "()F", methodCache: &LineMetrics.getUnderlineThickness_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
     /// public abstract float java.awt.font.LineMetrics.getAscent()
 
-    private static var getAscent_MethodID_6: jmethodID?
+    private static var getAscent_MethodID_2: jmethodID?
 
     open func getAscent() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAscent", methodSig: "()F", methodCache: &LineMetrics.getAscent_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
-    /// public abstract float java.awt.font.LineMetrics.getDescent()
-
-    private static var getDescent_MethodID_7: jmethodID?
-
-    open func getDescent() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getDescent", methodSig: "()F", methodCache: &LineMetrics.getDescent_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
-    /// public abstract float java.awt.font.LineMetrics.getLeading()
-
-    private static var getLeading_MethodID_8: jmethodID?
-
-    open func getLeading() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLeading", methodSig: "()F", methodCache: &LineMetrics.getLeading_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAscent", methodSig: "()F", methodCache: &LineMetrics.getAscent_MethodID_2, args: &__args, locals: &__locals )
+        return __return
     }
 
 
     /// public abstract int java.awt.font.LineMetrics.getBaselineIndex()
 
-    private static var getBaselineIndex_MethodID_9: jmethodID?
+    private static var getBaselineIndex_MethodID_3: jmethodID?
 
     open func getBaselineIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaselineIndex", methodSig: "()I", methodCache: &LineMetrics.getBaselineIndex_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaselineIndex", methodSig: "()I", methodCache: &LineMetrics.getBaselineIndex_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
     /// public abstract float[] java.awt.font.LineMetrics.getBaselineOffsets()
 
-    private static var getBaselineOffsets_MethodID_10: jmethodID?
+    private static var getBaselineOffsets_MethodID_4: jmethodID?
 
     open func getBaselineOffsets() -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBaselineOffsets", methodSig: "()[F", methodCache: &LineMetrics.getBaselineOffsets_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBaselineOffsets", methodSig: "()[F", methodCache: &LineMetrics.getBaselineOffsets_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
+    }
+
+
+    /// public abstract float java.awt.font.LineMetrics.getDescent()
+
+    private static var getDescent_MethodID_5: jmethodID?
+
+    open func getDescent() -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getDescent", methodSig: "()F", methodCache: &LineMetrics.getDescent_MethodID_5, args: &__args, locals: &__locals )
+        return __return
     }
 
 
     /// public abstract float java.awt.font.LineMetrics.getHeight()
 
-    private static var getHeight_MethodID_11: jmethodID?
+    private static var getHeight_MethodID_6: jmethodID?
 
     open func getHeight() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getHeight", methodSig: "()F", methodCache: &LineMetrics.getHeight_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getHeight", methodSig: "()F", methodCache: &LineMetrics.getHeight_MethodID_6, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public abstract float java.awt.font.LineMetrics.getLeading()
+
+    private static var getLeading_MethodID_7: jmethodID?
+
+    open func getLeading() -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLeading", methodSig: "()F", methodCache: &LineMetrics.getLeading_MethodID_7, args: &__args, locals: &__locals )
+        return __return
     }
 
 
     /// public abstract int java.awt.font.LineMetrics.getNumChars()
 
-    private static var getNumChars_MethodID_12: jmethodID?
+    private static var getNumChars_MethodID_8: jmethodID?
 
     open func getNumChars() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumChars", methodSig: "()I", methodCache: &LineMetrics.getNumChars_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumChars", methodSig: "()I", methodCache: &LineMetrics.getNumChars_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public abstract float java.awt.font.LineMetrics.getStrikethroughOffset()
+
+    private static var getStrikethroughOffset_MethodID_9: jmethodID?
+
+    open func getStrikethroughOffset() -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getStrikethroughOffset", methodSig: "()F", methodCache: &LineMetrics.getStrikethroughOffset_MethodID_9, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public abstract float java.awt.font.LineMetrics.getStrikethroughThickness()
+
+    private static var getStrikethroughThickness_MethodID_10: jmethodID?
+
+    open func getStrikethroughThickness() -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getStrikethroughThickness", methodSig: "()F", methodCache: &LineMetrics.getStrikethroughThickness_MethodID_10, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public abstract float java.awt.font.LineMetrics.getUnderlineOffset()
+
+    private static var getUnderlineOffset_MethodID_11: jmethodID?
+
+    open func getUnderlineOffset() -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getUnderlineOffset", methodSig: "()F", methodCache: &LineMetrics.getUnderlineOffset_MethodID_11, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public abstract float java.awt.font.LineMetrics.getUnderlineThickness()
+
+    private static var getUnderlineThickness_MethodID_12: jmethodID?
+
+    open func getUnderlineThickness() -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getUnderlineThickness", methodSig: "()F", methodCache: &LineMetrics.getUnderlineThickness_MethodID_12, args: &__args, locals: &__locals )
+        return __return
     }
 
 

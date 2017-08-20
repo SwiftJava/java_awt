@@ -21,51 +21,81 @@ open class Graphics: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/Graphics", classCache: &Graphics.GraphicsJNIClass, methodSig: "()V", methodCache: &Graphics.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void java.awt.Graphics.finalize()
+    /// public abstract void java.awt.Graphics.clearRect(int,int,int,int)
 
-    private static var finalize_MethodID_2: jmethodID?
+    private static var clearRect_MethodID_2: jmethodID?
 
-    override open func finalize() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func clearRect( x: Int, y: Int, width: Int, height: Int ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finalize", methodSig: "()V", methodCache: &Graphics.finalize_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearRect", methodSig: "(IIII)V", methodCache: &Graphics.clearRect_MethodID_2, args: &__args, locals: &__locals )
     }
 
-
-    /// public java.lang.String java.awt.Graphics.toString()
-
-    /// public abstract java.awt.Graphics java.awt.Graphics.create()
-
-    private static var create_MethodID_3: jmethodID?
-
-    open func create() -> Graphics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "create", methodSig: "()Ljava/awt/Graphics;", methodCache: &Graphics.create_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Graphics( javaObject: __return ) : nil
+    open func clearRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
+        clearRect( x: _x, y: _y, width: _width, height: _height )
     }
 
+    /// public abstract void java.awt.Graphics.clipRect(int,int,int,int)
+
+    private static var clipRect_MethodID_3: jmethodID?
+
+    open func clipRect( x: Int, y: Int, width: Int, height: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clipRect", methodSig: "(IIII)V", methodCache: &Graphics.clipRect_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func clipRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
+        clipRect( x: _x, y: _y, width: _width, height: _height )
+    }
+
+    /// public abstract void java.awt.Graphics.copyArea(int,int,int,int,int,int)
+
+    private static var copyArea_MethodID_4: jmethodID?
+
+    open func copyArea( x: Int, y: Int, width: Int, height: Int, dx: Int, dy: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        __args[4] = jvalue( i: jint(dx) )
+        __args[5] = jvalue( i: jint(dy) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "copyArea", methodSig: "(IIIIII)V", methodCache: &Graphics.copyArea_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func copyArea( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _dx: Int, _ _dy: Int ) {
+        copyArea( x: _x, y: _y, width: _width, height: _height, dx: _dx, dy: _dy )
+    }
 
     /// public java.awt.Graphics java.awt.Graphics.create(int,int,int,int)
 
-    private static var create_MethodID_4: jmethodID?
+    private static var create_MethodID_5: jmethodID?
 
     open func create( x: Int, y: Int, width: Int, height: Int ) -> Graphics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "create", methodSig: "(IIII)Ljava/awt/Graphics;", methodCache: &Graphics.create_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "create", methodSig: "(IIII)Ljava/awt/Graphics;", methodCache: &Graphics.create_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Graphics( javaObject: __return ) : nil
     }
@@ -74,556 +104,162 @@ open class Graphics: java_swift.JavaObject {
         return create( x: _x, y: _y, width: _width, height: _height )
     }
 
-    /// public abstract void java.awt.Graphics.translate(int,int)
+    /// public abstract java.awt.Graphics java.awt.Graphics.create()
 
-    private static var translate_MethodID_5: jmethodID?
+    private static var create_MethodID_6: jmethodID?
 
-    open func translate( x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func create() -> Graphics! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Graphics.translate_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func translate( _ _x: Int, _ _y: Int ) {
-        translate( x: _x, y: _y )
-    }
-
-    /// public abstract java.awt.Shape java.awt.Graphics.getClip()
-
-    private static var getClip_MethodID_6: jmethodID?
-
-    open func getClip() -> Shape! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClip", methodSig: "()Ljava/awt/Shape;", methodCache: &Graphics.getClip_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "create", methodSig: "()Ljava/awt/Graphics;", methodCache: &Graphics.create_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ShapeForward( javaObject: __return ) : nil
+        return __return != nil ? Graphics( javaObject: __return ) : nil
     }
 
 
-    /// public abstract java.awt.Color java.awt.Graphics.getColor()
+    /// public abstract void java.awt.Graphics.dispose()
 
-    private static var getColor_MethodID_7: jmethodID?
+    private static var dispose_MethodID_7: jmethodID?
 
-    open func getColor() -> Color! {
+    open func dispose() {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor", methodSig: "()Ljava/awt/Color;", methodCache: &Graphics.getColor_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Color( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &Graphics.dispose_MethodID_7, args: &__args, locals: &__locals )
     }
 
-
-    /// public abstract java.awt.Font java.awt.Graphics.getFont()
-
-    private static var getFont_MethodID_8: jmethodID?
-
-    open func getFont() -> Font! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &Graphics.getFont_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Font( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract void java.awt.Graphics.setFont(java.awt.Font)
-
-    private static var setFont_MethodID_9: jmethodID?
-
-    open func setFont( font: Font? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: font, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &Graphics.setFont_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func setFont( _ _font: Font? ) {
-        setFont( font: _font )
-    }
-
-    /// public boolean java.awt.Graphics.hitClip(int,int,int,int)
-
-    private static var hitClip_MethodID_10: jmethodID?
-
-    open func hitClip( x: Int, y: Int, width: Int, height: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "hitClip", methodSig: "(IIII)Z", methodCache: &Graphics.hitClip_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func hitClip( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) -> Bool {
-        return hitClip( x: _x, y: _y, width: _width, height: _height )
-    }
-
-    /// public abstract void java.awt.Graphics.clipRect(int,int,int,int)
-
-    private static var clipRect_MethodID_11: jmethodID?
-
-    open func clipRect( x: Int, y: Int, width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clipRect", methodSig: "(IIII)V", methodCache: &Graphics.clipRect_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func clipRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
-        clipRect( x: _x, y: _y, width: _width, height: _height )
-    }
-
-    /// public abstract void java.awt.Graphics.setPaintMode()
-
-    private static var setPaintMode_MethodID_12: jmethodID?
-
-    open func setPaintMode() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPaintMode", methodSig: "()V", methodCache: &Graphics.setPaintMode_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-
-    /// public abstract void java.awt.Graphics.setXORMode(java.awt.Color)
-
-    private static var setXORMode_MethodID_13: jmethodID?
-
-    open func setXORMode( c1: Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setXORMode", methodSig: "(Ljava/awt/Color;)V", methodCache: &Graphics.setXORMode_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setXORMode( _ _c1: Color? ) {
-        setXORMode( c1: _c1 )
-    }
-
-    /// public abstract void java.awt.Graphics.copyArea(int,int,int,int,int,int)
-
-    private static var copyArea_MethodID_14: jmethodID?
-
-    open func copyArea( x: Int, y: Int, width: Int, height: Int, dx: Int, dy: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        __args[4] = JNIType.toJava( value: dx, locals: &__locals )
-        __args[5] = JNIType.toJava( value: dy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "copyArea", methodSig: "(IIIIII)V", methodCache: &Graphics.copyArea_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func copyArea( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _dx: Int, _ _dy: Int ) {
-        copyArea( x: _x, y: _y, width: _width, height: _height, dx: _dx, dy: _dy )
-    }
-
-    /// public abstract void java.awt.Graphics.drawLine(int,int,int,int)
-
-    private static var drawLine_MethodID_15: jmethodID?
-
-    open func drawLine( x1: Int, y1: Int, x2: Int, y2: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(IIII)V", methodCache: &Graphics.drawLine_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func drawLine( _ _x1: Int, _ _y1: Int, _ _x2: Int, _ _y2: Int ) {
-        drawLine( x1: _x1, y1: _y1, x2: _x2, y2: _y2 )
-    }
-
-    /// public abstract void java.awt.Graphics.fillRect(int,int,int,int)
-
-    private static var fillRect_MethodID_16: jmethodID?
-
-    open func fillRect( x: Int, y: Int, width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillRect", methodSig: "(IIII)V", methodCache: &Graphics.fillRect_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func fillRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
-        fillRect( x: _x, y: _y, width: _width, height: _height )
-    }
-
-    /// public void java.awt.Graphics.drawRect(int,int,int,int)
-
-    private static var drawRect_MethodID_17: jmethodID?
-
-    open func drawRect( x: Int, y: Int, width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawRect", methodSig: "(IIII)V", methodCache: &Graphics.drawRect_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func drawRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
-        drawRect( x: _x, y: _y, width: _width, height: _height )
-    }
-
-    /// public abstract void java.awt.Graphics.drawRoundRect(int,int,int,int,int,int)
-
-    private static var drawRoundRect_MethodID_18: jmethodID?
-
-    open func drawRoundRect( x: Int, y: Int, width: Int, height: Int, arcWidth: Int, arcHeight: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arcWidth, locals: &__locals )
-        __args[5] = JNIType.toJava( value: arcHeight, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawRoundRect", methodSig: "(IIIIII)V", methodCache: &Graphics.drawRoundRect_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func drawRoundRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _arcWidth: Int, _ _arcHeight: Int ) {
-        drawRoundRect( x: _x, y: _y, width: _width, height: _height, arcWidth: _arcWidth, arcHeight: _arcHeight )
-    }
-
-    /// public abstract void java.awt.Graphics.fillRoundRect(int,int,int,int,int,int)
-
-    private static var fillRoundRect_MethodID_19: jmethodID?
-
-    open func fillRoundRect( x: Int, y: Int, width: Int, height: Int, arcWidth: Int, arcHeight: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arcWidth, locals: &__locals )
-        __args[5] = JNIType.toJava( value: arcHeight, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillRoundRect", methodSig: "(IIIIII)V", methodCache: &Graphics.fillRoundRect_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func fillRoundRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _arcWidth: Int, _ _arcHeight: Int ) {
-        fillRoundRect( x: _x, y: _y, width: _width, height: _height, arcWidth: _arcWidth, arcHeight: _arcHeight )
-    }
 
     /// public void java.awt.Graphics.draw3DRect(int,int,int,int,boolean)
 
-    private static var draw3DRect_MethodID_20: jmethodID?
+    private static var draw3DRect_MethodID_8: jmethodID?
 
     open func draw3DRect( x: Int, y: Int, width: Int, height: Int, raised: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        __args[4] = JNIType.toJava( value: raised, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "draw3DRect", methodSig: "(IIIIZ)V", methodCache: &Graphics.draw3DRect_MethodID_20, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        __args[4] = jvalue( z: jboolean(raised ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "draw3DRect", methodSig: "(IIIIZ)V", methodCache: &Graphics.draw3DRect_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func draw3DRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _raised: Bool ) {
         draw3DRect( x: _x, y: _y, width: _width, height: _height, raised: _raised )
     }
 
-    /// public void java.awt.Graphics.fill3DRect(int,int,int,int,boolean)
-
-    private static var fill3DRect_MethodID_21: jmethodID?
-
-    open func fill3DRect( x: Int, y: Int, width: Int, height: Int, raised: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        __args[4] = JNIType.toJava( value: raised, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fill3DRect", methodSig: "(IIIIZ)V", methodCache: &Graphics.fill3DRect_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open func fill3DRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _raised: Bool ) {
-        fill3DRect( x: _x, y: _y, width: _width, height: _height, raised: _raised )
-    }
-
-    /// public abstract void java.awt.Graphics.drawOval(int,int,int,int)
-
-    private static var drawOval_MethodID_22: jmethodID?
-
-    open func drawOval( x: Int, y: Int, width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawOval", methodSig: "(IIII)V", methodCache: &Graphics.drawOval_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func drawOval( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
-        drawOval( x: _x, y: _y, width: _width, height: _height )
-    }
-
-    /// public abstract void java.awt.Graphics.fillOval(int,int,int,int)
-
-    private static var fillOval_MethodID_23: jmethodID?
-
-    open func fillOval( x: Int, y: Int, width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillOval", methodSig: "(IIII)V", methodCache: &Graphics.fillOval_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func fillOval( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
-        fillOval( x: _x, y: _y, width: _width, height: _height )
-    }
-
     /// public abstract void java.awt.Graphics.drawArc(int,int,int,int,int,int)
 
-    private static var drawArc_MethodID_24: jmethodID?
+    private static var drawArc_MethodID_9: jmethodID?
 
     open func drawArc( x: Int, y: Int, width: Int, height: Int, startAngle: Int, arcAngle: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        __args[4] = JNIType.toJava( value: startAngle, locals: &__locals )
-        __args[5] = JNIType.toJava( value: arcAngle, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawArc", methodSig: "(IIIIII)V", methodCache: &Graphics.drawArc_MethodID_24, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        __args[4] = jvalue( i: jint(startAngle) )
+        __args[5] = jvalue( i: jint(arcAngle) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawArc", methodSig: "(IIIIII)V", methodCache: &Graphics.drawArc_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func drawArc( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _startAngle: Int, _ _arcAngle: Int ) {
         drawArc( x: _x, y: _y, width: _width, height: _height, startAngle: _startAngle, arcAngle: _arcAngle )
     }
 
-    /// public abstract void java.awt.Graphics.fillArc(int,int,int,int,int,int)
-
-    private static var fillArc_MethodID_25: jmethodID?
-
-    open func fillArc( x: Int, y: Int, width: Int, height: Int, startAngle: Int, arcAngle: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        __args[4] = JNIType.toJava( value: startAngle, locals: &__locals )
-        __args[5] = JNIType.toJava( value: arcAngle, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillArc", methodSig: "(IIIIII)V", methodCache: &Graphics.fillArc_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-    open func fillArc( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _startAngle: Int, _ _arcAngle: Int ) {
-        fillArc( x: _x, y: _y, width: _width, height: _height, startAngle: _startAngle, arcAngle: _arcAngle )
-    }
-
-    /// public abstract void java.awt.Graphics.drawPolyline(int[],int[],int)
-
-    private static var drawPolyline_MethodID_26: jmethodID?
-
-    open func drawPolyline( xPoints: [Int32]?, yPoints: [Int32]?, nPoints: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: xPoints, locals: &__locals )
-        __args[1] = JNIType.toJava( value: yPoints, locals: &__locals )
-        __args[2] = JNIType.toJava( value: nPoints, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawPolyline", methodSig: "([I[II)V", methodCache: &Graphics.drawPolyline_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func drawPolyline( _ _xPoints: [Int32]?, _ _yPoints: [Int32]?, _ _nPoints: Int ) {
-        drawPolyline( xPoints: _xPoints, yPoints: _yPoints, nPoints: _nPoints )
-    }
-
-    /// public abstract void java.awt.Graphics.drawPolygon(int[],int[],int)
-
-    private static var drawPolygon_MethodID_27: jmethodID?
-
-    open func drawPolygon( xPoints: [Int32]?, yPoints: [Int32]?, nPoints: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: xPoints, locals: &__locals )
-        __args[1] = JNIType.toJava( value: yPoints, locals: &__locals )
-        __args[2] = JNIType.toJava( value: nPoints, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawPolygon", methodSig: "([I[II)V", methodCache: &Graphics.drawPolygon_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func drawPolygon( _ _xPoints: [Int32]?, _ _yPoints: [Int32]?, _ _nPoints: Int ) {
-        drawPolygon( xPoints: _xPoints, yPoints: _yPoints, nPoints: _nPoints )
-    }
-
-    /// public void java.awt.Graphics.drawPolygon(java.awt.Polygon)
-
-    private static var drawPolygon_MethodID_28: jmethodID?
-
-    open func drawPolygon( p: Polygon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawPolygon", methodSig: "(Ljava/awt/Polygon;)V", methodCache: &Graphics.drawPolygon_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-    open func drawPolygon( _ _p: Polygon? ) {
-        drawPolygon( p: _p )
-    }
-
-    /// public void java.awt.Graphics.fillPolygon(java.awt.Polygon)
-
-    private static var fillPolygon_MethodID_29: jmethodID?
-
-    open func fillPolygon( p: Polygon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillPolygon", methodSig: "(Ljava/awt/Polygon;)V", methodCache: &Graphics.fillPolygon_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    open func fillPolygon( _ _p: Polygon? ) {
-        fillPolygon( p: _p )
-    }
-
-    /// public abstract void java.awt.Graphics.fillPolygon(int[],int[],int)
-
-    private static var fillPolygon_MethodID_30: jmethodID?
-
-    open func fillPolygon( xPoints: [Int32]?, yPoints: [Int32]?, nPoints: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: xPoints, locals: &__locals )
-        __args[1] = JNIType.toJava( value: yPoints, locals: &__locals )
-        __args[2] = JNIType.toJava( value: nPoints, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillPolygon", methodSig: "([I[II)V", methodCache: &Graphics.fillPolygon_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    open func fillPolygon( _ _xPoints: [Int32]?, _ _yPoints: [Int32]?, _ _nPoints: Int ) {
-        fillPolygon( xPoints: _xPoints, yPoints: _yPoints, nPoints: _nPoints )
-    }
-
-    /// public abstract void java.awt.Graphics.drawString(java.lang.String,int,int)
-
-    private static var drawString_MethodID_31: jmethodID?
-
-    open func drawString( str: String?, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: str, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawString", methodSig: "(Ljava/lang/String;II)V", methodCache: &Graphics.drawString_MethodID_31, args: &__args, locals: &__locals )
-    }
-
-    open func drawString( _ _str: String?, _ _x: Int, _ _y: Int ) {
-        drawString( str: _str, x: _x, y: _y )
-    }
-
-    /// public abstract void java.awt.Graphics.drawString(java.text.AttributedCharacterIterator,int,int)
-
-    private static var drawString_MethodID_32: jmethodID?
-
-    open func drawString( iterator: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: iterator, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawString", methodSig: "(Ljava/text/AttributedCharacterIterator;II)V", methodCache: &Graphics.drawString_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-    open func drawString( _ _iterator: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, _ _x: Int, _ _y: Int ) {
-        drawString( iterator: _iterator, x: _x, y: _y )
-    }
-
-    /// public void java.awt.Graphics.drawChars(char[],int,int,int,int)
-
-    private static var drawChars_MethodID_33: jmethodID?
-
-    open func drawChars( data: [UInt16]?, offset: Int, length: Int, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: data, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: length, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawChars", methodSig: "([CIIII)V", methodCache: &Graphics.drawChars_MethodID_33, args: &__args, locals: &__locals )
-    }
-
-    open func drawChars( _ _data: [UInt16]?, _ _offset: Int, _ _length: Int, _ _x: Int, _ _y: Int ) {
-        drawChars( data: _data, offset: _offset, length: _length, x: _x, y: _y )
-    }
-
     /// public void java.awt.Graphics.drawBytes(byte[],int,int,int,int)
 
-    private static var drawBytes_MethodID_34: jmethodID?
+    private static var drawBytes_MethodID_10: jmethodID?
 
     open func drawBytes( data: [Int8]?, offset: Int, length: Int, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: data, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: length, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawBytes", methodSig: "([BIIII)V", methodCache: &Graphics.drawBytes_MethodID_34, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(offset) )
+        __args[2] = jvalue( i: jint(length) )
+        __args[3] = jvalue( i: jint(x) )
+        __args[4] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawBytes", methodSig: "([BIIII)V", methodCache: &Graphics.drawBytes_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func drawBytes( _ _data: [Int8]?, _ _offset: Int, _ _length: Int, _ _x: Int, _ _y: Int ) {
         drawBytes( data: _data, offset: _offset, length: _length, x: _x, y: _y )
     }
 
+    /// public void java.awt.Graphics.drawChars(char[],int,int,int,int)
+
+    private static var drawChars_MethodID_11: jmethodID?
+
+    open func drawChars( data: [UInt16]?, offset: Int, length: Int, x: Int, y: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: data, locals: &__locals )
+        __args[1] = jvalue( i: jint(offset) )
+        __args[2] = jvalue( i: jint(length) )
+        __args[3] = jvalue( i: jint(x) )
+        __args[4] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawChars", methodSig: "([CIIII)V", methodCache: &Graphics.drawChars_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func drawChars( _ _data: [UInt16]?, _ _offset: Int, _ _length: Int, _ _x: Int, _ _y: Int ) {
+        drawChars( data: _data, offset: _offset, length: _length, x: _x, y: _y )
+    }
+
     /// public abstract boolean java.awt.Graphics.drawImage(java.awt.Image,int,int,java.awt.Color,java.awt.image.ImageObserver)
 
-    private static var drawImage_MethodID_35: jmethodID?
+    private static var drawImage_MethodID_12: jmethodID?
 
     open func drawImage( img: Image?, x: Int, y: Int, bgcolor: Color?, observer: ImageObserver? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: img, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
         __args[3] = JNIType.toJava( value: bgcolor, locals: &__locals )
         __args[4] = JNIType.toJava( value: observer, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IILjava/awt/Color;Ljava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_35, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IILjava/awt/Color;Ljava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_12, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func drawImage( _ _img: Image?, _ _x: Int, _ _y: Int, _ _bgcolor: Color?, _ _observer: ImageObserver? ) -> Bool {
         return drawImage( img: _img, x: _x, y: _y, bgcolor: _bgcolor, observer: _observer )
     }
 
+    /// public abstract boolean java.awt.Graphics.drawImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
+
+    private static var drawImage_MethodID_13: jmethodID?
+
+    open func drawImage( img: Image?, x: Int, y: Int, observer: ImageObserver? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        __args[3] = JNIType.toJava( value: observer, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_13, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func drawImage( _ _img: Image?, _ _x: Int, _ _y: Int, _ _observer: ImageObserver? ) -> Bool {
+        return drawImage( img: _img, x: _x, y: _y, observer: _observer )
+    }
+
     /// public abstract boolean java.awt.Graphics.drawImage(java.awt.Image,int,int,int,int,java.awt.Color,java.awt.image.ImageObserver)
 
-    private static var drawImage_MethodID_36: jmethodID?
+    private static var drawImage_MethodID_14: jmethodID?
 
     open func drawImage( img: Image?, x: Int, y: Int, width: Int, height: Int, bgcolor: Color?, observer: ImageObserver? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: img, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: width, locals: &__locals )
-        __args[4] = JNIType.toJava( value: height, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        __args[3] = jvalue( i: jint(width) )
+        __args[4] = jvalue( i: jint(height) )
         __args[5] = JNIType.toJava( value: bgcolor, locals: &__locals )
         __args[6] = JNIType.toJava( value: observer, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IIIILjava/awt/Color;Ljava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_36, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IIIILjava/awt/Color;Ljava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_14, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func drawImage( _ _img: Image?, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _bgcolor: Color?, _ _observer: ImageObserver? ) -> Bool {
@@ -632,19 +268,19 @@ open class Graphics: java_swift.JavaObject {
 
     /// public abstract boolean java.awt.Graphics.drawImage(java.awt.Image,int,int,int,int,java.awt.image.ImageObserver)
 
-    private static var drawImage_MethodID_37: jmethodID?
+    private static var drawImage_MethodID_15: jmethodID?
 
     open func drawImage( img: Image?, x: Int, y: Int, width: Int, height: Int, observer: ImageObserver? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: img, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: width, locals: &__locals )
-        __args[4] = JNIType.toJava( value: height, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        __args[3] = jvalue( i: jint(width) )
+        __args[4] = jvalue( i: jint(height) )
         __args[5] = JNIType.toJava( value: observer, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IIIILjava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_37, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IIIILjava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_15, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func drawImage( _ _img: Image?, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _observer: ImageObserver? ) -> Bool {
@@ -653,24 +289,24 @@ open class Graphics: java_swift.JavaObject {
 
     /// public abstract boolean java.awt.Graphics.drawImage(java.awt.Image,int,int,int,int,int,int,int,int,java.awt.Color,java.awt.image.ImageObserver)
 
-    private static var drawImage_MethodID_38: jmethodID?
+    private static var drawImage_MethodID_16: jmethodID?
 
     open func drawImage( img: Image?, dx1: Int, dy1: Int, dx2: Int, dy2: Int, sx1: Int, sy1: Int, sx2: Int, sy2: Int, bgcolor: Color?, observer: ImageObserver? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 11 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 11 )
         __args[0] = JNIType.toJava( value: img, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dx1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: dy1, locals: &__locals )
-        __args[3] = JNIType.toJava( value: dx2, locals: &__locals )
-        __args[4] = JNIType.toJava( value: dy2, locals: &__locals )
-        __args[5] = JNIType.toJava( value: sx1, locals: &__locals )
-        __args[6] = JNIType.toJava( value: sy1, locals: &__locals )
-        __args[7] = JNIType.toJava( value: sx2, locals: &__locals )
-        __args[8] = JNIType.toJava( value: sy2, locals: &__locals )
+        __args[1] = jvalue( i: jint(dx1) )
+        __args[2] = jvalue( i: jint(dy1) )
+        __args[3] = jvalue( i: jint(dx2) )
+        __args[4] = jvalue( i: jint(dy2) )
+        __args[5] = jvalue( i: jint(sx1) )
+        __args[6] = jvalue( i: jint(sy1) )
+        __args[7] = jvalue( i: jint(sx2) )
+        __args[8] = jvalue( i: jint(sy2) )
         __args[9] = JNIType.toJava( value: bgcolor, locals: &__locals )
         __args[10] = JNIType.toJava( value: observer, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IIIIIIIILjava/awt/Color;Ljava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IIIIIIIILjava/awt/Color;Ljava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_16, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func drawImage( _ _img: Image?, _ _dx1: Int, _ _dy1: Int, _ _dx2: Int, _ _dy2: Int, _ _sx1: Int, _ _sy1: Int, _ _sx2: Int, _ _sy2: Int, _ _bgcolor: Color?, _ _observer: ImageObserver? ) -> Bool {
@@ -679,126 +315,346 @@ open class Graphics: java_swift.JavaObject {
 
     /// public abstract boolean java.awt.Graphics.drawImage(java.awt.Image,int,int,int,int,int,int,int,int,java.awt.image.ImageObserver)
 
-    private static var drawImage_MethodID_39: jmethodID?
+    private static var drawImage_MethodID_17: jmethodID?
 
     open func drawImage( img: Image?, dx1: Int, dy1: Int, dx2: Int, dy2: Int, sx1: Int, sy1: Int, sx2: Int, sy2: Int, observer: ImageObserver? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 10 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 10 )
         __args[0] = JNIType.toJava( value: img, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dx1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: dy1, locals: &__locals )
-        __args[3] = JNIType.toJava( value: dx2, locals: &__locals )
-        __args[4] = JNIType.toJava( value: dy2, locals: &__locals )
-        __args[5] = JNIType.toJava( value: sx1, locals: &__locals )
-        __args[6] = JNIType.toJava( value: sy1, locals: &__locals )
-        __args[7] = JNIType.toJava( value: sx2, locals: &__locals )
-        __args[8] = JNIType.toJava( value: sy2, locals: &__locals )
+        __args[1] = jvalue( i: jint(dx1) )
+        __args[2] = jvalue( i: jint(dy1) )
+        __args[3] = jvalue( i: jint(dx2) )
+        __args[4] = jvalue( i: jint(dy2) )
+        __args[5] = jvalue( i: jint(sx1) )
+        __args[6] = jvalue( i: jint(sy1) )
+        __args[7] = jvalue( i: jint(sx2) )
+        __args[8] = jvalue( i: jint(sy2) )
         __args[9] = JNIType.toJava( value: observer, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IIIIIIIILjava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_39, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IIIIIIIILjava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_17, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func drawImage( _ _img: Image?, _ _dx1: Int, _ _dy1: Int, _ _dx2: Int, _ _dy2: Int, _ _sx1: Int, _ _sy1: Int, _ _sx2: Int, _ _sy2: Int, _ _observer: ImageObserver? ) -> Bool {
         return drawImage( img: _img, dx1: _dx1, dy1: _dy1, dx2: _dx2, dy2: _dy2, sx1: _sx1, sy1: _sy1, sx2: _sx2, sy2: _sy2, observer: _observer )
     }
 
-    /// public abstract boolean java.awt.Graphics.drawImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
+    /// public abstract void java.awt.Graphics.drawLine(int,int,int,int)
 
-    private static var drawImage_MethodID_40: jmethodID?
+    private static var drawLine_MethodID_18: jmethodID?
 
-    open func drawImage( img: Image?, x: Int, y: Int, observer: ImageObserver? ) -> Bool {
+    open func drawLine( x1: Int, y1: Int, x2: Int, y2: Int ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x1) )
+        __args[1] = jvalue( i: jint(y1) )
+        __args[2] = jvalue( i: jint(x2) )
+        __args[3] = jvalue( i: jint(y2) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(IIII)V", methodCache: &Graphics.drawLine_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func drawLine( _ _x1: Int, _ _y1: Int, _ _x2: Int, _ _y2: Int ) {
+        drawLine( x1: _x1, y1: _y1, x2: _x2, y2: _y2 )
+    }
+
+    /// public abstract void java.awt.Graphics.drawOval(int,int,int,int)
+
+    private static var drawOval_MethodID_19: jmethodID?
+
+    open func drawOval( x: Int, y: Int, width: Int, height: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: observer, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)Z", methodCache: &Graphics.drawImage_MethodID_40, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawOval", methodSig: "(IIII)V", methodCache: &Graphics.drawOval_MethodID_19, args: &__args, locals: &__locals )
     }
 
-    open func drawImage( _ _img: Image?, _ _x: Int, _ _y: Int, _ _observer: ImageObserver? ) -> Bool {
-        return drawImage( img: _img, x: _x, y: _y, observer: _observer )
+    open func drawOval( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
+        drawOval( x: _x, y: _y, width: _width, height: _height )
     }
 
-    /// public java.awt.Rectangle java.awt.Graphics.getClipRect()
+    /// public void java.awt.Graphics.drawPolygon(java.awt.Polygon)
 
-    private static var getClipRect_MethodID_41: jmethodID?
+    private static var drawPolygon_MethodID_20: jmethodID?
 
-    open func getClipRect() -> Rectangle! {
+    open func drawPolygon( p: Polygon? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawPolygon", methodSig: "(Ljava/awt/Polygon;)V", methodCache: &Graphics.drawPolygon_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func drawPolygon( _ _p: Polygon? ) {
+        drawPolygon( p: _p )
+    }
+
+    /// public abstract void java.awt.Graphics.drawPolygon(int[],int[],int)
+
+    private static var drawPolygon_MethodID_21: jmethodID?
+
+    open func drawPolygon( xPoints: [Int32]?, yPoints: [Int32]?, nPoints: Int ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClipRect", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Graphics.getClipRect_MethodID_41, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: xPoints, locals: &__locals )
+        __args[1] = JNIType.toJava( value: yPoints, locals: &__locals )
+        __args[2] = jvalue( i: jint(nPoints) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawPolygon", methodSig: "([I[II)V", methodCache: &Graphics.drawPolygon_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func drawPolygon( _ _xPoints: [Int32]?, _ _yPoints: [Int32]?, _ _nPoints: Int ) {
+        drawPolygon( xPoints: _xPoints, yPoints: _yPoints, nPoints: _nPoints )
+    }
+
+    /// public abstract void java.awt.Graphics.drawPolyline(int[],int[],int)
+
+    private static var drawPolyline_MethodID_22: jmethodID?
+
+    open func drawPolyline( xPoints: [Int32]?, yPoints: [Int32]?, nPoints: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: xPoints, locals: &__locals )
+        __args[1] = JNIType.toJava( value: yPoints, locals: &__locals )
+        __args[2] = jvalue( i: jint(nPoints) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawPolyline", methodSig: "([I[II)V", methodCache: &Graphics.drawPolyline_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func drawPolyline( _ _xPoints: [Int32]?, _ _yPoints: [Int32]?, _ _nPoints: Int ) {
+        drawPolyline( xPoints: _xPoints, yPoints: _yPoints, nPoints: _nPoints )
+    }
+
+    /// public void java.awt.Graphics.drawRect(int,int,int,int)
+
+    private static var drawRect_MethodID_23: jmethodID?
+
+    open func drawRect( x: Int, y: Int, width: Int, height: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawRect", methodSig: "(IIII)V", methodCache: &Graphics.drawRect_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func drawRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
+        drawRect( x: _x, y: _y, width: _width, height: _height )
+    }
+
+    /// public abstract void java.awt.Graphics.drawRoundRect(int,int,int,int,int,int)
+
+    private static var drawRoundRect_MethodID_24: jmethodID?
+
+    open func drawRoundRect( x: Int, y: Int, width: Int, height: Int, arcWidth: Int, arcHeight: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        __args[4] = jvalue( i: jint(arcWidth) )
+        __args[5] = jvalue( i: jint(arcHeight) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawRoundRect", methodSig: "(IIIIII)V", methodCache: &Graphics.drawRoundRect_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func drawRoundRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _arcWidth: Int, _ _arcHeight: Int ) {
+        drawRoundRect( x: _x, y: _y, width: _width, height: _height, arcWidth: _arcWidth, arcHeight: _arcHeight )
+    }
+
+    /// public abstract void java.awt.Graphics.drawString(java.lang.String,int,int)
+
+    private static var drawString_MethodID_25: jmethodID?
+
+    open func drawString( str: String?, x: Int, y: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: str, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawString", methodSig: "(Ljava/lang/String;II)V", methodCache: &Graphics.drawString_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func drawString( _ _str: String?, _ _x: Int, _ _y: Int ) {
+        drawString( str: _str, x: _x, y: _y )
+    }
+
+    /// public abstract void java.awt.Graphics.drawString(java.text.AttributedCharacterIterator,int,int)
+
+    private static var drawString_MethodID_26: jmethodID?
+
+    open func drawString( iterator: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, x: Int, y: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: iterator, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawString", methodSig: "(Ljava/text/AttributedCharacterIterator;II)V", methodCache: &Graphics.drawString_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    open func drawString( _ _iterator: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, _ _x: Int, _ _y: Int ) {
+        drawString( iterator: _iterator, x: _x, y: _y )
+    }
+
+    /// public void java.awt.Graphics.fill3DRect(int,int,int,int,boolean)
+
+    private static var fill3DRect_MethodID_27: jmethodID?
+
+    open func fill3DRect( x: Int, y: Int, width: Int, height: Int, raised: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        __args[4] = jvalue( z: jboolean(raised ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fill3DRect", methodSig: "(IIIIZ)V", methodCache: &Graphics.fill3DRect_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open func fill3DRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _raised: Bool ) {
+        fill3DRect( x: _x, y: _y, width: _width, height: _height, raised: _raised )
+    }
+
+    /// public abstract void java.awt.Graphics.fillArc(int,int,int,int,int,int)
+
+    private static var fillArc_MethodID_28: jmethodID?
+
+    open func fillArc( x: Int, y: Int, width: Int, height: Int, startAngle: Int, arcAngle: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        __args[4] = jvalue( i: jint(startAngle) )
+        __args[5] = jvalue( i: jint(arcAngle) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillArc", methodSig: "(IIIIII)V", methodCache: &Graphics.fillArc_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open func fillArc( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _startAngle: Int, _ _arcAngle: Int ) {
+        fillArc( x: _x, y: _y, width: _width, height: _height, startAngle: _startAngle, arcAngle: _arcAngle )
+    }
+
+    /// public abstract void java.awt.Graphics.fillOval(int,int,int,int)
+
+    private static var fillOval_MethodID_29: jmethodID?
+
+    open func fillOval( x: Int, y: Int, width: Int, height: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillOval", methodSig: "(IIII)V", methodCache: &Graphics.fillOval_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func fillOval( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
+        fillOval( x: _x, y: _y, width: _width, height: _height )
+    }
+
+    /// public void java.awt.Graphics.fillPolygon(java.awt.Polygon)
+
+    private static var fillPolygon_MethodID_30: jmethodID?
+
+    open func fillPolygon( p: Polygon? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillPolygon", methodSig: "(Ljava/awt/Polygon;)V", methodCache: &Graphics.fillPolygon_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func fillPolygon( _ _p: Polygon? ) {
+        fillPolygon( p: _p )
+    }
+
+    /// public abstract void java.awt.Graphics.fillPolygon(int[],int[],int)
+
+    private static var fillPolygon_MethodID_31: jmethodID?
+
+    open func fillPolygon( xPoints: [Int32]?, yPoints: [Int32]?, nPoints: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: xPoints, locals: &__locals )
+        __args[1] = JNIType.toJava( value: yPoints, locals: &__locals )
+        __args[2] = jvalue( i: jint(nPoints) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillPolygon", methodSig: "([I[II)V", methodCache: &Graphics.fillPolygon_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+    open func fillPolygon( _ _xPoints: [Int32]?, _ _yPoints: [Int32]?, _ _nPoints: Int ) {
+        fillPolygon( xPoints: _xPoints, yPoints: _yPoints, nPoints: _nPoints )
+    }
+
+    /// public abstract void java.awt.Graphics.fillRect(int,int,int,int)
+
+    private static var fillRect_MethodID_32: jmethodID?
+
+    open func fillRect( x: Int, y: Int, width: Int, height: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillRect", methodSig: "(IIII)V", methodCache: &Graphics.fillRect_MethodID_32, args: &__args, locals: &__locals )
+    }
+
+    open func fillRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
+        fillRect( x: _x, y: _y, width: _width, height: _height )
+    }
+
+    /// public abstract void java.awt.Graphics.fillRoundRect(int,int,int,int,int,int)
+
+    private static var fillRoundRect_MethodID_33: jmethodID?
+
+    open func fillRoundRect( x: Int, y: Int, width: Int, height: Int, arcWidth: Int, arcHeight: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        __args[4] = jvalue( i: jint(arcWidth) )
+        __args[5] = jvalue( i: jint(arcHeight) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fillRoundRect", methodSig: "(IIIIII)V", methodCache: &Graphics.fillRoundRect_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+    open func fillRoundRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _arcWidth: Int, _ _arcHeight: Int ) {
+        fillRoundRect( x: _x, y: _y, width: _width, height: _height, arcWidth: _arcWidth, arcHeight: _arcHeight )
+    }
+
+    /// public void java.awt.Graphics.finalize()
+
+    private static var finalize_MethodID_34: jmethodID?
+
+    override open func finalize() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finalize", methodSig: "()V", methodCache: &Graphics.finalize_MethodID_34, args: &__args, locals: &__locals )
+    }
+
+
+    /// public abstract java.awt.Shape java.awt.Graphics.getClip()
+
+    private static var getClip_MethodID_35: jmethodID?
+
+    open func getClip() -> Shape! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClip", methodSig: "()Ljava/awt/Shape;", methodCache: &Graphics.getClip_MethodID_35, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.FontMetrics java.awt.Graphics.getFontMetrics()
-
-    private static var getFontMetrics_MethodID_42: jmethodID?
-
-    open func getFontMetrics() -> FontMetrics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "()Ljava/awt/FontMetrics;", methodCache: &Graphics.getFontMetrics_MethodID_42, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? FontMetrics( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract java.awt.FontMetrics java.awt.Graphics.getFontMetrics(java.awt.Font)
-
-    private static var getFontMetrics_MethodID_43: jmethodID?
-
-    open func getFontMetrics( f: Font? ) -> FontMetrics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "(Ljava/awt/Font;)Ljava/awt/FontMetrics;", methodCache: &Graphics.getFontMetrics_MethodID_43, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? FontMetrics( javaObject: __return ) : nil
-    }
-
-    open func getFontMetrics( _ _f: Font? ) -> FontMetrics! {
-        return getFontMetrics( f: _f )
-    }
-
-    /// public abstract void java.awt.Graphics.setColor(java.awt.Color)
-
-    private static var setColor_MethodID_44: jmethodID?
-
-    open func setColor( c: Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &Graphics.setColor_MethodID_44, args: &__args, locals: &__locals )
-    }
-
-    open func setColor( _ _c: Color? ) {
-        setColor( c: _c )
-    }
-
-    /// public abstract void java.awt.Graphics.dispose()
-
-    private static var dispose_MethodID_45: jmethodID?
-
-    open func dispose() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &Graphics.dispose_MethodID_45, args: &__args, locals: &__locals )
+        return __return != nil ? ShapeForward( javaObject: __return ) : nil
     }
 
 
     /// public java.awt.Rectangle java.awt.Graphics.getClipBounds(java.awt.Rectangle)
 
-    private static var getClipBounds_MethodID_46: jmethodID?
+    private static var getClipBounds_MethodID_36: jmethodID?
 
     open func getClipBounds( r: Rectangle? ) -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: r, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClipBounds", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &Graphics.getClipBounds_MethodID_46, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClipBounds", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &Graphics.getClipBounds_MethodID_36, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
@@ -809,66 +665,212 @@ open class Graphics: java_swift.JavaObject {
 
     /// public abstract java.awt.Rectangle java.awt.Graphics.getClipBounds()
 
-    private static var getClipBounds_MethodID_47: jmethodID?
+    private static var getClipBounds_MethodID_37: jmethodID?
 
     open func getClipBounds() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClipBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Graphics.getClipBounds_MethodID_47, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClipBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Graphics.getClipBounds_MethodID_37, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
 
 
-    /// public abstract void java.awt.Graphics.setClip(java.awt.Shape)
+    /// public java.awt.Rectangle java.awt.Graphics.getClipRect()
 
-    private static var setClip_MethodID_48: jmethodID?
+    private static var getClipRect_MethodID_38: jmethodID?
 
-    open func setClip( clip: Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getClipRect() -> Rectangle! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: clip, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClip", methodSig: "(Ljava/awt/Shape;)V", methodCache: &Graphics.setClip_MethodID_48, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClipRect", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Graphics.getClipRect_MethodID_38, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
 
-    open func setClip( _ _clip: Shape? ) {
-        setClip( clip: _clip )
+
+    /// public abstract java.awt.Color java.awt.Graphics.getColor()
+
+    private static var getColor_MethodID_39: jmethodID?
+
+    open func getColor() -> Color! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor", methodSig: "()Ljava/awt/Color;", methodCache: &Graphics.getColor_MethodID_39, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Color( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract java.awt.Font java.awt.Graphics.getFont()
+
+    private static var getFont_MethodID_40: jmethodID?
+
+    open func getFont() -> Font! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &Graphics.getFont_MethodID_40, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Font( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract java.awt.FontMetrics java.awt.Graphics.getFontMetrics(java.awt.Font)
+
+    private static var getFontMetrics_MethodID_41: jmethodID?
+
+    open func getFontMetrics( f: Font? ) -> FontMetrics! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "(Ljava/awt/Font;)Ljava/awt/FontMetrics;", methodCache: &Graphics.getFontMetrics_MethodID_41, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? FontMetrics( javaObject: __return ) : nil
+    }
+
+    open func getFontMetrics( _ _f: Font? ) -> FontMetrics! {
+        return getFontMetrics( f: _f )
+    }
+
+    /// public java.awt.FontMetrics java.awt.Graphics.getFontMetrics()
+
+    private static var getFontMetrics_MethodID_42: jmethodID?
+
+    open func getFontMetrics() -> FontMetrics! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "()Ljava/awt/FontMetrics;", methodCache: &Graphics.getFontMetrics_MethodID_42, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? FontMetrics( javaObject: __return ) : nil
+    }
+
+
+    /// public boolean java.awt.Graphics.hitClip(int,int,int,int)
+
+    private static var hitClip_MethodID_43: jmethodID?
+
+    open func hitClip( x: Int, y: Int, width: Int, height: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "hitClip", methodSig: "(IIII)Z", methodCache: &Graphics.hitClip_MethodID_43, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func hitClip( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) -> Bool {
+        return hitClip( x: _x, y: _y, width: _width, height: _height )
     }
 
     /// public abstract void java.awt.Graphics.setClip(int,int,int,int)
 
-    private static var setClip_MethodID_49: jmethodID?
+    private static var setClip_MethodID_44: jmethodID?
 
     open func setClip( x: Int, y: Int, width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClip", methodSig: "(IIII)V", methodCache: &Graphics.setClip_MethodID_49, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClip", methodSig: "(IIII)V", methodCache: &Graphics.setClip_MethodID_44, args: &__args, locals: &__locals )
     }
 
     open func setClip( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
         setClip( x: _x, y: _y, width: _width, height: _height )
     }
 
-    /// public abstract void java.awt.Graphics.clearRect(int,int,int,int)
+    /// public abstract void java.awt.Graphics.setClip(java.awt.Shape)
 
-    private static var clearRect_MethodID_50: jmethodID?
+    private static var setClip_MethodID_45: jmethodID?
 
-    open func clearRect( x: Int, y: Int, width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open func setClip( clip: Shape? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearRect", methodSig: "(IIII)V", methodCache: &Graphics.clearRect_MethodID_50, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: clip, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClip", methodSig: "(Ljava/awt/Shape;)V", methodCache: &Graphics.setClip_MethodID_45, args: &__args, locals: &__locals )
     }
 
-    open func clearRect( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
-        clearRect( x: _x, y: _y, width: _width, height: _height )
+    open func setClip( _ _clip: Shape? ) {
+        setClip( clip: _clip )
+    }
+
+    /// public abstract void java.awt.Graphics.setColor(java.awt.Color)
+
+    private static var setColor_MethodID_46: jmethodID?
+
+    open func setColor( c: Color? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &Graphics.setColor_MethodID_46, args: &__args, locals: &__locals )
+    }
+
+    open func setColor( _ _c: Color? ) {
+        setColor( c: _c )
+    }
+
+    /// public abstract void java.awt.Graphics.setFont(java.awt.Font)
+
+    private static var setFont_MethodID_47: jmethodID?
+
+    open func setFont( font: Font? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: font, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &Graphics.setFont_MethodID_47, args: &__args, locals: &__locals )
+    }
+
+    open func setFont( _ _font: Font? ) {
+        setFont( font: _font )
+    }
+
+    /// public abstract void java.awt.Graphics.setPaintMode()
+
+    private static var setPaintMode_MethodID_48: jmethodID?
+
+    open func setPaintMode() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPaintMode", methodSig: "()V", methodCache: &Graphics.setPaintMode_MethodID_48, args: &__args, locals: &__locals )
+    }
+
+
+    /// public abstract void java.awt.Graphics.setXORMode(java.awt.Color)
+
+    private static var setXORMode_MethodID_49: jmethodID?
+
+    open func setXORMode( c1: Color? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setXORMode", methodSig: "(Ljava/awt/Color;)V", methodCache: &Graphics.setXORMode_MethodID_49, args: &__args, locals: &__locals )
+    }
+
+    open func setXORMode( _ _c1: Color? ) {
+        setXORMode( c1: _c1 )
+    }
+
+    /// public java.lang.String java.awt.Graphics.toString()
+
+    // Skipping method: false true false false false 
+
+    /// public abstract void java.awt.Graphics.translate(int,int)
+
+    private static var translate_MethodID_50: jmethodID?
+
+    open func translate( x: Int, y: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Graphics.translate_MethodID_50, args: &__args, locals: &__locals )
+    }
+
+    open func translate( _ _x: Int, _ _y: Int ) {
+        translate( x: _x, y: _y )
     }
 
 }

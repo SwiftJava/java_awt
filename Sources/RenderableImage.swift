@@ -10,19 +10,7 @@ public protocol RenderableImage: JavaProtocol {
 
     /// public static final java.lang.String java.awt.image.renderable.RenderableImage.HINTS_OBSERVED
 
-    static var HINTS_OBSERVED: String! { get }
-
-    /// public abstract java.lang.Object java.awt.image.renderable.RenderableImage.getProperty(java.lang.String)
-
-    func getProperty( name: String? ) -> java_swift.JavaObject!
-
-    /// public abstract boolean java.awt.image.renderable.RenderableImage.isDynamic()
-
-    func isDynamic() -> Bool
-
-    /// public abstract java.awt.image.RenderedImage java.awt.image.renderable.RenderableImage.createScaledRendering(int,int,java.awt.RenderingHints)
-
-    func createScaledRendering( w: Int, h: Int, hints: RenderingHints? ) -> RenderedImage!
+    // Skipping field: false false false false false true 
 
     /// public abstract java.awt.image.RenderedImage java.awt.image.renderable.RenderableImage.createDefaultRendering()
 
@@ -32,6 +20,14 @@ public protocol RenderableImage: JavaProtocol {
 
     func createRendering( renderContext: RenderContext? ) -> RenderedImage!
 
+    /// public abstract java.awt.image.RenderedImage java.awt.image.renderable.RenderableImage.createScaledRendering(int,int,java.awt.RenderingHints)
+
+    func createScaledRendering( w: Int, h: Int, hints: RenderingHints? ) -> RenderedImage!
+
+    /// public abstract float java.awt.image.renderable.RenderableImage.getHeight()
+
+    func getHeight() -> Float
+
     /// public abstract float java.awt.image.renderable.RenderableImage.getMinX()
 
     func getMinX() -> Float
@@ -40,21 +36,25 @@ public protocol RenderableImage: JavaProtocol {
 
     func getMinY() -> Float
 
-    /// public abstract float java.awt.image.renderable.RenderableImage.getWidth()
+    /// public abstract java.lang.Object java.awt.image.renderable.RenderableImage.getProperty(java.lang.String)
 
-    func getWidth() -> Float
+    func getProperty( name: String? ) -> java_swift.JavaObject!
 
-    /// public abstract float java.awt.image.renderable.RenderableImage.getHeight()
+    /// public abstract java.lang.String[] java.awt.image.renderable.RenderableImage.getPropertyNames()
 
-    func getHeight() -> Float
+    func getPropertyNames() -> [String]!
 
     /// public abstract java.util.Vector java.awt.image.renderable.RenderableImage.getSources()
 
     func getSources() -> java_util.Vector!
 
-    /// public abstract java.lang.String[] java.awt.image.renderable.RenderableImage.getPropertyNames()
+    /// public abstract float java.awt.image.renderable.RenderableImage.getWidth()
 
-    func getPropertyNames() -> [String]!
+    func getWidth() -> Float
+
+    /// public abstract boolean java.awt.image.renderable.RenderableImage.isDynamic()
+
+    func isDynamic() -> Bool
 
 }
 
@@ -70,48 +70,50 @@ open class RenderableImageForward: JNIObjectForward, RenderableImage {
     open static var HINTS_OBSERVED: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HINTS_OBSERVED", fieldType: "Ljava/lang/String;", fieldCache: &HINTS_OBSERVED_FieldID, className: "java/awt/image/renderable/RenderableImage", classCache: &RenderableImageJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
-    /// public abstract java.lang.Object java.awt.image.renderable.RenderableImage.getProperty(java.lang.String)
+    /// public abstract java.awt.image.RenderedImage java.awt.image.renderable.RenderableImage.createDefaultRendering()
 
-    private static var getProperty_MethodID_12: jmethodID?
+    private static var createDefaultRendering_MethodID_12: jmethodID?
 
-    open func getProperty( name: String? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createDefaultRendering() -> RenderedImage! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProperty", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &RenderableImageForward.getProperty_MethodID_12, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRendering", methodSig: "()Ljava/awt/image/RenderedImage;", methodCache: &RenderableImageForward.createDefaultRendering_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+        return __return != nil ? RenderedImageForward( javaObject: __return ) : nil
     }
 
-    open func getProperty( _ _name: String? ) -> java_swift.JavaObject! {
-        return getProperty( name: _name )
-    }
 
-    /// public abstract boolean java.awt.image.renderable.RenderableImage.isDynamic()
+    /// public abstract java.awt.image.RenderedImage java.awt.image.renderable.RenderableImage.createRendering(java.awt.image.renderable.RenderContext)
 
-    private static var isDynamic_MethodID_13: jmethodID?
+    private static var createRendering_MethodID_13: jmethodID?
 
-    open func isDynamic() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createRendering( renderContext: RenderContext? ) -> RenderedImage! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDynamic", methodSig: "()Z", methodCache: &RenderableImageForward.isDynamic_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: renderContext, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRendering", methodSig: "(Ljava/awt/image/renderable/RenderContext;)Ljava/awt/image/RenderedImage;", methodCache: &RenderableImageForward.createRendering_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? RenderedImageForward( javaObject: __return ) : nil
     }
 
+    open func createRendering( _ _renderContext: RenderContext? ) -> RenderedImage! {
+        return createRendering( renderContext: _renderContext )
+    }
 
     /// public abstract java.awt.image.RenderedImage java.awt.image.renderable.RenderableImage.createScaledRendering(int,int,java.awt.RenderingHints)
 
     private static var createScaledRendering_MethodID_14: jmethodID?
 
     open func createScaledRendering( w: Int, h: Int, hints: RenderingHints? ) -> RenderedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(w) )
+        __args[1] = jvalue( i: jint(h) )
         __args[2] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScaledRendering", methodSig: "(IILjava/awt/RenderingHints;)Ljava/awt/image/RenderedImage;", methodCache: &RenderableImageForward.createScaledRendering_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -122,109 +124,107 @@ open class RenderableImageForward: JNIObjectForward, RenderableImage {
         return createScaledRendering( w: _w, h: _h, hints: _hints )
     }
 
-    /// public abstract java.awt.image.RenderedImage java.awt.image.renderable.RenderableImage.createDefaultRendering()
+    /// public abstract float java.awt.image.renderable.RenderableImage.getHeight()
 
-    private static var createDefaultRendering_MethodID_15: jmethodID?
+    private static var getHeight_MethodID_15: jmethodID?
 
-    open func createDefaultRendering() -> RenderedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getHeight() -> Float {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRendering", methodSig: "()Ljava/awt/image/RenderedImage;", methodCache: &RenderableImageForward.createDefaultRendering_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? RenderedImageForward( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract java.awt.image.RenderedImage java.awt.image.renderable.RenderableImage.createRendering(java.awt.image.renderable.RenderContext)
-
-    private static var createRendering_MethodID_16: jmethodID?
-
-    open func createRendering( renderContext: RenderContext? ) -> RenderedImage! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: renderContext, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRendering", methodSig: "(Ljava/awt/image/renderable/RenderContext;)Ljava/awt/image/RenderedImage;", methodCache: &RenderableImageForward.createRendering_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? RenderedImageForward( javaObject: __return ) : nil
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getHeight", methodSig: "()F", methodCache: &RenderableImageForward.getHeight_MethodID_15, args: &__args, locals: &__locals )
+        return __return
     }
 
-    open func createRendering( _ _renderContext: RenderContext? ) -> RenderedImage! {
-        return createRendering( renderContext: _renderContext )
-    }
 
     /// public abstract float java.awt.image.renderable.RenderableImage.getMinX()
 
-    private static var getMinX_MethodID_17: jmethodID?
+    private static var getMinX_MethodID_16: jmethodID?
 
     open func getMinX() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinX", methodSig: "()F", methodCache: &RenderableImageForward.getMinX_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinX", methodSig: "()F", methodCache: &RenderableImageForward.getMinX_MethodID_16, args: &__args, locals: &__locals )
+        return __return
     }
 
 
     /// public abstract float java.awt.image.renderable.RenderableImage.getMinY()
 
-    private static var getMinY_MethodID_18: jmethodID?
+    private static var getMinY_MethodID_17: jmethodID?
 
     open func getMinY() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinY", methodSig: "()F", methodCache: &RenderableImageForward.getMinY_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinY", methodSig: "()F", methodCache: &RenderableImageForward.getMinY_MethodID_17, args: &__args, locals: &__locals )
+        return __return
     }
 
 
-    /// public abstract float java.awt.image.renderable.RenderableImage.getWidth()
+    /// public abstract java.lang.Object java.awt.image.renderable.RenderableImage.getProperty(java.lang.String)
 
-    private static var getWidth_MethodID_19: jmethodID?
+    private static var getProperty_MethodID_18: jmethodID?
 
-    open func getWidth() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getProperty( name: String? ) -> java_swift.JavaObject! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getWidth", methodSig: "()F", methodCache: &RenderableImageForward.getWidth_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProperty", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &RenderableImageForward.getProperty_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
+    open func getProperty( _ _name: String? ) -> java_swift.JavaObject! {
+        return getProperty( name: _name )
+    }
 
-    /// public abstract float java.awt.image.renderable.RenderableImage.getHeight()
+    /// public abstract java.lang.String[] java.awt.image.renderable.RenderableImage.getPropertyNames()
 
-    private static var getHeight_MethodID_20: jmethodID?
+    private static var getPropertyNames_MethodID_19: jmethodID?
 
-    open func getHeight() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getPropertyNames() -> [String]! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getHeight", methodSig: "()F", methodCache: &RenderableImageForward.getHeight_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyNames", methodSig: "()[Ljava/lang/String;", methodCache: &RenderableImageForward.getPropertyNames_MethodID_19, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [String].self, from: __return )
     }
 
 
     /// public abstract java.util.Vector java.awt.image.renderable.RenderableImage.getSources()
 
-    private static var getSources_MethodID_21: jmethodID?
+    private static var getSources_MethodID_20: jmethodID?
 
     open func getSources() -> java_util.Vector! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSources", methodSig: "()Ljava/util/Vector;", methodCache: &RenderableImageForward.getSources_MethodID_21, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSources", methodSig: "()Ljava/util/Vector;", methodCache: &RenderableImageForward.getSources_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.Vector( javaObject: __return ) : nil
     }
 
 
-    /// public abstract java.lang.String[] java.awt.image.renderable.RenderableImage.getPropertyNames()
+    /// public abstract float java.awt.image.renderable.RenderableImage.getWidth()
 
-    private static var getPropertyNames_MethodID_22: jmethodID?
+    private static var getWidth_MethodID_21: jmethodID?
 
-    open func getPropertyNames() -> [String]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getWidth() -> Float {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyNames", methodSig: "()[Ljava/lang/String;", methodCache: &RenderableImageForward.getPropertyNames_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [String](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getWidth", methodSig: "()F", methodCache: &RenderableImageForward.getWidth_MethodID_21, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public abstract boolean java.awt.image.renderable.RenderableImage.isDynamic()
+
+    private static var isDynamic_MethodID_22: jmethodID?
+
+    open func isDynamic() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDynamic", methodSig: "()Z", methodCache: &RenderableImageForward.isDynamic_MethodID_22, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
 }
-
 

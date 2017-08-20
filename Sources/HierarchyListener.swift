@@ -24,8 +24,8 @@ open class HierarchyListenerForward: java_util.EventListenerForward, HierarchyLi
     private static var hierarchyChanged_MethodID_2: jmethodID?
 
     open func hierarchyChanged( e: HierarchyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "hierarchyChanged", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &HierarchyListenerForward.hierarchyChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class HierarchyListenerForward: java_util.EventListenerForward, HierarchyLi
 
 }
 
-
 private typealias HierarchyListener_hierarchyChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func HierarchyListener_hierarchyChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     HierarchyListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).hierarchyChanged( e: e != nil ? HierarchyEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class HierarchyListenerLocal_: JNILocalProxy<HierarchyListener, Any> {
@@ -89,8 +86,5 @@ open class HierarchyListenerBase: HierarchyListener {
     open func hierarchyChanged( e: HierarchyEvent? ) /**/ {
     }
 
-    open func hierarchyChanged( _ _e: HierarchyEvent? ) /**/ {
-        hierarchyChanged( e: _e )
-    }
 
 }

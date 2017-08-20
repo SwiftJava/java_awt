@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.Insets ///
 
-open class Insets: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Serializable */ UnclassedProtocol {
+open class Insets: java_swift.JavaObject, java_lang.Cloneable, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -20,20 +20,21 @@ open class Insets: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Serial
 
     private static var InsetsJNIClass: jclass?
 
-    /// public int java.awt.Insets.top
+    /// private static final long java.awt.Insets.serialVersionUID
 
-    private static var top_FieldID: jfieldID?
+    /// public int java.awt.Insets.bottom
 
-    open var top: Int {
+    private static var bottom_FieldID: jfieldID?
+
+    open var bottom: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "top", fieldType: "I", fieldCache: &Insets.top_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &Insets.bottom_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "top", fieldType: "I", fieldCache: &Insets.top_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &Insets.bottom_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -43,31 +44,13 @@ open class Insets: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Serial
 
     open var left: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "left", fieldType: "I", fieldCache: &Insets.left_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "left", fieldType: "I", fieldCache: &Insets.left_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "left", fieldType: "I", fieldCache: &Insets.left_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public int java.awt.Insets.bottom
-
-    private static var bottom_FieldID: jfieldID?
-
-    open var bottom: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &Insets.bottom_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &Insets.bottom_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -77,30 +60,43 @@ open class Insets: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Serial
 
     open var right: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "right", fieldType: "I", fieldCache: &Insets.right_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "right", fieldType: "I", fieldCache: &Insets.right_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "right", fieldType: "I", fieldCache: &Insets.right_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// private static final long java.awt.Insets.serialVersionUID
+    /// public int java.awt.Insets.top
+
+    private static var top_FieldID: jfieldID?
+
+    open var top: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "top", fieldType: "I", fieldCache: &Insets.top_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "top", fieldType: "I", fieldCache: &Insets.top_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
     /// public java.awt.Insets(int,int,int,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( top: Int, left: Int, bottom: Int, right: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: top, locals: &__locals )
-        __args[1] = JNIType.toJava( value: left, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
-        __args[3] = JNIType.toJava( value: right, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(top) )
+        __args[1] = jvalue( i: jint(left) )
+        __args[2] = jvalue( i: jint(bottom) )
+        __args[3] = jvalue( i: jint(right) )
         let __object = JNIMethod.NewObject( className: "java/awt/Insets", classCache: &Insets.InsetsJNIClass, methodSig: "(IIII)V", methodCache: &Insets.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -110,50 +106,52 @@ open class Insets: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Serial
         self.init( top: _top, left: _left, bottom: _bottom, right: _right )
     }
 
+    /// private static native void java.awt.Insets.initIDs()
+
+    /// public java.lang.Object java.awt.Insets.clone()
+
+    private static var clone_MethodID_2: jmethodID?
+
+    override open func clone() -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &Insets.clone_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
     /// public boolean java.awt.Insets.equals(java.lang.Object)
 
-    private static var equals_MethodID_2: jmethodID?
+    private static var equals_MethodID_3: jmethodID?
 
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: obj, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &Insets.equals_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &Insets.equals_MethodID_3, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _obj: java_swift.JavaObject? ) -> Bool {
         return equals( obj: _obj )
     }
 
-    /// public java.lang.String java.awt.Insets.toString()
-
     /// public int java.awt.Insets.hashCode()
 
-    /// public java.lang.Object java.awt.Insets.clone()
-
-    private static var clone_MethodID_3: jmethodID?
-
-    override open func clone() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &Insets.clone_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
+    // Skipping method: false true false false false 
 
     /// public void java.awt.Insets.set(int,int,int,int)
 
     private static var set_MethodID_4: jmethodID?
 
     open func set( top: Int, left: Int, bottom: Int, right: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: top, locals: &__locals )
-        __args[1] = JNIType.toJava( value: left, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
-        __args[3] = JNIType.toJava( value: right, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(top) )
+        __args[1] = jvalue( i: jint(left) )
+        __args[2] = jvalue( i: jint(bottom) )
+        __args[3] = jvalue( i: jint(right) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "set", methodSig: "(IIII)V", methodCache: &Insets.set_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -161,7 +159,9 @@ open class Insets: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Serial
         set( top: _top, left: _left, bottom: _bottom, right: _right )
     }
 
-    /// private static native void java.awt.Insets.initIDs()
+    /// public java.lang.String java.awt.Insets.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

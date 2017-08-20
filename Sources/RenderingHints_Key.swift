@@ -25,9 +25,9 @@ open class RenderingHints_Key: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( privatekey: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: privatekey, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(privatekey) )
         let __object = JNIMethod.NewObject( className: "java/awt/RenderingHints$Key", classCache: &RenderingHints_Key.RenderingHints_KeyJNIClass, methodSig: "(I)V", methodCache: &RenderingHints_Key.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -37,55 +37,57 @@ open class RenderingHints_Key: java_swift.JavaObject {
         self.init( privatekey: _privatekey )
     }
 
+    /// private static synchronized void java.awt.RenderingHints$Key.recordIdentity(java.awt.RenderingHints$Key)
+
     /// public final boolean java.awt.RenderingHints$Key.equals(java.lang.Object)
 
     private static var equals_MethodID_2: jmethodID?
 
     open func equals( o: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints_Key.equals_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _o: java_swift.JavaObject? ) -> Bool {
         return equals( o: _o )
     }
 
+    /// private java.lang.String java.awt.RenderingHints$Key.getIdentity()
+
     /// public final int java.awt.RenderingHints$Key.hashCode()
+
+    // Skipping method: false true false false false 
+
+    /// protected final int java.awt.RenderingHints$Key.intKey()
+
+    private static var intKey_MethodID_3: jmethodID?
+
+    open func intKey() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "intKey", methodSig: "()I", methodCache: &RenderingHints_Key.intKey_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
 
     /// public abstract boolean java.awt.RenderingHints$Key.isCompatibleValue(java.lang.Object)
 
-    private static var isCompatibleValue_MethodID_3: jmethodID?
+    private static var isCompatibleValue_MethodID_4: jmethodID?
 
     open func isCompatibleValue( val: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: val, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompatibleValue", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints_Key.isCompatibleValue_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompatibleValue", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints_Key.isCompatibleValue_MethodID_4, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isCompatibleValue( _ _val: java_swift.JavaObject? ) -> Bool {
         return isCompatibleValue( val: _val )
     }
-
-    /// protected final int java.awt.RenderingHints$Key.intKey()
-
-    private static var intKey_MethodID_4: jmethodID?
-
-    open func intKey() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "intKey", methodSig: "()I", methodCache: &RenderingHints_Key.intKey_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// private java.lang.String java.awt.RenderingHints$Key.getIdentity()
-
-    /// private static synchronized void java.awt.RenderingHints$Key.recordIdentity(java.awt.RenderingHints$Key)
 
 }
 

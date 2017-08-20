@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.geom.Ellipse2D$Float ///
 
-open class Ellipse2D_Float: Ellipse2D, /* java.io.Serializable */ UnclassedProtocol {
+open class Ellipse2D_Float: Ellipse2D, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -20,19 +20,52 @@ open class Ellipse2D_Float: Ellipse2D, /* java.io.Serializable */ UnclassedProto
 
     private static var Ellipse2D_FloatJNIClass: jclass?
 
+    /// private static final long java.awt.geom.Ellipse2D$Float.serialVersionUID
+
+    /// public float java.awt.geom.Ellipse2D$Float.height
+
+    private static var height_FieldID: jfieldID?
+
+    open var height: Float {
+        get {
+            let __value = JNIField.GetFloatField( fieldName: "height", fieldType: "F", fieldCache: &Ellipse2D_Float.height_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( f: newValue )
+            JNIField.SetFloatField( fieldName: "height", fieldType: "F", fieldCache: &Ellipse2D_Float.height_FieldID, object: javaObject, value: __value.f, locals: &__locals )
+        }
+    }
+
+    /// public float java.awt.geom.Ellipse2D$Float.width
+
+    private static var width_FieldID: jfieldID?
+
+    open var width: Float {
+        get {
+            let __value = JNIField.GetFloatField( fieldName: "width", fieldType: "F", fieldCache: &Ellipse2D_Float.width_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( f: newValue )
+            JNIField.SetFloatField( fieldName: "width", fieldType: "F", fieldCache: &Ellipse2D_Float.width_FieldID, object: javaObject, value: __value.f, locals: &__locals )
+        }
+    }
+
     /// public float java.awt.geom.Ellipse2D$Float.x
 
     private static var x_FieldID: jfieldID?
 
     open var x: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "x", fieldType: "F", fieldCache: &Ellipse2D_Float.x_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "x", fieldType: "F", fieldCache: &Ellipse2D_Float.x_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "x", fieldType: "F", fieldCache: &Ellipse2D_Float.x_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
@@ -43,60 +76,23 @@ open class Ellipse2D_Float: Ellipse2D, /* java.io.Serializable */ UnclassedProto
 
     open var y: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "y", fieldType: "F", fieldCache: &Ellipse2D_Float.y_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "y", fieldType: "F", fieldCache: &Ellipse2D_Float.y_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "y", fieldType: "F", fieldCache: &Ellipse2D_Float.y_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
-
-    /// public float java.awt.geom.Ellipse2D$Float.width
-
-    private static var width_FieldID: jfieldID?
-
-    open var width: Float {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "width", fieldType: "F", fieldCache: &Ellipse2D_Float.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetFloatField( fieldName: "width", fieldType: "F", fieldCache: &Ellipse2D_Float.width_FieldID, object: javaObject, value: __value.f, locals: &__locals )
-        }
-    }
-
-    /// public float java.awt.geom.Ellipse2D$Float.height
-
-    private static var height_FieldID: jfieldID?
-
-    open var height: Float {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "height", fieldType: "F", fieldCache: &Ellipse2D_Float.height_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetFloatField( fieldName: "height", fieldType: "F", fieldCache: &Ellipse2D_Float.height_FieldID, object: javaObject, value: __value.f, locals: &__locals )
-        }
-    }
-
-    /// private static final long java.awt.geom.Ellipse2D$Float.serialVersionUID
 
     /// public java.awt.geom.Ellipse2D$Float()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Ellipse2D$Float", classCache: &Ellipse2D_Float.Ellipse2D_FloatJNIClass, methodSig: "()V", methodCache: &Ellipse2D_Float.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -107,12 +103,12 @@ open class Ellipse2D_Float: Ellipse2D, /* java.io.Serializable */ UnclassedProto
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( x: Float, y: Float, w: Float, h: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( f: y )
+        __args[2] = jvalue( f: w )
+        __args[3] = jvalue( f: h )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Ellipse2D$Float", classCache: &Ellipse2D_Float.Ellipse2D_FloatJNIClass, methodSig: "(FFFF)V", methodCache: &Ellipse2D_Float.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -122,37 +118,51 @@ open class Ellipse2D_Float: Ellipse2D, /* java.io.Serializable */ UnclassedProto
         self.init( x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public boolean java.awt.geom.Ellipse2D$Float.isEmpty()
-
     /// public java.awt.geom.Rectangle2D java.awt.geom.Ellipse2D$Float.getBounds2D()
 
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Ellipse2D$Float.getHeight()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Ellipse2D$Float.getWidth()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Ellipse2D$Float.getX()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Ellipse2D$Float.getY()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean java.awt.geom.Ellipse2D$Float.isEmpty()
+
+    // Skipping method: false true false false false 
+
     /// public void java.awt.geom.Ellipse2D$Float.setFrame(double,double,double,double)
+
+    // Skipping method: false true false false false 
 
     /// public void java.awt.geom.Ellipse2D$Float.setFrame(float,float,float,float)
 
     private static var setFrame_MethodID_3: jmethodID?
 
     open func setFrame( x: Float, y: Float, w: Float, h: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( f: y )
+        __args[2] = jvalue( f: w )
+        __args[3] = jvalue( f: h )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrame", methodSig: "(FFFF)V", methodCache: &Ellipse2D_Float.setFrame_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func setFrame( _ _x: Float, _ _y: Float, _ _w: Float, _ _h: Float ) {
         setFrame( x: _x, y: _y, w: _w, h: _h )
     }
-
-    /// public double java.awt.geom.Ellipse2D$Float.getX()
-
-    /// public double java.awt.geom.Ellipse2D$Float.getY()
-
-    /// public double java.awt.geom.Ellipse2D$Float.getWidth()
-
-    /// public double java.awt.geom.Ellipse2D$Float.getHeight()
 
 }
 

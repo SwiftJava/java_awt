@@ -16,59 +16,65 @@ open class ColorConvertOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     private static var ColorConvertOpJNIClass: jclass?
 
-    /// java.awt.color.ICC_Profile[] java.awt.image.ColorConvertOp.profileList
-
     /// java.awt.color.ColorSpace[] java.awt.image.ColorConvertOp.CSList
 
-    /// sun.java2d.cmm.ColorTransform java.awt.image.ColorConvertOp.thisTransform
-
-    /// sun.java2d.cmm.ColorTransform java.awt.image.ColorConvertOp.thisRasterTransform
-
-    /// java.awt.color.ICC_Profile java.awt.image.ColorConvertOp.thisSrcProfile
-
-    /// java.awt.color.ICC_Profile java.awt.image.ColorConvertOp.thisDestProfile
-
-    /// java.awt.RenderingHints java.awt.image.ColorConvertOp.hints
-
-    /// boolean java.awt.image.ColorConvertOp.gotProfiles
-
-    /// float[] java.awt.image.ColorConvertOp.srcMinVals
-
-    /// float[] java.awt.image.ColorConvertOp.srcMaxVals
-
-    /// float[] java.awt.image.ColorConvertOp.dstMinVals
+    // Skipping field: true false false false false false 
 
     /// float[] java.awt.image.ColorConvertOp.dstMaxVals
 
-    /// public java.awt.image.ColorConvertOp(java.awt.color.ICC_Profile[],java.awt.RenderingHints)
+    // Skipping field: true false false false false false 
 
-    private static var new_MethodID_1: jmethodID?
+    /// float[] java.awt.image.ColorConvertOp.dstMinVals
 
-    public convenience init( arg0: [ICC_Profile]?, arg1: RenderingHints? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/ColorConvertOp", classCache: &ColorConvertOp.ColorConvertOpJNIClass, methodSig: "([Ljava/awt/color/ICC_Profile;Ljava/awt/RenderingHints;)V", methodCache: &ColorConvertOp.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
+    // Skipping field: true false false false false false 
 
-    public convenience init( _ _arg0: [ICC_Profile]?, _ _arg1: RenderingHints? ) {
-        self.init( arg0: _arg0, arg1: _arg1 )
-    }
+    /// boolean java.awt.image.ColorConvertOp.gotProfiles
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.RenderingHints java.awt.image.ColorConvertOp.hints
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.color.ICC_Profile[] java.awt.image.ColorConvertOp.profileList
+
+    // Skipping field: true false false false false false 
+
+    /// float[] java.awt.image.ColorConvertOp.srcMaxVals
+
+    // Skipping field: true false false false false false 
+
+    /// float[] java.awt.image.ColorConvertOp.srcMinVals
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.color.ICC_Profile java.awt.image.ColorConvertOp.thisDestProfile
+
+    // Skipping field: true false false false false false 
+
+    /// sun.java2d.cmm.ColorTransform java.awt.image.ColorConvertOp.thisRasterTransform
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.color.ICC_Profile java.awt.image.ColorConvertOp.thisSrcProfile
+
+    // Skipping field: true false false false false false 
+
+    /// sun.java2d.cmm.ColorTransform java.awt.image.ColorConvertOp.thisTransform
+
+    // Skipping field: true false false false false false 
 
     /// public java.awt.image.ColorConvertOp(java.awt.color.ColorSpace,java.awt.color.ColorSpace,java.awt.RenderingHints)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( arg0: ColorSpace?, arg1: ColorSpace?, arg2: RenderingHints? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/ColorConvertOp", classCache: &ColorConvertOp.ColorConvertOpJNIClass, methodSig: "(Ljava/awt/color/ColorSpace;Ljava/awt/color/ColorSpace;Ljava/awt/RenderingHints;)V", methodCache: &ColorConvertOp.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/ColorConvertOp", classCache: &ColorConvertOp.ColorConvertOpJNIClass, methodSig: "(Ljava/awt/color/ColorSpace;Ljava/awt/color/ColorSpace;Ljava/awt/RenderingHints;)V", methodCache: &ColorConvertOp.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -79,14 +85,14 @@ open class ColorConvertOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     /// public java.awt.image.ColorConvertOp(java.awt.color.ColorSpace,java.awt.RenderingHints)
 
-    private static var new_MethodID_3: jmethodID?
+    private static var new_MethodID_2: jmethodID?
 
     public convenience init( arg0: ColorSpace?, arg1: RenderingHints? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/ColorConvertOp", classCache: &ColorConvertOp.ColorConvertOpJNIClass, methodSig: "(Ljava/awt/color/ColorSpace;Ljava/awt/RenderingHints;)V", methodCache: &ColorConvertOp.new_MethodID_3, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/ColorConvertOp", classCache: &ColorConvertOp.ColorConvertOpJNIClass, methodSig: "(Ljava/awt/color/ColorSpace;Ljava/awt/RenderingHints;)V", methodCache: &ColorConvertOp.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -97,13 +103,13 @@ open class ColorConvertOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     /// public java.awt.image.ColorConvertOp(java.awt.RenderingHints)
 
-    private static var new_MethodID_4: jmethodID?
+    private static var new_MethodID_3: jmethodID?
 
     public convenience init( arg0: RenderingHints? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/ColorConvertOp", classCache: &ColorConvertOp.ColorConvertOpJNIClass, methodSig: "(Ljava/awt/RenderingHints;)V", methodCache: &ColorConvertOp.new_MethodID_4, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/ColorConvertOp", classCache: &ColorConvertOp.ColorConvertOpJNIClass, methodSig: "(Ljava/awt/RenderingHints;)V", methodCache: &ColorConvertOp.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -112,103 +118,36 @@ open class ColorConvertOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         self.init( arg0: _arg0 )
     }
 
-    /// public final java.awt.image.WritableRaster java.awt.image.ColorConvertOp.filter(java.awt.image.Raster,java.awt.image.WritableRaster)
+    /// public java.awt.image.ColorConvertOp(java.awt.color.ICC_Profile[],java.awt.RenderingHints)
 
-    private static var filter_MethodID_5: jmethodID?
+    private static var new_MethodID_4: jmethodID?
 
-    open func filter( src: Raster?, dest: WritableRaster? ) -> WritableRaster! {
+    public convenience init( arg0: [ICC_Profile]?, arg1: RenderingHints? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &ColorConvertOp.filter_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, mapClass: "java/awt/RenderingHints", locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/ColorConvertOp", classCache: &ColorConvertOp.ColorConvertOpJNIClass, methodSig: "([Ljava/awt/color/ICC_Profile;Ljava/awt/RenderingHints;)V", methodCache: &ColorConvertOp.new_MethodID_4, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
     }
 
-    open func filter( _ _src: Raster?, _ _dest: WritableRaster? ) -> WritableRaster! {
-        return filter( src: _src, dest: _dest )
+    public convenience init( _ _arg0: [ICC_Profile]?, _ _arg1: RenderingHints? ) {
+        self.init( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public final java.awt.image.BufferedImage java.awt.image.ColorConvertOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
-
-    private static var filter_MethodID_6: jmethodID?
-
-    open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &ColorConvertOp.filter_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BufferedImage( javaObject: __return ) : nil
-    }
-
-    open func filter( _ _src: BufferedImage?, _ _dest: BufferedImage? ) -> BufferedImage! {
-        return filter( src: _src, dest: _dest )
-    }
-
-    /// public final java.awt.geom.Rectangle2D java.awt.image.ColorConvertOp.getBounds2D(java.awt.image.Raster)
-
-    private static var getBounds2D_MethodID_7: jmethodID?
-
-    open func getBounds2D( src: Raster? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &ColorConvertOp.getBounds2D_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-    open func getBounds2D( _ _src: Raster? ) -> Rectangle2D! {
-        return getBounds2D( src: _src )
-    }
-
-    /// public final java.awt.geom.Rectangle2D java.awt.image.ColorConvertOp.getBounds2D(java.awt.image.BufferedImage)
-
-    private static var getBounds2D_MethodID_8: jmethodID?
-
-    open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &ColorConvertOp.getBounds2D_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-    open func getBounds2D( _ _src: BufferedImage? ) -> Rectangle2D! {
-        return getBounds2D( src: _src )
-    }
-
-    /// private int java.awt.image.ColorConvertOp.getRenderingIntent(java.awt.color.ICC_Profile)
-
-    /// private void java.awt.image.ColorConvertOp.setMinMax(int,int,float[],float[])
-
-    /// public final java.awt.RenderingHints java.awt.image.ColorConvertOp.getRenderingHints()
-
-    private static var getRenderingHints_MethodID_9: jmethodID?
-
-    open func getRenderingHints() -> RenderingHints! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &ColorConvertOp.getRenderingHints_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: RenderingHints(), from: __return )
-    }
-
+    /// private final java.awt.image.BufferedImage java.awt.image.ColorConvertOp.ICCBIFilter(java.awt.image.BufferedImage,java.awt.color.ColorSpace,java.awt.image.BufferedImage,java.awt.color.ColorSpace)
 
     /// public java.awt.image.BufferedImage java.awt.image.ColorConvertOp.createCompatibleDestImage(java.awt.image.BufferedImage,java.awt.image.ColorModel)
 
-    private static var createCompatibleDestImage_MethodID_10: jmethodID?
+    private static var createCompatibleDestImage_MethodID_5: jmethodID?
 
     open func createCompatibleDestImage( src: BufferedImage?, destCM: ColorModel? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
         __args[1] = JNIType.toJava( value: destCM, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &ColorConvertOp.createCompatibleDestImage_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &ColorConvertOp.createCompatibleDestImage_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImage( javaObject: __return ) : nil
     }
@@ -221,13 +160,13 @@ open class ColorConvertOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     /// public java.awt.image.WritableRaster java.awt.image.ColorConvertOp.createCompatibleDestRaster(java.awt.image.Raster)
 
-    private static var createCompatibleDestRaster_MethodID_11: jmethodID?
+    private static var createCompatibleDestRaster_MethodID_6: jmethodID?
 
     open func createCompatibleDestRaster( src: Raster? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestRaster", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;", methodCache: &ColorConvertOp.createCompatibleDestRaster_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestRaster", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;", methodCache: &ColorConvertOp.createCompatibleDestRaster_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -236,13 +175,99 @@ open class ColorConvertOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         return createCompatibleDestRaster( src: _src )
     }
 
+    /// public final java.awt.image.BufferedImage java.awt.image.ColorConvertOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
+
+    private static var filter_MethodID_7: jmethodID?
+
+    open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &ColorConvertOp.filter_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BufferedImage( javaObject: __return ) : nil
+    }
+
+    open func filter( _ _src: BufferedImage?, _ _dest: BufferedImage? ) -> BufferedImage! {
+        return filter( src: _src, dest: _dest )
+    }
+
+    /// public final java.awt.image.WritableRaster java.awt.image.ColorConvertOp.filter(java.awt.image.Raster,java.awt.image.WritableRaster)
+
+    private static var filter_MethodID_8: jmethodID?
+
+    open func filter( src: Raster?, dest: WritableRaster? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &ColorConvertOp.filter_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open func filter( _ _src: Raster?, _ _dest: WritableRaster? ) -> WritableRaster! {
+        return filter( src: _src, dest: _dest )
+    }
+
+    /// public final java.awt.geom.Rectangle2D java.awt.image.ColorConvertOp.getBounds2D(java.awt.image.BufferedImage)
+
+    private static var getBounds2D_MethodID_9: jmethodID?
+
+    open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &ColorConvertOp.getBounds2D_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getBounds2D( _ _src: BufferedImage? ) -> Rectangle2D! {
+        return getBounds2D( src: _src )
+    }
+
+    /// public final java.awt.geom.Rectangle2D java.awt.image.ColorConvertOp.getBounds2D(java.awt.image.Raster)
+
+    private static var getBounds2D_MethodID_10: jmethodID?
+
+    open func getBounds2D( src: Raster? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &ColorConvertOp.getBounds2D_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getBounds2D( _ _src: Raster? ) -> Rectangle2D! {
+        return getBounds2D( src: _src )
+    }
+
+    /// public final java.awt.color.ICC_Profile[] java.awt.image.ColorConvertOp.getICC_Profiles()
+
+    private static var getICC_Profiles_MethodID_11: jmethodID?
+
+    open func getICC_Profiles() -> [ICC_Profile]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getICC_Profiles", methodSig: "()[Ljava/awt/color/ICC_Profile;", methodCache: &ColorConvertOp.getICC_Profiles_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ICC_Profile].self, from: __return )
+    }
+
+
+    /// private void java.awt.image.ColorConvertOp.getMinMaxValsFromColorSpaces(java.awt.color.ColorSpace,java.awt.color.ColorSpace)
+
+    /// private void java.awt.image.ColorConvertOp.getMinMaxValsFromProfiles(java.awt.color.ICC_Profile,java.awt.color.ICC_Profile)
+
     /// public final java.awt.geom.Point2D java.awt.image.ColorConvertOp.getPoint2D(java.awt.geom.Point2D,java.awt.geom.Point2D)
 
     private static var getPoint2D_MethodID_12: jmethodID?
 
     open func getPoint2D( srcPt: Point2D?, dstPt: Point2D? ) -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: srcPt, locals: &__locals )
         __args[1] = JNIType.toJava( value: dstPt, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &ColorConvertOp.getPoint2D_MethodID_12, args: &__args, locals: &__locals )
@@ -254,29 +279,27 @@ open class ColorConvertOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         return getPoint2D( srcPt: _srcPt, dstPt: _dstPt )
     }
 
-    /// public final java.awt.color.ICC_Profile[] java.awt.image.ColorConvertOp.getICC_Profiles()
+    /// public final java.awt.RenderingHints java.awt.image.ColorConvertOp.getRenderingHints()
 
-    private static var getICC_Profiles_MethodID_13: jmethodID?
+    private static var getRenderingHints_MethodID_13: jmethodID?
 
-    open func getICC_Profiles() -> [ICC_Profile]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getRenderingHints() -> RenderingHints! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getICC_Profiles", methodSig: "()[Ljava/awt/color/ICC_Profile;", methodCache: &ColorConvertOp.getICC_Profiles_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ICC_Profile](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &ColorConvertOp.getRenderingHints_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: RenderingHints.self, from: __return )
     }
 
 
-    /// private final java.awt.image.BufferedImage java.awt.image.ColorConvertOp.ICCBIFilter(java.awt.image.BufferedImage,java.awt.color.ColorSpace,java.awt.image.BufferedImage,java.awt.color.ColorSpace)
-
-    /// private void java.awt.image.ColorConvertOp.updateBITransform(java.awt.color.ICC_Profile,java.awt.color.ICC_Profile)
+    /// private int java.awt.image.ColorConvertOp.getRenderingIntent(java.awt.color.ICC_Profile)
 
     /// private final java.awt.image.BufferedImage java.awt.image.ColorConvertOp.nonICCBIFilter(java.awt.image.BufferedImage,java.awt.color.ColorSpace,java.awt.image.BufferedImage,java.awt.color.ColorSpace)
 
     /// private final java.awt.image.WritableRaster java.awt.image.ColorConvertOp.nonICCRasterFilter(java.awt.image.Raster,java.awt.image.WritableRaster)
 
-    /// private void java.awt.image.ColorConvertOp.getMinMaxValsFromProfiles(java.awt.color.ICC_Profile,java.awt.color.ICC_Profile)
+    /// private void java.awt.image.ColorConvertOp.setMinMax(int,int,float[],float[])
 
-    /// private void java.awt.image.ColorConvertOp.getMinMaxValsFromColorSpaces(java.awt.color.ColorSpace,java.awt.color.ColorSpace)
+    /// private void java.awt.image.ColorConvertOp.updateBITransform(java.awt.color.ICC_Profile,java.awt.color.ICC_Profile)
 
 }
 

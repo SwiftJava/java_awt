@@ -21,89 +21,79 @@ open class ContainerAdapter: java_swift.JavaObject, ContainerListener {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/event/ContainerAdapter", classCache: &ContainerAdapter.ContainerAdapterJNIClass, methodSig: "()V", methodCache: &ContainerAdapter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void java.awt.event.ContainerAdapter.componentRemoved(java.awt.event.ContainerEvent)
-
-    private static var componentRemoved_MethodID_2: jmethodID?
-
-    open func componentRemoved( e: ContainerEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentRemoved", methodSig: "(Ljava/awt/event/ContainerEvent;)V", methodCache: &ContainerAdapter.componentRemoved_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func componentRemoved( _ _e: ContainerEvent? ) {
-        componentRemoved( e: _e )
-    }
-
     /// public void java.awt.event.ContainerAdapter.componentAdded(java.awt.event.ContainerEvent)
 
-    private static var componentAdded_MethodID_3: jmethodID?
+    private static var componentAdded_MethodID_2: jmethodID?
 
     open func componentAdded( e: ContainerEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentAdded", methodSig: "(Ljava/awt/event/ContainerEvent;)V", methodCache: &ContainerAdapter.componentAdded_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentAdded", methodSig: "(Ljava/awt/event/ContainerEvent;)V", methodCache: &ContainerAdapter.componentAdded_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func componentAdded( _ _e: ContainerEvent? ) {
         componentAdded( e: _e )
     }
 
+    /// public void java.awt.event.ContainerAdapter.componentRemoved(java.awt.event.ContainerEvent)
+
+    private static var componentRemoved_MethodID_3: jmethodID?
+
+    open func componentRemoved( e: ContainerEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentRemoved", methodSig: "(Ljava/awt/event/ContainerEvent;)V", methodCache: &ContainerAdapter.componentRemoved_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func componentRemoved( _ _e: ContainerEvent? ) {
+        componentRemoved( e: _e )
+    }
+
 }
 
-private typealias ContainerAdapter_componentRemoved_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias ContainerAdapter_componentAdded_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func ContainerAdapter_componentRemoved_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    ContainerAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentRemoved( e: e != nil ? ContainerEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias ContainerAdapter_componentAdded_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func ContainerAdapter_componentAdded_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
+private func ContainerAdapter_componentAdded_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
     ContainerAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentAdded( e: e != nil ? ContainerEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias ContainerAdapter_equals_5_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
+private typealias ContainerAdapter_componentRemoved_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func ContainerAdapter_equals_5( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
-    JNI.inNative = true;
+private func ContainerAdapter_componentRemoved_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    ContainerAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentRemoved( e: e != nil ? ContainerEvent( javaObject: e ) : nil )
+}
+
+private typealias ContainerAdapter_equals_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
+
+private func ContainerAdapter_equals_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
     let __return = ContainerAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).equals( arg0: arg0 != nil ? java_swift.JavaObject( javaObject: arg0 ) : nil )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).z, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( z: jboolean(__return ? JNI_TRUE : JNI_FALSE) ).z, &__locals, removeLast: true )
 }
 
-private typealias ContainerAdapter_toString_6_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+private typealias ContainerAdapter_hashCode_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
 
-private func ContainerAdapter_toString_6( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
-    JNI.inNative = true;
-    let __return = ContainerAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).l, &locals, removeLast: true )
-}
-
-private typealias ContainerAdapter_hashCode_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
-
-private func ContainerAdapter_hashCode_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
-    JNI.inNative = true;
+private func ContainerAdapter_hashCode_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
     let __return = ContainerAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).hashCode( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).i, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( i: jint(__return) ).i, &__locals, removeLast: true )
+}
+
+private typealias ContainerAdapter_toString_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+
+private func ContainerAdapter_toString_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
+    let __return = ContainerAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
+    var __locals = [jobject]()
+    return JNI.check( JNIType.toJava( value: __return, locals: &__locals ).l, &__locals, removeLast: true )
 }
 
 fileprivate class ContainerAdapterLocal_: JNIObjectProxy<ContainerAdapter> {
@@ -111,20 +101,20 @@ fileprivate class ContainerAdapterLocal_: JNIObjectProxy<ContainerAdapter> {
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let ContainerAdapter_componentRemoved_0_thunk: ContainerAdapter_componentRemoved_0_type = ContainerAdapter_componentRemoved_0
-        natives.append( JNINativeMethod( name: strdup("__componentRemoved"), signature: strdup("(JLjava/awt/event/ContainerEvent;)V"), fnPtr: unsafeBitCast( ContainerAdapter_componentRemoved_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ContainerAdapter_componentAdded_0_thunk: ContainerAdapter_componentAdded_0_type = ContainerAdapter_componentAdded_0
+        natives.append( JNINativeMethod( name: strdup("__componentAdded"), signature: strdup("(JLjava/awt/event/ContainerEvent;)V"), fnPtr: unsafeBitCast( ContainerAdapter_componentAdded_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let ContainerAdapter_componentAdded_1_thunk: ContainerAdapter_componentAdded_1_type = ContainerAdapter_componentAdded_1
-        natives.append( JNINativeMethod( name: strdup("__componentAdded"), signature: strdup("(JLjava/awt/event/ContainerEvent;)V"), fnPtr: unsafeBitCast( ContainerAdapter_componentAdded_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ContainerAdapter_componentRemoved_1_thunk: ContainerAdapter_componentRemoved_1_type = ContainerAdapter_componentRemoved_1
+        natives.append( JNINativeMethod( name: strdup("__componentRemoved"), signature: strdup("(JLjava/awt/event/ContainerEvent;)V"), fnPtr: unsafeBitCast( ContainerAdapter_componentRemoved_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let ContainerAdapter_equals_5_thunk: ContainerAdapter_equals_5_type = ContainerAdapter_equals_5
-        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( ContainerAdapter_equals_5_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ContainerAdapter_equals_2_thunk: ContainerAdapter_equals_2_type = ContainerAdapter_equals_2
+        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( ContainerAdapter_equals_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let ContainerAdapter_toString_6_thunk: ContainerAdapter_toString_6_type = ContainerAdapter_toString_6
-        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( ContainerAdapter_toString_6_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ContainerAdapter_hashCode_4_thunk: ContainerAdapter_hashCode_4_type = ContainerAdapter_hashCode_4
+        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( ContainerAdapter_hashCode_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let ContainerAdapter_hashCode_7_thunk: ContainerAdapter_hashCode_7_type = ContainerAdapter_hashCode_7
-        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( ContainerAdapter_hashCode_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ContainerAdapter_toString_7_thunk: ContainerAdapter_toString_7_type = ContainerAdapter_toString_7
+        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( ContainerAdapter_toString_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -167,8 +157,8 @@ open class ContainerAdapterBase: ContainerAdapter {
     private static var new_MethodID_4: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
 
         self.init( javaObject: nil )
         __args[0] = __local!.swiftValue()

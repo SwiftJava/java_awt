@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.PageAttributes$PrintQualityType ///
 
-open class PageAttributes_PrintQualityType: /* java.awt.AttributeValue */ UnclassedObject {
+open class PageAttributes_PrintQualityType: /* class java.awt.AttributeValue */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,13 +16,17 @@ open class PageAttributes_PrintQualityType: /* java.awt.AttributeValue */ Unclas
 
     private static var PageAttributes_PrintQualityTypeJNIClass: jclass?
 
-    /// private static final int java.awt.PageAttributes$PrintQualityType.I_HIGH
+    /// public static final java.awt.PageAttributes$PrintQualityType java.awt.PageAttributes$PrintQualityType.DRAFT
 
-    /// private static final int java.awt.PageAttributes$PrintQualityType.I_NORMAL
+    private static var DRAFT_FieldID: jfieldID?
 
-    /// private static final int java.awt.PageAttributes$PrintQualityType.I_DRAFT
-
-    /// private static final java.lang.String[] java.awt.PageAttributes$PrintQualityType.NAMES
+    open static var DRAFT: PageAttributes_PrintQualityType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "DRAFT", fieldType: "Ljava/awt/PageAttributes$PrintQualityType;", fieldCache: &DRAFT_FieldID, className: "java/awt/PageAttributes$PrintQualityType", classCache: &PageAttributes_PrintQualityTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_PrintQualityType( javaObject: __value ) : nil
+        }
+    }
 
     /// public static final java.awt.PageAttributes$PrintQualityType java.awt.PageAttributes$PrintQualityType.HIGH
 
@@ -31,9 +35,18 @@ open class PageAttributes_PrintQualityType: /* java.awt.AttributeValue */ Unclas
     open static var HIGH: PageAttributes_PrintQualityType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HIGH", fieldType: "Ljava/awt/PageAttributes$PrintQualityType;", fieldCache: &HIGH_FieldID, className: "java/awt/PageAttributes$PrintQualityType", classCache: &PageAttributes_PrintQualityTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_PrintQualityType( javaObject: __value ) : nil
         }
     }
+
+    /// private static final int java.awt.PageAttributes$PrintQualityType.I_DRAFT
+
+    /// private static final int java.awt.PageAttributes$PrintQualityType.I_HIGH
+
+    /// private static final int java.awt.PageAttributes$PrintQualityType.I_NORMAL
+
+    /// private static final java.lang.String[] java.awt.PageAttributes$PrintQualityType.NAMES
 
     /// public static final java.awt.PageAttributes$PrintQualityType java.awt.PageAttributes$PrintQualityType.NORMAL
 
@@ -42,32 +55,43 @@ open class PageAttributes_PrintQualityType: /* java.awt.AttributeValue */ Unclas
     open static var NORMAL: PageAttributes_PrintQualityType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NORMAL", fieldType: "Ljava/awt/PageAttributes$PrintQualityType;", fieldCache: &NORMAL_FieldID, className: "java/awt/PageAttributes$PrintQualityType", classCache: &PageAttributes_PrintQualityTypeJNIClass )
-            return __value != nil ? PageAttributes_PrintQualityType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$PrintQualityType java.awt.PageAttributes$PrintQualityType.DRAFT
-
-    private static var DRAFT_FieldID: jfieldID?
-
-    open static var DRAFT: PageAttributes_PrintQualityType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "DRAFT", fieldType: "Ljava/awt/PageAttributes$PrintQualityType;", fieldCache: &DRAFT_FieldID, className: "java/awt/PageAttributes$PrintQualityType", classCache: &PageAttributes_PrintQualityTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_PrintQualityType( javaObject: __value ) : nil
         }
     }
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AttributeValue.log
 
-    /// private final int java.awt.AttributeValue.value
-
     /// private final java.lang.String[] java.awt.AttributeValue.names
+
+    /// private final int java.awt.AttributeValue.value
 
     /// private java.awt.PageAttributes$PrintQualityType(int)
 
+    /// public int java.awt.PageAttributes$PrintQualityType.hashCode()
+
+    private static var hashCode_MethodID_1: jmethodID?
+
+    override open func hashCode() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "hashCode", methodSig: "()I", methodCache: &PageAttributes_PrintQualityType.hashCode_MethodID_1, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public java.lang.String java.awt.PageAttributes$PrintQualityType.toString()
 
-    /// public int java.awt.PageAttributes$PrintQualityType.hashCode()
+    private static var toString_MethodID_2: jmethodID?
+
+    override open func toString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toString", methodSig: "()Ljava/lang/String;", methodCache: &PageAttributes_PrintQualityType.toString_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
 }
 

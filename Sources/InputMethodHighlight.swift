@@ -16,17 +16,6 @@ open class InputMethodHighlight: java_swift.JavaObject {
 
     private static var InputMethodHighlightJNIClass: jclass?
 
-    /// public static final int java.awt.im.InputMethodHighlight.RAW_TEXT
-
-    private static var RAW_TEXT_FieldID: jfieldID?
-
-    open static var RAW_TEXT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "RAW_TEXT", fieldType: "I", fieldCache: &RAW_TEXT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.im.InputMethodHighlight.CONVERTED_TEXT
 
     private static var CONVERTED_TEXT_FieldID: jfieldID?
@@ -34,17 +23,29 @@ open class InputMethodHighlight: java_swift.JavaObject {
     open static var CONVERTED_TEXT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONVERTED_TEXT", fieldType: "I", fieldCache: &CONVERTED_TEXT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final java.awt.im.InputMethodHighlight java.awt.im.InputMethodHighlight.UNSELECTED_RAW_TEXT_HIGHLIGHT
+    /// public static final int java.awt.im.InputMethodHighlight.RAW_TEXT
 
-    private static var UNSELECTED_RAW_TEXT_HIGHLIGHT_FieldID: jfieldID?
+    private static var RAW_TEXT_FieldID: jfieldID?
 
-    open static var UNSELECTED_RAW_TEXT_HIGHLIGHT: InputMethodHighlight! {
+    open static var RAW_TEXT: Int {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "UNSELECTED_RAW_TEXT_HIGHLIGHT", fieldType: "Ljava/awt/im/InputMethodHighlight;", fieldCache: &UNSELECTED_RAW_TEXT_HIGHLIGHT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
+            let __value = JNIField.GetStaticIntField( fieldName: "RAW_TEXT", fieldType: "I", fieldCache: &RAW_TEXT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final java.awt.im.InputMethodHighlight java.awt.im.InputMethodHighlight.SELECTED_CONVERTED_TEXT_HIGHLIGHT
+
+    private static var SELECTED_CONVERTED_TEXT_HIGHLIGHT_FieldID: jfieldID?
+
+    open static var SELECTED_CONVERTED_TEXT_HIGHLIGHT: InputMethodHighlight! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_CONVERTED_TEXT_HIGHLIGHT", fieldType: "Ljava/awt/im/InputMethodHighlight;", fieldCache: &SELECTED_CONVERTED_TEXT_HIGHLIGHT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? InputMethodHighlight( javaObject: __value ) : nil
         }
     }
@@ -56,6 +57,7 @@ open class InputMethodHighlight: java_swift.JavaObject {
     open static var SELECTED_RAW_TEXT_HIGHLIGHT: InputMethodHighlight! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_RAW_TEXT_HIGHLIGHT", fieldType: "Ljava/awt/im/InputMethodHighlight;", fieldCache: &SELECTED_RAW_TEXT_HIGHLIGHT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? InputMethodHighlight( javaObject: __value ) : nil
         }
     }
@@ -67,17 +69,19 @@ open class InputMethodHighlight: java_swift.JavaObject {
     open static var UNSELECTED_CONVERTED_TEXT_HIGHLIGHT: InputMethodHighlight! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNSELECTED_CONVERTED_TEXT_HIGHLIGHT", fieldType: "Ljava/awt/im/InputMethodHighlight;", fieldCache: &UNSELECTED_CONVERTED_TEXT_HIGHLIGHT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? InputMethodHighlight( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.im.InputMethodHighlight java.awt.im.InputMethodHighlight.SELECTED_CONVERTED_TEXT_HIGHLIGHT
+    /// public static final java.awt.im.InputMethodHighlight java.awt.im.InputMethodHighlight.UNSELECTED_RAW_TEXT_HIGHLIGHT
 
-    private static var SELECTED_CONVERTED_TEXT_HIGHLIGHT_FieldID: jfieldID?
+    private static var UNSELECTED_RAW_TEXT_HIGHLIGHT_FieldID: jfieldID?
 
-    open static var SELECTED_CONVERTED_TEXT_HIGHLIGHT: InputMethodHighlight! {
+    open static var UNSELECTED_RAW_TEXT_HIGHLIGHT: InputMethodHighlight! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_CONVERTED_TEXT_HIGHLIGHT", fieldType: "Ljava/awt/im/InputMethodHighlight;", fieldCache: &SELECTED_CONVERTED_TEXT_HIGHLIGHT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "UNSELECTED_RAW_TEXT_HIGHLIGHT", fieldType: "Ljava/awt/im/InputMethodHighlight;", fieldCache: &UNSELECTED_RAW_TEXT_HIGHLIGHT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? InputMethodHighlight( javaObject: __value ) : nil
         }
     }
@@ -86,28 +90,26 @@ open class InputMethodHighlight: java_swift.JavaObject {
 
     /// private int java.awt.im.InputMethodHighlight.state
 
-    /// private int java.awt.im.InputMethodHighlight.variation
-
     /// private java.util.Map java.awt.im.InputMethodHighlight.style
 
-    /// public java.awt.im.InputMethodHighlight(boolean,int,int,java.util.Map)
+    /// private int java.awt.im.InputMethodHighlight.variation
+
+    /// public java.awt.im.InputMethodHighlight(boolean,int)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( selected: Bool, state: Int, variation: Int, style: java_swift.JavaMap? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init( selected: Bool, state: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: selected, locals: &__locals )
-        __args[1] = JNIType.toJava( value: state, locals: &__locals )
-        __args[2] = JNIType.toJava( value: variation, locals: &__locals )
-        __args[3] = JNIType.toJava( value: style, mapClass: "java/util/Map", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlight.InputMethodHighlightJNIClass, methodSig: "(ZIILjava/util/Map;)V", methodCache: &InputMethodHighlight.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( z: jboolean(selected ? JNI_TRUE : JNI_FALSE) )
+        __args[1] = jvalue( i: jint(state) )
+        let __object = JNIMethod.NewObject( className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlight.InputMethodHighlightJNIClass, methodSig: "(ZI)V", methodCache: &InputMethodHighlight.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _selected: Bool, _ _state: Int, _ _variation: Int, _ _style: java_swift.JavaMap? ) {
-        self.init( selected: _selected, state: _state, variation: _variation, style: _style )
+    public convenience init( _ _selected: Bool, _ _state: Int ) {
+        self.init( selected: _selected, state: _state )
     }
 
     /// public java.awt.im.InputMethodHighlight(boolean,int,int)
@@ -115,11 +117,11 @@ open class InputMethodHighlight: java_swift.JavaObject {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( selected: Bool, state: Int, variation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: selected, locals: &__locals )
-        __args[1] = JNIType.toJava( value: state, locals: &__locals )
-        __args[2] = JNIType.toJava( value: variation, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( z: jboolean(selected ? JNI_TRUE : JNI_FALSE) )
+        __args[1] = jvalue( i: jint(state) )
+        __args[2] = jvalue( i: jint(variation) )
         let __object = JNIMethod.NewObject( className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlight.InputMethodHighlightJNIClass, methodSig: "(ZII)V", methodCache: &InputMethodHighlight.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -129,22 +131,24 @@ open class InputMethodHighlight: java_swift.JavaObject {
         self.init( selected: _selected, state: _state, variation: _variation )
     }
 
-    /// public java.awt.im.InputMethodHighlight(boolean,int)
+    /// public java.awt.im.InputMethodHighlight(boolean,int,int,java.util.Map)
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init( selected: Bool, state: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( selected: Bool, state: Int, variation: Int, style: java_swift.JavaMap? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: selected, locals: &__locals )
-        __args[1] = JNIType.toJava( value: state, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlight.InputMethodHighlightJNIClass, methodSig: "(ZI)V", methodCache: &InputMethodHighlight.new_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( z: jboolean(selected ? JNI_TRUE : JNI_FALSE) )
+        __args[1] = jvalue( i: jint(state) )
+        __args[2] = jvalue( i: jint(variation) )
+        __args[3] = JNIType.toJava( value: style, mapClass: "java/util/Map", locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlight.InputMethodHighlightJNIClass, methodSig: "(ZIILjava/util/Map;)V", methodCache: &InputMethodHighlight.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _selected: Bool, _ _state: Int ) {
-        self.init( selected: _selected, state: _state )
+    public convenience init( _ _selected: Bool, _ _state: Int, _ _variation: Int, _ _style: java_swift.JavaMap? ) {
+        self.init( selected: _selected, state: _state, variation: _variation, style: _style )
     }
 
     /// public int java.awt.im.InputMethodHighlight.getState()
@@ -152,47 +156,46 @@ open class InputMethodHighlight: java_swift.JavaObject {
     private static var getState_MethodID_4: jmethodID?
 
     open func getState() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getState", methodSig: "()I", methodCache: &InputMethodHighlight.getState_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public boolean java.awt.im.InputMethodHighlight.isSelected()
-
-    private static var isSelected_MethodID_5: jmethodID?
-
-    open func isSelected() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelected", methodSig: "()Z", methodCache: &InputMethodHighlight.isSelected_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return Int(__return)
     }
 
 
     /// public java.util.Map java.awt.im.InputMethodHighlight.getStyle()
 
-    private static var getStyle_MethodID_6: jmethodID?
+    private static var getStyle_MethodID_5: jmethodID?
 
     open func getStyle() -> java_swift.JavaMap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyle", methodSig: "()Ljava/util/Map;", methodCache: &InputMethodHighlight.getStyle_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: java_swift.JavaMapForward(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyle", methodSig: "()Ljava/util/Map;", methodCache: &InputMethodHighlight.getStyle_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: java_swift.JavaMapForward.self, from: __return )
     }
 
 
     /// public int java.awt.im.InputMethodHighlight.getVariation()
 
-    private static var getVariation_MethodID_7: jmethodID?
+    private static var getVariation_MethodID_6: jmethodID?
 
     open func getVariation() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVariation", methodSig: "()I", methodCache: &InputMethodHighlight.getVariation_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVariation", methodSig: "()I", methodCache: &InputMethodHighlight.getVariation_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public boolean java.awt.im.InputMethodHighlight.isSelected()
+
+    private static var isSelected_MethodID_7: jmethodID?
+
+    open func isSelected() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelected", methodSig: "()Z", methodCache: &InputMethodHighlight.isSelected_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 

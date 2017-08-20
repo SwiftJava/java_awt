@@ -7,37 +7,37 @@ import java_swift
 
 public protocol ImageObserver: JavaProtocol {
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    /// public static final int java.awt.image.ImageObserver.ABORT
 
-    static var WIDTH: Int { get }
-
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
-
-    static var HEIGHT: Int { get }
-
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
-
-    static var PROPERTIES: Int { get }
-
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
-
-    static var SOMEBITS: Int { get }
-
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
-
-    static var FRAMEBITS: Int { get }
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.image.ImageObserver.ALLBITS
 
-    static var ALLBITS: Int { get }
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.image.ImageObserver.ERROR
 
-    static var ERROR: Int { get }
+    // Skipping field: false false false false false true 
 
-    /// public static final int java.awt.image.ImageObserver.ABORT
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
 
-    static var ABORT: Int { get }
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    // Skipping field: false false false false false true 
 
     /// public abstract boolean java.awt.image.ImageObserver.imageUpdate(java.awt.Image,int,int,int,int,int)
 
@@ -50,58 +50,14 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
 
     private static var ImageObserverJNIClass: jclass?
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    /// public static final int java.awt.image.ImageObserver.ABORT
 
-    private static var WIDTH_FieldID: jfieldID?
+    private static var ABORT_FieldID: jfieldID?
 
-    open static var WIDTH: Int {
+    open static var ABORT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WIDTH", fieldType: "I", fieldCache: &WIDTH_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
-
-    private static var HEIGHT_FieldID: jfieldID?
-
-    open static var HEIGHT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "HEIGHT", fieldType: "I", fieldCache: &HEIGHT_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
-
-    private static var PROPERTIES_FieldID: jfieldID?
-
-    open static var PROPERTIES: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PROPERTIES", fieldType: "I", fieldCache: &PROPERTIES_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
-
-    private static var SOMEBITS_FieldID: jfieldID?
-
-    open static var SOMEBITS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOMEBITS", fieldType: "I", fieldCache: &SOMEBITS_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
-
-    private static var FRAMEBITS_FieldID: jfieldID?
-
-    open static var FRAMEBITS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "FRAMEBITS", fieldType: "I", fieldCache: &FRAMEBITS_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "ABORT", fieldType: "I", fieldCache: &ABORT_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
+            return Int(__value)
         }
     }
 
@@ -112,7 +68,7 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
     open static var ALLBITS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALLBITS", fieldType: "I", fieldCache: &ALLBITS_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -123,18 +79,62 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
     open static var ERROR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ERROR", fieldType: "I", fieldCache: &ERROR_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.image.ImageObserver.ABORT
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
 
-    private static var ABORT_FieldID: jfieldID?
+    private static var FRAMEBITS_FieldID: jfieldID?
 
-    open static var ABORT: Int {
+    open static var FRAMEBITS: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ABORT", fieldType: "I", fieldCache: &ABORT_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "FRAMEBITS", fieldType: "I", fieldCache: &FRAMEBITS_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
+
+    private static var HEIGHT_FieldID: jfieldID?
+
+    open static var HEIGHT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "HEIGHT", fieldType: "I", fieldCache: &HEIGHT_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    private static var PROPERTIES_FieldID: jfieldID?
+
+    open static var PROPERTIES: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PROPERTIES", fieldType: "I", fieldCache: &PROPERTIES_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    private static var SOMEBITS_FieldID: jfieldID?
+
+    open static var SOMEBITS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOMEBITS", fieldType: "I", fieldCache: &SOMEBITS_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    private static var WIDTH_FieldID: jfieldID?
+
+    open static var WIDTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WIDTH", fieldType: "I", fieldCache: &WIDTH_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
+            return Int(__value)
         }
     }
 
@@ -143,16 +143,16 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
     private static var imageUpdate_MethodID_2: jmethodID?
 
     open func imageUpdate( img: Image?, infoflags: Int, x: Int, y: Int, width: Int, height: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: img, locals: &__locals )
-        __args[1] = JNIType.toJava( value: infoflags, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: width, locals: &__locals )
-        __args[5] = JNIType.toJava( value: height, locals: &__locals )
+        __args[1] = jvalue( i: jint(infoflags) )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(width) )
+        __args[5] = jvalue( i: jint(height) )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "imageUpdate", methodSig: "(Ljava/awt/Image;IIIII)Z", methodCache: &ImageObserverForward.imageUpdate_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func imageUpdate( _ _img: Image?, _ _infoflags: Int, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) -> Bool {
@@ -160,5 +160,4 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
     }
 
 }
-
 

@@ -25,8 +25,8 @@ open class DropTargetEvent: java_util.EventObject {
 
     open var context: DropTargetContext! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "context", fieldType: "Ljava/awt/dnd/DropTargetContext;", fieldCache: &DropTargetEvent.context_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "context", fieldType: "Ljava/awt/dnd/DropTargetContext;", fieldCache: &DropTargetEvent.context_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? DropTargetContext( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -44,8 +44,8 @@ open class DropTargetEvent: java_util.EventObject {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &DropTargetEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &DropTargetEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -60,8 +60,8 @@ open class DropTargetEvent: java_util.EventObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( dtc: DropTargetContext? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dtc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DropTargetEvent", classCache: &DropTargetEvent.DropTargetEventJNIClass, methodSig: "(Ljava/awt/dnd/DropTargetContext;)V", methodCache: &DropTargetEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -77,8 +77,8 @@ open class DropTargetEvent: java_util.EventObject {
     private static var getDropTargetContext_MethodID_2: jmethodID?
 
     open func getDropTargetContext() -> DropTargetContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropTargetContext", methodSig: "()Ljava/awt/dnd/DropTargetContext;", methodCache: &DropTargetEvent.getDropTargetContext_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DropTargetContext( javaObject: __return ) : nil

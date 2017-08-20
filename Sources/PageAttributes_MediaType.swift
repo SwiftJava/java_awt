@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.PageAttributes$MediaType ///
 
-open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObject {
+open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,13 +16,1365 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
 
     private static var PageAttributes_MediaTypeJNIClass: jclass?
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_ISO_4A0
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A
+
+    private static var A_FieldID: jfieldID?
+
+    open static var A: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A0
+
+    private static var A0_FieldID: jfieldID?
+
+    open static var A0: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A1
+
+    private static var A1_FieldID: jfieldID?
+
+    open static var A1: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A10
+
+    private static var A10_FieldID: jfieldID?
+
+    open static var A10: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A2
+
+    private static var A2_FieldID: jfieldID?
+
+    open static var A2: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A3
+
+    private static var A3_FieldID: jfieldID?
+
+    open static var A3: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A4
+
+    private static var A4_FieldID: jfieldID?
+
+    open static var A4: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A5
+
+    private static var A5_FieldID: jfieldID?
+
+    open static var A5: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A6
+
+    private static var A6_FieldID: jfieldID?
+
+    open static var A6: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A7
+
+    private static var A7_FieldID: jfieldID?
+
+    open static var A7: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A8
+
+    private static var A8_FieldID: jfieldID?
+
+    open static var A8: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A9
+
+    private static var A9_FieldID: jfieldID?
+
+    open static var A9: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "A9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B
+
+    private static var B_FieldID: jfieldID?
+
+    open static var B: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B0
+
+    private static var B0_FieldID: jfieldID?
+
+    open static var B0: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B1
+
+    private static var B1_FieldID: jfieldID?
+
+    open static var B1: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B10
+
+    private static var B10_FieldID: jfieldID?
+
+    open static var B10: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B2
+
+    private static var B2_FieldID: jfieldID?
+
+    open static var B2: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B3
+
+    private static var B3_FieldID: jfieldID?
+
+    open static var B3: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B4
+
+    private static var B4_FieldID: jfieldID?
+
+    open static var B4: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B5
+
+    private static var B5_FieldID: jfieldID?
+
+    open static var B5: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B6
+
+    private static var B6_FieldID: jfieldID?
+
+    open static var B6: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B7
+
+    private static var B7_FieldID: jfieldID?
+
+    open static var B7: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B8
+
+    private static var B8_FieldID: jfieldID?
+
+    open static var B8: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B9
+
+    private static var B9_FieldID: jfieldID?
+
+    open static var B9: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "B9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C
+
+    private static var C_FieldID: jfieldID?
+
+    open static var C: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C0
+
+    private static var C0_FieldID: jfieldID?
+
+    open static var C0: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C1
+
+    private static var C1_FieldID: jfieldID?
+
+    open static var C1: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C10
+
+    private static var C10_FieldID: jfieldID?
+
+    open static var C10: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C2
+
+    private static var C2_FieldID: jfieldID?
+
+    open static var C2: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C3
+
+    private static var C3_FieldID: jfieldID?
+
+    open static var C3: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C4
+
+    private static var C4_FieldID: jfieldID?
+
+    open static var C4: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C5
+
+    private static var C5_FieldID: jfieldID?
+
+    open static var C5: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C6
+
+    private static var C6_FieldID: jfieldID?
+
+    open static var C6: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C7
+
+    private static var C7_FieldID: jfieldID?
+
+    open static var C7: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C8
+
+    private static var C8_FieldID: jfieldID?
+
+    open static var C8: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C9
+
+    private static var C9_FieldID: jfieldID?
+
+    open static var C9: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "C9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.D
+
+    private static var D_FieldID: jfieldID?
+
+    open static var D: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "D", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &D_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.E
+
+    private static var E_FieldID: jfieldID?
+
+    open static var E: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "E", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &E_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_10
+
+    private static var ENV_10_FieldID: jfieldID?
+
+    open static var ENV_10: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_10X13
+
+    private static var ENV_10X13_FieldID: jfieldID?
+
+    open static var ENV_10X13: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10X13", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10X13_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_10X14
+
+    private static var ENV_10X14_FieldID: jfieldID?
+
+    open static var ENV_10X14: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10X14", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10X14_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_10X15
+
+    private static var ENV_10X15_FieldID: jfieldID?
+
+    open static var ENV_10X15: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10X15", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10X15_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_11
+
+    private static var ENV_11_FieldID: jfieldID?
+
+    open static var ENV_11: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_11", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_11_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_12
+
+    private static var ENV_12_FieldID: jfieldID?
+
+    open static var ENV_12: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_12", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_12_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_14
+
+    private static var ENV_14_FieldID: jfieldID?
+
+    open static var ENV_14: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_14", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_14_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_6X9
+
+    private static var ENV_6X9_FieldID: jfieldID?
+
+    open static var ENV_6X9: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_6X9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_6X9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_7X9
+
+    private static var ENV_7X9_FieldID: jfieldID?
+
+    open static var ENV_7X9: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_7X9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_7X9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_9
+
+    private static var ENV_9_FieldID: jfieldID?
+
+    open static var ENV_9: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_9X11
+
+    private static var ENV_9X11_FieldID: jfieldID?
+
+    open static var ENV_9X11: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_9X11", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_9X11_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_9X12
+
+    private static var ENV_9X12_FieldID: jfieldID?
+
+    open static var ENV_9X12: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_9X12", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_9X12_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_INVITE
+
+    private static var ENV_INVITE_FieldID: jfieldID?
+
+    open static var ENV_INVITE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_INVITE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_INVITE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_ITALY
+
+    private static var ENV_ITALY_FieldID: jfieldID?
+
+    open static var ENV_ITALY: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_ITALY", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_ITALY_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_MONARCH
+
+    private static var ENV_MONARCH_FieldID: jfieldID?
+
+    open static var ENV_MONARCH: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_MONARCH", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_MONARCH_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_PERSONAL
+
+    private static var ENV_PERSONAL_FieldID: jfieldID?
+
+    open static var ENV_PERSONAL: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_PERSONAL", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_PERSONAL_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.EXECUTIVE
+
+    private static var EXECUTIVE_FieldID: jfieldID?
+
+    open static var EXECUTIVE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "EXECUTIVE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &EXECUTIVE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.FOLIO
+
+    private static var FOLIO_FieldID: jfieldID?
+
+    open static var FOLIO: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "FOLIO", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &FOLIO_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.INVITE
+
+    private static var INVITE_FieldID: jfieldID?
+
+    open static var INVITE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "INVITE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &INVITE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.INVITE_ENVELOPE
+
+    private static var INVITE_ENVELOPE_FieldID: jfieldID?
+
+    open static var INVITE_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "INVITE_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &INVITE_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.INVOICE
+
+    private static var INVOICE_FieldID: jfieldID?
+
+    open static var INVOICE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "INVOICE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &INVOICE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_2A0
+
+    private static var ISO_2A0_FieldID: jfieldID?
+
+    open static var ISO_2A0: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_2A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_2A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_4A0
+
+    private static var ISO_4A0_FieldID: jfieldID?
+
+    open static var ISO_4A0: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_4A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_4A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A0
+
+    private static var ISO_A0_FieldID: jfieldID?
+
+    open static var ISO_A0: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A1
+
+    private static var ISO_A1_FieldID: jfieldID?
+
+    open static var ISO_A1: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A10
+
+    private static var ISO_A10_FieldID: jfieldID?
+
+    open static var ISO_A10: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A2
+
+    private static var ISO_A2_FieldID: jfieldID?
+
+    open static var ISO_A2: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A3
+
+    private static var ISO_A3_FieldID: jfieldID?
+
+    open static var ISO_A3: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A4
+
+    private static var ISO_A4_FieldID: jfieldID?
+
+    open static var ISO_A4: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A5
+
+    private static var ISO_A5_FieldID: jfieldID?
+
+    open static var ISO_A5: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A6
+
+    private static var ISO_A6_FieldID: jfieldID?
+
+    open static var ISO_A6: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A7
+
+    private static var ISO_A7_FieldID: jfieldID?
+
+    open static var ISO_A7: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A8
+
+    private static var ISO_A8_FieldID: jfieldID?
+
+    open static var ISO_A8: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A9
+
+    private static var ISO_A9_FieldID: jfieldID?
+
+    open static var ISO_A9: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B0
+
+    private static var ISO_B0_FieldID: jfieldID?
+
+    open static var ISO_B0: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B1
+
+    private static var ISO_B1_FieldID: jfieldID?
+
+    open static var ISO_B1: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B10
+
+    private static var ISO_B10_FieldID: jfieldID?
+
+    open static var ISO_B10: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B2
+
+    private static var ISO_B2_FieldID: jfieldID?
+
+    open static var ISO_B2: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B3
+
+    private static var ISO_B3_FieldID: jfieldID?
+
+    open static var ISO_B3: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B4
+
+    private static var ISO_B4_FieldID: jfieldID?
+
+    open static var ISO_B4: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B4_ENVELOPE
+
+    private static var ISO_B4_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_B4_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B4_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B4_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B5
+
+    private static var ISO_B5_FieldID: jfieldID?
+
+    open static var ISO_B5: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B5_ENVELOPE
+
+    private static var ISO_B5_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_B5_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B5_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B5_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B6
+
+    private static var ISO_B6_FieldID: jfieldID?
+
+    open static var ISO_B6: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B7
+
+    private static var ISO_B7_FieldID: jfieldID?
+
+    open static var ISO_B7: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B8
+
+    private static var ISO_B8_FieldID: jfieldID?
+
+    open static var ISO_B8: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B9
+
+    private static var ISO_B9_FieldID: jfieldID?
+
+    open static var ISO_B9: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C0
+
+    private static var ISO_C0_FieldID: jfieldID?
+
+    open static var ISO_C0: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C0_ENVELOPE
+
+    private static var ISO_C0_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_C0_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C0_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C0_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C1
+
+    private static var ISO_C1_FieldID: jfieldID?
+
+    open static var ISO_C1: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C10
+
+    private static var ISO_C10_FieldID: jfieldID?
+
+    open static var ISO_C10: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C10_ENVELOPE
+
+    private static var ISO_C10_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_C10_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C10_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C10_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C1_ENVELOPE
+
+    private static var ISO_C1_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_C1_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C1_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C1_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C2
+
+    private static var ISO_C2_FieldID: jfieldID?
+
+    open static var ISO_C2: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C2_ENVELOPE
+
+    private static var ISO_C2_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_C2_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C2_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C2_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C3
+
+    private static var ISO_C3_FieldID: jfieldID?
+
+    open static var ISO_C3: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C3_ENVELOPE
+
+    private static var ISO_C3_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_C3_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C3_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C3_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C4
+
+    private static var ISO_C4_FieldID: jfieldID?
+
+    open static var ISO_C4: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C4_ENVELOPE
+
+    private static var ISO_C4_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_C4_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C4_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C4_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C5
+
+    private static var ISO_C5_FieldID: jfieldID?
+
+    open static var ISO_C5: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C5_ENVELOPE
+
+    private static var ISO_C5_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_C5_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C5_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C5_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C6
+
+    private static var ISO_C6_FieldID: jfieldID?
+
+    open static var ISO_C6: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C6_ENVELOPE
+
+    private static var ISO_C6_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_C6_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C6_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C6_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C7
+
+    private static var ISO_C7_FieldID: jfieldID?
+
+    open static var ISO_C7: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C7_ENVELOPE
+
+    private static var ISO_C7_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_C7_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C7_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C7_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C8
+
+    private static var ISO_C8_FieldID: jfieldID?
+
+    open static var ISO_C8: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C8_ENVELOPE
+
+    private static var ISO_C8_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_C8_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C8_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C8_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C9
+
+    private static var ISO_C9_FieldID: jfieldID?
+
+    open static var ISO_C9: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C9_ENVELOPE
+
+    private static var ISO_C9_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_C9_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_DESIGNATED_LONG
+
+    private static var ISO_DESIGNATED_LONG_FieldID: jfieldID?
+
+    open static var ISO_DESIGNATED_LONG: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_DESIGNATED_LONG", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_DESIGNATED_LONG_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_DESIGNATED_LONG_ENVELOPE
+
+    private static var ISO_DESIGNATED_LONG_ENVELOPE_FieldID: jfieldID?
+
+    open static var ISO_DESIGNATED_LONG_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_DESIGNATED_LONG_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_DESIGNATED_LONG_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ITALY
+
+    private static var ITALY_FieldID: jfieldID?
+
+    open static var ITALY: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ITALY", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ITALY_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ITALY_ENVELOPE
+
+    private static var ITALY_ENVELOPE_FieldID: jfieldID?
+
+    open static var ITALY_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ITALY_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ITALY_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_A
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_B
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_C
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_D
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_E
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_EXECUTIVE
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_FOLIO
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_INVITE_ENVELOPE
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_INVOICE
 
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_2A0
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_ISO_4A0
 
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_A0
 
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_A1
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_ISO_A10
 
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_A2
 
@@ -40,11 +1392,11 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
 
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_A9
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_ISO_A10
-
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_B0
 
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_B1
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_ISO_B10
 
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_B2
 
@@ -62,33 +1414,11 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
 
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_B9
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_ISO_B10
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B0
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B1
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B2
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B3
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B4
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B5
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B6
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B7
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B8
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B9
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B10
-
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_C0
 
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_C1
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_ISO_C10
 
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_C2
 
@@ -106,49 +1436,53 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
 
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_C9
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_ISO_C10
-
     /// private static final int java.awt.PageAttributes$MediaType.I_ISO_DESIGNATED_LONG
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_EXECUTIVE
+    /// private static final int java.awt.PageAttributes$MediaType.I_ITALY_ENVELOPE
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_FOLIO
+    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B0
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_INVOICE
+    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B1
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B10
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B2
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B3
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B4
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B5
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B6
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B7
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B8
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_JIS_B9
 
     /// private static final int java.awt.PageAttributes$MediaType.I_LEDGER
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_NA_LETTER
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_NA_LEGAL
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_QUARTO
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_A
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_B
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_C
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_D
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_E
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_NA_10X15_ENVELOPE
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_NA_10X14_ENVELOPE
+    /// private static final int java.awt.PageAttributes$MediaType.I_MONARCH_ENVELOPE
 
     /// private static final int java.awt.PageAttributes$MediaType.I_NA_10X13_ENVELOPE
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_NA_9X12_ENVELOPE
+    /// private static final int java.awt.PageAttributes$MediaType.I_NA_10X14_ENVELOPE
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_NA_9X11_ENVELOPE
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_NA_7X9_ENVELOPE
+    /// private static final int java.awt.PageAttributes$MediaType.I_NA_10X15_ENVELOPE
 
     /// private static final int java.awt.PageAttributes$MediaType.I_NA_6X9_ENVELOPE
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_NA_NUMBER_9_ENVELOPE
+    /// private static final int java.awt.PageAttributes$MediaType.I_NA_7X9_ENVELOPE
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_NA_9X11_ENVELOPE
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_NA_9X12_ENVELOPE
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_NA_LEGAL
+
+    /// private static final int java.awt.PageAttributes$MediaType.I_NA_LETTER
 
     /// private static final int java.awt.PageAttributes$MediaType.I_NA_NUMBER_10_ENVELOPE
 
@@ -158,279 +1492,11 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
 
     /// private static final int java.awt.PageAttributes$MediaType.I_NA_NUMBER_14_ENVELOPE
 
-    /// private static final int java.awt.PageAttributes$MediaType.I_INVITE_ENVELOPE
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_ITALY_ENVELOPE
-
-    /// private static final int java.awt.PageAttributes$MediaType.I_MONARCH_ENVELOPE
+    /// private static final int java.awt.PageAttributes$MediaType.I_NA_NUMBER_9_ENVELOPE
 
     /// private static final int java.awt.PageAttributes$MediaType.I_PERSONAL_ENVELOPE
 
-    /// private static final java.lang.String[] java.awt.PageAttributes$MediaType.NAMES
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_4A0
-
-    private static var ISO_4A0_FieldID: jfieldID?
-
-    open static var ISO_4A0: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_4A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_4A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_2A0
-
-    private static var ISO_2A0_FieldID: jfieldID?
-
-    open static var ISO_2A0: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_2A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_2A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A0
-
-    private static var ISO_A0_FieldID: jfieldID?
-
-    open static var ISO_A0: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A1
-
-    private static var ISO_A1_FieldID: jfieldID?
-
-    open static var ISO_A1: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A2
-
-    private static var ISO_A2_FieldID: jfieldID?
-
-    open static var ISO_A2: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A3
-
-    private static var ISO_A3_FieldID: jfieldID?
-
-    open static var ISO_A3: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A4
-
-    private static var ISO_A4_FieldID: jfieldID?
-
-    open static var ISO_A4: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A5
-
-    private static var ISO_A5_FieldID: jfieldID?
-
-    open static var ISO_A5: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A6
-
-    private static var ISO_A6_FieldID: jfieldID?
-
-    open static var ISO_A6: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A7
-
-    private static var ISO_A7_FieldID: jfieldID?
-
-    open static var ISO_A7: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A8
-
-    private static var ISO_A8_FieldID: jfieldID?
-
-    open static var ISO_A8: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A9
-
-    private static var ISO_A9_FieldID: jfieldID?
-
-    open static var ISO_A9: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_A10
-
-    private static var ISO_A10_FieldID: jfieldID?
-
-    open static var ISO_A10: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B0
-
-    private static var ISO_B0_FieldID: jfieldID?
-
-    open static var ISO_B0: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B1
-
-    private static var ISO_B1_FieldID: jfieldID?
-
-    open static var ISO_B1: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B2
-
-    private static var ISO_B2_FieldID: jfieldID?
-
-    open static var ISO_B2: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B3
-
-    private static var ISO_B3_FieldID: jfieldID?
-
-    open static var ISO_B3: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B4
-
-    private static var ISO_B4_FieldID: jfieldID?
-
-    open static var ISO_B4: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B5
-
-    private static var ISO_B5_FieldID: jfieldID?
-
-    open static var ISO_B5: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B6
-
-    private static var ISO_B6_FieldID: jfieldID?
-
-    open static var ISO_B6: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B7
-
-    private static var ISO_B7_FieldID: jfieldID?
-
-    open static var ISO_B7: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B8
-
-    private static var ISO_B8_FieldID: jfieldID?
-
-    open static var ISO_B8: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B9
-
-    private static var ISO_B9_FieldID: jfieldID?
-
-    open static var ISO_B9: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B10
-
-    private static var ISO_B10_FieldID: jfieldID?
-
-    open static var ISO_B10: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
+    /// private static final int java.awt.PageAttributes$MediaType.I_QUARTO
 
     /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B0
 
@@ -439,6 +1505,7 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
     open static var JIS_B0: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
@@ -450,94 +1517,7 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
     open static var JIS_B1: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B2
-
-    private static var JIS_B2_FieldID: jfieldID?
-
-    open static var JIS_B2: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B3
-
-    private static var JIS_B3_FieldID: jfieldID?
-
-    open static var JIS_B3: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B4
-
-    private static var JIS_B4_FieldID: jfieldID?
-
-    open static var JIS_B4: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B5
-
-    private static var JIS_B5_FieldID: jfieldID?
-
-    open static var JIS_B5: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B6
-
-    private static var JIS_B6_FieldID: jfieldID?
-
-    open static var JIS_B6: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B7
-
-    private static var JIS_B7_FieldID: jfieldID?
-
-    open static var JIS_B7: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B8
-
-    private static var JIS_B8_FieldID: jfieldID?
-
-    open static var JIS_B8: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B9
-
-    private static var JIS_B9_FieldID: jfieldID?
-
-    open static var JIS_B9: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
@@ -549,171 +1529,103 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
     open static var JIS_B10: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C0
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B2
 
-    private static var ISO_C0_FieldID: jfieldID?
+    private static var JIS_B2_FieldID: jfieldID?
 
-    open static var ISO_C0: PageAttributes_MediaType! {
+    open static var JIS_B2: PageAttributes_MediaType! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C1
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B3
 
-    private static var ISO_C1_FieldID: jfieldID?
+    private static var JIS_B3_FieldID: jfieldID?
 
-    open static var ISO_C1: PageAttributes_MediaType! {
+    open static var JIS_B3: PageAttributes_MediaType! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C2
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B4
 
-    private static var ISO_C2_FieldID: jfieldID?
+    private static var JIS_B4_FieldID: jfieldID?
 
-    open static var ISO_C2: PageAttributes_MediaType! {
+    open static var JIS_B4: PageAttributes_MediaType! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C3
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B5
 
-    private static var ISO_C3_FieldID: jfieldID?
+    private static var JIS_B5_FieldID: jfieldID?
 
-    open static var ISO_C3: PageAttributes_MediaType! {
+    open static var JIS_B5: PageAttributes_MediaType! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C4
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B6
 
-    private static var ISO_C4_FieldID: jfieldID?
+    private static var JIS_B6_FieldID: jfieldID?
 
-    open static var ISO_C4: PageAttributes_MediaType! {
+    open static var JIS_B6: PageAttributes_MediaType! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C5
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B7
 
-    private static var ISO_C5_FieldID: jfieldID?
+    private static var JIS_B7_FieldID: jfieldID?
 
-    open static var ISO_C5: PageAttributes_MediaType! {
+    open static var JIS_B7: PageAttributes_MediaType! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C6
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B8
 
-    private static var ISO_C6_FieldID: jfieldID?
+    private static var JIS_B8_FieldID: jfieldID?
 
-    open static var ISO_C6: PageAttributes_MediaType! {
+    open static var JIS_B8: PageAttributes_MediaType! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C7
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.JIS_B9
 
-    private static var ISO_C7_FieldID: jfieldID?
+    private static var JIS_B9_FieldID: jfieldID?
 
-    open static var ISO_C7: PageAttributes_MediaType! {
+    open static var JIS_B9: PageAttributes_MediaType! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C8
-
-    private static var ISO_C8_FieldID: jfieldID?
-
-    open static var ISO_C8: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C9
-
-    private static var ISO_C9_FieldID: jfieldID?
-
-    open static var ISO_C9: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C10
-
-    private static var ISO_C10_FieldID: jfieldID?
-
-    open static var ISO_C10: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_DESIGNATED_LONG
-
-    private static var ISO_DESIGNATED_LONG_FieldID: jfieldID?
-
-    open static var ISO_DESIGNATED_LONG: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_DESIGNATED_LONG", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_DESIGNATED_LONG_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.EXECUTIVE
-
-    private static var EXECUTIVE_FieldID: jfieldID?
-
-    open static var EXECUTIVE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "EXECUTIVE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &EXECUTIVE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.FOLIO
-
-    private static var FOLIO_FieldID: jfieldID?
-
-    open static var FOLIO: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "FOLIO", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &FOLIO_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.INVOICE
-
-    private static var INVOICE_FieldID: jfieldID?
-
-    open static var INVOICE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "INVOICE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &INVOICE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
@@ -725,831 +1637,7 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
     open static var LEDGER: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LEDGER", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &LEDGER_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_LETTER
-
-    private static var NA_LETTER_FieldID: jfieldID?
-
-    open static var NA_LETTER: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_LETTER", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_LETTER_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_LEGAL
-
-    private static var NA_LEGAL_FieldID: jfieldID?
-
-    open static var NA_LEGAL: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_LEGAL", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_LEGAL_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.QUARTO
-
-    private static var QUARTO_FieldID: jfieldID?
-
-    open static var QUARTO: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "QUARTO", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &QUARTO_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A
-
-    private static var A_FieldID: jfieldID?
-
-    open static var A: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B
-
-    private static var B_FieldID: jfieldID?
-
-    open static var B: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C
-
-    private static var C_FieldID: jfieldID?
-
-    open static var C: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.D
-
-    private static var D_FieldID: jfieldID?
-
-    open static var D: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "D", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &D_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.E
-
-    private static var E_FieldID: jfieldID?
-
-    open static var E: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "E", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &E_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_10X15_ENVELOPE
-
-    private static var NA_10X15_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_10X15_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_10X15_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_10X15_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_10X14_ENVELOPE
-
-    private static var NA_10X14_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_10X14_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_10X14_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_10X14_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_10X13_ENVELOPE
-
-    private static var NA_10X13_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_10X13_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_10X13_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_10X13_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_9X12_ENVELOPE
-
-    private static var NA_9X12_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_9X12_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_9X12_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_9X12_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_9X11_ENVELOPE
-
-    private static var NA_9X11_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_9X11_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_9X11_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_9X11_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_7X9_ENVELOPE
-
-    private static var NA_7X9_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_7X9_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_7X9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_7X9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_6X9_ENVELOPE
-
-    private static var NA_6X9_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_6X9_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_6X9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_6X9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_NUMBER_9_ENVELOPE
-
-    private static var NA_NUMBER_9_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_NUMBER_9_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_NUMBER_10_ENVELOPE
-
-    private static var NA_NUMBER_10_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_NUMBER_10_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_10_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_10_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_NUMBER_11_ENVELOPE
-
-    private static var NA_NUMBER_11_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_NUMBER_11_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_11_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_11_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_NUMBER_12_ENVELOPE
-
-    private static var NA_NUMBER_12_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_NUMBER_12_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_12_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_12_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_NUMBER_14_ENVELOPE
-
-    private static var NA_NUMBER_14_ENVELOPE_FieldID: jfieldID?
-
-    open static var NA_NUMBER_14_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_14_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_14_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.INVITE_ENVELOPE
-
-    private static var INVITE_ENVELOPE_FieldID: jfieldID?
-
-    open static var INVITE_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "INVITE_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &INVITE_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ITALY_ENVELOPE
-
-    private static var ITALY_ENVELOPE_FieldID: jfieldID?
-
-    open static var ITALY_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ITALY_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ITALY_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.MONARCH_ENVELOPE
-
-    private static var MONARCH_ENVELOPE_FieldID: jfieldID?
-
-    open static var MONARCH_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "MONARCH_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &MONARCH_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.PERSONAL_ENVELOPE
-
-    private static var PERSONAL_ENVELOPE_FieldID: jfieldID?
-
-    open static var PERSONAL_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "PERSONAL_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &PERSONAL_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A0
-
-    private static var A0_FieldID: jfieldID?
-
-    open static var A0: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A1
-
-    private static var A1_FieldID: jfieldID?
-
-    open static var A1: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A2
-
-    private static var A2_FieldID: jfieldID?
-
-    open static var A2: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A3
-
-    private static var A3_FieldID: jfieldID?
-
-    open static var A3: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A4
-
-    private static var A4_FieldID: jfieldID?
-
-    open static var A4: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A5
-
-    private static var A5_FieldID: jfieldID?
-
-    open static var A5: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A6
-
-    private static var A6_FieldID: jfieldID?
-
-    open static var A6: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A7
-
-    private static var A7_FieldID: jfieldID?
-
-    open static var A7: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A8
-
-    private static var A8_FieldID: jfieldID?
-
-    open static var A8: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A9
-
-    private static var A9_FieldID: jfieldID?
-
-    open static var A9: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.A10
-
-    private static var A10_FieldID: jfieldID?
-
-    open static var A10: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "A10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B0
-
-    private static var B0_FieldID: jfieldID?
-
-    open static var B0: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B1
-
-    private static var B1_FieldID: jfieldID?
-
-    open static var B1: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B2
-
-    private static var B2_FieldID: jfieldID?
-
-    open static var B2: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B3
-
-    private static var B3_FieldID: jfieldID?
-
-    open static var B3: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B4
-
-    private static var B4_FieldID: jfieldID?
-
-    open static var B4: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B4_ENVELOPE
-
-    private static var ISO_B4_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_B4_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B4_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B4_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B5
-
-    private static var B5_FieldID: jfieldID?
-
-    open static var B5: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_B5_ENVELOPE
-
-    private static var ISO_B5_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_B5_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B5_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B5_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B6
-
-    private static var B6_FieldID: jfieldID?
-
-    open static var B6: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B7
-
-    private static var B7_FieldID: jfieldID?
-
-    open static var B7: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B8
-
-    private static var B8_FieldID: jfieldID?
-
-    open static var B8: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B9
-
-    private static var B9_FieldID: jfieldID?
-
-    open static var B9: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.B10
-
-    private static var B10_FieldID: jfieldID?
-
-    open static var B10: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "B10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C0
-
-    private static var C0_FieldID: jfieldID?
-
-    open static var C0: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C0_ENVELOPE
-
-    private static var ISO_C0_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_C0_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C0_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C0_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C1
-
-    private static var C1_FieldID: jfieldID?
-
-    open static var C1: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C1_ENVELOPE
-
-    private static var ISO_C1_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_C1_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C1_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C1_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C2
-
-    private static var C2_FieldID: jfieldID?
-
-    open static var C2: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C2_ENVELOPE
-
-    private static var ISO_C2_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_C2_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C2_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C2_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C3
-
-    private static var C3_FieldID: jfieldID?
-
-    open static var C3: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C3_ENVELOPE
-
-    private static var ISO_C3_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_C3_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C3_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C3_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C4
-
-    private static var C4_FieldID: jfieldID?
-
-    open static var C4: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C4_ENVELOPE
-
-    private static var ISO_C4_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_C4_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C4_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C4_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C5
-
-    private static var C5_FieldID: jfieldID?
-
-    open static var C5: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C5_ENVELOPE
-
-    private static var ISO_C5_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_C5_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C5_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C5_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C6
-
-    private static var C6_FieldID: jfieldID?
-
-    open static var C6: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C6_ENVELOPE
-
-    private static var ISO_C6_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_C6_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C6_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C6_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C7
-
-    private static var C7_FieldID: jfieldID?
-
-    open static var C7: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C7_ENVELOPE
-
-    private static var ISO_C7_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_C7_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C7_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C7_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C8
-
-    private static var C8_FieldID: jfieldID?
-
-    open static var C8: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C8_ENVELOPE
-
-    private static var ISO_C8_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_C8_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C8_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C8_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C9
-
-    private static var C9_FieldID: jfieldID?
-
-    open static var C9: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C9_ENVELOPE
-
-    private static var ISO_C9_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_C9_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.C10
-
-    private static var C10_FieldID: jfieldID?
-
-    open static var C10: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "C10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_C10_ENVELOPE
-
-    private static var ISO_C10_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_C10_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C10_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C10_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ISO_DESIGNATED_LONG_ENVELOPE
-
-    private static var ISO_DESIGNATED_LONG_ENVELOPE_FieldID: jfieldID?
-
-    open static var ISO_DESIGNATED_LONG_ENVELOPE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ISO_DESIGNATED_LONG_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_DESIGNATED_LONG_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.STATEMENT
-
-    private static var STATEMENT_FieldID: jfieldID?
-
-    open static var STATEMENT: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "STATEMENT", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &STATEMENT_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.TABLOID
-
-    private static var TABLOID_FieldID: jfieldID?
-
-    open static var TABLOID: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "TABLOID", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &TABLOID_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.LETTER
-
-    private static var LETTER_FieldID: jfieldID?
-
-    open static var LETTER: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "LETTER", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &LETTER_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NOTE
-
-    private static var NOTE_FieldID: jfieldID?
-
-    open static var NOTE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NOTE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NOTE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
@@ -1561,204 +1649,19 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
     open static var LEGAL: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LEGAL", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &LEGAL_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_10X15
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.LETTER
 
-    private static var ENV_10X15_FieldID: jfieldID?
+    private static var LETTER_FieldID: jfieldID?
 
-    open static var ENV_10X15: PageAttributes_MediaType! {
+    open static var LETTER: PageAttributes_MediaType! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10X15", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10X15_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_10X14
-
-    private static var ENV_10X14_FieldID: jfieldID?
-
-    open static var ENV_10X14: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10X14", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10X14_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_10X13
-
-    private static var ENV_10X13_FieldID: jfieldID?
-
-    open static var ENV_10X13: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10X13", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10X13_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_9X12
-
-    private static var ENV_9X12_FieldID: jfieldID?
-
-    open static var ENV_9X12: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_9X12", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_9X12_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_9X11
-
-    private static var ENV_9X11_FieldID: jfieldID?
-
-    open static var ENV_9X11: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_9X11", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_9X11_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_7X9
-
-    private static var ENV_7X9_FieldID: jfieldID?
-
-    open static var ENV_7X9: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_7X9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_7X9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_6X9
-
-    private static var ENV_6X9_FieldID: jfieldID?
-
-    open static var ENV_6X9: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_6X9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_6X9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_9
-
-    private static var ENV_9_FieldID: jfieldID?
-
-    open static var ENV_9: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_10
-
-    private static var ENV_10_FieldID: jfieldID?
-
-    open static var ENV_10: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_11
-
-    private static var ENV_11_FieldID: jfieldID?
-
-    open static var ENV_11: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_11", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_11_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_12
-
-    private static var ENV_12_FieldID: jfieldID?
-
-    open static var ENV_12: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_12", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_12_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_14
-
-    private static var ENV_14_FieldID: jfieldID?
-
-    open static var ENV_14: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_14", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_14_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_INVITE
-
-    private static var ENV_INVITE_FieldID: jfieldID?
-
-    open static var ENV_INVITE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_INVITE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_INVITE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_ITALY
-
-    private static var ENV_ITALY_FieldID: jfieldID?
-
-    open static var ENV_ITALY: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_ITALY", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_ITALY_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_MONARCH
-
-    private static var ENV_MONARCH_FieldID: jfieldID?
-
-    open static var ENV_MONARCH: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_MONARCH", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_MONARCH_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ENV_PERSONAL
-
-    private static var ENV_PERSONAL_FieldID: jfieldID?
-
-    open static var ENV_PERSONAL: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ENV_PERSONAL", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_PERSONAL_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.INVITE
-
-    private static var INVITE_FieldID: jfieldID?
-
-    open static var INVITE: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "INVITE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &INVITE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
-            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.ITALY
-
-    private static var ITALY_FieldID: jfieldID?
-
-    open static var ITALY: PageAttributes_MediaType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ITALY", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ITALY_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "LETTER", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &LETTER_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
@@ -1770,6 +1673,201 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
     open static var MONARCH: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MONARCH", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &MONARCH_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.MONARCH_ENVELOPE
+
+    private static var MONARCH_ENVELOPE_FieldID: jfieldID?
+
+    open static var MONARCH_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "MONARCH_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &MONARCH_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// private static final java.lang.String[] java.awt.PageAttributes$MediaType.NAMES
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_10X13_ENVELOPE
+
+    private static var NA_10X13_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_10X13_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_10X13_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_10X13_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_10X14_ENVELOPE
+
+    private static var NA_10X14_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_10X14_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_10X14_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_10X14_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_10X15_ENVELOPE
+
+    private static var NA_10X15_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_10X15_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_10X15_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_10X15_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_6X9_ENVELOPE
+
+    private static var NA_6X9_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_6X9_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_6X9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_6X9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_7X9_ENVELOPE
+
+    private static var NA_7X9_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_7X9_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_7X9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_7X9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_9X11_ENVELOPE
+
+    private static var NA_9X11_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_9X11_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_9X11_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_9X11_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_9X12_ENVELOPE
+
+    private static var NA_9X12_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_9X12_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_9X12_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_9X12_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_LEGAL
+
+    private static var NA_LEGAL_FieldID: jfieldID?
+
+    open static var NA_LEGAL: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_LEGAL", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_LEGAL_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_LETTER
+
+    private static var NA_LETTER_FieldID: jfieldID?
+
+    open static var NA_LETTER: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_LETTER", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_LETTER_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_NUMBER_10_ENVELOPE
+
+    private static var NA_NUMBER_10_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_NUMBER_10_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_10_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_10_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_NUMBER_11_ENVELOPE
+
+    private static var NA_NUMBER_11_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_NUMBER_11_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_11_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_11_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_NUMBER_12_ENVELOPE
+
+    private static var NA_NUMBER_12_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_NUMBER_12_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_12_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_12_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_NUMBER_14_ENVELOPE
+
+    private static var NA_NUMBER_14_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_NUMBER_14_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_14_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_14_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NA_NUMBER_9_ENVELOPE
+
+    private static var NA_NUMBER_9_ENVELOPE_FieldID: jfieldID?
+
+    open static var NA_NUMBER_9_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.NOTE
+
+    private static var NOTE_FieldID: jfieldID?
+
+    open static var NOTE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NOTE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NOTE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
@@ -1781,21 +1879,91 @@ open class PageAttributes_MediaType: /* java.awt.AttributeValue */ UnclassedObje
     open static var PERSONAL: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PERSONAL", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &PERSONAL_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.PERSONAL_ENVELOPE
+
+    private static var PERSONAL_ENVELOPE_FieldID: jfieldID?
+
+    open static var PERSONAL_ENVELOPE: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "PERSONAL_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &PERSONAL_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.QUARTO
+
+    private static var QUARTO_FieldID: jfieldID?
+
+    open static var QUARTO: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "QUARTO", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &QUARTO_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.STATEMENT
+
+    private static var STATEMENT_FieldID: jfieldID?
+
+    open static var STATEMENT: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "STATEMENT", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &STATEMENT_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.PageAttributes$MediaType java.awt.PageAttributes$MediaType.TABLOID
+
+    private static var TABLOID_FieldID: jfieldID?
+
+    open static var TABLOID: PageAttributes_MediaType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "TABLOID", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &TABLOID_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_MediaType( javaObject: __value ) : nil
         }
     }
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AttributeValue.log
 
-    /// private final int java.awt.AttributeValue.value
-
     /// private final java.lang.String[] java.awt.AttributeValue.names
+
+    /// private final int java.awt.AttributeValue.value
 
     /// private java.awt.PageAttributes$MediaType(int)
 
+    /// public int java.awt.PageAttributes$MediaType.hashCode()
+
+    private static var hashCode_MethodID_1: jmethodID?
+
+    override open func hashCode() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "hashCode", methodSig: "()I", methodCache: &PageAttributes_MediaType.hashCode_MethodID_1, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public java.lang.String java.awt.PageAttributes$MediaType.toString()
 
-    /// public int java.awt.PageAttributes$MediaType.hashCode()
+    private static var toString_MethodID_2: jmethodID?
+
+    override open func toString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toString", methodSig: "()Ljava/lang/String;", methodCache: &PageAttributes_MediaType.toString_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
 }
 

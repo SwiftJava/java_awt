@@ -17,129 +17,6 @@ open class AWTEvent: java_util.EventObject {
 
     private static var AWTEventJNIClass: jclass?
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.AWTEvent.log
-
-    /// private byte[] java.awt.AWTEvent.bdata
-
-    /// protected int java.awt.AWTEvent.id
-
-    private static var id_FieldID: jfieldID?
-
-    open var id: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &AWTEvent.id_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &AWTEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected boolean java.awt.AWTEvent.consumed
-
-    private static var consumed_FieldID: jfieldID?
-
-    open var consumed: Bool {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &AWTEvent.consumed_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &AWTEvent.consumed_FieldID, object: javaObject, value: __value.z, locals: &__locals )
-        }
-    }
-
-    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
-
-    /// transient boolean java.awt.AWTEvent.focusManagerIsDispatching
-
-    /// transient boolean java.awt.AWTEvent.isPosted
-
-    /// private transient boolean java.awt.AWTEvent.isSystemGenerated
-
-    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
-
-    private static var COMPONENT_EVENT_MASK_FieldID: jfieldID?
-
-    open static var COMPONENT_EVENT_MASK: Int64 {
-        get {
-            let __value = JNIField.GetStaticLongField( fieldName: "COMPONENT_EVENT_MASK", fieldType: "J", fieldCache: &COMPONENT_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
-        }
-    }
-
-    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
-
-    private static var CONTAINER_EVENT_MASK_FieldID: jfieldID?
-
-    open static var CONTAINER_EVENT_MASK: Int64 {
-        get {
-            let __value = JNIField.GetStaticLongField( fieldName: "CONTAINER_EVENT_MASK", fieldType: "J", fieldCache: &CONTAINER_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
-        }
-    }
-
-    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
-
-    private static var FOCUS_EVENT_MASK_FieldID: jfieldID?
-
-    open static var FOCUS_EVENT_MASK: Int64 {
-        get {
-            let __value = JNIField.GetStaticLongField( fieldName: "FOCUS_EVENT_MASK", fieldType: "J", fieldCache: &FOCUS_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
-        }
-    }
-
-    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
-
-    private static var KEY_EVENT_MASK_FieldID: jfieldID?
-
-    open static var KEY_EVENT_MASK: Int64 {
-        get {
-            let __value = JNIField.GetStaticLongField( fieldName: "KEY_EVENT_MASK", fieldType: "J", fieldCache: &KEY_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
-        }
-    }
-
-    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
-
-    private static var MOUSE_EVENT_MASK_FieldID: jfieldID?
-
-    open static var MOUSE_EVENT_MASK: Int64 {
-        get {
-            let __value = JNIField.GetStaticLongField( fieldName: "MOUSE_EVENT_MASK", fieldType: "J", fieldCache: &MOUSE_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
-        }
-    }
-
-    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
-
-    private static var MOUSE_MOTION_EVENT_MASK_FieldID: jfieldID?
-
-    open static var MOUSE_MOTION_EVENT_MASK: Int64 {
-        get {
-            let __value = JNIField.GetStaticLongField( fieldName: "MOUSE_MOTION_EVENT_MASK", fieldType: "J", fieldCache: &MOUSE_MOTION_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
-        }
-    }
-
-    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
-
-    private static var WINDOW_EVENT_MASK_FieldID: jfieldID?
-
-    open static var WINDOW_EVENT_MASK: Int64 {
-        get {
-            let __value = JNIField.GetStaticLongField( fieldName: "WINDOW_EVENT_MASK", fieldType: "J", fieldCache: &WINDOW_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
-        }
-    }
-
     /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
 
     private static var ACTION_EVENT_MASK_FieldID: jfieldID?
@@ -147,7 +24,7 @@ open class AWTEvent: java_util.EventObject {
     open static var ACTION_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "ACTION_EVENT_MASK", fieldType: "J", fieldCache: &ACTION_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
+            return __value
         }
     }
 
@@ -158,75 +35,40 @@ open class AWTEvent: java_util.EventObject {
     open static var ADJUSTMENT_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "ADJUSTMENT_EVENT_MASK", fieldType: "J", fieldCache: &ADJUSTMENT_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
+            return __value
         }
     }
 
-    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
+    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
 
-    private static var ITEM_EVENT_MASK_FieldID: jfieldID?
+    private static var COMPONENT_EVENT_MASK_FieldID: jfieldID?
 
-    open static var ITEM_EVENT_MASK: Int64 {
+    open static var COMPONENT_EVENT_MASK: Int64 {
         get {
-            let __value = JNIField.GetStaticLongField( fieldName: "ITEM_EVENT_MASK", fieldType: "J", fieldCache: &ITEM_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
+            let __value = JNIField.GetStaticLongField( fieldName: "COMPONENT_EVENT_MASK", fieldType: "J", fieldCache: &COMPONENT_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
         }
     }
 
-    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
+    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
 
-    private static var TEXT_EVENT_MASK_FieldID: jfieldID?
+    private static var CONTAINER_EVENT_MASK_FieldID: jfieldID?
 
-    open static var TEXT_EVENT_MASK: Int64 {
+    open static var CONTAINER_EVENT_MASK: Int64 {
         get {
-            let __value = JNIField.GetStaticLongField( fieldName: "TEXT_EVENT_MASK", fieldType: "J", fieldCache: &TEXT_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
+            let __value = JNIField.GetStaticLongField( fieldName: "CONTAINER_EVENT_MASK", fieldType: "J", fieldCache: &CONTAINER_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
         }
     }
 
-    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
+    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
 
-    private static var INPUT_METHOD_EVENT_MASK_FieldID: jfieldID?
+    private static var FOCUS_EVENT_MASK_FieldID: jfieldID?
 
-    open static var INPUT_METHOD_EVENT_MASK: Int64 {
+    open static var FOCUS_EVENT_MASK: Int64 {
         get {
-            let __value = JNIField.GetStaticLongField( fieldName: "INPUT_METHOD_EVENT_MASK", fieldType: "J", fieldCache: &INPUT_METHOD_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
-        }
-    }
-
-    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
-
-    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
-
-    private static var PAINT_EVENT_MASK_FieldID: jfieldID?
-
-    open static var PAINT_EVENT_MASK: Int64 {
-        get {
-            let __value = JNIField.GetStaticLongField( fieldName: "PAINT_EVENT_MASK", fieldType: "J", fieldCache: &PAINT_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
-        }
-    }
-
-    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
-
-    private static var INVOCATION_EVENT_MASK_FieldID: jfieldID?
-
-    open static var INVOCATION_EVENT_MASK: Int64 {
-        get {
-            let __value = JNIField.GetStaticLongField( fieldName: "INVOCATION_EVENT_MASK", fieldType: "J", fieldCache: &INVOCATION_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
-        }
-    }
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
-
-    private static var HIERARCHY_EVENT_MASK_FieldID: jfieldID?
-
-    open static var HIERARCHY_EVENT_MASK: Int64 {
-        get {
-            let __value = JNIField.GetStaticLongField( fieldName: "HIERARCHY_EVENT_MASK", fieldType: "J", fieldCache: &HIERARCHY_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
+            let __value = JNIField.GetStaticLongField( fieldName: "FOCUS_EVENT_MASK", fieldType: "J", fieldCache: &FOCUS_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
         }
     }
 
@@ -237,7 +79,88 @@ open class AWTEvent: java_util.EventObject {
     open static var HIERARCHY_BOUNDS_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "HIERARCHY_BOUNDS_EVENT_MASK", fieldType: "J", fieldCache: &HIERARCHY_BOUNDS_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
+            return __value
+        }
+    }
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
+
+    private static var HIERARCHY_EVENT_MASK_FieldID: jfieldID?
+
+    open static var HIERARCHY_EVENT_MASK: Int64 {
+        get {
+            let __value = JNIField.GetStaticLongField( fieldName: "HIERARCHY_EVENT_MASK", fieldType: "J", fieldCache: &HIERARCHY_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
+        }
+    }
+
+    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
+
+    // Skipping field: true false false false false false 
+
+    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
+
+    private static var INPUT_METHOD_EVENT_MASK_FieldID: jfieldID?
+
+    open static var INPUT_METHOD_EVENT_MASK: Int64 {
+        get {
+            let __value = JNIField.GetStaticLongField( fieldName: "INPUT_METHOD_EVENT_MASK", fieldType: "J", fieldCache: &INPUT_METHOD_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
+        }
+    }
+
+    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
+
+    private static var INVOCATION_EVENT_MASK_FieldID: jfieldID?
+
+    open static var INVOCATION_EVENT_MASK: Int64 {
+        get {
+            let __value = JNIField.GetStaticLongField( fieldName: "INVOCATION_EVENT_MASK", fieldType: "J", fieldCache: &INVOCATION_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
+        }
+    }
+
+    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
+
+    private static var ITEM_EVENT_MASK_FieldID: jfieldID?
+
+    open static var ITEM_EVENT_MASK: Int64 {
+        get {
+            let __value = JNIField.GetStaticLongField( fieldName: "ITEM_EVENT_MASK", fieldType: "J", fieldCache: &ITEM_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
+        }
+    }
+
+    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
+
+    private static var KEY_EVENT_MASK_FieldID: jfieldID?
+
+    open static var KEY_EVENT_MASK: Int64 {
+        get {
+            let __value = JNIField.GetStaticLongField( fieldName: "KEY_EVENT_MASK", fieldType: "J", fieldCache: &KEY_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
+        }
+    }
+
+    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
+
+    private static var MOUSE_EVENT_MASK_FieldID: jfieldID?
+
+    open static var MOUSE_EVENT_MASK: Int64 {
+        get {
+            let __value = JNIField.GetStaticLongField( fieldName: "MOUSE_EVENT_MASK", fieldType: "J", fieldCache: &MOUSE_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
+        }
+    }
+
+    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
+
+    private static var MOUSE_MOTION_EVENT_MASK_FieldID: jfieldID?
+
+    open static var MOUSE_MOTION_EVENT_MASK: Int64 {
+        get {
+            let __value = JNIField.GetStaticLongField( fieldName: "MOUSE_MOTION_EVENT_MASK", fieldType: "J", fieldCache: &MOUSE_MOTION_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
         }
     }
 
@@ -248,29 +171,18 @@ open class AWTEvent: java_util.EventObject {
     open static var MOUSE_WHEEL_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "MOUSE_WHEEL_EVENT_MASK", fieldType: "J", fieldCache: &MOUSE_WHEEL_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
+            return __value
         }
     }
 
-    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
+    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
 
-    private static var WINDOW_STATE_EVENT_MASK_FieldID: jfieldID?
+    private static var PAINT_EVENT_MASK_FieldID: jfieldID?
 
-    open static var WINDOW_STATE_EVENT_MASK: Int64 {
+    open static var PAINT_EVENT_MASK: Int64 {
         get {
-            let __value = JNIField.GetStaticLongField( fieldName: "WINDOW_STATE_EVENT_MASK", fieldType: "J", fieldCache: &WINDOW_STATE_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
-        }
-    }
-
-    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
-
-    private static var WINDOW_FOCUS_EVENT_MASK_FieldID: jfieldID?
-
-    open static var WINDOW_FOCUS_EVENT_MASK: Int64 {
-        get {
-            let __value = JNIField.GetStaticLongField( fieldName: "WINDOW_FOCUS_EVENT_MASK", fieldType: "J", fieldCache: &WINDOW_FOCUS_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int64(), from: __value )
+            let __value = JNIField.GetStaticLongField( fieldName: "PAINT_EVENT_MASK", fieldType: "J", fieldCache: &PAINT_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
         }
     }
 
@@ -281,13 +193,105 @@ open class AWTEvent: java_util.EventObject {
     open static var RESERVED_ID_MAX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RESERVED_ID_MAX", fieldType: "I", fieldCache: &RESERVED_ID_MAX_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
+
+    private static var TEXT_EVENT_MASK_FieldID: jfieldID?
+
+    open static var TEXT_EVENT_MASK: Int64 {
+        get {
+            let __value = JNIField.GetStaticLongField( fieldName: "TEXT_EVENT_MASK", fieldType: "J", fieldCache: &TEXT_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
+        }
+    }
+
+    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
+
+    private static var WINDOW_EVENT_MASK_FieldID: jfieldID?
+
+    open static var WINDOW_EVENT_MASK: Int64 {
+        get {
+            let __value = JNIField.GetStaticLongField( fieldName: "WINDOW_EVENT_MASK", fieldType: "J", fieldCache: &WINDOW_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
+        }
+    }
+
+    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
+
+    private static var WINDOW_FOCUS_EVENT_MASK_FieldID: jfieldID?
+
+    open static var WINDOW_FOCUS_EVENT_MASK: Int64 {
+        get {
+            let __value = JNIField.GetStaticLongField( fieldName: "WINDOW_FOCUS_EVENT_MASK", fieldType: "J", fieldCache: &WINDOW_FOCUS_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
+        }
+    }
+
+    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
+
+    private static var WINDOW_STATE_EVENT_MASK_FieldID: jfieldID?
+
+    open static var WINDOW_STATE_EVENT_MASK: Int64 {
+        get {
+            let __value = JNIField.GetStaticLongField( fieldName: "WINDOW_STATE_EVENT_MASK", fieldType: "J", fieldCache: &WINDOW_STATE_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
+            return __value
         }
     }
 
     /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
 
+    /// private static final sun.util.logging.PlatformLogger java.awt.AWTEvent.log
+
     /// private static final long java.awt.AWTEvent.serialVersionUID
+
+    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
+
+    /// private byte[] java.awt.AWTEvent.bdata
+
+    /// protected boolean java.awt.AWTEvent.consumed
+
+    private static var consumed_FieldID: jfieldID?
+
+    open var consumed: Bool {
+        get {
+            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &AWTEvent.consumed_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &AWTEvent.consumed_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+        }
+    }
+
+    /// transient boolean java.awt.AWTEvent.focusManagerIsDispatching
+
+    // Skipping field: true false false false false false 
+
+    /// protected int java.awt.AWTEvent.id
+
+    private static var id_FieldID: jfieldID?
+
+    open var id: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &AWTEvent.id_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &AWTEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// transient boolean java.awt.AWTEvent.isPosted
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.AWTEvent.isSystemGenerated
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -297,8 +301,8 @@ open class AWTEvent: java_util.EventObject {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &AWTEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &AWTEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -308,33 +312,15 @@ open class AWTEvent: java_util.EventObject {
         }
     }
 
-    /// public java.awt.AWTEvent(java.lang.Object,int)
+    /// public java.awt.AWTEvent(java.awt.Event)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( arg0: java_swift.JavaObject?, arg1: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/AWTEvent", classCache: &AWTEvent.AWTEventJNIClass, methodSig: "(Ljava/lang/Object;I)V", methodCache: &AWTEvent.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _arg0: java_swift.JavaObject?, _ _arg1: Int ) {
-        self.init( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public java.awt.AWTEvent(java.awt.Event)
-
-    private static var new_MethodID_2: jmethodID?
-
     public convenience init( arg0: Event? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/AWTEvent", classCache: &AWTEvent.AWTEventJNIClass, methodSig: "(Ljava/awt/Event;)V", methodCache: &AWTEvent.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/AWTEvent", classCache: &AWTEvent.AWTEventJNIClass, methodSig: "(Ljava/awt/Event;)V", methodCache: &AWTEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -343,93 +329,132 @@ open class AWTEvent: java_util.EventObject {
         self.init( arg0: _arg0 )
     }
 
-    /// public java.lang.String java.awt.AWTEvent.toString()
+    /// public java.awt.AWTEvent(java.lang.Object,int)
 
-    /// static byte[] java.awt.AWTEvent.access$100(java.awt.AWTEvent)
+    private static var new_MethodID_2: jmethodID?
 
-    /// static sun.util.logging.PlatformLogger java.awt.AWTEvent.access$200()
+    public convenience init( arg0: java_swift.JavaObject?, arg1: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __object = JNIMethod.NewObject( className: "java/awt/AWTEvent", classCache: &AWTEvent.AWTEventJNIClass, methodSig: "(Ljava/lang/Object;I)V", methodCache: &AWTEvent.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _arg0: java_swift.JavaObject?, _ _arg1: Int ) {
+        self.init( arg0: _arg0, arg1: _arg1 )
+    }
 
     /// static boolean java.awt.AWTEvent.access$000(java.awt.AWTEvent)
 
+    // Skipping method: true false false false false 
+
     /// static boolean java.awt.AWTEvent.access$002(java.awt.AWTEvent,boolean)
 
-    /// public java.lang.String java.awt.AWTEvent.paramString()
+    // Skipping method: true false false false false 
 
-    private static var paramString_MethodID_3: jmethodID?
+    /// static byte[] java.awt.AWTEvent.access$100(java.awt.AWTEvent)
 
-    open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &AWTEvent.paramString_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
+    // Skipping method: true false false false false 
 
     /// static byte[] java.awt.AWTEvent.access$102(java.awt.AWTEvent,byte[])
 
+    // Skipping method: true false false false false 
+
+    /// static sun.util.logging.PlatformLogger java.awt.AWTEvent.access$200()
+
+    // Skipping method: true false false false false 
+
+    /// private static synchronized java.lang.reflect.Field java.awt.AWTEvent.get_InputEvent_CanAccessSystemClipboard()
+
     /// private static native void java.awt.AWTEvent.initIDs()
+
+    /// protected void java.awt.AWTEvent.consume()
+
+    private static var consume_MethodID_3: jmethodID?
+
+    open func consume() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "consume", methodSig: "()V", methodCache: &AWTEvent.consume_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+
+    /// java.awt.Event java.awt.AWTEvent.convertToOld()
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.AWTEvent.copyPrivateDataInto(java.awt.AWTEvent)
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.AWTEvent.dispatched()
+
+    // Skipping method: true false false false false 
+
+    /// final java.security.AccessControlContext java.awt.AWTEvent.getAccessControlContext()
+
+    // Skipping method: true false false false false 
 
     /// public int java.awt.AWTEvent.getID()
 
     private static var getID_MethodID_4: jmethodID?
 
     open func getID() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getID", methodSig: "()I", methodCache: &AWTEvent.getID_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
-    /// final java.security.AccessControlContext java.awt.AWTEvent.getAccessControlContext()
+    /// protected boolean java.awt.AWTEvent.isConsumed()
 
-    /// java.awt.Event java.awt.AWTEvent.convertToOld()
+    private static var isConsumed_MethodID_5: jmethodID?
 
-    /// void java.awt.AWTEvent.copyPrivateDataInto(java.awt.AWTEvent)
+    open func isConsumed() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumed", methodSig: "()Z", methodCache: &AWTEvent.isConsumed_MethodID_5, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
 
-    /// private static synchronized java.lang.reflect.Field java.awt.AWTEvent.get_InputEvent_CanAccessSystemClipboard()
+
+    /// private native void java.awt.AWTEvent.nativeSetSource(java.awt.peer.ComponentPeer)
+
+    /// public java.lang.String java.awt.AWTEvent.paramString()
+
+    private static var paramString_MethodID_6: jmethodID?
+
+    open func paramString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &AWTEvent.paramString_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
     /// public void java.awt.AWTEvent.setSource(java.lang.Object)
 
-    private static var setSource_MethodID_5: jmethodID?
+    private static var setSource_MethodID_7: jmethodID?
 
     open func setSource( arg0: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSource", methodSig: "(Ljava/lang/Object;)V", methodCache: &AWTEvent.setSource_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSource", methodSig: "(Ljava/lang/Object;)V", methodCache: &AWTEvent.setSource_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setSource( _ _arg0: java_swift.JavaObject? ) {
         setSource( arg0: _arg0 )
     }
 
-    /// private native void java.awt.AWTEvent.nativeSetSource(java.awt.peer.ComponentPeer)
+    /// public java.lang.String java.awt.AWTEvent.toString()
 
-    /// void java.awt.AWTEvent.dispatched()
-
-    /// protected boolean java.awt.AWTEvent.isConsumed()
-
-    private static var isConsumed_MethodID_6: jmethodID?
-
-    open func isConsumed() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumed", methodSig: "()Z", methodCache: &AWTEvent.isConsumed_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected void java.awt.AWTEvent.consume()
-
-    private static var consume_MethodID_7: jmethodID?
-
-    open func consume() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "consume", methodSig: "()V", methodCache: &AWTEvent.consume_MethodID_7, args: &__args, locals: &__locals )
-    }
-
+    // Skipping method: false true false false false 
 
 }
 

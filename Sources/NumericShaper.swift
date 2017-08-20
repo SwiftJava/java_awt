@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.font.NumericShaper ///
 
-open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,28 +16,14 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
 
     private static var NumericShaperJNIClass: jclass?
 
-    /// private int java.awt.font.NumericShaper.key
+    /// public static final int java.awt.font.NumericShaper.ALL_RANGES
 
-    /// private int java.awt.font.NumericShaper.mask
+    private static var ALL_RANGES_FieldID: jfieldID?
 
-    /// private java.awt.font.NumericShaper$Range java.awt.font.NumericShaper.shapingRange
-
-    /// private transient java.util.Set java.awt.font.NumericShaper.rangeSet
-
-    /// private transient java.awt.font.NumericShaper$Range[] java.awt.font.NumericShaper.rangeArray
-
-    /// private static final int java.awt.font.NumericShaper.BSEARCH_THRESHOLD
-
-    /// private static final long java.awt.font.NumericShaper.serialVersionUID
-
-    /// public static final int java.awt.font.NumericShaper.EUROPEAN
-
-    private static var EUROPEAN_FieldID: jfieldID?
-
-    open static var EUROPEAN: Int {
+    open static var ALL_RANGES: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "EUROPEAN", fieldType: "I", fieldCache: &EUROPEAN_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "ALL_RANGES", fieldType: "I", fieldCache: &ALL_RANGES_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
         }
     }
 
@@ -48,31 +34,11 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
     open static var ARABIC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ARABIC", fieldType: "I", fieldCache: &ARABIC_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.font.NumericShaper.EASTERN_ARABIC
-
-    private static var EASTERN_ARABIC_FieldID: jfieldID?
-
-    open static var EASTERN_ARABIC: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "EASTERN_ARABIC", fieldType: "I", fieldCache: &EASTERN_ARABIC_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.NumericShaper.DEVANAGARI
-
-    private static var DEVANAGARI_FieldID: jfieldID?
-
-    open static var DEVANAGARI: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "DEVANAGARI", fieldType: "I", fieldCache: &DEVANAGARI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// private static final int java.awt.font.NumericShaper.ARABIC_KEY
 
     /// public static final int java.awt.font.NumericShaper.BENGALI
 
@@ -81,130 +47,41 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
     open static var BENGALI: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BENGALI", fieldType: "I", fieldCache: &BENGALI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.font.NumericShaper.GURMUKHI
+    /// private static final int java.awt.font.NumericShaper.BENGALI_KEY
 
-    private static var GURMUKHI_FieldID: jfieldID?
+    /// private static final int java.awt.font.NumericShaper.BSEARCH_THRESHOLD
 
-    open static var GURMUKHI: Int {
+    /// private static final int java.awt.font.NumericShaper.CONTEXTUAL_MASK
+
+    /// public static final int java.awt.font.NumericShaper.DEVANAGARI
+
+    private static var DEVANAGARI_FieldID: jfieldID?
+
+    open static var DEVANAGARI: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "GURMUKHI", fieldType: "I", fieldCache: &GURMUKHI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "DEVANAGARI", fieldType: "I", fieldCache: &DEVANAGARI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.font.NumericShaper.GUJARATI
+    /// private static final int java.awt.font.NumericShaper.DEVANAGARI_KEY
 
-    private static var GUJARATI_FieldID: jfieldID?
+    /// public static final int java.awt.font.NumericShaper.EASTERN_ARABIC
 
-    open static var GUJARATI: Int {
+    private static var EASTERN_ARABIC_FieldID: jfieldID?
+
+    open static var EASTERN_ARABIC: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "GUJARATI", fieldType: "I", fieldCache: &GUJARATI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "EASTERN_ARABIC", fieldType: "I", fieldCache: &EASTERN_ARABIC_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.font.NumericShaper.ORIYA
-
-    private static var ORIYA_FieldID: jfieldID?
-
-    open static var ORIYA: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ORIYA", fieldType: "I", fieldCache: &ORIYA_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.NumericShaper.TAMIL
-
-    private static var TAMIL_FieldID: jfieldID?
-
-    open static var TAMIL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAMIL", fieldType: "I", fieldCache: &TAMIL_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.NumericShaper.TELUGU
-
-    private static var TELUGU_FieldID: jfieldID?
-
-    open static var TELUGU: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TELUGU", fieldType: "I", fieldCache: &TELUGU_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.NumericShaper.KANNADA
-
-    private static var KANNADA_FieldID: jfieldID?
-
-    open static var KANNADA: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "KANNADA", fieldType: "I", fieldCache: &KANNADA_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.NumericShaper.MALAYALAM
-
-    private static var MALAYALAM_FieldID: jfieldID?
-
-    open static var MALAYALAM: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MALAYALAM", fieldType: "I", fieldCache: &MALAYALAM_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.NumericShaper.THAI
-
-    private static var THAI_FieldID: jfieldID?
-
-    open static var THAI: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "THAI", fieldType: "I", fieldCache: &THAI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.NumericShaper.LAO
-
-    private static var LAO_FieldID: jfieldID?
-
-    open static var LAO: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LAO", fieldType: "I", fieldCache: &LAO_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.NumericShaper.TIBETAN
-
-    private static var TIBETAN_FieldID: jfieldID?
-
-    open static var TIBETAN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TIBETAN", fieldType: "I", fieldCache: &TIBETAN_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.NumericShaper.MYANMAR
-
-    private static var MYANMAR_FieldID: jfieldID?
-
-    open static var MYANMAR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MYANMAR", fieldType: "I", fieldCache: &MYANMAR_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// private static final int java.awt.font.NumericShaper.EASTERN_ARABIC_KEY
 
     /// public static final int java.awt.font.NumericShaper.ETHIOPIC
 
@@ -213,9 +90,63 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
     open static var ETHIOPIC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ETHIOPIC", fieldType: "I", fieldCache: &ETHIOPIC_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
+
+    /// private static final int java.awt.font.NumericShaper.ETHIOPIC_KEY
+
+    /// public static final int java.awt.font.NumericShaper.EUROPEAN
+
+    private static var EUROPEAN_FieldID: jfieldID?
+
+    open static var EUROPEAN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "EUROPEAN", fieldType: "I", fieldCache: &EUROPEAN_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.EUROPEAN_KEY
+
+    /// public static final int java.awt.font.NumericShaper.GUJARATI
+
+    private static var GUJARATI_FieldID: jfieldID?
+
+    open static var GUJARATI: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "GUJARATI", fieldType: "I", fieldCache: &GUJARATI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.GUJARATI_KEY
+
+    /// public static final int java.awt.font.NumericShaper.GURMUKHI
+
+    private static var GURMUKHI_FieldID: jfieldID?
+
+    open static var GURMUKHI: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "GURMUKHI", fieldType: "I", fieldCache: &GURMUKHI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.GURMUKHI_KEY
+
+    /// public static final int java.awt.font.NumericShaper.KANNADA
+
+    private static var KANNADA_FieldID: jfieldID?
+
+    open static var KANNADA: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "KANNADA", fieldType: "I", fieldCache: &KANNADA_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.KANNADA_KEY
 
     /// public static final int java.awt.font.NumericShaper.KHMER
 
@@ -224,9 +155,37 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
     open static var KHMER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KHMER", fieldType: "I", fieldCache: &KHMER_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
+
+    /// private static final int java.awt.font.NumericShaper.KHMER_KEY
+
+    /// public static final int java.awt.font.NumericShaper.LAO
+
+    private static var LAO_FieldID: jfieldID?
+
+    open static var LAO: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "LAO", fieldType: "I", fieldCache: &LAO_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.LAO_KEY
+
+    /// public static final int java.awt.font.NumericShaper.MALAYALAM
+
+    private static var MALAYALAM_FieldID: jfieldID?
+
+    open static var MALAYALAM: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MALAYALAM", fieldType: "I", fieldCache: &MALAYALAM_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.MALAYALAM_KEY
 
     /// public static final int java.awt.font.NumericShaper.MONGOLIAN
 
@@ -235,62 +194,91 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
     open static var MONGOLIAN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MONGOLIAN", fieldType: "I", fieldCache: &MONGOLIAN_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
-
-    /// public static final int java.awt.font.NumericShaper.ALL_RANGES
-
-    private static var ALL_RANGES_FieldID: jfieldID?
-
-    open static var ALL_RANGES: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ALL_RANGES", fieldType: "I", fieldCache: &ALL_RANGES_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// private static final int java.awt.font.NumericShaper.EUROPEAN_KEY
-
-    /// private static final int java.awt.font.NumericShaper.ARABIC_KEY
-
-    /// private static final int java.awt.font.NumericShaper.EASTERN_ARABIC_KEY
-
-    /// private static final int java.awt.font.NumericShaper.DEVANAGARI_KEY
-
-    /// private static final int java.awt.font.NumericShaper.BENGALI_KEY
-
-    /// private static final int java.awt.font.NumericShaper.GURMUKHI_KEY
-
-    /// private static final int java.awt.font.NumericShaper.GUJARATI_KEY
-
-    /// private static final int java.awt.font.NumericShaper.ORIYA_KEY
-
-    /// private static final int java.awt.font.NumericShaper.TAMIL_KEY
-
-    /// private static final int java.awt.font.NumericShaper.TELUGU_KEY
-
-    /// private static final int java.awt.font.NumericShaper.KANNADA_KEY
-
-    /// private static final int java.awt.font.NumericShaper.MALAYALAM_KEY
-
-    /// private static final int java.awt.font.NumericShaper.THAI_KEY
-
-    /// private static final int java.awt.font.NumericShaper.LAO_KEY
-
-    /// private static final int java.awt.font.NumericShaper.TIBETAN_KEY
-
-    /// private static final int java.awt.font.NumericShaper.MYANMAR_KEY
-
-    /// private static final int java.awt.font.NumericShaper.ETHIOPIC_KEY
-
-    /// private static final int java.awt.font.NumericShaper.KHMER_KEY
 
     /// private static final int java.awt.font.NumericShaper.MONGOLIAN_KEY
 
+    /// public static final int java.awt.font.NumericShaper.MYANMAR
+
+    private static var MYANMAR_FieldID: jfieldID?
+
+    open static var MYANMAR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MYANMAR", fieldType: "I", fieldCache: &MYANMAR_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.MYANMAR_KEY
+
     /// private static final int java.awt.font.NumericShaper.NUM_KEYS
 
-    /// private static final int java.awt.font.NumericShaper.CONTEXTUAL_MASK
+    /// public static final int java.awt.font.NumericShaper.ORIYA
+
+    private static var ORIYA_FieldID: jfieldID?
+
+    open static var ORIYA: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "ORIYA", fieldType: "I", fieldCache: &ORIYA_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.ORIYA_KEY
+
+    /// public static final int java.awt.font.NumericShaper.TAMIL
+
+    private static var TAMIL_FieldID: jfieldID?
+
+    open static var TAMIL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAMIL", fieldType: "I", fieldCache: &TAMIL_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.TAMIL_KEY
+
+    /// public static final int java.awt.font.NumericShaper.TELUGU
+
+    private static var TELUGU_FieldID: jfieldID?
+
+    open static var TELUGU: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TELUGU", fieldType: "I", fieldCache: &TELUGU_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.TELUGU_KEY
+
+    /// public static final int java.awt.font.NumericShaper.THAI
+
+    private static var THAI_FieldID: jfieldID?
+
+    open static var THAI: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "THAI", fieldType: "I", fieldCache: &THAI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.THAI_KEY
+
+    /// public static final int java.awt.font.NumericShaper.TIBETAN
+
+    private static var TIBETAN_FieldID: jfieldID?
+
+    open static var TIBETAN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TIBETAN", fieldType: "I", fieldCache: &TIBETAN_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.font.NumericShaper.TIBETAN_KEY
 
     /// private static final char[] java.awt.font.NumericShaper.bases
 
@@ -300,9 +288,21 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
 
     /// private static int java.awt.font.NumericShaper.ctCacheLimit
 
-    /// private transient volatile java.awt.font.NumericShaper$Range java.awt.font.NumericShaper.currentRange
+    /// private static final long java.awt.font.NumericShaper.serialVersionUID
 
     /// private static int[] java.awt.font.NumericShaper.strongTable
+
+    /// private transient volatile java.awt.font.NumericShaper$Range java.awt.font.NumericShaper.currentRange
+
+    /// private int java.awt.font.NumericShaper.key
+
+    /// private int java.awt.font.NumericShaper.mask
+
+    /// private transient java.awt.font.NumericShaper$Range[] java.awt.font.NumericShaper.rangeArray
+
+    /// private transient java.util.Set java.awt.font.NumericShaper.rangeSet
+
+    /// private java.awt.font.NumericShaper$Range java.awt.font.NumericShaper.shapingRange
 
     /// private transient volatile int java.awt.font.NumericShaper.stCache
 
@@ -310,88 +310,79 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
 
     /// private java.awt.font.NumericShaper(java.awt.font.NumericShaper$Range,java.util.Set)
 
-    /// public boolean java.awt.font.NumericShaper.equals(java.lang.Object)
-
-    private static var equals_MethodID_1: jmethodID?
-
-    open func equals( o: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: o, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &NumericShaper.equals_MethodID_1, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func equals( _ _o: java_swift.JavaObject? ) -> Bool {
-        return equals( o: _o )
-    }
-
-    /// public java.lang.String java.awt.font.NumericShaper.toString()
-
-    /// public int java.awt.font.NumericShaper.hashCode()
-
-    /// private void java.awt.font.NumericShaper.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
-
-    /// private static int java.awt.font.NumericShaper.search(int,int[],int,int)
-
-    /// public void java.awt.font.NumericShaper.shape(char[],int,int,int)
-
-    private static var shape_MethodID_2: jmethodID?
-
-    open func shape( text: [UInt16]?, start: Int, count: Int, context: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        __args[1] = JNIType.toJava( value: start, locals: &__locals )
-        __args[2] = JNIType.toJava( value: count, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shape", methodSig: "([CIII)V", methodCache: &NumericShaper.shape_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func shape( _ _text: [UInt16]?, _ _start: Int, _ _count: Int, _ _context: Int ) {
-        shape( text: _text, start: _start, count: _count, context: _context )
-    }
-
-    /// public void java.awt.font.NumericShaper.shape(char[],int,int)
-
-    private static var shape_MethodID_3: jmethodID?
-
-    open func shape( text: [UInt16]?, start: Int, count: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        __args[1] = JNIType.toJava( value: start, locals: &__locals )
-        __args[2] = JNIType.toJava( value: count, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shape", methodSig: "([CII)V", methodCache: &NumericShaper.shape_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func shape( _ _text: [UInt16]?, _ _start: Int, _ _count: Int ) {
-        shape( text: _text, start: _start, count: _count )
-    }
-
-    /// public void java.awt.font.NumericShaper.shape(char[],int,int,java.awt.font.NumericShaper$Range)
-
-    private static var shape_MethodID_4: jmethodID?
-
-    open func shape( text: [UInt16]?, start: Int, count: Int, context: NumericShaper_Range? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        __args[1] = JNIType.toJava( value: start, locals: &__locals )
-        __args[2] = JNIType.toJava( value: count, locals: &__locals )
-        __args[3] = JNIType.toJava( value: context, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shape", methodSig: "([CIILjava/awt/font/NumericShaper$Range;)V", methodCache: &NumericShaper.shape_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func shape( _ _text: [UInt16]?, _ _start: Int, _ _count: Int, _ _context: NumericShaper_Range? ) {
-        shape( text: _text, start: _start, count: _count, context: _context )
-    }
-
     /// private static int java.awt.font.NumericShaper.getContextKey(char)
 
-    /// private java.awt.font.NumericShaper$Range java.awt.font.NumericShaper.rangeForCodePoint(int)
+    /// public static java.awt.font.NumericShaper java.awt.font.NumericShaper.getContextualShaper(int)
 
-    /// private boolean java.awt.font.NumericShaper.isStrongDirectional(char)
+    private static var getContextualShaper_MethodID_1: jmethodID?
+
+    open class func getContextualShaper( ranges: Int ) -> NumericShaper! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(ranges) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getContextualShaper", methodSig: "(I)Ljava/awt/font/NumericShaper;", methodCache: &getContextualShaper_MethodID_1, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? NumericShaper( javaObject: __return ) : nil
+    }
+
+    open class func getContextualShaper( _ _ranges: Int ) -> NumericShaper! {
+        return getContextualShaper( ranges: _ranges )
+    }
+
+    /// public static java.awt.font.NumericShaper java.awt.font.NumericShaper.getContextualShaper(int,int)
+
+    private static var getContextualShaper_MethodID_2: jmethodID?
+
+    open class func getContextualShaper( ranges: Int, defaultContext: Int ) -> NumericShaper! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(ranges) )
+        __args[1] = jvalue( i: jint(defaultContext) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getContextualShaper", methodSig: "(II)Ljava/awt/font/NumericShaper;", methodCache: &getContextualShaper_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? NumericShaper( javaObject: __return ) : nil
+    }
+
+    open class func getContextualShaper( _ _ranges: Int, _ _defaultContext: Int ) -> NumericShaper! {
+        return getContextualShaper( ranges: _ranges, defaultContext: _defaultContext )
+    }
+
+    /// public static java.awt.font.NumericShaper java.awt.font.NumericShaper.getContextualShaper(java.util.Set)
+
+    private static var getContextualShaper_MethodID_3: jmethodID?
+
+    open class func getContextualShaper( ranges: java_swift.JavaSet? ) -> NumericShaper! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: ranges, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getContextualShaper", methodSig: "(Ljava/util/Set;)Ljava/awt/font/NumericShaper;", methodCache: &getContextualShaper_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? NumericShaper( javaObject: __return ) : nil
+    }
+
+    open class func getContextualShaper( _ _ranges: java_swift.JavaSet? ) -> NumericShaper! {
+        return getContextualShaper( ranges: _ranges )
+    }
+
+    /// public static java.awt.font.NumericShaper java.awt.font.NumericShaper.getContextualShaper(java.util.Set,java.awt.font.NumericShaper$Range)
+
+    private static var getContextualShaper_MethodID_4: jmethodID?
+
+    open class func getContextualShaper( ranges: java_swift.JavaSet?, defaultContext: NumericShaper_Range? ) -> NumericShaper! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: ranges, locals: &__locals )
+        __args[1] = JNIType.toJava( value: defaultContext, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getContextualShaper", methodSig: "(Ljava/util/Set;Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;", methodCache: &getContextualShaper_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? NumericShaper( javaObject: __return ) : nil
+    }
+
+    open class func getContextualShaper( _ _ranges: java_swift.JavaSet?, _ _defaultContext: NumericShaper_Range? ) -> NumericShaper! {
+        return getContextualShaper( ranges: _ranges, defaultContext: _defaultContext )
+    }
+
+    /// private static int java.awt.font.NumericShaper.getHighBit(int)
 
     /// private static int java.awt.font.NumericShaper.getKeyFromMask(int)
 
@@ -400,9 +391,9 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
     private static var getShaper_MethodID_5: jmethodID?
 
     open class func getShaper( singleRange: Int ) -> NumericShaper! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: singleRange, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(singleRange) )
         let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getShaper", methodSig: "(I)Ljava/awt/font/NumericShaper;", methodCache: &getShaper_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? NumericShaper( javaObject: __return ) : nil
@@ -417,8 +408,8 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
     private static var getShaper_MethodID_6: jmethodID?
 
     open class func getShaper( singleRange: NumericShaper_Range? ) -> NumericShaper! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: singleRange, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getShaper", methodSig: "(Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;", methodCache: &getShaper_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -429,122 +420,135 @@ open class NumericShaper: java_swift.JavaObject, /* java.io.Serializable */ Uncl
         return getShaper( singleRange: _singleRange )
     }
 
-    /// public static java.awt.font.NumericShaper java.awt.font.NumericShaper.getContextualShaper(java.util.Set,java.awt.font.NumericShaper$Range)
-
-    private static var getContextualShaper_MethodID_7: jmethodID?
-
-    open class func getContextualShaper( ranges: java_swift.JavaSet?, defaultContext: NumericShaper_Range? ) -> NumericShaper! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ranges, locals: &__locals )
-        __args[1] = JNIType.toJava( value: defaultContext, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getContextualShaper", methodSig: "(Ljava/util/Set;Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;", methodCache: &getContextualShaper_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? NumericShaper( javaObject: __return ) : nil
-    }
-
-    open class func getContextualShaper( _ _ranges: java_swift.JavaSet?, _ _defaultContext: NumericShaper_Range? ) -> NumericShaper! {
-        return getContextualShaper( ranges: _ranges, defaultContext: _defaultContext )
-    }
-
-    /// public static java.awt.font.NumericShaper java.awt.font.NumericShaper.getContextualShaper(int)
-
-    private static var getContextualShaper_MethodID_8: jmethodID?
-
-    open class func getContextualShaper( ranges: Int ) -> NumericShaper! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ranges, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getContextualShaper", methodSig: "(I)Ljava/awt/font/NumericShaper;", methodCache: &getContextualShaper_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? NumericShaper( javaObject: __return ) : nil
-    }
-
-    open class func getContextualShaper( _ _ranges: Int ) -> NumericShaper! {
-        return getContextualShaper( ranges: _ranges )
-    }
-
-    /// public static java.awt.font.NumericShaper java.awt.font.NumericShaper.getContextualShaper(int,int)
-
-    private static var getContextualShaper_MethodID_9: jmethodID?
-
-    open class func getContextualShaper( ranges: Int, defaultContext: Int ) -> NumericShaper! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ranges, locals: &__locals )
-        __args[1] = JNIType.toJava( value: defaultContext, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getContextualShaper", methodSig: "(II)Ljava/awt/font/NumericShaper;", methodCache: &getContextualShaper_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? NumericShaper( javaObject: __return ) : nil
-    }
-
-    open class func getContextualShaper( _ _ranges: Int, _ _defaultContext: Int ) -> NumericShaper! {
-        return getContextualShaper( ranges: _ranges, defaultContext: _defaultContext )
-    }
-
-    /// public static java.awt.font.NumericShaper java.awt.font.NumericShaper.getContextualShaper(java.util.Set)
-
-    private static var getContextualShaper_MethodID_10: jmethodID?
-
-    open class func getContextualShaper( ranges: java_swift.JavaSet? ) -> NumericShaper! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ranges, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass, methodName: "getContextualShaper", methodSig: "(Ljava/util/Set;)Ljava/awt/font/NumericShaper;", methodCache: &getContextualShaper_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? NumericShaper( javaObject: __return ) : nil
-    }
-
-    open class func getContextualShaper( _ _ranges: java_swift.JavaSet? ) -> NumericShaper! {
-        return getContextualShaper( ranges: _ranges )
-    }
+    /// private static int java.awt.font.NumericShaper.search(int,int[],int,int)
 
     /// private void java.awt.font.NumericShaper.checkParams(char[],int,int)
 
-    /// public boolean java.awt.font.NumericShaper.isContextual()
+    /// public boolean java.awt.font.NumericShaper.equals(java.lang.Object)
 
-    private static var isContextual_MethodID_11: jmethodID?
+    private static var equals_MethodID_7: jmethodID?
 
-    open func isContextual() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func equals( o: java_swift.JavaObject? ) -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isContextual", methodSig: "()Z", methodCache: &NumericShaper.isContextual_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: o, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &NumericShaper.equals_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-
-    /// public int java.awt.font.NumericShaper.getRanges()
-
-    private static var getRanges_MethodID_12: jmethodID?
-
-    open func getRanges() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRanges", methodSig: "()I", methodCache: &NumericShaper.getRanges_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+    override open func equals( _ _o: java_swift.JavaObject? ) -> Bool {
+        return equals( o: _o )
     }
-
 
     /// public java.util.Set java.awt.font.NumericShaper.getRangeSet()
 
-    private static var getRangeSet_MethodID_13: jmethodID?
+    private static var getRangeSet_MethodID_8: jmethodID?
 
     open func getRangeSet() -> java_swift.JavaSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRangeSet", methodSig: "()Ljava/util/Set;", methodCache: &NumericShaper.getRangeSet_MethodID_13, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRangeSet", methodSig: "()Ljava/util/Set;", methodCache: &NumericShaper.getRangeSet_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaSetForward( javaObject: __return ) : nil
     }
 
 
-    /// private void java.awt.font.NumericShaper.shapeNonContextually(char[],int,int)
+    /// public int java.awt.font.NumericShaper.getRanges()
+
+    private static var getRanges_MethodID_9: jmethodID?
+
+    open func getRanges() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRanges", methodSig: "()I", methodCache: &NumericShaper.getRanges_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.font.NumericShaper.hashCode()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean java.awt.font.NumericShaper.isContextual()
+
+    private static var isContextual_MethodID_10: jmethodID?
+
+    open func isContextual() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isContextual", methodSig: "()Z", methodCache: &NumericShaper.isContextual_MethodID_10, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// private boolean java.awt.font.NumericShaper.isStrongDirectional(char)
+
+    /// private java.awt.font.NumericShaper$Range java.awt.font.NumericShaper.rangeForCodePoint(int)
+
+    /// public void java.awt.font.NumericShaper.shape(char[],int,int)
+
+    private static var shape_MethodID_11: jmethodID?
+
+    open func shape( text: [UInt16]?, start: Int, count: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: text, locals: &__locals )
+        __args[1] = jvalue( i: jint(start) )
+        __args[2] = jvalue( i: jint(count) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shape", methodSig: "([CII)V", methodCache: &NumericShaper.shape_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func shape( _ _text: [UInt16]?, _ _start: Int, _ _count: Int ) {
+        shape( text: _text, start: _start, count: _count )
+    }
+
+    /// public void java.awt.font.NumericShaper.shape(char[],int,int,int)
+
+    private static var shape_MethodID_12: jmethodID?
+
+    open func shape( text: [UInt16]?, start: Int, count: Int, context: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: text, locals: &__locals )
+        __args[1] = jvalue( i: jint(start) )
+        __args[2] = jvalue( i: jint(count) )
+        __args[3] = jvalue( i: jint(context) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shape", methodSig: "([CIII)V", methodCache: &NumericShaper.shape_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func shape( _ _text: [UInt16]?, _ _start: Int, _ _count: Int, _ _context: Int ) {
+        shape( text: _text, start: _start, count: _count, context: _context )
+    }
+
+    /// public void java.awt.font.NumericShaper.shape(char[],int,int,java.awt.font.NumericShaper$Range)
+
+    private static var shape_MethodID_13: jmethodID?
+
+    open func shape( text: [UInt16]?, start: Int, count: Int, context: NumericShaper_Range? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: text, locals: &__locals )
+        __args[1] = jvalue( i: jint(start) )
+        __args[2] = jvalue( i: jint(count) )
+        __args[3] = JNIType.toJava( value: context, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shape", methodSig: "([CIILjava/awt/font/NumericShaper$Range;)V", methodCache: &NumericShaper.shape_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func shape( _ _text: [UInt16]?, _ _start: Int, _ _count: Int, _ _context: NumericShaper_Range? ) {
+        shape( text: _text, start: _start, count: _count, context: _context )
+    }
 
     /// private synchronized void java.awt.font.NumericShaper.shapeContextually(char[],int,int,int)
 
     /// private void java.awt.font.NumericShaper.shapeContextually(char[],int,int,java.awt.font.NumericShaper$Range)
 
-    /// private static int java.awt.font.NumericShaper.getHighBit(int)
+    /// private void java.awt.font.NumericShaper.shapeNonContextually(char[],int,int)
+
+    /// public java.lang.String java.awt.font.NumericShaper.toString()
+
+    // Skipping method: false true false false false 
+
+    /// private void java.awt.font.NumericShaper.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
 }
 

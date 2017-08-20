@@ -16,4 +16,3 @@ open class FontPeerForward: JNIObjectForward, FontPeer {
 
 }
 
-

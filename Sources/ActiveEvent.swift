@@ -23,12 +23,11 @@ open class ActiveEventForward: JNIObjectForward, ActiveEvent {
     private static var dispatch_MethodID_2: jmethodID?
 
     open func dispatch() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispatch", methodSig: "()V", methodCache: &ActiveEventForward.dispatch_MethodID_2, args: &__args, locals: &__locals )
     }
 
 
 }
-
 

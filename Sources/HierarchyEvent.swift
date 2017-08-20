@@ -16,30 +16,6 @@ open class HierarchyEvent: AWTEvent {
 
     private static var HierarchyEventJNIClass: jclass?
 
-    /// private static final long java.awt.event.HierarchyEvent.serialVersionUID
-
-    /// public static final int java.awt.event.HierarchyEvent.HIERARCHY_FIRST
-
-    private static var HIERARCHY_FIRST_FieldID: jfieldID?
-
-    open static var HIERARCHY_FIRST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "HIERARCHY_FIRST", fieldType: "I", fieldCache: &HIERARCHY_FIRST_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.event.HierarchyEvent.HIERARCHY_CHANGED
-
-    private static var HIERARCHY_CHANGED_FieldID: jfieldID?
-
-    open static var HIERARCHY_CHANGED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "HIERARCHY_CHANGED", fieldType: "I", fieldCache: &HIERARCHY_CHANGED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.event.HierarchyEvent.ANCESTOR_MOVED
 
     private static var ANCESTOR_MOVED_FieldID: jfieldID?
@@ -47,7 +23,7 @@ open class HierarchyEvent: AWTEvent {
     open static var ANCESTOR_MOVED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ANCESTOR_MOVED", fieldType: "I", fieldCache: &ANCESTOR_MOVED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -58,29 +34,7 @@ open class HierarchyEvent: AWTEvent {
     open static var ANCESTOR_RESIZED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ANCESTOR_RESIZED", fieldType: "I", fieldCache: &ANCESTOR_RESIZED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.event.HierarchyEvent.HIERARCHY_LAST
-
-    private static var HIERARCHY_LAST_FieldID: jfieldID?
-
-    open static var HIERARCHY_LAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "HIERARCHY_LAST", fieldType: "I", fieldCache: &HIERARCHY_LAST_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.event.HierarchyEvent.PARENT_CHANGED
-
-    private static var PARENT_CHANGED_FieldID: jfieldID?
-
-    open static var PARENT_CHANGED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PARENT_CHANGED", fieldType: "I", fieldCache: &PARENT_CHANGED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -91,7 +45,51 @@ open class HierarchyEvent: AWTEvent {
     open static var DISPLAYABILITY_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DISPLAYABILITY_CHANGED", fieldType: "I", fieldCache: &DISPLAYABILITY_CHANGED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.event.HierarchyEvent.HIERARCHY_CHANGED
+
+    private static var HIERARCHY_CHANGED_FieldID: jfieldID?
+
+    open static var HIERARCHY_CHANGED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "HIERARCHY_CHANGED", fieldType: "I", fieldCache: &HIERARCHY_CHANGED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.event.HierarchyEvent.HIERARCHY_FIRST
+
+    private static var HIERARCHY_FIRST_FieldID: jfieldID?
+
+    open static var HIERARCHY_FIRST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "HIERARCHY_FIRST", fieldType: "I", fieldCache: &HIERARCHY_FIRST_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.event.HierarchyEvent.HIERARCHY_LAST
+
+    private static var HIERARCHY_LAST_FieldID: jfieldID?
+
+    open static var HIERARCHY_LAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "HIERARCHY_LAST", fieldType: "I", fieldCache: &HIERARCHY_LAST_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.event.HierarchyEvent.PARENT_CHANGED
+
+    private static var PARENT_CHANGED_FieldID: jfieldID?
+
+    open static var PARENT_CHANGED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PARENT_CHANGED", fieldType: "I", fieldCache: &PARENT_CHANGED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
+            return Int(__value)
         }
     }
 
@@ -102,36 +100,117 @@ open class HierarchyEvent: AWTEvent {
     open static var SHOWING_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SHOWING_CHANGED", fieldType: "I", fieldCache: &SHOWING_CHANGED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// java.awt.Component java.awt.event.HierarchyEvent.changed
-
-    /// java.awt.Container java.awt.event.HierarchyEvent.changedParent
+    /// private static final long java.awt.event.HierarchyEvent.serialVersionUID
 
     /// long java.awt.event.HierarchyEvent.changeFlags
 
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Component java.awt.event.HierarchyEvent.changed
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Container java.awt.event.HierarchyEvent.changedParent
+
+    // Skipping field: true false false false false false 
+
+    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
+
+    // Skipping field: true false false false false false 
+
+    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
+
     /// private static final sun.util.logging.PlatformLogger java.awt.AWTEvent.log
 
+    /// private static final long java.awt.AWTEvent.serialVersionUID
+
+    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
+
     /// private byte[] java.awt.AWTEvent.bdata
-
-    /// protected int java.awt.AWTEvent.id
-
-    private static var id_FieldID: jfieldID?
-
-    override open var id: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &HierarchyEvent.id_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &HierarchyEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
 
     /// protected boolean java.awt.AWTEvent.consumed
 
@@ -139,70 +218,41 @@ open class HierarchyEvent: AWTEvent {
 
     override open var consumed: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &HierarchyEvent.consumed_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &HierarchyEvent.consumed_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &HierarchyEvent.consumed_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
-
     /// transient boolean java.awt.AWTEvent.focusManagerIsDispatching
+
+    // Skipping field: true false false false false false 
+
+    /// protected int java.awt.AWTEvent.id
+
+    private static var id_FieldID: jfieldID?
+
+    override open var id: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &HierarchyEvent.id_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &HierarchyEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
     /// transient boolean java.awt.AWTEvent.isPosted
 
+    // Skipping field: true false false false false false 
+
     /// private transient boolean java.awt.AWTEvent.isSystemGenerated
-
-    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
-
-    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
-
-    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
-
-    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
-
-    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
-
-    /// private static final long java.awt.AWTEvent.serialVersionUID
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -212,8 +262,8 @@ open class HierarchyEvent: AWTEvent {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &HierarchyEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &HierarchyEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -228,10 +278,10 @@ open class HierarchyEvent: AWTEvent {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: Component?, id: Int, changed: Component?, changedParent: Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
         __args[2] = JNIType.toJava( value: changed, locals: &__locals )
         __args[3] = JNIType.toJava( value: changedParent, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEvent.HierarchyEventJNIClass, methodSig: "(Ljava/awt/Component;ILjava/awt/Component;Ljava/awt/Container;)V", methodCache: &HierarchyEvent.new_MethodID_1, args: &__args, locals: &__locals )
@@ -248,13 +298,13 @@ open class HierarchyEvent: AWTEvent {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( source: Component?, id: Int, changed: Component?, changedParent: Container?, changeFlags: Int64 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
         __args[2] = JNIType.toJava( value: changed, locals: &__locals )
         __args[3] = JNIType.toJava( value: changedParent, locals: &__locals )
-        __args[4] = JNIType.toJava( value: changeFlags, locals: &__locals )
+        __args[4] = jvalue( j: changeFlags )
         let __object = JNIMethod.NewObject( className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEvent.HierarchyEventJNIClass, methodSig: "(Ljava/awt/Component;ILjava/awt/Component;Ljava/awt/Container;J)V", methodCache: &HierarchyEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -264,16 +314,26 @@ open class HierarchyEvent: AWTEvent {
         self.init( source: _source, id: _id, changed: _changed, changedParent: _changedParent, changeFlags: _changeFlags )
     }
 
-    /// public java.lang.String java.awt.event.HierarchyEvent.paramString()
+    /// public long java.awt.event.HierarchyEvent.getChangeFlags()
+
+    private static var getChangeFlags_MethodID_3: jmethodID?
+
+    open func getChangeFlags() -> Int64 {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getChangeFlags", methodSig: "()J", methodCache: &HierarchyEvent.getChangeFlags_MethodID_3, args: &__args, locals: &__locals )
+        return __return
+    }
+
 
     /// public java.awt.Component java.awt.event.HierarchyEvent.getChanged()
 
-    private static var getChanged_MethodID_3: jmethodID?
+    private static var getChanged_MethodID_4: jmethodID?
 
     open func getChanged() -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChanged", methodSig: "()Ljava/awt/Component;", methodCache: &HierarchyEvent.getChanged_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChanged", methodSig: "()Ljava/awt/Component;", methodCache: &HierarchyEvent.getChanged_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
     }
@@ -281,26 +341,14 @@ open class HierarchyEvent: AWTEvent {
 
     /// public java.awt.Container java.awt.event.HierarchyEvent.getChangedParent()
 
-    private static var getChangedParent_MethodID_4: jmethodID?
+    private static var getChangedParent_MethodID_5: jmethodID?
 
     open func getChangedParent() -> Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangedParent", methodSig: "()Ljava/awt/Container;", methodCache: &HierarchyEvent.getChangedParent_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangedParent", methodSig: "()Ljava/awt/Container;", methodCache: &HierarchyEvent.getChangedParent_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Container( javaObject: __return ) : nil
-    }
-
-
-    /// public long java.awt.event.HierarchyEvent.getChangeFlags()
-
-    private static var getChangeFlags_MethodID_5: jmethodID?
-
-    open func getChangeFlags() -> Int64 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getChangeFlags", methodSig: "()J", methodCache: &HierarchyEvent.getChangeFlags_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int64(), from: __return )
     }
 
 
@@ -309,13 +357,17 @@ open class HierarchyEvent: AWTEvent {
     private static var getComponent_MethodID_6: jmethodID?
 
     open func getComponent() -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &HierarchyEvent.getComponent_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
     }
 
+
+    /// public java.lang.String java.awt.event.HierarchyEvent.paramString()
+
+    // Skipping method: false true false false false 
 
 }
 

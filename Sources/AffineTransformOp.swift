@@ -16,18 +16,14 @@ open class AffineTransformOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     private static var AffineTransformOpJNIClass: jclass?
 
-    /// private java.awt.geom.AffineTransform java.awt.image.AffineTransformOp.xform
+    /// public static final int java.awt.image.AffineTransformOp.TYPE_BICUBIC
 
-    /// java.awt.RenderingHints java.awt.image.AffineTransformOp.hints
+    private static var TYPE_BICUBIC_FieldID: jfieldID?
 
-    /// public static final int java.awt.image.AffineTransformOp.TYPE_NEAREST_NEIGHBOR
-
-    private static var TYPE_NEAREST_NEIGHBOR_FieldID: jfieldID?
-
-    open static var TYPE_NEAREST_NEIGHBOR: Int {
+    open static var TYPE_BICUBIC: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_NEAREST_NEIGHBOR", fieldType: "I", fieldCache: &TYPE_NEAREST_NEIGHBOR_FieldID, className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOpJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BICUBIC", fieldType: "I", fieldCache: &TYPE_BICUBIC_FieldID, className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOpJNIClass )
+            return Int(__value)
         }
     }
 
@@ -38,51 +34,41 @@ open class AffineTransformOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
     open static var TYPE_BILINEAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BILINEAR", fieldType: "I", fieldCache: &TYPE_BILINEAR_FieldID, className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOpJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.image.AffineTransformOp.TYPE_BICUBIC
+    /// public static final int java.awt.image.AffineTransformOp.TYPE_NEAREST_NEIGHBOR
 
-    private static var TYPE_BICUBIC_FieldID: jfieldID?
+    private static var TYPE_NEAREST_NEIGHBOR_FieldID: jfieldID?
 
-    open static var TYPE_BICUBIC: Int {
+    open static var TYPE_NEAREST_NEIGHBOR: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BICUBIC", fieldType: "I", fieldCache: &TYPE_BICUBIC_FieldID, className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOpJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_NEAREST_NEIGHBOR", fieldType: "I", fieldCache: &TYPE_NEAREST_NEIGHBOR_FieldID, className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOpJNIClass )
+            return Int(__value)
         }
     }
+
+    /// java.awt.RenderingHints java.awt.image.AffineTransformOp.hints
+
+    // Skipping field: true false false false false false 
 
     /// int java.awt.image.AffineTransformOp.interpolationType
 
-    /// public java.awt.image.AffineTransformOp(java.awt.geom.AffineTransform,java.awt.RenderingHints)
+    // Skipping field: true false false false false false 
 
-    private static var new_MethodID_1: jmethodID?
-
-    public convenience init( xform: AffineTransform?, hints: RenderingHints? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: xform, locals: &__locals )
-        __args[1] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOp.AffineTransformOpJNIClass, methodSig: "(Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)V", methodCache: &AffineTransformOp.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _xform: AffineTransform?, _ _hints: RenderingHints? ) {
-        self.init( xform: _xform, hints: _hints )
-    }
+    /// private java.awt.geom.AffineTransform java.awt.image.AffineTransformOp.xform
 
     /// public java.awt.image.AffineTransformOp(java.awt.geom.AffineTransform,int)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( xform: AffineTransform?, interpolationType: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: xform, locals: &__locals )
-        __args[1] = JNIType.toJava( value: interpolationType, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOp.AffineTransformOpJNIClass, methodSig: "(Ljava/awt/geom/AffineTransform;I)V", methodCache: &AffineTransformOp.new_MethodID_2, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(interpolationType) )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOp.AffineTransformOpJNIClass, methodSig: "(Ljava/awt/geom/AffineTransform;I)V", methodCache: &AffineTransformOp.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -91,124 +77,34 @@ open class AffineTransformOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         self.init( xform: _xform, interpolationType: _interpolationType )
     }
 
-    /// public final java.awt.image.BufferedImage java.awt.image.AffineTransformOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
+    /// public java.awt.image.AffineTransformOp(java.awt.geom.AffineTransform,java.awt.RenderingHints)
 
-    private static var filter_MethodID_3: jmethodID?
+    private static var new_MethodID_2: jmethodID?
 
-    open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
+    public convenience init( xform: AffineTransform?, hints: RenderingHints? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &AffineTransformOp.filter_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BufferedImage( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: xform, locals: &__locals )
+        __args[1] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOp.AffineTransformOpJNIClass, methodSig: "(Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)V", methodCache: &AffineTransformOp.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
     }
 
-    open func filter( _ _src: BufferedImage?, _ _dest: BufferedImage? ) -> BufferedImage! {
-        return filter( src: _src, dest: _dest )
+    public convenience init( _ _xform: AffineTransform?, _ _hints: RenderingHints? ) {
+        self.init( xform: _xform, hints: _hints )
     }
-
-    /// public final java.awt.image.WritableRaster java.awt.image.AffineTransformOp.filter(java.awt.image.Raster,java.awt.image.WritableRaster)
-
-    private static var filter_MethodID_4: jmethodID?
-
-    open func filter( src: Raster?, dest: WritableRaster? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &AffineTransformOp.filter_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open func filter( _ _src: Raster?, _ _dest: WritableRaster? ) -> WritableRaster! {
-        return filter( src: _src, dest: _dest )
-    }
-
-    /// public final java.awt.geom.Rectangle2D java.awt.image.AffineTransformOp.getBounds2D(java.awt.image.Raster)
-
-    private static var getBounds2D_MethodID_5: jmethodID?
-
-    open func getBounds2D( src: Raster? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &AffineTransformOp.getBounds2D_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-    open func getBounds2D( _ _src: Raster? ) -> Rectangle2D! {
-        return getBounds2D( src: _src )
-    }
-
-    /// public final java.awt.geom.Rectangle2D java.awt.image.AffineTransformOp.getBounds2D(java.awt.image.BufferedImage)
-
-    private static var getBounds2D_MethodID_6: jmethodID?
-
-    open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &AffineTransformOp.getBounds2D_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-    open func getBounds2D( _ _src: BufferedImage? ) -> Rectangle2D! {
-        return getBounds2D( src: _src )
-    }
-
-    /// public final java.awt.geom.AffineTransform java.awt.image.AffineTransformOp.getTransform()
-
-    private static var getTransform_MethodID_7: jmethodID?
-
-    open func getTransform() -> AffineTransform! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransform", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &AffineTransformOp.getTransform_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AffineTransform( javaObject: __return ) : nil
-    }
-
-
-    /// public final java.awt.RenderingHints java.awt.image.AffineTransformOp.getRenderingHints()
-
-    private static var getRenderingHints_MethodID_8: jmethodID?
-
-    open func getRenderingHints() -> RenderingHints! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &AffineTransformOp.getRenderingHints_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: RenderingHints(), from: __return )
-    }
-
-
-    /// public final int java.awt.image.AffineTransformOp.getInterpolationType()
-
-    private static var getInterpolationType_MethodID_9: jmethodID?
-
-    open func getInterpolationType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInterpolationType", methodSig: "()I", methodCache: &AffineTransformOp.getInterpolationType_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
 
     /// public java.awt.image.BufferedImage java.awt.image.AffineTransformOp.createCompatibleDestImage(java.awt.image.BufferedImage,java.awt.image.ColorModel)
 
-    private static var createCompatibleDestImage_MethodID_10: jmethodID?
+    private static var createCompatibleDestImage_MethodID_3: jmethodID?
 
     open func createCompatibleDestImage( src: BufferedImage?, destCM: ColorModel? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
         __args[1] = JNIType.toJava( value: destCM, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &AffineTransformOp.createCompatibleDestImage_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &AffineTransformOp.createCompatibleDestImage_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImage( javaObject: __return ) : nil
     }
@@ -219,13 +115,13 @@ open class AffineTransformOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     /// public java.awt.image.WritableRaster java.awt.image.AffineTransformOp.createCompatibleDestRaster(java.awt.image.Raster)
 
-    private static var createCompatibleDestRaster_MethodID_11: jmethodID?
+    private static var createCompatibleDestRaster_MethodID_4: jmethodID?
 
     open func createCompatibleDestRaster( src: Raster? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestRaster", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;", methodCache: &AffineTransformOp.createCompatibleDestRaster_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestRaster", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;", methodCache: &AffineTransformOp.createCompatibleDestRaster_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -234,16 +130,98 @@ open class AffineTransformOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         return createCompatibleDestRaster( src: _src )
     }
 
+    /// public final java.awt.image.BufferedImage java.awt.image.AffineTransformOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
+
+    private static var filter_MethodID_5: jmethodID?
+
+    open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &AffineTransformOp.filter_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BufferedImage( javaObject: __return ) : nil
+    }
+
+    open func filter( _ _src: BufferedImage?, _ _dest: BufferedImage? ) -> BufferedImage! {
+        return filter( src: _src, dest: _dest )
+    }
+
+    /// public final java.awt.image.WritableRaster java.awt.image.AffineTransformOp.filter(java.awt.image.Raster,java.awt.image.WritableRaster)
+
+    private static var filter_MethodID_6: jmethodID?
+
+    open func filter( src: Raster?, dest: WritableRaster? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &AffineTransformOp.filter_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open func filter( _ _src: Raster?, _ _dest: WritableRaster? ) -> WritableRaster! {
+        return filter( src: _src, dest: _dest )
+    }
+
+    /// public final java.awt.geom.Rectangle2D java.awt.image.AffineTransformOp.getBounds2D(java.awt.image.BufferedImage)
+
+    private static var getBounds2D_MethodID_7: jmethodID?
+
+    open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &AffineTransformOp.getBounds2D_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getBounds2D( _ _src: BufferedImage? ) -> Rectangle2D! {
+        return getBounds2D( src: _src )
+    }
+
+    /// public final java.awt.geom.Rectangle2D java.awt.image.AffineTransformOp.getBounds2D(java.awt.image.Raster)
+
+    private static var getBounds2D_MethodID_8: jmethodID?
+
+    open func getBounds2D( src: Raster? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &AffineTransformOp.getBounds2D_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getBounds2D( _ _src: Raster? ) -> Rectangle2D! {
+        return getBounds2D( src: _src )
+    }
+
+    /// public final int java.awt.image.AffineTransformOp.getInterpolationType()
+
+    private static var getInterpolationType_MethodID_9: jmethodID?
+
+    open func getInterpolationType() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInterpolationType", methodSig: "()I", methodCache: &AffineTransformOp.getInterpolationType_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public final java.awt.geom.Point2D java.awt.image.AffineTransformOp.getPoint2D(java.awt.geom.Point2D,java.awt.geom.Point2D)
 
-    private static var getPoint2D_MethodID_12: jmethodID?
+    private static var getPoint2D_MethodID_10: jmethodID?
 
     open func getPoint2D( srcPt: Point2D?, dstPt: Point2D? ) -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: srcPt, locals: &__locals )
         __args[1] = JNIType.toJava( value: dstPt, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &AffineTransformOp.getPoint2D_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &AffineTransformOp.getPoint2D_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point2D( javaObject: __return ) : nil
     }
@@ -252,7 +230,34 @@ open class AffineTransformOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         return getPoint2D( srcPt: _srcPt, dstPt: _dstPt )
     }
 
+    /// public final java.awt.RenderingHints java.awt.image.AffineTransformOp.getRenderingHints()
+
+    private static var getRenderingHints_MethodID_11: jmethodID?
+
+    open func getRenderingHints() -> RenderingHints! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &AffineTransformOp.getRenderingHints_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: RenderingHints.self, from: __return )
+    }
+
+
+    /// public final java.awt.geom.AffineTransform java.awt.image.AffineTransformOp.getTransform()
+
+    private static var getTransform_MethodID_12: jmethodID?
+
+    open func getTransform() -> AffineTransform! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransform", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &AffineTransformOp.getTransform_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AffineTransform( javaObject: __return ) : nil
+    }
+
+
     /// void java.awt.image.AffineTransformOp.validateTransform(java.awt.geom.AffineTransform)
+
+    // Skipping method: true false false false false 
 
 }
 

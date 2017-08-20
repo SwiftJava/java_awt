@@ -28,8 +28,8 @@ open class WindowFocusListenerForward: java_util.EventListenerForward, WindowFoc
     private static var windowGainedFocus_MethodID_3: jmethodID?
 
     open func windowGainedFocus( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowGainedFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowFocusListenerForward.windowGainedFocus_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -43,8 +43,8 @@ open class WindowFocusListenerForward: java_util.EventListenerForward, WindowFoc
     private static var windowLostFocus_MethodID_4: jmethodID?
 
     open func windowLostFocus( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowLostFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowFocusListenerForward.windowLostFocus_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -55,21 +55,16 @@ open class WindowFocusListenerForward: java_util.EventListenerForward, WindowFoc
 
 }
 
-
 private typealias WindowFocusListener_windowGainedFocus_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func WindowFocusListener_windowGainedFocus_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     WindowFocusListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowGainedFocus( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 private typealias WindowFocusListener_windowLostFocus_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func WindowFocusListener_windowLostFocus_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     WindowFocusListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowLostFocus( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class WindowFocusListenerLocal_: JNILocalProxy<WindowFocusListener, Any> {
@@ -119,17 +114,11 @@ open class WindowFocusListenerBase: WindowFocusListener {
     open func windowGainedFocus( e: WindowEvent? ) /**/ {
     }
 
-    open func windowGainedFocus( _ _e: WindowEvent? ) /**/ {
-        windowGainedFocus( e: _e )
-    }
 
     /// public abstract void java.awt.event.WindowFocusListener.windowLostFocus(java.awt.event.WindowEvent)
 
     open func windowLostFocus( e: WindowEvent? ) /**/ {
     }
 
-    open func windowLostFocus( _ _e: WindowEvent? ) /**/ {
-        windowLostFocus( e: _e )
-    }
 
 }

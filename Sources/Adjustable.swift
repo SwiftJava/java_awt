@@ -9,75 +9,75 @@ public protocol Adjustable: JavaProtocol {
 
     /// public static final int java.awt.Adjustable.HORIZONTAL
 
-    static var HORIZONTAL: Int { get }
-
-    /// public static final int java.awt.Adjustable.VERTICAL
-
-    static var VERTICAL: Int { get }
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.Adjustable.NO_ORIENTATION
 
-    static var NO_ORIENTATION: Int { get }
+    // Skipping field: false false false false false true 
 
-    /// public abstract int java.awt.Adjustable.getValue()
+    /// public static final int java.awt.Adjustable.VERTICAL
 
-    func getValue() -> Int
-
-    /// public abstract void java.awt.Adjustable.setValue(int)
-
-    func setValue( v: Int )
-
-    /// public abstract int java.awt.Adjustable.getOrientation()
-
-    func getOrientation() -> Int
-
-    /// public abstract void java.awt.Adjustable.setMinimum(int)
-
-    func setMinimum( min: Int )
-
-    /// public abstract int java.awt.Adjustable.getMinimum()
-
-    func getMinimum() -> Int
-
-    /// public abstract void java.awt.Adjustable.setMaximum(int)
-
-    func setMaximum( max: Int )
-
-    /// public abstract int java.awt.Adjustable.getMaximum()
-
-    func getMaximum() -> Int
-
-    /// public abstract void java.awt.Adjustable.setUnitIncrement(int)
-
-    func setUnitIncrement( u: Int )
-
-    /// public abstract int java.awt.Adjustable.getUnitIncrement()
-
-    func getUnitIncrement() -> Int
-
-    /// public abstract void java.awt.Adjustable.setBlockIncrement(int)
-
-    func setBlockIncrement( b: Int )
-
-    /// public abstract int java.awt.Adjustable.getBlockIncrement()
-
-    func getBlockIncrement() -> Int
-
-    /// public abstract void java.awt.Adjustable.setVisibleAmount(int)
-
-    func setVisibleAmount( v: Int )
-
-    /// public abstract int java.awt.Adjustable.getVisibleAmount()
-
-    func getVisibleAmount() -> Int
+    // Skipping field: false false false false false true 
 
     /// public abstract void java.awt.Adjustable.addAdjustmentListener(java.awt.event.AdjustmentListener)
 
     func addAdjustmentListener( l: AdjustmentListener? )
 
+    /// public abstract int java.awt.Adjustable.getBlockIncrement()
+
+    func getBlockIncrement() -> Int
+
+    /// public abstract int java.awt.Adjustable.getMaximum()
+
+    func getMaximum() -> Int
+
+    /// public abstract int java.awt.Adjustable.getMinimum()
+
+    func getMinimum() -> Int
+
+    /// public abstract int java.awt.Adjustable.getOrientation()
+
+    func getOrientation() -> Int
+
+    /// public abstract int java.awt.Adjustable.getUnitIncrement()
+
+    func getUnitIncrement() -> Int
+
+    /// public abstract int java.awt.Adjustable.getValue()
+
+    func getValue() -> Int
+
+    /// public abstract int java.awt.Adjustable.getVisibleAmount()
+
+    func getVisibleAmount() -> Int
+
     /// public abstract void java.awt.Adjustable.removeAdjustmentListener(java.awt.event.AdjustmentListener)
 
     func removeAdjustmentListener( l: AdjustmentListener? )
+
+    /// public abstract void java.awt.Adjustable.setBlockIncrement(int)
+
+    func setBlockIncrement( b: Int )
+
+    /// public abstract void java.awt.Adjustable.setMaximum(int)
+
+    func setMaximum( max: Int )
+
+    /// public abstract void java.awt.Adjustable.setMinimum(int)
+
+    func setMinimum( min: Int )
+
+    /// public abstract void java.awt.Adjustable.setUnitIncrement(int)
+
+    func setUnitIncrement( u: Int )
+
+    /// public abstract void java.awt.Adjustable.setValue(int)
+
+    func setValue( v: Int )
+
+    /// public abstract void java.awt.Adjustable.setVisibleAmount(int)
+
+    func setVisibleAmount( v: Int )
 
 }
 
@@ -93,18 +93,7 @@ open class AdjustableForward: JNIObjectForward, Adjustable {
     open static var HORIZONTAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL", fieldType: "I", fieldCache: &HORIZONTAL_FieldID, className: "java/awt/Adjustable", classCache: &AdjustableJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Adjustable.VERTICAL
-
-    private static var VERTICAL_FieldID: jfieldID?
-
-    open static var VERTICAL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "java/awt/Adjustable", classCache: &AdjustableJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -115,138 +104,143 @@ open class AdjustableForward: JNIObjectForward, Adjustable {
     open static var NO_ORIENTATION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NO_ORIENTATION", fieldType: "I", fieldCache: &NO_ORIENTATION_FieldID, className: "java/awt/Adjustable", classCache: &AdjustableJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public abstract int java.awt.Adjustable.getValue()
+    /// public static final int java.awt.Adjustable.VERTICAL
 
-    private static var getValue_MethodID_16: jmethodID?
+    private static var VERTICAL_FieldID: jfieldID?
 
-    open func getValue() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open static var VERTICAL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "java/awt/Adjustable", classCache: &AdjustableJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public abstract void java.awt.Adjustable.addAdjustmentListener(java.awt.event.AdjustmentListener)
+
+    private static var addAdjustmentListener_MethodID_16: jmethodID?
+
+    open func addAdjustmentListener( l: AdjustmentListener? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getValue", methodSig: "()I", methodCache: &AdjustableForward.getValue_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract void java.awt.Adjustable.setValue(int)
-
-    private static var setValue_MethodID_17: jmethodID?
-
-    open func setValue( v: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAdjustmentListener", methodSig: "(Ljava/awt/event/AdjustmentListener;)V", methodCache: &AdjustableForward.addAdjustmentListener_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func addAdjustmentListener( _ _l: AdjustmentListener? ) {
+        addAdjustmentListener( l: _l )
+    }
+
+    /// public abstract int java.awt.Adjustable.getBlockIncrement()
+
+    private static var getBlockIncrement_MethodID_17: jmethodID?
+
+    open func getBlockIncrement() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: v, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(I)V", methodCache: &AdjustableForward.setValue_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func setValue( _ _v: Int ) {
-        setValue( v: _v )
-    }
-
-    /// public abstract int java.awt.Adjustable.getOrientation()
-
-    private static var getOrientation_MethodID_18: jmethodID?
-
-    open func getOrientation() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &AdjustableForward.getOrientation_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlockIncrement", methodSig: "()I", methodCache: &AdjustableForward.getBlockIncrement_MethodID_17, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-
-    /// public abstract void java.awt.Adjustable.setMinimum(int)
-
-    private static var setMinimum_MethodID_19: jmethodID?
-
-    open func setMinimum( min: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: min, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &AdjustableForward.setMinimum_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setMinimum( _ _min: Int ) {
-        setMinimum( min: _min )
-    }
-
-    /// public abstract int java.awt.Adjustable.getMinimum()
-
-    private static var getMinimum_MethodID_20: jmethodID?
-
-    open func getMinimum() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimum", methodSig: "()I", methodCache: &AdjustableForward.getMinimum_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract void java.awt.Adjustable.setMaximum(int)
-
-    private static var setMaximum_MethodID_21: jmethodID?
-
-    open func setMaximum( max: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: max, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &AdjustableForward.setMaximum_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open func setMaximum( _ _max: Int ) {
-        setMaximum( max: _max )
-    }
 
     /// public abstract int java.awt.Adjustable.getMaximum()
 
-    private static var getMaximum_MethodID_22: jmethodID?
+    private static var getMaximum_MethodID_18: jmethodID?
 
     open func getMaximum() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &AdjustableForward.getMaximum_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract void java.awt.Adjustable.setUnitIncrement(int)
-
-    private static var setUnitIncrement_MethodID_23: jmethodID?
-
-    open func setUnitIncrement( u: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: u, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUnitIncrement", methodSig: "(I)V", methodCache: &AdjustableForward.setUnitIncrement_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &AdjustableForward.getMaximum_MethodID_18, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func setUnitIncrement( _ _u: Int ) {
-        setUnitIncrement( u: _u )
+
+    /// public abstract int java.awt.Adjustable.getMinimum()
+
+    private static var getMinimum_MethodID_19: jmethodID?
+
+    open func getMinimum() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimum", methodSig: "()I", methodCache: &AdjustableForward.getMinimum_MethodID_19, args: &__args, locals: &__locals )
+        return Int(__return)
     }
+
+
+    /// public abstract int java.awt.Adjustable.getOrientation()
+
+    private static var getOrientation_MethodID_20: jmethodID?
+
+    open func getOrientation() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &AdjustableForward.getOrientation_MethodID_20, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
 
     /// public abstract int java.awt.Adjustable.getUnitIncrement()
 
-    private static var getUnitIncrement_MethodID_24: jmethodID?
+    private static var getUnitIncrement_MethodID_21: jmethodID?
 
     open func getUnitIncrement() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUnitIncrement", methodSig: "()I", methodCache: &AdjustableForward.getUnitIncrement_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUnitIncrement", methodSig: "()I", methodCache: &AdjustableForward.getUnitIncrement_MethodID_21, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+
+    /// public abstract int java.awt.Adjustable.getValue()
+
+    private static var getValue_MethodID_22: jmethodID?
+
+    open func getValue() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getValue", methodSig: "()I", methodCache: &AdjustableForward.getValue_MethodID_22, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public abstract int java.awt.Adjustable.getVisibleAmount()
+
+    private static var getVisibleAmount_MethodID_23: jmethodID?
+
+    open func getVisibleAmount() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVisibleAmount", methodSig: "()I", methodCache: &AdjustableForward.getVisibleAmount_MethodID_23, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public abstract void java.awt.Adjustable.removeAdjustmentListener(java.awt.event.AdjustmentListener)
+
+    private static var removeAdjustmentListener_MethodID_24: jmethodID?
+
+    open func removeAdjustmentListener( l: AdjustmentListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAdjustmentListener", methodSig: "(Ljava/awt/event/AdjustmentListener;)V", methodCache: &AdjustableForward.removeAdjustmentListener_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func removeAdjustmentListener( _ _l: AdjustmentListener? ) {
+        removeAdjustmentListener( l: _l )
+    }
 
     /// public abstract void java.awt.Adjustable.setBlockIncrement(int)
 
     private static var setBlockIncrement_MethodID_25: jmethodID?
 
     open func setBlockIncrement( b: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(b) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBlockIncrement", methodSig: "(I)V", methodCache: &AdjustableForward.setBlockIncrement_MethodID_25, args: &__args, locals: &__locals )
     }
 
@@ -254,75 +248,80 @@ open class AdjustableForward: JNIObjectForward, Adjustable {
         setBlockIncrement( b: _b )
     }
 
-    /// public abstract int java.awt.Adjustable.getBlockIncrement()
+    /// public abstract void java.awt.Adjustable.setMaximum(int)
 
-    private static var getBlockIncrement_MethodID_26: jmethodID?
+    private static var setMaximum_MethodID_26: jmethodID?
 
-    open func getBlockIncrement() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setMaximum( max: Int ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlockIncrement", methodSig: "()I", methodCache: &AdjustableForward.getBlockIncrement_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(max) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &AdjustableForward.setMaximum_MethodID_26, args: &__args, locals: &__locals )
     }
 
+    open func setMaximum( _ _max: Int ) {
+        setMaximum( max: _max )
+    }
+
+    /// public abstract void java.awt.Adjustable.setMinimum(int)
+
+    private static var setMinimum_MethodID_27: jmethodID?
+
+    open func setMinimum( min: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(min) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &AdjustableForward.setMinimum_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open func setMinimum( _ _min: Int ) {
+        setMinimum( min: _min )
+    }
+
+    /// public abstract void java.awt.Adjustable.setUnitIncrement(int)
+
+    private static var setUnitIncrement_MethodID_28: jmethodID?
+
+    open func setUnitIncrement( u: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(u) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUnitIncrement", methodSig: "(I)V", methodCache: &AdjustableForward.setUnitIncrement_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open func setUnitIncrement( _ _u: Int ) {
+        setUnitIncrement( u: _u )
+    }
+
+    /// public abstract void java.awt.Adjustable.setValue(int)
+
+    private static var setValue_MethodID_29: jmethodID?
+
+    open func setValue( v: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(v) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(I)V", methodCache: &AdjustableForward.setValue_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func setValue( _ _v: Int ) {
+        setValue( v: _v )
+    }
 
     /// public abstract void java.awt.Adjustable.setVisibleAmount(int)
 
-    private static var setVisibleAmount_MethodID_27: jmethodID?
+    private static var setVisibleAmount_MethodID_30: jmethodID?
 
     open func setVisibleAmount( v: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: v, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisibleAmount", methodSig: "(I)V", methodCache: &AdjustableForward.setVisibleAmount_MethodID_27, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(v) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisibleAmount", methodSig: "(I)V", methodCache: &AdjustableForward.setVisibleAmount_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func setVisibleAmount( _ _v: Int ) {
         setVisibleAmount( v: _v )
     }
 
-    /// public abstract int java.awt.Adjustable.getVisibleAmount()
-
-    private static var getVisibleAmount_MethodID_28: jmethodID?
-
-    open func getVisibleAmount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVisibleAmount", methodSig: "()I", methodCache: &AdjustableForward.getVisibleAmount_MethodID_28, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract void java.awt.Adjustable.addAdjustmentListener(java.awt.event.AdjustmentListener)
-
-    private static var addAdjustmentListener_MethodID_29: jmethodID?
-
-    open func addAdjustmentListener( l: AdjustmentListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAdjustmentListener", methodSig: "(Ljava/awt/event/AdjustmentListener;)V", methodCache: &AdjustableForward.addAdjustmentListener_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    open func addAdjustmentListener( _ _l: AdjustmentListener? ) {
-        addAdjustmentListener( l: _l )
-    }
-
-    /// public abstract void java.awt.Adjustable.removeAdjustmentListener(java.awt.event.AdjustmentListener)
-
-    private static var removeAdjustmentListener_MethodID_30: jmethodID?
-
-    open func removeAdjustmentListener( l: AdjustmentListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAdjustmentListener", methodSig: "(Ljava/awt/event/AdjustmentListener;)V", methodCache: &AdjustableForward.removeAdjustmentListener_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    open func removeAdjustmentListener( _ _l: AdjustmentListener? ) {
-        removeAdjustmentListener( l: _l )
-    }
-
 }
-
 

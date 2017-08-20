@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.BorderLayout ///
 
-open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Serializable */ UnclassedProtocol {
+open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,94 +16,6 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seria
 
     private static var BorderLayoutJNIClass: jclass?
 
-    /// int java.awt.BorderLayout.hgap
-
-    /// int java.awt.BorderLayout.vgap
-
-    /// java.awt.Component java.awt.BorderLayout.north
-
-    /// java.awt.Component java.awt.BorderLayout.west
-
-    /// java.awt.Component java.awt.BorderLayout.east
-
-    /// java.awt.Component java.awt.BorderLayout.south
-
-    /// java.awt.Component java.awt.BorderLayout.center
-
-    /// java.awt.Component java.awt.BorderLayout.firstLine
-
-    /// java.awt.Component java.awt.BorderLayout.lastLine
-
-    /// java.awt.Component java.awt.BorderLayout.firstItem
-
-    /// java.awt.Component java.awt.BorderLayout.lastItem
-
-    /// public static final java.lang.String java.awt.BorderLayout.NORTH
-
-    private static var NORTH_FieldID: jfieldID?
-
-    open static var NORTH: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NORTH", fieldType: "Ljava/lang/String;", fieldCache: &NORTH_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String java.awt.BorderLayout.SOUTH
-
-    private static var SOUTH_FieldID: jfieldID?
-
-    open static var SOUTH: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "SOUTH", fieldType: "Ljava/lang/String;", fieldCache: &SOUTH_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String java.awt.BorderLayout.EAST
-
-    private static var EAST_FieldID: jfieldID?
-
-    open static var EAST: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "EAST", fieldType: "Ljava/lang/String;", fieldCache: &EAST_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String java.awt.BorderLayout.WEST
-
-    private static var WEST_FieldID: jfieldID?
-
-    open static var WEST: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "WEST", fieldType: "Ljava/lang/String;", fieldCache: &WEST_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String java.awt.BorderLayout.CENTER
-
-    private static var CENTER_FieldID: jfieldID?
-
-    open static var CENTER: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "CENTER", fieldType: "Ljava/lang/String;", fieldCache: &CENTER_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String java.awt.BorderLayout.BEFORE_FIRST_LINE
-
-    private static var BEFORE_FIRST_LINE_FieldID: jfieldID?
-
-    open static var BEFORE_FIRST_LINE: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "BEFORE_FIRST_LINE", fieldType: "Ljava/lang/String;", fieldCache: &BEFORE_FIRST_LINE_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
     /// public static final java.lang.String java.awt.BorderLayout.AFTER_LAST_LINE
 
     private static var AFTER_LAST_LINE_FieldID: jfieldID?
@@ -111,18 +23,8 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seria
     open static var AFTER_LAST_LINE: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "AFTER_LAST_LINE", fieldType: "Ljava/lang/String;", fieldCache: &AFTER_LAST_LINE_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String java.awt.BorderLayout.BEFORE_LINE_BEGINS
-
-    private static var BEFORE_LINE_BEGINS_FieldID: jfieldID?
-
-    open static var BEFORE_LINE_BEGINS: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "BEFORE_LINE_BEGINS", fieldType: "Ljava/lang/String;", fieldCache: &BEFORE_LINE_BEGINS_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -133,40 +35,56 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seria
     open static var AFTER_LINE_ENDS: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "AFTER_LINE_ENDS", fieldType: "Ljava/lang/String;", fieldCache: &AFTER_LINE_ENDS_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.lang.String java.awt.BorderLayout.PAGE_START
+    /// public static final java.lang.String java.awt.BorderLayout.BEFORE_FIRST_LINE
 
-    private static var PAGE_START_FieldID: jfieldID?
+    private static var BEFORE_FIRST_LINE_FieldID: jfieldID?
 
-    open static var PAGE_START: String! {
+    open static var BEFORE_FIRST_LINE: String! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "PAGE_START", fieldType: "Ljava/lang/String;", fieldCache: &PAGE_START_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetStaticObjectField( fieldName: "BEFORE_FIRST_LINE", fieldType: "Ljava/lang/String;", fieldCache: &BEFORE_FIRST_LINE_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.lang.String java.awt.BorderLayout.PAGE_END
+    /// public static final java.lang.String java.awt.BorderLayout.BEFORE_LINE_BEGINS
 
-    private static var PAGE_END_FieldID: jfieldID?
+    private static var BEFORE_LINE_BEGINS_FieldID: jfieldID?
 
-    open static var PAGE_END: String! {
+    open static var BEFORE_LINE_BEGINS: String! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "PAGE_END", fieldType: "Ljava/lang/String;", fieldCache: &PAGE_END_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetStaticObjectField( fieldName: "BEFORE_LINE_BEGINS", fieldType: "Ljava/lang/String;", fieldCache: &BEFORE_LINE_BEGINS_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.lang.String java.awt.BorderLayout.LINE_START
+    /// public static final java.lang.String java.awt.BorderLayout.CENTER
 
-    private static var LINE_START_FieldID: jfieldID?
+    private static var CENTER_FieldID: jfieldID?
 
-    open static var LINE_START: String! {
+    open static var CENTER: String! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "LINE_START", fieldType: "Ljava/lang/String;", fieldCache: &LINE_START_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetStaticObjectField( fieldName: "CENTER", fieldType: "Ljava/lang/String;", fieldCache: &CENTER_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String java.awt.BorderLayout.EAST
+
+    private static var EAST_FieldID: jfieldID?
+
+    open static var EAST: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "EAST", fieldType: "Ljava/lang/String;", fieldCache: &EAST_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -177,19 +95,136 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seria
     open static var LINE_END: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LINE_END", fieldType: "Ljava/lang/String;", fieldCache: &LINE_END_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String java.awt.BorderLayout.LINE_START
+
+    private static var LINE_START_FieldID: jfieldID?
+
+    open static var LINE_START: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "LINE_START", fieldType: "Ljava/lang/String;", fieldCache: &LINE_START_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String java.awt.BorderLayout.NORTH
+
+    private static var NORTH_FieldID: jfieldID?
+
+    open static var NORTH: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NORTH", fieldType: "Ljava/lang/String;", fieldCache: &NORTH_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String java.awt.BorderLayout.PAGE_END
+
+    private static var PAGE_END_FieldID: jfieldID?
+
+    open static var PAGE_END: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "PAGE_END", fieldType: "Ljava/lang/String;", fieldCache: &PAGE_END_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String java.awt.BorderLayout.PAGE_START
+
+    private static var PAGE_START_FieldID: jfieldID?
+
+    open static var PAGE_START: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "PAGE_START", fieldType: "Ljava/lang/String;", fieldCache: &PAGE_START_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String java.awt.BorderLayout.SOUTH
+
+    private static var SOUTH_FieldID: jfieldID?
+
+    open static var SOUTH: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "SOUTH", fieldType: "Ljava/lang/String;", fieldCache: &SOUTH_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String java.awt.BorderLayout.WEST
+
+    private static var WEST_FieldID: jfieldID?
+
+    open static var WEST: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "WEST", fieldType: "Ljava/lang/String;", fieldCache: &WEST_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
     /// private static final long java.awt.BorderLayout.serialVersionUID
+
+    /// java.awt.Component java.awt.BorderLayout.center
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Component java.awt.BorderLayout.east
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Component java.awt.BorderLayout.firstItem
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Component java.awt.BorderLayout.firstLine
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.BorderLayout.hgap
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Component java.awt.BorderLayout.lastItem
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Component java.awt.BorderLayout.lastLine
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Component java.awt.BorderLayout.north
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Component java.awt.BorderLayout.south
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.BorderLayout.vgap
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Component java.awt.BorderLayout.west
+
+    // Skipping field: true false false false false false 
 
     /// public java.awt.BorderLayout()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/BorderLayout", classCache: &BorderLayout.BorderLayoutJNIClass, methodSig: "()V", methodCache: &BorderLayout.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -200,10 +235,10 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seria
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( hgap: Int, vgap: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hgap, locals: &__locals )
-        __args[1] = JNIType.toJava( value: vgap, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(hgap) )
+        __args[1] = jvalue( i: jint(vgap) )
         let __object = JNIMethod.NewObject( className: "java/awt/BorderLayout", classCache: &BorderLayout.BorderLayoutJNIClass, methodSig: "(II)V", methodCache: &BorderLayout.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -213,19 +248,49 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seria
         self.init( hgap: _hgap, vgap: _vgap )
     }
 
-    /// public java.lang.String java.awt.BorderLayout.toString()
+    /// public void java.awt.BorderLayout.addLayoutComponent(java.awt.Component,java.lang.Object)
+
+    private static var addLayoutComponent_MethodID_3: jmethodID?
+
+    open func addLayoutComponent( comp: Component?, constraints: java_swift.JavaObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &BorderLayout.addLayoutComponent_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func addLayoutComponent( _ _comp: Component?, _ _constraints: java_swift.JavaObject? ) {
+        addLayoutComponent( comp: _comp, constraints: _constraints )
+    }
+
+    /// public void java.awt.BorderLayout.addLayoutComponent(java.lang.String,java.awt.Component)
+
+    private static var addLayoutComponent_MethodID_4: jmethodID?
+
+    open func addLayoutComponent( name: String?, comp: Component? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BorderLayout.addLayoutComponent_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func addLayoutComponent( _ _name: String?, _ _comp: Component? ) {
+        addLayoutComponent( name: _name, comp: _comp )
+    }
 
     /// private java.awt.Component java.awt.BorderLayout.getChild(java.lang.String,boolean)
 
     /// public java.lang.Object java.awt.BorderLayout.getConstraints(java.awt.Component)
 
-    private static var getConstraints_MethodID_3: jmethodID?
+    private static var getConstraints_MethodID_5: jmethodID?
 
     open func getConstraints( comp: Component? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getConstraints", methodSig: "(Ljava/awt/Component;)Ljava/lang/Object;", methodCache: &BorderLayout.getConstraints_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getConstraints", methodSig: "(Ljava/awt/Component;)Ljava/lang/Object;", methodCache: &BorderLayout.getConstraints_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -236,196 +301,26 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seria
 
     /// public int java.awt.BorderLayout.getHgap()
 
-    private static var getHgap_MethodID_4: jmethodID?
+    private static var getHgap_MethodID_6: jmethodID?
 
     open func getHgap() -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHgap", methodSig: "()I", methodCache: &BorderLayout.getHgap_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHgap", methodSig: "()I", methodCache: &BorderLayout.getHgap_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-
-    /// public void java.awt.BorderLayout.setHgap(int)
-
-    private static var setHgap_MethodID_5: jmethodID?
-
-    open func setHgap( hgap: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hgap, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHgap", methodSig: "(I)V", methodCache: &BorderLayout.setHgap_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func setHgap( _ _hgap: Int ) {
-        setHgap( hgap: _hgap )
-    }
-
-    /// public int java.awt.BorderLayout.getVgap()
-
-    private static var getVgap_MethodID_6: jmethodID?
-
-    open func getVgap() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVgap", methodSig: "()I", methodCache: &BorderLayout.getVgap_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void java.awt.BorderLayout.setVgap(int)
-
-    private static var setVgap_MethodID_7: jmethodID?
-
-    open func setVgap( vgap: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: vgap, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVgap", methodSig: "(I)V", methodCache: &BorderLayout.setVgap_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setVgap( _ _vgap: Int ) {
-        setVgap( vgap: _vgap )
-    }
-
-    /// public void java.awt.BorderLayout.removeLayoutComponent(java.awt.Component)
-
-    private static var removeLayoutComponent_MethodID_8: jmethodID?
-
-    open func removeLayoutComponent( comp: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BorderLayout.removeLayoutComponent_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func removeLayoutComponent( _ _comp: Component? ) {
-        removeLayoutComponent( comp: _comp )
-    }
-
-    /// public void java.awt.BorderLayout.addLayoutComponent(java.lang.String,java.awt.Component)
-
-    private static var addLayoutComponent_MethodID_9: jmethodID?
-
-    open func addLayoutComponent( name: String?, comp: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BorderLayout.addLayoutComponent_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func addLayoutComponent( _ _name: String?, _ _comp: Component? ) {
-        addLayoutComponent( name: _name, comp: _comp )
-    }
-
-    /// public void java.awt.BorderLayout.addLayoutComponent(java.awt.Component,java.lang.Object)
-
-    private static var addLayoutComponent_MethodID_10: jmethodID?
-
-    open func addLayoutComponent( comp: Component?, constraints: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &BorderLayout.addLayoutComponent_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func addLayoutComponent( _ _comp: Component?, _ _constraints: java_swift.JavaObject? ) {
-        addLayoutComponent( comp: _comp, constraints: _constraints )
-    }
-
-    /// public void java.awt.BorderLayout.layoutContainer(java.awt.Container)
-
-    private static var layoutContainer_MethodID_11: jmethodID?
-
-    open func layoutContainer( parent: Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BorderLayout.layoutContainer_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func layoutContainer( _ _parent: Container? ) {
-        layoutContainer( parent: _parent )
-    }
-
-    /// public void java.awt.BorderLayout.invalidateLayout(java.awt.Container)
-
-    private static var invalidateLayout_MethodID_12: jmethodID?
-
-    open func invalidateLayout( target: Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidateLayout", methodSig: "(Ljava/awt/Container;)V", methodCache: &BorderLayout.invalidateLayout_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func invalidateLayout( _ _target: Container? ) {
-        invalidateLayout( target: _target )
-    }
-
-    /// public java.awt.Dimension java.awt.BorderLayout.preferredLayoutSize(java.awt.Container)
-
-    private static var preferredLayoutSize_MethodID_13: jmethodID?
-
-    open func preferredLayoutSize( parent: Container? ) -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BorderLayout.preferredLayoutSize_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
-    open func preferredLayoutSize( _ _parent: Container? ) -> Dimension! {
-        return preferredLayoutSize( parent: _parent )
-    }
-
-    /// public java.awt.Dimension java.awt.BorderLayout.minimumLayoutSize(java.awt.Container)
-
-    private static var minimumLayoutSize_MethodID_14: jmethodID?
-
-    open func minimumLayoutSize( parent: Container? ) -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BorderLayout.minimumLayoutSize_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
-    open func minimumLayoutSize( _ _parent: Container? ) -> Dimension! {
-        return minimumLayoutSize( parent: _parent )
-    }
-
-    /// public java.awt.Dimension java.awt.BorderLayout.maximumLayoutSize(java.awt.Container)
-
-    private static var maximumLayoutSize_MethodID_15: jmethodID?
-
-    open func maximumLayoutSize( target: Container? ) -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "maximumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BorderLayout.maximumLayoutSize_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
-    open func maximumLayoutSize( _ _target: Container? ) -> Dimension! {
-        return maximumLayoutSize( target: _target )
-    }
 
     /// public float java.awt.BorderLayout.getLayoutAlignmentX(java.awt.Container)
 
-    private static var getLayoutAlignmentX_MethodID_16: jmethodID?
+    private static var getLayoutAlignmentX_MethodID_7: jmethodID?
 
     open func getLayoutAlignmentX( target: Container? ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentX", methodSig: "(Ljava/awt/Container;)F", methodCache: &BorderLayout.getLayoutAlignmentX_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentX", methodSig: "(Ljava/awt/Container;)F", methodCache: &BorderLayout.getLayoutAlignmentX_MethodID_7, args: &__args, locals: &__locals )
+        return __return
     }
 
     open func getLayoutAlignmentX( _ _target: Container? ) -> Float {
@@ -434,29 +329,47 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seria
 
     /// public float java.awt.BorderLayout.getLayoutAlignmentY(java.awt.Container)
 
-    private static var getLayoutAlignmentY_MethodID_17: jmethodID?
+    private static var getLayoutAlignmentY_MethodID_8: jmethodID?
 
     open func getLayoutAlignmentY( target: Container? ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentY", methodSig: "(Ljava/awt/Container;)F", methodCache: &BorderLayout.getLayoutAlignmentY_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentY", methodSig: "(Ljava/awt/Container;)F", methodCache: &BorderLayout.getLayoutAlignmentY_MethodID_8, args: &__args, locals: &__locals )
+        return __return
     }
 
     open func getLayoutAlignmentY( _ _target: Container? ) -> Float {
         return getLayoutAlignmentY( target: _target )
     }
 
+    /// public java.awt.Component java.awt.BorderLayout.getLayoutComponent(java.awt.Container,java.lang.Object)
+
+    private static var getLayoutComponent_MethodID_9: jmethodID?
+
+    open func getLayoutComponent( target: Container?, constraints: java_swift.JavaObject? ) -> Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayoutComponent", methodSig: "(Ljava/awt/Container;Ljava/lang/Object;)Ljava/awt/Component;", methodCache: &BorderLayout.getLayoutComponent_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component( javaObject: __return ) : nil
+    }
+
+    open func getLayoutComponent( _ _target: Container?, _ _constraints: java_swift.JavaObject? ) -> Component! {
+        return getLayoutComponent( target: _target, constraints: _constraints )
+    }
+
     /// public java.awt.Component java.awt.BorderLayout.getLayoutComponent(java.lang.Object)
 
-    private static var getLayoutComponent_MethodID_18: jmethodID?
+    private static var getLayoutComponent_MethodID_10: jmethodID?
 
     open func getLayoutComponent( constraints: java_swift.JavaObject? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: constraints, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayoutComponent", methodSig: "(Ljava/lang/Object;)Ljava/awt/Component;", methodCache: &BorderLayout.getLayoutComponent_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayoutComponent", methodSig: "(Ljava/lang/Object;)Ljava/awt/Component;", methodCache: &BorderLayout.getLayoutComponent_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
     }
@@ -465,23 +378,147 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* java.io.Seria
         return getLayoutComponent( constraints: _constraints )
     }
 
-    /// public java.awt.Component java.awt.BorderLayout.getLayoutComponent(java.awt.Container,java.lang.Object)
+    /// public int java.awt.BorderLayout.getVgap()
 
-    private static var getLayoutComponent_MethodID_19: jmethodID?
+    private static var getVgap_MethodID_11: jmethodID?
 
-    open func getLayoutComponent( target: Container?, constraints: java_swift.JavaObject? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getVgap() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayoutComponent", methodSig: "(Ljava/awt/Container;Ljava/lang/Object;)Ljava/awt/Component;", methodCache: &BorderLayout.getLayoutComponent_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVgap", methodSig: "()I", methodCache: &BorderLayout.getVgap_MethodID_11, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func getLayoutComponent( _ _target: Container?, _ _constraints: java_swift.JavaObject? ) -> Component! {
-        return getLayoutComponent( target: _target, constraints: _constraints )
+
+    /// public void java.awt.BorderLayout.invalidateLayout(java.awt.Container)
+
+    private static var invalidateLayout_MethodID_12: jmethodID?
+
+    open func invalidateLayout( target: Container? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidateLayout", methodSig: "(Ljava/awt/Container;)V", methodCache: &BorderLayout.invalidateLayout_MethodID_12, args: &__args, locals: &__locals )
     }
+
+    open func invalidateLayout( _ _target: Container? ) {
+        invalidateLayout( target: _target )
+    }
+
+    /// public void java.awt.BorderLayout.layoutContainer(java.awt.Container)
+
+    private static var layoutContainer_MethodID_13: jmethodID?
+
+    open func layoutContainer( parent: Container? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BorderLayout.layoutContainer_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func layoutContainer( _ _parent: Container? ) {
+        layoutContainer( parent: _parent )
+    }
+
+    /// public java.awt.Dimension java.awt.BorderLayout.maximumLayoutSize(java.awt.Container)
+
+    private static var maximumLayoutSize_MethodID_14: jmethodID?
+
+    open func maximumLayoutSize( target: Container? ) -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "maximumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BorderLayout.maximumLayoutSize_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+    open func maximumLayoutSize( _ _target: Container? ) -> Dimension! {
+        return maximumLayoutSize( target: _target )
+    }
+
+    /// public java.awt.Dimension java.awt.BorderLayout.minimumLayoutSize(java.awt.Container)
+
+    private static var minimumLayoutSize_MethodID_15: jmethodID?
+
+    open func minimumLayoutSize( parent: Container? ) -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BorderLayout.minimumLayoutSize_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+    open func minimumLayoutSize( _ _parent: Container? ) -> Dimension! {
+        return minimumLayoutSize( parent: _parent )
+    }
+
+    /// public java.awt.Dimension java.awt.BorderLayout.preferredLayoutSize(java.awt.Container)
+
+    private static var preferredLayoutSize_MethodID_16: jmethodID?
+
+    open func preferredLayoutSize( parent: Container? ) -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BorderLayout.preferredLayoutSize_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+    open func preferredLayoutSize( _ _parent: Container? ) -> Dimension! {
+        return preferredLayoutSize( parent: _parent )
+    }
+
+    /// public void java.awt.BorderLayout.removeLayoutComponent(java.awt.Component)
+
+    private static var removeLayoutComponent_MethodID_17: jmethodID?
+
+    open func removeLayoutComponent( comp: Component? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BorderLayout.removeLayoutComponent_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func removeLayoutComponent( _ _comp: Component? ) {
+        removeLayoutComponent( comp: _comp )
+    }
+
+    /// public void java.awt.BorderLayout.setHgap(int)
+
+    private static var setHgap_MethodID_18: jmethodID?
+
+    open func setHgap( hgap: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(hgap) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHgap", methodSig: "(I)V", methodCache: &BorderLayout.setHgap_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setHgap( _ _hgap: Int ) {
+        setHgap( hgap: _hgap )
+    }
+
+    /// public void java.awt.BorderLayout.setVgap(int)
+
+    private static var setVgap_MethodID_19: jmethodID?
+
+    open func setVgap( vgap: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(vgap) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVgap", methodSig: "(I)V", methodCache: &BorderLayout.setVgap_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func setVgap( _ _vgap: Int ) {
+        setVgap( vgap: _vgap )
+    }
+
+    /// public java.lang.String java.awt.BorderLayout.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

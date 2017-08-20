@@ -7,6 +7,10 @@ import java_swift
 
 public protocol Transferable: JavaProtocol {
 
+    /// public abstract java.lang.Object java.awt.datatransfer.Transferable.getTransferData(java.awt.datatransfer.DataFlavor) throws java.awt.datatransfer.UnsupportedFlavorException,java.io.IOException
+
+    func getTransferData( flavor: DataFlavor? ) throws /* java.awt.datatransfer.UnsupportedFlavorException, java.io.IOException */ -> java_swift.JavaObject!
+
     /// public abstract java.awt.datatransfer.DataFlavor[] java.awt.datatransfer.Transferable.getTransferDataFlavors()
 
     func getTransferDataFlavors() -> [DataFlavor]!
@@ -15,10 +19,6 @@ public protocol Transferable: JavaProtocol {
 
     func isDataFlavorSupported( flavor: DataFlavor? ) -> Bool
 
-    /// public abstract java.lang.Object java.awt.datatransfer.Transferable.getTransferData(java.awt.datatransfer.DataFlavor) throws java.awt.datatransfer.UnsupportedFlavorException,java.io.IOException
-
-    func getTransferData( flavor: DataFlavor? ) throws /* java.awt.datatransfer.UnsupportedFlavorException, java.io.IOException */ -> java_swift.JavaObject!
-
 }
 
 
@@ -26,45 +26,18 @@ open class TransferableForward: JNIObjectForward, Transferable {
 
     private static var TransferableJNIClass: jclass?
 
-    /// public abstract java.awt.datatransfer.DataFlavor[] java.awt.datatransfer.Transferable.getTransferDataFlavors()
-
-    private static var getTransferDataFlavors_MethodID_4: jmethodID?
-
-    open func getTransferDataFlavors() -> [DataFlavor]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferDataFlavors", methodSig: "()[Ljava/awt/datatransfer/DataFlavor;", methodCache: &TransferableForward.getTransferDataFlavors_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [DataFlavor](), from: __return )
-    }
-
-
-    /// public abstract boolean java.awt.datatransfer.Transferable.isDataFlavorSupported(java.awt.datatransfer.DataFlavor)
-
-    private static var isDataFlavorSupported_MethodID_5: jmethodID?
-
-    open func isDataFlavorSupported( flavor: DataFlavor? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: flavor, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDataFlavorSupported", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &TransferableForward.isDataFlavorSupported_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isDataFlavorSupported( _ _flavor: DataFlavor? ) -> Bool {
-        return isDataFlavorSupported( flavor: _flavor )
-    }
-
     /// public abstract java.lang.Object java.awt.datatransfer.Transferable.getTransferData(java.awt.datatransfer.DataFlavor) throws java.awt.datatransfer.UnsupportedFlavorException,java.io.IOException
 
-    private static var getTransferData_MethodID_6: jmethodID?
+    private static var getTransferData_MethodID_4: jmethodID?
 
     open func getTransferData( flavor: DataFlavor? ) throws /* java.awt.datatransfer.UnsupportedFlavorException, java.io.IOException */ -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: flavor, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferData", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Ljava/lang/Object;", methodCache: &TransferableForward.getTransferData_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferData", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Ljava/lang/Object;", methodCache: &TransferableForward.getTransferData_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw UnsupportedFlavorException( javaObject: throwable )
         }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
@@ -74,6 +47,33 @@ open class TransferableForward: JNIObjectForward, Transferable {
         return try getTransferData( flavor: _flavor )
     }
 
-}
+    /// public abstract java.awt.datatransfer.DataFlavor[] java.awt.datatransfer.Transferable.getTransferDataFlavors()
 
+    private static var getTransferDataFlavors_MethodID_5: jmethodID?
+
+    open func getTransferDataFlavors() -> [DataFlavor]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferDataFlavors", methodSig: "()[Ljava/awt/datatransfer/DataFlavor;", methodCache: &TransferableForward.getTransferDataFlavors_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [DataFlavor].self, from: __return )
+    }
+
+
+    /// public abstract boolean java.awt.datatransfer.Transferable.isDataFlavorSupported(java.awt.datatransfer.DataFlavor)
+
+    private static var isDataFlavorSupported_MethodID_6: jmethodID?
+
+    open func isDataFlavorSupported( flavor: DataFlavor? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: flavor, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDataFlavorSupported", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &TransferableForward.isDataFlavorSupported_MethodID_6, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func isDataFlavorSupported( _ _flavor: DataFlavor? ) -> Bool {
+        return isDataFlavorSupported( flavor: _flavor )
+    }
+
+}
 

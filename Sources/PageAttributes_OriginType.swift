@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.PageAttributes$OriginType ///
 
-open class PageAttributes_OriginType: /* java.awt.AttributeValue */ UnclassedObject {
+open class PageAttributes_OriginType: /* class java.awt.AttributeValue */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -29,6 +29,7 @@ open class PageAttributes_OriginType: /* java.awt.AttributeValue */ UnclassedObj
     open static var PHYSICAL: PageAttributes_OriginType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PHYSICAL", fieldType: "Ljava/awt/PageAttributes$OriginType;", fieldCache: &PHYSICAL_FieldID, className: "java/awt/PageAttributes$OriginType", classCache: &PageAttributes_OriginTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_OriginType( javaObject: __value ) : nil
         }
     }
@@ -40,21 +41,43 @@ open class PageAttributes_OriginType: /* java.awt.AttributeValue */ UnclassedObj
     open static var PRINTABLE: PageAttributes_OriginType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PRINTABLE", fieldType: "Ljava/awt/PageAttributes$OriginType;", fieldCache: &PRINTABLE_FieldID, className: "java/awt/PageAttributes$OriginType", classCache: &PageAttributes_OriginTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_OriginType( javaObject: __value ) : nil
         }
     }
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AttributeValue.log
 
-    /// private final int java.awt.AttributeValue.value
-
     /// private final java.lang.String[] java.awt.AttributeValue.names
+
+    /// private final int java.awt.AttributeValue.value
 
     /// private java.awt.PageAttributes$OriginType(int)
 
+    /// public int java.awt.PageAttributes$OriginType.hashCode()
+
+    private static var hashCode_MethodID_1: jmethodID?
+
+    override open func hashCode() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "hashCode", methodSig: "()I", methodCache: &PageAttributes_OriginType.hashCode_MethodID_1, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public java.lang.String java.awt.PageAttributes$OriginType.toString()
 
-    /// public int java.awt.PageAttributes$OriginType.hashCode()
+    private static var toString_MethodID_2: jmethodID?
+
+    override open func toString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toString", methodSig: "()Ljava/lang/String;", methodCache: &PageAttributes_OriginType.toString_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
 }
 

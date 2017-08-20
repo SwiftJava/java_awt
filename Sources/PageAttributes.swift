@@ -32,26 +32,16 @@ open class PageAttributes: java_swift.JavaObject, java_lang.Cloneable {
 
     /// private int[] java.awt.PageAttributes.printerResolution
 
-    /// public java.awt.PageAttributes(java.awt.PageAttributes$ColorType,java.awt.PageAttributes$MediaType,java.awt.PageAttributes$OrientationRequestedType,java.awt.PageAttributes$OriginType,java.awt.PageAttributes$PrintQualityType,int[])
+    /// public java.awt.PageAttributes()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( color: PageAttributes_ColorType?, media: PageAttributes_MediaType?, orientationRequested: PageAttributes_OrientationRequestedType?, origin: PageAttributes_OriginType?, printQuality: PageAttributes_PrintQualityType?, printerResolution: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: color, locals: &__locals )
-        __args[1] = JNIType.toJava( value: media, locals: &__locals )
-        __args[2] = JNIType.toJava( value: orientationRequested, locals: &__locals )
-        __args[3] = JNIType.toJava( value: origin, locals: &__locals )
-        __args[4] = JNIType.toJava( value: printQuality, locals: &__locals )
-        __args[5] = JNIType.toJava( value: printerResolution, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/PageAttributes", classCache: &PageAttributes.PageAttributesJNIClass, methodSig: "(Ljava/awt/PageAttributes$ColorType;Ljava/awt/PageAttributes$MediaType;Ljava/awt/PageAttributes$OrientationRequestedType;Ljava/awt/PageAttributes$OriginType;Ljava/awt/PageAttributes$PrintQualityType;[I)V", methodCache: &PageAttributes.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "java/awt/PageAttributes", classCache: &PageAttributes.PageAttributesJNIClass, methodSig: "()V", methodCache: &PageAttributes.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _color: PageAttributes_ColorType?, _ _media: PageAttributes_MediaType?, _ _orientationRequested: PageAttributes_OrientationRequestedType?, _ _origin: PageAttributes_OriginType?, _ _printQuality: PageAttributes_PrintQualityType?, _ _printerResolution: [Int32]? ) {
-        self.init( color: _color, media: _media, orientationRequested: _orientationRequested, origin: _origin, printQuality: _printQuality, printerResolution: _printerResolution )
     }
 
     /// public java.awt.PageAttributes(java.awt.PageAttributes)
@@ -59,8 +49,8 @@ open class PageAttributes: java_swift.JavaObject, java_lang.Cloneable {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( obj: PageAttributes? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/PageAttributes", classCache: &PageAttributes.PageAttributesJNIClass, methodSig: "(Ljava/awt/PageAttributes;)V", methodCache: &PageAttributes.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -71,74 +61,65 @@ open class PageAttributes: java_swift.JavaObject, java_lang.Cloneable {
         self.init( obj: _obj )
     }
 
-    /// public java.awt.PageAttributes()
+    /// public java.awt.PageAttributes(java.awt.PageAttributes$ColorType,java.awt.PageAttributes$MediaType,java.awt.PageAttributes$OrientationRequestedType,java.awt.PageAttributes$OriginType,java.awt.PageAttributes$PrintQualityType,int[])
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( color: PageAttributes_ColorType?, media: PageAttributes_MediaType?, orientationRequested: PageAttributes_OrientationRequestedType?, origin: PageAttributes_OriginType?, printQuality: PageAttributes_PrintQualityType?, printerResolution: [Int32]? ) {
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "java/awt/PageAttributes", classCache: &PageAttributes.PageAttributesJNIClass, methodSig: "()V", methodCache: &PageAttributes.new_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: color, locals: &__locals )
+        __args[1] = JNIType.toJava( value: media, locals: &__locals )
+        __args[2] = JNIType.toJava( value: orientationRequested, locals: &__locals )
+        __args[3] = JNIType.toJava( value: origin, locals: &__locals )
+        __args[4] = JNIType.toJava( value: printQuality, locals: &__locals )
+        __args[5] = JNIType.toJava( value: printerResolution, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/PageAttributes", classCache: &PageAttributes.PageAttributesJNIClass, methodSig: "(Ljava/awt/PageAttributes$ColorType;Ljava/awt/PageAttributes$MediaType;Ljava/awt/PageAttributes$OrientationRequestedType;Ljava/awt/PageAttributes$OriginType;Ljava/awt/PageAttributes$PrintQualityType;[I)V", methodCache: &PageAttributes.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
+    public convenience init( _ _color: PageAttributes_ColorType?, _ _media: PageAttributes_MediaType?, _ _orientationRequested: PageAttributes_OrientationRequestedType?, _ _origin: PageAttributes_OriginType?, _ _printQuality: PageAttributes_PrintQualityType?, _ _printerResolution: [Int32]? ) {
+        self.init( color: _color, media: _media, orientationRequested: _orientationRequested, origin: _origin, printQuality: _printQuality, printerResolution: _printerResolution )
+    }
+
+    /// public java.lang.Object java.awt.PageAttributes.clone()
+
+    private static var clone_MethodID_4: jmethodID?
+
+    override open func clone() -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &PageAttributes.clone_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
     /// public boolean java.awt.PageAttributes.equals(java.lang.Object)
 
-    private static var equals_MethodID_4: jmethodID?
+    private static var equals_MethodID_5: jmethodID?
 
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: obj, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &PageAttributes.equals_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &PageAttributes.equals_MethodID_5, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _obj: java_swift.JavaObject? ) -> Bool {
         return equals( obj: _obj )
     }
 
-    /// public java.lang.String java.awt.PageAttributes.toString()
-
-    /// public int java.awt.PageAttributes.hashCode()
-
-    /// public java.lang.Object java.awt.PageAttributes.clone()
-
-    private static var clone_MethodID_5: jmethodID?
-
-    override open func clone() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &PageAttributes.clone_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.PageAttributes.set(java.awt.PageAttributes)
-
-    private static var set_MethodID_6: jmethodID?
-
-    open func set( obj: PageAttributes? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "set", methodSig: "(Ljava/awt/PageAttributes;)V", methodCache: &PageAttributes.set_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func set( _ _obj: PageAttributes? ) {
-        set( obj: _obj )
-    }
-
     /// public java.awt.PageAttributes$ColorType java.awt.PageAttributes.getColor()
 
-    private static var getColor_MethodID_7: jmethodID?
+    private static var getColor_MethodID_6: jmethodID?
 
     open func getColor() -> PageAttributes_ColorType! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor", methodSig: "()Ljava/awt/PageAttributes$ColorType;", methodCache: &PageAttributes.getColor_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor", methodSig: "()Ljava/awt/PageAttributes$ColorType;", methodCache: &PageAttributes.getColor_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PageAttributes_ColorType( javaObject: __return ) : nil
     }
@@ -146,26 +127,111 @@ open class PageAttributes: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public java.awt.PageAttributes$MediaType java.awt.PageAttributes.getMedia()
 
-    private static var getMedia_MethodID_8: jmethodID?
+    private static var getMedia_MethodID_7: jmethodID?
 
     open func getMedia() -> PageAttributes_MediaType! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMedia", methodSig: "()Ljava/awt/PageAttributes$MediaType;", methodCache: &PageAttributes.getMedia_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMedia", methodSig: "()Ljava/awt/PageAttributes$MediaType;", methodCache: &PageAttributes.getMedia_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PageAttributes_MediaType( javaObject: __return ) : nil
     }
 
 
+    /// public java.awt.PageAttributes$OrientationRequestedType java.awt.PageAttributes.getOrientationRequested()
+
+    private static var getOrientationRequested_MethodID_8: jmethodID?
+
+    open func getOrientationRequested() -> PageAttributes_OrientationRequestedType! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOrientationRequested", methodSig: "()Ljava/awt/PageAttributes$OrientationRequestedType;", methodCache: &PageAttributes.getOrientationRequested_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PageAttributes_OrientationRequestedType( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.PageAttributes$OriginType java.awt.PageAttributes.getOrigin()
+
+    private static var getOrigin_MethodID_9: jmethodID?
+
+    open func getOrigin() -> PageAttributes_OriginType! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOrigin", methodSig: "()Ljava/awt/PageAttributes$OriginType;", methodCache: &PageAttributes.getOrigin_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PageAttributes_OriginType( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.PageAttributes$PrintQualityType java.awt.PageAttributes.getPrintQuality()
+
+    private static var getPrintQuality_MethodID_10: jmethodID?
+
+    open func getPrintQuality() -> PageAttributes_PrintQualityType! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrintQuality", methodSig: "()Ljava/awt/PageAttributes$PrintQualityType;", methodCache: &PageAttributes.getPrintQuality_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PageAttributes_PrintQualityType( javaObject: __return ) : nil
+    }
+
+
+    /// public int[] java.awt.PageAttributes.getPrinterResolution()
+
+    private static var getPrinterResolution_MethodID_11: jmethodID?
+
+    open func getPrinterResolution() -> [Int32]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrinterResolution", methodSig: "()[I", methodCache: &PageAttributes.getPrinterResolution_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
+    }
+
+
+    /// public int java.awt.PageAttributes.hashCode()
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.PageAttributes.set(java.awt.PageAttributes)
+
+    private static var set_MethodID_12: jmethodID?
+
+    open func set( obj: PageAttributes? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "set", methodSig: "(Ljava/awt/PageAttributes;)V", methodCache: &PageAttributes.set_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func set( _ _obj: PageAttributes? ) {
+        set( obj: _obj )
+    }
+
+    /// public void java.awt.PageAttributes.setColor(java.awt.PageAttributes$ColorType)
+
+    private static var setColor_MethodID_13: jmethodID?
+
+    open func setColor( color: PageAttributes_ColorType? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: color, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColor", methodSig: "(Ljava/awt/PageAttributes$ColorType;)V", methodCache: &PageAttributes.setColor_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func setColor( _ _color: PageAttributes_ColorType? ) {
+        setColor( color: _color )
+    }
+
     /// public void java.awt.PageAttributes.setMedia(java.awt.PageAttributes$MediaType)
 
-    private static var setMedia_MethodID_9: jmethodID?
+    private static var setMedia_MethodID_14: jmethodID?
 
     open func setMedia( media: PageAttributes_MediaType? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: media, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMedia", methodSig: "(Ljava/awt/PageAttributes$MediaType;)V", methodCache: &PageAttributes.setMedia_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMedia", methodSig: "(Ljava/awt/PageAttributes$MediaType;)V", methodCache: &PageAttributes.setMedia_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setMedia( _ _media: PageAttributes_MediaType? ) {
@@ -174,37 +240,24 @@ open class PageAttributes: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public void java.awt.PageAttributes.setMediaToDefault()
 
-    private static var setMediaToDefault_MethodID_10: jmethodID?
+    private static var setMediaToDefault_MethodID_15: jmethodID?
 
     open func setMediaToDefault() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMediaToDefault", methodSig: "()V", methodCache: &PageAttributes.setMediaToDefault_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.awt.PageAttributes$OrientationRequestedType java.awt.PageAttributes.getOrientationRequested()
-
-    private static var getOrientationRequested_MethodID_11: jmethodID?
-
-    open func getOrientationRequested() -> PageAttributes_OrientationRequestedType! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOrientationRequested", methodSig: "()Ljava/awt/PageAttributes$OrientationRequestedType;", methodCache: &PageAttributes.getOrientationRequested_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PageAttributes_OrientationRequestedType( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMediaToDefault", methodSig: "()V", methodCache: &PageAttributes.setMediaToDefault_MethodID_15, args: &__args, locals: &__locals )
     }
 
 
     /// public void java.awt.PageAttributes.setOrientationRequested(int)
 
-    private static var setOrientationRequested_MethodID_12: jmethodID?
+    private static var setOrientationRequested_MethodID_16: jmethodID?
 
     open func setOrientationRequested( orientationRequested: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: orientationRequested, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientationRequested", methodSig: "(I)V", methodCache: &PageAttributes.setOrientationRequested_MethodID_12, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(orientationRequested) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientationRequested", methodSig: "(I)V", methodCache: &PageAttributes.setOrientationRequested_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setOrientationRequested( _ _orientationRequested: Int ) {
@@ -213,13 +266,13 @@ open class PageAttributes: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public void java.awt.PageAttributes.setOrientationRequested(java.awt.PageAttributes$OrientationRequestedType)
 
-    private static var setOrientationRequested_MethodID_13: jmethodID?
+    private static var setOrientationRequested_MethodID_17: jmethodID?
 
     open func setOrientationRequested( orientationRequested: PageAttributes_OrientationRequestedType? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: orientationRequested, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientationRequested", methodSig: "(Ljava/awt/PageAttributes$OrientationRequestedType;)V", methodCache: &PageAttributes.setOrientationRequested_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientationRequested", methodSig: "(Ljava/awt/PageAttributes$OrientationRequestedType;)V", methodCache: &PageAttributes.setOrientationRequested_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setOrientationRequested( _ _orientationRequested: PageAttributes_OrientationRequestedType? ) {
@@ -228,65 +281,39 @@ open class PageAttributes: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public void java.awt.PageAttributes.setOrientationRequestedToDefault()
 
-    private static var setOrientationRequestedToDefault_MethodID_14: jmethodID?
+    private static var setOrientationRequestedToDefault_MethodID_18: jmethodID?
 
     open func setOrientationRequestedToDefault() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientationRequestedToDefault", methodSig: "()V", methodCache: &PageAttributes.setOrientationRequestedToDefault_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.awt.PageAttributes$OriginType java.awt.PageAttributes.getOrigin()
-
-    private static var getOrigin_MethodID_15: jmethodID?
-
-    open func getOrigin() -> PageAttributes_OriginType! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOrigin", methodSig: "()Ljava/awt/PageAttributes$OriginType;", methodCache: &PageAttributes.getOrigin_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PageAttributes_OriginType( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientationRequestedToDefault", methodSig: "()V", methodCache: &PageAttributes.setOrientationRequestedToDefault_MethodID_18, args: &__args, locals: &__locals )
     }
 
 
     /// public void java.awt.PageAttributes.setOrigin(java.awt.PageAttributes$OriginType)
 
-    private static var setOrigin_MethodID_16: jmethodID?
+    private static var setOrigin_MethodID_19: jmethodID?
 
     open func setOrigin( origin: PageAttributes_OriginType? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: origin, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrigin", methodSig: "(Ljava/awt/PageAttributes$OriginType;)V", methodCache: &PageAttributes.setOrigin_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrigin", methodSig: "(Ljava/awt/PageAttributes$OriginType;)V", methodCache: &PageAttributes.setOrigin_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func setOrigin( _ _origin: PageAttributes_OriginType? ) {
         setOrigin( origin: _origin )
     }
 
-    /// public java.awt.PageAttributes$PrintQualityType java.awt.PageAttributes.getPrintQuality()
-
-    private static var getPrintQuality_MethodID_17: jmethodID?
-
-    open func getPrintQuality() -> PageAttributes_PrintQualityType! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrintQuality", methodSig: "()Ljava/awt/PageAttributes$PrintQualityType;", methodCache: &PageAttributes.getPrintQuality_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PageAttributes_PrintQualityType( javaObject: __return ) : nil
-    }
-
-
     /// public void java.awt.PageAttributes.setPrintQuality(int)
 
-    private static var setPrintQuality_MethodID_18: jmethodID?
+    private static var setPrintQuality_MethodID_20: jmethodID?
 
     open func setPrintQuality( printQuality: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: printQuality, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrintQuality", methodSig: "(I)V", methodCache: &PageAttributes.setPrintQuality_MethodID_18, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(printQuality) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrintQuality", methodSig: "(I)V", methodCache: &PageAttributes.setPrintQuality_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func setPrintQuality( _ _printQuality: Int ) {
@@ -295,13 +322,13 @@ open class PageAttributes: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public void java.awt.PageAttributes.setPrintQuality(java.awt.PageAttributes$PrintQualityType)
 
-    private static var setPrintQuality_MethodID_19: jmethodID?
+    private static var setPrintQuality_MethodID_21: jmethodID?
 
     open func setPrintQuality( printQuality: PageAttributes_PrintQualityType? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: printQuality, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrintQuality", methodSig: "(Ljava/awt/PageAttributes$PrintQualityType;)V", methodCache: &PageAttributes.setPrintQuality_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrintQuality", methodSig: "(Ljava/awt/PageAttributes$PrintQualityType;)V", methodCache: &PageAttributes.setPrintQuality_MethodID_21, args: &__args, locals: &__locals )
     }
 
     open func setPrintQuality( _ _printQuality: PageAttributes_PrintQualityType? ) {
@@ -310,50 +337,23 @@ open class PageAttributes: java_swift.JavaObject, java_lang.Cloneable {
 
     /// public void java.awt.PageAttributes.setPrintQualityToDefault()
 
-    private static var setPrintQualityToDefault_MethodID_20: jmethodID?
+    private static var setPrintQualityToDefault_MethodID_22: jmethodID?
 
     open func setPrintQualityToDefault() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrintQualityToDefault", methodSig: "()V", methodCache: &PageAttributes.setPrintQualityToDefault_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-
-    /// public int[] java.awt.PageAttributes.getPrinterResolution()
-
-    private static var getPrinterResolution_MethodID_21: jmethodID?
-
-    open func getPrinterResolution() -> [Int32]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrinterResolution", methodSig: "()[I", methodCache: &PageAttributes.getPrinterResolution_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrintQualityToDefault", methodSig: "()V", methodCache: &PageAttributes.setPrintQualityToDefault_MethodID_22, args: &__args, locals: &__locals )
     }
 
-
-    /// public void java.awt.PageAttributes.setPrinterResolution(int[])
-
-    private static var setPrinterResolution_MethodID_22: jmethodID?
-
-    open func setPrinterResolution( printerResolution: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: printerResolution, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrinterResolution", methodSig: "([I)V", methodCache: &PageAttributes.setPrinterResolution_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func setPrinterResolution( _ _printerResolution: [Int32]? ) {
-        setPrinterResolution( printerResolution: _printerResolution )
-    }
 
     /// public void java.awt.PageAttributes.setPrinterResolution(int)
 
     private static var setPrinterResolution_MethodID_23: jmethodID?
 
     open func setPrinterResolution( printerResolution: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: printerResolution, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(printerResolution) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrinterResolution", methodSig: "(I)V", methodCache: &PageAttributes.setPrinterResolution_MethodID_23, args: &__args, locals: &__locals )
     }
 
@@ -361,31 +361,35 @@ open class PageAttributes: java_swift.JavaObject, java_lang.Cloneable {
         setPrinterResolution( printerResolution: _printerResolution )
     }
 
+    /// public void java.awt.PageAttributes.setPrinterResolution(int[])
+
+    private static var setPrinterResolution_MethodID_24: jmethodID?
+
+    open func setPrinterResolution( printerResolution: [Int32]? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: printerResolution, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrinterResolution", methodSig: "([I)V", methodCache: &PageAttributes.setPrinterResolution_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func setPrinterResolution( _ _printerResolution: [Int32]? ) {
+        setPrinterResolution( printerResolution: _printerResolution )
+    }
+
     /// public void java.awt.PageAttributes.setPrinterResolutionToDefault()
 
-    private static var setPrinterResolutionToDefault_MethodID_24: jmethodID?
+    private static var setPrinterResolutionToDefault_MethodID_25: jmethodID?
 
     open func setPrinterResolutionToDefault() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrinterResolutionToDefault", methodSig: "()V", methodCache: &PageAttributes.setPrinterResolutionToDefault_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void java.awt.PageAttributes.setColor(java.awt.PageAttributes$ColorType)
-
-    private static var setColor_MethodID_25: jmethodID?
-
-    open func setColor( color: PageAttributes_ColorType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: color, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColor", methodSig: "(Ljava/awt/PageAttributes$ColorType;)V", methodCache: &PageAttributes.setColor_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrinterResolutionToDefault", methodSig: "()V", methodCache: &PageAttributes.setPrinterResolutionToDefault_MethodID_25, args: &__args, locals: &__locals )
     }
 
-    open func setColor( _ _color: PageAttributes_ColorType? ) {
-        setColor( color: _color )
-    }
+
+    /// public java.lang.String java.awt.PageAttributes.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

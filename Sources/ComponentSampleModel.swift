@@ -22,9 +22,8 @@ open class ComponentSampleModel: SampleModel {
 
     open var bandOffsets: [Int32]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "bandOffsets", fieldType: "[I", fieldCache: &ComponentSampleModel.bandOffsets_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "bandOffsets", fieldType: "[I", fieldCache: &ComponentSampleModel.bandOffsets_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -39,9 +38,8 @@ open class ComponentSampleModel: SampleModel {
 
     open var bankIndices: [Int32]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "bankIndices", fieldType: "[I", fieldCache: &ComponentSampleModel.bankIndices_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "bankIndices", fieldType: "[I", fieldCache: &ComponentSampleModel.bankIndices_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -56,13 +54,12 @@ open class ComponentSampleModel: SampleModel {
 
     override open var numBands: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &ComponentSampleModel.numBands_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &ComponentSampleModel.numBands_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &ComponentSampleModel.numBands_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -73,31 +70,13 @@ open class ComponentSampleModel: SampleModel {
 
     open var numBanks: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "numBanks", fieldType: "I", fieldCache: &ComponentSampleModel.numBanks_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "numBanks", fieldType: "I", fieldCache: &ComponentSampleModel.numBanks_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "numBanks", fieldType: "I", fieldCache: &ComponentSampleModel.numBanks_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int java.awt.image.ComponentSampleModel.scanlineStride
-
-    private static var scanlineStride_FieldID: jfieldID?
-
-    open var scanlineStride: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &ComponentSampleModel.scanlineStride_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &ComponentSampleModel.scanlineStride_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -107,31 +86,45 @@ open class ComponentSampleModel: SampleModel {
 
     open var pixelStride: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "pixelStride", fieldType: "I", fieldCache: &ComponentSampleModel.pixelStride_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "pixelStride", fieldType: "I", fieldCache: &ComponentSampleModel.pixelStride_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "pixelStride", fieldType: "I", fieldCache: &ComponentSampleModel.pixelStride_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// protected int java.awt.image.SampleModel.width
+    /// protected int java.awt.image.ComponentSampleModel.scanlineStride
 
-    private static var width_FieldID: jfieldID?
+    private static var scanlineStride_FieldID: jfieldID?
 
-    override open var width: Int {
+    open var scanlineStride: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &ComponentSampleModel.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &ComponentSampleModel.scanlineStride_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &ComponentSampleModel.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &ComponentSampleModel.scanlineStride_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected int java.awt.image.SampleModel.dataType
+
+    private static var dataType_FieldID: jfieldID?
+
+    override open var dataType: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &ComponentSampleModel.dataType_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &ComponentSampleModel.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -141,73 +134,50 @@ open class ComponentSampleModel: SampleModel {
 
     override open var height: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &ComponentSampleModel.height_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &ComponentSampleModel.height_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "height", fieldType: "I", fieldCache: &ComponentSampleModel.height_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
     /// protected int java.awt.image.SampleModel.numBands
 
-    /// protected int java.awt.image.SampleModel.dataType
+    // Skipping field: false false true false false false 
 
-    private static var dataType_FieldID: jfieldID?
+    /// protected int java.awt.image.SampleModel.width
 
-    override open var dataType: Int {
+    private static var width_FieldID: jfieldID?
+
+    override open var width: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &ComponentSampleModel.dataType_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &ComponentSampleModel.width_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &ComponentSampleModel.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &ComponentSampleModel.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
-    }
-
-    /// public java.awt.image.ComponentSampleModel(int,int,int,int,int,int[],int[])
-
-    private static var new_MethodID_1: jmethodID?
-
-    public convenience init( dataType: Int, w: Int, h: Int, pixelStride: Int, scanlineStride: Int, bankIndices: [Int32]?, bandOffsets: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: pixelStride, locals: &__locals )
-        __args[4] = JNIType.toJava( value: scanlineStride, locals: &__locals )
-        __args[5] = JNIType.toJava( value: bankIndices, locals: &__locals )
-        __args[6] = JNIType.toJava( value: bandOffsets, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/ComponentSampleModel", classCache: &ComponentSampleModel.ComponentSampleModelJNIClass, methodSig: "(IIIII[I[I)V", methodCache: &ComponentSampleModel.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _dataType: Int, _ _w: Int, _ _h: Int, _ _pixelStride: Int, _ _scanlineStride: Int, _ _bankIndices: [Int32]?, _ _bandOffsets: [Int32]? ) {
-        self.init( dataType: _dataType, w: _w, h: _h, pixelStride: _pixelStride, scanlineStride: _scanlineStride, bankIndices: _bankIndices, bandOffsets: _bandOffsets )
     }
 
     /// public java.awt.image.ComponentSampleModel(int,int,int,int,int,int[])
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( dataType: Int, w: Int, h: Int, pixelStride: Int, scanlineStride: Int, bandOffsets: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: pixelStride, locals: &__locals )
-        __args[4] = JNIType.toJava( value: scanlineStride, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(pixelStride) )
+        __args[4] = jvalue( i: jint(scanlineStride) )
         __args[5] = JNIType.toJava( value: bandOffsets, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/ComponentSampleModel", classCache: &ComponentSampleModel.ComponentSampleModelJNIClass, methodSig: "(IIIII[I)V", methodCache: &ComponentSampleModel.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/ComponentSampleModel", classCache: &ComponentSampleModel.ComponentSampleModelJNIClass, methodSig: "(IIIII[I)V", methodCache: &ComponentSampleModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -216,35 +186,104 @@ open class ComponentSampleModel: SampleModel {
         self.init( dataType: _dataType, w: _w, h: _h, pixelStride: _pixelStride, scanlineStride: _scanlineStride, bandOffsets: _bandOffsets )
     }
 
+    /// public java.awt.image.ComponentSampleModel(int,int,int,int,int,int[],int[])
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( dataType: Int, w: Int, h: Int, pixelStride: Int, scanlineStride: Int, bankIndices: [Int32]?, bandOffsets: [Int32]? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(pixelStride) )
+        __args[4] = jvalue( i: jint(scanlineStride) )
+        __args[5] = JNIType.toJava( value: bankIndices, locals: &__locals )
+        __args[6] = JNIType.toJava( value: bandOffsets, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/ComponentSampleModel", classCache: &ComponentSampleModel.ComponentSampleModelJNIClass, methodSig: "(IIIII[I[I)V", methodCache: &ComponentSampleModel.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _dataType: Int, _ _w: Int, _ _h: Int, _ _pixelStride: Int, _ _scanlineStride: Int, _ _bankIndices: [Int32]?, _ _bandOffsets: [Int32]? ) {
+        self.init( dataType: _dataType, w: _w, h: _h, pixelStride: _pixelStride, scanlineStride: _scanlineStride, bankIndices: _bankIndices, bandOffsets: _bandOffsets )
+    }
+
+    /// private static native void java.awt.image.ComponentSampleModel.initIDs()
+
+    /// public java.awt.image.SampleModel java.awt.image.ComponentSampleModel.createCompatibleSampleModel(int,int)
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.image.DataBuffer java.awt.image.ComponentSampleModel.createDataBuffer()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.image.SampleModel java.awt.image.ComponentSampleModel.createSubsetSampleModel(int[])
+
+    // Skipping method: false true false false false 
+
     /// public boolean java.awt.image.ComponentSampleModel.equals(java.lang.Object)
 
     private static var equals_MethodID_3: jmethodID?
 
     open func equals( o: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &ComponentSampleModel.equals_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _o: java_swift.JavaObject? ) -> Bool {
         return equals( o: _o )
     }
 
-    /// public int java.awt.image.ComponentSampleModel.hashCode()
+    /// public final int[] java.awt.image.ComponentSampleModel.getBandOffsets()
+
+    private static var getBandOffsets_MethodID_4: jmethodID?
+
+    open func getBandOffsets() -> [Int32]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBandOffsets", methodSig: "()[I", methodCache: &ComponentSampleModel.getBandOffsets_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
+    }
+
+
+    /// public final int[] java.awt.image.ComponentSampleModel.getBankIndices()
+
+    private static var getBankIndices_MethodID_5: jmethodID?
+
+    open func getBankIndices() -> [Int32]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBankIndices", methodSig: "()[I", methodCache: &ComponentSampleModel.getBankIndices_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
+    }
+
+
+    /// private int java.awt.image.ComponentSampleModel.getBufferSize()
+
+    /// public java.lang.Object java.awt.image.ComponentSampleModel.getDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public final int java.awt.image.ComponentSampleModel.getNumDataElements()
+
+    // Skipping method: false true false false false 
 
     /// public int java.awt.image.ComponentSampleModel.getOffset(int,int)
 
-    private static var getOffset_MethodID_4: jmethodID?
+    private static var getOffset_MethodID_6: jmethodID?
 
     open func getOffset( x: Int, y: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "(II)I", methodCache: &ComponentSampleModel.getOffset_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "(II)I", methodCache: &ComponentSampleModel.getOffset_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getOffset( _ _x: Int, _ _y: Int ) -> Int {
@@ -253,117 +292,115 @@ open class ComponentSampleModel: SampleModel {
 
     /// public int java.awt.image.ComponentSampleModel.getOffset(int,int,int)
 
-    private static var getOffset_MethodID_5: jmethodID?
+    private static var getOffset_MethodID_7: jmethodID?
 
     open func getOffset( x: Int, y: Int, b: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "(III)I", methodCache: &ComponentSampleModel.getOffset_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(b) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "(III)I", methodCache: &ComponentSampleModel.getOffset_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getOffset( _ _x: Int, _ _y: Int, _ _b: Int ) -> Int {
         return getOffset( x: _x, y: _y, b: _b )
     }
 
-    /// private void java.awt.image.ComponentSampleModel.verify()
-
-    /// private static native void java.awt.image.ComponentSampleModel.initIDs()
-
-    /// public final int[] java.awt.image.ComponentSampleModel.getSampleSize()
-
-    /// public final int java.awt.image.ComponentSampleModel.getSampleSize(int)
-
-    /// public java.awt.image.DataBuffer java.awt.image.ComponentSampleModel.createDataBuffer()
-
-    /// public java.awt.image.SampleModel java.awt.image.ComponentSampleModel.createSubsetSampleModel(int[])
-
-    /// public void java.awt.image.ComponentSampleModel.setDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.ComponentSampleModel.setPixel(int,int,int[],java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.ComponentSampleModel.setPixels(int,int,int,int,int[],java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.ComponentSampleModel.setSample(int,int,int,int,java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.ComponentSampleModel.setSample(int,int,int,float,java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.ComponentSampleModel.setSample(int,int,int,double,java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.ComponentSampleModel.setSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
-
-    /// public java.lang.Object java.awt.image.ComponentSampleModel.getDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
-
-    /// public java.awt.image.SampleModel java.awt.image.ComponentSampleModel.createCompatibleSampleModel(int,int)
-
-    /// public final int java.awt.image.ComponentSampleModel.getNumDataElements()
-
     /// public int[] java.awt.image.ComponentSampleModel.getPixel(int,int,int[],java.awt.image.DataBuffer)
 
-    /// public int[] java.awt.image.ComponentSampleModel.getPixels(int,int,int,int,int[],java.awt.image.DataBuffer)
-
-    /// public int java.awt.image.ComponentSampleModel.getSample(int,int,int,java.awt.image.DataBuffer)
-
-    /// public float java.awt.image.ComponentSampleModel.getSampleFloat(int,int,int,java.awt.image.DataBuffer)
-
-    /// public double java.awt.image.ComponentSampleModel.getSampleDouble(int,int,int,java.awt.image.DataBuffer)
-
-    /// public int[] java.awt.image.ComponentSampleModel.getSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
-
-    /// public final int java.awt.image.ComponentSampleModel.getScanlineStride()
-
-    private static var getScanlineStride_MethodID_6: jmethodID?
-
-    open func getScanlineStride() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScanlineStride", methodSig: "()I", methodCache: &ComponentSampleModel.getScanlineStride_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
+    // Skipping method: false true false false false 
 
     /// public final int java.awt.image.ComponentSampleModel.getPixelStride()
 
-    private static var getPixelStride_MethodID_7: jmethodID?
+    private static var getPixelStride_MethodID_8: jmethodID?
 
     open func getPixelStride() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPixelStride", methodSig: "()I", methodCache: &ComponentSampleModel.getPixelStride_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPixelStride", methodSig: "()I", methodCache: &ComponentSampleModel.getPixelStride_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public final int[] java.awt.image.ComponentSampleModel.getBandOffsets()
+    /// public int[] java.awt.image.ComponentSampleModel.getPixels(int,int,int,int,int[],java.awt.image.DataBuffer)
 
-    private static var getBandOffsets_MethodID_8: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func getBandOffsets() -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// public int java.awt.image.ComponentSampleModel.getSample(int,int,int,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.image.ComponentSampleModel.getSampleDouble(int,int,int,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public float java.awt.image.ComponentSampleModel.getSampleFloat(int,int,int,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public final int java.awt.image.ComponentSampleModel.getSampleSize(int)
+
+    // Skipping method: false true false false false 
+
+    /// public final int[] java.awt.image.ComponentSampleModel.getSampleSize()
+
+    // Skipping method: false true false false false 
+
+    /// public int[] java.awt.image.ComponentSampleModel.getSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public final int java.awt.image.ComponentSampleModel.getScanlineStride()
+
+    private static var getScanlineStride_MethodID_9: jmethodID?
+
+    open func getScanlineStride() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBandOffsets", methodSig: "()[I", methodCache: &ComponentSampleModel.getBandOffsets_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScanlineStride", methodSig: "()I", methodCache: &ComponentSampleModel.getScanlineStride_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+
+    /// public int java.awt.image.ComponentSampleModel.hashCode()
+
+    // Skipping method: false true false false false 
 
     /// int[] java.awt.image.ComponentSampleModel.orderBands(int[],int)
 
-    /// private int java.awt.image.ComponentSampleModel.getBufferSize()
+    // Skipping method: true false false false false 
 
-    /// public final int[] java.awt.image.ComponentSampleModel.getBankIndices()
+    /// public void java.awt.image.ComponentSampleModel.setDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
 
-    private static var getBankIndices_MethodID_9: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func getBankIndices() -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBankIndices", methodSig: "()[I", methodCache: &ComponentSampleModel.getBankIndices_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
-    }
+    /// public void java.awt.image.ComponentSampleModel.setPixel(int,int,int[],java.awt.image.DataBuffer)
 
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.ComponentSampleModel.setPixels(int,int,int,int,int[],java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.ComponentSampleModel.setSample(int,int,int,double,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.ComponentSampleModel.setSample(int,int,int,float,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.ComponentSampleModel.setSample(int,int,int,int,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.ComponentSampleModel.setSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// private void java.awt.image.ComponentSampleModel.verify()
 
 }
 

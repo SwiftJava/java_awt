@@ -7,6 +7,10 @@ import java_swift
 
 public protocol PaintContext: JavaProtocol {
 
+    /// public abstract void java.awt.PaintContext.dispose()
+
+    func dispose()
+
     /// public abstract java.awt.image.ColorModel java.awt.PaintContext.getColorModel()
 
     func getColorModel() -> ColorModel!
@@ -15,10 +19,6 @@ public protocol PaintContext: JavaProtocol {
 
     func getRaster( x: Int, y: Int, w: Int, h: Int ) -> Raster!
 
-    /// public abstract void java.awt.PaintContext.dispose()
-
-    func dispose()
-
 }
 
 
@@ -26,14 +26,25 @@ open class PaintContextForward: JNIObjectForward, PaintContext {
 
     private static var PaintContextJNIClass: jclass?
 
+    /// public abstract void java.awt.PaintContext.dispose()
+
+    private static var dispose_MethodID_4: jmethodID?
+
+    open func dispose() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &PaintContextForward.dispose_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+
     /// public abstract java.awt.image.ColorModel java.awt.PaintContext.getColorModel()
 
-    private static var getColorModel_MethodID_4: jmethodID?
+    private static var getColorModel_MethodID_5: jmethodID?
 
     open func getColorModel() -> ColorModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &PaintContextForward.getColorModel_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &PaintContextForward.getColorModel_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ColorModel( javaObject: __return ) : nil
     }
@@ -41,16 +52,16 @@ open class PaintContextForward: JNIObjectForward, PaintContext {
 
     /// public abstract java.awt.image.Raster java.awt.PaintContext.getRaster(int,int,int,int)
 
-    private static var getRaster_MethodID_5: jmethodID?
+    private static var getRaster_MethodID_6: jmethodID?
 
     open func getRaster( x: Int, y: Int, w: Int, h: Int ) -> Raster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRaster", methodSig: "(IIII)Ljava/awt/image/Raster;", methodCache: &PaintContextForward.getRaster_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRaster", methodSig: "(IIII)Ljava/awt/image/Raster;", methodCache: &PaintContextForward.getRaster_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Raster( javaObject: __return ) : nil
     }
@@ -59,17 +70,5 @@ open class PaintContextForward: JNIObjectForward, PaintContext {
         return getRaster( x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public abstract void java.awt.PaintContext.dispose()
-
-    private static var dispose_MethodID_6: jmethodID?
-
-    open func dispose() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &PaintContextForward.dispose_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
 }
-
 

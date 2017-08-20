@@ -8,69 +8,69 @@ import java_util
 
 public protocol ImageConsumer: JavaProtocol {
 
-    /// public static final int java.awt.image.ImageConsumer.RANDOMPIXELORDER
-
-    static var RANDOMPIXELORDER: Int { get }
-
-    /// public static final int java.awt.image.ImageConsumer.TOPDOWNLEFTRIGHT
-
-    static var TOPDOWNLEFTRIGHT: Int { get }
-
     /// public static final int java.awt.image.ImageConsumer.COMPLETESCANLINES
 
-    static var COMPLETESCANLINES: Int { get }
-
-    /// public static final int java.awt.image.ImageConsumer.SINGLEPASS
-
-    static var SINGLEPASS: Int { get }
-
-    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAME
-
-    static var SINGLEFRAME: Int { get }
-
-    /// public static final int java.awt.image.ImageConsumer.IMAGEERROR
-
-    static var IMAGEERROR: Int { get }
-
-    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAMEDONE
-
-    static var SINGLEFRAMEDONE: Int { get }
-
-    /// public static final int java.awt.image.ImageConsumer.STATICIMAGEDONE
-
-    static var STATICIMAGEDONE: Int { get }
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.image.ImageConsumer.IMAGEABORTED
 
-    static var IMAGEABORTED: Int { get }
+    // Skipping field: false false false false false true 
 
-    /// public abstract void java.awt.image.ImageConsumer.setProperties(java.util.Hashtable)
+    /// public static final int java.awt.image.ImageConsumer.IMAGEERROR
 
-    func setProperties( props: java_util.Hashtable? )
+    // Skipping field: false false false false false true 
 
-    /// public abstract void java.awt.image.ImageConsumer.setPixels(int,int,int,int,java.awt.image.ColorModel,byte[],int,int)
+    /// public static final int java.awt.image.ImageConsumer.RANDOMPIXELORDER
 
-    func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int8]?, off: Int, scansize: Int )
+    // Skipping field: false false false false false true 
 
-    /// public abstract void java.awt.image.ImageConsumer.setPixels(int,int,int,int,java.awt.image.ColorModel,int[],int,int)
+    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAME
 
-    func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int32]?, off: Int, scansize: Int )
+    // Skipping field: false false false false false true 
 
-    /// public abstract void java.awt.image.ImageConsumer.setHints(int)
+    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAMEDONE
 
-    func setHints( hintflags: Int )
+    // Skipping field: false false false false false true 
 
-    /// public abstract void java.awt.image.ImageConsumer.setDimensions(int,int)
+    /// public static final int java.awt.image.ImageConsumer.SINGLEPASS
 
-    func setDimensions( width: Int, height: Int )
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.image.ImageConsumer.STATICIMAGEDONE
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.image.ImageConsumer.TOPDOWNLEFTRIGHT
+
+    // Skipping field: false false false false false true 
+
+    /// public abstract void java.awt.image.ImageConsumer.imageComplete(int)
+
+    func imageComplete( status: Int )
 
     /// public abstract void java.awt.image.ImageConsumer.setColorModel(java.awt.image.ColorModel)
 
     func setColorModel( model: ColorModel? )
 
-    /// public abstract void java.awt.image.ImageConsumer.imageComplete(int)
+    /// public abstract void java.awt.image.ImageConsumer.setDimensions(int,int)
 
-    func imageComplete( status: Int )
+    func setDimensions( width: Int, height: Int )
+
+    /// public abstract void java.awt.image.ImageConsumer.setHints(int)
+
+    func setHints( hintflags: Int )
+
+    /// public abstract void java.awt.image.ImageConsumer.setPixels(int,int,int,int,java.awt.image.ColorModel,int[],int,int)
+
+    func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int32]?, off: Int, scansize: Int )
+
+    /// public abstract void java.awt.image.ImageConsumer.setPixels(int,int,int,int,java.awt.image.ColorModel,byte[],int,int)
+
+    func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int8]?, off: Int, scansize: Int )
+
+    /// public abstract void java.awt.image.ImageConsumer.setProperties(java.util.Hashtable)
+
+    func setProperties( props: java_util.Hashtable? )
 
 }
 
@@ -79,28 +79,6 @@ open class ImageConsumerForward: JNIObjectForward, ImageConsumer {
 
     private static var ImageConsumerJNIClass: jclass?
 
-    /// public static final int java.awt.image.ImageConsumer.RANDOMPIXELORDER
-
-    private static var RANDOMPIXELORDER_FieldID: jfieldID?
-
-    open static var RANDOMPIXELORDER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "RANDOMPIXELORDER", fieldType: "I", fieldCache: &RANDOMPIXELORDER_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageConsumer.TOPDOWNLEFTRIGHT
-
-    private static var TOPDOWNLEFTRIGHT_FieldID: jfieldID?
-
-    open static var TOPDOWNLEFTRIGHT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TOPDOWNLEFTRIGHT", fieldType: "I", fieldCache: &TOPDOWNLEFTRIGHT_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.image.ImageConsumer.COMPLETESCANLINES
 
     private static var COMPLETESCANLINES_FieldID: jfieldID?
@@ -108,62 +86,7 @@ open class ImageConsumerForward: JNIObjectForward, ImageConsumer {
     open static var COMPLETESCANLINES: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMPLETESCANLINES", fieldType: "I", fieldCache: &COMPLETESCANLINES_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageConsumer.SINGLEPASS
-
-    private static var SINGLEPASS_FieldID: jfieldID?
-
-    open static var SINGLEPASS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SINGLEPASS", fieldType: "I", fieldCache: &SINGLEPASS_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAME
-
-    private static var SINGLEFRAME_FieldID: jfieldID?
-
-    open static var SINGLEFRAME: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SINGLEFRAME", fieldType: "I", fieldCache: &SINGLEFRAME_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageConsumer.IMAGEERROR
-
-    private static var IMAGEERROR_FieldID: jfieldID?
-
-    open static var IMAGEERROR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "IMAGEERROR", fieldType: "I", fieldCache: &IMAGEERROR_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAMEDONE
-
-    private static var SINGLEFRAMEDONE_FieldID: jfieldID?
-
-    open static var SINGLEFRAMEDONE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SINGLEFRAMEDONE", fieldType: "I", fieldCache: &SINGLEFRAMEDONE_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageConsumer.STATICIMAGEDONE
-
-    private static var STATICIMAGEDONE_FieldID: jfieldID?
-
-    open static var STATICIMAGEDONE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "STATICIMAGEDONE", fieldType: "I", fieldCache: &STATICIMAGEDONE_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -174,67 +97,131 @@ open class ImageConsumerForward: JNIObjectForward, ImageConsumer {
     open static var IMAGEABORTED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "IMAGEABORTED", fieldType: "I", fieldCache: &IMAGEABORTED_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public abstract void java.awt.image.ImageConsumer.setProperties(java.util.Hashtable)
+    /// public static final int java.awt.image.ImageConsumer.IMAGEERROR
 
-    private static var setProperties_MethodID_8: jmethodID?
+    private static var IMAGEERROR_FieldID: jfieldID?
 
-    open func setProperties( props: java_util.Hashtable? ) {
+    open static var IMAGEERROR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "IMAGEERROR", fieldType: "I", fieldCache: &IMAGEERROR_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageConsumer.RANDOMPIXELORDER
+
+    private static var RANDOMPIXELORDER_FieldID: jfieldID?
+
+    open static var RANDOMPIXELORDER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "RANDOMPIXELORDER", fieldType: "I", fieldCache: &RANDOMPIXELORDER_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAME
+
+    private static var SINGLEFRAME_FieldID: jfieldID?
+
+    open static var SINGLEFRAME: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SINGLEFRAME", fieldType: "I", fieldCache: &SINGLEFRAME_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAMEDONE
+
+    private static var SINGLEFRAMEDONE_FieldID: jfieldID?
+
+    open static var SINGLEFRAMEDONE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SINGLEFRAMEDONE", fieldType: "I", fieldCache: &SINGLEFRAMEDONE_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageConsumer.SINGLEPASS
+
+    private static var SINGLEPASS_FieldID: jfieldID?
+
+    open static var SINGLEPASS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SINGLEPASS", fieldType: "I", fieldCache: &SINGLEPASS_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageConsumer.STATICIMAGEDONE
+
+    private static var STATICIMAGEDONE_FieldID: jfieldID?
+
+    open static var STATICIMAGEDONE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "STATICIMAGEDONE", fieldType: "I", fieldCache: &STATICIMAGEDONE_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageConsumer.TOPDOWNLEFTRIGHT
+
+    private static var TOPDOWNLEFTRIGHT_FieldID: jfieldID?
+
+    open static var TOPDOWNLEFTRIGHT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TOPDOWNLEFTRIGHT", fieldType: "I", fieldCache: &TOPDOWNLEFTRIGHT_FieldID, className: "java/awt/image/ImageConsumer", classCache: &ImageConsumerJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public abstract void java.awt.image.ImageConsumer.imageComplete(int)
+
+    private static var imageComplete_MethodID_8: jmethodID?
+
+    open func imageComplete( status: Int ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(status) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "imageComplete", methodSig: "(I)V", methodCache: &ImageConsumerForward.imageComplete_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func imageComplete( _ _status: Int ) {
+        imageComplete( status: _status )
+    }
+
+    /// public abstract void java.awt.image.ImageConsumer.setColorModel(java.awt.image.ColorModel)
+
+    private static var setColorModel_MethodID_9: jmethodID?
+
+    open func setColorModel( model: ColorModel? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: props, mapClass: "java/util/Hashtable", locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setProperties", methodSig: "(Ljava/util/Hashtable;)V", methodCache: &ImageConsumerForward.setProperties_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: model, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColorModel", methodSig: "(Ljava/awt/image/ColorModel;)V", methodCache: &ImageConsumerForward.setColorModel_MethodID_9, args: &__args, locals: &__locals )
     }
 
-    open func setProperties( _ _props: java_util.Hashtable? ) {
-        setProperties( props: _props )
+    open func setColorModel( _ _model: ColorModel? ) {
+        setColorModel( model: _model )
     }
 
-    /// public abstract void java.awt.image.ImageConsumer.setPixels(int,int,int,int,java.awt.image.ColorModel,byte[],int,int)
+    /// public abstract void java.awt.image.ImageConsumer.setDimensions(int,int)
 
-    private static var setPixels_MethodID_9: jmethodID?
+    private static var setDimensions_MethodID_10: jmethodID?
 
-    open func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int8]?, off: Int, scansize: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+    open func setDimensions( width: Int, height: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: model, locals: &__locals )
-        __args[5] = JNIType.toJava( value: pixels, locals: &__locals )
-        __args[6] = JNIType.toJava( value: off, locals: &__locals )
-        __args[7] = JNIType.toJava( value: scansize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIIILjava/awt/image/ColorModel;[BII)V", methodCache: &ImageConsumerForward.setPixels_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(width) )
+        __args[1] = jvalue( i: jint(height) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDimensions", methodSig: "(II)V", methodCache: &ImageConsumerForward.setDimensions_MethodID_10, args: &__args, locals: &__locals )
     }
 
-    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _model: ColorModel?, _ _pixels: [Int8]?, _ _off: Int, _ _scansize: Int ) {
-        setPixels( x: _x, y: _y, w: _w, h: _h, model: _model, pixels: _pixels, off: _off, scansize: _scansize )
-    }
-
-    /// public abstract void java.awt.image.ImageConsumer.setPixels(int,int,int,int,java.awt.image.ColorModel,int[],int,int)
-
-    private static var setPixels_MethodID_10: jmethodID?
-
-    open func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int32]?, off: Int, scansize: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: model, locals: &__locals )
-        __args[5] = JNIType.toJava( value: pixels, locals: &__locals )
-        __args[6] = JNIType.toJava( value: off, locals: &__locals )
-        __args[7] = JNIType.toJava( value: scansize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIIILjava/awt/image/ColorModel;[III)V", methodCache: &ImageConsumerForward.setPixels_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _model: ColorModel?, _ _pixels: [Int32]?, _ _off: Int, _ _scansize: Int ) {
-        setPixels( x: _x, y: _y, w: _w, h: _h, model: _model, pixels: _pixels, off: _off, scansize: _scansize )
+    open func setDimensions( _ _width: Int, _ _height: Int ) {
+        setDimensions( width: _width, height: _height )
     }
 
     /// public abstract void java.awt.image.ImageConsumer.setHints(int)
@@ -242,9 +229,9 @@ open class ImageConsumerForward: JNIObjectForward, ImageConsumer {
     private static var setHints_MethodID_11: jmethodID?
 
     open func setHints( hintflags: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hintflags, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(hintflags) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHints", methodSig: "(I)V", methodCache: &ImageConsumerForward.setHints_MethodID_11, args: &__args, locals: &__locals )
     }
 
@@ -252,52 +239,64 @@ open class ImageConsumerForward: JNIObjectForward, ImageConsumer {
         setHints( hintflags: _hintflags )
     }
 
-    /// public abstract void java.awt.image.ImageConsumer.setDimensions(int,int)
+    /// public abstract void java.awt.image.ImageConsumer.setPixels(int,int,int,int,java.awt.image.ColorModel,int[],int,int)
 
-    private static var setDimensions_MethodID_12: jmethodID?
+    private static var setPixels_MethodID_12: jmethodID?
 
-    open func setDimensions( width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int32]?, off: Int, scansize: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDimensions", methodSig: "(II)V", methodCache: &ImageConsumerForward.setDimensions_MethodID_12, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = JNIType.toJava( value: model, locals: &__locals )
+        __args[5] = JNIType.toJava( value: pixels, locals: &__locals )
+        __args[6] = jvalue( i: jint(off) )
+        __args[7] = jvalue( i: jint(scansize) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIIILjava/awt/image/ColorModel;[III)V", methodCache: &ImageConsumerForward.setPixels_MethodID_12, args: &__args, locals: &__locals )
     }
 
-    open func setDimensions( _ _width: Int, _ _height: Int ) {
-        setDimensions( width: _width, height: _height )
+    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _model: ColorModel?, _ _pixels: [Int32]?, _ _off: Int, _ _scansize: Int ) {
+        setPixels( x: _x, y: _y, w: _w, h: _h, model: _model, pixels: _pixels, off: _off, scansize: _scansize )
     }
 
-    /// public abstract void java.awt.image.ImageConsumer.setColorModel(java.awt.image.ColorModel)
+    /// public abstract void java.awt.image.ImageConsumer.setPixels(int,int,int,int,java.awt.image.ColorModel,byte[],int,int)
 
-    private static var setColorModel_MethodID_13: jmethodID?
+    private static var setPixels_MethodID_13: jmethodID?
 
-    open func setColorModel( model: ColorModel? ) {
+    open func setPixels( x: Int, y: Int, w: Int, h: Int, model: ColorModel?, pixels: [Int8]?, off: Int, scansize: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = JNIType.toJava( value: model, locals: &__locals )
+        __args[5] = JNIType.toJava( value: pixels, locals: &__locals )
+        __args[6] = jvalue( i: jint(off) )
+        __args[7] = jvalue( i: jint(scansize) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIIILjava/awt/image/ColorModel;[BII)V", methodCache: &ImageConsumerForward.setPixels_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _model: ColorModel?, _ _pixels: [Int8]?, _ _off: Int, _ _scansize: Int ) {
+        setPixels( x: _x, y: _y, w: _w, h: _h, model: _model, pixels: _pixels, off: _off, scansize: _scansize )
+    }
+
+    /// public abstract void java.awt.image.ImageConsumer.setProperties(java.util.Hashtable)
+
+    private static var setProperties_MethodID_14: jmethodID?
+
+    open func setProperties( props: java_util.Hashtable? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: model, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColorModel", methodSig: "(Ljava/awt/image/ColorModel;)V", methodCache: &ImageConsumerForward.setColorModel_MethodID_13, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: props, mapClass: "java/util/Hashtable", locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setProperties", methodSig: "(Ljava/util/Hashtable;)V", methodCache: &ImageConsumerForward.setProperties_MethodID_14, args: &__args, locals: &__locals )
     }
 
-    open func setColorModel( _ _model: ColorModel? ) {
-        setColorModel( model: _model )
-    }
-
-    /// public abstract void java.awt.image.ImageConsumer.imageComplete(int)
-
-    private static var imageComplete_MethodID_14: jmethodID?
-
-    open func imageComplete( status: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: status, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "imageComplete", methodSig: "(I)V", methodCache: &ImageConsumerForward.imageComplete_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func imageComplete( _ _status: Int ) {
-        imageComplete( status: _status )
+    open func setProperties( _ _props: java_util.Hashtable? ) {
+        setProperties( props: _props )
     }
 
 }
-
 

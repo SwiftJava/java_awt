@@ -21,38 +21,48 @@ open class Ellipse2D: RectangularShape {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Ellipse2D", classCache: &Ellipse2D.Ellipse2DJNIClass, methodSig: "()V", methodCache: &Ellipse2D.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
+
+    /// public boolean java.awt.geom.Ellipse2D.contains(double,double)
+
+    // Skipping method: false true false false false 
+
+    /// public boolean java.awt.geom.Ellipse2D.contains(double,double,double,double)
+
+    // Skipping method: false true false false false 
 
     /// public boolean java.awt.geom.Ellipse2D.equals(java.lang.Object)
 
     private static var equals_MethodID_2: jmethodID?
 
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &Ellipse2D.equals_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _obj: java_swift.JavaObject? ) -> Bool {
         return equals( obj: _obj )
     }
 
+    /// public java.awt.geom.PathIterator java.awt.geom.Ellipse2D.getPathIterator(java.awt.geom.AffineTransform)
+
+    // Skipping method: false true false false false 
+
     /// public int java.awt.geom.Ellipse2D.hashCode()
 
-    /// public boolean java.awt.geom.Ellipse2D.contains(double,double)
-
-    /// public boolean java.awt.geom.Ellipse2D.contains(double,double,double,double)
+    // Skipping method: false true false false false 
 
     /// public boolean java.awt.geom.Ellipse2D.intersects(double,double,double,double)
 
-    /// public java.awt.geom.PathIterator java.awt.geom.Ellipse2D.getPathIterator(java.awt.geom.AffineTransform)
+    // Skipping method: false true false false false 
 
 }
 

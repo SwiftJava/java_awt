@@ -17,84 +17,83 @@ open class MemoryImageSource: java_swift.JavaObject, ImageProducer {
 
     private static var MemoryImageSourceJNIClass: jclass?
 
-    /// int java.awt.image.MemoryImageSource.width
-
-    /// int java.awt.image.MemoryImageSource.height
-
-    /// java.awt.image.ColorModel java.awt.image.MemoryImageSource.model
-
-    /// java.lang.Object java.awt.image.MemoryImageSource.pixels
-
-    /// int java.awt.image.MemoryImageSource.pixeloffset
-
-    /// int java.awt.image.MemoryImageSource.pixelscan
-
-    /// java.util.Hashtable java.awt.image.MemoryImageSource.properties
-
-    /// java.util.Vector java.awt.image.MemoryImageSource.theConsumers
-
     /// boolean java.awt.image.MemoryImageSource.animating
+
+    // Skipping field: true false false false false false 
 
     /// boolean java.awt.image.MemoryImageSource.fullbuffers
 
-    /// public java.awt.image.MemoryImageSource(int,int,int[],int,int,java.util.Hashtable)
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.image.MemoryImageSource.height
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.image.ColorModel java.awt.image.MemoryImageSource.model
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.image.MemoryImageSource.pixeloffset
+
+    // Skipping field: true false false false false false 
+
+    /// java.lang.Object java.awt.image.MemoryImageSource.pixels
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.image.MemoryImageSource.pixelscan
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Hashtable java.awt.image.MemoryImageSource.properties
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.image.MemoryImageSource.theConsumers
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.image.MemoryImageSource.width
+
+    // Skipping field: true false false false false false 
+
+    /// public java.awt.image.MemoryImageSource(int,int,java.awt.image.ColorModel,int[],int,int)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( w: Int, h: Int, pix: [Int32]?, off: Int, scan: Int, props: java_util.Hashtable? ) {
+    public convenience init( w: Int, h: Int, cm: ColorModel?, pix: [Int32]?, off: Int, scan: Int ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: h, locals: &__locals )
-        __args[2] = JNIType.toJava( value: pix, locals: &__locals )
-        __args[3] = JNIType.toJava( value: off, locals: &__locals )
-        __args[4] = JNIType.toJava( value: scan, locals: &__locals )
-        __args[5] = JNIType.toJava( value: props, mapClass: "java/util/Hashtable", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(II[IIILjava/util/Hashtable;)V", methodCache: &MemoryImageSource.new_MethodID_1, args: &__args, locals: &__locals )
+        __args[0] = jvalue( i: jint(w) )
+        __args[1] = jvalue( i: jint(h) )
+        __args[2] = JNIType.toJava( value: cm, locals: &__locals )
+        __args[3] = JNIType.toJava( value: pix, locals: &__locals )
+        __args[4] = jvalue( i: jint(off) )
+        __args[5] = jvalue( i: jint(scan) )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(IILjava/awt/image/ColorModel;[III)V", methodCache: &MemoryImageSource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _w: Int, _ _h: Int, _ _pix: [Int32]?, _ _off: Int, _ _scan: Int, _ _props: java_util.Hashtable? ) {
-        self.init( w: _w, h: _h, pix: _pix, off: _off, scan: _scan, props: _props )
-    }
-
-    /// public java.awt.image.MemoryImageSource(int,int,int[],int,int)
-
-    private static var new_MethodID_2: jmethodID?
-
-    public convenience init( w: Int, h: Int, pix: [Int32]?, off: Int, scan: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: h, locals: &__locals )
-        __args[2] = JNIType.toJava( value: pix, locals: &__locals )
-        __args[3] = JNIType.toJava( value: off, locals: &__locals )
-        __args[4] = JNIType.toJava( value: scan, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(II[III)V", methodCache: &MemoryImageSource.new_MethodID_2, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _w: Int, _ _h: Int, _ _pix: [Int32]?, _ _off: Int, _ _scan: Int ) {
-        self.init( w: _w, h: _h, pix: _pix, off: _off, scan: _scan )
+    public convenience init( _ _w: Int, _ _h: Int, _ _cm: ColorModel?, _ _pix: [Int32]?, _ _off: Int, _ _scan: Int ) {
+        self.init( w: _w, h: _h, cm: _cm, pix: _pix, off: _off, scan: _scan )
     }
 
     /// public java.awt.image.MemoryImageSource(int,int,java.awt.image.ColorModel,int[],int,int,java.util.Hashtable)
 
-    private static var new_MethodID_3: jmethodID?
+    private static var new_MethodID_2: jmethodID?
 
     public convenience init( w: Int, h: Int, cm: ColorModel?, pix: [Int32]?, off: Int, scan: Int, props: java_util.Hashtable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(w) )
+        __args[1] = jvalue( i: jint(h) )
         __args[2] = JNIType.toJava( value: cm, locals: &__locals )
         __args[3] = JNIType.toJava( value: pix, locals: &__locals )
-        __args[4] = JNIType.toJava( value: off, locals: &__locals )
-        __args[5] = JNIType.toJava( value: scan, locals: &__locals )
+        __args[4] = jvalue( i: jint(off) )
+        __args[5] = jvalue( i: jint(scan) )
         __args[6] = JNIType.toJava( value: props, mapClass: "java/util/Hashtable", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(IILjava/awt/image/ColorModel;[IIILjava/util/Hashtable;)V", methodCache: &MemoryImageSource.new_MethodID_3, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(IILjava/awt/image/ColorModel;[IIILjava/util/Hashtable;)V", methodCache: &MemoryImageSource.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -105,18 +104,18 @@ open class MemoryImageSource: java_swift.JavaObject, ImageProducer {
 
     /// public java.awt.image.MemoryImageSource(int,int,java.awt.image.ColorModel,byte[],int,int)
 
-    private static var new_MethodID_4: jmethodID?
+    private static var new_MethodID_3: jmethodID?
 
     public convenience init( w: Int, h: Int, cm: ColorModel?, pix: [Int8]?, off: Int, scan: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(w) )
+        __args[1] = jvalue( i: jint(h) )
         __args[2] = JNIType.toJava( value: cm, locals: &__locals )
         __args[3] = JNIType.toJava( value: pix, locals: &__locals )
-        __args[4] = JNIType.toJava( value: off, locals: &__locals )
-        __args[5] = JNIType.toJava( value: scan, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(IILjava/awt/image/ColorModel;[BII)V", methodCache: &MemoryImageSource.new_MethodID_4, args: &__args, locals: &__locals )
+        __args[4] = jvalue( i: jint(off) )
+        __args[5] = jvalue( i: jint(scan) )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(IILjava/awt/image/ColorModel;[BII)V", methodCache: &MemoryImageSource.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -127,19 +126,19 @@ open class MemoryImageSource: java_swift.JavaObject, ImageProducer {
 
     /// public java.awt.image.MemoryImageSource(int,int,java.awt.image.ColorModel,byte[],int,int,java.util.Hashtable)
 
-    private static var new_MethodID_5: jmethodID?
+    private static var new_MethodID_4: jmethodID?
 
     public convenience init( w: Int, h: Int, cm: ColorModel?, pix: [Int8]?, off: Int, scan: Int, props: java_util.Hashtable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(w) )
+        __args[1] = jvalue( i: jint(h) )
         __args[2] = JNIType.toJava( value: cm, locals: &__locals )
         __args[3] = JNIType.toJava( value: pix, locals: &__locals )
-        __args[4] = JNIType.toJava( value: off, locals: &__locals )
-        __args[5] = JNIType.toJava( value: scan, locals: &__locals )
+        __args[4] = jvalue( i: jint(off) )
+        __args[5] = jvalue( i: jint(scan) )
         __args[6] = JNIType.toJava( value: props, mapClass: "java/util/Hashtable", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(IILjava/awt/image/ColorModel;[BIILjava/util/Hashtable;)V", methodCache: &MemoryImageSource.new_MethodID_5, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(IILjava/awt/image/ColorModel;[BIILjava/util/Hashtable;)V", methodCache: &MemoryImageSource.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -148,58 +147,82 @@ open class MemoryImageSource: java_swift.JavaObject, ImageProducer {
         self.init( w: _w, h: _h, cm: _cm, pix: _pix, off: _off, scan: _scan, props: _props )
     }
 
-    /// public java.awt.image.MemoryImageSource(int,int,java.awt.image.ColorModel,int[],int,int)
+    /// public java.awt.image.MemoryImageSource(int,int,int[],int,int)
 
-    private static var new_MethodID_6: jmethodID?
+    private static var new_MethodID_5: jmethodID?
 
-    public convenience init( w: Int, h: Int, cm: ColorModel?, pix: [Int32]?, off: Int, scan: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    public convenience init( w: Int, h: Int, pix: [Int32]?, off: Int, scan: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: h, locals: &__locals )
-        __args[2] = JNIType.toJava( value: cm, locals: &__locals )
-        __args[3] = JNIType.toJava( value: pix, locals: &__locals )
-        __args[4] = JNIType.toJava( value: off, locals: &__locals )
-        __args[5] = JNIType.toJava( value: scan, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(IILjava/awt/image/ColorModel;[III)V", methodCache: &MemoryImageSource.new_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(w) )
+        __args[1] = jvalue( i: jint(h) )
+        __args[2] = JNIType.toJava( value: pix, locals: &__locals )
+        __args[3] = jvalue( i: jint(off) )
+        __args[4] = jvalue( i: jint(scan) )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(II[III)V", methodCache: &MemoryImageSource.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _w: Int, _ _h: Int, _ _cm: ColorModel?, _ _pix: [Int32]?, _ _off: Int, _ _scan: Int ) {
-        self.init( w: _w, h: _h, cm: _cm, pix: _pix, off: _off, scan: _scan )
+    public convenience init( _ _w: Int, _ _h: Int, _ _pix: [Int32]?, _ _off: Int, _ _scan: Int ) {
+        self.init( w: _w, h: _h, pix: _pix, off: _off, scan: _scan )
     }
+
+    /// public java.awt.image.MemoryImageSource(int,int,int[],int,int,java.util.Hashtable)
+
+    private static var new_MethodID_6: jmethodID?
+
+    public convenience init( w: Int, h: Int, pix: [Int32]?, off: Int, scan: Int, props: java_util.Hashtable? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(w) )
+        __args[1] = jvalue( i: jint(h) )
+        __args[2] = JNIType.toJava( value: pix, locals: &__locals )
+        __args[3] = jvalue( i: jint(off) )
+        __args[4] = jvalue( i: jint(scan) )
+        __args[5] = JNIType.toJava( value: props, mapClass: "java/util/Hashtable", locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/MemoryImageSource", classCache: &MemoryImageSource.MemoryImageSourceJNIClass, methodSig: "(II[IIILjava/util/Hashtable;)V", methodCache: &MemoryImageSource.new_MethodID_6, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _w: Int, _ _h: Int, _ _pix: [Int32]?, _ _off: Int, _ _scan: Int, _ _props: java_util.Hashtable? ) {
+        self.init( w: _w, h: _h, pix: _pix, off: _off, scan: _scan, props: _props )
+    }
+
+    /// public synchronized void java.awt.image.MemoryImageSource.addConsumer(java.awt.image.ImageConsumer)
+
+    private static var addConsumer_MethodID_7: jmethodID?
+
+    open func addConsumer( ic: ImageConsumer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: ic, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &MemoryImageSource.addConsumer_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func addConsumer( _ _ic: ImageConsumer? ) {
+        addConsumer( ic: _ic )
+    }
+
+    /// private void java.awt.image.MemoryImageSource.initConsumer(java.awt.image.ImageConsumer)
 
     /// private void java.awt.image.MemoryImageSource.initialize(int,int,java.awt.image.ColorModel,java.lang.Object,int,int,java.util.Hashtable)
 
-    /// public synchronized void java.awt.image.MemoryImageSource.setAnimated(boolean)
+    /// public synchronized boolean java.awt.image.MemoryImageSource.isConsumer(java.awt.image.ImageConsumer)
 
-    private static var setAnimated_MethodID_7: jmethodID?
+    private static var isConsumer_MethodID_8: jmethodID?
 
-    open func setAnimated( animated: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func isConsumer( ic: ImageConsumer? ) -> Bool {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: animated, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAnimated", methodSig: "(Z)V", methodCache: &MemoryImageSource.setAnimated_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setAnimated( _ _animated: Bool ) {
-        setAnimated( animated: _animated )
-    }
-
-    /// public synchronized void java.awt.image.MemoryImageSource.setFullBufferUpdates(boolean)
-
-    private static var setFullBufferUpdates_MethodID_8: jmethodID?
-
-    open func setFullBufferUpdates( fullbuffers: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fullbuffers, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFullBufferUpdates", methodSig: "(Z)V", methodCache: &MemoryImageSource.setFullBufferUpdates_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ic, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)Z", methodCache: &MemoryImageSource.isConsumer_MethodID_8, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    open func setFullBufferUpdates( _ _fullbuffers: Bool ) {
-        setFullBufferUpdates( fullbuffers: _fullbuffers )
+    open func isConsumer( _ _ic: ImageConsumer? ) -> Bool {
+        return isConsumer( ic: _ic )
     }
 
     /// public synchronized void java.awt.image.MemoryImageSource.newPixels(int,int,int,int)
@@ -207,12 +230,12 @@ open class MemoryImageSource: java_swift.JavaObject, ImageProducer {
     private static var newPixels_MethodID_9: jmethodID?
 
     open func newPixels( x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "newPixels", methodSig: "(IIII)V", methodCache: &MemoryImageSource.newPixels_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -225,13 +248,13 @@ open class MemoryImageSource: java_swift.JavaObject, ImageProducer {
     private static var newPixels_MethodID_10: jmethodID?
 
     open func newPixels( x: Int, y: Int, w: Int, h: Int, framenotify: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: framenotify, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = jvalue( z: jboolean(framenotify ? JNI_TRUE : JNI_FALSE) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "newPixels", methodSig: "(IIIIZ)V", methodCache: &MemoryImageSource.newPixels_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -239,29 +262,18 @@ open class MemoryImageSource: java_swift.JavaObject, ImageProducer {
         newPixels( x: _x, y: _y, w: _w, h: _h, framenotify: _framenotify )
     }
 
-    /// public void java.awt.image.MemoryImageSource.newPixels()
+    /// public synchronized void java.awt.image.MemoryImageSource.newPixels(int[],java.awt.image.ColorModel,int,int)
 
     private static var newPixels_MethodID_11: jmethodID?
 
-    open func newPixels() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "newPixels", methodSig: "()V", methodCache: &MemoryImageSource.newPixels_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-
-    /// public synchronized void java.awt.image.MemoryImageSource.newPixels(int[],java.awt.image.ColorModel,int,int)
-
-    private static var newPixels_MethodID_12: jmethodID?
-
     open func newPixels( newpix: [Int32]?, newmodel: ColorModel?, offset: Int, scansize: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: newpix, locals: &__locals )
         __args[1] = JNIType.toJava( value: newmodel, locals: &__locals )
-        __args[2] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[3] = JNIType.toJava( value: scansize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "newPixels", methodSig: "([ILjava/awt/image/ColorModel;II)V", methodCache: &MemoryImageSource.newPixels_MethodID_12, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(offset) )
+        __args[3] = jvalue( i: jint(scansize) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "newPixels", methodSig: "([ILjava/awt/image/ColorModel;II)V", methodCache: &MemoryImageSource.newPixels_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func newPixels( _ _newpix: [Int32]?, _ _newmodel: ColorModel?, _ _offset: Int, _ _scansize: Int ) {
@@ -270,100 +282,108 @@ open class MemoryImageSource: java_swift.JavaObject, ImageProducer {
 
     /// public synchronized void java.awt.image.MemoryImageSource.newPixels(byte[],java.awt.image.ColorModel,int,int)
 
-    private static var newPixels_MethodID_13: jmethodID?
+    private static var newPixels_MethodID_12: jmethodID?
 
     open func newPixels( newpix: [Int8]?, newmodel: ColorModel?, offset: Int, scansize: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: newpix, locals: &__locals )
         __args[1] = JNIType.toJava( value: newmodel, locals: &__locals )
-        __args[2] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[3] = JNIType.toJava( value: scansize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "newPixels", methodSig: "([BLjava/awt/image/ColorModel;II)V", methodCache: &MemoryImageSource.newPixels_MethodID_13, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(offset) )
+        __args[3] = jvalue( i: jint(scansize) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "newPixels", methodSig: "([BLjava/awt/image/ColorModel;II)V", methodCache: &MemoryImageSource.newPixels_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func newPixels( _ _newpix: [Int8]?, _ _newmodel: ColorModel?, _ _offset: Int, _ _scansize: Int ) {
         newPixels( newpix: _newpix, newmodel: _newmodel, offset: _offset, scansize: _scansize )
     }
 
-    /// private void java.awt.image.MemoryImageSource.initConsumer(java.awt.image.ImageConsumer)
+    /// public void java.awt.image.MemoryImageSource.newPixels()
 
-    /// private void java.awt.image.MemoryImageSource.sendPixels(java.awt.image.ImageConsumer,int,int,int,int)
+    private static var newPixels_MethodID_13: jmethodID?
 
-    /// public synchronized void java.awt.image.MemoryImageSource.addConsumer(java.awt.image.ImageConsumer)
-
-    private static var addConsumer_MethodID_14: jmethodID?
-
-    open func addConsumer( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func newPixels() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &MemoryImageSource.addConsumer_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func addConsumer( _ _ic: ImageConsumer? ) {
-        addConsumer( ic: _ic )
-    }
-
-    /// public synchronized boolean java.awt.image.MemoryImageSource.isConsumer(java.awt.image.ImageConsumer)
-
-    private static var isConsumer_MethodID_15: jmethodID?
-
-    open func isConsumer( ic: ImageConsumer? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ic, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)Z", methodCache: &MemoryImageSource.isConsumer_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "newPixels", methodSig: "()V", methodCache: &MemoryImageSource.newPixels_MethodID_13, args: &__args, locals: &__locals )
     }
 
-    open func isConsumer( _ _ic: ImageConsumer? ) -> Bool {
-        return isConsumer( ic: _ic )
-    }
 
     /// public synchronized void java.awt.image.MemoryImageSource.removeConsumer(java.awt.image.ImageConsumer)
 
-    private static var removeConsumer_MethodID_16: jmethodID?
+    private static var removeConsumer_MethodID_14: jmethodID?
 
     open func removeConsumer( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &MemoryImageSource.removeConsumer_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &MemoryImageSource.removeConsumer_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func removeConsumer( _ _ic: ImageConsumer? ) {
         removeConsumer( ic: _ic )
     }
 
-    /// public void java.awt.image.MemoryImageSource.startProduction(java.awt.image.ImageConsumer)
-
-    private static var startProduction_MethodID_17: jmethodID?
-
-    open func startProduction( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startProduction", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &MemoryImageSource.startProduction_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func startProduction( _ _ic: ImageConsumer? ) {
-        startProduction( ic: _ic )
-    }
-
     /// public void java.awt.image.MemoryImageSource.requestTopDownLeftRightResend(java.awt.image.ImageConsumer)
 
-    private static var requestTopDownLeftRightResend_MethodID_18: jmethodID?
+    private static var requestTopDownLeftRightResend_MethodID_15: jmethodID?
 
     open func requestTopDownLeftRightResend( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "requestTopDownLeftRightResend", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &MemoryImageSource.requestTopDownLeftRightResend_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "requestTopDownLeftRightResend", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &MemoryImageSource.requestTopDownLeftRightResend_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func requestTopDownLeftRightResend( _ _ic: ImageConsumer? ) {
         requestTopDownLeftRightResend( ic: _ic )
+    }
+
+    /// private void java.awt.image.MemoryImageSource.sendPixels(java.awt.image.ImageConsumer,int,int,int,int)
+
+    /// public synchronized void java.awt.image.MemoryImageSource.setAnimated(boolean)
+
+    private static var setAnimated_MethodID_16: jmethodID?
+
+    open func setAnimated( animated: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(animated ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAnimated", methodSig: "(Z)V", methodCache: &MemoryImageSource.setAnimated_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func setAnimated( _ _animated: Bool ) {
+        setAnimated( animated: _animated )
+    }
+
+    /// public synchronized void java.awt.image.MemoryImageSource.setFullBufferUpdates(boolean)
+
+    private static var setFullBufferUpdates_MethodID_17: jmethodID?
+
+    open func setFullBufferUpdates( fullbuffers: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(fullbuffers ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFullBufferUpdates", methodSig: "(Z)V", methodCache: &MemoryImageSource.setFullBufferUpdates_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func setFullBufferUpdates( _ _fullbuffers: Bool ) {
+        setFullBufferUpdates( fullbuffers: _fullbuffers )
+    }
+
+    /// public void java.awt.image.MemoryImageSource.startProduction(java.awt.image.ImageConsumer)
+
+    private static var startProduction_MethodID_18: jmethodID?
+
+    open func startProduction( ic: ImageConsumer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: ic, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startProduction", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &MemoryImageSource.startProduction_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func startProduction( _ _ic: ImageConsumer? ) {
+        startProduction( ic: _ic )
     }
 
 }

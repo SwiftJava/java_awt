@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.geom.Arc2D$Float ///
 
-open class Arc2D_Float: Arc2D, /* java.io.Serializable */ UnclassedProtocol {
+open class Arc2D_Float: Arc2D, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -20,54 +20,21 @@ open class Arc2D_Float: Arc2D, /* java.io.Serializable */ UnclassedProtocol {
 
     private static var Arc2D_FloatJNIClass: jclass?
 
-    /// public float java.awt.geom.Arc2D$Float.x
+    /// private static final long java.awt.geom.Arc2D$Float.serialVersionUID
 
-    private static var x_FieldID: jfieldID?
+    /// public float java.awt.geom.Arc2D$Float.extent
 
-    open var x: Float {
+    private static var extent_FieldID: jfieldID?
+
+    open var extent: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "x", fieldType: "F", fieldCache: &Arc2D_Float.x_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "extent", fieldType: "F", fieldCache: &Arc2D_Float.extent_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetFloatField( fieldName: "x", fieldType: "F", fieldCache: &Arc2D_Float.x_FieldID, object: javaObject, value: __value.f, locals: &__locals )
-        }
-    }
-
-    /// public float java.awt.geom.Arc2D$Float.y
-
-    private static var y_FieldID: jfieldID?
-
-    open var y: Float {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "y", fieldType: "F", fieldCache: &Arc2D_Float.y_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetFloatField( fieldName: "y", fieldType: "F", fieldCache: &Arc2D_Float.y_FieldID, object: javaObject, value: __value.f, locals: &__locals )
-        }
-    }
-
-    /// public float java.awt.geom.Arc2D$Float.width
-
-    private static var width_FieldID: jfieldID?
-
-    open var width: Float {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "width", fieldType: "F", fieldCache: &Arc2D_Float.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetFloatField( fieldName: "width", fieldType: "F", fieldCache: &Arc2D_Float.width_FieldID, object: javaObject, value: __value.f, locals: &__locals )
+            let __value = jvalue( f: newValue )
+            JNIField.SetFloatField( fieldName: "extent", fieldType: "F", fieldCache: &Arc2D_Float.extent_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
 
@@ -77,13 +44,12 @@ open class Arc2D_Float: Arc2D, /* java.io.Serializable */ UnclassedProtocol {
 
     open var height: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "height", fieldType: "F", fieldCache: &Arc2D_Float.height_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "height", fieldType: "F", fieldCache: &Arc2D_Float.height_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "height", fieldType: "F", fieldCache: &Arc2D_Float.height_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
@@ -94,62 +60,88 @@ open class Arc2D_Float: Arc2D, /* java.io.Serializable */ UnclassedProtocol {
 
     open var start: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "start", fieldType: "F", fieldCache: &Arc2D_Float.start_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "start", fieldType: "F", fieldCache: &Arc2D_Float.start_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "start", fieldType: "F", fieldCache: &Arc2D_Float.start_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
 
-    /// public float java.awt.geom.Arc2D$Float.extent
+    /// public float java.awt.geom.Arc2D$Float.width
 
-    private static var extent_FieldID: jfieldID?
+    private static var width_FieldID: jfieldID?
 
-    open var extent: Float {
+    open var width: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "extent", fieldType: "F", fieldCache: &Arc2D_Float.extent_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "width", fieldType: "F", fieldCache: &Arc2D_Float.width_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetFloatField( fieldName: "extent", fieldType: "F", fieldCache: &Arc2D_Float.extent_FieldID, object: javaObject, value: __value.f, locals: &__locals )
+            let __value = jvalue( f: newValue )
+            JNIField.SetFloatField( fieldName: "width", fieldType: "F", fieldCache: &Arc2D_Float.width_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
 
-    /// private static final long java.awt.geom.Arc2D$Float.serialVersionUID
+    /// public float java.awt.geom.Arc2D$Float.x
 
-    /// public static final int java.awt.geom.Arc2D.OPEN
+    private static var x_FieldID: jfieldID?
+
+    open var x: Float {
+        get {
+            let __value = JNIField.GetFloatField( fieldName: "x", fieldType: "F", fieldCache: &Arc2D_Float.x_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( f: newValue )
+            JNIField.SetFloatField( fieldName: "x", fieldType: "F", fieldCache: &Arc2D_Float.x_FieldID, object: javaObject, value: __value.f, locals: &__locals )
+        }
+    }
+
+    /// public float java.awt.geom.Arc2D$Float.y
+
+    private static var y_FieldID: jfieldID?
+
+    open var y: Float {
+        get {
+            let __value = JNIField.GetFloatField( fieldName: "y", fieldType: "F", fieldCache: &Arc2D_Float.y_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( f: newValue )
+            JNIField.SetFloatField( fieldName: "y", fieldType: "F", fieldCache: &Arc2D_Float.y_FieldID, object: javaObject, value: __value.f, locals: &__locals )
+        }
+    }
 
     /// public static final int java.awt.geom.Arc2D.CHORD
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.geom.Arc2D.OPEN
+
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.geom.Arc2D.PIE
+
+    // Skipping field: false true false false false false 
 
     /// private int java.awt.geom.Arc2D.type
 
-    /// public java.awt.geom.Arc2D$Float(java.awt.geom.Rectangle2D,float,float,int)
+    /// public java.awt.geom.Arc2D$Float()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( ellipseBounds: Rectangle2D?, start: Float, extent: Float, type: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ellipseBounds, locals: &__locals )
-        __args[1] = JNIType.toJava( value: start, locals: &__locals )
-        __args[2] = JNIType.toJava( value: extent, locals: &__locals )
-        __args[3] = JNIType.toJava( value: type, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/Arc2D$Float", classCache: &Arc2D_Float.Arc2D_FloatJNIClass, methodSig: "(Ljava/awt/geom/Rectangle2D;FFI)V", methodCache: &Arc2D_Float.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/Arc2D$Float", classCache: &Arc2D_Float.Arc2D_FloatJNIClass, methodSig: "()V", methodCache: &Arc2D_Float.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _ellipseBounds: Rectangle2D?, _ _start: Float, _ _extent: Float, _ _type: Int ) {
-        self.init( ellipseBounds: _ellipseBounds, start: _start, extent: _extent, type: _type )
     }
 
     /// public java.awt.geom.Arc2D$Float(float,float,float,float,float,float,int)
@@ -157,15 +149,15 @@ open class Arc2D_Float: Arc2D, /* java.io.Serializable */ UnclassedProtocol {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( x: Float, y: Float, w: Float, h: Float, start: Float, extent: Float, type: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: start, locals: &__locals )
-        __args[5] = JNIType.toJava( value: extent, locals: &__locals )
-        __args[6] = JNIType.toJava( value: type, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( f: y )
+        __args[2] = jvalue( f: w )
+        __args[3] = jvalue( f: h )
+        __args[4] = jvalue( f: start )
+        __args[5] = jvalue( f: extent )
+        __args[6] = jvalue( i: jint(type) )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Arc2D$Float", classCache: &Arc2D_Float.Arc2D_FloatJNIClass, methodSig: "(FFFFFFI)V", methodCache: &Arc2D_Float.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -180,9 +172,9 @@ open class Arc2D_Float: Arc2D, /* java.io.Serializable */ UnclassedProtocol {
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( type: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(type) )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Arc2D$Float", classCache: &Arc2D_Float.Arc2D_FloatJNIClass, methodSig: "(I)V", methodCache: &Arc2D_Float.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -192,53 +184,65 @@ open class Arc2D_Float: Arc2D, /* java.io.Serializable */ UnclassedProtocol {
         self.init( type: _type )
     }
 
-    /// public java.awt.geom.Arc2D$Float()
+    /// public java.awt.geom.Arc2D$Float(java.awt.geom.Rectangle2D,float,float,int)
 
     private static var new_MethodID_4: jmethodID?
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( ellipseBounds: Rectangle2D?, start: Float, extent: Float, type: Int ) {
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/Arc2D$Float", classCache: &Arc2D_Float.Arc2D_FloatJNIClass, methodSig: "()V", methodCache: &Arc2D_Float.new_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: ellipseBounds, locals: &__locals )
+        __args[1] = jvalue( f: start )
+        __args[2] = jvalue( f: extent )
+        __args[3] = jvalue( i: jint(type) )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/Arc2D$Float", classCache: &Arc2D_Float.Arc2D_FloatJNIClass, methodSig: "(Ljava/awt/geom/Rectangle2D;FFI)V", methodCache: &Arc2D_Float.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public boolean java.awt.geom.Arc2D$Float.isEmpty()
-
-    /// private void java.awt.geom.Arc2D$Float.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
-
-    /// private void java.awt.geom.Arc2D$Float.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
-
-    /// public double java.awt.geom.Arc2D$Float.getX()
-
-    /// public double java.awt.geom.Arc2D$Float.getY()
-
-    /// public double java.awt.geom.Arc2D$Float.getWidth()
-
-    /// public double java.awt.geom.Arc2D$Float.getHeight()
-
-    /// public double java.awt.geom.Arc2D$Float.getAngleStart()
+    public convenience init( _ _ellipseBounds: Rectangle2D?, _ _start: Float, _ _extent: Float, _ _type: Int ) {
+        self.init( ellipseBounds: _ellipseBounds, start: _start, extent: _extent, type: _type )
+    }
 
     /// public double java.awt.geom.Arc2D$Float.getAngleExtent()
 
-    /// public void java.awt.geom.Arc2D$Float.setArc(double,double,double,double,double,double,int)
+    // Skipping method: false true false false false 
 
-    /// public void java.awt.geom.Arc2D$Float.setAngleStart(double)
+    /// public double java.awt.geom.Arc2D$Float.getAngleStart()
 
-    /// public void java.awt.geom.Arc2D$Float.setAngleExtent(double)
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Arc2D$Float.getHeight()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Arc2D$Float.getWidth()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Arc2D$Float.getX()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Arc2D$Float.getY()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean java.awt.geom.Arc2D$Float.isEmpty()
+
+    // Skipping method: false true false false false 
 
     /// protected java.awt.geom.Rectangle2D java.awt.geom.Arc2D$Float.makeBounds(double,double,double,double)
 
     private static var makeBounds_MethodID_5: jmethodID?
 
     override open func makeBounds( x: Double, y: Double, w: Double, h: Double ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: w )
+        __args[3] = jvalue( d: h )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "makeBounds", methodSig: "(DDDD)Ljava/awt/geom/Rectangle2D;", methodCache: &Arc2D_Float.makeBounds_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
@@ -247,6 +251,22 @@ open class Arc2D_Float: Arc2D, /* java.io.Serializable */ UnclassedProtocol {
     override open func makeBounds( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Rectangle2D! {
         return makeBounds( x: _x, y: _y, w: _w, h: _h )
     }
+
+    /// private void java.awt.geom.Arc2D$Float.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
+
+    /// public void java.awt.geom.Arc2D$Float.setAngleExtent(double)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.geom.Arc2D$Float.setAngleStart(double)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.geom.Arc2D$Float.setArc(double,double,double,double,double,double,int)
+
+    // Skipping method: false true false false false 
+
+    /// private void java.awt.geom.Arc2D$Float.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
 }
 

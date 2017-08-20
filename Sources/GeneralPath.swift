@@ -18,114 +18,115 @@ open class GeneralPath: Path2D_Float {
 
     /// private static final long java.awt.geom.GeneralPath.serialVersionUID
 
-    /// transient float[] java.awt.geom.Path2D$Float.floatCoords
+    /// static final boolean java.awt.geom.Path2D$Float.$assertionsDisabled
+
+    // Skipping field: true false false false false false 
 
     /// private static final long java.awt.geom.Path2D$Float.serialVersionUID
 
-    /// static final boolean java.awt.geom.Path2D$Float.$assertionsDisabled
+    /// transient float[] java.awt.geom.Path2D$Float.floatCoords
 
-    /// public static final int java.awt.geom.Path2D.WIND_EVEN_ODD
-
-    /// public static final int java.awt.geom.Path2D.WIND_NON_ZERO
-
-    /// private static final byte java.awt.geom.Path2D.SEG_MOVETO
-
-    /// private static final byte java.awt.geom.Path2D.SEG_LINETO
-
-    /// private static final byte java.awt.geom.Path2D.SEG_QUADTO
-
-    /// private static final byte java.awt.geom.Path2D.SEG_CUBICTO
-
-    /// private static final byte java.awt.geom.Path2D.SEG_CLOSE
-
-    /// transient byte[] java.awt.geom.Path2D.pointTypes
-
-    /// transient int java.awt.geom.Path2D.numTypes
-
-    /// transient int java.awt.geom.Path2D.numCoords
-
-    /// transient int java.awt.geom.Path2D.windingRule
-
-    /// static final int java.awt.geom.Path2D.INIT_SIZE
-
-    /// static final int java.awt.geom.Path2D.EXPAND_MAX
-
-    /// static final int java.awt.geom.Path2D.EXPAND_MAX_COORDS
-
-    /// static final int java.awt.geom.Path2D.EXPAND_MIN
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_STORAGE_FLT_ARRAY
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_STORAGE_DBL_ARRAY
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_MOVETO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_LINETO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_QUADTO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_CUBICTO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_MOVETO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_LINETO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_QUADTO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_CUBICTO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_CLOSE
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_PATH_END
+    // Skipping field: true false false false false false 
 
     /// static final boolean java.awt.geom.Path2D.$assertionsDisabled
 
-    /// java.awt.geom.GeneralPath(int,byte[],int,float[],int)
+    // Skipping field: true false false false false false 
 
-    /// public java.awt.geom.GeneralPath(java.awt.Shape)
+    /// static final int java.awt.geom.Path2D.EXPAND_MAX
+
+    // Skipping field: true false false false false false 
+
+    /// static final int java.awt.geom.Path2D.EXPAND_MAX_COORDS
+
+    // Skipping field: true false false false false false 
+
+    /// static final int java.awt.geom.Path2D.EXPAND_MIN
+
+    // Skipping field: true false false false false false 
+
+    /// static final int java.awt.geom.Path2D.INIT_SIZE
+
+    // Skipping field: true false false false false false 
+
+    /// private static final byte java.awt.geom.Path2D.SEG_CLOSE
+
+    /// private static final byte java.awt.geom.Path2D.SEG_CUBICTO
+
+    /// private static final byte java.awt.geom.Path2D.SEG_LINETO
+
+    /// private static final byte java.awt.geom.Path2D.SEG_MOVETO
+
+    /// private static final byte java.awt.geom.Path2D.SEG_QUADTO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_PATH_END
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_CLOSE
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_CUBICTO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_LINETO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_MOVETO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_QUADTO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_CUBICTO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_LINETO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_MOVETO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_QUADTO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_STORAGE_DBL_ARRAY
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_STORAGE_FLT_ARRAY
+
+    /// public static final int java.awt.geom.Path2D.WIND_EVEN_ODD
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.geom.Path2D.WIND_NON_ZERO
+
+    // Skipping field: false true false false false false 
+
+    /// transient int java.awt.geom.Path2D.numCoords
+
+    // Skipping field: true false false false false false 
+
+    /// transient int java.awt.geom.Path2D.numTypes
+
+    // Skipping field: true false false false false false 
+
+    /// transient byte[] java.awt.geom.Path2D.pointTypes
+
+    // Skipping field: true false false false false false 
+
+    /// transient int java.awt.geom.Path2D.windingRule
+
+    // Skipping field: true false false false false false 
+
+    /// public java.awt.geom.GeneralPath()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( s: Shape? ) {
+    public convenience init() {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/GeneralPath", classCache: &GeneralPath.GeneralPathJNIClass, methodSig: "(Ljava/awt/Shape;)V", methodCache: &GeneralPath.new_MethodID_1, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/GeneralPath", classCache: &GeneralPath.GeneralPathJNIClass, methodSig: "()V", methodCache: &GeneralPath.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _s: Shape? ) {
-        self.init( s: _s )
-    }
-
-    /// public java.awt.geom.GeneralPath(int,int)
-
-    private static var new_MethodID_2: jmethodID?
-
-    public convenience init( rule: Int, initialCapacity: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rule, locals: &__locals )
-        __args[1] = JNIType.toJava( value: initialCapacity, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/GeneralPath", classCache: &GeneralPath.GeneralPathJNIClass, methodSig: "(II)V", methodCache: &GeneralPath.new_MethodID_2, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _rule: Int, _ _initialCapacity: Int ) {
-        self.init( rule: _rule, initialCapacity: _initialCapacity )
     }
 
     /// public java.awt.geom.GeneralPath(int)
 
-    private static var new_MethodID_3: jmethodID?
+    private static var new_MethodID_2: jmethodID?
 
     public convenience init( rule: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rule, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/GeneralPath", classCache: &GeneralPath.GeneralPathJNIClass, methodSig: "(I)V", methodCache: &GeneralPath.new_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(rule) )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/GeneralPath", classCache: &GeneralPath.GeneralPathJNIClass, methodSig: "(I)V", methodCache: &GeneralPath.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -134,16 +135,43 @@ open class GeneralPath: Path2D_Float {
         self.init( rule: _rule )
     }
 
-    /// public java.awt.geom.GeneralPath()
+    /// public java.awt.geom.GeneralPath(int,int)
+
+    private static var new_MethodID_3: jmethodID?
+
+    public convenience init( rule: Int, initialCapacity: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(rule) )
+        __args[1] = jvalue( i: jint(initialCapacity) )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/GeneralPath", classCache: &GeneralPath.GeneralPathJNIClass, methodSig: "(II)V", methodCache: &GeneralPath.new_MethodID_3, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _rule: Int, _ _initialCapacity: Int ) {
+        self.init( rule: _rule, initialCapacity: _initialCapacity )
+    }
+
+    /// java.awt.geom.GeneralPath(int,byte[],int,float[],int)
+
+    // Skipping init: true false false 
+
+    /// public java.awt.geom.GeneralPath(java.awt.Shape)
 
     private static var new_MethodID_4: jmethodID?
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( s: Shape? ) {
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/GeneralPath", classCache: &GeneralPath.GeneralPathJNIClass, methodSig: "()V", methodCache: &GeneralPath.new_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/GeneralPath", classCache: &GeneralPath.GeneralPathJNIClass, methodSig: "(Ljava/awt/Shape;)V", methodCache: &GeneralPath.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _s: Shape? ) {
+        self.init( s: _s )
     }
 
 }

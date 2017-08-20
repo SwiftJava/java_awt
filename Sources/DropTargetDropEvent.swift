@@ -21,13 +21,13 @@ open class DropTargetDropEvent: DropTargetEvent {
 
     /// private static final java.awt.Point java.awt.dnd.DropTargetDropEvent.zero
 
-    /// private java.awt.Point java.awt.dnd.DropTargetDropEvent.location
-
     /// private int java.awt.dnd.DropTargetDropEvent.actions
 
     /// private int java.awt.dnd.DropTargetDropEvent.dropAction
 
     /// private boolean java.awt.dnd.DropTargetDropEvent.isLocalTx
+
+    /// private java.awt.Point java.awt.dnd.DropTargetDropEvent.location
 
     /// private static final long java.awt.dnd.DropTargetEvent.serialVersionUID
 
@@ -37,8 +37,8 @@ open class DropTargetDropEvent: DropTargetEvent {
 
     override open var context: DropTargetContext! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "context", fieldType: "Ljava/awt/dnd/DropTargetContext;", fieldCache: &DropTargetDropEvent.context_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "context", fieldType: "Ljava/awt/dnd/DropTargetContext;", fieldCache: &DropTargetDropEvent.context_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? DropTargetContext( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -56,8 +56,8 @@ open class DropTargetDropEvent: DropTargetEvent {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &DropTargetDropEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &DropTargetDropEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -72,12 +72,12 @@ open class DropTargetDropEvent: DropTargetEvent {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( dtc: DropTargetContext?, cursorLocn: Point?, dropAction: Int, srcActions: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: dtc, locals: &__locals )
         __args[1] = JNIType.toJava( value: cursorLocn, locals: &__locals )
-        __args[2] = JNIType.toJava( value: dropAction, locals: &__locals )
-        __args[3] = JNIType.toJava( value: srcActions, locals: &__locals )
+        __args[2] = jvalue( i: jint(dropAction) )
+        __args[3] = jvalue( i: jint(srcActions) )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DropTargetDropEvent", classCache: &DropTargetDropEvent.DropTargetDropEventJNIClass, methodSig: "(Ljava/awt/dnd/DropTargetContext;Ljava/awt/Point;II)V", methodCache: &DropTargetDropEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -92,13 +92,13 @@ open class DropTargetDropEvent: DropTargetEvent {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( dtc: DropTargetContext?, cursorLocn: Point?, dropAction: Int, srcActions: Int, isLocal: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: dtc, locals: &__locals )
         __args[1] = JNIType.toJava( value: cursorLocn, locals: &__locals )
-        __args[2] = JNIType.toJava( value: dropAction, locals: &__locals )
-        __args[3] = JNIType.toJava( value: srcActions, locals: &__locals )
-        __args[4] = JNIType.toJava( value: isLocal, locals: &__locals )
+        __args[2] = jvalue( i: jint(dropAction) )
+        __args[3] = jvalue( i: jint(srcActions) )
+        __args[4] = jvalue( z: jboolean(isLocal ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DropTargetDropEvent", classCache: &DropTargetDropEvent.DropTargetDropEventJNIClass, methodSig: "(Ljava/awt/dnd/DropTargetContext;Ljava/awt/Point;IIZ)V", methodCache: &DropTargetDropEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -108,101 +108,15 @@ open class DropTargetDropEvent: DropTargetEvent {
         self.init( dtc: _dtc, cursorLocn: _cursorLocn, dropAction: _dropAction, srcActions: _srcActions, isLocal: _isLocal )
     }
 
-    /// public java.awt.Point java.awt.dnd.DropTargetDropEvent.getLocation()
-
-    private static var getLocation_MethodID_3: jmethodID?
-
-    open func getLocation() -> Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocation", methodSig: "()Ljava/awt/Point;", methodCache: &DropTargetDropEvent.getLocation_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point( javaObject: __return ) : nil
-    }
-
-
-    /// public int java.awt.dnd.DropTargetDropEvent.getSourceActions()
-
-    private static var getSourceActions_MethodID_4: jmethodID?
-
-    open func getSourceActions() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSourceActions", methodSig: "()I", methodCache: &DropTargetDropEvent.getSourceActions_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void java.awt.dnd.DropTargetDropEvent.rejectDrop()
-
-    private static var rejectDrop_MethodID_5: jmethodID?
-
-    open func rejectDrop() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rejectDrop", methodSig: "()V", methodCache: &DropTargetDropEvent.rejectDrop_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.awt.datatransfer.Transferable java.awt.dnd.DropTargetDropEvent.getTransferable()
-
-    private static var getTransferable_MethodID_6: jmethodID?
-
-    open func getTransferable() -> Transferable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferable", methodSig: "()Ljava/awt/datatransfer/Transferable;", methodCache: &DropTargetDropEvent.getTransferable_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TransferableForward( javaObject: __return ) : nil
-    }
-
-
-    /// public int java.awt.dnd.DropTargetDropEvent.getDropAction()
-
-    private static var getDropAction_MethodID_7: jmethodID?
-
-    open func getDropAction() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDropAction", methodSig: "()I", methodCache: &DropTargetDropEvent.getDropAction_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.awt.datatransfer.DataFlavor[] java.awt.dnd.DropTargetDropEvent.getCurrentDataFlavors()
-
-    private static var getCurrentDataFlavors_MethodID_8: jmethodID?
-
-    open func getCurrentDataFlavors() -> [DataFlavor]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentDataFlavors", methodSig: "()[Ljava/awt/datatransfer/DataFlavor;", methodCache: &DropTargetDropEvent.getCurrentDataFlavors_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [DataFlavor](), from: __return )
-    }
-
-
-    /// public java.util.List java.awt.dnd.DropTargetDropEvent.getCurrentDataFlavorsAsList()
-
-    private static var getCurrentDataFlavorsAsList_MethodID_9: jmethodID?
-
-    open func getCurrentDataFlavorsAsList() -> java_util.List! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentDataFlavorsAsList", methodSig: "()Ljava/util/List;", methodCache: &DropTargetDropEvent.getCurrentDataFlavorsAsList_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
-    }
-
-
     /// public void java.awt.dnd.DropTargetDropEvent.acceptDrop(int)
 
-    private static var acceptDrop_MethodID_10: jmethodID?
+    private static var acceptDrop_MethodID_3: jmethodID?
 
     open func acceptDrop( dropAction: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dropAction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "acceptDrop", methodSig: "(I)V", methodCache: &DropTargetDropEvent.acceptDrop_MethodID_10, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(dropAction) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "acceptDrop", methodSig: "(I)V", methodCache: &DropTargetDropEvent.acceptDrop_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func acceptDrop( _ _dropAction: Int ) {
@@ -211,17 +125,108 @@ open class DropTargetDropEvent: DropTargetEvent {
 
     /// public void java.awt.dnd.DropTargetDropEvent.dropComplete(boolean)
 
-    private static var dropComplete_MethodID_11: jmethodID?
+    private static var dropComplete_MethodID_4: jmethodID?
 
     open func dropComplete( success: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: success, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dropComplete", methodSig: "(Z)V", methodCache: &DropTargetDropEvent.dropComplete_MethodID_11, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(success ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dropComplete", methodSig: "(Z)V", methodCache: &DropTargetDropEvent.dropComplete_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func dropComplete( _ _success: Bool ) {
         dropComplete( success: _success )
+    }
+
+    /// public java.awt.datatransfer.DataFlavor[] java.awt.dnd.DropTargetDropEvent.getCurrentDataFlavors()
+
+    private static var getCurrentDataFlavors_MethodID_5: jmethodID?
+
+    open func getCurrentDataFlavors() -> [DataFlavor]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentDataFlavors", methodSig: "()[Ljava/awt/datatransfer/DataFlavor;", methodCache: &DropTargetDropEvent.getCurrentDataFlavors_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [DataFlavor].self, from: __return )
+    }
+
+
+    /// public java.util.List java.awt.dnd.DropTargetDropEvent.getCurrentDataFlavorsAsList()
+
+    private static var getCurrentDataFlavorsAsList_MethodID_6: jmethodID?
+
+    open func getCurrentDataFlavorsAsList() -> java_util.List! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentDataFlavorsAsList", methodSig: "()Ljava/util/List;", methodCache: &DropTargetDropEvent.getCurrentDataFlavorsAsList_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int java.awt.dnd.DropTargetDropEvent.getDropAction()
+
+    private static var getDropAction_MethodID_7: jmethodID?
+
+    open func getDropAction() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDropAction", methodSig: "()I", methodCache: &DropTargetDropEvent.getDropAction_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.awt.Point java.awt.dnd.DropTargetDropEvent.getLocation()
+
+    private static var getLocation_MethodID_8: jmethodID?
+
+    open func getLocation() -> Point! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocation", methodSig: "()Ljava/awt/Point;", methodCache: &DropTargetDropEvent.getLocation_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point( javaObject: __return ) : nil
+    }
+
+
+    /// public int java.awt.dnd.DropTargetDropEvent.getSourceActions()
+
+    private static var getSourceActions_MethodID_9: jmethodID?
+
+    open func getSourceActions() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSourceActions", methodSig: "()I", methodCache: &DropTargetDropEvent.getSourceActions_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.awt.datatransfer.Transferable java.awt.dnd.DropTargetDropEvent.getTransferable()
+
+    private static var getTransferable_MethodID_10: jmethodID?
+
+    open func getTransferable() -> Transferable! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferable", methodSig: "()Ljava/awt/datatransfer/Transferable;", methodCache: &DropTargetDropEvent.getTransferable_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TransferableForward( javaObject: __return ) : nil
+    }
+
+
+    /// public boolean java.awt.dnd.DropTargetDropEvent.isDataFlavorSupported(java.awt.datatransfer.DataFlavor)
+
+    private static var isDataFlavorSupported_MethodID_11: jmethodID?
+
+    open func isDataFlavorSupported( df: DataFlavor? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: df, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDataFlavorSupported", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &DropTargetDropEvent.isDataFlavorSupported_MethodID_11, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func isDataFlavorSupported( _ _df: DataFlavor? ) -> Bool {
+        return isDataFlavorSupported( df: _df )
     }
 
     /// public boolean java.awt.dnd.DropTargetDropEvent.isLocalTransfer()
@@ -229,28 +234,23 @@ open class DropTargetDropEvent: DropTargetEvent {
     private static var isLocalTransfer_MethodID_12: jmethodID?
 
     open func isLocalTransfer() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLocalTransfer", methodSig: "()Z", methodCache: &DropTargetDropEvent.isLocalTransfer_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// public boolean java.awt.dnd.DropTargetDropEvent.isDataFlavorSupported(java.awt.datatransfer.DataFlavor)
+    /// public void java.awt.dnd.DropTargetDropEvent.rejectDrop()
 
-    private static var isDataFlavorSupported_MethodID_13: jmethodID?
+    private static var rejectDrop_MethodID_13: jmethodID?
 
-    open func isDataFlavorSupported( df: DataFlavor? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func rejectDrop() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: df, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDataFlavorSupported", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &DropTargetDropEvent.isDataFlavorSupported_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rejectDrop", methodSig: "()V", methodCache: &DropTargetDropEvent.rejectDrop_MethodID_13, args: &__args, locals: &__locals )
     }
 
-    open func isDataFlavorSupported( _ _df: DataFlavor? ) -> Bool {
-        return isDataFlavorSupported( df: _df )
-    }
 
 }
 

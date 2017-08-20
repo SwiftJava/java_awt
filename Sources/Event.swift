@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.Event ///
 
-open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,38 +16,14 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     private static var EventJNIClass: jclass?
 
-    /// private transient long java.awt.Event.data
+    /// public static final int java.awt.Event.ACTION_EVENT
 
-    /// public static final int java.awt.Event.SHIFT_MASK
+    private static var ACTION_EVENT_FieldID: jfieldID?
 
-    private static var SHIFT_MASK_FieldID: jfieldID?
-
-    open static var SHIFT_MASK: Int {
+    open static var ACTION_EVENT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SHIFT_MASK", fieldType: "I", fieldCache: &SHIFT_MASK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.CTRL_MASK
-
-    private static var CTRL_MASK_FieldID: jfieldID?
-
-    open static var CTRL_MASK: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CTRL_MASK", fieldType: "I", fieldCache: &CTRL_MASK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.META_MASK
-
-    private static var META_MASK_FieldID: jfieldID?
-
-    open static var META_MASK: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "META_MASK", fieldType: "I", fieldCache: &META_MASK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "ACTION_EVENT", fieldType: "I", fieldCache: &ACTION_EVENT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
         }
     }
 
@@ -58,304 +34,7 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     open static var ALT_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALT_MASK", fieldType: "I", fieldCache: &ALT_MASK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.HOME
-
-    private static var HOME_FieldID: jfieldID?
-
-    open static var HOME: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "HOME", fieldType: "I", fieldCache: &HOME_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.END
-
-    private static var END_FieldID: jfieldID?
-
-    open static var END: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "END", fieldType: "I", fieldCache: &END_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.PGUP
-
-    private static var PGUP_FieldID: jfieldID?
-
-    open static var PGUP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PGUP", fieldType: "I", fieldCache: &PGUP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.PGDN
-
-    private static var PGDN_FieldID: jfieldID?
-
-    open static var PGDN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PGDN", fieldType: "I", fieldCache: &PGDN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.UP
-
-    private static var UP_FieldID: jfieldID?
-
-    open static var UP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "UP", fieldType: "I", fieldCache: &UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.DOWN
-
-    private static var DOWN_FieldID: jfieldID?
-
-    open static var DOWN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "DOWN", fieldType: "I", fieldCache: &DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.LEFT
-
-    private static var LEFT_FieldID: jfieldID?
-
-    open static var LEFT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.RIGHT
-
-    private static var RIGHT_FieldID: jfieldID?
-
-    open static var RIGHT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F1
-
-    private static var F1_FieldID: jfieldID?
-
-    open static var F1: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F1", fieldType: "I", fieldCache: &F1_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F2
-
-    private static var F2_FieldID: jfieldID?
-
-    open static var F2: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F2", fieldType: "I", fieldCache: &F2_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F3
-
-    private static var F3_FieldID: jfieldID?
-
-    open static var F3: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F3", fieldType: "I", fieldCache: &F3_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F4
-
-    private static var F4_FieldID: jfieldID?
-
-    open static var F4: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F4", fieldType: "I", fieldCache: &F4_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F5
-
-    private static var F5_FieldID: jfieldID?
-
-    open static var F5: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F5", fieldType: "I", fieldCache: &F5_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F6
-
-    private static var F6_FieldID: jfieldID?
-
-    open static var F6: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F6", fieldType: "I", fieldCache: &F6_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F7
-
-    private static var F7_FieldID: jfieldID?
-
-    open static var F7: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F7", fieldType: "I", fieldCache: &F7_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F8
-
-    private static var F8_FieldID: jfieldID?
-
-    open static var F8: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F8", fieldType: "I", fieldCache: &F8_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F9
-
-    private static var F9_FieldID: jfieldID?
-
-    open static var F9: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F9", fieldType: "I", fieldCache: &F9_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F10
-
-    private static var F10_FieldID: jfieldID?
-
-    open static var F10: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F10", fieldType: "I", fieldCache: &F10_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F11
-
-    private static var F11_FieldID: jfieldID?
-
-    open static var F11: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F11", fieldType: "I", fieldCache: &F11_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.F12
-
-    private static var F12_FieldID: jfieldID?
-
-    open static var F12: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "F12", fieldType: "I", fieldCache: &F12_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.PRINT_SCREEN
-
-    private static var PRINT_SCREEN_FieldID: jfieldID?
-
-    open static var PRINT_SCREEN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PRINT_SCREEN", fieldType: "I", fieldCache: &PRINT_SCREEN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.SCROLL_LOCK
-
-    private static var SCROLL_LOCK_FieldID: jfieldID?
-
-    open static var SCROLL_LOCK: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_LOCK", fieldType: "I", fieldCache: &SCROLL_LOCK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.CAPS_LOCK
-
-    private static var CAPS_LOCK_FieldID: jfieldID?
-
-    open static var CAPS_LOCK: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CAPS_LOCK", fieldType: "I", fieldCache: &CAPS_LOCK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.NUM_LOCK
-
-    private static var NUM_LOCK_FieldID: jfieldID?
-
-    open static var NUM_LOCK: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NUM_LOCK", fieldType: "I", fieldCache: &NUM_LOCK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.PAUSE
-
-    private static var PAUSE_FieldID: jfieldID?
-
-    open static var PAUSE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PAUSE", fieldType: "I", fieldCache: &PAUSE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.INSERT
-
-    private static var INSERT_FieldID: jfieldID?
-
-    open static var INSERT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "INSERT", fieldType: "I", fieldCache: &INSERT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.ENTER
-
-    private static var ENTER_FieldID: jfieldID?
-
-    open static var ENTER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ENTER", fieldType: "I", fieldCache: &ENTER_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -366,29 +45,29 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     open static var BACK_SPACE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BACK_SPACE", fieldType: "I", fieldCache: &BACK_SPACE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.Event.TAB
+    /// public static final int java.awt.Event.CAPS_LOCK
 
-    private static var TAB_FieldID: jfieldID?
+    private static var CAPS_LOCK_FieldID: jfieldID?
 
-    open static var TAB: Int {
+    open static var CAPS_LOCK: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAB", fieldType: "I", fieldCache: &TAB_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "CAPS_LOCK", fieldType: "I", fieldCache: &CAPS_LOCK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.Event.ESCAPE
+    /// public static final int java.awt.Event.CTRL_MASK
 
-    private static var ESCAPE_FieldID: jfieldID?
+    private static var CTRL_MASK_FieldID: jfieldID?
 
-    open static var ESCAPE: Int {
+    open static var CTRL_MASK: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ESCAPE", fieldType: "I", fieldCache: &ESCAPE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "CTRL_MASK", fieldType: "I", fieldCache: &CTRL_MASK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
         }
     }
 
@@ -399,64 +78,238 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     open static var DELETE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DELETE", fieldType: "I", fieldCache: &DELETE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// private static final int java.awt.Event.WINDOW_EVENT
+    /// public static final int java.awt.Event.DOWN
 
-    /// public static final int java.awt.Event.WINDOW_DESTROY
+    private static var DOWN_FieldID: jfieldID?
 
-    private static var WINDOW_DESTROY_FieldID: jfieldID?
-
-    open static var WINDOW_DESTROY: Int {
+    open static var DOWN: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_DESTROY", fieldType: "I", fieldCache: &WINDOW_DESTROY_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "DOWN", fieldType: "I", fieldCache: &DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.Event.WINDOW_EXPOSE
+    /// public static final int java.awt.Event.END
 
-    private static var WINDOW_EXPOSE_FieldID: jfieldID?
+    private static var END_FieldID: jfieldID?
 
-    open static var WINDOW_EXPOSE: Int {
+    open static var END: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_EXPOSE", fieldType: "I", fieldCache: &WINDOW_EXPOSE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "END", fieldType: "I", fieldCache: &END_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.Event.WINDOW_ICONIFY
+    /// public static final int java.awt.Event.ENTER
 
-    private static var WINDOW_ICONIFY_FieldID: jfieldID?
+    private static var ENTER_FieldID: jfieldID?
 
-    open static var WINDOW_ICONIFY: Int {
+    open static var ENTER: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_ICONIFY", fieldType: "I", fieldCache: &WINDOW_ICONIFY_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "ENTER", fieldType: "I", fieldCache: &ENTER_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.Event.WINDOW_DEICONIFY
+    /// public static final int java.awt.Event.ESCAPE
 
-    private static var WINDOW_DEICONIFY_FieldID: jfieldID?
+    private static var ESCAPE_FieldID: jfieldID?
 
-    open static var WINDOW_DEICONIFY: Int {
+    open static var ESCAPE: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_DEICONIFY", fieldType: "I", fieldCache: &WINDOW_DEICONIFY_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "ESCAPE", fieldType: "I", fieldCache: &ESCAPE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.Event.WINDOW_MOVED
+    /// public static final int java.awt.Event.F1
 
-    private static var WINDOW_MOVED_FieldID: jfieldID?
+    private static var F1_FieldID: jfieldID?
 
-    open static var WINDOW_MOVED: Int {
+    open static var F1: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_MOVED", fieldType: "I", fieldCache: &WINDOW_MOVED_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "F1", fieldType: "I", fieldCache: &F1_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.F10
+
+    private static var F10_FieldID: jfieldID?
+
+    open static var F10: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "F10", fieldType: "I", fieldCache: &F10_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.F11
+
+    private static var F11_FieldID: jfieldID?
+
+    open static var F11: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "F11", fieldType: "I", fieldCache: &F11_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.F12
+
+    private static var F12_FieldID: jfieldID?
+
+    open static var F12: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "F12", fieldType: "I", fieldCache: &F12_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.F2
+
+    private static var F2_FieldID: jfieldID?
+
+    open static var F2: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "F2", fieldType: "I", fieldCache: &F2_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.F3
+
+    private static var F3_FieldID: jfieldID?
+
+    open static var F3: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "F3", fieldType: "I", fieldCache: &F3_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.F4
+
+    private static var F4_FieldID: jfieldID?
+
+    open static var F4: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "F4", fieldType: "I", fieldCache: &F4_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.F5
+
+    private static var F5_FieldID: jfieldID?
+
+    open static var F5: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "F5", fieldType: "I", fieldCache: &F5_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.F6
+
+    private static var F6_FieldID: jfieldID?
+
+    open static var F6: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "F6", fieldType: "I", fieldCache: &F6_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.F7
+
+    private static var F7_FieldID: jfieldID?
+
+    open static var F7: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "F7", fieldType: "I", fieldCache: &F7_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.F8
+
+    private static var F8_FieldID: jfieldID?
+
+    open static var F8: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "F8", fieldType: "I", fieldCache: &F8_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.F9
+
+    private static var F9_FieldID: jfieldID?
+
+    open static var F9: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "F9", fieldType: "I", fieldCache: &F9_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.GOT_FOCUS
+
+    private static var GOT_FOCUS_FieldID: jfieldID?
+
+    open static var GOT_FOCUS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "GOT_FOCUS", fieldType: "I", fieldCache: &GOT_FOCUS_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.HOME
+
+    private static var HOME_FieldID: jfieldID?
+
+    open static var HOME: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "HOME", fieldType: "I", fieldCache: &HOME_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.INSERT
+
+    private static var INSERT_FieldID: jfieldID?
+
+    open static var INSERT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "INSERT", fieldType: "I", fieldCache: &INSERT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.KEY_ACTION
+
+    private static var KEY_ACTION_FieldID: jfieldID?
+
+    open static var KEY_ACTION: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "KEY_ACTION", fieldType: "I", fieldCache: &KEY_ACTION_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.KEY_ACTION_RELEASE
+
+    private static var KEY_ACTION_RELEASE_FieldID: jfieldID?
+
+    open static var KEY_ACTION_RELEASE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "KEY_ACTION_RELEASE", fieldType: "I", fieldCache: &KEY_ACTION_RELEASE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
         }
     }
 
@@ -469,7 +322,7 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     open static var KEY_PRESS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_PRESS", fieldType: "I", fieldCache: &KEY_PRESS_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -480,176 +333,29 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     open static var KEY_RELEASE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_RELEASE", fieldType: "I", fieldCache: &KEY_RELEASE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.Event.KEY_ACTION
+    /// public static final int java.awt.Event.LEFT
 
-    private static var KEY_ACTION_FieldID: jfieldID?
+    private static var LEFT_FieldID: jfieldID?
 
-    open static var KEY_ACTION: Int {
+    open static var LEFT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "KEY_ACTION", fieldType: "I", fieldCache: &KEY_ACTION_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.Event.KEY_ACTION_RELEASE
+    /// public static final int java.awt.Event.LIST_DESELECT
 
-    private static var KEY_ACTION_RELEASE_FieldID: jfieldID?
+    private static var LIST_DESELECT_FieldID: jfieldID?
 
-    open static var KEY_ACTION_RELEASE: Int {
+    open static var LIST_DESELECT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "KEY_ACTION_RELEASE", fieldType: "I", fieldCache: &KEY_ACTION_RELEASE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// private static final int java.awt.Event.MOUSE_EVENT
-
-    /// public static final int java.awt.Event.MOUSE_DOWN
-
-    private static var MOUSE_DOWN_FieldID: jfieldID?
-
-    open static var MOUSE_DOWN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_DOWN", fieldType: "I", fieldCache: &MOUSE_DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.MOUSE_UP
-
-    private static var MOUSE_UP_FieldID: jfieldID?
-
-    open static var MOUSE_UP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_UP", fieldType: "I", fieldCache: &MOUSE_UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.MOUSE_MOVE
-
-    private static var MOUSE_MOVE_FieldID: jfieldID?
-
-    open static var MOUSE_MOVE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_MOVE", fieldType: "I", fieldCache: &MOUSE_MOVE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.MOUSE_ENTER
-
-    private static var MOUSE_ENTER_FieldID: jfieldID?
-
-    open static var MOUSE_ENTER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_ENTER", fieldType: "I", fieldCache: &MOUSE_ENTER_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.MOUSE_EXIT
-
-    private static var MOUSE_EXIT_FieldID: jfieldID?
-
-    open static var MOUSE_EXIT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_EXIT", fieldType: "I", fieldCache: &MOUSE_EXIT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.MOUSE_DRAG
-
-    private static var MOUSE_DRAG_FieldID: jfieldID?
-
-    open static var MOUSE_DRAG: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_DRAG", fieldType: "I", fieldCache: &MOUSE_DRAG_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// private static final int java.awt.Event.SCROLL_EVENT
-
-    /// public static final int java.awt.Event.SCROLL_LINE_UP
-
-    private static var SCROLL_LINE_UP_FieldID: jfieldID?
-
-    open static var SCROLL_LINE_UP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_LINE_UP", fieldType: "I", fieldCache: &SCROLL_LINE_UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.SCROLL_LINE_DOWN
-
-    private static var SCROLL_LINE_DOWN_FieldID: jfieldID?
-
-    open static var SCROLL_LINE_DOWN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_LINE_DOWN", fieldType: "I", fieldCache: &SCROLL_LINE_DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.SCROLL_PAGE_UP
-
-    private static var SCROLL_PAGE_UP_FieldID: jfieldID?
-
-    open static var SCROLL_PAGE_UP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_PAGE_UP", fieldType: "I", fieldCache: &SCROLL_PAGE_UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.SCROLL_PAGE_DOWN
-
-    private static var SCROLL_PAGE_DOWN_FieldID: jfieldID?
-
-    open static var SCROLL_PAGE_DOWN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_PAGE_DOWN", fieldType: "I", fieldCache: &SCROLL_PAGE_DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.SCROLL_ABSOLUTE
-
-    private static var SCROLL_ABSOLUTE_FieldID: jfieldID?
-
-    open static var SCROLL_ABSOLUTE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_ABSOLUTE", fieldType: "I", fieldCache: &SCROLL_ABSOLUTE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.SCROLL_BEGIN
-
-    private static var SCROLL_BEGIN_FieldID: jfieldID?
-
-    open static var SCROLL_BEGIN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_BEGIN", fieldType: "I", fieldCache: &SCROLL_BEGIN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.SCROLL_END
-
-    private static var SCROLL_END_FieldID: jfieldID?
-
-    open static var SCROLL_END: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_END", fieldType: "I", fieldCache: &SCROLL_END_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "LIST_DESELECT", fieldType: "I", fieldCache: &LIST_DESELECT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
         }
     }
 
@@ -662,31 +368,7 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     open static var LIST_SELECT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LIST_SELECT", fieldType: "I", fieldCache: &LIST_SELECT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.LIST_DESELECT
-
-    private static var LIST_DESELECT_FieldID: jfieldID?
-
-    open static var LIST_DESELECT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LIST_DESELECT", fieldType: "I", fieldCache: &LIST_DESELECT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// private static final int java.awt.Event.MISC_EVENT
-
-    /// public static final int java.awt.Event.ACTION_EVENT
-
-    private static var ACTION_EVENT_FieldID: jfieldID?
-
-    open static var ACTION_EVENT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ACTION_EVENT", fieldType: "I", fieldCache: &ACTION_EVENT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -697,29 +379,7 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     open static var LOAD_FILE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LOAD_FILE", fieldType: "I", fieldCache: &LOAD_FILE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.SAVE_FILE
-
-    private static var SAVE_FILE_FieldID: jfieldID?
-
-    open static var SAVE_FILE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SAVE_FILE", fieldType: "I", fieldCache: &SAVE_FILE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Event.GOT_FOCUS
-
-    private static var GOT_FOCUS_FieldID: jfieldID?
-
-    open static var GOT_FOCUS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "GOT_FOCUS", fieldType: "I", fieldCache: &GOT_FOCUS_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -730,7 +390,451 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     open static var LOST_FOCUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LOST_FOCUS", fieldType: "I", fieldCache: &LOST_FOCUS_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.META_MASK
+
+    private static var META_MASK_FieldID: jfieldID?
+
+    open static var META_MASK: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "META_MASK", fieldType: "I", fieldCache: &META_MASK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.Event.MISC_EVENT
+
+    /// public static final int java.awt.Event.MOUSE_DOWN
+
+    private static var MOUSE_DOWN_FieldID: jfieldID?
+
+    open static var MOUSE_DOWN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_DOWN", fieldType: "I", fieldCache: &MOUSE_DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.MOUSE_DRAG
+
+    private static var MOUSE_DRAG_FieldID: jfieldID?
+
+    open static var MOUSE_DRAG: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_DRAG", fieldType: "I", fieldCache: &MOUSE_DRAG_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.MOUSE_ENTER
+
+    private static var MOUSE_ENTER_FieldID: jfieldID?
+
+    open static var MOUSE_ENTER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_ENTER", fieldType: "I", fieldCache: &MOUSE_ENTER_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.Event.MOUSE_EVENT
+
+    /// public static final int java.awt.Event.MOUSE_EXIT
+
+    private static var MOUSE_EXIT_FieldID: jfieldID?
+
+    open static var MOUSE_EXIT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_EXIT", fieldType: "I", fieldCache: &MOUSE_EXIT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.MOUSE_MOVE
+
+    private static var MOUSE_MOVE_FieldID: jfieldID?
+
+    open static var MOUSE_MOVE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_MOVE", fieldType: "I", fieldCache: &MOUSE_MOVE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.MOUSE_UP
+
+    private static var MOUSE_UP_FieldID: jfieldID?
+
+    open static var MOUSE_UP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_UP", fieldType: "I", fieldCache: &MOUSE_UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.NUM_LOCK
+
+    private static var NUM_LOCK_FieldID: jfieldID?
+
+    open static var NUM_LOCK: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NUM_LOCK", fieldType: "I", fieldCache: &NUM_LOCK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.PAUSE
+
+    private static var PAUSE_FieldID: jfieldID?
+
+    open static var PAUSE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PAUSE", fieldType: "I", fieldCache: &PAUSE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.PGDN
+
+    private static var PGDN_FieldID: jfieldID?
+
+    open static var PGDN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PGDN", fieldType: "I", fieldCache: &PGDN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.PGUP
+
+    private static var PGUP_FieldID: jfieldID?
+
+    open static var PGUP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PGUP", fieldType: "I", fieldCache: &PGUP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.PRINT_SCREEN
+
+    private static var PRINT_SCREEN_FieldID: jfieldID?
+
+    open static var PRINT_SCREEN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PRINT_SCREEN", fieldType: "I", fieldCache: &PRINT_SCREEN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.RIGHT
+
+    private static var RIGHT_FieldID: jfieldID?
+
+    open static var RIGHT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.SAVE_FILE
+
+    private static var SAVE_FILE_FieldID: jfieldID?
+
+    open static var SAVE_FILE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SAVE_FILE", fieldType: "I", fieldCache: &SAVE_FILE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.SCROLL_ABSOLUTE
+
+    private static var SCROLL_ABSOLUTE_FieldID: jfieldID?
+
+    open static var SCROLL_ABSOLUTE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_ABSOLUTE", fieldType: "I", fieldCache: &SCROLL_ABSOLUTE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.SCROLL_BEGIN
+
+    private static var SCROLL_BEGIN_FieldID: jfieldID?
+
+    open static var SCROLL_BEGIN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_BEGIN", fieldType: "I", fieldCache: &SCROLL_BEGIN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.SCROLL_END
+
+    private static var SCROLL_END_FieldID: jfieldID?
+
+    open static var SCROLL_END: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_END", fieldType: "I", fieldCache: &SCROLL_END_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.Event.SCROLL_EVENT
+
+    /// public static final int java.awt.Event.SCROLL_LINE_DOWN
+
+    private static var SCROLL_LINE_DOWN_FieldID: jfieldID?
+
+    open static var SCROLL_LINE_DOWN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_LINE_DOWN", fieldType: "I", fieldCache: &SCROLL_LINE_DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.SCROLL_LINE_UP
+
+    private static var SCROLL_LINE_UP_FieldID: jfieldID?
+
+    open static var SCROLL_LINE_UP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_LINE_UP", fieldType: "I", fieldCache: &SCROLL_LINE_UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.SCROLL_LOCK
+
+    private static var SCROLL_LOCK_FieldID: jfieldID?
+
+    open static var SCROLL_LOCK: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_LOCK", fieldType: "I", fieldCache: &SCROLL_LOCK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.SCROLL_PAGE_DOWN
+
+    private static var SCROLL_PAGE_DOWN_FieldID: jfieldID?
+
+    open static var SCROLL_PAGE_DOWN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_PAGE_DOWN", fieldType: "I", fieldCache: &SCROLL_PAGE_DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.SCROLL_PAGE_UP
+
+    private static var SCROLL_PAGE_UP_FieldID: jfieldID?
+
+    open static var SCROLL_PAGE_UP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_PAGE_UP", fieldType: "I", fieldCache: &SCROLL_PAGE_UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.SHIFT_MASK
+
+    private static var SHIFT_MASK_FieldID: jfieldID?
+
+    open static var SHIFT_MASK: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SHIFT_MASK", fieldType: "I", fieldCache: &SHIFT_MASK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.TAB
+
+    private static var TAB_FieldID: jfieldID?
+
+    open static var TAB: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAB", fieldType: "I", fieldCache: &TAB_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.UP
+
+    private static var UP_FieldID: jfieldID?
+
+    open static var UP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "UP", fieldType: "I", fieldCache: &UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.WINDOW_DEICONIFY
+
+    private static var WINDOW_DEICONIFY_FieldID: jfieldID?
+
+    open static var WINDOW_DEICONIFY: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_DEICONIFY", fieldType: "I", fieldCache: &WINDOW_DEICONIFY_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.WINDOW_DESTROY
+
+    private static var WINDOW_DESTROY_FieldID: jfieldID?
+
+    open static var WINDOW_DESTROY: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_DESTROY", fieldType: "I", fieldCache: &WINDOW_DESTROY_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int java.awt.Event.WINDOW_EVENT
+
+    /// public static final int java.awt.Event.WINDOW_EXPOSE
+
+    private static var WINDOW_EXPOSE_FieldID: jfieldID?
+
+    open static var WINDOW_EXPOSE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_EXPOSE", fieldType: "I", fieldCache: &WINDOW_EXPOSE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.WINDOW_ICONIFY
+
+    private static var WINDOW_ICONIFY_FieldID: jfieldID?
+
+    open static var WINDOW_ICONIFY: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_ICONIFY", fieldType: "I", fieldCache: &WINDOW_ICONIFY_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Event.WINDOW_MOVED
+
+    private static var WINDOW_MOVED_FieldID: jfieldID?
+
+    open static var WINDOW_MOVED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_MOVED", fieldType: "I", fieldCache: &WINDOW_MOVED_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final int[][] java.awt.Event.actionKeyCodes
+
+    /// private static final long java.awt.Event.serialVersionUID
+
+    /// public java.lang.Object java.awt.Event.arg
+
+    private static var arg_FieldID: jfieldID?
+
+    open var arg: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "arg", fieldType: "Ljava/lang/Object;", fieldCache: &Event.arg_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "arg", fieldType: "Ljava/lang/Object;", fieldCache: &Event.arg_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// public int java.awt.Event.clickCount
+
+    private static var clickCount_FieldID: jfieldID?
+
+    open var clickCount: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "clickCount", fieldType: "I", fieldCache: &Event.clickCount_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "clickCount", fieldType: "I", fieldCache: &Event.clickCount_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// private boolean java.awt.Event.consumed
+
+    /// private transient long java.awt.Event.data
+
+    /// public java.awt.Event java.awt.Event.evt
+
+    private static var evt_FieldID: jfieldID?
+
+    open var evt: Event! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "evt", fieldType: "Ljava/awt/Event;", fieldCache: &Event.evt_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? Event( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "evt", fieldType: "Ljava/awt/Event;", fieldCache: &Event.evt_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// public int java.awt.Event.id
+
+    private static var id_FieldID: jfieldID?
+
+    open var id: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &Event.id_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &Event.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// public int java.awt.Event.key
+
+    private static var key_FieldID: jfieldID?
+
+    open var key: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "key", fieldType: "I", fieldCache: &Event.key_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "key", fieldType: "I", fieldCache: &Event.key_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// public int java.awt.Event.modifiers
+
+    private static var modifiers_FieldID: jfieldID?
+
+    open var modifiers: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "modifiers", fieldType: "I", fieldCache: &Event.modifiers_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "modifiers", fieldType: "I", fieldCache: &Event.modifiers_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -740,8 +844,8 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     open var target: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "target", fieldType: "Ljava/lang/Object;", fieldCache: &Event.target_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "target", fieldType: "Ljava/lang/Object;", fieldCache: &Event.target_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -757,31 +861,13 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     open var when: Int64 {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetLongField( fieldName: "when", fieldType: "J", fieldCache: &Event.when_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int64(), from: __value )
+            let __value = JNIField.GetLongField( fieldName: "when", fieldType: "J", fieldCache: &Event.when_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( j: newValue )
             JNIField.SetLongField( fieldName: "when", fieldType: "J", fieldCache: &Event.when_FieldID, object: javaObject, value: __value.j, locals: &__locals )
-        }
-    }
-
-    /// public int java.awt.Event.id
-
-    private static var id_FieldID: jfieldID?
-
-    open var id: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &Event.id_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &Event.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -791,13 +877,12 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     open var x: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "x", fieldType: "I", fieldCache: &Event.x_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "x", fieldType: "I", fieldCache: &Event.x_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "x", fieldType: "I", fieldCache: &Event.x_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -808,123 +893,50 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     open var y: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "y", fieldType: "I", fieldCache: &Event.y_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "y", fieldType: "I", fieldCache: &Event.y_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "y", fieldType: "I", fieldCache: &Event.y_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// public int java.awt.Event.key
-
-    private static var key_FieldID: jfieldID?
-
-    open var key: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "key", fieldType: "I", fieldCache: &Event.key_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "key", fieldType: "I", fieldCache: &Event.key_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public int java.awt.Event.modifiers
-
-    private static var modifiers_FieldID: jfieldID?
-
-    open var modifiers: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "modifiers", fieldType: "I", fieldCache: &Event.modifiers_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "modifiers", fieldType: "I", fieldCache: &Event.modifiers_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public int java.awt.Event.clickCount
-
-    private static var clickCount_FieldID: jfieldID?
-
-    open var clickCount: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "clickCount", fieldType: "I", fieldCache: &Event.clickCount_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "clickCount", fieldType: "I", fieldCache: &Event.clickCount_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public java.lang.Object java.awt.Event.arg
-
-    private static var arg_FieldID: jfieldID?
-
-    open var arg: java_swift.JavaObject! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "arg", fieldType: "Ljava/lang/Object;", fieldCache: &Event.arg_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "arg", fieldType: "Ljava/lang/Object;", fieldCache: &Event.arg_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// public java.awt.Event java.awt.Event.evt
-
-    private static var evt_FieldID: jfieldID?
-
-    open var evt: Event! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "evt", fieldType: "Ljava/awt/Event;", fieldCache: &Event.evt_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? Event( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "evt", fieldType: "Ljava/awt/Event;", fieldCache: &Event.evt_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// private static final int[][] java.awt.Event.actionKeyCodes
-
-    /// private boolean java.awt.Event.consumed
-
-    /// private static final long java.awt.Event.serialVersionUID
-
-    /// public java.awt.Event(java.lang.Object,long,int,int,int,int,int)
+    /// public java.awt.Event(java.lang.Object,int,java.lang.Object)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( target: java_swift.JavaObject?, when: Int64, id: Int, x: Int, y: Int, key: Int, modifiers: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+    public convenience init( target: java_swift.JavaObject?, id: Int, arg: java_swift.JavaObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        __args[1] = JNIType.toJava( value: when, locals: &__locals )
-        __args[2] = JNIType.toJava( value: id, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        __args[5] = JNIType.toJava( value: key, locals: &__locals )
-        __args[6] = JNIType.toJava( value: modifiers, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Event", classCache: &Event.EventJNIClass, methodSig: "(Ljava/lang/Object;JIIIII)V", methodCache: &Event.new_MethodID_1, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
+        __args[2] = JNIType.toJava( value: arg, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/Event", classCache: &Event.EventJNIClass, methodSig: "(Ljava/lang/Object;ILjava/lang/Object;)V", methodCache: &Event.new_MethodID_1, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _target: java_swift.JavaObject?, _ _id: Int, _ _arg: java_swift.JavaObject? ) {
+        self.init( target: _target, id: _id, arg: _arg )
+    }
+
+    /// public java.awt.Event(java.lang.Object,long,int,int,int,int,int)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( target: java_swift.JavaObject?, when: Int64, id: Int, x: Int, y: Int, key: Int, modifiers: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        __args[1] = jvalue( j: when )
+        __args[2] = jvalue( i: jint(id) )
+        __args[3] = jvalue( i: jint(x) )
+        __args[4] = jvalue( i: jint(y) )
+        __args[5] = jvalue( i: jint(key) )
+        __args[6] = jvalue( i: jint(modifiers) )
+        let __object = JNIMethod.NewObject( className: "java/awt/Event", classCache: &Event.EventJNIClass, methodSig: "(Ljava/lang/Object;JIIIII)V", methodCache: &Event.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -935,20 +947,20 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     /// public java.awt.Event(java.lang.Object,long,int,int,int,int,int,java.lang.Object)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_3: jmethodID?
 
     public convenience init( target: java_swift.JavaObject?, when: Int64, id: Int, x: Int, y: Int, key: Int, modifiers: Int, arg: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
         __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        __args[1] = JNIType.toJava( value: when, locals: &__locals )
-        __args[2] = JNIType.toJava( value: id, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        __args[5] = JNIType.toJava( value: key, locals: &__locals )
-        __args[6] = JNIType.toJava( value: modifiers, locals: &__locals )
+        __args[1] = jvalue( j: when )
+        __args[2] = jvalue( i: jint(id) )
+        __args[3] = jvalue( i: jint(x) )
+        __args[4] = jvalue( i: jint(y) )
+        __args[5] = jvalue( i: jint(key) )
+        __args[6] = jvalue( i: jint(modifiers) )
         __args[7] = JNIType.toJava( value: arg, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Event", classCache: &Event.EventJNIClass, methodSig: "(Ljava/lang/Object;JIIIIILjava/lang/Object;)V", methodCache: &Event.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/Event", classCache: &Event.EventJNIClass, methodSig: "(Ljava/lang/Object;JIIIIILjava/lang/Object;)V", methodCache: &Event.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -957,100 +969,92 @@ open class Event: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
         self.init( target: _target, when: _when, id: _id, x: _x, y: _y, key: _key, modifiers: _modifiers, arg: _arg )
     }
 
-    /// public java.awt.Event(java.lang.Object,int,java.lang.Object)
+    /// static int java.awt.Event.getOldEventKey(java.awt.event.KeyEvent)
 
-    private static var new_MethodID_3: jmethodID?
-
-    public convenience init( target: java_swift.JavaObject?, id: Int, arg: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Event", classCache: &Event.EventJNIClass, methodSig: "(Ljava/lang/Object;ILjava/lang/Object;)V", methodCache: &Event.new_MethodID_3, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _target: java_swift.JavaObject?, _ _id: Int, _ _arg: java_swift.JavaObject? ) {
-        self.init( target: _target, id: _id, arg: _arg )
-    }
-
-    /// public java.lang.String java.awt.Event.toString()
-
-    /// protected java.lang.String java.awt.Event.paramString()
-
-    private static var paramString_MethodID_4: jmethodID?
-
-    open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &Event.paramString_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
+    // Skipping method: true false false false false 
 
     /// private static native void java.awt.Event.initIDs()
 
+    /// void java.awt.Event.consume()
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Event.controlDown()
+
+    private static var controlDown_MethodID_4: jmethodID?
+
+    open func controlDown() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "controlDown", methodSig: "()Z", methodCache: &Event.controlDown_MethodID_4, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// char java.awt.Event.getKeyEventChar()
+
+    // Skipping method: true false false false false 
+
+    /// boolean java.awt.Event.isConsumed()
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Event.metaDown()
+
+    private static var metaDown_MethodID_5: jmethodID?
+
+    open func metaDown() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "metaDown", methodSig: "()Z", methodCache: &Event.metaDown_MethodID_5, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// protected java.lang.String java.awt.Event.paramString()
+
+    private static var paramString_MethodID_6: jmethodID?
+
+    open func paramString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &Event.paramString_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public boolean java.awt.Event.shiftDown()
+
+    private static var shiftDown_MethodID_7: jmethodID?
+
+    open func shiftDown() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shiftDown", methodSig: "()Z", methodCache: &Event.shiftDown_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public java.lang.String java.awt.Event.toString()
+
+    // Skipping method: false true false false false 
+
     /// public void java.awt.Event.translate(int,int)
 
-    private static var translate_MethodID_5: jmethodID?
+    private static var translate_MethodID_8: jmethodID?
 
     open func translate( dx: Int, dy: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dx, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Event.translate_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(dx) )
+        __args[1] = jvalue( i: jint(dy) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Event.translate_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func translate( _ _dx: Int, _ _dy: Int ) {
         translate( dx: _dx, dy: _dy )
     }
-
-    /// char java.awt.Event.getKeyEventChar()
-
-    /// public boolean java.awt.Event.shiftDown()
-
-    private static var shiftDown_MethodID_6: jmethodID?
-
-    open func shiftDown() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shiftDown", methodSig: "()Z", methodCache: &Event.shiftDown_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.Event.controlDown()
-
-    private static var controlDown_MethodID_7: jmethodID?
-
-    open func controlDown() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "controlDown", methodSig: "()Z", methodCache: &Event.controlDown_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.Event.metaDown()
-
-    private static var metaDown_MethodID_8: jmethodID?
-
-    open func metaDown() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "metaDown", methodSig: "()Z", methodCache: &Event.metaDown_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// static int java.awt.Event.getOldEventKey(java.awt.event.KeyEvent)
-
-    /// boolean java.awt.Event.isConsumed()
-
-    /// void java.awt.Event.consume()
 
 }
 

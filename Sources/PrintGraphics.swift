@@ -23,8 +23,8 @@ open class PrintGraphicsForward: JNIObjectForward, PrintGraphics {
     private static var getPrintJob_MethodID_2: jmethodID?
 
     open func getPrintJob() -> PrintJob! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrintJob", methodSig: "()Ljava/awt/PrintJob;", methodCache: &PrintGraphicsForward.getPrintJob_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PrintJob( javaObject: __return ) : nil
@@ -32,5 +32,4 @@ open class PrintGraphicsForward: JNIObjectForward, PrintGraphics {
 
 
 }
-
 

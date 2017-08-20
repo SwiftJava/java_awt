@@ -22,50 +22,48 @@ open class TextHitInfo: java_swift.JavaObject {
 
     /// private java.awt.font.TextHitInfo(int,boolean)
 
-    /// public boolean java.awt.font.TextHitInfo.equals(java.lang.Object)
+    /// public static java.awt.font.TextHitInfo java.awt.font.TextHitInfo.afterOffset(int)
 
-    private static var equals_MethodID_1: jmethodID?
+    private static var afterOffset_MethodID_1: jmethodID?
 
-    open func equals( obj: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func afterOffset( offset: Int ) -> TextHitInfo! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &TextHitInfo.equals_MethodID_1, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func equals( _ _obj: java_swift.JavaObject? ) -> Bool {
-        return equals( obj: _obj )
-    }
-
-    /// public boolean java.awt.font.TextHitInfo.equals(java.awt.font.TextHitInfo)
-
-    private static var equals_MethodID_2: jmethodID?
-
-    open func equals( hitInfo: TextHitInfo? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(offset) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/TextHitInfo", classCache: &TextHitInfoJNIClass, methodName: "afterOffset", methodSig: "(I)Ljava/awt/font/TextHitInfo;", methodCache: &afterOffset_MethodID_1, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TextHitInfo( javaObject: __return ) : nil
+    }
+
+    open class func afterOffset( _ _offset: Int ) -> TextHitInfo! {
+        return afterOffset( offset: _offset )
+    }
+
+    /// public static java.awt.font.TextHitInfo java.awt.font.TextHitInfo.beforeOffset(int)
+
+    private static var beforeOffset_MethodID_2: jmethodID?
+
+    open class func beforeOffset( offset: Int ) -> TextHitInfo! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hitInfo, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/font/TextHitInfo;)Z", methodCache: &TextHitInfo.equals_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(offset) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/TextHitInfo", classCache: &TextHitInfoJNIClass, methodName: "beforeOffset", methodSig: "(I)Ljava/awt/font/TextHitInfo;", methodCache: &beforeOffset_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TextHitInfo( javaObject: __return ) : nil
     }
 
-    open func equals( _ _hitInfo: TextHitInfo? ) -> Bool {
-        return equals( hitInfo: _hitInfo )
+    open class func beforeOffset( _ _offset: Int ) -> TextHitInfo! {
+        return beforeOffset( offset: _offset )
     }
-
-    /// public java.lang.String java.awt.font.TextHitInfo.toString()
-
-    /// public int java.awt.font.TextHitInfo.hashCode()
 
     /// public static java.awt.font.TextHitInfo java.awt.font.TextHitInfo.leading(int)
 
     private static var leading_MethodID_3: jmethodID?
 
     open class func leading( charIndex: Int ) -> TextHitInfo! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: charIndex, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(charIndex) )
         let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/TextHitInfo", classCache: &TextHitInfoJNIClass, methodName: "leading", methodSig: "(I)Ljava/awt/font/TextHitInfo;", methodCache: &leading_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
@@ -75,51 +73,15 @@ open class TextHitInfo: java_swift.JavaObject {
         return leading( charIndex: _charIndex )
     }
 
-    /// public int java.awt.font.TextHitInfo.getInsertionIndex()
-
-    private static var getInsertionIndex_MethodID_4: jmethodID?
-
-    open func getInsertionIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInsertionIndex", methodSig: "()I", methodCache: &TextHitInfo.getInsertionIndex_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.font.TextHitInfo.getCharIndex()
-
-    private static var getCharIndex_MethodID_5: jmethodID?
-
-    open func getCharIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCharIndex", methodSig: "()I", methodCache: &TextHitInfo.getCharIndex_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public boolean java.awt.font.TextHitInfo.isLeadingEdge()
-
-    private static var isLeadingEdge_MethodID_6: jmethodID?
-
-    open func isLeadingEdge() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeadingEdge", methodSig: "()Z", methodCache: &TextHitInfo.isLeadingEdge_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public static java.awt.font.TextHitInfo java.awt.font.TextHitInfo.trailing(int)
 
-    private static var trailing_MethodID_7: jmethodID?
+    private static var trailing_MethodID_4: jmethodID?
 
     open class func trailing( charIndex: Int ) -> TextHitInfo! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: charIndex, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/TextHitInfo", classCache: &TextHitInfoJNIClass, methodName: "trailing", methodSig: "(I)Ljava/awt/font/TextHitInfo;", methodCache: &trailing_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(charIndex) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/TextHitInfo", classCache: &TextHitInfoJNIClass, methodName: "trailing", methodSig: "(I)Ljava/awt/font/TextHitInfo;", methodCache: &trailing_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
     }
@@ -128,62 +90,71 @@ open class TextHitInfo: java_swift.JavaObject {
         return trailing( charIndex: _charIndex )
     }
 
-    /// public static java.awt.font.TextHitInfo java.awt.font.TextHitInfo.afterOffset(int)
+    /// public boolean java.awt.font.TextHitInfo.equals(java.awt.font.TextHitInfo)
 
-    private static var afterOffset_MethodID_8: jmethodID?
+    private static var equals_MethodID_5: jmethodID?
 
-    open class func afterOffset( offset: Int ) -> TextHitInfo! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func equals( hitInfo: TextHitInfo? ) -> Bool {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/TextHitInfo", classCache: &TextHitInfoJNIClass, methodName: "afterOffset", methodSig: "(I)Ljava/awt/font/TextHitInfo;", methodCache: &afterOffset_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TextHitInfo( javaObject: __return ) : nil
-    }
-
-    open class func afterOffset( _ _offset: Int ) -> TextHitInfo! {
-        return afterOffset( offset: _offset )
-    }
-
-    /// public java.awt.font.TextHitInfo java.awt.font.TextHitInfo.getOtherHit()
-
-    private static var getOtherHit_MethodID_9: jmethodID?
-
-    open func getOtherHit() -> TextHitInfo! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOtherHit", methodSig: "()Ljava/awt/font/TextHitInfo;", methodCache: &TextHitInfo.getOtherHit_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TextHitInfo( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: hitInfo, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/font/TextHitInfo;)Z", methodCache: &TextHitInfo.equals_MethodID_5, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
+    open func equals( _ _hitInfo: TextHitInfo? ) -> Bool {
+        return equals( hitInfo: _hitInfo )
+    }
 
-    /// public static java.awt.font.TextHitInfo java.awt.font.TextHitInfo.beforeOffset(int)
+    /// public boolean java.awt.font.TextHitInfo.equals(java.lang.Object)
 
-    private static var beforeOffset_MethodID_10: jmethodID?
+    private static var equals_MethodID_6: jmethodID?
 
-    open class func beforeOffset( offset: Int ) -> TextHitInfo! {
+    open func equals( obj: java_swift.JavaObject? ) -> Bool {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/font/TextHitInfo", classCache: &TextHitInfoJNIClass, methodName: "beforeOffset", methodSig: "(I)Ljava/awt/font/TextHitInfo;", methodCache: &beforeOffset_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TextHitInfo( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &TextHitInfo.equals_MethodID_6, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    open class func beforeOffset( _ _offset: Int ) -> TextHitInfo! {
-        return beforeOffset( offset: _offset )
+    override open func equals( _ _obj: java_swift.JavaObject? ) -> Bool {
+        return equals( obj: _obj )
     }
+
+    /// public int java.awt.font.TextHitInfo.getCharIndex()
+
+    private static var getCharIndex_MethodID_7: jmethodID?
+
+    open func getCharIndex() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCharIndex", methodSig: "()I", methodCache: &TextHitInfo.getCharIndex_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.font.TextHitInfo.getInsertionIndex()
+
+    private static var getInsertionIndex_MethodID_8: jmethodID?
+
+    open func getInsertionIndex() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInsertionIndex", methodSig: "()I", methodCache: &TextHitInfo.getInsertionIndex_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
 
     /// public java.awt.font.TextHitInfo java.awt.font.TextHitInfo.getOffsetHit(int)
 
-    private static var getOffsetHit_MethodID_11: jmethodID?
+    private static var getOffsetHit_MethodID_9: jmethodID?
 
     open func getOffsetHit( delta: Int ) -> TextHitInfo! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: delta, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOffsetHit", methodSig: "(I)Ljava/awt/font/TextHitInfo;", methodCache: &TextHitInfo.getOffsetHit_MethodID_11, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(delta) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOffsetHit", methodSig: "(I)Ljava/awt/font/TextHitInfo;", methodCache: &TextHitInfo.getOffsetHit_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
     }
@@ -191,6 +162,39 @@ open class TextHitInfo: java_swift.JavaObject {
     open func getOffsetHit( _ _delta: Int ) -> TextHitInfo! {
         return getOffsetHit( delta: _delta )
     }
+
+    /// public java.awt.font.TextHitInfo java.awt.font.TextHitInfo.getOtherHit()
+
+    private static var getOtherHit_MethodID_10: jmethodID?
+
+    open func getOtherHit() -> TextHitInfo! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOtherHit", methodSig: "()Ljava/awt/font/TextHitInfo;", methodCache: &TextHitInfo.getOtherHit_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TextHitInfo( javaObject: __return ) : nil
+    }
+
+
+    /// public int java.awt.font.TextHitInfo.hashCode()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean java.awt.font.TextHitInfo.isLeadingEdge()
+
+    private static var isLeadingEdge_MethodID_11: jmethodID?
+
+    open func isLeadingEdge() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeadingEdge", methodSig: "()Z", methodCache: &TextHitInfo.isLeadingEdge_MethodID_11, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public java.lang.String java.awt.font.TextHitInfo.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

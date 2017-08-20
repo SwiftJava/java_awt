@@ -19,13 +19,13 @@ public protocol ImageProducer: JavaProtocol {
 
     func removeConsumer( ic: ImageConsumer? )
 
-    /// public abstract void java.awt.image.ImageProducer.startProduction(java.awt.image.ImageConsumer)
-
-    func startProduction( ic: ImageConsumer? )
-
     /// public abstract void java.awt.image.ImageProducer.requestTopDownLeftRightResend(java.awt.image.ImageConsumer)
 
     func requestTopDownLeftRightResend( ic: ImageConsumer? )
+
+    /// public abstract void java.awt.image.ImageProducer.startProduction(java.awt.image.ImageConsumer)
+
+    func startProduction( ic: ImageConsumer? )
 
 }
 
@@ -39,8 +39,8 @@ open class ImageProducerForward: JNIObjectForward, ImageProducer {
     private static var addConsumer_MethodID_6: jmethodID?
 
     open func addConsumer( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ic, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &ImageProducerForward.addConsumer_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -54,11 +54,11 @@ open class ImageProducerForward: JNIObjectForward, ImageProducer {
     private static var isConsumer_MethodID_7: jmethodID?
 
     open func isConsumer( ic: ImageConsumer? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ic, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)Z", methodCache: &ImageProducerForward.isConsumer_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isConsumer( _ _ic: ImageConsumer? ) -> Bool {
@@ -70,8 +70,8 @@ open class ImageProducerForward: JNIObjectForward, ImageProducer {
     private static var removeConsumer_MethodID_8: jmethodID?
 
     open func removeConsumer( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ic, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &ImageProducerForward.removeConsumer_MethodID_8, args: &__args, locals: &__locals )
     }
@@ -80,36 +80,35 @@ open class ImageProducerForward: JNIObjectForward, ImageProducer {
         removeConsumer( ic: _ic )
     }
 
-    /// public abstract void java.awt.image.ImageProducer.startProduction(java.awt.image.ImageConsumer)
-
-    private static var startProduction_MethodID_9: jmethodID?
-
-    open func startProduction( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startProduction", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &ImageProducerForward.startProduction_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func startProduction( _ _ic: ImageConsumer? ) {
-        startProduction( ic: _ic )
-    }
-
     /// public abstract void java.awt.image.ImageProducer.requestTopDownLeftRightResend(java.awt.image.ImageConsumer)
 
-    private static var requestTopDownLeftRightResend_MethodID_10: jmethodID?
+    private static var requestTopDownLeftRightResend_MethodID_9: jmethodID?
 
     open func requestTopDownLeftRightResend( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "requestTopDownLeftRightResend", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &ImageProducerForward.requestTopDownLeftRightResend_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "requestTopDownLeftRightResend", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &ImageProducerForward.requestTopDownLeftRightResend_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func requestTopDownLeftRightResend( _ _ic: ImageConsumer? ) {
         requestTopDownLeftRightResend( ic: _ic )
     }
 
-}
+    /// public abstract void java.awt.image.ImageProducer.startProduction(java.awt.image.ImageConsumer)
 
+    private static var startProduction_MethodID_10: jmethodID?
+
+    open func startProduction( ic: ImageConsumer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: ic, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startProduction", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &ImageProducerForward.startProduction_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func startProduction( _ _ic: ImageConsumer? ) {
+        startProduction( ic: _ic )
+    }
+
+}
 

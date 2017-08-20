@@ -20,25 +20,25 @@ open class Kernel: java_swift.JavaObject, java_lang.Cloneable {
 
     private static var KernelJNIClass: jclass?
 
-    /// private int java.awt.image.Kernel.width
+    /// private float[] java.awt.image.Kernel.data
 
     /// private int java.awt.image.Kernel.height
+
+    /// private int java.awt.image.Kernel.width
 
     /// private int java.awt.image.Kernel.xOrigin
 
     /// private int java.awt.image.Kernel.yOrigin
-
-    /// private float[] java.awt.image.Kernel.data
 
     /// public java.awt.image.Kernel(int,int,float[])
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( width: Int, height: Int, data: [Float]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(width) )
+        __args[1] = jvalue( i: jint(height) )
         __args[2] = JNIType.toJava( value: data, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/Kernel", classCache: &Kernel.KernelJNIClass, methodSig: "(II[F)V", methodCache: &Kernel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -49,84 +49,84 @@ open class Kernel: java_swift.JavaObject, java_lang.Cloneable {
         self.init( width: _width, height: _height, data: _data )
     }
 
+    /// private static native void java.awt.image.Kernel.initIDs()
+
     /// public java.lang.Object java.awt.image.Kernel.clone()
 
     private static var clone_MethodID_2: jmethodID?
 
     override open func clone() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &Kernel.clone_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
 
-    /// private static native void java.awt.image.Kernel.initIDs()
-
-    /// public final int java.awt.image.Kernel.getWidth()
-
-    private static var getWidth_MethodID_3: jmethodID?
-
-    open func getWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &Kernel.getWidth_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public final int java.awt.image.Kernel.getHeight()
 
-    private static var getHeight_MethodID_4: jmethodID?
+    private static var getHeight_MethodID_3: jmethodID?
 
     open func getHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &Kernel.getHeight_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public final int java.awt.image.Kernel.getXOrigin()
-
-    private static var getXOrigin_MethodID_5: jmethodID?
-
-    open func getXOrigin() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getXOrigin", methodSig: "()I", methodCache: &Kernel.getXOrigin_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public final int java.awt.image.Kernel.getYOrigin()
-
-    private static var getYOrigin_MethodID_6: jmethodID?
-
-    open func getYOrigin() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getYOrigin", methodSig: "()I", methodCache: &Kernel.getYOrigin_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &Kernel.getHeight_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
     /// public final float[] java.awt.image.Kernel.getKernelData(float[])
 
-    private static var getKernelData_MethodID_7: jmethodID?
+    private static var getKernelData_MethodID_4: jmethodID?
 
     open func getKernelData( data: [Float]? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKernelData", methodSig: "([F)[F", methodCache: &Kernel.getKernelData_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKernelData", methodSig: "([F)[F", methodCache: &Kernel.getKernelData_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
     open func getKernelData( _ _data: [Float]? ) -> [Float]! {
         return getKernelData( data: _data )
     }
+
+    /// public final int java.awt.image.Kernel.getWidth()
+
+    private static var getWidth_MethodID_5: jmethodID?
+
+    open func getWidth() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &Kernel.getWidth_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public final int java.awt.image.Kernel.getXOrigin()
+
+    private static var getXOrigin_MethodID_6: jmethodID?
+
+    open func getXOrigin() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getXOrigin", methodSig: "()I", methodCache: &Kernel.getXOrigin_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public final int java.awt.image.Kernel.getYOrigin()
+
+    private static var getYOrigin_MethodID_7: jmethodID?
+
+    open func getYOrigin() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getYOrigin", methodSig: "()I", methodCache: &Kernel.getYOrigin_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
 
 }
 

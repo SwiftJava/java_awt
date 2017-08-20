@@ -24,8 +24,8 @@ open class DragSourceMotionListenerForward: java_util.EventListenerForward, Drag
     private static var dragMouseMoved_MethodID_2: jmethodID?
 
     open func dragMouseMoved( dsde: DragSourceDragEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragMouseMoved", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceMotionListenerForward.dragMouseMoved_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class DragSourceMotionListenerForward: java_util.EventListenerForward, Drag
 
 }
 
-
 private typealias DragSourceMotionListener_dragMouseMoved_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func DragSourceMotionListener_dragMouseMoved_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dsde: jobject? ) -> () {
-    JNI.inNative = true;
     DragSourceMotionListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragMouseMoved( dsde: dsde != nil ? DragSourceDragEvent( javaObject: dsde ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class DragSourceMotionListenerLocal_: JNILocalProxy<DragSourceMotionListener, Any> {
@@ -89,8 +86,5 @@ open class DragSourceMotionListenerBase: DragSourceMotionListener {
     open func dragMouseMoved( dsde: DragSourceDragEvent? ) /**/ {
     }
 
-    open func dragMouseMoved( _ _dsde: DragSourceDragEvent? ) /**/ {
-        dragMouseMoved( dsde: _dsde )
-    }
 
 }

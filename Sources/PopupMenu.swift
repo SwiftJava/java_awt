@@ -20,15 +20,13 @@ open class PopupMenu: Menu {
 
     /// static int java.awt.PopupMenu.nameCounter
 
-    /// transient boolean java.awt.PopupMenu.isTrayIconPopup
+    // Skipping field: true false false false false false 
 
     /// private static final long java.awt.PopupMenu.serialVersionUID
 
-    /// java.util.Vector java.awt.Menu.items
+    /// transient boolean java.awt.PopupMenu.isTrayIconPopup
 
-    /// boolean java.awt.Menu.tearOff
-
-    /// boolean java.awt.Menu.isHelpMenu
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.String java.awt.Menu.base
 
@@ -36,19 +34,19 @@ open class PopupMenu: Menu {
 
     /// private static final long java.awt.Menu.serialVersionUID
 
+    /// boolean java.awt.Menu.isHelpMenu
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Menu.items
+
+    // Skipping field: true false false false false false 
+
     /// private int java.awt.Menu.menuSerializedDataVersion
 
-    /// boolean java.awt.MenuItem.enabled
+    /// boolean java.awt.Menu.tearOff
 
-    /// java.lang.String java.awt.MenuItem.label
-
-    /// java.lang.String java.awt.MenuItem.actionCommand
-
-    /// long java.awt.MenuItem.eventMask
-
-    /// transient java.awt.event.ActionListener java.awt.MenuItem.actionListener
-
-    /// private java.awt.MenuShortcut java.awt.MenuItem.shortcut
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.String java.awt.MenuItem.base
 
@@ -56,15 +54,53 @@ open class PopupMenu: Menu {
 
     /// private static final long java.awt.MenuItem.serialVersionUID
 
+    /// java.lang.String java.awt.MenuItem.actionCommand
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.ActionListener java.awt.MenuItem.actionListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.MenuItem.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.MenuItem.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// java.lang.String java.awt.MenuItem.label
+
+    // Skipping field: true false false false false false 
+
     /// private int java.awt.MenuItem.menuItemSerializedDataVersion
 
-    /// transient java.awt.peer.MenuComponentPeer java.awt.MenuComponent.peer
+    /// private java.awt.MenuShortcut java.awt.MenuItem.shortcut
 
-    /// transient java.awt.MenuContainer java.awt.MenuComponent.parent
+    /// static final java.lang.String java.awt.MenuComponent.actionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.MenuComponent.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final long java.awt.MenuComponent.serialVersionUID
+
+    /// private transient volatile java.security.AccessControlContext java.awt.MenuComponent.acc
+
+    /// javax.accessibility.AccessibleContext java.awt.MenuComponent.accessibleContext
+
+    // Skipping field: true false false false false false 
 
     /// transient sun.awt.AppContext java.awt.MenuComponent.appContext
 
+    // Skipping field: true false false false false false 
+
     /// java.awt.Font java.awt.MenuComponent.font
+
+    // Skipping field: true false false false false false 
 
     /// private java.lang.String java.awt.MenuComponent.name
 
@@ -72,23 +108,23 @@ open class PopupMenu: Menu {
 
     /// boolean java.awt.MenuComponent.newEventsOnly
 
-    /// private transient volatile java.security.AccessControlContext java.awt.MenuComponent.acc
+    // Skipping field: true false false false false false 
 
-    /// static final java.lang.String java.awt.MenuComponent.actionListenerK
+    /// transient java.awt.MenuContainer java.awt.MenuComponent.parent
 
-    /// static final java.lang.String java.awt.MenuComponent.itemListenerK
+    // Skipping field: true false false false false false 
 
-    /// private static final long java.awt.MenuComponent.serialVersionUID
+    /// transient java.awt.peer.MenuComponentPeer java.awt.MenuComponent.peer
 
-    /// javax.accessibility.AccessibleContext java.awt.MenuComponent.accessibleContext
+    // Skipping field: true false false false false false 
 
     /// public java.awt.PopupMenu() throws java.awt.HeadlessException
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/PopupMenu", classCache: &PopupMenu.PopupMenuJNIClass, methodSig: "()V", methodCache: &PopupMenu.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -99,11 +135,12 @@ open class PopupMenu: Menu {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( label: String? ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: label, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/PopupMenu", classCache: &PopupMenu.PopupMenuJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &PopupMenu.new_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw HeadlessException( javaObject: throwable )
         }
         self.init( javaObject: __object )
@@ -114,30 +151,38 @@ open class PopupMenu: Menu {
         try self.init( label: _label )
     }
 
-    /// public java.awt.MenuContainer java.awt.PopupMenu.getParent()
+    /// public void java.awt.PopupMenu.addNotify()
+
+    // Skipping method: false true false false false 
 
     /// java.lang.String java.awt.PopupMenu.constructComponentName()
+
+    // Skipping method: true false false false false 
+
+    /// public javax.accessibility.AccessibleContext java.awt.PopupMenu.getAccessibleContext()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.MenuContainer java.awt.PopupMenu.getParent()
+
+    // Skipping method: false true false false false 
 
     /// public void java.awt.PopupMenu.show(java.awt.Component,int,int)
 
     private static var show_MethodID_3: jmethodID?
 
     open func show( origin: Component?, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: origin, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "show", methodSig: "(Ljava/awt/Component;II)V", methodCache: &PopupMenu.show_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func show( _ _origin: Component?, _ _x: Int, _ _y: Int ) {
         show( origin: _origin, x: _x, y: _y )
     }
-
-    /// public javax.accessibility.AccessibleContext java.awt.PopupMenu.getAccessibleContext()
-
-    /// public void java.awt.PopupMenu.addNotify()
 
 }
 

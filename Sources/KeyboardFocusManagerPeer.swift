@@ -7,10 +7,6 @@ import java_swift
 
 public protocol KeyboardFocusManagerPeer: JavaProtocol {
 
-    /// public abstract void java.awt.peer.KeyboardFocusManagerPeer.setCurrentFocusedWindow(java.awt.Window)
-
-    func setCurrentFocusedWindow( win: Window? )
-
     /// public abstract void java.awt.peer.KeyboardFocusManagerPeer.clearGlobalFocusOwner(java.awt.Window)
 
     func clearGlobalFocusOwner( activeWindow: Window? )
@@ -19,13 +15,17 @@ public protocol KeyboardFocusManagerPeer: JavaProtocol {
 
     func getCurrentFocusOwner() -> Component!
 
+    /// public abstract java.awt.Window java.awt.peer.KeyboardFocusManagerPeer.getCurrentFocusedWindow()
+
+    func getCurrentFocusedWindow() -> Window!
+
     /// public abstract void java.awt.peer.KeyboardFocusManagerPeer.setCurrentFocusOwner(java.awt.Component)
 
     func setCurrentFocusOwner( comp: Component? )
 
-    /// public abstract java.awt.Window java.awt.peer.KeyboardFocusManagerPeer.getCurrentFocusedWindow()
+    /// public abstract void java.awt.peer.KeyboardFocusManagerPeer.setCurrentFocusedWindow(java.awt.Window)
 
-    func getCurrentFocusedWindow() -> Window!
+    func setCurrentFocusedWindow( win: Window? )
 
 }
 
@@ -34,30 +34,15 @@ open class KeyboardFocusManagerPeerForward: JNIObjectForward, KeyboardFocusManag
 
     private static var KeyboardFocusManagerPeerJNIClass: jclass?
 
-    /// public abstract void java.awt.peer.KeyboardFocusManagerPeer.setCurrentFocusedWindow(java.awt.Window)
-
-    private static var setCurrentFocusedWindow_MethodID_6: jmethodID?
-
-    open func setCurrentFocusedWindow( win: Window? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: win, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurrentFocusedWindow", methodSig: "(Ljava/awt/Window;)V", methodCache: &KeyboardFocusManagerPeerForward.setCurrentFocusedWindow_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setCurrentFocusedWindow( _ _win: Window? ) {
-        setCurrentFocusedWindow( win: _win )
-    }
-
     /// public abstract void java.awt.peer.KeyboardFocusManagerPeer.clearGlobalFocusOwner(java.awt.Window)
 
-    private static var clearGlobalFocusOwner_MethodID_7: jmethodID?
+    private static var clearGlobalFocusOwner_MethodID_6: jmethodID?
 
     open func clearGlobalFocusOwner( activeWindow: Window? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: activeWindow, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearGlobalFocusOwner", methodSig: "(Ljava/awt/Window;)V", methodCache: &KeyboardFocusManagerPeerForward.clearGlobalFocusOwner_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearGlobalFocusOwner", methodSig: "(Ljava/awt/Window;)V", methodCache: &KeyboardFocusManagerPeerForward.clearGlobalFocusOwner_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func clearGlobalFocusOwner( _ _activeWindow: Window? ) {
@@ -66,14 +51,27 @@ open class KeyboardFocusManagerPeerForward: JNIObjectForward, KeyboardFocusManag
 
     /// public abstract java.awt.Component java.awt.peer.KeyboardFocusManagerPeer.getCurrentFocusOwner()
 
-    private static var getCurrentFocusOwner_MethodID_8: jmethodID?
+    private static var getCurrentFocusOwner_MethodID_7: jmethodID?
 
     open func getCurrentFocusOwner() -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &KeyboardFocusManagerPeerForward.getCurrentFocusOwner_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &KeyboardFocusManagerPeerForward.getCurrentFocusOwner_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract java.awt.Window java.awt.peer.KeyboardFocusManagerPeer.getCurrentFocusedWindow()
+
+    private static var getCurrentFocusedWindow_MethodID_8: jmethodID?
+
+    open func getCurrentFocusedWindow() -> Window! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentFocusedWindow", methodSig: "()Ljava/awt/Window;", methodCache: &KeyboardFocusManagerPeerForward.getCurrentFocusedWindow_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Window( javaObject: __return ) : nil
     }
 
 
@@ -82,8 +80,8 @@ open class KeyboardFocusManagerPeerForward: JNIObjectForward, KeyboardFocusManag
     private static var setCurrentFocusOwner_MethodID_9: jmethodID?
 
     open func setCurrentFocusOwner( comp: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurrentFocusOwner", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManagerPeerForward.setCurrentFocusOwner_MethodID_9, args: &__args, locals: &__locals )
     }
@@ -92,19 +90,20 @@ open class KeyboardFocusManagerPeerForward: JNIObjectForward, KeyboardFocusManag
         setCurrentFocusOwner( comp: _comp )
     }
 
-    /// public abstract java.awt.Window java.awt.peer.KeyboardFocusManagerPeer.getCurrentFocusedWindow()
+    /// public abstract void java.awt.peer.KeyboardFocusManagerPeer.setCurrentFocusedWindow(java.awt.Window)
 
-    private static var getCurrentFocusedWindow_MethodID_10: jmethodID?
+    private static var setCurrentFocusedWindow_MethodID_10: jmethodID?
 
-    open func getCurrentFocusedWindow() -> Window! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setCurrentFocusedWindow( win: Window? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentFocusedWindow", methodSig: "()Ljava/awt/Window;", methodCache: &KeyboardFocusManagerPeerForward.getCurrentFocusedWindow_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Window( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: win, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurrentFocusedWindow", methodSig: "(Ljava/awt/Window;)V", methodCache: &KeyboardFocusManagerPeerForward.setCurrentFocusedWindow_MethodID_10, args: &__args, locals: &__locals )
     }
 
+    open func setCurrentFocusedWindow( _ _win: Window? ) {
+        setCurrentFocusedWindow( win: _win )
+    }
 
 }
-
 

@@ -18,19 +18,25 @@ open class LookupTable: java_swift.JavaObject {
 
     /// int java.awt.image.LookupTable.numComponents
 
-    /// int java.awt.image.LookupTable.offset
+    // Skipping field: true false false false false false 
 
     /// int java.awt.image.LookupTable.numEntries
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.image.LookupTable.offset
+
+    // Skipping field: true false false false false false 
 
     /// protected java.awt.image.LookupTable(int,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( offset: Int, numComponents: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: numComponents, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(numComponents) )
         let __object = JNIMethod.NewObject( className: "java/awt/image/LookupTable", classCache: &LookupTable.LookupTableJNIClass, methodSig: "(II)V", methodCache: &LookupTable.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -40,27 +46,27 @@ open class LookupTable: java_swift.JavaObject {
         self.init( offset: _offset, numComponents: _numComponents )
     }
 
-    /// public int java.awt.image.LookupTable.getOffset()
+    /// public int java.awt.image.LookupTable.getNumComponents()
 
-    private static var getOffset_MethodID_2: jmethodID?
+    private static var getNumComponents_MethodID_2: jmethodID?
 
-    open func getOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getNumComponents() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "()I", methodCache: &LookupTable.getOffset_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumComponents", methodSig: "()I", methodCache: &LookupTable.getNumComponents_MethodID_2, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public int java.awt.image.LookupTable.getNumComponents()
+    /// public int java.awt.image.LookupTable.getOffset()
 
-    private static var getNumComponents_MethodID_3: jmethodID?
+    private static var getOffset_MethodID_3: jmethodID?
 
-    open func getNumComponents() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getOffset() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumComponents", methodSig: "()I", methodCache: &LookupTable.getNumComponents_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "()I", methodCache: &LookupTable.getOffset_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
@@ -69,12 +75,12 @@ open class LookupTable: java_swift.JavaObject {
     private static var lookupPixel_MethodID_4: jmethodID?
 
     open func lookupPixel( src: [Int32]?, dest: [Int32]? ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
         __args[1] = JNIType.toJava( value: dest, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "lookupPixel", methodSig: "([I[I)[I", methodCache: &LookupTable.lookupPixel_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
     }
 
     open func lookupPixel( _ _src: [Int32]?, _ _dest: [Int32]? ) -> [Int32]! {

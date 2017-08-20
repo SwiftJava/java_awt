@@ -8,13 +8,13 @@ import java_util
 
 public protocol FlavorTable: FlavorMap {
 
-    /// public abstract java.util.List java.awt.datatransfer.FlavorTable.getNativesForFlavor(java.awt.datatransfer.DataFlavor)
-
-    func getNativesForFlavor( flav: DataFlavor? ) -> java_util.List!
-
     /// public abstract java.util.List java.awt.datatransfer.FlavorTable.getFlavorsForNative(java.lang.String)
 
     func getFlavorsForNative( nat: String? ) -> java_util.List!
+
+    /// public abstract java.util.List java.awt.datatransfer.FlavorTable.getNativesForFlavor(java.awt.datatransfer.DataFlavor)
+
+    func getNativesForFlavor( flav: DataFlavor? ) -> java_util.List!
 
 }
 
@@ -23,32 +23,15 @@ open class FlavorTableForward: FlavorMapForward, FlavorTable {
 
     private static var FlavorTableJNIClass: jclass?
 
-    /// public abstract java.util.List java.awt.datatransfer.FlavorTable.getNativesForFlavor(java.awt.datatransfer.DataFlavor)
-
-    private static var getNativesForFlavor_MethodID_3: jmethodID?
-
-    open func getNativesForFlavor( flav: DataFlavor? ) -> java_util.List! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: flav, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNativesForFlavor", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Ljava/util/List;", methodCache: &FlavorTableForward.getNativesForFlavor_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
-    }
-
-    open func getNativesForFlavor( _ _flav: DataFlavor? ) -> java_util.List! {
-        return getNativesForFlavor( flav: _flav )
-    }
-
     /// public abstract java.util.List java.awt.datatransfer.FlavorTable.getFlavorsForNative(java.lang.String)
 
-    private static var getFlavorsForNative_MethodID_4: jmethodID?
+    private static var getFlavorsForNative_MethodID_3: jmethodID?
 
     open func getFlavorsForNative( nat: String? ) -> java_util.List! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: nat, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFlavorsForNative", methodSig: "(Ljava/lang/String;)Ljava/util/List;", methodCache: &FlavorTableForward.getFlavorsForNative_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFlavorsForNative", methodSig: "(Ljava/lang/String;)Ljava/util/List;", methodCache: &FlavorTableForward.getFlavorsForNative_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
     }
@@ -57,40 +40,54 @@ open class FlavorTableForward: FlavorMapForward, FlavorTable {
         return getFlavorsForNative( nat: _nat )
     }
 
-    /// public abstract java.util.Map java.awt.datatransfer.FlavorMap.getNativesForFlavors(java.awt.datatransfer.DataFlavor[])
-
-    private static var getNativesForFlavors_MethodID_5: jmethodID?
-
-    override open func getNativesForFlavors( flavors: [DataFlavor]? ) -> java_swift.JavaMap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: flavors, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNativesForFlavors", methodSig: "([Ljava/awt/datatransfer/DataFlavor;)Ljava/util/Map;", methodCache: &FlavorTableForward.getNativesForFlavors_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: java_swift.JavaMapForward(), from: __return )
-    }
-
-    override open func getNativesForFlavors( _ _flavors: [DataFlavor]? ) -> java_swift.JavaMap! {
-        return getNativesForFlavors( flavors: _flavors )
-    }
-
     /// public abstract java.util.Map java.awt.datatransfer.FlavorMap.getFlavorsForNatives(java.lang.String[])
 
-    private static var getFlavorsForNatives_MethodID_6: jmethodID?
+    private static var getFlavorsForNatives_MethodID_4: jmethodID?
 
     override open func getFlavorsForNatives( natives: [String]? ) -> java_swift.JavaMap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: natives, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFlavorsForNatives", methodSig: "([Ljava/lang/String;)Ljava/util/Map;", methodCache: &FlavorTableForward.getFlavorsForNatives_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: java_swift.JavaMapForward(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFlavorsForNatives", methodSig: "([Ljava/lang/String;)Ljava/util/Map;", methodCache: &FlavorTableForward.getFlavorsForNatives_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: java_swift.JavaMapForward.self, from: __return )
     }
 
     override open func getFlavorsForNatives( _ _natives: [String]? ) -> java_swift.JavaMap! {
         return getFlavorsForNatives( natives: _natives )
     }
 
-}
+    /// public abstract java.util.List java.awt.datatransfer.FlavorTable.getNativesForFlavor(java.awt.datatransfer.DataFlavor)
 
+    private static var getNativesForFlavor_MethodID_5: jmethodID?
+
+    open func getNativesForFlavor( flav: DataFlavor? ) -> java_util.List! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: flav, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNativesForFlavor", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Ljava/util/List;", methodCache: &FlavorTableForward.getNativesForFlavor_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
+    }
+
+    open func getNativesForFlavor( _ _flav: DataFlavor? ) -> java_util.List! {
+        return getNativesForFlavor( flav: _flav )
+    }
+
+    /// public abstract java.util.Map java.awt.datatransfer.FlavorMap.getNativesForFlavors(java.awt.datatransfer.DataFlavor[])
+
+    private static var getNativesForFlavors_MethodID_6: jmethodID?
+
+    override open func getNativesForFlavors( flavors: [DataFlavor]? ) -> java_swift.JavaMap! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: flavors, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNativesForFlavors", methodSig: "([Ljava/awt/datatransfer/DataFlavor;)Ljava/util/Map;", methodCache: &FlavorTableForward.getNativesForFlavors_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: java_swift.JavaMapForward.self, from: __return )
+    }
+
+    override open func getNativesForFlavors( _ _flavors: [DataFlavor]? ) -> java_swift.JavaMap! {
+        return getNativesForFlavors( flavors: _flavors )
+    }
+
+}
 

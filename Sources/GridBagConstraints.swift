@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.GridBagConstraints ///
 
-open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Serializable */ UnclassedProtocol {
+open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -20,292 +20,6 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
 
     private static var GridBagConstraintsJNIClass: jclass?
 
-    /// public static final int java.awt.GridBagConstraints.RELATIVE
-
-    private static var RELATIVE_FieldID: jfieldID?
-
-    open static var RELATIVE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "RELATIVE", fieldType: "I", fieldCache: &RELATIVE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.REMAINDER
-
-    private static var REMAINDER_FieldID: jfieldID?
-
-    open static var REMAINDER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "REMAINDER", fieldType: "I", fieldCache: &REMAINDER_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.NONE
-
-    private static var NONE_FieldID: jfieldID?
-
-    open static var NONE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NONE", fieldType: "I", fieldCache: &NONE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.BOTH
-
-    private static var BOTH_FieldID: jfieldID?
-
-    open static var BOTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "BOTH", fieldType: "I", fieldCache: &BOTH_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.HORIZONTAL
-
-    private static var HORIZONTAL_FieldID: jfieldID?
-
-    open static var HORIZONTAL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL", fieldType: "I", fieldCache: &HORIZONTAL_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.VERTICAL
-
-    private static var VERTICAL_FieldID: jfieldID?
-
-    open static var VERTICAL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.CENTER
-
-    private static var CENTER_FieldID: jfieldID?
-
-    open static var CENTER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.NORTH
-
-    private static var NORTH_FieldID: jfieldID?
-
-    open static var NORTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.NORTHEAST
-
-    private static var NORTHEAST_FieldID: jfieldID?
-
-    open static var NORTHEAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTHEAST", fieldType: "I", fieldCache: &NORTHEAST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.EAST
-
-    private static var EAST_FieldID: jfieldID?
-
-    open static var EAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "EAST", fieldType: "I", fieldCache: &EAST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.SOUTHEAST
-
-    private static var SOUTHEAST_FieldID: jfieldID?
-
-    open static var SOUTHEAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTHEAST", fieldType: "I", fieldCache: &SOUTHEAST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.SOUTH
-
-    private static var SOUTH_FieldID: jfieldID?
-
-    open static var SOUTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.SOUTHWEST
-
-    private static var SOUTHWEST_FieldID: jfieldID?
-
-    open static var SOUTHWEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTHWEST", fieldType: "I", fieldCache: &SOUTHWEST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.WEST
-
-    private static var WEST_FieldID: jfieldID?
-
-    open static var WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.NORTHWEST
-
-    private static var NORTHWEST_FieldID: jfieldID?
-
-    open static var NORTHWEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTHWEST", fieldType: "I", fieldCache: &NORTHWEST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.PAGE_START
-
-    private static var PAGE_START_FieldID: jfieldID?
-
-    open static var PAGE_START: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PAGE_START", fieldType: "I", fieldCache: &PAGE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.PAGE_END
-
-    private static var PAGE_END_FieldID: jfieldID?
-
-    open static var PAGE_END: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PAGE_END", fieldType: "I", fieldCache: &PAGE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.LINE_START
-
-    private static var LINE_START_FieldID: jfieldID?
-
-    open static var LINE_START: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LINE_START", fieldType: "I", fieldCache: &LINE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.LINE_END
-
-    private static var LINE_END_FieldID: jfieldID?
-
-    open static var LINE_END: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LINE_END", fieldType: "I", fieldCache: &LINE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.FIRST_LINE_START
-
-    private static var FIRST_LINE_START_FieldID: jfieldID?
-
-    open static var FIRST_LINE_START: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "FIRST_LINE_START", fieldType: "I", fieldCache: &FIRST_LINE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.FIRST_LINE_END
-
-    private static var FIRST_LINE_END_FieldID: jfieldID?
-
-    open static var FIRST_LINE_END: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "FIRST_LINE_END", fieldType: "I", fieldCache: &FIRST_LINE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.LAST_LINE_START
-
-    private static var LAST_LINE_START_FieldID: jfieldID?
-
-    open static var LAST_LINE_START: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LAST_LINE_START", fieldType: "I", fieldCache: &LAST_LINE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.LAST_LINE_END
-
-    private static var LAST_LINE_END_FieldID: jfieldID?
-
-    open static var LAST_LINE_END: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LAST_LINE_END", fieldType: "I", fieldCache: &LAST_LINE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.BASELINE
-
-    private static var BASELINE_FieldID: jfieldID?
-
-    open static var BASELINE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "BASELINE", fieldType: "I", fieldCache: &BASELINE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.BASELINE_LEADING
-
-    private static var BASELINE_LEADING_FieldID: jfieldID?
-
-    open static var BASELINE_LEADING: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "BASELINE_LEADING", fieldType: "I", fieldCache: &BASELINE_LEADING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GridBagConstraints.BASELINE_TRAILING
-
-    private static var BASELINE_TRAILING_FieldID: jfieldID?
-
-    open static var BASELINE_TRAILING: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "BASELINE_TRAILING", fieldType: "I", fieldCache: &BASELINE_TRAILING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.GridBagConstraints.ABOVE_BASELINE
 
     private static var ABOVE_BASELINE_FieldID: jfieldID?
@@ -313,7 +27,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
     open static var ABOVE_BASELINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ABOVE_BASELINE", fieldType: "I", fieldCache: &ABOVE_BASELINE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -324,7 +38,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
     open static var ABOVE_BASELINE_LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ABOVE_BASELINE_LEADING", fieldType: "I", fieldCache: &ABOVE_BASELINE_LEADING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -335,7 +49,40 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
     open static var ABOVE_BASELINE_TRAILING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ABOVE_BASELINE_TRAILING", fieldType: "I", fieldCache: &ABOVE_BASELINE_TRAILING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.BASELINE
+
+    private static var BASELINE_FieldID: jfieldID?
+
+    open static var BASELINE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "BASELINE", fieldType: "I", fieldCache: &BASELINE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.BASELINE_LEADING
+
+    private static var BASELINE_LEADING_FieldID: jfieldID?
+
+    open static var BASELINE_LEADING: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "BASELINE_LEADING", fieldType: "I", fieldCache: &BASELINE_LEADING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.BASELINE_TRAILING
+
+    private static var BASELINE_TRAILING_FieldID: jfieldID?
+
+    open static var BASELINE_TRAILING: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "BASELINE_TRAILING", fieldType: "I", fieldCache: &BASELINE_TRAILING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
         }
     }
 
@@ -346,7 +93,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
     open static var BELOW_BASELINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BELOW_BASELINE", fieldType: "I", fieldCache: &BELOW_BASELINE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -357,7 +104,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
     open static var BELOW_BASELINE_LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BELOW_BASELINE_LEADING", fieldType: "I", fieldCache: &BELOW_BASELINE_LEADING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -368,7 +115,346 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
     open static var BELOW_BASELINE_TRAILING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BELOW_BASELINE_TRAILING", fieldType: "I", fieldCache: &BELOW_BASELINE_TRAILING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.BOTH
+
+    private static var BOTH_FieldID: jfieldID?
+
+    open static var BOTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "BOTH", fieldType: "I", fieldCache: &BOTH_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.CENTER
+
+    private static var CENTER_FieldID: jfieldID?
+
+    open static var CENTER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.EAST
+
+    private static var EAST_FieldID: jfieldID?
+
+    open static var EAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "EAST", fieldType: "I", fieldCache: &EAST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.FIRST_LINE_END
+
+    private static var FIRST_LINE_END_FieldID: jfieldID?
+
+    open static var FIRST_LINE_END: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "FIRST_LINE_END", fieldType: "I", fieldCache: &FIRST_LINE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.FIRST_LINE_START
+
+    private static var FIRST_LINE_START_FieldID: jfieldID?
+
+    open static var FIRST_LINE_START: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "FIRST_LINE_START", fieldType: "I", fieldCache: &FIRST_LINE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.HORIZONTAL
+
+    private static var HORIZONTAL_FieldID: jfieldID?
+
+    open static var HORIZONTAL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL", fieldType: "I", fieldCache: &HORIZONTAL_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.LAST_LINE_END
+
+    private static var LAST_LINE_END_FieldID: jfieldID?
+
+    open static var LAST_LINE_END: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "LAST_LINE_END", fieldType: "I", fieldCache: &LAST_LINE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.LAST_LINE_START
+
+    private static var LAST_LINE_START_FieldID: jfieldID?
+
+    open static var LAST_LINE_START: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "LAST_LINE_START", fieldType: "I", fieldCache: &LAST_LINE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.LINE_END
+
+    private static var LINE_END_FieldID: jfieldID?
+
+    open static var LINE_END: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "LINE_END", fieldType: "I", fieldCache: &LINE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.LINE_START
+
+    private static var LINE_START_FieldID: jfieldID?
+
+    open static var LINE_START: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "LINE_START", fieldType: "I", fieldCache: &LINE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.NONE
+
+    private static var NONE_FieldID: jfieldID?
+
+    open static var NONE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NONE", fieldType: "I", fieldCache: &NONE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.NORTH
+
+    private static var NORTH_FieldID: jfieldID?
+
+    open static var NORTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.NORTHEAST
+
+    private static var NORTHEAST_FieldID: jfieldID?
+
+    open static var NORTHEAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTHEAST", fieldType: "I", fieldCache: &NORTHEAST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.NORTHWEST
+
+    private static var NORTHWEST_FieldID: jfieldID?
+
+    open static var NORTHWEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTHWEST", fieldType: "I", fieldCache: &NORTHWEST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.PAGE_END
+
+    private static var PAGE_END_FieldID: jfieldID?
+
+    open static var PAGE_END: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PAGE_END", fieldType: "I", fieldCache: &PAGE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.PAGE_START
+
+    private static var PAGE_START_FieldID: jfieldID?
+
+    open static var PAGE_START: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PAGE_START", fieldType: "I", fieldCache: &PAGE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.RELATIVE
+
+    private static var RELATIVE_FieldID: jfieldID?
+
+    open static var RELATIVE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "RELATIVE", fieldType: "I", fieldCache: &RELATIVE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.REMAINDER
+
+    private static var REMAINDER_FieldID: jfieldID?
+
+    open static var REMAINDER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "REMAINDER", fieldType: "I", fieldCache: &REMAINDER_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.SOUTH
+
+    private static var SOUTH_FieldID: jfieldID?
+
+    open static var SOUTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.SOUTHEAST
+
+    private static var SOUTHEAST_FieldID: jfieldID?
+
+    open static var SOUTHEAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTHEAST", fieldType: "I", fieldCache: &SOUTHEAST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.SOUTHWEST
+
+    private static var SOUTHWEST_FieldID: jfieldID?
+
+    open static var SOUTHWEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTHWEST", fieldType: "I", fieldCache: &SOUTHWEST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.VERTICAL
+
+    private static var VERTICAL_FieldID: jfieldID?
+
+    open static var VERTICAL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.GridBagConstraints.WEST
+
+    private static var WEST_FieldID: jfieldID?
+
+    open static var WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private static final long java.awt.GridBagConstraints.serialVersionUID
+
+    /// public int java.awt.GridBagConstraints.anchor
+
+    private static var anchor_FieldID: jfieldID?
+
+    open var anchor: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "anchor", fieldType: "I", fieldCache: &GridBagConstraints.anchor_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "anchor", fieldType: "I", fieldCache: &GridBagConstraints.anchor_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// transient int java.awt.GridBagConstraints.ascent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.Component$BaselineResizeBehavior java.awt.GridBagConstraints.baselineResizeBehavior
+
+    // Skipping field: true false false false false false 
+
+    /// transient int java.awt.GridBagConstraints.centerOffset
+
+    // Skipping field: true false false false false false 
+
+    /// transient int java.awt.GridBagConstraints.centerPadding
+
+    // Skipping field: true false false false false false 
+
+    /// transient int java.awt.GridBagConstraints.descent
+
+    // Skipping field: true false false false false false 
+
+    /// public int java.awt.GridBagConstraints.fill
+
+    private static var fill_FieldID: jfieldID?
+
+    open var fill: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "fill", fieldType: "I", fieldCache: &GridBagConstraints.fill_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "fill", fieldType: "I", fieldCache: &GridBagConstraints.fill_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// public int java.awt.GridBagConstraints.gridheight
+
+    private static var gridheight_FieldID: jfieldID?
+
+    open var gridheight: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "gridheight", fieldType: "I", fieldCache: &GridBagConstraints.gridheight_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "gridheight", fieldType: "I", fieldCache: &GridBagConstraints.gridheight_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// public int java.awt.GridBagConstraints.gridwidth
+
+    private static var gridwidth_FieldID: jfieldID?
+
+    open var gridwidth: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "gridwidth", fieldType: "I", fieldCache: &GridBagConstraints.gridwidth_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "gridwidth", fieldType: "I", fieldCache: &GridBagConstraints.gridwidth_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -378,13 +464,12 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
 
     open var gridx: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "gridx", fieldType: "I", fieldCache: &GridBagConstraints.gridx_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "gridx", fieldType: "I", fieldCache: &GridBagConstraints.gridx_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "gridx", fieldType: "I", fieldCache: &GridBagConstraints.gridx_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -395,116 +480,13 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
 
     open var gridy: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "gridy", fieldType: "I", fieldCache: &GridBagConstraints.gridy_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "gridy", fieldType: "I", fieldCache: &GridBagConstraints.gridy_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "gridy", fieldType: "I", fieldCache: &GridBagConstraints.gridy_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public int java.awt.GridBagConstraints.gridwidth
-
-    private static var gridwidth_FieldID: jfieldID?
-
-    open var gridwidth: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "gridwidth", fieldType: "I", fieldCache: &GridBagConstraints.gridwidth_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "gridwidth", fieldType: "I", fieldCache: &GridBagConstraints.gridwidth_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public int java.awt.GridBagConstraints.gridheight
-
-    private static var gridheight_FieldID: jfieldID?
-
-    open var gridheight: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "gridheight", fieldType: "I", fieldCache: &GridBagConstraints.gridheight_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "gridheight", fieldType: "I", fieldCache: &GridBagConstraints.gridheight_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public double java.awt.GridBagConstraints.weightx
-
-    private static var weightx_FieldID: jfieldID?
-
-    open var weightx: Double {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "weightx", fieldType: "D", fieldCache: &GridBagConstraints.weightx_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetDoubleField( fieldName: "weightx", fieldType: "D", fieldCache: &GridBagConstraints.weightx_FieldID, object: javaObject, value: __value.d, locals: &__locals )
-        }
-    }
-
-    /// public double java.awt.GridBagConstraints.weighty
-
-    private static var weighty_FieldID: jfieldID?
-
-    open var weighty: Double {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "weighty", fieldType: "D", fieldCache: &GridBagConstraints.weighty_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetDoubleField( fieldName: "weighty", fieldType: "D", fieldCache: &GridBagConstraints.weighty_FieldID, object: javaObject, value: __value.d, locals: &__locals )
-        }
-    }
-
-    /// public int java.awt.GridBagConstraints.anchor
-
-    private static var anchor_FieldID: jfieldID?
-
-    open var anchor: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "anchor", fieldType: "I", fieldCache: &GridBagConstraints.anchor_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "anchor", fieldType: "I", fieldCache: &GridBagConstraints.anchor_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public int java.awt.GridBagConstraints.fill
-
-    private static var fill_FieldID: jfieldID?
-
-    open var fill: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "fill", fieldType: "I", fieldCache: &GridBagConstraints.fill_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "fill", fieldType: "I", fieldCache: &GridBagConstraints.fill_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -514,8 +496,8 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
 
     open var insets: Insets! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "insets", fieldType: "Ljava/awt/Insets;", fieldCache: &GridBagConstraints.insets_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "insets", fieldType: "Ljava/awt/Insets;", fieldCache: &GridBagConstraints.insets_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? Insets( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -531,13 +513,12 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
 
     open var ipadx: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "ipadx", fieldType: "I", fieldCache: &GridBagConstraints.ipadx_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "ipadx", fieldType: "I", fieldCache: &GridBagConstraints.ipadx_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "ipadx", fieldType: "I", fieldCache: &GridBagConstraints.ipadx_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -548,48 +529,79 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
 
     open var ipady: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "ipady", fieldType: "I", fieldCache: &GridBagConstraints.ipady_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "ipady", fieldType: "I", fieldCache: &GridBagConstraints.ipady_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "ipady", fieldType: "I", fieldCache: &GridBagConstraints.ipady_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// int java.awt.GridBagConstraints.tempX
+    /// int java.awt.GridBagConstraints.minHeight
 
-    /// int java.awt.GridBagConstraints.tempY
-
-    /// int java.awt.GridBagConstraints.tempWidth
-
-    /// int java.awt.GridBagConstraints.tempHeight
+    // Skipping field: true false false false false false 
 
     /// int java.awt.GridBagConstraints.minWidth
 
-    /// int java.awt.GridBagConstraints.minHeight
+    // Skipping field: true false false false false false 
 
-    /// transient int java.awt.GridBagConstraints.ascent
+    /// int java.awt.GridBagConstraints.tempHeight
 
-    /// transient int java.awt.GridBagConstraints.descent
+    // Skipping field: true false false false false false 
 
-    /// transient java.awt.Component$BaselineResizeBehavior java.awt.GridBagConstraints.baselineResizeBehavior
+    /// int java.awt.GridBagConstraints.tempWidth
 
-    /// transient int java.awt.GridBagConstraints.centerPadding
+    // Skipping field: true false false false false false 
 
-    /// transient int java.awt.GridBagConstraints.centerOffset
+    /// int java.awt.GridBagConstraints.tempX
 
-    /// private static final long java.awt.GridBagConstraints.serialVersionUID
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.GridBagConstraints.tempY
+
+    // Skipping field: true false false false false false 
+
+    /// public double java.awt.GridBagConstraints.weightx
+
+    private static var weightx_FieldID: jfieldID?
+
+    open var weightx: Double {
+        get {
+            let __value = JNIField.GetDoubleField( fieldName: "weightx", fieldType: "D", fieldCache: &GridBagConstraints.weightx_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( d: newValue )
+            JNIField.SetDoubleField( fieldName: "weightx", fieldType: "D", fieldCache: &GridBagConstraints.weightx_FieldID, object: javaObject, value: __value.d, locals: &__locals )
+        }
+    }
+
+    /// public double java.awt.GridBagConstraints.weighty
+
+    private static var weighty_FieldID: jfieldID?
+
+    open var weighty: Double {
+        get {
+            let __value = JNIField.GetDoubleField( fieldName: "weighty", fieldType: "D", fieldCache: &GridBagConstraints.weighty_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( d: newValue )
+            JNIField.SetDoubleField( fieldName: "weighty", fieldType: "D", fieldCache: &GridBagConstraints.weighty_FieldID, object: javaObject, value: __value.d, locals: &__locals )
+        }
+    }
 
     /// public java.awt.GridBagConstraints()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/GridBagConstraints", classCache: &GridBagConstraints.GridBagConstraintsJNIClass, methodSig: "()V", methodCache: &GridBagConstraints.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -600,19 +612,19 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( gridx: Int, gridy: Int, gridwidth: Int, gridheight: Int, weightx: Double, weighty: Double, anchor: Int, fill: Int, insets: Insets?, ipadx: Int, ipady: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 11 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: gridx, locals: &__locals )
-        __args[1] = JNIType.toJava( value: gridy, locals: &__locals )
-        __args[2] = JNIType.toJava( value: gridwidth, locals: &__locals )
-        __args[3] = JNIType.toJava( value: gridheight, locals: &__locals )
-        __args[4] = JNIType.toJava( value: weightx, locals: &__locals )
-        __args[5] = JNIType.toJava( value: weighty, locals: &__locals )
-        __args[6] = JNIType.toJava( value: anchor, locals: &__locals )
-        __args[7] = JNIType.toJava( value: fill, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 11 )
+        __args[0] = jvalue( i: jint(gridx) )
+        __args[1] = jvalue( i: jint(gridy) )
+        __args[2] = jvalue( i: jint(gridwidth) )
+        __args[3] = jvalue( i: jint(gridheight) )
+        __args[4] = jvalue( d: weightx )
+        __args[5] = jvalue( d: weighty )
+        __args[6] = jvalue( i: jint(anchor) )
+        __args[7] = jvalue( i: jint(fill) )
         __args[8] = JNIType.toJava( value: insets, locals: &__locals )
-        __args[9] = JNIType.toJava( value: ipadx, locals: &__locals )
-        __args[10] = JNIType.toJava( value: ipady, locals: &__locals )
+        __args[9] = jvalue( i: jint(ipadx) )
+        __args[10] = jvalue( i: jint(ipady) )
         let __object = JNIMethod.NewObject( className: "java/awt/GridBagConstraints", classCache: &GridBagConstraints.GridBagConstraintsJNIClass, methodSig: "(IIIIDDIILjava/awt/Insets;II)V", methodCache: &GridBagConstraints.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -627,8 +639,8 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
     private static var clone_MethodID_3: jmethodID?
 
     override open func clone() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &GridBagConstraints.clone_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
@@ -636,6 +648,8 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* ja
 
 
     /// boolean java.awt.GridBagConstraints.isVerticallyResizable()
+
+    // Skipping method: true false false false false 
 
 }
 

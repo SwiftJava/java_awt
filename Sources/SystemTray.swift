@@ -16,26 +16,62 @@ open class SystemTray: java_swift.JavaObject {
 
     private static var SystemTrayJNIClass: jclass?
 
+    /// private static final java.awt.TrayIcon[] java.awt.SystemTray.EMPTY_TRAY_ARRAY
+
     /// private static java.awt.SystemTray java.awt.SystemTray.systemTray
 
     /// private int java.awt.SystemTray.currentIconID
 
     /// private transient java.awt.peer.SystemTrayPeer java.awt.SystemTray.peer
 
-    /// private static final java.awt.TrayIcon[] java.awt.SystemTray.EMPTY_TRAY_ARRAY
-
     /// private java.awt.SystemTray()
+
+    /// static void java.awt.SystemTray.access$000(java.awt.SystemTray,java.lang.String,java.lang.Object,java.lang.Object)
+
+    // Skipping method: true false false false false 
+
+    /// static void java.awt.SystemTray.checkSystemTrayAllowed()
+
+    // Skipping method: true false false false false 
+
+    /// public static java.awt.SystemTray java.awt.SystemTray.getSystemTray()
+
+    private static var getSystemTray_MethodID_1: jmethodID?
+
+    open class func getSystemTray() -> SystemTray! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/SystemTray", classCache: &SystemTrayJNIClass, methodName: "getSystemTray", methodSig: "()Ljava/awt/SystemTray;", methodCache: &getSystemTray_MethodID_1, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SystemTray( javaObject: __return ) : nil
+    }
+
+
+    /// private static void java.awt.SystemTray.initializeSystemTrayIfNeeded()
+
+    /// public static boolean java.awt.SystemTray.isSupported()
+
+    private static var isSupported_MethodID_2: jmethodID?
+
+    open class func isSupported() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/SystemTray", classCache: &SystemTrayJNIClass, methodName: "isSupported", methodSig: "()Z", methodCache: &isSupported_MethodID_2, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
 
     /// public void java.awt.SystemTray.add(java.awt.TrayIcon) throws java.awt.AWTException
 
-    private static var add_MethodID_1: jmethodID?
+    private static var add_MethodID_3: jmethodID?
 
     open func add( trayIcon: TrayIcon? ) throws /* java.awt.AWTException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: trayIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/TrayIcon;)V", methodCache: &SystemTray.add_MethodID_1, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/TrayIcon;)V", methodCache: &SystemTray.add_MethodID_3, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw AWTException( javaObject: throwable )
         }
     }
@@ -44,130 +80,101 @@ open class SystemTray: java_swift.JavaObject {
         try add( trayIcon: _trayIcon )
     }
 
+    /// synchronized void java.awt.SystemTray.addNotify()
+
+    // Skipping method: true false false false false 
+
+    /// public synchronized void java.awt.SystemTray.addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
+
+    private static var addPropertyChangeListener_MethodID_4: jmethodID?
+
+    open func addPropertyChangeListener( propertyName: String?, listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &SystemTray.addPropertyChangeListener_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func addPropertyChangeListener( _ _propertyName: String?, _ _listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        addPropertyChangeListener( propertyName: _propertyName, listener: _listener )
+    }
+
+    /// private void java.awt.SystemTray.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
+
+    /// private synchronized java.beans.PropertyChangeSupport java.awt.SystemTray.getCurrentChangeSupport()
+
+    /// public synchronized java.beans.PropertyChangeListener[] java.awt.SystemTray.getPropertyChangeListeners(java.lang.String)
+
+    private static var getPropertyChangeListeners_MethodID_5: jmethodID?
+
+    open func getPropertyChangeListeners( propertyName: String? ) -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "(Ljava/lang/String;)[Ljava/beans/PropertyChangeListener;", methodCache: &SystemTray.getPropertyChangeListeners_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward].self, from: __return )
+    }
+
+    open func getPropertyChangeListeners( _ _propertyName: String? ) -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
+        return getPropertyChangeListeners( propertyName: _propertyName )
+    }
+
+    /// public java.awt.Dimension java.awt.SystemTray.getTrayIconSize()
+
+    private static var getTrayIconSize_MethodID_6: jmethodID?
+
+    open func getTrayIconSize() -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTrayIconSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &SystemTray.getTrayIconSize_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.TrayIcon[] java.awt.SystemTray.getTrayIcons()
+
+    private static var getTrayIcons_MethodID_7: jmethodID?
+
+    open func getTrayIcons() -> [TrayIcon]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTrayIcons", methodSig: "()[Ljava/awt/TrayIcon;", methodCache: &SystemTray.getTrayIcons_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [TrayIcon].self, from: __return )
+    }
+
+
     /// public void java.awt.SystemTray.remove(java.awt.TrayIcon)
 
-    private static var remove_MethodID_2: jmethodID?
+    private static var remove_MethodID_8: jmethodID?
 
     open func remove( trayIcon: TrayIcon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: trayIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/TrayIcon;)V", methodCache: &SystemTray.remove_MethodID_2, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/TrayIcon;)V", methodCache: &SystemTray.remove_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func remove( _ _trayIcon: TrayIcon? ) {
         remove( trayIcon: _trayIcon )
     }
 
-    /// static void java.awt.SystemTray.access$000(java.awt.SystemTray,java.lang.String,java.lang.Object,java.lang.Object)
-
-    /// public static boolean java.awt.SystemTray.isSupported()
-
-    private static var isSupported_MethodID_3: jmethodID?
-
-    open class func isSupported() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "java/awt/SystemTray", classCache: &SystemTrayJNIClass, methodName: "isSupported", methodSig: "()Z", methodCache: &isSupported_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public synchronized void java.awt.SystemTray.removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
 
-    private static var removePropertyChangeListener_MethodID_4: jmethodID?
+    private static var removePropertyChangeListener_MethodID_9: jmethodID?
 
-    open func removePropertyChangeListener( propertyName: String?, listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func removePropertyChangeListener( propertyName: String?, listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
         __args[1] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &SystemTray.removePropertyChangeListener_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &SystemTray.removePropertyChangeListener_MethodID_9, args: &__args, locals: &__locals )
     }
 
-    open func removePropertyChangeListener( _ _propertyName: String?, _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
+    open func removePropertyChangeListener( _ _propertyName: String?, _ _listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
         removePropertyChangeListener( propertyName: _propertyName, listener: _listener )
     }
-
-    /// private void java.awt.SystemTray.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
-
-    /// synchronized void java.awt.SystemTray.addNotify()
-
-    /// public synchronized java.beans.PropertyChangeListener[] java.awt.SystemTray.getPropertyChangeListeners(java.lang.String)
-
-    private static var getPropertyChangeListeners_MethodID_5: jmethodID?
-
-    open func getPropertyChangeListeners( propertyName: String? ) -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "(Ljava/lang/String;)[Ljava/beans/PropertyChangeListener;", methodCache: &SystemTray.getPropertyChangeListeners_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
-    }
-
-    open func getPropertyChangeListeners( _ _propertyName: String? ) -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        return getPropertyChangeListeners( propertyName: _propertyName )
-    }
-
-    /// public synchronized void java.awt.SystemTray.addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
-
-    private static var addPropertyChangeListener_MethodID_6: jmethodID?
-
-    open func addPropertyChangeListener( propertyName: String?, listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &SystemTray.addPropertyChangeListener_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func addPropertyChangeListener( _ _propertyName: String?, _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        addPropertyChangeListener( propertyName: _propertyName, listener: _listener )
-    }
-
-    /// public static java.awt.SystemTray java.awt.SystemTray.getSystemTray()
-
-    private static var getSystemTray_MethodID_7: jmethodID?
-
-    open class func getSystemTray() -> SystemTray! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/SystemTray", classCache: &SystemTrayJNIClass, methodName: "getSystemTray", methodSig: "()Ljava/awt/SystemTray;", methodCache: &getSystemTray_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SystemTray( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.TrayIcon[] java.awt.SystemTray.getTrayIcons()
-
-    private static var getTrayIcons_MethodID_8: jmethodID?
-
-    open func getTrayIcons() -> [TrayIcon]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTrayIcons", methodSig: "()[Ljava/awt/TrayIcon;", methodCache: &SystemTray.getTrayIcons_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [TrayIcon](), from: __return )
-    }
-
-
-    /// public java.awt.Dimension java.awt.SystemTray.getTrayIconSize()
-
-    private static var getTrayIconSize_MethodID_9: jmethodID?
-
-    open func getTrayIconSize() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTrayIconSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &SystemTray.getTrayIconSize_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// private synchronized java.beans.PropertyChangeSupport java.awt.SystemTray.getCurrentChangeSupport()
-
-    /// static void java.awt.SystemTray.checkSystemTrayAllowed()
-
-    /// private static void java.awt.SystemTray.initializeSystemTrayIfNeeded()
 
 }
 

@@ -23,11 +23,11 @@ open class KeyEventDispatcherForward: JNIObjectForward, KeyEventDispatcher {
     private static var dispatchKeyEvent_MethodID_2: jmethodID?
 
     open func dispatchKeyEvent( e: KeyEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "dispatchKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)Z", methodCache: &KeyEventDispatcherForward.dispatchKeyEvent_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func dispatchKeyEvent( _ _e: KeyEvent? ) -> Bool {
@@ -35,5 +35,4 @@ open class KeyEventDispatcherForward: JNIObjectForward, KeyEventDispatcher {
     }
 
 }
-
 

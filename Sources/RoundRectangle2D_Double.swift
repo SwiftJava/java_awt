@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.geom.RoundRectangle2D$Double ///
 
-open class RoundRectangle2D_Double: RoundRectangle2D, /* java.io.Serializable */ UnclassedProtocol {
+open class RoundRectangle2D_Double: RoundRectangle2D, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -20,19 +20,84 @@ open class RoundRectangle2D_Double: RoundRectangle2D, /* java.io.Serializable */
 
     private static var RoundRectangle2D_DoubleJNIClass: jclass?
 
+    /// private static final long java.awt.geom.RoundRectangle2D$Double.serialVersionUID
+
+    /// public double java.awt.geom.RoundRectangle2D$Double.archeight
+
+    private static var archeight_FieldID: jfieldID?
+
+    open var archeight: Double {
+        get {
+            let __value = JNIField.GetDoubleField( fieldName: "archeight", fieldType: "D", fieldCache: &RoundRectangle2D_Double.archeight_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( d: newValue )
+            JNIField.SetDoubleField( fieldName: "archeight", fieldType: "D", fieldCache: &RoundRectangle2D_Double.archeight_FieldID, object: javaObject, value: __value.d, locals: &__locals )
+        }
+    }
+
+    /// public double java.awt.geom.RoundRectangle2D$Double.arcwidth
+
+    private static var arcwidth_FieldID: jfieldID?
+
+    open var arcwidth: Double {
+        get {
+            let __value = JNIField.GetDoubleField( fieldName: "arcwidth", fieldType: "D", fieldCache: &RoundRectangle2D_Double.arcwidth_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( d: newValue )
+            JNIField.SetDoubleField( fieldName: "arcwidth", fieldType: "D", fieldCache: &RoundRectangle2D_Double.arcwidth_FieldID, object: javaObject, value: __value.d, locals: &__locals )
+        }
+    }
+
+    /// public double java.awt.geom.RoundRectangle2D$Double.height
+
+    private static var height_FieldID: jfieldID?
+
+    open var height: Double {
+        get {
+            let __value = JNIField.GetDoubleField( fieldName: "height", fieldType: "D", fieldCache: &RoundRectangle2D_Double.height_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( d: newValue )
+            JNIField.SetDoubleField( fieldName: "height", fieldType: "D", fieldCache: &RoundRectangle2D_Double.height_FieldID, object: javaObject, value: __value.d, locals: &__locals )
+        }
+    }
+
+    /// public double java.awt.geom.RoundRectangle2D$Double.width
+
+    private static var width_FieldID: jfieldID?
+
+    open var width: Double {
+        get {
+            let __value = JNIField.GetDoubleField( fieldName: "width", fieldType: "D", fieldCache: &RoundRectangle2D_Double.width_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( d: newValue )
+            JNIField.SetDoubleField( fieldName: "width", fieldType: "D", fieldCache: &RoundRectangle2D_Double.width_FieldID, object: javaObject, value: __value.d, locals: &__locals )
+        }
+    }
+
     /// public double java.awt.geom.RoundRectangle2D$Double.x
 
     private static var x_FieldID: jfieldID?
 
     open var x: Double {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "x", fieldType: "D", fieldCache: &RoundRectangle2D_Double.x_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
+            let __value = JNIField.GetDoubleField( fieldName: "x", fieldType: "D", fieldCache: &RoundRectangle2D_Double.x_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( d: newValue )
             JNIField.SetDoubleField( fieldName: "x", fieldType: "D", fieldCache: &RoundRectangle2D_Double.x_FieldID, object: javaObject, value: __value.d, locals: &__locals )
         }
     }
@@ -43,94 +108,23 @@ open class RoundRectangle2D_Double: RoundRectangle2D, /* java.io.Serializable */
 
     open var y: Double {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "y", fieldType: "D", fieldCache: &RoundRectangle2D_Double.y_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
+            let __value = JNIField.GetDoubleField( fieldName: "y", fieldType: "D", fieldCache: &RoundRectangle2D_Double.y_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( d: newValue )
             JNIField.SetDoubleField( fieldName: "y", fieldType: "D", fieldCache: &RoundRectangle2D_Double.y_FieldID, object: javaObject, value: __value.d, locals: &__locals )
         }
     }
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.width
-
-    private static var width_FieldID: jfieldID?
-
-    open var width: Double {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "width", fieldType: "D", fieldCache: &RoundRectangle2D_Double.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetDoubleField( fieldName: "width", fieldType: "D", fieldCache: &RoundRectangle2D_Double.width_FieldID, object: javaObject, value: __value.d, locals: &__locals )
-        }
-    }
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.height
-
-    private static var height_FieldID: jfieldID?
-
-    open var height: Double {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "height", fieldType: "D", fieldCache: &RoundRectangle2D_Double.height_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetDoubleField( fieldName: "height", fieldType: "D", fieldCache: &RoundRectangle2D_Double.height_FieldID, object: javaObject, value: __value.d, locals: &__locals )
-        }
-    }
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.arcwidth
-
-    private static var arcwidth_FieldID: jfieldID?
-
-    open var arcwidth: Double {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "arcwidth", fieldType: "D", fieldCache: &RoundRectangle2D_Double.arcwidth_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetDoubleField( fieldName: "arcwidth", fieldType: "D", fieldCache: &RoundRectangle2D_Double.arcwidth_FieldID, object: javaObject, value: __value.d, locals: &__locals )
-        }
-    }
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.archeight
-
-    private static var archeight_FieldID: jfieldID?
-
-    open var archeight: Double {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "archeight", fieldType: "D", fieldCache: &RoundRectangle2D_Double.archeight_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetDoubleField( fieldName: "archeight", fieldType: "D", fieldCache: &RoundRectangle2D_Double.archeight_FieldID, object: javaObject, value: __value.d, locals: &__locals )
-        }
-    }
-
-    /// private static final long java.awt.geom.RoundRectangle2D$Double.serialVersionUID
 
     /// public java.awt.geom.RoundRectangle2D$Double()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/RoundRectangle2D$Double", classCache: &RoundRectangle2D_Double.RoundRectangle2D_DoubleJNIClass, methodSig: "()V", methodCache: &RoundRectangle2D_Double.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -141,14 +135,14 @@ open class RoundRectangle2D_Double: RoundRectangle2D, /* java.io.Serializable */
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( x: Double, y: Double, w: Double, h: Double, arcw: Double, arch: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arcw, locals: &__locals )
-        __args[5] = JNIType.toJava( value: arch, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: w )
+        __args[3] = jvalue( d: h )
+        __args[4] = jvalue( d: arcw )
+        __args[5] = jvalue( d: arch )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/RoundRectangle2D$Double", classCache: &RoundRectangle2D_Double.RoundRectangle2D_DoubleJNIClass, methodSig: "(DDDDDD)V", methodCache: &RoundRectangle2D_Double.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -158,43 +152,61 @@ open class RoundRectangle2D_Double: RoundRectangle2D, /* java.io.Serializable */
         self.init( x: _x, y: _y, w: _w, h: _h, arcw: _arcw, arch: _arch )
     }
 
-    /// public boolean java.awt.geom.RoundRectangle2D$Double.isEmpty()
+    /// public double java.awt.geom.RoundRectangle2D$Double.getArcHeight()
 
-    /// public java.awt.geom.Rectangle2D java.awt.geom.RoundRectangle2D$Double.getBounds2D()
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.getX()
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.getY()
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.getWidth()
-
-    /// public double java.awt.geom.RoundRectangle2D$Double.getHeight()
+    // Skipping method: false true false false false 
 
     /// public double java.awt.geom.RoundRectangle2D$Double.getArcWidth()
 
-    /// public double java.awt.geom.RoundRectangle2D$Double.getArcHeight()
+    // Skipping method: false true false false false 
 
-    /// public void java.awt.geom.RoundRectangle2D$Double.setRoundRect(java.awt.geom.RoundRectangle2D)
+    /// public java.awt.geom.Rectangle2D java.awt.geom.RoundRectangle2D$Double.getBounds2D()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.RoundRectangle2D$Double.getHeight()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.RoundRectangle2D$Double.getWidth()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.RoundRectangle2D$Double.getX()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.RoundRectangle2D$Double.getY()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean java.awt.geom.RoundRectangle2D$Double.isEmpty()
+
+    // Skipping method: false true false false false 
 
     /// public void java.awt.geom.RoundRectangle2D$Double.setRoundRect(double,double,double,double,double,double)
 
     private static var setRoundRect_MethodID_3: jmethodID?
 
     open func setRoundRect( x: Double, y: Double, w: Double, h: Double, arcw: Double, arch: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arcw, locals: &__locals )
-        __args[5] = JNIType.toJava( value: arch, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: w )
+        __args[3] = jvalue( d: h )
+        __args[4] = jvalue( d: arcw )
+        __args[5] = jvalue( d: arch )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRoundRect", methodSig: "(DDDDDD)V", methodCache: &RoundRectangle2D_Double.setRoundRect_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func setRoundRect( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double, _ _arcw: Double, _ _arch: Double ) {
         setRoundRect( x: _x, y: _y, w: _w, h: _h, arcw: _arcw, arch: _arch )
     }
+
+    /// public void java.awt.geom.RoundRectangle2D$Double.setRoundRect(java.awt.geom.RoundRectangle2D)
+
+    // Skipping method: false true false false false 
 
 }
 

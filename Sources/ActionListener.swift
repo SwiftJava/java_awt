@@ -24,8 +24,8 @@ open class ActionListenerForward: java_util.EventListenerForward, ActionListener
     private static var actionPerformed_MethodID_2: jmethodID?
 
     open func actionPerformed( e: ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &ActionListenerForward.actionPerformed_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class ActionListenerForward: java_util.EventListenerForward, ActionListener
 
 }
 
-
 private typealias ActionListener_actionPerformed_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func ActionListener_actionPerformed_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     ActionListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).actionPerformed( e: e != nil ? ActionEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class ActionListenerLocal_: JNILocalProxy<ActionListener, Any> {
@@ -89,8 +86,5 @@ open class ActionListenerBase: ActionListener {
     open func actionPerformed( e: ActionEvent? ) /**/ {
     }
 
-    open func actionPerformed( _ _e: ActionEvent? ) /**/ {
-        actionPerformed( e: _e )
-    }
 
 }

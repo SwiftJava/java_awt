@@ -7,13 +7,13 @@ import java_swift
 
 public protocol SecondaryLoop: JavaProtocol {
 
-    /// public abstract boolean java.awt.SecondaryLoop.exit()
-
-    func exit() -> Bool
-
     /// public abstract boolean java.awt.SecondaryLoop.enter()
 
     func enter() -> Bool
+
+    /// public abstract boolean java.awt.SecondaryLoop.exit()
+
+    func exit() -> Bool
 
 }
 
@@ -22,30 +22,29 @@ open class SecondaryLoopForward: JNIObjectForward, SecondaryLoop {
 
     private static var SecondaryLoopJNIClass: jclass?
 
-    /// public abstract boolean java.awt.SecondaryLoop.exit()
+    /// public abstract boolean java.awt.SecondaryLoop.enter()
 
-    private static var exit_MethodID_3: jmethodID?
+    private static var enter_MethodID_3: jmethodID?
 
-    open func exit() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func enter() -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "exit", methodSig: "()Z", methodCache: &SecondaryLoopForward.exit_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "enter", methodSig: "()Z", methodCache: &SecondaryLoopForward.enter_MethodID_3, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// public abstract boolean java.awt.SecondaryLoop.enter()
+    /// public abstract boolean java.awt.SecondaryLoop.exit()
 
-    private static var enter_MethodID_4: jmethodID?
+    private static var exit_MethodID_4: jmethodID?
 
-    open func enter() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func exit() -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "enter", methodSig: "()Z", methodCache: &SecondaryLoopForward.enter_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "exit", methodSig: "()Z", methodCache: &SecondaryLoopForward.exit_MethodID_4, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
 }
-
 

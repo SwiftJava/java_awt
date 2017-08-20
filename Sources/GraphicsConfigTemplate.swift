@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.GraphicsConfigTemplate ///
 
-open class GraphicsConfigTemplate: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class GraphicsConfigTemplate: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,7 +16,16 @@ open class GraphicsConfigTemplate: java_swift.JavaObject, /* java.io.Serializabl
 
     private static var GraphicsConfigTemplateJNIClass: jclass?
 
-    /// private static final long java.awt.GraphicsConfigTemplate.serialVersionUID
+    /// public static final int java.awt.GraphicsConfigTemplate.PREFERRED
+
+    private static var PREFERRED_FieldID: jfieldID?
+
+    open static var PREFERRED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PREFERRED", fieldType: "I", fieldCache: &PREFERRED_FieldID, className: "java/awt/GraphicsConfigTemplate", classCache: &GraphicsConfigTemplateJNIClass )
+            return Int(__value)
+        }
+    }
 
     /// public static final int java.awt.GraphicsConfigTemplate.REQUIRED
 
@@ -25,18 +34,7 @@ open class GraphicsConfigTemplate: java_swift.JavaObject, /* java.io.Serializabl
     open static var REQUIRED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "REQUIRED", fieldType: "I", fieldCache: &REQUIRED_FieldID, className: "java/awt/GraphicsConfigTemplate", classCache: &GraphicsConfigTemplateJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.GraphicsConfigTemplate.PREFERRED
-
-    private static var PREFERRED_FieldID: jfieldID?
-
-    open static var PREFERRED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PREFERRED", fieldType: "I", fieldCache: &PREFERRED_FieldID, className: "java/awt/GraphicsConfigTemplate", classCache: &GraphicsConfigTemplateJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -47,17 +45,19 @@ open class GraphicsConfigTemplate: java_swift.JavaObject, /* java.io.Serializabl
     open static var UNNECESSARY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UNNECESSARY", fieldType: "I", fieldCache: &UNNECESSARY_FieldID, className: "java/awt/GraphicsConfigTemplate", classCache: &GraphicsConfigTemplateJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
+
+    /// private static final long java.awt.GraphicsConfigTemplate.serialVersionUID
 
     /// public java.awt.GraphicsConfigTemplate()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/GraphicsConfigTemplate", classCache: &GraphicsConfigTemplate.GraphicsConfigTemplateJNIClass, methodSig: "()V", methodCache: &GraphicsConfigTemplate.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -68,8 +68,8 @@ open class GraphicsConfigTemplate: java_swift.JavaObject, /* java.io.Serializabl
     private static var getBestConfiguration_MethodID_2: jmethodID?
 
     open func getBestConfiguration( gc: [GraphicsConfiguration]? ) -> GraphicsConfiguration! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: gc, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBestConfiguration", methodSig: "([Ljava/awt/GraphicsConfiguration;)Ljava/awt/GraphicsConfiguration;", methodCache: &GraphicsConfigTemplate.getBestConfiguration_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -85,11 +85,11 @@ open class GraphicsConfigTemplate: java_swift.JavaObject, /* java.io.Serializabl
     private static var isGraphicsConfigSupported_MethodID_3: jmethodID?
 
     open func isGraphicsConfigSupported( gc: GraphicsConfiguration? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: gc, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isGraphicsConfigSupported", methodSig: "(Ljava/awt/GraphicsConfiguration;)Z", methodCache: &GraphicsConfigTemplate.isGraphicsConfigSupported_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isGraphicsConfigSupported( _ _gc: GraphicsConfiguration? ) -> Bool {

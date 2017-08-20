@@ -16,17 +16,6 @@ open class ScrollPane: Container {
 
     private static var ScrollPaneJNIClass: jclass?
 
-    /// public static final int java.awt.ScrollPane.SCROLLBARS_AS_NEEDED
-
-    private static var SCROLLBARS_AS_NEEDED_FieldID: jfieldID?
-
-    open static var SCROLLBARS_AS_NEEDED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBARS_AS_NEEDED", fieldType: "I", fieldCache: &SCROLLBARS_AS_NEEDED_FieldID, className: "java/awt/ScrollPane", classCache: &ScrollPaneJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.ScrollPane.SCROLLBARS_ALWAYS
 
     private static var SCROLLBARS_ALWAYS_FieldID: jfieldID?
@@ -34,7 +23,18 @@ open class ScrollPane: Container {
     open static var SCROLLBARS_ALWAYS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBARS_ALWAYS", fieldType: "I", fieldCache: &SCROLLBARS_ALWAYS_FieldID, className: "java/awt/ScrollPane", classCache: &ScrollPaneJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.ScrollPane.SCROLLBARS_AS_NEEDED
+
+    private static var SCROLLBARS_AS_NEEDED_FieldID: jfieldID?
+
+    open static var SCROLLBARS_AS_NEEDED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBARS_AS_NEEDED", fieldType: "I", fieldCache: &SCROLLBARS_AS_NEEDED_FieldID, className: "java/awt/ScrollPane", classCache: &ScrollPaneJNIClass )
+            return Int(__value)
         }
     }
 
@@ -45,285 +45,245 @@ open class ScrollPane: Container {
     open static var SCROLLBARS_NEVER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBARS_NEVER", fieldType: "I", fieldCache: &SCROLLBARS_NEVER_FieldID, className: "java/awt/ScrollPane", classCache: &ScrollPaneJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
+
+    /// private static final java.lang.String java.awt.ScrollPane.base
+
+    /// private static final boolean java.awt.ScrollPane.defaultWheelScroll
+
+    /// private static int java.awt.ScrollPane.nameCounter
+
+    /// private static final long java.awt.ScrollPane.serialVersionUID
+
+    /// private java.awt.ScrollPaneAdjustable java.awt.ScrollPane.hAdjustable
 
     /// private int java.awt.ScrollPane.scrollbarDisplayPolicy
 
     /// private java.awt.ScrollPaneAdjustable java.awt.ScrollPane.vAdjustable
 
-    /// private java.awt.ScrollPaneAdjustable java.awt.ScrollPane.hAdjustable
-
-    /// private static final java.lang.String java.awt.ScrollPane.base
-
-    /// private static int java.awt.ScrollPane.nameCounter
-
-    /// private static final boolean java.awt.ScrollPane.defaultWheelScroll
-
     /// private boolean java.awt.ScrollPane.wheelScrollingEnabled
-
-    /// private static final long java.awt.ScrollPane.serialVersionUID
-
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
-
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
 
     /// private static final java.awt.Component[] java.awt.Container.EMPTY_ARRAY
 
-    /// private java.util.List java.awt.Container.component
-
-    /// java.awt.LayoutManager java.awt.Container.layoutMgr
-
-    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
-
-    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
-
-    /// private boolean java.awt.Container.focusCycleRoot
-
-    /// private boolean java.awt.Container.focusTraversalPolicyProvider
-
-    /// private transient java.util.Set java.awt.Container.printingThreads
-
-    /// private transient boolean java.awt.Container.printing
-
-    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
-
-    /// transient int java.awt.Container.listeningChildren
-
-    /// transient int java.awt.Container.listeningBoundsChildren
-
-    /// transient int java.awt.Container.descendantsCount
-
-    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
-
-    /// private static final long java.awt.Container.serialVersionUID
-
     /// static final boolean java.awt.Container.INCLUDE_SELF
+
+    // Skipping field: true false false false false false 
 
     /// static final boolean java.awt.Container.SEARCH_HEAVYWEIGHTS
 
-    /// private transient int java.awt.Container.numOfHWComponents
+    // Skipping field: true false false false false false 
 
-    /// private transient int java.awt.Container.numOfLWComponents
+    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+
+    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
 
     /// private static final sun.util.logging.PlatformLogger java.awt.Container.mixingLog
 
     /// private static final java.io.ObjectStreamField[] java.awt.Container.serialPersistentFields
 
-    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+    /// private static final long java.awt.Container.serialVersionUID
 
-    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+    /// private java.util.List java.awt.Container.component
 
-    /// transient java.awt.Component java.awt.Container.modalComp
+    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
 
-    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
+    // Skipping field: true false false false false false 
 
     /// private int java.awt.Container.containerSerializedDataVersion
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+    /// transient int java.awt.Container.descendantsCount
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+    /// private boolean java.awt.Container.focusCycleRoot
 
-    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
 
-    /// transient java.awt.Container java.awt.Component.parent
+    /// private boolean java.awt.Container.focusTraversalPolicyProvider
 
-    /// transient sun.awt.AppContext java.awt.Component.appContext
+    /// java.awt.LayoutManager java.awt.Container.layoutMgr
 
-    /// int java.awt.Component.x
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.y
+    /// transient int java.awt.Container.listeningBoundsChildren
 
-    /// int java.awt.Component.width
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.height
+    /// transient int java.awt.Container.listeningChildren
 
-    /// java.awt.Color java.awt.Component.foreground
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Color java.awt.Component.background
+    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
 
-    /// volatile java.awt.Font java.awt.Component.font
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Font java.awt.Component.peerFont
+    /// transient java.awt.Component java.awt.Container.modalComp
 
-    /// java.awt.Cursor java.awt.Component.cursor
+    // Skipping field: true false false false false false 
 
-    /// java.util.Locale java.awt.Component.locale
+    /// private transient int java.awt.Container.numOfHWComponents
 
-    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+    /// private transient int java.awt.Container.numOfLWComponents
 
-    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
 
-    /// boolean java.awt.Component.ignoreRepaint
+    // Skipping field: true false false false false false 
 
-    /// boolean java.awt.Component.visible
+    /// private transient boolean java.awt.Container.printing
 
-    /// boolean java.awt.Component.enabled
+    /// private transient java.util.Set java.awt.Container.printingThreads
 
-    /// private volatile boolean java.awt.Component.valid
+    /// static final boolean java.awt.Component.$assertionsDisabled
 
-    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+    // Skipping field: true false false false false false 
 
-    /// java.util.Vector java.awt.Component.popups
+    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
 
-    /// private java.lang.String java.awt.Component.name
+    // Skipping field: false true false false false false 
 
-    /// private boolean java.awt.Component.nameExplicitlySet
+    /// public static final float java.awt.Component.CENTER_ALIGNMENT
 
-    /// private boolean java.awt.Component.focusable
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
+    // Skipping field: false true false false false false 
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
 
-    /// private int java.awt.Component.isFocusTraversableOverridden
-
-    /// java.util.Set[] java.awt.Component.focusTraversalKeys
-
-    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
-
-    /// private boolean java.awt.Component.focusTraversalKeysEnabled
-
-    /// static final java.lang.Object java.awt.Component.LOCK
-
-    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
-
-    /// java.awt.Dimension java.awt.Component.minSize
-
-    /// boolean java.awt.Component.minSizeSet
-
-    /// java.awt.Dimension java.awt.Component.prefSize
-
-    /// boolean java.awt.Component.prefSizeSet
-
-    /// java.awt.Dimension java.awt.Component.maxSize
-
-    /// boolean java.awt.Component.maxSizeSet
-
-    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
-
-    /// boolean java.awt.Component.newEventsOnly
-
-    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
-
-    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
-
-    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
-
-    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
-
-    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
-
-    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
-
-    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
-
-    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
-
-    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
-
-    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
-
-    /// static final java.lang.String java.awt.Component.actionListenerK
-
-    /// static final java.lang.String java.awt.Component.adjustmentListenerK
-
-    /// static final java.lang.String java.awt.Component.componentListenerK
-
-    /// static final java.lang.String java.awt.Component.containerListenerK
-
-    /// static final java.lang.String java.awt.Component.focusListenerK
-
-    /// static final java.lang.String java.awt.Component.itemListenerK
-
-    /// static final java.lang.String java.awt.Component.keyListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
-
-    /// static final java.lang.String java.awt.Component.textListenerK
-
-    /// static final java.lang.String java.awt.Component.ownedWindowK
-
-    /// static final java.lang.String java.awt.Component.windowListenerK
-
-    /// static final java.lang.String java.awt.Component.inputMethodListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
-
-    /// static final java.lang.String java.awt.Component.windowStateListenerK
-
-    /// static final java.lang.String java.awt.Component.windowFocusListenerK
-
-    /// long java.awt.Component.eventMask
-
-    /// static boolean java.awt.Component.isInc
-
-    /// static int java.awt.Component.incRate
-
-    /// public static final float java.awt.Component.TOP_ALIGNMENT
-
-    /// public static final float java.awt.Component.CENTER_ALIGNMENT
-
-    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
 
     /// public static final float java.awt.Component.LEFT_ALIGNMENT
 
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.Object java.awt.Component.LOCK
+
+    // Skipping field: true false false false false false 
+
     /// public static final float java.awt.Component.RIGHT_ALIGNMENT
 
-    /// private static final long java.awt.Component.serialVersionUID
+    // Skipping field: false true false false false false 
 
-    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+    /// public static final float java.awt.Component.TOP_ALIGNMENT
 
-    /// private transient java.lang.Object java.awt.Component.objectLock
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Component.isPacked
+    /// static final java.lang.String java.awt.Component.actionListenerK
 
-    /// private int java.awt.Component.boundsOp
+    // Skipping field: true false false false false false 
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+    /// static final java.lang.String java.awt.Component.adjustmentListenerK
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
-
-    /// private transient boolean java.awt.Component.isAddNotifyComplete
-
-    /// transient boolean java.awt.Component.backgroundEraseDisabled
-
-    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
-
-    /// private transient boolean java.awt.Component.coalescingEnabled
-
-    /// private static final java.util.Map java.awt.Component.coalesceMap
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Class[] java.awt.Component.coalesceEventsParams
 
+    /// private static final java.util.Map java.awt.Component.coalesceMap
+
+    /// static final java.lang.String java.awt.Component.componentListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.containerListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+
+    /// static final java.lang.String java.awt.Component.focusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+
+    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
+
+    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.hierarchyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static int java.awt.Component.incRate
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.inputMethodListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static boolean java.awt.Component.isInc
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.keyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+
+    /// static final java.lang.String java.awt.Component.mouseListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.ownedWindowK
+
+    // Skipping field: true false false false false false 
+
     /// private static sun.awt.RequestFocusController java.awt.Component.requestFocusController
 
-    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
+    /// private static final long java.awt.Component.serialVersionUID
 
-    /// private int java.awt.Component.componentSerializedDataVersion
+    /// static final java.lang.String java.awt.Component.textListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowFocusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowStateListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
 
     /// protected javax.accessibility.AccessibleContext java.awt.Component.accessibleContext
 
     private static var accessibleContext_FieldID: jfieldID?
 
-    override open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+    override open var accessibleContext: /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &ScrollPane.accessibleContext_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &ScrollPane.accessibleContext_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -332,34 +292,261 @@ open class ScrollPane: Container {
         }
     }
 
-    /// static final boolean java.awt.Component.$assertionsDisabled
+    /// transient sun.awt.AppContext java.awt.Component.appContext
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
+    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
 
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+    /// java.awt.Color java.awt.Component.background
 
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+    /// transient boolean java.awt.Component.backgroundEraseDisabled
 
-    /// public static final int java.awt.image.ImageObserver.ALLBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.ERROR
+    /// private int java.awt.Component.boundsOp
+
+    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+
+    // Skipping field: true false false false false false 
+
+    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+
+    /// private transient boolean java.awt.Component.coalescingEnabled
+
+    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.componentSerializedDataVersion
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+
+    /// java.awt.Cursor java.awt.Component.cursor
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.Component.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Set[] java.awt.Component.focusTraversalKeys
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Component.focusTraversalKeysEnabled
+
+    /// private boolean java.awt.Component.focusable
+
+    /// volatile java.awt.Font java.awt.Component.font
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color java.awt.Component.foreground
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+
+    /// int java.awt.Component.height
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.ignoreRepaint
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Component.isAddNotifyComplete
+
+    /// private int java.awt.Component.isFocusTraversableOverridden
+
+    /// boolean java.awt.Component.isPacked
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Locale java.awt.Component.locale
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.maxSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.maxSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.minSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.minSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
+
+    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.String java.awt.Component.name
+
+    /// private boolean java.awt.Component.nameExplicitlySet
+
+    /// boolean java.awt.Component.newEventsOnly
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Component.objectLock
+
+    /// transient java.awt.Container java.awt.Component.parent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font java.awt.Component.peerFont
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Component.popups
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.prefSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.prefSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Component.valid
+
+    /// boolean java.awt.Component.visible
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.width
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.x
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.y
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.image.ImageObserver.ABORT
 
-    /// public java.awt.ScrollPane(int) throws java.awt.HeadlessException
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ALLBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ERROR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    // Skipping field: false true false false false false 
+
+    /// public java.awt.ScrollPane() throws java.awt.HeadlessException
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( scrollbarDisplayPolicy: Int ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: scrollbarDisplayPolicy, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/ScrollPane", classCache: &ScrollPane.ScrollPaneJNIClass, methodSig: "(I)V", methodCache: &ScrollPane.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "java/awt/ScrollPane", classCache: &ScrollPane.ScrollPaneJNIClass, methodSig: "()V", methodCache: &ScrollPane.new_MethodID_1, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    /// public java.awt.ScrollPane(int) throws java.awt.HeadlessException
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( scrollbarDisplayPolicy: Int ) throws {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(scrollbarDisplayPolicy) )
+        let __object = JNIMethod.NewObject( className: "java/awt/ScrollPane", classCache: &ScrollPane.ScrollPaneJNIClass, methodSig: "(I)V", methodCache: &ScrollPane.new_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw HeadlessException( javaObject: throwable )
         }
         self.init( javaObject: __object )
@@ -370,279 +557,284 @@ open class ScrollPane: Container {
         try self.init( scrollbarDisplayPolicy: _scrollbarDisplayPolicy )
     }
 
-    /// public java.awt.ScrollPane() throws java.awt.HeadlessException
-
-    private static var new_MethodID_2: jmethodID?
-
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "java/awt/ScrollPane", classCache: &ScrollPane.ScrollPaneJNIClass, methodSig: "()V", methodCache: &ScrollPane.new_MethodID_2, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    /// private void java.awt.ScrollPane.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
-
-    /// private void java.awt.ScrollPane.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
-
-    /// public java.lang.String java.awt.ScrollPane.paramString()
-
-    private static var paramString_MethodID_3: jmethodID?
-
-    override open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &ScrollPane.paramString_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
     /// private static native void java.awt.ScrollPane.initIDs()
-
-    /// java.lang.String java.awt.ScrollPane.constructComponentName()
-
-    /// void java.awt.ScrollPane.autoProcessMouseWheel(java.awt.event.MouseWheelEvent)
-
-    /// protected boolean java.awt.ScrollPane.eventTypeEnabled(int)
-
-    private static var eventTypeEnabled_MethodID_4: jmethodID?
-
-    open func eventTypeEnabled( type: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "eventTypeEnabled", methodSig: "(I)Z", methodCache: &ScrollPane.eventTypeEnabled_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func eventTypeEnabled( _ _type: Int ) -> Bool {
-        return eventTypeEnabled( type: _type )
-    }
-
-    /// protected void java.awt.ScrollPane.processMouseWheelEvent(java.awt.event.MouseWheelEvent)
-
-    private static var processMouseWheelEvent_MethodID_5: jmethodID?
-
-    open func processMouseWheelEvent( e: MouseWheelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseWheelEvent", methodSig: "(Ljava/awt/event/MouseWheelEvent;)V", methodCache: &ScrollPane.processMouseWheelEvent_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func processMouseWheelEvent( _ _e: MouseWheelEvent? ) {
-        processMouseWheelEvent( e: _e )
-    }
-
-    /// public javax.accessibility.AccessibleContext java.awt.ScrollPane.getAccessibleContext()
-
-    /// public void java.awt.ScrollPane.addNotify()
 
     /// protected final void java.awt.ScrollPane.addImpl(java.awt.Component,java.lang.Object,int)
 
-    private static var addImpl_MethodID_6: jmethodID?
+    private static var addImpl_MethodID_3: jmethodID?
 
     open func addImpl( comp: Component?, constraints: java_swift.JavaObject?, index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &ScrollPane.addImpl_MethodID_6, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(index) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &ScrollPane.addImpl_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func addImpl( _ _comp: Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
         addImpl( comp: _comp, constraints: _constraints, index: _index )
     }
 
-    /// public final void java.awt.ScrollPane.setLayout(java.awt.LayoutManager)
+    /// public void java.awt.ScrollPane.addNotify()
 
-    private static var setLayout_MethodID_7: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func setLayout( mgr: LayoutManager? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mgr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &ScrollPane.setLayout_MethodID_7, args: &__args, locals: &__locals )
-    }
+    /// private void java.awt.ScrollPane.addToPanel(java.awt.Component,java.lang.Object,int)
 
-    override open func setLayout( _ _mgr: LayoutManager? ) {
-        setLayout( mgr: _mgr )
-    }
+    /// void java.awt.ScrollPane.autoProcessMouseWheel(java.awt.event.MouseWheelEvent)
+
+    // Skipping method: true false false false false 
+
+    /// java.awt.Dimension java.awt.ScrollPane.calculateChildSize()
+
+    // Skipping method: true false false false false 
+
+    /// java.lang.String java.awt.ScrollPane.constructComponentName()
+
+    // Skipping method: true false false false false 
 
     /// public void java.awt.ScrollPane.doLayout()
 
+    // Skipping method: false true false false false 
+
+    /// protected boolean java.awt.ScrollPane.eventTypeEnabled(int)
+
+    private static var eventTypeEnabled_MethodID_4: jmethodID?
+
+    open func eventTypeEnabled( type: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(type) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "eventTypeEnabled", methodSig: "(I)Z", methodCache: &ScrollPane.eventTypeEnabled_MethodID_4, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func eventTypeEnabled( _ _type: Int ) -> Bool {
+        return eventTypeEnabled( type: _type )
+    }
+
+    /// public javax.accessibility.AccessibleContext java.awt.ScrollPane.getAccessibleContext()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Adjustable java.awt.ScrollPane.getHAdjustable()
+
+    private static var getHAdjustable_MethodID_5: jmethodID?
+
+    open func getHAdjustable() -> Adjustable! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHAdjustable", methodSig: "()Ljava/awt/Adjustable;", methodCache: &ScrollPane.getHAdjustable_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AdjustableForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int java.awt.ScrollPane.getHScrollbarHeight()
+
+    private static var getHScrollbarHeight_MethodID_6: jmethodID?
+
+    open func getHScrollbarHeight() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHScrollbarHeight", methodSig: "()I", methodCache: &ScrollPane.getHScrollbarHeight_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.awt.Point java.awt.ScrollPane.getScrollPosition()
+
+    private static var getScrollPosition_MethodID_7: jmethodID?
+
+    open func getScrollPosition() -> Point! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScrollPosition", methodSig: "()Ljava/awt/Point;", methodCache: &ScrollPane.getScrollPosition_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point( javaObject: __return ) : nil
+    }
+
+
+    /// public int java.awt.ScrollPane.getScrollbarDisplayPolicy()
+
+    private static var getScrollbarDisplayPolicy_MethodID_8: jmethodID?
+
+    open func getScrollbarDisplayPolicy() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollbarDisplayPolicy", methodSig: "()I", methodCache: &ScrollPane.getScrollbarDisplayPolicy_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.awt.Adjustable java.awt.ScrollPane.getVAdjustable()
+
+    private static var getVAdjustable_MethodID_9: jmethodID?
+
+    open func getVAdjustable() -> Adjustable! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVAdjustable", methodSig: "()Ljava/awt/Adjustable;", methodCache: &ScrollPane.getVAdjustable_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AdjustableForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int java.awt.ScrollPane.getVScrollbarWidth()
+
+    private static var getVScrollbarWidth_MethodID_10: jmethodID?
+
+    open func getVScrollbarWidth() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVScrollbarWidth", methodSig: "()I", methodCache: &ScrollPane.getVScrollbarWidth_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.awt.Dimension java.awt.ScrollPane.getViewportSize()
+
+    private static var getViewportSize_MethodID_11: jmethodID?
+
+    open func getViewportSize() -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewportSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &ScrollPane.getViewportSize_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public boolean java.awt.ScrollPane.isWheelScrollingEnabled()
+
+    private static var isWheelScrollingEnabled_MethodID_12: jmethodID?
+
+    open func isWheelScrollingEnabled() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isWheelScrollingEnabled", methodSig: "()Z", methodCache: &ScrollPane.isWheelScrollingEnabled_MethodID_12, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
     /// public void java.awt.ScrollPane.layout()
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String java.awt.ScrollPane.paramString()
+
+    private static var paramString_MethodID_13: jmethodID?
+
+    override open func paramString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &ScrollPane.paramString_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
     /// public void java.awt.ScrollPane.printComponents(java.awt.Graphics)
 
-    private static var printComponents_MethodID_8: jmethodID?
+    private static var printComponents_MethodID_14: jmethodID?
 
     open func printComponents( g: Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "printComponents", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &ScrollPane.printComponents_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "printComponents", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &ScrollPane.printComponents_MethodID_14, args: &__args, locals: &__locals )
     }
 
     override open func printComponents( _ _g: Graphics? ) {
         printComponents( g: _g )
     }
 
-    /// private void java.awt.ScrollPane.addToPanel(java.awt.Component,java.lang.Object,int)
+    /// protected void java.awt.ScrollPane.processMouseWheelEvent(java.awt.event.MouseWheelEvent)
 
-    /// public int java.awt.ScrollPane.getScrollbarDisplayPolicy()
+    private static var processMouseWheelEvent_MethodID_15: jmethodID?
 
-    private static var getScrollbarDisplayPolicy_MethodID_9: jmethodID?
-
-    open func getScrollbarDisplayPolicy() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func processMouseWheelEvent( e: MouseWheelEvent? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollbarDisplayPolicy", methodSig: "()I", methodCache: &ScrollPane.getScrollbarDisplayPolicy_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseWheelEvent", methodSig: "(Ljava/awt/event/MouseWheelEvent;)V", methodCache: &ScrollPane.processMouseWheelEvent_MethodID_15, args: &__args, locals: &__locals )
     }
 
-
-    /// public java.awt.Dimension java.awt.ScrollPane.getViewportSize()
-
-    private static var getViewportSize_MethodID_10: jmethodID?
-
-    open func getViewportSize() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewportSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &ScrollPane.getViewportSize_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
+    override open func processMouseWheelEvent( _ _e: MouseWheelEvent? ) {
+        processMouseWheelEvent( e: _e )
     }
 
+    /// private void java.awt.ScrollPane.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
 
-    /// public int java.awt.ScrollPane.getHScrollbarHeight()
+    /// public final void java.awt.ScrollPane.setLayout(java.awt.LayoutManager)
 
-    private static var getHScrollbarHeight_MethodID_11: jmethodID?
+    private static var setLayout_MethodID_16: jmethodID?
 
-    open func getHScrollbarHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setLayout( mgr: LayoutManager? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHScrollbarHeight", methodSig: "()I", methodCache: &ScrollPane.getHScrollbarHeight_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: mgr, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &ScrollPane.setLayout_MethodID_16, args: &__args, locals: &__locals )
     }
 
-
-    /// public int java.awt.ScrollPane.getVScrollbarWidth()
-
-    private static var getVScrollbarWidth_MethodID_12: jmethodID?
-
-    open func getVScrollbarWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVScrollbarWidth", methodSig: "()I", methodCache: &ScrollPane.getVScrollbarWidth_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.awt.Adjustable java.awt.ScrollPane.getVAdjustable()
-
-    private static var getVAdjustable_MethodID_13: jmethodID?
-
-    open func getVAdjustable() -> Adjustable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVAdjustable", methodSig: "()Ljava/awt/Adjustable;", methodCache: &ScrollPane.getVAdjustable_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AdjustableForward( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Adjustable java.awt.ScrollPane.getHAdjustable()
-
-    private static var getHAdjustable_MethodID_14: jmethodID?
-
-    open func getHAdjustable() -> Adjustable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHAdjustable", methodSig: "()Ljava/awt/Adjustable;", methodCache: &ScrollPane.getHAdjustable_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AdjustableForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.ScrollPane.setScrollPosition(java.awt.Point)
-
-    private static var setScrollPosition_MethodID_15: jmethodID?
-
-    open func setScrollPosition( p: Point? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setScrollPosition", methodSig: "(Ljava/awt/Point;)V", methodCache: &ScrollPane.setScrollPosition_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setScrollPosition( _ _p: Point? ) {
-        setScrollPosition( p: _p )
+    override open func setLayout( _ _mgr: LayoutManager? ) {
+        setLayout( mgr: _mgr )
     }
 
     /// public void java.awt.ScrollPane.setScrollPosition(int,int)
 
-    private static var setScrollPosition_MethodID_16: jmethodID?
+    private static var setScrollPosition_MethodID_17: jmethodID?
 
     open func setScrollPosition( x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setScrollPosition", methodSig: "(II)V", methodCache: &ScrollPane.setScrollPosition_MethodID_16, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setScrollPosition", methodSig: "(II)V", methodCache: &ScrollPane.setScrollPosition_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setScrollPosition( _ _x: Int, _ _y: Int ) {
         setScrollPosition( x: _x, y: _y )
     }
 
-    /// public java.awt.Point java.awt.ScrollPane.getScrollPosition()
+    /// public void java.awt.ScrollPane.setScrollPosition(java.awt.Point)
 
-    private static var getScrollPosition_MethodID_17: jmethodID?
+    private static var setScrollPosition_MethodID_18: jmethodID?
 
-    open func getScrollPosition() -> Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setScrollPosition( p: Point? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScrollPosition", methodSig: "()Ljava/awt/Point;", methodCache: &ScrollPane.getScrollPosition_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setScrollPosition", methodSig: "(Ljava/awt/Point;)V", methodCache: &ScrollPane.setScrollPosition_MethodID_18, args: &__args, locals: &__locals )
     }
 
-
-    /// java.awt.Dimension java.awt.ScrollPane.calculateChildSize()
+    open func setScrollPosition( _ _p: Point? ) {
+        setScrollPosition( p: _p )
+    }
 
     /// public void java.awt.ScrollPane.setWheelScrollingEnabled(boolean)
 
-    private static var setWheelScrollingEnabled_MethodID_18: jmethodID?
+    private static var setWheelScrollingEnabled_MethodID_19: jmethodID?
 
     open func setWheelScrollingEnabled( handleWheel: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: handleWheel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWheelScrollingEnabled", methodSig: "(Z)V", methodCache: &ScrollPane.setWheelScrollingEnabled_MethodID_18, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(handleWheel ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWheelScrollingEnabled", methodSig: "(Z)V", methodCache: &ScrollPane.setWheelScrollingEnabled_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func setWheelScrollingEnabled( _ _handleWheel: Bool ) {
         setWheelScrollingEnabled( handleWheel: _handleWheel )
     }
 
-    /// public boolean java.awt.ScrollPane.isWheelScrollingEnabled()
-
-    private static var isWheelScrollingEnabled_MethodID_19: jmethodID?
-
-    open func isWheelScrollingEnabled() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isWheelScrollingEnabled", methodSig: "()Z", methodCache: &ScrollPane.isWheelScrollingEnabled_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
+    /// private void java.awt.ScrollPane.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
     /// In declared protocol but not defined.. ///
 
     /// public abstract javax.accessibility.AccessibleContext javax.accessibility.Accessible.getAccessibleContext()
+
+    // Skipping method: false true false false false 
 
 }
 

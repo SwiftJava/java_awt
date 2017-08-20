@@ -7,13 +7,29 @@ import java_swift
 
 public protocol RobotPeer: JavaProtocol {
 
-    /// public abstract void java.awt.peer.RobotPeer.mouseMove(int,int)
-
-    func mouseMove( x: Int, y: Int )
-
     /// public abstract void java.awt.peer.RobotPeer.dispose()
 
     func dispose()
+
+    /// public abstract int java.awt.peer.RobotPeer.getRGBPixel(int,int)
+
+    func getRGBPixel( x: Int, y: Int ) -> Int
+
+    /// public abstract int[] java.awt.peer.RobotPeer.getRGBPixels(java.awt.Rectangle)
+
+    func getRGBPixels( bounds: Rectangle? ) -> [Int32]!
+
+    /// public abstract void java.awt.peer.RobotPeer.keyPress(int)
+
+    func keyPress( keycode: Int )
+
+    /// public abstract void java.awt.peer.RobotPeer.keyRelease(int)
+
+    func keyRelease( keycode: Int )
+
+    /// public abstract void java.awt.peer.RobotPeer.mouseMove(int,int)
+
+    func mouseMove( x: Int, y: Int )
 
     /// public abstract void java.awt.peer.RobotPeer.mousePress(int)
 
@@ -27,22 +43,6 @@ public protocol RobotPeer: JavaProtocol {
 
     func mouseWheel( wheelAmt: Int )
 
-    /// public abstract void java.awt.peer.RobotPeer.keyPress(int)
-
-    func keyPress( keycode: Int )
-
-    /// public abstract void java.awt.peer.RobotPeer.keyRelease(int)
-
-    func keyRelease( keycode: Int )
-
-    /// public abstract int java.awt.peer.RobotPeer.getRGBPixel(int,int)
-
-    func getRGBPixel( x: Int, y: Int ) -> Int
-
-    /// public abstract int[] java.awt.peer.RobotPeer.getRGBPixels(java.awt.Rectangle)
-
-    func getRGBPixels( bounds: Rectangle? ) -> [Int32]!
-
 }
 
 
@@ -50,119 +50,28 @@ open class RobotPeerForward: JNIObjectForward, RobotPeer {
 
     private static var RobotPeerJNIClass: jclass?
 
-    /// public abstract void java.awt.peer.RobotPeer.mouseMove(int,int)
-
-    private static var mouseMove_MethodID_10: jmethodID?
-
-    open func mouseMove( x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMove", methodSig: "(II)V", methodCache: &RobotPeerForward.mouseMove_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func mouseMove( _ _x: Int, _ _y: Int ) {
-        mouseMove( x: _x, y: _y )
-    }
-
     /// public abstract void java.awt.peer.RobotPeer.dispose()
 
-    private static var dispose_MethodID_11: jmethodID?
+    private static var dispose_MethodID_10: jmethodID?
 
     open func dispose() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &RobotPeerForward.dispose_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-
-    /// public abstract void java.awt.peer.RobotPeer.mousePress(int)
-
-    private static var mousePress_MethodID_12: jmethodID?
-
-    open func mousePress( buttons: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: buttons, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePress", methodSig: "(I)V", methodCache: &RobotPeerForward.mousePress_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &RobotPeerForward.dispose_MethodID_10, args: &__args, locals: &__locals )
     }
 
-    open func mousePress( _ _buttons: Int ) {
-        mousePress( buttons: _buttons )
-    }
-
-    /// public abstract void java.awt.peer.RobotPeer.mouseRelease(int)
-
-    private static var mouseRelease_MethodID_13: jmethodID?
-
-    open func mouseRelease( buttons: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: buttons, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseRelease", methodSig: "(I)V", methodCache: &RobotPeerForward.mouseRelease_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func mouseRelease( _ _buttons: Int ) {
-        mouseRelease( buttons: _buttons )
-    }
-
-    /// public abstract void java.awt.peer.RobotPeer.mouseWheel(int)
-
-    private static var mouseWheel_MethodID_14: jmethodID?
-
-    open func mouseWheel( wheelAmt: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: wheelAmt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseWheel", methodSig: "(I)V", methodCache: &RobotPeerForward.mouseWheel_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func mouseWheel( _ _wheelAmt: Int ) {
-        mouseWheel( wheelAmt: _wheelAmt )
-    }
-
-    /// public abstract void java.awt.peer.RobotPeer.keyPress(int)
-
-    private static var keyPress_MethodID_15: jmethodID?
-
-    open func keyPress( keycode: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keycode, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyPress", methodSig: "(I)V", methodCache: &RobotPeerForward.keyPress_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func keyPress( _ _keycode: Int ) {
-        keyPress( keycode: _keycode )
-    }
-
-    /// public abstract void java.awt.peer.RobotPeer.keyRelease(int)
-
-    private static var keyRelease_MethodID_16: jmethodID?
-
-    open func keyRelease( keycode: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keycode, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyRelease", methodSig: "(I)V", methodCache: &RobotPeerForward.keyRelease_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func keyRelease( _ _keycode: Int ) {
-        keyRelease( keycode: _keycode )
-    }
 
     /// public abstract int java.awt.peer.RobotPeer.getRGBPixel(int,int)
 
-    private static var getRGBPixel_MethodID_17: jmethodID?
+    private static var getRGBPixel_MethodID_11: jmethodID?
 
     open func getRGBPixel( x: Int, y: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGBPixel", methodSig: "(II)I", methodCache: &RobotPeerForward.getRGBPixel_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGBPixel", methodSig: "(II)I", methodCache: &RobotPeerForward.getRGBPixel_MethodID_11, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getRGBPixel( _ _x: Int, _ _y: Int ) -> Int {
@@ -171,20 +80,110 @@ open class RobotPeerForward: JNIObjectForward, RobotPeer {
 
     /// public abstract int[] java.awt.peer.RobotPeer.getRGBPixels(java.awt.Rectangle)
 
-    private static var getRGBPixels_MethodID_18: jmethodID?
+    private static var getRGBPixels_MethodID_12: jmethodID?
 
     open func getRGBPixels( bounds: Rectangle? ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: bounds, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRGBPixels", methodSig: "(Ljava/awt/Rectangle;)[I", methodCache: &RobotPeerForward.getRGBPixels_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRGBPixels", methodSig: "(Ljava/awt/Rectangle;)[I", methodCache: &RobotPeerForward.getRGBPixels_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
     }
 
     open func getRGBPixels( _ _bounds: Rectangle? ) -> [Int32]! {
         return getRGBPixels( bounds: _bounds )
     }
 
-}
+    /// public abstract void java.awt.peer.RobotPeer.keyPress(int)
 
+    private static var keyPress_MethodID_13: jmethodID?
+
+    open func keyPress( keycode: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(keycode) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyPress", methodSig: "(I)V", methodCache: &RobotPeerForward.keyPress_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func keyPress( _ _keycode: Int ) {
+        keyPress( keycode: _keycode )
+    }
+
+    /// public abstract void java.awt.peer.RobotPeer.keyRelease(int)
+
+    private static var keyRelease_MethodID_14: jmethodID?
+
+    open func keyRelease( keycode: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(keycode) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyRelease", methodSig: "(I)V", methodCache: &RobotPeerForward.keyRelease_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func keyRelease( _ _keycode: Int ) {
+        keyRelease( keycode: _keycode )
+    }
+
+    /// public abstract void java.awt.peer.RobotPeer.mouseMove(int,int)
+
+    private static var mouseMove_MethodID_15: jmethodID?
+
+    open func mouseMove( x: Int, y: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMove", methodSig: "(II)V", methodCache: &RobotPeerForward.mouseMove_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func mouseMove( _ _x: Int, _ _y: Int ) {
+        mouseMove( x: _x, y: _y )
+    }
+
+    /// public abstract void java.awt.peer.RobotPeer.mousePress(int)
+
+    private static var mousePress_MethodID_16: jmethodID?
+
+    open func mousePress( buttons: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(buttons) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePress", methodSig: "(I)V", methodCache: &RobotPeerForward.mousePress_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func mousePress( _ _buttons: Int ) {
+        mousePress( buttons: _buttons )
+    }
+
+    /// public abstract void java.awt.peer.RobotPeer.mouseRelease(int)
+
+    private static var mouseRelease_MethodID_17: jmethodID?
+
+    open func mouseRelease( buttons: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(buttons) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseRelease", methodSig: "(I)V", methodCache: &RobotPeerForward.mouseRelease_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func mouseRelease( _ _buttons: Int ) {
+        mouseRelease( buttons: _buttons )
+    }
+
+    /// public abstract void java.awt.peer.RobotPeer.mouseWheel(int)
+
+    private static var mouseWheel_MethodID_18: jmethodID?
+
+    open func mouseWheel( wheelAmt: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(wheelAmt) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseWheel", methodSig: "(I)V", methodCache: &RobotPeerForward.mouseWheel_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func mouseWheel( _ _wheelAmt: Int ) {
+        mouseWheel( wheelAmt: _wheelAmt )
+    }
+
+}
 

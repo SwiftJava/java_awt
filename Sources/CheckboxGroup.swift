@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.CheckboxGroup ///
 
-open class CheckboxGroup: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class CheckboxGroup: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,60 +16,45 @@ open class CheckboxGroup: java_swift.JavaObject, /* java.io.Serializable */ Uncl
 
     private static var CheckboxGroupJNIClass: jclass?
 
+    /// private static final long java.awt.CheckboxGroup.serialVersionUID
+
     /// java.awt.Checkbox java.awt.CheckboxGroup.selectedCheckbox
 
-    /// private static final long java.awt.CheckboxGroup.serialVersionUID
+    // Skipping field: true false false false false false 
 
     /// public java.awt.CheckboxGroup()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/CheckboxGroup", classCache: &CheckboxGroup.CheckboxGroupJNIClass, methodSig: "()V", methodCache: &CheckboxGroup.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public java.lang.String java.awt.CheckboxGroup.toString()
+    /// public java.awt.Checkbox java.awt.CheckboxGroup.getCurrent()
 
-    /// public void java.awt.CheckboxGroup.setSelectedCheckbox(java.awt.Checkbox)
+    private static var getCurrent_MethodID_2: jmethodID?
 
-    private static var setSelectedCheckbox_MethodID_2: jmethodID?
-
-    open func setSelectedCheckbox( box: Checkbox? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getCurrent() -> Checkbox! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: box, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedCheckbox", methodSig: "(Ljava/awt/Checkbox;)V", methodCache: &CheckboxGroup.setSelectedCheckbox_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrent", methodSig: "()Ljava/awt/Checkbox;", methodCache: &CheckboxGroup.getCurrent_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Checkbox( javaObject: __return ) : nil
     }
 
-    open func setSelectedCheckbox( _ _box: Checkbox? ) {
-        setSelectedCheckbox( box: _box )
-    }
 
     /// public java.awt.Checkbox java.awt.CheckboxGroup.getSelectedCheckbox()
 
     private static var getSelectedCheckbox_MethodID_3: jmethodID?
 
     open func getSelectedCheckbox() -> Checkbox! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedCheckbox", methodSig: "()Ljava/awt/Checkbox;", methodCache: &CheckboxGroup.getSelectedCheckbox_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Checkbox( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Checkbox java.awt.CheckboxGroup.getCurrent()
-
-    private static var getCurrent_MethodID_4: jmethodID?
-
-    open func getCurrent() -> Checkbox! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrent", methodSig: "()Ljava/awt/Checkbox;", methodCache: &CheckboxGroup.getCurrent_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Checkbox( javaObject: __return ) : nil
     }
@@ -77,18 +62,37 @@ open class CheckboxGroup: java_swift.JavaObject, /* java.io.Serializable */ Uncl
 
     /// public synchronized void java.awt.CheckboxGroup.setCurrent(java.awt.Checkbox)
 
-    private static var setCurrent_MethodID_5: jmethodID?
+    private static var setCurrent_MethodID_4: jmethodID?
 
     open func setCurrent( box: Checkbox? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: box, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurrent", methodSig: "(Ljava/awt/Checkbox;)V", methodCache: &CheckboxGroup.setCurrent_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurrent", methodSig: "(Ljava/awt/Checkbox;)V", methodCache: &CheckboxGroup.setCurrent_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setCurrent( _ _box: Checkbox? ) {
         setCurrent( box: _box )
     }
+
+    /// public void java.awt.CheckboxGroup.setSelectedCheckbox(java.awt.Checkbox)
+
+    private static var setSelectedCheckbox_MethodID_5: jmethodID?
+
+    open func setSelectedCheckbox( box: Checkbox? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: box, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedCheckbox", methodSig: "(Ljava/awt/Checkbox;)V", methodCache: &CheckboxGroup.setSelectedCheckbox_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectedCheckbox( _ _box: Checkbox? ) {
+        setSelectedCheckbox( box: _box )
+    }
+
+    /// public java.lang.String java.awt.CheckboxGroup.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

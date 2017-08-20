@@ -7,19 +7,21 @@ import java_swift
 
 public protocol InputMethodContext: InputMethodRequests {
 
-    /// public abstract void java.awt.im.spi.InputMethodContext.dispatchInputMethodEvent(int,java.text.AttributedCharacterIterator,int,java.awt.font.TextHitInfo,java.awt.font.TextHitInfo)
-
-    func dispatchInputMethodEvent( id: Int, text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, committedCharacterCount: Int, caret: TextHitInfo?, visiblePosition: TextHitInfo? )
-
     /// public abstract javax.swing.JFrame java.awt.im.spi.InputMethodContext.createInputMethodJFrame(java.lang.String,boolean)
 
-    /// public abstract void java.awt.im.spi.InputMethodContext.enableClientWindowNotification(java.awt.im.spi.InputMethod,boolean)
-
-    func enableClientWindowNotification( inputMethod: InputMethod?, enable: Bool )
+    // Skipping method: false false true false false 
 
     /// public abstract java.awt.Window java.awt.im.spi.InputMethodContext.createInputMethodWindow(java.lang.String,boolean)
 
     func createInputMethodWindow( title: String?, attachToInputContext: Bool ) -> Window!
+
+    /// public abstract void java.awt.im.spi.InputMethodContext.dispatchInputMethodEvent(int,java.text.AttributedCharacterIterator,int,java.awt.font.TextHitInfo,java.awt.font.TextHitInfo)
+
+    func dispatchInputMethodEvent( id: Int, text: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, committedCharacterCount: Int, caret: TextHitInfo?, visiblePosition: TextHitInfo? )
+
+    /// public abstract void java.awt.im.spi.InputMethodContext.enableClientWindowNotification(java.awt.im.spi.InputMethod,boolean)
+
+    func enableClientWindowNotification( inputMethod: InputMethod?, enable: Bool )
 
 }
 
@@ -28,53 +30,24 @@ open class InputMethodContextForward: InputMethodRequestsForward, InputMethodCon
 
     private static var InputMethodContextJNIClass: jclass?
 
-    /// public abstract void java.awt.im.spi.InputMethodContext.dispatchInputMethodEvent(int,java.text.AttributedCharacterIterator,int,java.awt.font.TextHitInfo,java.awt.font.TextHitInfo)
+    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.cancelLatestCommittedText(java.text.AttributedCharacterIterator$Attribute[])
 
-    private static var dispatchInputMethodEvent_MethodID_4: jmethodID?
-
-    open func dispatchInputMethodEvent( id: Int, text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, committedCharacterCount: Int, caret: TextHitInfo?, visiblePosition: TextHitInfo? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: id, locals: &__locals )
-        __args[1] = JNIType.toJava( value: text, locals: &__locals )
-        __args[2] = JNIType.toJava( value: committedCharacterCount, locals: &__locals )
-        __args[3] = JNIType.toJava( value: caret, locals: &__locals )
-        __args[4] = JNIType.toJava( value: visiblePosition, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispatchInputMethodEvent", methodSig: "(ILjava/text/AttributedCharacterIterator;ILjava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;)V", methodCache: &InputMethodContextForward.dispatchInputMethodEvent_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func dispatchInputMethodEvent( _ _id: Int, _ _text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, _ _committedCharacterCount: Int, _ _caret: TextHitInfo?, _ _visiblePosition: TextHitInfo? ) {
-        dispatchInputMethodEvent( id: _id, text: _text, committedCharacterCount: _committedCharacterCount, caret: _caret, visiblePosition: _visiblePosition )
-    }
+    // Skipping method: false false true false false 
 
     /// public abstract javax.swing.JFrame java.awt.im.spi.InputMethodContext.createInputMethodJFrame(java.lang.String,boolean)
 
-    /// public abstract void java.awt.im.spi.InputMethodContext.enableClientWindowNotification(java.awt.im.spi.InputMethod,boolean)
-
-    private static var enableClientWindowNotification_MethodID_5: jmethodID?
-
-    open func enableClientWindowNotification( inputMethod: InputMethod?, enable: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: inputMethod, locals: &__locals )
-        __args[1] = JNIType.toJava( value: enable, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableClientWindowNotification", methodSig: "(Ljava/awt/im/spi/InputMethod;Z)V", methodCache: &InputMethodContextForward.enableClientWindowNotification_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func enableClientWindowNotification( _ _inputMethod: InputMethod?, _ _enable: Bool ) {
-        enableClientWindowNotification( inputMethod: _inputMethod, enable: _enable )
-    }
+    // Skipping method: false false true false false 
 
     /// public abstract java.awt.Window java.awt.im.spi.InputMethodContext.createInputMethodWindow(java.lang.String,boolean)
 
-    private static var createInputMethodWindow_MethodID_6: jmethodID?
+    private static var createInputMethodWindow_MethodID_4: jmethodID?
 
     open func createInputMethodWindow( title: String?, attachToInputContext: Bool ) -> Window! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: attachToInputContext, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createInputMethodWindow", methodSig: "(Ljava/lang/String;Z)Ljava/awt/Window;", methodCache: &InputMethodContextForward.createInputMethodWindow_MethodID_6, args: &__args, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(attachToInputContext ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createInputMethodWindow", methodSig: "(Ljava/lang/String;Z)Ljava/awt/Window;", methodCache: &InputMethodContextForward.createInputMethodWindow_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Window( javaObject: __return ) : nil
     }
@@ -83,33 +56,79 @@ open class InputMethodContextForward: InputMethodRequestsForward, InputMethodCon
         return createInputMethodWindow( title: _title, attachToInputContext: _attachToInputContext )
     }
 
-    /// public abstract java.awt.Rectangle java.awt.im.InputMethodRequests.getTextLocation(java.awt.font.TextHitInfo)
+    /// public abstract void java.awt.im.spi.InputMethodContext.dispatchInputMethodEvent(int,java.text.AttributedCharacterIterator,int,java.awt.font.TextHitInfo,java.awt.font.TextHitInfo)
 
-    private static var getTextLocation_MethodID_7: jmethodID?
+    private static var dispatchInputMethodEvent_MethodID_5: jmethodID?
 
-    override open func getTextLocation( offset: TextHitInfo? ) -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func dispatchInputMethodEvent( id: Int, text: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, committedCharacterCount: Int, caret: TextHitInfo?, visiblePosition: TextHitInfo? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextLocation", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/Rectangle;", methodCache: &InputMethodContextForward.getTextLocation_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(id) )
+        __args[1] = JNIType.toJava( value: text, locals: &__locals )
+        __args[2] = jvalue( i: jint(committedCharacterCount) )
+        __args[3] = JNIType.toJava( value: caret, locals: &__locals )
+        __args[4] = JNIType.toJava( value: visiblePosition, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispatchInputMethodEvent", methodSig: "(ILjava/text/AttributedCharacterIterator;ILjava/awt/font/TextHitInfo;Ljava/awt/font/TextHitInfo;)V", methodCache: &InputMethodContextForward.dispatchInputMethodEvent_MethodID_5, args: &__args, locals: &__locals )
     }
 
-    override open func getTextLocation( _ _offset: TextHitInfo? ) -> Rectangle! {
-        return getTextLocation( offset: _offset )
+    open func dispatchInputMethodEvent( _ _id: Int, _ _text: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, _ _committedCharacterCount: Int, _ _caret: TextHitInfo?, _ _visiblePosition: TextHitInfo? ) {
+        dispatchInputMethodEvent( id: _id, text: _text, committedCharacterCount: _committedCharacterCount, caret: _caret, visiblePosition: _visiblePosition )
     }
+
+    /// public abstract void java.awt.im.spi.InputMethodContext.enableClientWindowNotification(java.awt.im.spi.InputMethod,boolean)
+
+    private static var enableClientWindowNotification_MethodID_6: jmethodID?
+
+    open func enableClientWindowNotification( inputMethod: InputMethod?, enable: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: inputMethod, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(enable ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableClientWindowNotification", methodSig: "(Ljava/awt/im/spi/InputMethod;Z)V", methodCache: &InputMethodContextForward.enableClientWindowNotification_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func enableClientWindowNotification( _ _inputMethod: InputMethod?, _ _enable: Bool ) {
+        enableClientWindowNotification( inputMethod: _inputMethod, enable: _enable )
+    }
+
+    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.getCommittedText(int,int,java.text.AttributedCharacterIterator$Attribute[])
+
+    // Skipping method: false false true false false 
+
+    /// public abstract int java.awt.im.InputMethodRequests.getCommittedTextLength()
+
+    private static var getCommittedTextLength_MethodID_7: jmethodID?
+
+    override open func getCommittedTextLength() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCommittedTextLength", methodSig: "()I", methodCache: &InputMethodContextForward.getCommittedTextLength_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public abstract int java.awt.im.InputMethodRequests.getInsertPositionOffset()
+
+    private static var getInsertPositionOffset_MethodID_8: jmethodID?
+
+    override open func getInsertPositionOffset() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInsertPositionOffset", methodSig: "()I", methodCache: &InputMethodContextForward.getInsertPositionOffset_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
 
     /// public abstract java.awt.font.TextHitInfo java.awt.im.InputMethodRequests.getLocationOffset(int,int)
 
-    private static var getLocationOffset_MethodID_8: jmethodID?
+    private static var getLocationOffset_MethodID_9: jmethodID?
 
     override open func getLocationOffset( x: Int, y: Int ) -> TextHitInfo! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocationOffset", methodSig: "(II)Ljava/awt/font/TextHitInfo;", methodCache: &InputMethodContextForward.getLocationOffset_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocationOffset", methodSig: "(II)Ljava/awt/font/TextHitInfo;", methodCache: &InputMethodContextForward.getLocationOffset_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
     }
@@ -118,44 +137,40 @@ open class InputMethodContextForward: InputMethodRequestsForward, InputMethodCon
         return getLocationOffset( x: _x, y: _y )
     }
 
-    /// public abstract int java.awt.im.InputMethodRequests.getInsertPositionOffset()
-
-    private static var getInsertPositionOffset_MethodID_9: jmethodID?
-
-    override open func getInsertPositionOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInsertPositionOffset", methodSig: "()I", methodCache: &InputMethodContextForward.getInsertPositionOffset_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.getCommittedText(int,int,java.text.AttributedCharacterIterator$Attribute[])
-
-    /// public abstract int java.awt.im.InputMethodRequests.getCommittedTextLength()
-
-    private static var getCommittedTextLength_MethodID_10: jmethodID?
-
-    override open func getCommittedTextLength() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCommittedTextLength", methodSig: "()I", methodCache: &InputMethodContextForward.getCommittedTextLength_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.cancelLatestCommittedText(java.text.AttributedCharacterIterator$Attribute[])
-
     /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.getSelectedText(java.text.AttributedCharacterIterator$Attribute[])
+
+    // Skipping method: false false true false false 
+
+    /// public abstract java.awt.Rectangle java.awt.im.InputMethodRequests.getTextLocation(java.awt.font.TextHitInfo)
+
+    private static var getTextLocation_MethodID_10: jmethodID?
+
+    override open func getTextLocation( offset: TextHitInfo? ) -> Rectangle! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextLocation", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/Rectangle;", methodCache: &InputMethodContextForward.getTextLocation_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
+    override open func getTextLocation( _ _offset: TextHitInfo? ) -> Rectangle! {
+        return getTextLocation( offset: _offset )
+    }
 
     /// In declared protocol but not defined.. ///
 
-    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.getSelectedText(java.text.AttributedCharacterIterator$Attribute[])
+    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.cancelLatestCommittedText(java.text.AttributedCharacterIterator$Attribute[])
+
+    // Skipping method: false false true false false 
 
     /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.getCommittedText(int,int,java.text.AttributedCharacterIterator$Attribute[])
 
-    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.cancelLatestCommittedText(java.text.AttributedCharacterIterator$Attribute[])
+    // Skipping method: false false true false false 
+
+    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.getSelectedText(java.text.AttributedCharacterIterator$Attribute[])
+
+    // Skipping method: false false true false false 
 
 }
-
 

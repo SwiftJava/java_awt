@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.geom.Point2D$Double ///
 
-open class Point2D_Double: Point2D, /* java.io.Serializable */ UnclassedProtocol {
+open class Point2D_Double: Point2D, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -20,19 +20,20 @@ open class Point2D_Double: Point2D, /* java.io.Serializable */ UnclassedProtocol
 
     private static var Point2D_DoubleJNIClass: jclass?
 
+    /// private static final long java.awt.geom.Point2D$Double.serialVersionUID
+
     /// public double java.awt.geom.Point2D$Double.x
 
     private static var x_FieldID: jfieldID?
 
     open var x: Double {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "x", fieldType: "D", fieldCache: &Point2D_Double.x_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
+            let __value = JNIField.GetDoubleField( fieldName: "x", fieldType: "D", fieldCache: &Point2D_Double.x_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( d: newValue )
             JNIField.SetDoubleField( fieldName: "x", fieldType: "D", fieldCache: &Point2D_Double.x_FieldID, object: javaObject, value: __value.d, locals: &__locals )
         }
     }
@@ -43,26 +44,23 @@ open class Point2D_Double: Point2D, /* java.io.Serializable */ UnclassedProtocol
 
     open var y: Double {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "y", fieldType: "D", fieldCache: &Point2D_Double.y_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
+            let __value = JNIField.GetDoubleField( fieldName: "y", fieldType: "D", fieldCache: &Point2D_Double.y_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( d: newValue )
             JNIField.SetDoubleField( fieldName: "y", fieldType: "D", fieldCache: &Point2D_Double.y_FieldID, object: javaObject, value: __value.d, locals: &__locals )
         }
     }
-
-    /// private static final long java.awt.geom.Point2D$Double.serialVersionUID
 
     /// public java.awt.geom.Point2D$Double()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Point2D$Double", classCache: &Point2D_Double.Point2D_DoubleJNIClass, methodSig: "()V", methodCache: &Point2D_Double.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -73,10 +71,10 @@ open class Point2D_Double: Point2D, /* java.io.Serializable */ UnclassedProtocol
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( x: Double, y: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Point2D$Double", classCache: &Point2D_Double.Point2D_DoubleJNIClass, methodSig: "(DD)V", methodCache: &Point2D_Double.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -86,13 +84,21 @@ open class Point2D_Double: Point2D, /* java.io.Serializable */ UnclassedProtocol
         self.init( x: _x, y: _y )
     }
 
-    /// public java.lang.String java.awt.geom.Point2D$Double.toString()
-
     /// public double java.awt.geom.Point2D$Double.getX()
+
+    // Skipping method: false true false false false 
 
     /// public double java.awt.geom.Point2D$Double.getY()
 
+    // Skipping method: false true false false false 
+
     /// public void java.awt.geom.Point2D$Double.setLocation(double,double)
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String java.awt.geom.Point2D$Double.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

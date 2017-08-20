@@ -21,8 +21,8 @@ open class DragSourceAdapter: java_swift.JavaObject, DragSourceListener, DragSou
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/dnd/DragSourceAdapter", classCache: &DragSourceAdapter.DragSourceAdapterJNIClass, methodSig: "()V", methodCache: &DragSourceAdapter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -33,8 +33,8 @@ open class DragSourceAdapter: java_swift.JavaObject, DragSourceListener, DragSou
     private static var dragDropEnd_MethodID_2: jmethodID?
 
     open func dragDropEnd( dsde: DragSourceDropEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragDropEnd", methodSig: "(Ljava/awt/dnd/DragSourceDropEvent;)V", methodCache: &DragSourceAdapter.dragDropEnd_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -43,45 +43,60 @@ open class DragSourceAdapter: java_swift.JavaObject, DragSourceListener, DragSou
         dragDropEnd( dsde: _dsde )
     }
 
-    /// public void java.awt.dnd.DragSourceAdapter.dragMouseMoved(java.awt.dnd.DragSourceDragEvent)
-
-    private static var dragMouseMoved_MethodID_3: jmethodID?
-
-    open func dragMouseMoved( dsde: DragSourceDragEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragMouseMoved", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceAdapter.dragMouseMoved_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func dragMouseMoved( _ _dsde: DragSourceDragEvent? ) {
-        dragMouseMoved( dsde: _dsde )
-    }
-
     /// public void java.awt.dnd.DragSourceAdapter.dragEnter(java.awt.dnd.DragSourceDragEvent)
 
-    private static var dragEnter_MethodID_4: jmethodID?
+    private static var dragEnter_MethodID_3: jmethodID?
 
     open func dragEnter( dsde: DragSourceDragEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragEnter", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceAdapter.dragEnter_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragEnter", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceAdapter.dragEnter_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func dragEnter( _ _dsde: DragSourceDragEvent? ) {
         dragEnter( dsde: _dsde )
     }
 
+    /// public void java.awt.dnd.DragSourceAdapter.dragExit(java.awt.dnd.DragSourceEvent)
+
+    private static var dragExit_MethodID_4: jmethodID?
+
+    open func dragExit( dse: DragSourceEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: dse, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragExit", methodSig: "(Ljava/awt/dnd/DragSourceEvent;)V", methodCache: &DragSourceAdapter.dragExit_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func dragExit( _ _dse: DragSourceEvent? ) {
+        dragExit( dse: _dse )
+    }
+
+    /// public void java.awt.dnd.DragSourceAdapter.dragMouseMoved(java.awt.dnd.DragSourceDragEvent)
+
+    private static var dragMouseMoved_MethodID_5: jmethodID?
+
+    open func dragMouseMoved( dsde: DragSourceDragEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragMouseMoved", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceAdapter.dragMouseMoved_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func dragMouseMoved( _ _dsde: DragSourceDragEvent? ) {
+        dragMouseMoved( dsde: _dsde )
+    }
+
     /// public void java.awt.dnd.DragSourceAdapter.dragOver(java.awt.dnd.DragSourceDragEvent)
 
-    private static var dragOver_MethodID_5: jmethodID?
+    private static var dragOver_MethodID_6: jmethodID?
 
     open func dragOver( dsde: DragSourceDragEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragOver", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceAdapter.dragOver_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragOver", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceAdapter.dragOver_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func dragOver( _ _dsde: DragSourceDragEvent? ) {
@@ -90,32 +105,17 @@ open class DragSourceAdapter: java_swift.JavaObject, DragSourceListener, DragSou
 
     /// public void java.awt.dnd.DragSourceAdapter.dropActionChanged(java.awt.dnd.DragSourceDragEvent)
 
-    private static var dropActionChanged_MethodID_6: jmethodID?
+    private static var dropActionChanged_MethodID_7: jmethodID?
 
     open func dropActionChanged( dsde: DragSourceDragEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dsde, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dropActionChanged", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceAdapter.dropActionChanged_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dropActionChanged", methodSig: "(Ljava/awt/dnd/DragSourceDragEvent;)V", methodCache: &DragSourceAdapter.dropActionChanged_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func dropActionChanged( _ _dsde: DragSourceDragEvent? ) {
         dropActionChanged( dsde: _dsde )
-    }
-
-    /// public void java.awt.dnd.DragSourceAdapter.dragExit(java.awt.dnd.DragSourceEvent)
-
-    private static var dragExit_MethodID_7: jmethodID?
-
-    open func dragExit( dse: DragSourceEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dse, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragExit", methodSig: "(Ljava/awt/dnd/DragSourceEvent;)V", methodCache: &DragSourceAdapter.dragExit_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func dragExit( _ _dse: DragSourceEvent? ) {
-        dragExit( dse: _dse )
     }
 
 }
@@ -123,79 +123,61 @@ open class DragSourceAdapter: java_swift.JavaObject, DragSourceListener, DragSou
 private typealias DragSourceAdapter_dragDropEnd_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func DragSourceAdapter_dragDropEnd_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dsde: jobject? ) -> () {
-    JNI.inNative = true;
     DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragDropEnd( dsde: dsde != nil ? DragSourceDropEvent( javaObject: dsde ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias DragSourceAdapter_dragMouseMoved_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias DragSourceAdapter_dragEnter_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func DragSourceAdapter_dragMouseMoved_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dsde: jobject? ) -> () {
-    JNI.inNative = true;
-    DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragMouseMoved( dsde: dsde != nil ? DragSourceDragEvent( javaObject: dsde ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias DragSourceAdapter_dragEnter_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DragSourceAdapter_dragEnter_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dsde: jobject? ) -> () {
-    JNI.inNative = true;
+private func DragSourceAdapter_dragEnter_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dsde: jobject? ) -> () {
     DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragEnter( dsde: dsde != nil ? DragSourceDragEvent( javaObject: dsde ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias DragSourceAdapter_dragOver_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias DragSourceAdapter_dragExit_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func DragSourceAdapter_dragOver_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dsde: jobject? ) -> () {
-    JNI.inNative = true;
-    DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragOver( dsde: dsde != nil ? DragSourceDragEvent( javaObject: dsde ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias DragSourceAdapter_dropActionChanged_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DragSourceAdapter_dropActionChanged_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dsde: jobject? ) -> () {
-    JNI.inNative = true;
-    DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dropActionChanged( dsde: dsde != nil ? DragSourceDragEvent( javaObject: dsde ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias DragSourceAdapter_dragExit_5_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DragSourceAdapter_dragExit_5( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dse: jobject? ) -> () {
-    JNI.inNative = true;
+private func DragSourceAdapter_dragExit_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dse: jobject? ) -> () {
     DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragExit( dse: dse != nil ? DragSourceEvent( javaObject: dse ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias DragSourceAdapter_equals_9_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
+private typealias DragSourceAdapter_dragMouseMoved_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func DragSourceAdapter_equals_9( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
-    JNI.inNative = true;
+private func DragSourceAdapter_dragMouseMoved_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dsde: jobject? ) -> () {
+    DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragMouseMoved( dsde: dsde != nil ? DragSourceDragEvent( javaObject: dsde ) : nil )
+}
+
+private typealias DragSourceAdapter_dragOver_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func DragSourceAdapter_dragOver_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dsde: jobject? ) -> () {
+    DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragOver( dsde: dsde != nil ? DragSourceDragEvent( javaObject: dsde ) : nil )
+}
+
+private typealias DragSourceAdapter_dropActionChanged_5_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func DragSourceAdapter_dropActionChanged_5( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dsde: jobject? ) -> () {
+    DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dropActionChanged( dsde: dsde != nil ? DragSourceDragEvent( javaObject: dsde ) : nil )
+}
+
+private typealias DragSourceAdapter_equals_6_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
+
+private func DragSourceAdapter_equals_6( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
     let __return = DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).equals( arg0: arg0 != nil ? java_swift.JavaObject( javaObject: arg0 ) : nil )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).z, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( z: jboolean(__return ? JNI_TRUE : JNI_FALSE) ).z, &__locals, removeLast: true )
 }
 
-private typealias DragSourceAdapter_toString_10_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+private typealias DragSourceAdapter_hashCode_8_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
 
-private func DragSourceAdapter_toString_10( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
-    JNI.inNative = true;
-    let __return = DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).l, &locals, removeLast: true )
-}
-
-private typealias DragSourceAdapter_hashCode_11_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
-
-private func DragSourceAdapter_hashCode_11( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
-    JNI.inNative = true;
+private func DragSourceAdapter_hashCode_8( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
     let __return = DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).hashCode( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).i, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( i: jint(__return) ).i, &__locals, removeLast: true )
+}
+
+private typealias DragSourceAdapter_toString_11_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+
+private func DragSourceAdapter_toString_11( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
+    let __return = DragSourceAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
+    var __locals = [jobject]()
+    return JNI.check( JNIType.toJava( value: __return, locals: &__locals ).l, &__locals, removeLast: true )
 }
 
 fileprivate class DragSourceAdapterLocal_: JNIObjectProxy<DragSourceAdapter> {
@@ -206,29 +188,29 @@ fileprivate class DragSourceAdapterLocal_: JNIObjectProxy<DragSourceAdapter> {
         let DragSourceAdapter_dragDropEnd_0_thunk: DragSourceAdapter_dragDropEnd_0_type = DragSourceAdapter_dragDropEnd_0
         natives.append( JNINativeMethod( name: strdup("__dragDropEnd"), signature: strdup("(JLjava/awt/dnd/DragSourceDropEvent;)V"), fnPtr: unsafeBitCast( DragSourceAdapter_dragDropEnd_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DragSourceAdapter_dragMouseMoved_1_thunk: DragSourceAdapter_dragMouseMoved_1_type = DragSourceAdapter_dragMouseMoved_1
-        natives.append( JNINativeMethod( name: strdup("__dragMouseMoved"), signature: strdup("(JLjava/awt/dnd/DragSourceDragEvent;)V"), fnPtr: unsafeBitCast( DragSourceAdapter_dragMouseMoved_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DragSourceAdapter_dragEnter_1_thunk: DragSourceAdapter_dragEnter_1_type = DragSourceAdapter_dragEnter_1
+        natives.append( JNINativeMethod( name: strdup("__dragEnter"), signature: strdup("(JLjava/awt/dnd/DragSourceDragEvent;)V"), fnPtr: unsafeBitCast( DragSourceAdapter_dragEnter_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DragSourceAdapter_dragEnter_2_thunk: DragSourceAdapter_dragEnter_2_type = DragSourceAdapter_dragEnter_2
-        natives.append( JNINativeMethod( name: strdup("__dragEnter"), signature: strdup("(JLjava/awt/dnd/DragSourceDragEvent;)V"), fnPtr: unsafeBitCast( DragSourceAdapter_dragEnter_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DragSourceAdapter_dragExit_2_thunk: DragSourceAdapter_dragExit_2_type = DragSourceAdapter_dragExit_2
+        natives.append( JNINativeMethod( name: strdup("__dragExit"), signature: strdup("(JLjava/awt/dnd/DragSourceEvent;)V"), fnPtr: unsafeBitCast( DragSourceAdapter_dragExit_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DragSourceAdapter_dragOver_3_thunk: DragSourceAdapter_dragOver_3_type = DragSourceAdapter_dragOver_3
-        natives.append( JNINativeMethod( name: strdup("__dragOver"), signature: strdup("(JLjava/awt/dnd/DragSourceDragEvent;)V"), fnPtr: unsafeBitCast( DragSourceAdapter_dragOver_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DragSourceAdapter_dragMouseMoved_3_thunk: DragSourceAdapter_dragMouseMoved_3_type = DragSourceAdapter_dragMouseMoved_3
+        natives.append( JNINativeMethod( name: strdup("__dragMouseMoved"), signature: strdup("(JLjava/awt/dnd/DragSourceDragEvent;)V"), fnPtr: unsafeBitCast( DragSourceAdapter_dragMouseMoved_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DragSourceAdapter_dropActionChanged_4_thunk: DragSourceAdapter_dropActionChanged_4_type = DragSourceAdapter_dropActionChanged_4
-        natives.append( JNINativeMethod( name: strdup("__dropActionChanged"), signature: strdup("(JLjava/awt/dnd/DragSourceDragEvent;)V"), fnPtr: unsafeBitCast( DragSourceAdapter_dropActionChanged_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DragSourceAdapter_dragOver_4_thunk: DragSourceAdapter_dragOver_4_type = DragSourceAdapter_dragOver_4
+        natives.append( JNINativeMethod( name: strdup("__dragOver"), signature: strdup("(JLjava/awt/dnd/DragSourceDragEvent;)V"), fnPtr: unsafeBitCast( DragSourceAdapter_dragOver_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DragSourceAdapter_dragExit_5_thunk: DragSourceAdapter_dragExit_5_type = DragSourceAdapter_dragExit_5
-        natives.append( JNINativeMethod( name: strdup("__dragExit"), signature: strdup("(JLjava/awt/dnd/DragSourceEvent;)V"), fnPtr: unsafeBitCast( DragSourceAdapter_dragExit_5_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DragSourceAdapter_dropActionChanged_5_thunk: DragSourceAdapter_dropActionChanged_5_type = DragSourceAdapter_dropActionChanged_5
+        natives.append( JNINativeMethod( name: strdup("__dropActionChanged"), signature: strdup("(JLjava/awt/dnd/DragSourceDragEvent;)V"), fnPtr: unsafeBitCast( DragSourceAdapter_dropActionChanged_5_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DragSourceAdapter_equals_9_thunk: DragSourceAdapter_equals_9_type = DragSourceAdapter_equals_9
-        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( DragSourceAdapter_equals_9_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DragSourceAdapter_equals_6_thunk: DragSourceAdapter_equals_6_type = DragSourceAdapter_equals_6
+        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( DragSourceAdapter_equals_6_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DragSourceAdapter_toString_10_thunk: DragSourceAdapter_toString_10_type = DragSourceAdapter_toString_10
-        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( DragSourceAdapter_toString_10_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DragSourceAdapter_hashCode_8_thunk: DragSourceAdapter_hashCode_8_type = DragSourceAdapter_hashCode_8
+        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( DragSourceAdapter_hashCode_8_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DragSourceAdapter_hashCode_11_thunk: DragSourceAdapter_hashCode_11_type = DragSourceAdapter_hashCode_11
-        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( DragSourceAdapter_hashCode_11_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DragSourceAdapter_toString_11_thunk: DragSourceAdapter_toString_11_type = DragSourceAdapter_toString_11
+        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( DragSourceAdapter_toString_11_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -271,8 +253,8 @@ open class DragSourceAdapterBase: DragSourceAdapter {
     private static var new_MethodID_8: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
 
         self.init( javaObject: nil )
         __args[0] = __local!.swiftValue()

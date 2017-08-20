@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.PageAttributes$OrientationRequestedType ///
 
-open class PageAttributes_OrientationRequestedType: /* java.awt.AttributeValue */ UnclassedObject {
+open class PageAttributes_OrientationRequestedType: /* class java.awt.AttributeValue */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,9 +16,21 @@ open class PageAttributes_OrientationRequestedType: /* java.awt.AttributeValue *
 
     private static var PageAttributes_OrientationRequestedTypeJNIClass: jclass?
 
+    /// private static final int java.awt.PageAttributes$OrientationRequestedType.I_LANDSCAPE
+
     /// private static final int java.awt.PageAttributes$OrientationRequestedType.I_PORTRAIT
 
-    /// private static final int java.awt.PageAttributes$OrientationRequestedType.I_LANDSCAPE
+    /// public static final java.awt.PageAttributes$OrientationRequestedType java.awt.PageAttributes$OrientationRequestedType.LANDSCAPE
+
+    private static var LANDSCAPE_FieldID: jfieldID?
+
+    open static var LANDSCAPE: PageAttributes_OrientationRequestedType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "LANDSCAPE", fieldType: "Ljava/awt/PageAttributes$OrientationRequestedType;", fieldCache: &LANDSCAPE_FieldID, className: "java/awt/PageAttributes$OrientationRequestedType", classCache: &PageAttributes_OrientationRequestedTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? PageAttributes_OrientationRequestedType( javaObject: __value ) : nil
+        }
+    }
 
     /// private static final java.lang.String[] java.awt.PageAttributes$OrientationRequestedType.NAMES
 
@@ -29,32 +41,43 @@ open class PageAttributes_OrientationRequestedType: /* java.awt.AttributeValue *
     open static var PORTRAIT: PageAttributes_OrientationRequestedType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PORTRAIT", fieldType: "Ljava/awt/PageAttributes$OrientationRequestedType;", fieldCache: &PORTRAIT_FieldID, className: "java/awt/PageAttributes$OrientationRequestedType", classCache: &PageAttributes_OrientationRequestedTypeJNIClass )
-            return __value != nil ? PageAttributes_OrientationRequestedType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.PageAttributes$OrientationRequestedType java.awt.PageAttributes$OrientationRequestedType.LANDSCAPE
-
-    private static var LANDSCAPE_FieldID: jfieldID?
-
-    open static var LANDSCAPE: PageAttributes_OrientationRequestedType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "LANDSCAPE", fieldType: "Ljava/awt/PageAttributes$OrientationRequestedType;", fieldCache: &LANDSCAPE_FieldID, className: "java/awt/PageAttributes$OrientationRequestedType", classCache: &PageAttributes_OrientationRequestedTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_OrientationRequestedType( javaObject: __value ) : nil
         }
     }
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AttributeValue.log
 
-    /// private final int java.awt.AttributeValue.value
-
     /// private final java.lang.String[] java.awt.AttributeValue.names
+
+    /// private final int java.awt.AttributeValue.value
 
     /// private java.awt.PageAttributes$OrientationRequestedType(int)
 
+    /// public int java.awt.PageAttributes$OrientationRequestedType.hashCode()
+
+    private static var hashCode_MethodID_1: jmethodID?
+
+    override open func hashCode() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "hashCode", methodSig: "()I", methodCache: &PageAttributes_OrientationRequestedType.hashCode_MethodID_1, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public java.lang.String java.awt.PageAttributes$OrientationRequestedType.toString()
 
-    /// public int java.awt.PageAttributes$OrientationRequestedType.hashCode()
+    private static var toString_MethodID_2: jmethodID?
+
+    override open func toString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toString", methodSig: "()Ljava/lang/String;", methodCache: &PageAttributes_OrientationRequestedType.toString_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
 }
 

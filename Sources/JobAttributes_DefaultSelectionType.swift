@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.JobAttributes$DefaultSelectionType ///
 
-open class JobAttributes_DefaultSelectionType: /* java.awt.AttributeValue */ UnclassedObject {
+open class JobAttributes_DefaultSelectionType: /* class java.awt.AttributeValue */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,6 +16,18 @@ open class JobAttributes_DefaultSelectionType: /* java.awt.AttributeValue */ Unc
 
     private static var JobAttributes_DefaultSelectionTypeJNIClass: jclass?
 
+    /// public static final java.awt.JobAttributes$DefaultSelectionType java.awt.JobAttributes$DefaultSelectionType.ALL
+
+    private static var ALL_FieldID: jfieldID?
+
+    open static var ALL: JobAttributes_DefaultSelectionType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ALL", fieldType: "Ljava/awt/JobAttributes$DefaultSelectionType;", fieldCache: &ALL_FieldID, className: "java/awt/JobAttributes$DefaultSelectionType", classCache: &JobAttributes_DefaultSelectionTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JobAttributes_DefaultSelectionType( javaObject: __value ) : nil
+        }
+    }
+
     /// private static final int java.awt.JobAttributes$DefaultSelectionType.I_ALL
 
     /// private static final int java.awt.JobAttributes$DefaultSelectionType.I_RANGE
@@ -24,17 +36,6 @@ open class JobAttributes_DefaultSelectionType: /* java.awt.AttributeValue */ Unc
 
     /// private static final java.lang.String[] java.awt.JobAttributes$DefaultSelectionType.NAMES
 
-    /// public static final java.awt.JobAttributes$DefaultSelectionType java.awt.JobAttributes$DefaultSelectionType.ALL
-
-    private static var ALL_FieldID: jfieldID?
-
-    open static var ALL: JobAttributes_DefaultSelectionType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ALL", fieldType: "Ljava/awt/JobAttributes$DefaultSelectionType;", fieldCache: &ALL_FieldID, className: "java/awt/JobAttributes$DefaultSelectionType", classCache: &JobAttributes_DefaultSelectionTypeJNIClass )
-            return __value != nil ? JobAttributes_DefaultSelectionType( javaObject: __value ) : nil
-        }
-    }
-
     /// public static final java.awt.JobAttributes$DefaultSelectionType java.awt.JobAttributes$DefaultSelectionType.RANGE
 
     private static var RANGE_FieldID: jfieldID?
@@ -42,6 +43,7 @@ open class JobAttributes_DefaultSelectionType: /* java.awt.AttributeValue */ Unc
     open static var RANGE: JobAttributes_DefaultSelectionType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RANGE", fieldType: "Ljava/awt/JobAttributes$DefaultSelectionType;", fieldCache: &RANGE_FieldID, className: "java/awt/JobAttributes$DefaultSelectionType", classCache: &JobAttributes_DefaultSelectionTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JobAttributes_DefaultSelectionType( javaObject: __value ) : nil
         }
     }
@@ -53,21 +55,43 @@ open class JobAttributes_DefaultSelectionType: /* java.awt.AttributeValue */ Unc
     open static var SELECTION: JobAttributes_DefaultSelectionType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTION", fieldType: "Ljava/awt/JobAttributes$DefaultSelectionType;", fieldCache: &SELECTION_FieldID, className: "java/awt/JobAttributes$DefaultSelectionType", classCache: &JobAttributes_DefaultSelectionTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JobAttributes_DefaultSelectionType( javaObject: __value ) : nil
         }
     }
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AttributeValue.log
 
-    /// private final int java.awt.AttributeValue.value
-
     /// private final java.lang.String[] java.awt.AttributeValue.names
+
+    /// private final int java.awt.AttributeValue.value
 
     /// private java.awt.JobAttributes$DefaultSelectionType(int)
 
+    /// public int java.awt.JobAttributes$DefaultSelectionType.hashCode()
+
+    private static var hashCode_MethodID_1: jmethodID?
+
+    override open func hashCode() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "hashCode", methodSig: "()I", methodCache: &JobAttributes_DefaultSelectionType.hashCode_MethodID_1, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public java.lang.String java.awt.JobAttributes$DefaultSelectionType.toString()
 
-    /// public int java.awt.JobAttributes$DefaultSelectionType.hashCode()
+    private static var toString_MethodID_2: jmethodID?
+
+    override open func toString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toString", methodSig: "()Ljava/lang/String;", methodCache: &JobAttributes_DefaultSelectionType.toString_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
 }
 

@@ -7,17 +7,17 @@ import java_swift
 
 public protocol Transparency: JavaProtocol {
 
-    /// public static final int java.awt.Transparency.OPAQUE
-
-    static var OPAQUE: Int { get }
-
     /// public static final int java.awt.Transparency.BITMASK
 
-    static var BITMASK: Int { get }
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.Transparency.OPAQUE
+
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.Transparency.TRANSLUCENT
 
-    static var TRANSLUCENT: Int { get }
+    // Skipping field: false false false false false true 
 
     /// public abstract int java.awt.Transparency.getTransparency()
 
@@ -30,17 +30,6 @@ open class TransparencyForward: JNIObjectForward, Transparency {
 
     private static var TransparencyJNIClass: jclass?
 
-    /// public static final int java.awt.Transparency.OPAQUE
-
-    private static var OPAQUE_FieldID: jfieldID?
-
-    open static var OPAQUE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/Transparency", classCache: &TransparencyJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.Transparency.BITMASK
 
     private static var BITMASK_FieldID: jfieldID?
@@ -48,7 +37,18 @@ open class TransparencyForward: JNIObjectForward, Transparency {
     open static var BITMASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BITMASK", fieldType: "I", fieldCache: &BITMASK_FieldID, className: "java/awt/Transparency", classCache: &TransparencyJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Transparency.OPAQUE
+
+    private static var OPAQUE_FieldID: jfieldID?
+
+    open static var OPAQUE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/Transparency", classCache: &TransparencyJNIClass )
+            return Int(__value)
         }
     }
 
@@ -59,7 +59,7 @@ open class TransparencyForward: JNIObjectForward, Transparency {
     open static var TRANSLUCENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRANSLUCENT", fieldType: "I", fieldCache: &TRANSLUCENT_FieldID, className: "java/awt/Transparency", classCache: &TransparencyJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -68,13 +68,12 @@ open class TransparencyForward: JNIObjectForward, Transparency {
     private static var getTransparency_MethodID_2: jmethodID?
 
     open func getTransparency() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &TransparencyForward.getTransparency_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
 }
-
 

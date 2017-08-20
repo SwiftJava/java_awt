@@ -16,17 +16,6 @@ open class Frame: Window {
 
     private static var FrameJNIClass: jclass?
 
-    /// public static final int java.awt.Frame.DEFAULT_CURSOR
-
-    private static var DEFAULT_CURSOR_FieldID: jfieldID?
-
-    open static var DEFAULT_CURSOR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT_CURSOR", fieldType: "I", fieldCache: &DEFAULT_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.Frame.CROSSHAIR_CURSOR
 
     private static var CROSSHAIR_CURSOR_FieldID: jfieldID?
@@ -34,106 +23,18 @@ open class Frame: Window {
     open static var CROSSHAIR_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CROSSHAIR_CURSOR", fieldType: "I", fieldCache: &CROSSHAIR_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.Frame.TEXT_CURSOR
+    /// public static final int java.awt.Frame.DEFAULT_CURSOR
 
-    private static var TEXT_CURSOR_FieldID: jfieldID?
+    private static var DEFAULT_CURSOR_FieldID: jfieldID?
 
-    open static var TEXT_CURSOR: Int {
+    open static var DEFAULT_CURSOR: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TEXT_CURSOR", fieldType: "I", fieldCache: &TEXT_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.WAIT_CURSOR
-
-    private static var WAIT_CURSOR_FieldID: jfieldID?
-
-    open static var WAIT_CURSOR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WAIT_CURSOR", fieldType: "I", fieldCache: &WAIT_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.SW_RESIZE_CURSOR
-
-    private static var SW_RESIZE_CURSOR_FieldID: jfieldID?
-
-    open static var SW_RESIZE_CURSOR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SW_RESIZE_CURSOR", fieldType: "I", fieldCache: &SW_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.SE_RESIZE_CURSOR
-
-    private static var SE_RESIZE_CURSOR_FieldID: jfieldID?
-
-    open static var SE_RESIZE_CURSOR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SE_RESIZE_CURSOR", fieldType: "I", fieldCache: &SE_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.NW_RESIZE_CURSOR
-
-    private static var NW_RESIZE_CURSOR_FieldID: jfieldID?
-
-    open static var NW_RESIZE_CURSOR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NW_RESIZE_CURSOR", fieldType: "I", fieldCache: &NW_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.NE_RESIZE_CURSOR
-
-    private static var NE_RESIZE_CURSOR_FieldID: jfieldID?
-
-    open static var NE_RESIZE_CURSOR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NE_RESIZE_CURSOR", fieldType: "I", fieldCache: &NE_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.N_RESIZE_CURSOR
-
-    private static var N_RESIZE_CURSOR_FieldID: jfieldID?
-
-    open static var N_RESIZE_CURSOR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "N_RESIZE_CURSOR", fieldType: "I", fieldCache: &N_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.S_RESIZE_CURSOR
-
-    private static var S_RESIZE_CURSOR_FieldID: jfieldID?
-
-    open static var S_RESIZE_CURSOR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "S_RESIZE_CURSOR", fieldType: "I", fieldCache: &S_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.W_RESIZE_CURSOR
-
-    private static var W_RESIZE_CURSOR_FieldID: jfieldID?
-
-    open static var W_RESIZE_CURSOR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "W_RESIZE_CURSOR", fieldType: "I", fieldCache: &W_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT_CURSOR", fieldType: "I", fieldCache: &DEFAULT_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
         }
     }
 
@@ -144,7 +45,7 @@ open class Frame: Window {
     open static var E_RESIZE_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "E_RESIZE_CURSOR", fieldType: "I", fieldCache: &E_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -155,29 +56,7 @@ open class Frame: Window {
     open static var HAND_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HAND_CURSOR", fieldType: "I", fieldCache: &HAND_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.MOVE_CURSOR
-
-    private static var MOVE_CURSOR_FieldID: jfieldID?
-
-    open static var MOVE_CURSOR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MOVE_CURSOR", fieldType: "I", fieldCache: &MOVE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.NORMAL
-
-    private static var NORMAL_FieldID: jfieldID?
-
-    open static var NORMAL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORMAL", fieldType: "I", fieldCache: &NORMAL_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -188,29 +67,7 @@ open class Frame: Window {
     open static var ICONIFIED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ICONIFIED", fieldType: "I", fieldCache: &ICONIFIED_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.MAXIMIZED_HORIZ
-
-    private static var MAXIMIZED_HORIZ_FieldID: jfieldID?
-
-    open static var MAXIMIZED_HORIZ: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MAXIMIZED_HORIZ", fieldType: "I", fieldCache: &MAXIMIZED_HORIZ_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Frame.MAXIMIZED_VERT
-
-    private static var MAXIMIZED_VERT_FieldID: jfieldID?
-
-    open static var MAXIMIZED_VERT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MAXIMIZED_VERT", fieldType: "I", fieldCache: &MAXIMIZED_VERT_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -221,25 +78,152 @@ open class Frame: Window {
     open static var MAXIMIZED_BOTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MAXIMIZED_BOTH", fieldType: "I", fieldCache: &MAXIMIZED_BOTH_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// java.awt.Rectangle java.awt.Frame.maximizedBounds
+    /// public static final int java.awt.Frame.MAXIMIZED_HORIZ
 
-    /// java.lang.String java.awt.Frame.title
+    private static var MAXIMIZED_HORIZ_FieldID: jfieldID?
 
-    /// java.awt.MenuBar java.awt.Frame.menuBar
+    open static var MAXIMIZED_HORIZ: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MAXIMIZED_HORIZ", fieldType: "I", fieldCache: &MAXIMIZED_HORIZ_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
 
-    /// boolean java.awt.Frame.resizable
+    /// public static final int java.awt.Frame.MAXIMIZED_VERT
 
-    /// boolean java.awt.Frame.undecorated
+    private static var MAXIMIZED_VERT_FieldID: jfieldID?
 
-    /// boolean java.awt.Frame.mbManagement
+    open static var MAXIMIZED_VERT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MAXIMIZED_VERT", fieldType: "I", fieldCache: &MAXIMIZED_VERT_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
 
-    /// private int java.awt.Frame.state
+    /// public static final int java.awt.Frame.MOVE_CURSOR
 
-    /// java.util.Vector java.awt.Frame.ownedWindows
+    private static var MOVE_CURSOR_FieldID: jfieldID?
+
+    open static var MOVE_CURSOR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MOVE_CURSOR", fieldType: "I", fieldCache: &MOVE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Frame.NE_RESIZE_CURSOR
+
+    private static var NE_RESIZE_CURSOR_FieldID: jfieldID?
+
+    open static var NE_RESIZE_CURSOR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NE_RESIZE_CURSOR", fieldType: "I", fieldCache: &NE_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Frame.NORMAL
+
+    private static var NORMAL_FieldID: jfieldID?
+
+    open static var NORMAL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORMAL", fieldType: "I", fieldCache: &NORMAL_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Frame.NW_RESIZE_CURSOR
+
+    private static var NW_RESIZE_CURSOR_FieldID: jfieldID?
+
+    open static var NW_RESIZE_CURSOR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NW_RESIZE_CURSOR", fieldType: "I", fieldCache: &NW_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Frame.N_RESIZE_CURSOR
+
+    private static var N_RESIZE_CURSOR_FieldID: jfieldID?
+
+    open static var N_RESIZE_CURSOR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "N_RESIZE_CURSOR", fieldType: "I", fieldCache: &N_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Frame.SE_RESIZE_CURSOR
+
+    private static var SE_RESIZE_CURSOR_FieldID: jfieldID?
+
+    open static var SE_RESIZE_CURSOR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SE_RESIZE_CURSOR", fieldType: "I", fieldCache: &SE_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Frame.SW_RESIZE_CURSOR
+
+    private static var SW_RESIZE_CURSOR_FieldID: jfieldID?
+
+    open static var SW_RESIZE_CURSOR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SW_RESIZE_CURSOR", fieldType: "I", fieldCache: &SW_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Frame.S_RESIZE_CURSOR
+
+    private static var S_RESIZE_CURSOR_FieldID: jfieldID?
+
+    open static var S_RESIZE_CURSOR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "S_RESIZE_CURSOR", fieldType: "I", fieldCache: &S_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Frame.TEXT_CURSOR
+
+    private static var TEXT_CURSOR_FieldID: jfieldID?
+
+    open static var TEXT_CURSOR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TEXT_CURSOR", fieldType: "I", fieldCache: &TEXT_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Frame.WAIT_CURSOR
+
+    private static var WAIT_CURSOR_FieldID: jfieldID?
+
+    open static var WAIT_CURSOR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WAIT_CURSOR", fieldType: "I", fieldCache: &WAIT_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Frame.W_RESIZE_CURSOR
+
+    private static var W_RESIZE_CURSOR_FieldID: jfieldID?
+
+    open static var W_RESIZE_CURSOR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "W_RESIZE_CURSOR", fieldType: "I", fieldCache: &W_RESIZE_CURSOR_FieldID, className: "java/awt/Frame", classCache: &FrameJNIClass )
+            return Int(__value)
+        }
+    }
 
     /// private static final java.lang.String java.awt.Frame.base
 
@@ -249,75 +233,117 @@ open class Frame: Window {
 
     /// private int java.awt.Frame.frameSerializedDataVersion
 
-    /// java.lang.String java.awt.Window.warningString
+    /// java.awt.Rectangle java.awt.Frame.maximizedBounds
 
-    /// transient java.util.List java.awt.Window.icons
+    // Skipping field: true false false false false false 
 
-    /// private transient java.awt.Component java.awt.Window.temporaryLostComponent
+    /// boolean java.awt.Frame.mbManagement
 
-    /// static boolean java.awt.Window.systemSyncLWRequests
+    // Skipping field: true false false false false false 
 
-    /// boolean java.awt.Window.syncLWRequests
+    /// java.awt.MenuBar java.awt.Frame.menuBar
 
-    /// transient boolean java.awt.Window.beforeFirstShow
+    // Skipping field: true false false false false false 
 
-    /// private transient boolean java.awt.Window.disposing
+    /// java.util.Vector java.awt.Frame.ownedWindows
 
-    /// transient java.awt.Window$WindowDisposerRecord java.awt.Window.disposerRecord
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Frame.resizable
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Frame.state
+
+    /// java.lang.String java.awt.Frame.title
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Frame.undecorated
+
+    // Skipping field: true false false false false false 
 
     /// static final int java.awt.Window.OPENED
 
-    /// int java.awt.Window.state
-
-    /// private boolean java.awt.Window.alwaysOnTop
+    // Skipping field: true false false false false false 
 
     /// private static final sun.awt.util.IdentityArrayList java.awt.Window.allWindows
 
-    /// transient java.util.Vector java.awt.Window.ownedWindowList
-
-    /// private transient java.lang.ref.WeakReference java.awt.Window.weakThis
-
-    /// transient boolean java.awt.Window.showWithParent
-
-    /// transient java.awt.Dialog java.awt.Window.modalBlocker
-
-    /// java.awt.Dialog$ModalExclusionType java.awt.Window.modalExclusionType
-
-    /// transient java.awt.event.WindowListener java.awt.Window.windowListener
-
-    /// transient java.awt.event.WindowStateListener java.awt.Window.windowStateListener
-
-    /// transient java.awt.event.WindowFocusListener java.awt.Window.windowFocusListener
-
-    /// transient java.awt.im.InputContext java.awt.Window.inputContext
-
-    /// private transient java.lang.Object java.awt.Window.inputContextLock
-
-    /// private java.awt.FocusManager java.awt.Window.focusMgr
-
-    /// private boolean java.awt.Window.focusableWindowState
-
-    /// private volatile boolean java.awt.Window.autoRequestFocus
-
-    /// transient boolean java.awt.Window.isInShow
-
-    /// private volatile float java.awt.Window.opacity
-
-    /// private java.awt.Shape java.awt.Window.shape
-
     /// private static final java.lang.String java.awt.Window.base
+
+    /// private static final java.util.concurrent.atomic.AtomicBoolean java.awt.Window.beforeFirstWindowShown
+
+    /// private static final boolean java.awt.Window.locationByPlatformProp
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Window.log
 
     /// private static int java.awt.Window.nameCounter
 
     /// private static final long java.awt.Window.serialVersionUID
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Window.log
+    /// static boolean java.awt.Window.systemSyncLWRequests
 
-    /// private static final boolean java.awt.Window.locationByPlatformProp
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Window.alwaysOnTop
+
+    /// transient java.lang.Object java.awt.Window.anchor
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Window.autoRequestFocus
+
+    /// transient boolean java.awt.Window.beforeFirstShow
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.Window$WindowDisposerRecord java.awt.Window.disposerRecord
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Window.disposing
+
+    /// private java.awt.FocusManager java.awt.Window.focusMgr
+
+    /// private boolean java.awt.Window.focusableWindowState
+
+    /// transient java.util.List java.awt.Window.icons
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.im.InputContext java.awt.Window.inputContext
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Window.inputContextLock
+
+    /// transient boolean java.awt.Window.isInShow
+
+    // Skipping field: true false false false false false 
 
     /// transient boolean java.awt.Window.isTrayIconWindow
 
-    /// private transient volatile int java.awt.Window.securityWarningWidth
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Window.locationByPlatform
+
+    /// transient java.awt.Dialog java.awt.Window.modalBlocker
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dialog$ModalExclusionType java.awt.Window.modalExclusionType
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile float java.awt.Window.opacity
+
+    /// transient java.util.Vector java.awt.Window.ownedWindowList
+
+    // Skipping field: true false false false false false 
+
+    /// private transient float java.awt.Window.securityWarningAlignmentX
+
+    /// private transient float java.awt.Window.securityWarningAlignmentY
 
     /// private transient volatile int java.awt.Window.securityWarningHeight
 
@@ -325,279 +351,265 @@ open class Frame: Window {
 
     /// private transient double java.awt.Window.securityWarningPointY
 
-    /// private transient float java.awt.Window.securityWarningAlignmentX
+    /// private transient volatile int java.awt.Window.securityWarningWidth
 
-    /// private transient float java.awt.Window.securityWarningAlignmentY
+    /// private java.awt.Shape java.awt.Window.shape
 
-    /// transient java.lang.Object java.awt.Window.anchor
+    /// transient boolean java.awt.Window.showWithParent
 
-    /// private static final java.util.concurrent.atomic.AtomicBoolean java.awt.Window.beforeFirstWindowShown
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Window.state
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Window.syncLWRequests
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.awt.Component java.awt.Window.temporaryLostComponent
 
     /// private java.awt.Window$Type java.awt.Window.type
 
+    /// java.lang.String java.awt.Window.warningString
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.ref.WeakReference java.awt.Window.weakThis
+
+    /// transient java.awt.event.WindowFocusListener java.awt.Window.windowFocusListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.WindowListener java.awt.Window.windowListener
+
+    // Skipping field: true false false false false false 
+
     /// private int java.awt.Window.windowSerializedDataVersion
 
-    /// private volatile boolean java.awt.Window.locationByPlatform
+    /// transient java.awt.event.WindowStateListener java.awt.Window.windowStateListener
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
-
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+    // Skipping field: true false false false false false 
 
     /// private static final java.awt.Component[] java.awt.Container.EMPTY_ARRAY
 
-    /// private java.util.List java.awt.Container.component
-
-    /// java.awt.LayoutManager java.awt.Container.layoutMgr
-
-    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
-
-    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
-
-    /// private boolean java.awt.Container.focusCycleRoot
-
-    /// private boolean java.awt.Container.focusTraversalPolicyProvider
-
-    /// private transient java.util.Set java.awt.Container.printingThreads
-
-    /// private transient boolean java.awt.Container.printing
-
-    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
-
-    /// transient int java.awt.Container.listeningChildren
-
-    /// transient int java.awt.Container.listeningBoundsChildren
-
-    /// transient int java.awt.Container.descendantsCount
-
-    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
-
-    /// private static final long java.awt.Container.serialVersionUID
-
     /// static final boolean java.awt.Container.INCLUDE_SELF
+
+    // Skipping field: true false false false false false 
 
     /// static final boolean java.awt.Container.SEARCH_HEAVYWEIGHTS
 
-    /// private transient int java.awt.Container.numOfHWComponents
+    // Skipping field: true false false false false false 
 
-    /// private transient int java.awt.Container.numOfLWComponents
+    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+
+    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
 
     /// private static final sun.util.logging.PlatformLogger java.awt.Container.mixingLog
 
     /// private static final java.io.ObjectStreamField[] java.awt.Container.serialPersistentFields
 
-    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+    /// private static final long java.awt.Container.serialVersionUID
 
-    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+    /// private java.util.List java.awt.Container.component
 
-    /// transient java.awt.Component java.awt.Container.modalComp
+    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
 
-    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
+    // Skipping field: true false false false false false 
 
     /// private int java.awt.Container.containerSerializedDataVersion
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+    /// transient int java.awt.Container.descendantsCount
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+    /// private boolean java.awt.Container.focusCycleRoot
 
-    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
 
-    /// transient java.awt.Container java.awt.Component.parent
+    /// private boolean java.awt.Container.focusTraversalPolicyProvider
 
-    /// transient sun.awt.AppContext java.awt.Component.appContext
+    /// java.awt.LayoutManager java.awt.Container.layoutMgr
 
-    /// int java.awt.Component.x
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.y
+    /// transient int java.awt.Container.listeningBoundsChildren
 
-    /// int java.awt.Component.width
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.height
+    /// transient int java.awt.Container.listeningChildren
 
-    /// java.awt.Color java.awt.Component.foreground
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Color java.awt.Component.background
+    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
 
-    /// volatile java.awt.Font java.awt.Component.font
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Font java.awt.Component.peerFont
+    /// transient java.awt.Component java.awt.Container.modalComp
 
-    /// java.awt.Cursor java.awt.Component.cursor
+    // Skipping field: true false false false false false 
 
-    /// java.util.Locale java.awt.Component.locale
+    /// private transient int java.awt.Container.numOfHWComponents
 
-    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+    /// private transient int java.awt.Container.numOfLWComponents
 
-    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
 
-    /// boolean java.awt.Component.ignoreRepaint
+    // Skipping field: true false false false false false 
 
-    /// boolean java.awt.Component.visible
+    /// private transient boolean java.awt.Container.printing
 
-    /// boolean java.awt.Component.enabled
+    /// private transient java.util.Set java.awt.Container.printingThreads
 
-    /// private volatile boolean java.awt.Component.valid
+    /// static final boolean java.awt.Component.$assertionsDisabled
 
-    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+    // Skipping field: true false false false false false 
 
-    /// java.util.Vector java.awt.Component.popups
+    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
 
-    /// private java.lang.String java.awt.Component.name
+    // Skipping field: false true false false false false 
 
-    /// private boolean java.awt.Component.nameExplicitlySet
+    /// public static final float java.awt.Component.CENTER_ALIGNMENT
 
-    /// private boolean java.awt.Component.focusable
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
+    // Skipping field: false true false false false false 
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
 
-    /// private int java.awt.Component.isFocusTraversableOverridden
-
-    /// java.util.Set[] java.awt.Component.focusTraversalKeys
-
-    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
-
-    /// private boolean java.awt.Component.focusTraversalKeysEnabled
-
-    /// static final java.lang.Object java.awt.Component.LOCK
-
-    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
-
-    /// java.awt.Dimension java.awt.Component.minSize
-
-    /// boolean java.awt.Component.minSizeSet
-
-    /// java.awt.Dimension java.awt.Component.prefSize
-
-    /// boolean java.awt.Component.prefSizeSet
-
-    /// java.awt.Dimension java.awt.Component.maxSize
-
-    /// boolean java.awt.Component.maxSizeSet
-
-    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
-
-    /// boolean java.awt.Component.newEventsOnly
-
-    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
-
-    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
-
-    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
-
-    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
-
-    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
-
-    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
-
-    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
-
-    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
-
-    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
-
-    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
-
-    /// static final java.lang.String java.awt.Component.actionListenerK
-
-    /// static final java.lang.String java.awt.Component.adjustmentListenerK
-
-    /// static final java.lang.String java.awt.Component.componentListenerK
-
-    /// static final java.lang.String java.awt.Component.containerListenerK
-
-    /// static final java.lang.String java.awt.Component.focusListenerK
-
-    /// static final java.lang.String java.awt.Component.itemListenerK
-
-    /// static final java.lang.String java.awt.Component.keyListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
-
-    /// static final java.lang.String java.awt.Component.textListenerK
-
-    /// static final java.lang.String java.awt.Component.ownedWindowK
-
-    /// static final java.lang.String java.awt.Component.windowListenerK
-
-    /// static final java.lang.String java.awt.Component.inputMethodListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
-
-    /// static final java.lang.String java.awt.Component.windowStateListenerK
-
-    /// static final java.lang.String java.awt.Component.windowFocusListenerK
-
-    /// long java.awt.Component.eventMask
-
-    /// static boolean java.awt.Component.isInc
-
-    /// static int java.awt.Component.incRate
-
-    /// public static final float java.awt.Component.TOP_ALIGNMENT
-
-    /// public static final float java.awt.Component.CENTER_ALIGNMENT
-
-    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
 
     /// public static final float java.awt.Component.LEFT_ALIGNMENT
 
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.Object java.awt.Component.LOCK
+
+    // Skipping field: true false false false false false 
+
     /// public static final float java.awt.Component.RIGHT_ALIGNMENT
 
-    /// private static final long java.awt.Component.serialVersionUID
+    // Skipping field: false true false false false false 
 
-    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+    /// public static final float java.awt.Component.TOP_ALIGNMENT
 
-    /// private transient java.lang.Object java.awt.Component.objectLock
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Component.isPacked
+    /// static final java.lang.String java.awt.Component.actionListenerK
 
-    /// private int java.awt.Component.boundsOp
+    // Skipping field: true false false false false false 
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+    /// static final java.lang.String java.awt.Component.adjustmentListenerK
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
-
-    /// private transient boolean java.awt.Component.isAddNotifyComplete
-
-    /// transient boolean java.awt.Component.backgroundEraseDisabled
-
-    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
-
-    /// private transient boolean java.awt.Component.coalescingEnabled
-
-    /// private static final java.util.Map java.awt.Component.coalesceMap
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Class[] java.awt.Component.coalesceEventsParams
 
+    /// private static final java.util.Map java.awt.Component.coalesceMap
+
+    /// static final java.lang.String java.awt.Component.componentListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.containerListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+
+    /// static final java.lang.String java.awt.Component.focusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+
+    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
+
+    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.hierarchyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static int java.awt.Component.incRate
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.inputMethodListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static boolean java.awt.Component.isInc
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.keyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+
+    /// static final java.lang.String java.awt.Component.mouseListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.ownedWindowK
+
+    // Skipping field: true false false false false false 
+
     /// private static sun.awt.RequestFocusController java.awt.Component.requestFocusController
 
-    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
+    /// private static final long java.awt.Component.serialVersionUID
 
-    /// private int java.awt.Component.componentSerializedDataVersion
+    /// static final java.lang.String java.awt.Component.textListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowFocusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowStateListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
 
     /// protected javax.accessibility.AccessibleContext java.awt.Component.accessibleContext
 
     private static var accessibleContext_FieldID: jfieldID?
 
-    override open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+    override open var accessibleContext: /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Frame.accessibleContext_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Frame.accessibleContext_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -606,52 +618,278 @@ open class Frame: Window {
         }
     }
 
-    /// static final boolean java.awt.Component.$assertionsDisabled
+    /// transient sun.awt.AppContext java.awt.Component.appContext
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
+    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
 
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+    /// java.awt.Color java.awt.Component.background
 
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+    /// transient boolean java.awt.Component.backgroundEraseDisabled
 
-    /// public static final int java.awt.image.ImageObserver.ALLBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.ERROR
+    /// private int java.awt.Component.boundsOp
+
+    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+
+    // Skipping field: true false false false false false 
+
+    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+
+    /// private transient boolean java.awt.Component.coalescingEnabled
+
+    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.componentSerializedDataVersion
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+
+    /// java.awt.Cursor java.awt.Component.cursor
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.Component.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Set[] java.awt.Component.focusTraversalKeys
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Component.focusTraversalKeysEnabled
+
+    /// private boolean java.awt.Component.focusable
+
+    /// volatile java.awt.Font java.awt.Component.font
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color java.awt.Component.foreground
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+
+    /// int java.awt.Component.height
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.ignoreRepaint
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Component.isAddNotifyComplete
+
+    /// private int java.awt.Component.isFocusTraversableOverridden
+
+    /// boolean java.awt.Component.isPacked
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Locale java.awt.Component.locale
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.maxSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.maxSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.minSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.minSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
+
+    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.String java.awt.Component.name
+
+    /// private boolean java.awt.Component.nameExplicitlySet
+
+    /// boolean java.awt.Component.newEventsOnly
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Component.objectLock
+
+    /// transient java.awt.Container java.awt.Component.parent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font java.awt.Component.peerFont
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Component.popups
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.prefSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.prefSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Component.valid
+
+    /// boolean java.awt.Component.visible
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.width
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.x
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.y
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.image.ImageObserver.ABORT
 
-    /// public java.awt.Frame(java.lang.String,java.awt.GraphicsConfiguration)
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ALLBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ERROR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    // Skipping field: false true false false false false 
+
+    /// public java.awt.Frame() throws java.awt.HeadlessException
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( title: String?, gc: GraphicsConfiguration? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: gc, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Frame", classCache: &Frame.FrameJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/GraphicsConfiguration;)V", methodCache: &Frame.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "java/awt/Frame", classCache: &Frame.FrameJNIClass, methodSig: "()V", methodCache: &Frame.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _title: String?, _ _gc: GraphicsConfiguration? ) {
-        self.init( title: _title, gc: _gc )
+    /// public java.awt.Frame(java.awt.GraphicsConfiguration)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( gc: GraphicsConfiguration? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: gc, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/Frame", classCache: &Frame.FrameJNIClass, methodSig: "(Ljava/awt/GraphicsConfiguration;)V", methodCache: &Frame.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _gc: GraphicsConfiguration? ) {
+        self.init( gc: _gc )
     }
 
     /// public java.awt.Frame(java.lang.String) throws java.awt.HeadlessException
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_3: jmethodID?
 
     public convenience init( title: String? ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Frame", classCache: &Frame.FrameJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &Frame.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/Frame", classCache: &Frame.FrameJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &Frame.new_MethodID_3, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw HeadlessException( javaObject: throwable )
         }
         self.init( javaObject: __object )
@@ -662,403 +900,410 @@ open class Frame: Window {
         try self.init( title: _title )
     }
 
-    /// public java.awt.Frame(java.awt.GraphicsConfiguration)
-
-    private static var new_MethodID_3: jmethodID?
-
-    public convenience init( gc: GraphicsConfiguration? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: gc, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Frame", classCache: &Frame.FrameJNIClass, methodSig: "(Ljava/awt/GraphicsConfiguration;)V", methodCache: &Frame.new_MethodID_3, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _gc: GraphicsConfiguration? ) {
-        self.init( gc: _gc )
-    }
-
-    /// public java.awt.Frame() throws java.awt.HeadlessException
+    /// public java.awt.Frame(java.lang.String,java.awt.GraphicsConfiguration)
 
     private static var new_MethodID_4: jmethodID?
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( title: String?, gc: GraphicsConfiguration? ) {
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "java/awt/Frame", classCache: &Frame.FrameJNIClass, methodSig: "()V", methodCache: &Frame.new_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: title, locals: &__locals )
+        __args[1] = JNIType.toJava( value: gc, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/Frame", classCache: &Frame.FrameJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/GraphicsConfiguration;)V", methodCache: &Frame.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void java.awt.Frame.remove(java.awt.MenuComponent)
-
-    private static var remove_MethodID_5: jmethodID?
-
-    override open func remove( comp: MenuComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &Frame.remove_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func remove( _ _comp: MenuComponent? ) {
-        remove( comp: _comp )
+    public convenience init( _ _title: String?, _ _gc: GraphicsConfiguration? ) {
+        self.init( title: _title, gc: _gc )
     }
 
     /// static int java.awt.Frame.access$000(java.awt.Frame)
 
-    /// private void java.awt.Frame.init(java.lang.String,java.awt.GraphicsConfiguration)
-
-    /// private void java.awt.Frame.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
-
-    /// private void java.awt.Frame.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
-
-    /// public synchronized int java.awt.Frame.getState()
-
-    private static var getState_MethodID_6: jmethodID?
-
-    open func getState() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getState", methodSig: "()I", methodCache: &Frame.getState_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
+    // Skipping method: true false false false false 
 
     /// static int java.awt.Frame.access$002(java.awt.Frame,int)
 
-    /// protected java.lang.String java.awt.Frame.paramString()
+    // Skipping method: true false false false false 
 
-    private static var paramString_MethodID_7: jmethodID?
+    /// public static java.awt.Frame[] java.awt.Frame.getFrames()
 
-    override open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var getFrames_MethodID_5: jmethodID?
+
+    open class func getFrames() -> [Frame]! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &Frame.paramString_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Frame", classCache: &FrameJNIClass, methodName: "getFrames", methodSig: "()[Ljava/awt/Frame;", methodCache: &getFrames_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Frame].self, from: __return )
     }
 
 
     /// private static native void java.awt.Frame.initIDs()
 
+    /// private void java.awt.Frame.init(java.lang.String,java.awt.GraphicsConfiguration)
+
+    /// public void java.awt.Frame.addNotify()
+
+    // Skipping method: false true false false false 
+
     /// java.lang.String java.awt.Frame.constructComponentName()
 
-    /// public void java.awt.Frame.setCursor(int)
-
-    private static var setCursor_MethodID_8: jmethodID?
-
-    open func setCursor( cursorType: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cursorType, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(I)V", methodCache: &Frame.setCursor_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setCursor( _ _cursorType: Int ) {
-        setCursor( cursorType: _cursorType )
-    }
-
-    /// public java.lang.String java.awt.Frame.getTitle()
-
-    private static var getTitle_MethodID_9: jmethodID?
-
-    open func getTitle() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitle", methodSig: "()Ljava/lang/String;", methodCache: &Frame.getTitle_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public void java.awt.Frame.setTitle(java.lang.String)
-
-    private static var setTitle_MethodID_10: jmethodID?
-
-    open func setTitle( title: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &Frame.setTitle_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func setTitle( _ _title: String? ) {
-        setTitle( title: _title )
-    }
-
-    /// public void java.awt.Frame.setBackground(java.awt.Color)
-
-    private static var setBackground_MethodID_11: jmethodID?
-
-    open func setBackground( bgColor: Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bgColor, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &Frame.setBackground_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    override open func setBackground( _ _bgColor: Color? ) {
-        setBackground( bgColor: _bgColor )
-    }
+    // Skipping method: true false false false false 
 
     /// public javax.accessibility.AccessibleContext java.awt.Frame.getAccessibleContext()
 
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.Frame.getCursorType()
+
+    private static var getCursorType_MethodID_6: jmethodID?
+
+    open func getCursorType() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCursorType", methodSig: "()I", methodCache: &Frame.getCursorType_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.Frame.getExtendedState()
+
+    private static var getExtendedState_MethodID_7: jmethodID?
+
+    open func getExtendedState() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getExtendedState", methodSig: "()I", methodCache: &Frame.getExtendedState_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.awt.Image java.awt.Frame.getIconImage()
+
+    private static var getIconImage_MethodID_8: jmethodID?
+
+    open func getIconImage() -> Image! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIconImage", methodSig: "()Ljava/awt/Image;", methodCache: &Frame.getIconImage_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Image( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Rectangle java.awt.Frame.getMaximizedBounds()
+
+    private static var getMaximizedBounds_MethodID_9: jmethodID?
+
+    open func getMaximizedBounds() -> Rectangle! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximizedBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Frame.getMaximizedBounds_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.MenuBar java.awt.Frame.getMenuBar()
+
+    private static var getMenuBar_MethodID_10: jmethodID?
+
+    open func getMenuBar() -> MenuBar! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuBar", methodSig: "()Ljava/awt/MenuBar;", methodCache: &Frame.getMenuBar_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MenuBar( javaObject: __return ) : nil
+    }
+
+
+    /// public synchronized int java.awt.Frame.getState()
+
+    private static var getState_MethodID_11: jmethodID?
+
+    open func getState() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getState", methodSig: "()I", methodCache: &Frame.getState_MethodID_11, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.lang.String java.awt.Frame.getTitle()
+
+    private static var getTitle_MethodID_12: jmethodID?
+
+    open func getTitle() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitle", methodSig: "()Ljava/lang/String;", methodCache: &Frame.getTitle_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// private boolean java.awt.Frame.isFrameStateSupported(int)
+
     /// public boolean java.awt.Frame.isResizable()
 
-    private static var isResizable_MethodID_12: jmethodID?
+    private static var isResizable_MethodID_13: jmethodID?
 
     open func isResizable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isResizable", methodSig: "()Z", methodCache: &Frame.isResizable_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void java.awt.Frame.setResizable(boolean)
-
-    private static var setResizable_MethodID_13: jmethodID?
-
-    open func setResizable( resizable: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: resizable, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &Frame.setResizable_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isResizable", methodSig: "()Z", methodCache: &Frame.isResizable_MethodID_13, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    open func setResizable( _ _resizable: Bool ) {
-        setResizable( resizable: _resizable )
-    }
 
     /// public boolean java.awt.Frame.isUndecorated()
 
     private static var isUndecorated_MethodID_14: jmethodID?
 
     open func isUndecorated() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isUndecorated", methodSig: "()Z", methodCache: &Frame.isUndecorated_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// public void java.awt.Frame.setOpacity(float)
+    /// protected java.lang.String java.awt.Frame.paramString()
 
-    private static var setOpacity_MethodID_15: jmethodID?
+    private static var paramString_MethodID_15: jmethodID?
 
-    open func setOpacity( opacity: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func paramString() -> String! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: opacity, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpacity", methodSig: "(F)V", methodCache: &Frame.setOpacity_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    override open func setOpacity( _ _opacity: Float ) {
-        setOpacity( opacity: _opacity )
-    }
-
-    /// public void java.awt.Frame.setShape(java.awt.Shape)
-
-    private static var setShape_MethodID_16: jmethodID?
-
-    open func setShape( shape: Shape? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: shape, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setShape", methodSig: "(Ljava/awt/Shape;)V", methodCache: &Frame.setShape_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    override open func setShape( _ _shape: Shape? ) {
-        setShape( shape: _shape )
-    }
-
-    /// public void java.awt.Frame.setIconImage(java.awt.Image)
-
-    private static var setIconImage_MethodID_17: jmethodID?
-
-    open func setIconImage( image: Image? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &Frame.setIconImage_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    override open func setIconImage( _ _image: Image? ) {
-        setIconImage( image: _image )
-    }
-
-    /// public java.awt.Image java.awt.Frame.getIconImage()
-
-    private static var getIconImage_MethodID_18: jmethodID?
-
-    open func getIconImage() -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIconImage", methodSig: "()Ljava/awt/Image;", methodCache: &Frame.getIconImage_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &Frame.paramString_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
 
-    /// public java.awt.MenuBar java.awt.Frame.getMenuBar()
+    /// void java.awt.Frame.postProcessKeyEvent(java.awt.event.KeyEvent)
 
-    private static var getMenuBar_MethodID_19: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func getMenuBar() -> MenuBar! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// private void java.awt.Frame.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
+
+    /// public void java.awt.Frame.remove(java.awt.MenuComponent)
+
+    private static var remove_MethodID_16: jmethodID?
+
+    override open func remove( comp: MenuComponent? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuBar", methodSig: "()Ljava/awt/MenuBar;", methodCache: &Frame.getMenuBar_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MenuBar( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.Frame.setMenuBar(java.awt.MenuBar)
-
-    private static var setMenuBar_MethodID_20: jmethodID?
-
-    open func setMenuBar( mb: MenuBar? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mb, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMenuBar", methodSig: "(Ljava/awt/MenuBar;)V", methodCache: &Frame.setMenuBar_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &Frame.remove_MethodID_16, args: &__args, locals: &__locals )
     }
 
-    open func setMenuBar( _ _mb: MenuBar? ) {
-        setMenuBar( mb: _mb )
+    override open func remove( _ _comp: MenuComponent? ) {
+        remove( comp: _comp )
+    }
+
+    /// public void java.awt.Frame.removeNotify()
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.Frame.setBackground(java.awt.Color)
+
+    private static var setBackground_MethodID_17: jmethodID?
+
+    open func setBackground( bgColor: Color? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: bgColor, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &Frame.setBackground_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    override open func setBackground( _ _bgColor: Color? ) {
+        setBackground( bgColor: _bgColor )
+    }
+
+    /// public void java.awt.Frame.setCursor(int)
+
+    private static var setCursor_MethodID_18: jmethodID?
+
+    open func setCursor( cursorType: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(cursorType) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(I)V", methodCache: &Frame.setCursor_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setCursor( _ _cursorType: Int ) {
+        setCursor( cursorType: _cursorType )
     }
 
     /// public void java.awt.Frame.setExtendedState(int)
 
-    private static var setExtendedState_MethodID_21: jmethodID?
+    private static var setExtendedState_MethodID_19: jmethodID?
 
     open func setExtendedState( state: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: state, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExtendedState", methodSig: "(I)V", methodCache: &Frame.setExtendedState_MethodID_21, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(state) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExtendedState", methodSig: "(I)V", methodCache: &Frame.setExtendedState_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func setExtendedState( _ _state: Int ) {
         setExtendedState( state: _state )
     }
 
+    /// public void java.awt.Frame.setIconImage(java.awt.Image)
+
+    private static var setIconImage_MethodID_20: jmethodID?
+
+    open func setIconImage( image: Image? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &Frame.setIconImage_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    override open func setIconImage( _ _image: Image? ) {
+        setIconImage( image: _image )
+    }
+
     /// public void java.awt.Frame.setMaximizedBounds(java.awt.Rectangle)
 
-    private static var setMaximizedBounds_MethodID_22: jmethodID?
+    private static var setMaximizedBounds_MethodID_21: jmethodID?
 
     open func setMaximizedBounds( bounds: Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: bounds, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximizedBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &Frame.setMaximizedBounds_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximizedBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &Frame.setMaximizedBounds_MethodID_21, args: &__args, locals: &__locals )
     }
 
     open func setMaximizedBounds( _ _bounds: Rectangle? ) {
         setMaximizedBounds( bounds: _bounds )
     }
 
-    /// public java.awt.Rectangle java.awt.Frame.getMaximizedBounds()
+    /// public void java.awt.Frame.setMenuBar(java.awt.MenuBar)
 
-    private static var getMaximizedBounds_MethodID_23: jmethodID?
+    private static var setMenuBar_MethodID_22: jmethodID?
 
-    open func getMaximizedBounds() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setMenuBar( mb: MenuBar? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximizedBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Frame.getMaximizedBounds_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: mb, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMenuBar", methodSig: "(Ljava/awt/MenuBar;)V", methodCache: &Frame.setMenuBar_MethodID_22, args: &__args, locals: &__locals )
     }
 
-
-    /// public int java.awt.Frame.getCursorType()
-
-    private static var getCursorType_MethodID_24: jmethodID?
-
-    open func getCursorType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCursorType", methodSig: "()I", methodCache: &Frame.getCursorType_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+    open func setMenuBar( _ _mb: MenuBar? ) {
+        setMenuBar( mb: _mb )
     }
 
+    /// public void java.awt.Frame.setOpacity(float)
+
+    private static var setOpacity_MethodID_23: jmethodID?
+
+    open func setOpacity( opacity: Float ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( f: opacity )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpacity", methodSig: "(F)V", methodCache: &Frame.setOpacity_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    override open func setOpacity( _ _opacity: Float ) {
+        setOpacity( opacity: _opacity )
+    }
+
+    /// public void java.awt.Frame.setResizable(boolean)
+
+    private static var setResizable_MethodID_24: jmethodID?
+
+    open func setResizable( resizable: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(resizable ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &Frame.setResizable_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func setResizable( _ _resizable: Bool ) {
+        setResizable( resizable: _resizable )
+    }
+
+    /// public void java.awt.Frame.setShape(java.awt.Shape)
+
+    private static var setShape_MethodID_25: jmethodID?
+
+    open func setShape( shape: Shape? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: shape, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setShape", methodSig: "(Ljava/awt/Shape;)V", methodCache: &Frame.setShape_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    override open func setShape( _ _shape: Shape? ) {
+        setShape( shape: _shape )
+    }
 
     /// public synchronized void java.awt.Frame.setState(int)
 
-    private static var setState_MethodID_25: jmethodID?
+    private static var setState_MethodID_26: jmethodID?
 
     open func setState( state: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: state, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setState", methodSig: "(I)V", methodCache: &Frame.setState_MethodID_25, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(state) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setState", methodSig: "(I)V", methodCache: &Frame.setState_MethodID_26, args: &__args, locals: &__locals )
     }
 
     open func setState( _ _state: Int ) {
         setState( state: _state )
     }
 
-    /// public void java.awt.Frame.addNotify()
+    /// public void java.awt.Frame.setTitle(java.lang.String)
 
-    /// public void java.awt.Frame.removeNotify()
+    private static var setTitle_MethodID_27: jmethodID?
 
-    /// void java.awt.Frame.postProcessKeyEvent(java.awt.event.KeyEvent)
-
-    /// private boolean java.awt.Frame.isFrameStateSupported(int)
-
-    /// public static java.awt.Frame[] java.awt.Frame.getFrames()
-
-    private static var getFrames_MethodID_26: jmethodID?
-
-    open class func getFrames() -> [Frame]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setTitle( title: String? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/Frame", classCache: &FrameJNIClass, methodName: "getFrames", methodSig: "()[Ljava/awt/Frame;", methodCache: &getFrames_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Frame](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: title, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &Frame.setTitle_MethodID_27, args: &__args, locals: &__locals )
     }
 
+    open func setTitle( _ _title: String? ) {
+        setTitle( title: _title )
+    }
 
     /// public void java.awt.Frame.setUndecorated(boolean)
 
-    private static var setUndecorated_MethodID_27: jmethodID?
+    private static var setUndecorated_MethodID_28: jmethodID?
 
     open func setUndecorated( undecorated: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: undecorated, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUndecorated", methodSig: "(Z)V", methodCache: &Frame.setUndecorated_MethodID_27, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(undecorated ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUndecorated", methodSig: "(Z)V", methodCache: &Frame.setUndecorated_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func setUndecorated( _ _undecorated: Bool ) {
         setUndecorated( undecorated: _undecorated )
     }
 
-    /// public int java.awt.Frame.getExtendedState()
-
-    private static var getExtendedState_MethodID_28: jmethodID?
-
-    open func getExtendedState() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getExtendedState", methodSig: "()I", methodCache: &Frame.getExtendedState_MethodID_28, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
+    /// private void java.awt.Frame.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
     /// In declared protocol but not defined.. ///
 
     /// public abstract java.awt.Font java.awt.MenuContainer.getFont()
+
+    // Skipping method: false true false false false 
 
     /// public abstract boolean java.awt.MenuContainer.postEvent(java.awt.Event)
 
     private static var postEvent_MethodID_29: jmethodID?
 
     override open func postEvent( evt: Event? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: evt, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "postEvent", methodSig: "(Ljava/awt/Event;)Z", methodCache: &Frame.postEvent_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func postEvent( _ _evt: Event? ) -> Bool {
@@ -1070,9 +1315,7 @@ open class Frame: Window {
 private typealias Frame_paint_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func Frame_paint_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> () {
-    JNI.inNative = true;
     FrameLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).paint( arg0: arg0 != nil ? Graphics( javaObject: arg0 ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class FrameLocal_: JNIObjectProxy<Frame> {
@@ -1119,42 +1362,58 @@ open class FrameBase: Frame {
         }
     }
 
-    /// public java.awt.Frame(java.lang.String,java.awt.GraphicsConfiguration)
+    /// public java.awt.Frame() throws java.awt.HeadlessException
 
     private static var new_MethodID_30: jmethodID?
 
-    public convenience init( title: String?, gc: GraphicsConfiguration? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: gc, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
 
         self.init( javaObject: nil )
-        __args[2] = __local!.swiftValue()
+        __args[0] = __local!.swiftValue()
 
-        let __object = JNIMethod.NewObject( className: "org/swiftjava/java_awt/FrameProxy", classCache: &FrameBase.FrameBaseJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/GraphicsConfiguration;J)V", methodCache: &FrameBase.new_MethodID_30, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "org/swiftjava/java_awt/FrameProxy", classCache: &FrameBase.FrameBaseJNIClass, methodSig: "(J)V", methodCache: &FrameBase.new_MethodID_30, args: &__args, locals: &__locals )
         self.javaObject = __object
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _title: String?, _ _gc: GraphicsConfiguration? ) {
-        self.init( title: _title, gc: _gc )
+    /// public java.awt.Frame(java.awt.GraphicsConfiguration)
+
+    private static var new_MethodID_31: jmethodID?
+
+    public convenience init( gc: GraphicsConfiguration? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: gc, locals: &__locals )
+
+        self.init( javaObject: nil )
+        __args[1] = __local!.swiftValue()
+
+        let __object = JNIMethod.NewObject( className: "org/swiftjava/java_awt/FrameProxy", classCache: &FrameBase.FrameBaseJNIClass, methodSig: "(Ljava/awt/GraphicsConfiguration;J)V", methodCache: &FrameBase.new_MethodID_31, args: &__args, locals: &__locals )
+        self.javaObject = __object
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _gc: GraphicsConfiguration? ) {
+        self.init( gc: _gc )
     }
 
     /// public java.awt.Frame(java.lang.String) throws java.awt.HeadlessException
 
-    private static var new_MethodID_31: jmethodID?
+    private static var new_MethodID_32: jmethodID?
 
     public convenience init( title: String? ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[1] = __local!.swiftValue()
 
-        let __object = JNIMethod.NewObject( className: "org/swiftjava/java_awt/FrameProxy", classCache: &FrameBase.FrameBaseJNIClass, methodSig: "(Ljava/lang/String;J)V", methodCache: &FrameBase.new_MethodID_31, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "org/swiftjava/java_awt/FrameProxy", classCache: &FrameBase.FrameBaseJNIClass, methodSig: "(Ljava/lang/String;J)V", methodCache: &FrameBase.new_MethodID_32, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw HeadlessException( javaObject: throwable )
         }
         self.javaObject = __object
@@ -1165,41 +1424,26 @@ open class FrameBase: Frame {
         try self.init( title: _title )
     }
 
-    /// public java.awt.Frame(java.awt.GraphicsConfiguration)
-
-    private static var new_MethodID_32: jmethodID?
-
-    public convenience init( gc: GraphicsConfiguration? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: gc, locals: &__locals )
-
-        self.init( javaObject: nil )
-        __args[1] = __local!.swiftValue()
-
-        let __object = JNIMethod.NewObject( className: "org/swiftjava/java_awt/FrameProxy", classCache: &FrameBase.FrameBaseJNIClass, methodSig: "(Ljava/awt/GraphicsConfiguration;J)V", methodCache: &FrameBase.new_MethodID_32, args: &__args, locals: &__locals )
-        self.javaObject = __object
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _gc: GraphicsConfiguration? ) {
-        self.init( gc: _gc )
-    }
-
-    /// public java.awt.Frame() throws java.awt.HeadlessException
+    /// public java.awt.Frame(java.lang.String,java.awt.GraphicsConfiguration)
 
     private static var new_MethodID_33: jmethodID?
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( title: String?, gc: GraphicsConfiguration? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: title, locals: &__locals )
+        __args[1] = JNIType.toJava( value: gc, locals: &__locals )
 
         self.init( javaObject: nil )
-        __args[0] = __local!.swiftValue()
+        __args[2] = __local!.swiftValue()
 
-        let __object = JNIMethod.NewObject( className: "org/swiftjava/java_awt/FrameProxy", classCache: &FrameBase.FrameBaseJNIClass, methodSig: "(J)V", methodCache: &FrameBase.new_MethodID_33, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "org/swiftjava/java_awt/FrameProxy", classCache: &FrameBase.FrameBaseJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/GraphicsConfiguration;J)V", methodCache: &FrameBase.new_MethodID_33, args: &__args, locals: &__locals )
         self.javaObject = __object
         JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _title: String?, _ _gc: GraphicsConfiguration? ) {
+        self.init( title: _title, gc: _gc )
     }
 
 }

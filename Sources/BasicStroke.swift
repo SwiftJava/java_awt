@@ -16,39 +16,6 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
 
     private static var BasicStrokeJNIClass: jclass?
 
-    /// public static final int java.awt.BasicStroke.JOIN_MITER
-
-    private static var JOIN_MITER_FieldID: jfieldID?
-
-    open static var JOIN_MITER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "JOIN_MITER", fieldType: "I", fieldCache: &JOIN_MITER_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.BasicStroke.JOIN_ROUND
-
-    private static var JOIN_ROUND_FieldID: jfieldID?
-
-    open static var JOIN_ROUND: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "JOIN_ROUND", fieldType: "I", fieldCache: &JOIN_ROUND_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.BasicStroke.JOIN_BEVEL
-
-    private static var JOIN_BEVEL_FieldID: jfieldID?
-
-    open static var JOIN_BEVEL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "JOIN_BEVEL", fieldType: "I", fieldCache: &JOIN_BEVEL_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.BasicStroke.CAP_BUTT
 
     private static var CAP_BUTT_FieldID: jfieldID?
@@ -56,7 +23,7 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
     open static var CAP_BUTT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CAP_BUTT", fieldType: "I", fieldCache: &CAP_BUTT_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -67,7 +34,7 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
     open static var CAP_ROUND: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CAP_ROUND", fieldType: "I", fieldCache: &CAP_ROUND_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -78,29 +45,74 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
     open static var CAP_SQUARE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CAP_SQUARE", fieldType: "I", fieldCache: &CAP_SQUARE_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// float java.awt.BasicStroke.width
+    /// public static final int java.awt.BasicStroke.JOIN_BEVEL
 
-    /// int java.awt.BasicStroke.join
+    private static var JOIN_BEVEL_FieldID: jfieldID?
+
+    open static var JOIN_BEVEL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "JOIN_BEVEL", fieldType: "I", fieldCache: &JOIN_BEVEL_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.BasicStroke.JOIN_MITER
+
+    private static var JOIN_MITER_FieldID: jfieldID?
+
+    open static var JOIN_MITER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "JOIN_MITER", fieldType: "I", fieldCache: &JOIN_MITER_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.BasicStroke.JOIN_ROUND
+
+    private static var JOIN_ROUND_FieldID: jfieldID?
+
+    open static var JOIN_ROUND: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "JOIN_ROUND", fieldType: "I", fieldCache: &JOIN_ROUND_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
+            return Int(__value)
+        }
+    }
 
     /// int java.awt.BasicStroke.cap
 
-    /// float java.awt.BasicStroke.miterlimit
+    // Skipping field: true false false false false false 
 
     /// float[] java.awt.BasicStroke.dash
 
+    // Skipping field: true false false false false false 
+
     /// float java.awt.BasicStroke.dash_phase
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.BasicStroke.join
+
+    // Skipping field: true false false false false false 
+
+    /// float java.awt.BasicStroke.miterlimit
+
+    // Skipping field: true false false false false false 
+
+    /// float java.awt.BasicStroke.width
+
+    // Skipping field: true false false false false false 
 
     /// public java.awt.BasicStroke()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/BasicStroke", classCache: &BasicStroke.BasicStrokeJNIClass, methodSig: "()V", methodCache: &BasicStroke.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -111,9 +123,9 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( width: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( f: width )
         let __object = JNIMethod.NewObject( className: "java/awt/BasicStroke", classCache: &BasicStroke.BasicStrokeJNIClass, methodSig: "(F)V", methodCache: &BasicStroke.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -128,11 +140,11 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( width: Float, cap: Int, join: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: cap, locals: &__locals )
-        __args[2] = JNIType.toJava( value: join, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( f: width )
+        __args[1] = jvalue( i: jint(cap) )
+        __args[2] = jvalue( i: jint(join) )
         let __object = JNIMethod.NewObject( className: "java/awt/BasicStroke", classCache: &BasicStroke.BasicStrokeJNIClass, methodSig: "(FII)V", methodCache: &BasicStroke.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -147,12 +159,12 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
     private static var new_MethodID_4: jmethodID?
 
     public convenience init( width: Float, cap: Int, join: Int, miterlimit: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: cap, locals: &__locals )
-        __args[2] = JNIType.toJava( value: join, locals: &__locals )
-        __args[3] = JNIType.toJava( value: miterlimit, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( f: width )
+        __args[1] = jvalue( i: jint(cap) )
+        __args[2] = jvalue( i: jint(join) )
+        __args[3] = jvalue( f: miterlimit )
         let __object = JNIMethod.NewObject( className: "java/awt/BasicStroke", classCache: &BasicStroke.BasicStrokeJNIClass, methodSig: "(FIIF)V", methodCache: &BasicStroke.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -167,14 +179,14 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
     private static var new_MethodID_5: jmethodID?
 
     public convenience init( width: Float, cap: Int, join: Int, miterlimit: Float, dash: [Float]?, dash_phase: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: cap, locals: &__locals )
-        __args[2] = JNIType.toJava( value: join, locals: &__locals )
-        __args[3] = JNIType.toJava( value: miterlimit, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( f: width )
+        __args[1] = jvalue( i: jint(cap) )
+        __args[2] = jvalue( i: jint(join) )
+        __args[3] = jvalue( f: miterlimit )
         __args[4] = JNIType.toJava( value: dash, locals: &__locals )
-        __args[5] = JNIType.toJava( value: dash_phase, locals: &__locals )
+        __args[5] = jvalue( f: dash_phase )
         let __object = JNIMethod.NewObject( className: "java/awt/BasicStroke", classCache: &BasicStroke.BasicStrokeJNIClass, methodSig: "(FIIF[FF)V", methodCache: &BasicStroke.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -184,33 +196,15 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
         self.init( width: _width, cap: _cap, join: _join, miterlimit: _miterlimit, dash: _dash, dash_phase: _dash_phase )
     }
 
-    /// public boolean java.awt.BasicStroke.equals(java.lang.Object)
-
-    private static var equals_MethodID_6: jmethodID?
-
-    open func equals( obj: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &BasicStroke.equals_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func equals( _ _obj: java_swift.JavaObject? ) -> Bool {
-        return equals( obj: _obj )
-    }
-
-    /// public int java.awt.BasicStroke.hashCode()
-
     /// public java.awt.Shape java.awt.BasicStroke.createStrokedShape(java.awt.Shape)
 
-    private static var createStrokedShape_MethodID_7: jmethodID?
+    private static var createStrokedShape_MethodID_6: jmethodID?
 
     open func createStrokedShape( p: Shape? ) -> Shape! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createStrokedShape", methodSig: "(Ljava/awt/Shape;)Ljava/awt/Shape;", methodCache: &BasicStroke.createStrokedShape_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createStrokedShape", methodSig: "(Ljava/awt/Shape;)Ljava/awt/Shape;", methodCache: &BasicStroke.createStrokedShape_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ShapeForward( javaObject: __return ) : nil
     }
@@ -219,77 +213,97 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
         return createStrokedShape( p: _p )
     }
 
-    /// public float java.awt.BasicStroke.getLineWidth()
+    /// public boolean java.awt.BasicStroke.equals(java.lang.Object)
 
-    private static var getLineWidth_MethodID_8: jmethodID?
+    private static var equals_MethodID_7: jmethodID?
 
-    open func getLineWidth() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLineWidth", methodSig: "()F", methodCache: &BasicStroke.getLineWidth_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &BasicStroke.equals_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-
-    /// public int java.awt.BasicStroke.getEndCap()
-
-    private static var getEndCap_MethodID_9: jmethodID?
-
-    open func getEndCap() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndCap", methodSig: "()I", methodCache: &BasicStroke.getEndCap_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+    override open func equals( _ _obj: java_swift.JavaObject? ) -> Bool {
+        return equals( obj: _obj )
     }
-
-
-    /// public int java.awt.BasicStroke.getLineJoin()
-
-    private static var getLineJoin_MethodID_10: jmethodID?
-
-    open func getLineJoin() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineJoin", methodSig: "()I", methodCache: &BasicStroke.getLineJoin_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public float java.awt.BasicStroke.getMiterLimit()
-
-    private static var getMiterLimit_MethodID_11: jmethodID?
-
-    open func getMiterLimit() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMiterLimit", methodSig: "()F", methodCache: &BasicStroke.getMiterLimit_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
 
     /// public float[] java.awt.BasicStroke.getDashArray()
 
-    private static var getDashArray_MethodID_12: jmethodID?
+    private static var getDashArray_MethodID_8: jmethodID?
 
     open func getDashArray() -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDashArray", methodSig: "()[F", methodCache: &BasicStroke.getDashArray_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDashArray", methodSig: "()[F", methodCache: &BasicStroke.getDashArray_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
 
     /// public float java.awt.BasicStroke.getDashPhase()
 
-    private static var getDashPhase_MethodID_13: jmethodID?
+    private static var getDashPhase_MethodID_9: jmethodID?
 
     open func getDashPhase() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getDashPhase", methodSig: "()F", methodCache: &BasicStroke.getDashPhase_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getDashPhase", methodSig: "()F", methodCache: &BasicStroke.getDashPhase_MethodID_9, args: &__args, locals: &__locals )
+        return __return
     }
 
+
+    /// public int java.awt.BasicStroke.getEndCap()
+
+    private static var getEndCap_MethodID_10: jmethodID?
+
+    open func getEndCap() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndCap", methodSig: "()I", methodCache: &BasicStroke.getEndCap_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.BasicStroke.getLineJoin()
+
+    private static var getLineJoin_MethodID_11: jmethodID?
+
+    open func getLineJoin() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineJoin", methodSig: "()I", methodCache: &BasicStroke.getLineJoin_MethodID_11, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public float java.awt.BasicStroke.getLineWidth()
+
+    private static var getLineWidth_MethodID_12: jmethodID?
+
+    open func getLineWidth() -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLineWidth", methodSig: "()F", methodCache: &BasicStroke.getLineWidth_MethodID_12, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public float java.awt.BasicStroke.getMiterLimit()
+
+    private static var getMiterLimit_MethodID_13: jmethodID?
+
+    open func getMiterLimit() -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMiterLimit", methodSig: "()F", methodCache: &BasicStroke.getMiterLimit_MethodID_13, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public int java.awt.BasicStroke.hashCode()
+
+    // Skipping method: false true false false false 
 
 }
 

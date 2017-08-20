@@ -24,8 +24,8 @@ open class TextListenerForward: java_util.EventListenerForward, TextListener {
     private static var textValueChanged_MethodID_2: jmethodID?
 
     open func textValueChanged( e: TextEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "textValueChanged", methodSig: "(Ljava/awt/event/TextEvent;)V", methodCache: &TextListenerForward.textValueChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class TextListenerForward: java_util.EventListenerForward, TextListener {
 
 }
 
-
 private typealias TextListener_textValueChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func TextListener_textValueChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     TextListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).textValueChanged( e: e != nil ? TextEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class TextListenerLocal_: JNILocalProxy<TextListener, Any> {
@@ -89,8 +86,5 @@ open class TextListenerBase: TextListener {
     open func textValueChanged( e: TextEvent? ) /**/ {
     }
 
-    open func textValueChanged( _ _e: TextEvent? ) /**/ {
-        textValueChanged( e: _e )
-    }
 
 }

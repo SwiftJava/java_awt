@@ -16,9 +16,9 @@ open class StringSelection: java_swift.JavaObject, Transferable, ClipboardOwner 
 
     private static var StringSelectionJNIClass: jclass?
 
-    /// private static final int java.awt.datatransfer.StringSelection.STRING
-
     /// private static final int java.awt.datatransfer.StringSelection.PLAIN_TEXT
+
+    /// private static final int java.awt.datatransfer.StringSelection.STRING
 
     /// private static final java.awt.datatransfer.DataFlavor[] java.awt.datatransfer.StringSelection.flavors
 
@@ -29,8 +29,8 @@ open class StringSelection: java_swift.JavaObject, Transferable, ClipboardOwner 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( data: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: data, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/datatransfer/StringSelection", classCache: &StringSelection.StringSelectionJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &StringSelection.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -41,20 +41,25 @@ open class StringSelection: java_swift.JavaObject, Transferable, ClipboardOwner 
         self.init( data: _data )
     }
 
-    /// public void java.awt.datatransfer.StringSelection.lostOwnership(java.awt.datatransfer.Clipboard,java.awt.datatransfer.Transferable)
+    /// public java.lang.Object java.awt.datatransfer.StringSelection.getTransferData(java.awt.datatransfer.DataFlavor) throws java.awt.datatransfer.UnsupportedFlavorException,java.io.IOException
 
-    private static var lostOwnership_MethodID_2: jmethodID?
+    private static var getTransferData_MethodID_2: jmethodID?
 
-    open func lostOwnership( clipboard: Clipboard?, contents: Transferable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getTransferData( flavor: DataFlavor? ) throws /* java.awt.datatransfer.UnsupportedFlavorException, java.io.IOException */ -> java_swift.JavaObject! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: clipboard, locals: &__locals )
-        __args[1] = JNIType.toJava( value: contents, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "lostOwnership", methodSig: "(Ljava/awt/datatransfer/Clipboard;Ljava/awt/datatransfer/Transferable;)V", methodCache: &StringSelection.lostOwnership_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: flavor, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferData", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Ljava/lang/Object;", methodCache: &StringSelection.getTransferData_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw UnsupportedFlavorException( javaObject: throwable )
+        }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
-    open func lostOwnership( _ _clipboard: Clipboard?, _ _contents: Transferable? ) {
-        lostOwnership( clipboard: _clipboard, contents: _contents )
+    open func getTransferData( _ _flavor: DataFlavor? ) throws /* java.awt.datatransfer.UnsupportedFlavorException, java.io.IOException */ -> java_swift.JavaObject! {
+        return try getTransferData( flavor: _flavor )
     }
 
     /// public java.awt.datatransfer.DataFlavor[] java.awt.datatransfer.StringSelection.getTransferDataFlavors()
@@ -62,10 +67,10 @@ open class StringSelection: java_swift.JavaObject, Transferable, ClipboardOwner 
     private static var getTransferDataFlavors_MethodID_3: jmethodID?
 
     open func getTransferDataFlavors() -> [DataFlavor]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferDataFlavors", methodSig: "()[Ljava/awt/datatransfer/DataFlavor;", methodCache: &StringSelection.getTransferDataFlavors_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [DataFlavor](), from: __return )
+        return JNIType.toSwift( type: [DataFlavor].self, from: __return )
     }
 
 
@@ -74,35 +79,31 @@ open class StringSelection: java_swift.JavaObject, Transferable, ClipboardOwner 
     private static var isDataFlavorSupported_MethodID_4: jmethodID?
 
     open func isDataFlavorSupported( flavor: DataFlavor? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: flavor, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDataFlavorSupported", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &StringSelection.isDataFlavorSupported_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isDataFlavorSupported( _ _flavor: DataFlavor? ) -> Bool {
         return isDataFlavorSupported( flavor: _flavor )
     }
 
-    /// public java.lang.Object java.awt.datatransfer.StringSelection.getTransferData(java.awt.datatransfer.DataFlavor) throws java.awt.datatransfer.UnsupportedFlavorException,java.io.IOException
+    /// public void java.awt.datatransfer.StringSelection.lostOwnership(java.awt.datatransfer.Clipboard,java.awt.datatransfer.Transferable)
 
-    private static var getTransferData_MethodID_5: jmethodID?
+    private static var lostOwnership_MethodID_5: jmethodID?
 
-    open func getTransferData( flavor: DataFlavor? ) throws /* java.awt.datatransfer.UnsupportedFlavorException, java.io.IOException */ -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func lostOwnership( clipboard: Clipboard?, contents: Transferable? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: flavor, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferData", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Ljava/lang/Object;", methodCache: &StringSelection.getTransferData_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw UnsupportedFlavorException( javaObject: throwable )
-        }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: clipboard, locals: &__locals )
+        __args[1] = JNIType.toJava( value: contents, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "lostOwnership", methodSig: "(Ljava/awt/datatransfer/Clipboard;Ljava/awt/datatransfer/Transferable;)V", methodCache: &StringSelection.lostOwnership_MethodID_5, args: &__args, locals: &__locals )
     }
 
-    open func getTransferData( _ _flavor: DataFlavor? ) throws /* java.awt.datatransfer.UnsupportedFlavorException, java.io.IOException */ -> java_swift.JavaObject! {
-        return try getTransferData( flavor: _flavor )
+    open func lostOwnership( _ _clipboard: Clipboard?, _ _contents: Transferable? ) {
+        lostOwnership( clipboard: _clipboard, contents: _contents )
     }
 
 }

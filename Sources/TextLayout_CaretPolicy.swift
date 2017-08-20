@@ -21,8 +21,8 @@ open class TextLayout_CaretPolicy: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/font/TextLayout$CaretPolicy", classCache: &TextLayout_CaretPolicy.TextLayout_CaretPolicyJNIClass, methodSig: "()V", methodCache: &TextLayout_CaretPolicy.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -33,8 +33,8 @@ open class TextLayout_CaretPolicy: java_swift.JavaObject {
     private static var getStrongCaret_MethodID_2: jmethodID?
 
     open func getStrongCaret( hit1: TextHitInfo?, hit2: TextHitInfo?, layout: TextLayout? ) -> TextHitInfo! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: hit1, locals: &__locals )
         __args[1] = JNIType.toJava( value: hit2, locals: &__locals )
         __args[2] = JNIType.toJava( value: layout, locals: &__locals )

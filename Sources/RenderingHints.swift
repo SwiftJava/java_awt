@@ -8,20 +8,26 @@ import java_util
 /// class java.awt.RenderingHints ///
 
 open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.Cloneable {
-    public func computeIfAbsent(arg0: JavaObject?, arg1: UnclassedProtocol?) -> JavaObject! {
+    public func compute(arg0: JavaObject?, arg1: UnavailableProtocol?) -> JavaObject! {
         return nil
     }
 
-    public func computeIfPresent(arg0: JavaObject?, arg1: UnclassedProtocol?) -> JavaObject! {
+    public func computeIfAbsent(arg0: JavaObject?, arg1: UnavailableProtocol?) -> JavaObject! {
         return nil
     }
 
-    public func compute(arg0: JavaObject?, arg1: UnclassedProtocol?) -> JavaObject! {
+    public func computeIfPresent(arg0: JavaObject?, arg1: UnavailableProtocol?) -> JavaObject! {
         return nil
     }
 
-    public func merge(arg0: JavaObject?, arg1: JavaObject?, arg2: UnclassedProtocol?) -> JavaObject! {
+    public func forEach(arg0: UnavailableProtocol?) {
+    }
+
+    public func merge(arg0: JavaObject?, arg1: JavaObject?, arg2: UnavailableProtocol?) -> JavaObject! {
         return nil
+    }
+
+    public func replaceAll(arg0: UnavailableProtocol?) {
     }
 
 
@@ -37,7 +43,17 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var RenderingHintsJNIClass: jclass?
 
-    /// java.util.HashMap java.awt.RenderingHints.hintmap
+    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_ALPHA_INTERPOLATION
+
+    private static var KEY_ALPHA_INTERPOLATION_FieldID: jfieldID?
+
+    open static var KEY_ALPHA_INTERPOLATION: RenderingHints_Key! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_ALPHA_INTERPOLATION", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_ALPHA_INTERPOLATION_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
+        }
+    }
 
     /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_ANTIALIASING
 
@@ -46,84 +62,20 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
     open static var KEY_ANTIALIASING: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_ANTIALIASING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_ANTIALIASING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_ANTIALIAS_ON
+    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_COLOR_RENDERING
 
-    private static var VALUE_ANTIALIAS_ON_FieldID: jfieldID?
+    private static var KEY_COLOR_RENDERING_FieldID: jfieldID?
 
-    open static var VALUE_ANTIALIAS_ON: java_swift.JavaObject! {
+    open static var KEY_COLOR_RENDERING: RenderingHints_Key! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ANTIALIAS_ON", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ANTIALIAS_ON_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_ANTIALIAS_OFF
-
-    private static var VALUE_ANTIALIAS_OFF_FieldID: jfieldID?
-
-    open static var VALUE_ANTIALIAS_OFF: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ANTIALIAS_OFF", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ANTIALIAS_OFF_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_ANTIALIAS_DEFAULT
-
-    private static var VALUE_ANTIALIAS_DEFAULT_FieldID: jfieldID?
-
-    open static var VALUE_ANTIALIAS_DEFAULT: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ANTIALIAS_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ANTIALIAS_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_RENDERING
-
-    private static var KEY_RENDERING_FieldID: jfieldID?
-
-    open static var KEY_RENDERING: RenderingHints_Key! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_RENDERING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_RENDERING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_COLOR_RENDERING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_COLOR_RENDERING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_RENDER_SPEED
-
-    private static var VALUE_RENDER_SPEED_FieldID: jfieldID?
-
-    open static var VALUE_RENDER_SPEED: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_RENDER_SPEED", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_RENDER_SPEED_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_RENDER_QUALITY
-
-    private static var VALUE_RENDER_QUALITY_FieldID: jfieldID?
-
-    open static var VALUE_RENDER_QUALITY: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_RENDER_QUALITY", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_RENDER_QUALITY_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_RENDER_DEFAULT
-
-    private static var VALUE_RENDER_DEFAULT_FieldID: jfieldID?
-
-    open static var VALUE_RENDER_DEFAULT: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_RENDER_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_RENDER_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
 
@@ -134,149 +86,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
     open static var KEY_DITHERING: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_DITHERING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_DITHERING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_DITHER_DISABLE
-
-    private static var VALUE_DITHER_DISABLE_FieldID: jfieldID?
-
-    open static var VALUE_DITHER_DISABLE: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_DITHER_DISABLE", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_DITHER_DISABLE_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_DITHER_ENABLE
-
-    private static var VALUE_DITHER_ENABLE_FieldID: jfieldID?
-
-    open static var VALUE_DITHER_ENABLE: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_DITHER_ENABLE", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_DITHER_ENABLE_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_DITHER_DEFAULT
-
-    private static var VALUE_DITHER_DEFAULT_FieldID: jfieldID?
-
-    open static var VALUE_DITHER_DEFAULT: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_DITHER_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_DITHER_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_TEXT_ANTIALIASING
-
-    private static var KEY_TEXT_ANTIALIASING_FieldID: jfieldID?
-
-    open static var KEY_TEXT_ANTIALIASING: RenderingHints_Key! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_TEXT_ANTIALIASING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_TEXT_ANTIALIASING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_ON
-
-    private static var VALUE_TEXT_ANTIALIAS_ON_FieldID: jfieldID?
-
-    open static var VALUE_TEXT_ANTIALIAS_ON: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_ON", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_ON_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_OFF
-
-    private static var VALUE_TEXT_ANTIALIAS_OFF_FieldID: jfieldID?
-
-    open static var VALUE_TEXT_ANTIALIAS_OFF: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_OFF", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_OFF_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_DEFAULT
-
-    private static var VALUE_TEXT_ANTIALIAS_DEFAULT_FieldID: jfieldID?
-
-    open static var VALUE_TEXT_ANTIALIAS_DEFAULT: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_GASP
-
-    private static var VALUE_TEXT_ANTIALIAS_GASP_FieldID: jfieldID?
-
-    open static var VALUE_TEXT_ANTIALIAS_GASP: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_GASP", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_GASP_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB
-
-    private static var VALUE_TEXT_ANTIALIAS_LCD_HRGB_FieldID: jfieldID?
-
-    open static var VALUE_TEXT_ANTIALIAS_LCD_HRGB: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_HRGB", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_HRGB_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HBGR
-
-    private static var VALUE_TEXT_ANTIALIAS_LCD_HBGR_FieldID: jfieldID?
-
-    open static var VALUE_TEXT_ANTIALIAS_LCD_HBGR: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_HBGR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_HBGR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_VRGB
-
-    private static var VALUE_TEXT_ANTIALIAS_LCD_VRGB_FieldID: jfieldID?
-
-    open static var VALUE_TEXT_ANTIALIAS_LCD_VRGB: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_VRGB", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_VRGB_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_VBGR
-
-    private static var VALUE_TEXT_ANTIALIAS_LCD_VBGR_FieldID: jfieldID?
-
-    open static var VALUE_TEXT_ANTIALIAS_LCD_VBGR: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_VBGR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_VBGR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_TEXT_LCD_CONTRAST
-
-    private static var KEY_TEXT_LCD_CONTRAST_FieldID: jfieldID?
-
-    open static var KEY_TEXT_LCD_CONTRAST: RenderingHints_Key! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_TEXT_LCD_CONTRAST", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_TEXT_LCD_CONTRAST_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
         }
     }
@@ -288,40 +98,8 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
     open static var KEY_FRACTIONALMETRICS: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_FRACTIONALMETRICS", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_FRACTIONALMETRICS_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_FRACTIONALMETRICS_OFF
-
-    private static var VALUE_FRACTIONALMETRICS_OFF_FieldID: jfieldID?
-
-    open static var VALUE_FRACTIONALMETRICS_OFF: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_FRACTIONALMETRICS_OFF", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_FRACTIONALMETRICS_OFF_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_FRACTIONALMETRICS_ON
-
-    private static var VALUE_FRACTIONALMETRICS_ON_FieldID: jfieldID?
-
-    open static var VALUE_FRACTIONALMETRICS_ON: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_FRACTIONALMETRICS_ON", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_FRACTIONALMETRICS_ON_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_FRACTIONALMETRICS_DEFAULT
-
-    private static var VALUE_FRACTIONALMETRICS_DEFAULT_FieldID: jfieldID?
-
-    open static var VALUE_FRACTIONALMETRICS_DEFAULT: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_FRACTIONALMETRICS_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_FRACTIONALMETRICS_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
 
@@ -332,61 +110,67 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
     open static var KEY_INTERPOLATION: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_INTERPOLATION", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_INTERPOLATION_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR
+    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_RENDERING
 
-    private static var VALUE_INTERPOLATION_NEAREST_NEIGHBOR_FieldID: jfieldID?
+    private static var KEY_RENDERING_FieldID: jfieldID?
 
-    open static var VALUE_INTERPOLATION_NEAREST_NEIGHBOR: java_swift.JavaObject! {
+    open static var KEY_RENDERING: RenderingHints_Key! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_INTERPOLATION_NEAREST_NEIGHBOR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_INTERPOLATION_NEAREST_NEIGHBOR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_INTERPOLATION_BILINEAR
-
-    private static var VALUE_INTERPOLATION_BILINEAR_FieldID: jfieldID?
-
-    open static var VALUE_INTERPOLATION_BILINEAR: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_INTERPOLATION_BILINEAR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_INTERPOLATION_BILINEAR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_INTERPOLATION_BICUBIC
-
-    private static var VALUE_INTERPOLATION_BICUBIC_FieldID: jfieldID?
-
-    open static var VALUE_INTERPOLATION_BICUBIC: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_INTERPOLATION_BICUBIC", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_INTERPOLATION_BICUBIC_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_ALPHA_INTERPOLATION
-
-    private static var KEY_ALPHA_INTERPOLATION_FieldID: jfieldID?
-
-    open static var KEY_ALPHA_INTERPOLATION: RenderingHints_Key! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_ALPHA_INTERPOLATION", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_ALPHA_INTERPOLATION_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_RENDERING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_RENDERING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED
+    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_STROKE_CONTROL
 
-    private static var VALUE_ALPHA_INTERPOLATION_SPEED_FieldID: jfieldID?
+    private static var KEY_STROKE_CONTROL_FieldID: jfieldID?
 
-    open static var VALUE_ALPHA_INTERPOLATION_SPEED: java_swift.JavaObject! {
+    open static var KEY_STROKE_CONTROL: RenderingHints_Key! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ALPHA_INTERPOLATION_SPEED", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ALPHA_INTERPOLATION_SPEED_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_STROKE_CONTROL", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_STROKE_CONTROL_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_TEXT_ANTIALIASING
+
+    private static var KEY_TEXT_ANTIALIASING_FieldID: jfieldID?
+
+    open static var KEY_TEXT_ANTIALIASING: RenderingHints_Key! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_TEXT_ANTIALIASING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_TEXT_ANTIALIASING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_TEXT_LCD_CONTRAST
+
+    private static var KEY_TEXT_LCD_CONTRAST_FieldID: jfieldID?
+
+    open static var KEY_TEXT_LCD_CONTRAST: RenderingHints_Key! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_TEXT_LCD_CONTRAST", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_TEXT_LCD_CONTRAST_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_ALPHA_INTERPOLATION_DEFAULT
+
+    private static var VALUE_ALPHA_INTERPOLATION_DEFAULT_FieldID: jfieldID?
+
+    open static var VALUE_ALPHA_INTERPOLATION_DEFAULT: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ALPHA_INTERPOLATION_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ALPHA_INTERPOLATION_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
@@ -398,50 +182,55 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
     open static var VALUE_ALPHA_INTERPOLATION_QUALITY: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ALPHA_INTERPOLATION_QUALITY", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ALPHA_INTERPOLATION_QUALITY_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_ALPHA_INTERPOLATION_DEFAULT
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED
 
-    private static var VALUE_ALPHA_INTERPOLATION_DEFAULT_FieldID: jfieldID?
+    private static var VALUE_ALPHA_INTERPOLATION_SPEED_FieldID: jfieldID?
 
-    open static var VALUE_ALPHA_INTERPOLATION_DEFAULT: java_swift.JavaObject! {
+    open static var VALUE_ALPHA_INTERPOLATION_SPEED: java_swift.JavaObject! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ALPHA_INTERPOLATION_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ALPHA_INTERPOLATION_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ALPHA_INTERPOLATION_SPEED", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ALPHA_INTERPOLATION_SPEED_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_COLOR_RENDERING
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_ANTIALIAS_DEFAULT
 
-    private static var KEY_COLOR_RENDERING_FieldID: jfieldID?
+    private static var VALUE_ANTIALIAS_DEFAULT_FieldID: jfieldID?
 
-    open static var KEY_COLOR_RENDERING: RenderingHints_Key! {
+    open static var VALUE_ANTIALIAS_DEFAULT: java_swift.JavaObject! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_COLOR_RENDERING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_COLOR_RENDERING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_COLOR_RENDER_SPEED
-
-    private static var VALUE_COLOR_RENDER_SPEED_FieldID: jfieldID?
-
-    open static var VALUE_COLOR_RENDER_SPEED: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_COLOR_RENDER_SPEED", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_COLOR_RENDER_SPEED_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ANTIALIAS_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ANTIALIAS_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_COLOR_RENDER_QUALITY
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_ANTIALIAS_OFF
 
-    private static var VALUE_COLOR_RENDER_QUALITY_FieldID: jfieldID?
+    private static var VALUE_ANTIALIAS_OFF_FieldID: jfieldID?
 
-    open static var VALUE_COLOR_RENDER_QUALITY: java_swift.JavaObject! {
+    open static var VALUE_ANTIALIAS_OFF: java_swift.JavaObject! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_COLOR_RENDER_QUALITY", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_COLOR_RENDER_QUALITY_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ANTIALIAS_OFF", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ANTIALIAS_OFF_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_ANTIALIAS_ON
+
+    private static var VALUE_ANTIALIAS_ON_FieldID: jfieldID?
+
+    open static var VALUE_ANTIALIAS_ON: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ANTIALIAS_ON", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ANTIALIAS_ON_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
@@ -453,18 +242,176 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
     open static var VALUE_COLOR_RENDER_DEFAULT: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_COLOR_RENDER_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_COLOR_RENDER_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.RenderingHints$Key java.awt.RenderingHints.KEY_STROKE_CONTROL
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_COLOR_RENDER_QUALITY
 
-    private static var KEY_STROKE_CONTROL_FieldID: jfieldID?
+    private static var VALUE_COLOR_RENDER_QUALITY_FieldID: jfieldID?
 
-    open static var KEY_STROKE_CONTROL: RenderingHints_Key! {
+    open static var VALUE_COLOR_RENDER_QUALITY: java_swift.JavaObject! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "KEY_STROKE_CONTROL", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_STROKE_CONTROL_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
-            return __value != nil ? RenderingHints_Key( javaObject: __value ) : nil
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_COLOR_RENDER_QUALITY", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_COLOR_RENDER_QUALITY_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_COLOR_RENDER_SPEED
+
+    private static var VALUE_COLOR_RENDER_SPEED_FieldID: jfieldID?
+
+    open static var VALUE_COLOR_RENDER_SPEED: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_COLOR_RENDER_SPEED", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_COLOR_RENDER_SPEED_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_DITHER_DEFAULT
+
+    private static var VALUE_DITHER_DEFAULT_FieldID: jfieldID?
+
+    open static var VALUE_DITHER_DEFAULT: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_DITHER_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_DITHER_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_DITHER_DISABLE
+
+    private static var VALUE_DITHER_DISABLE_FieldID: jfieldID?
+
+    open static var VALUE_DITHER_DISABLE: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_DITHER_DISABLE", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_DITHER_DISABLE_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_DITHER_ENABLE
+
+    private static var VALUE_DITHER_ENABLE_FieldID: jfieldID?
+
+    open static var VALUE_DITHER_ENABLE: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_DITHER_ENABLE", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_DITHER_ENABLE_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_FRACTIONALMETRICS_DEFAULT
+
+    private static var VALUE_FRACTIONALMETRICS_DEFAULT_FieldID: jfieldID?
+
+    open static var VALUE_FRACTIONALMETRICS_DEFAULT: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_FRACTIONALMETRICS_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_FRACTIONALMETRICS_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_FRACTIONALMETRICS_OFF
+
+    private static var VALUE_FRACTIONALMETRICS_OFF_FieldID: jfieldID?
+
+    open static var VALUE_FRACTIONALMETRICS_OFF: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_FRACTIONALMETRICS_OFF", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_FRACTIONALMETRICS_OFF_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_FRACTIONALMETRICS_ON
+
+    private static var VALUE_FRACTIONALMETRICS_ON_FieldID: jfieldID?
+
+    open static var VALUE_FRACTIONALMETRICS_ON: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_FRACTIONALMETRICS_ON", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_FRACTIONALMETRICS_ON_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_INTERPOLATION_BICUBIC
+
+    private static var VALUE_INTERPOLATION_BICUBIC_FieldID: jfieldID?
+
+    open static var VALUE_INTERPOLATION_BICUBIC: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_INTERPOLATION_BICUBIC", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_INTERPOLATION_BICUBIC_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_INTERPOLATION_BILINEAR
+
+    private static var VALUE_INTERPOLATION_BILINEAR_FieldID: jfieldID?
+
+    open static var VALUE_INTERPOLATION_BILINEAR: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_INTERPOLATION_BILINEAR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_INTERPOLATION_BILINEAR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR
+
+    private static var VALUE_INTERPOLATION_NEAREST_NEIGHBOR_FieldID: jfieldID?
+
+    open static var VALUE_INTERPOLATION_NEAREST_NEIGHBOR: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_INTERPOLATION_NEAREST_NEIGHBOR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_INTERPOLATION_NEAREST_NEIGHBOR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_RENDER_DEFAULT
+
+    private static var VALUE_RENDER_DEFAULT_FieldID: jfieldID?
+
+    open static var VALUE_RENDER_DEFAULT: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_RENDER_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_RENDER_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_RENDER_QUALITY
+
+    private static var VALUE_RENDER_QUALITY_FieldID: jfieldID?
+
+    open static var VALUE_RENDER_QUALITY: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_RENDER_QUALITY", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_RENDER_QUALITY_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_RENDER_SPEED
+
+    private static var VALUE_RENDER_SPEED_FieldID: jfieldID?
+
+    open static var VALUE_RENDER_SPEED: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_RENDER_SPEED", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_RENDER_SPEED_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
 
@@ -475,6 +422,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
     open static var VALUE_STROKE_DEFAULT: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_STROKE_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_STROKE_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
@@ -486,6 +434,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
     open static var VALUE_STROKE_NORMALIZE: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_STROKE_NORMALIZE", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_STROKE_NORMALIZE_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
@@ -497,37 +446,121 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
     open static var VALUE_STROKE_PURE: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_STROKE_PURE", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_STROKE_PURE_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
 
-    /// public java.awt.RenderingHints(java.util.Map)
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_DEFAULT
 
-    private static var new_MethodID_1: jmethodID?
+    private static var VALUE_TEXT_ANTIALIAS_DEFAULT_FieldID: jfieldID?
 
-    public convenience init( _init: java_swift.JavaMap? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: _init, mapClass: "java/util/Map", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/RenderingHints", classCache: &RenderingHints.RenderingHintsJNIClass, methodSig: "(Ljava/util/Map;)V", methodCache: &RenderingHints.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
+    open static var VALUE_TEXT_ANTIALIAS_DEFAULT: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
     }
 
-    public convenience init( _ __init: java_swift.JavaMap? ) {
-        self.init( _init: __init )
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_GASP
+
+    private static var VALUE_TEXT_ANTIALIAS_GASP_FieldID: jfieldID?
+
+    open static var VALUE_TEXT_ANTIALIAS_GASP: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_GASP", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_GASP_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
     }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HBGR
+
+    private static var VALUE_TEXT_ANTIALIAS_LCD_HBGR_FieldID: jfieldID?
+
+    open static var VALUE_TEXT_ANTIALIAS_LCD_HBGR: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_HBGR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_HBGR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB
+
+    private static var VALUE_TEXT_ANTIALIAS_LCD_HRGB_FieldID: jfieldID?
+
+    open static var VALUE_TEXT_ANTIALIAS_LCD_HRGB: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_HRGB", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_HRGB_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_VBGR
+
+    private static var VALUE_TEXT_ANTIALIAS_LCD_VBGR_FieldID: jfieldID?
+
+    open static var VALUE_TEXT_ANTIALIAS_LCD_VBGR: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_VBGR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_VBGR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_VRGB
+
+    private static var VALUE_TEXT_ANTIALIAS_LCD_VRGB_FieldID: jfieldID?
+
+    open static var VALUE_TEXT_ANTIALIAS_LCD_VRGB: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_VRGB", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_VRGB_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_OFF
+
+    private static var VALUE_TEXT_ANTIALIAS_OFF_FieldID: jfieldID?
+
+    open static var VALUE_TEXT_ANTIALIAS_OFF: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_OFF", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_OFF_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.RenderingHints.VALUE_TEXT_ANTIALIAS_ON
+
+    private static var VALUE_TEXT_ANTIALIAS_ON_FieldID: jfieldID?
+
+    open static var VALUE_TEXT_ANTIALIAS_ON: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_ON", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_ON_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// java.util.HashMap java.awt.RenderingHints.hintmap
+
+    // Skipping field: true false false false false false 
 
     /// public java.awt.RenderingHints(java.awt.RenderingHints$Key,java.lang.Object)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( key: RenderingHints_Key?, value: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
         __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/RenderingHints", classCache: &RenderingHints.RenderingHintsJNIClass, methodSig: "(Ljava/awt/RenderingHints$Key;Ljava/lang/Object;)V", methodCache: &RenderingHints.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/RenderingHints", classCache: &RenderingHints.RenderingHintsJNIClass, methodSig: "(Ljava/awt/RenderingHints$Key;Ljava/lang/Object;)V", methodCache: &RenderingHints.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -536,13 +569,30 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
         self.init( key: _key, value: _value )
     }
 
+    /// public java.awt.RenderingHints(java.util.Map)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( _init: java_swift.JavaMap? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: _init, mapClass: "java/util/Map", locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/RenderingHints", classCache: &RenderingHints.RenderingHintsJNIClass, methodSig: "(Ljava/util/Map;)V", methodCache: &RenderingHints.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ __init: java_swift.JavaMap? ) {
+        self.init( _init: __init )
+    }
+
     /// public void java.awt.RenderingHints.add(java.awt.RenderingHints)
 
     private static var add_MethodID_3: jmethodID?
 
     open func add( hints: RenderingHints? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/RenderingHints;)V", methodCache: &RenderingHints.add_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -551,32 +601,100 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
         add( hints: _hints )
     }
 
-    /// public java.lang.Object java.awt.RenderingHints.remove(java.lang.Object)
+    /// public void java.awt.RenderingHints.clear()
 
-    private static var remove_MethodID_4: jmethodID?
+    private static var clear_MethodID_4: jmethodID?
 
-    open func remove( arg0: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func clear() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.remove_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clear", methodSig: "()V", methodCache: &RenderingHints.clear_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+
+    /// public java.lang.Object java.awt.RenderingHints.clone()
+
+    private static var clone_MethodID_5: jmethodID?
+
+    override open func clone() -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &RenderingHints.clone_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
-    open func remove( _ _arg0: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        return remove( arg0: _arg0 )
+
+    /// public boolean java.awt.RenderingHints.containsKey(java.lang.Object)
+
+    private static var containsKey_MethodID_6: jmethodID?
+
+    open func containsKey( arg0: java_swift.JavaObject? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsKey", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints.containsKey_MethodID_6, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func containsKey( _ _arg0: java_swift.JavaObject? ) -> Bool {
+        return containsKey( arg0: _arg0 )
+    }
+
+    /// public boolean java.awt.RenderingHints.containsValue(java.lang.Object)
+
+    private static var containsValue_MethodID_7: jmethodID?
+
+    open func containsValue( arg0: java_swift.JavaObject? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsValue", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints.containsValue_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func containsValue( _ _arg0: java_swift.JavaObject? ) -> Bool {
+        return containsValue( arg0: _arg0 )
+    }
+
+    /// public java.util.Set java.awt.RenderingHints.entrySet()
+
+    private static var entrySet_MethodID_8: jmethodID?
+
+    open func entrySet() -> java_swift.JavaSet! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "entrySet", methodSig: "()Ljava/util/Set;", methodCache: &RenderingHints.entrySet_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaSetForward( javaObject: __return ) : nil
+    }
+
+
+    /// public boolean java.awt.RenderingHints.equals(java.lang.Object)
+
+    private static var equals_MethodID_9: jmethodID?
+
+    override open func equals( arg0: java_swift.JavaObject? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints.equals_MethodID_9, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    override open func equals( _ _arg0: java_swift.JavaObject? ) -> Bool {
+        return equals( arg0: _arg0 )
     }
 
     /// public java.lang.Object java.awt.RenderingHints.get(java.lang.Object)
 
-    private static var get_MethodID_5: jmethodID?
+    private static var get_MethodID_10: jmethodID?
 
     open func get( arg0: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "get", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.get_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "get", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.get_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -585,16 +703,45 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
         return get( arg0: _arg0 )
     }
 
+    /// public int java.awt.RenderingHints.hashCode()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean java.awt.RenderingHints.isEmpty()
+
+    private static var isEmpty_MethodID_11: jmethodID?
+
+    open func isEmpty() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEmpty", methodSig: "()Z", methodCache: &RenderingHints.isEmpty_MethodID_11, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public java.util.Set java.awt.RenderingHints.keySet()
+
+    private static var keySet_MethodID_12: jmethodID?
+
+    open func keySet() -> java_swift.JavaSet! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "keySet", methodSig: "()Ljava/util/Set;", methodCache: &RenderingHints.keySet_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaSetForward( javaObject: __return ) : nil
+    }
+
+
     /// public java.lang.Object java.awt.RenderingHints.put(java.lang.Object,java.lang.Object)
 
-    private static var put_MethodID_6: jmethodID?
+    private static var put_MethodID_13: jmethodID?
 
     open func put( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "put", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.put_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "put", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.put_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -603,107 +750,13 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
         return put( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public boolean java.awt.RenderingHints.equals(java.lang.Object)
-
-    private static var equals_MethodID_7: jmethodID?
-
-    override open func equals( arg0: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints.equals_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func equals( _ _arg0: java_swift.JavaObject? ) -> Bool {
-        return equals( arg0: _arg0 )
-    }
-
-    /// public java.lang.String java.awt.RenderingHints.toString()
-
-    /// public java.util.Collection java.awt.RenderingHints.values()
-
-    private static var values_MethodID_8: jmethodID?
-
-    open func values() -> java_util.Collection! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "values", methodSig: "()Ljava/util/Collection;", methodCache: &RenderingHints.values_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.CollectionForward( javaObject: __return ) : nil
-    }
-
-
-    /// public int java.awt.RenderingHints.hashCode()
-
-    /// public java.lang.Object java.awt.RenderingHints.clone()
-
-    private static var clone_MethodID_9: jmethodID?
-
-    override open func clone() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &RenderingHints.clone_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.RenderingHints.clear()
-
-    private static var clear_MethodID_10: jmethodID?
-
-    open func clear() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clear", methodSig: "()V", methodCache: &RenderingHints.clear_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// public boolean java.awt.RenderingHints.isEmpty()
-
-    private static var isEmpty_MethodID_11: jmethodID?
-
-    open func isEmpty() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEmpty", methodSig: "()Z", methodCache: &RenderingHints.isEmpty_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public int java.awt.RenderingHints.size()
-
-    private static var size_MethodID_12: jmethodID?
-
-    open func size() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "size", methodSig: "()I", methodCache: &RenderingHints.size_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.util.Set java.awt.RenderingHints.entrySet()
-
-    private static var entrySet_MethodID_13: jmethodID?
-
-    open func entrySet() -> java_swift.JavaSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "entrySet", methodSig: "()Ljava/util/Set;", methodCache: &RenderingHints.entrySet_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaSetForward( javaObject: __return ) : nil
-    }
-
-
     /// public void java.awt.RenderingHints.putAll(java.util.Map)
 
     private static var putAll_MethodID_14: jmethodID?
 
     open func putAll( arg0: java_swift.JavaMap? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, mapClass: "java/util/Map", locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "putAll", methodSig: "(Ljava/util/Map;)V", methodCache: &RenderingHints.putAll_MethodID_14, args: &__args, locals: &__locals )
     }
@@ -712,63 +765,82 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
         putAll( arg0: _arg0 )
     }
 
-    /// public java.util.Set java.awt.RenderingHints.keySet()
+    /// public java.lang.Object java.awt.RenderingHints.remove(java.lang.Object)
 
-    private static var keySet_MethodID_15: jmethodID?
+    private static var remove_MethodID_15: jmethodID?
 
-    open func keySet() -> java_swift.JavaSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func remove( arg0: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "keySet", methodSig: "()Ljava/util/Set;", methodCache: &RenderingHints.keySet_MethodID_15, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.remove_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaSetForward( javaObject: __return ) : nil
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
+    open func remove( _ _arg0: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        return remove( arg0: _arg0 )
+    }
 
-    /// public boolean java.awt.RenderingHints.containsValue(java.lang.Object)
+    /// public int java.awt.RenderingHints.size()
 
-    private static var containsValue_MethodID_16: jmethodID?
+    private static var size_MethodID_16: jmethodID?
 
-    open func containsValue( arg0: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func size() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsValue", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints.containsValue_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func containsValue( _ _arg0: java_swift.JavaObject? ) -> Bool {
-        return containsValue( arg0: _arg0 )
-    }
-
-    /// public boolean java.awt.RenderingHints.containsKey(java.lang.Object)
-
-    private static var containsKey_MethodID_17: jmethodID?
-
-    open func containsKey( arg0: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsKey", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RenderingHints.containsKey_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "size", methodSig: "()I", methodCache: &RenderingHints.size_MethodID_16, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func containsKey( _ _arg0: java_swift.JavaObject? ) -> Bool {
-        return containsKey( arg0: _arg0 )
+
+    /// public java.lang.String java.awt.RenderingHints.toString()
+
+    // Skipping method: false true false false false 
+
+    /// public java.util.Collection java.awt.RenderingHints.values()
+
+    private static var values_MethodID_17: jmethodID?
+
+    open func values() -> java_util.Collection! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "values", methodSig: "()Ljava/util/Collection;", methodCache: &RenderingHints.values_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.CollectionForward( javaObject: __return ) : nil
     }
+
 
     /// In declared protocol but not defined.. ///
 
-    /// public default java.lang.Object java.util.Map.computeIfAbsent(java.lang.Object,java.util.function.Function)
+    /// public default java.lang.Object java.util.Map.compute(java.lang.Object,java.util.function.BiFunction)
 
-    private static var computeIfAbsent_MethodID_18: jmethodID?
+    private static var compute_MethodID_18: jmethodID?
 
-    open func computeIfAbsent( arg0: java_swift.JavaObject?, arg1: java_util.Function? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func compute( arg0: java_swift.JavaObject?, arg1: java_util.BiFunction? ) -> java_swift.JavaObject! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "computeIfAbsent", methodSig: "(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;", methodCache: &RenderingHints.computeIfAbsent_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "compute", methodSig: "(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;", methodCache: &RenderingHints.compute_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    open func compute( _ _arg0: java_swift.JavaObject?, _ _arg1: java_util.BiFunction? ) -> java_swift.JavaObject! {
+        return compute( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public default java.lang.Object java.util.Map.computeIfAbsent(java.lang.Object,java.util.function.Function)
+
+    private static var computeIfAbsent_MethodID_19: jmethodID?
+
+    open func computeIfAbsent( arg0: java_swift.JavaObject?, arg1: java_util.Function? ) -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "computeIfAbsent", methodSig: "(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;", methodCache: &RenderingHints.computeIfAbsent_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -777,105 +849,16 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
         return computeIfAbsent( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public default boolean java.util.Map.remove(java.lang.Object,java.lang.Object)
-
-    private static var remove_MethodID_19: jmethodID?
-
-    open func remove( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &RenderingHints.remove_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func remove( _ _arg0: java_swift.JavaObject?, _ _arg1: java_swift.JavaObject? ) -> Bool {
-        return remove( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public abstract int java.util.Map.hashCode()
-
-    /// public default java.lang.Object java.util.Map.getOrDefault(java.lang.Object,java.lang.Object)
-
-    private static var getOrDefault_MethodID_20: jmethodID?
-
-    open func getOrDefault( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOrDefault", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.getOrDefault_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open func getOrDefault( _ _arg0: java_swift.JavaObject?, _ _arg1: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        return getOrDefault( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public default java.lang.Object java.util.Map.putIfAbsent(java.lang.Object,java.lang.Object)
-
-    private static var putIfAbsent_MethodID_21: jmethodID?
-
-    open func putIfAbsent( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "putIfAbsent", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.putIfAbsent_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open func putIfAbsent( _ _arg0: java_swift.JavaObject?, _ _arg1: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        return putIfAbsent( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public default java.lang.Object java.util.Map.merge(java.lang.Object,java.lang.Object,java.util.function.BiFunction)
-
-    private static var merge_MethodID_22: jmethodID?
-
-    open func merge( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject?, arg2: java_util.BiFunction? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "merge", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;", methodCache: &RenderingHints.merge_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open func merge( _ _arg0: java_swift.JavaObject?, _ _arg1: java_swift.JavaObject?, _ _arg2: java_util.BiFunction? ) -> java_swift.JavaObject! {
-        return merge( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public default void java.util.Map.forEach(java.util.function.BiConsumer)
-
-    private static var forEach_MethodID_23: jmethodID?
-
-    open func forEach( arg0: java_util.BiConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "forEach", methodSig: "(Ljava/util/function/BiConsumer;)V", methodCache: &RenderingHints.forEach_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func forEach( _ _arg0: java_util.BiConsumer? ) {
-        forEach( arg0: _arg0 )
-    }
-
     /// public default java.lang.Object java.util.Map.computeIfPresent(java.lang.Object,java.util.function.BiFunction)
 
-    private static var computeIfPresent_MethodID_24: jmethodID?
+    private static var computeIfPresent_MethodID_20: jmethodID?
 
     open func computeIfPresent( arg0: java_swift.JavaObject?, arg1: java_util.BiFunction? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "computeIfPresent", methodSig: "(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;", methodCache: &RenderingHints.computeIfPresent_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "computeIfPresent", methodSig: "(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;", methodCache: &RenderingHints.computeIfPresent_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -884,16 +867,107 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
         return computeIfPresent( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public default java.lang.Object java.util.Map.replace(java.lang.Object,java.lang.Object)
+    /// public default void java.util.Map.forEach(java.util.function.BiConsumer)
 
-    private static var replace_MethodID_25: jmethodID?
+    private static var forEach_MethodID_21: jmethodID?
 
-    open func replace( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func forEach( arg0: java_util.BiConsumer? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "forEach", methodSig: "(Ljava/util/function/BiConsumer;)V", methodCache: &RenderingHints.forEach_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func forEach( _ _arg0: java_util.BiConsumer? ) {
+        forEach( arg0: _arg0 )
+    }
+
+    /// public default java.lang.Object java.util.Map.getOrDefault(java.lang.Object,java.lang.Object)
+
+    private static var getOrDefault_MethodID_22: jmethodID?
+
+    open func getOrDefault( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "replace", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.replace_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOrDefault", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.getOrDefault_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    open func getOrDefault( _ _arg0: java_swift.JavaObject?, _ _arg1: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        return getOrDefault( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public abstract int java.util.Map.hashCode()
+
+    // Skipping method: false true false false false 
+
+    /// public default java.lang.Object java.util.Map.merge(java.lang.Object,java.lang.Object,java.util.function.BiFunction)
+
+    private static var merge_MethodID_23: jmethodID?
+
+    open func merge( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject?, arg2: java_util.BiFunction? ) -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "merge", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;", methodCache: &RenderingHints.merge_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    open func merge( _ _arg0: java_swift.JavaObject?, _ _arg1: java_swift.JavaObject?, _ _arg2: java_util.BiFunction? ) -> java_swift.JavaObject! {
+        return merge( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// public default java.lang.Object java.util.Map.putIfAbsent(java.lang.Object,java.lang.Object)
+
+    private static var putIfAbsent_MethodID_24: jmethodID?
+
+    open func putIfAbsent( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "putIfAbsent", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.putIfAbsent_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    open func putIfAbsent( _ _arg0: java_swift.JavaObject?, _ _arg1: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        return putIfAbsent( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public default boolean java.util.Map.remove(java.lang.Object,java.lang.Object)
+
+    private static var remove_MethodID_25: jmethodID?
+
+    open func remove( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &RenderingHints.remove_MethodID_25, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func remove( _ _arg0: java_swift.JavaObject?, _ _arg1: java_swift.JavaObject? ) -> Bool {
+        return remove( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public default java.lang.Object java.util.Map.replace(java.lang.Object,java.lang.Object)
+
+    private static var replace_MethodID_26: jmethodID?
+
+    open func replace( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "replace", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &RenderingHints.replace_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -904,16 +978,16 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     /// public default boolean java.util.Map.replace(java.lang.Object,java.lang.Object,java.lang.Object)
 
-    private static var replace_MethodID_26: jmethodID?
+    private static var replace_MethodID_27: jmethodID?
 
     open func replace( arg0: java_swift.JavaObject?, arg1: java_swift.JavaObject?, arg2: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "replace", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &RenderingHints.replace_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "replace", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &RenderingHints.replace_MethodID_27, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func replace( _ _arg0: java_swift.JavaObject?, _ _arg1: java_swift.JavaObject?, _ _arg2: java_swift.JavaObject? ) -> Bool {
@@ -922,35 +996,17 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     /// public default void java.util.Map.replaceAll(java.util.function.BiFunction)
 
-    private static var replaceAll_MethodID_27: jmethodID?
+    private static var replaceAll_MethodID_28: jmethodID?
 
     open func replaceAll( arg0: java_util.BiFunction? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceAll", methodSig: "(Ljava/util/function/BiFunction;)V", methodCache: &RenderingHints.replaceAll_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceAll", methodSig: "(Ljava/util/function/BiFunction;)V", methodCache: &RenderingHints.replaceAll_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func replaceAll( _ _arg0: java_util.BiFunction? ) {
         replaceAll( arg0: _arg0 )
-    }
-
-    /// public default java.lang.Object java.util.Map.compute(java.lang.Object,java.util.function.BiFunction)
-
-    private static var compute_MethodID_28: jmethodID?
-
-    open func compute( arg0: java_swift.JavaObject?, arg1: java_util.BiFunction? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "compute", methodSig: "(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;", methodCache: &RenderingHints.compute_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open func compute( _ _arg0: java_swift.JavaObject?, _ _arg1: java_util.BiFunction? ) -> java_swift.JavaObject! {
-        return compute( arg0: _arg0, arg1: _arg1 )
     }
 
 }

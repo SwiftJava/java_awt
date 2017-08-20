@@ -16,17 +16,6 @@ open class SystemColor: Color {
 
     private static var SystemColorJNIClass: jclass?
 
-    /// public static final int java.awt.SystemColor.DESKTOP
-
-    private static var DESKTOP_FieldID: jfieldID?
-
-    open static var DESKTOP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "DESKTOP", fieldType: "I", fieldCache: &DESKTOP_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.SystemColor.ACTIVE_CAPTION
 
     private static var ACTIVE_CAPTION_FieldID: jfieldID?
@@ -34,18 +23,7 @@ open class SystemColor: Color {
     open static var ACTIVE_CAPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ACTIVE_CAPTION", fieldType: "I", fieldCache: &ACTIVE_CAPTION_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.ACTIVE_CAPTION_TEXT
-
-    private static var ACTIVE_CAPTION_TEXT_FieldID: jfieldID?
-
-    open static var ACTIVE_CAPTION_TEXT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ACTIVE_CAPTION_TEXT", fieldType: "I", fieldCache: &ACTIVE_CAPTION_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -56,150 +34,18 @@ open class SystemColor: Color {
     open static var ACTIVE_CAPTION_BORDER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ACTIVE_CAPTION_BORDER", fieldType: "I", fieldCache: &ACTIVE_CAPTION_BORDER_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.SystemColor.INACTIVE_CAPTION
+    /// public static final int java.awt.SystemColor.ACTIVE_CAPTION_TEXT
 
-    private static var INACTIVE_CAPTION_FieldID: jfieldID?
+    private static var ACTIVE_CAPTION_TEXT_FieldID: jfieldID?
 
-    open static var INACTIVE_CAPTION: Int {
+    open static var ACTIVE_CAPTION_TEXT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "INACTIVE_CAPTION", fieldType: "I", fieldCache: &INACTIVE_CAPTION_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.INACTIVE_CAPTION_TEXT
-
-    private static var INACTIVE_CAPTION_TEXT_FieldID: jfieldID?
-
-    open static var INACTIVE_CAPTION_TEXT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "INACTIVE_CAPTION_TEXT", fieldType: "I", fieldCache: &INACTIVE_CAPTION_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.INACTIVE_CAPTION_BORDER
-
-    private static var INACTIVE_CAPTION_BORDER_FieldID: jfieldID?
-
-    open static var INACTIVE_CAPTION_BORDER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "INACTIVE_CAPTION_BORDER", fieldType: "I", fieldCache: &INACTIVE_CAPTION_BORDER_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.WINDOW
-
-    private static var WINDOW_FieldID: jfieldID?
-
-    open static var WINDOW: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW", fieldType: "I", fieldCache: &WINDOW_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.WINDOW_BORDER
-
-    private static var WINDOW_BORDER_FieldID: jfieldID?
-
-    open static var WINDOW_BORDER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_BORDER", fieldType: "I", fieldCache: &WINDOW_BORDER_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.WINDOW_TEXT
-
-    private static var WINDOW_TEXT_FieldID: jfieldID?
-
-    open static var WINDOW_TEXT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_TEXT", fieldType: "I", fieldCache: &WINDOW_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.MENU
-
-    private static var MENU_FieldID: jfieldID?
-
-    open static var MENU: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MENU", fieldType: "I", fieldCache: &MENU_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.MENU_TEXT
-
-    private static var MENU_TEXT_FieldID: jfieldID?
-
-    open static var MENU_TEXT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MENU_TEXT", fieldType: "I", fieldCache: &MENU_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.TEXT
-
-    private static var TEXT_FieldID: jfieldID?
-
-    open static var TEXT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TEXT", fieldType: "I", fieldCache: &TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.TEXT_TEXT
-
-    private static var TEXT_TEXT_FieldID: jfieldID?
-
-    open static var TEXT_TEXT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TEXT_TEXT", fieldType: "I", fieldCache: &TEXT_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.TEXT_HIGHLIGHT
-
-    private static var TEXT_HIGHLIGHT_FieldID: jfieldID?
-
-    open static var TEXT_HIGHLIGHT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TEXT_HIGHLIGHT", fieldType: "I", fieldCache: &TEXT_HIGHLIGHT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.TEXT_HIGHLIGHT_TEXT
-
-    private static var TEXT_HIGHLIGHT_TEXT_FieldID: jfieldID?
-
-    open static var TEXT_HIGHLIGHT_TEXT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TEXT_HIGHLIGHT_TEXT", fieldType: "I", fieldCache: &TEXT_HIGHLIGHT_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.TEXT_INACTIVE_TEXT
-
-    private static var TEXT_INACTIVE_TEXT_FieldID: jfieldID?
-
-    open static var TEXT_INACTIVE_TEXT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TEXT_INACTIVE_TEXT", fieldType: "I", fieldCache: &TEXT_INACTIVE_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "ACTIVE_CAPTION_TEXT", fieldType: "I", fieldCache: &ACTIVE_CAPTION_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
         }
     }
 
@@ -210,51 +56,7 @@ open class SystemColor: Color {
     open static var CONTROL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONTROL", fieldType: "I", fieldCache: &CONTROL_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.CONTROL_TEXT
-
-    private static var CONTROL_TEXT_FieldID: jfieldID?
-
-    open static var CONTROL_TEXT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CONTROL_TEXT", fieldType: "I", fieldCache: &CONTROL_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.CONTROL_HIGHLIGHT
-
-    private static var CONTROL_HIGHLIGHT_FieldID: jfieldID?
-
-    open static var CONTROL_HIGHLIGHT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CONTROL_HIGHLIGHT", fieldType: "I", fieldCache: &CONTROL_HIGHLIGHT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.CONTROL_LT_HIGHLIGHT
-
-    private static var CONTROL_LT_HIGHLIGHT_FieldID: jfieldID?
-
-    open static var CONTROL_LT_HIGHLIGHT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CONTROL_LT_HIGHLIGHT", fieldType: "I", fieldCache: &CONTROL_LT_HIGHLIGHT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.SystemColor.CONTROL_SHADOW
-
-    private static var CONTROL_SHADOW_FieldID: jfieldID?
-
-    open static var CONTROL_SHADOW: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CONTROL_SHADOW", fieldType: "I", fieldCache: &CONTROL_SHADOW_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -265,18 +67,95 @@ open class SystemColor: Color {
     open static var CONTROL_DK_SHADOW: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONTROL_DK_SHADOW", fieldType: "I", fieldCache: &CONTROL_DK_SHADOW_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.SystemColor.SCROLLBAR
+    /// public static final int java.awt.SystemColor.CONTROL_HIGHLIGHT
 
-    private static var SCROLLBAR_FieldID: jfieldID?
+    private static var CONTROL_HIGHLIGHT_FieldID: jfieldID?
 
-    open static var SCROLLBAR: Int {
+    open static var CONTROL_HIGHLIGHT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBAR", fieldType: "I", fieldCache: &SCROLLBAR_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "CONTROL_HIGHLIGHT", fieldType: "I", fieldCache: &CONTROL_HIGHLIGHT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.CONTROL_LT_HIGHLIGHT
+
+    private static var CONTROL_LT_HIGHLIGHT_FieldID: jfieldID?
+
+    open static var CONTROL_LT_HIGHLIGHT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "CONTROL_LT_HIGHLIGHT", fieldType: "I", fieldCache: &CONTROL_LT_HIGHLIGHT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.CONTROL_SHADOW
+
+    private static var CONTROL_SHADOW_FieldID: jfieldID?
+
+    open static var CONTROL_SHADOW: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "CONTROL_SHADOW", fieldType: "I", fieldCache: &CONTROL_SHADOW_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.CONTROL_TEXT
+
+    private static var CONTROL_TEXT_FieldID: jfieldID?
+
+    open static var CONTROL_TEXT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "CONTROL_TEXT", fieldType: "I", fieldCache: &CONTROL_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.DESKTOP
+
+    private static var DESKTOP_FieldID: jfieldID?
+
+    open static var DESKTOP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "DESKTOP", fieldType: "I", fieldCache: &DESKTOP_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.INACTIVE_CAPTION
+
+    private static var INACTIVE_CAPTION_FieldID: jfieldID?
+
+    open static var INACTIVE_CAPTION: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "INACTIVE_CAPTION", fieldType: "I", fieldCache: &INACTIVE_CAPTION_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.INACTIVE_CAPTION_BORDER
+
+    private static var INACTIVE_CAPTION_BORDER_FieldID: jfieldID?
+
+    open static var INACTIVE_CAPTION_BORDER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "INACTIVE_CAPTION_BORDER", fieldType: "I", fieldCache: &INACTIVE_CAPTION_BORDER_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.INACTIVE_CAPTION_TEXT
+
+    private static var INACTIVE_CAPTION_TEXT_FieldID: jfieldID?
+
+    open static var INACTIVE_CAPTION_TEXT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "INACTIVE_CAPTION_TEXT", fieldType: "I", fieldCache: &INACTIVE_CAPTION_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
         }
     }
 
@@ -287,7 +166,7 @@ open class SystemColor: Color {
     open static var INFO: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INFO", fieldType: "I", fieldCache: &INFO_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -298,7 +177,29 @@ open class SystemColor: Color {
     open static var INFO_TEXT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INFO_TEXT", fieldType: "I", fieldCache: &INFO_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.MENU
+
+    private static var MENU_FieldID: jfieldID?
+
+    open static var MENU: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MENU", fieldType: "I", fieldCache: &MENU_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.MENU_TEXT
+
+    private static var MENU_TEXT_FieldID: jfieldID?
+
+    open static var MENU_TEXT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MENU_TEXT", fieldType: "I", fieldCache: &MENU_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
         }
     }
 
@@ -309,20 +210,106 @@ open class SystemColor: Color {
     open static var NUM_COLORS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NUM_COLORS", fieldType: "I", fieldCache: &NUM_COLORS_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// private static int[] java.awt.SystemColor.systemColors
+    /// public static final int java.awt.SystemColor.SCROLLBAR
 
-    /// public static final java.awt.SystemColor java.awt.SystemColor.desktop
+    private static var SCROLLBAR_FieldID: jfieldID?
 
-    private static var desktop_FieldID: jfieldID?
-
-    open static var desktop: SystemColor! {
+    open static var SCROLLBAR: Int {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "desktop", fieldType: "Ljava/awt/SystemColor;", fieldCache: &desktop_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
+            let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBAR", fieldType: "I", fieldCache: &SCROLLBAR_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.TEXT
+
+    private static var TEXT_FieldID: jfieldID?
+
+    open static var TEXT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TEXT", fieldType: "I", fieldCache: &TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.TEXT_HIGHLIGHT
+
+    private static var TEXT_HIGHLIGHT_FieldID: jfieldID?
+
+    open static var TEXT_HIGHLIGHT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TEXT_HIGHLIGHT", fieldType: "I", fieldCache: &TEXT_HIGHLIGHT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.TEXT_HIGHLIGHT_TEXT
+
+    private static var TEXT_HIGHLIGHT_TEXT_FieldID: jfieldID?
+
+    open static var TEXT_HIGHLIGHT_TEXT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TEXT_HIGHLIGHT_TEXT", fieldType: "I", fieldCache: &TEXT_HIGHLIGHT_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.TEXT_INACTIVE_TEXT
+
+    private static var TEXT_INACTIVE_TEXT_FieldID: jfieldID?
+
+    open static var TEXT_INACTIVE_TEXT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TEXT_INACTIVE_TEXT", fieldType: "I", fieldCache: &TEXT_INACTIVE_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.TEXT_TEXT
+
+    private static var TEXT_TEXT_FieldID: jfieldID?
+
+    open static var TEXT_TEXT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TEXT_TEXT", fieldType: "I", fieldCache: &TEXT_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.WINDOW
+
+    private static var WINDOW_FieldID: jfieldID?
+
+    open static var WINDOW: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW", fieldType: "I", fieldCache: &WINDOW_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.WINDOW_BORDER
+
+    private static var WINDOW_BORDER_FieldID: jfieldID?
+
+    open static var WINDOW_BORDER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_BORDER", fieldType: "I", fieldCache: &WINDOW_BORDER_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.SystemColor.WINDOW_TEXT
+
+    private static var WINDOW_TEXT_FieldID: jfieldID?
+
+    open static var WINDOW_TEXT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_TEXT", fieldType: "I", fieldCache: &WINDOW_TEXT_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            return Int(__value)
         }
     }
 
@@ -333,17 +320,7 @@ open class SystemColor: Color {
     open static var activeCaption: SystemColor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "activeCaption", fieldType: "Ljava/awt/SystemColor;", fieldCache: &activeCaption_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.activeCaptionText
-
-    private static var activeCaptionText_FieldID: jfieldID?
-
-    open static var activeCaptionText: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "activeCaptionText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &activeCaptionText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SystemColor( javaObject: __value ) : nil
         }
     }
@@ -355,149 +332,19 @@ open class SystemColor: Color {
     open static var activeCaptionBorder: SystemColor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "activeCaptionBorder", fieldType: "Ljava/awt/SystemColor;", fieldCache: &activeCaptionBorder_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SystemColor( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.SystemColor java.awt.SystemColor.inactiveCaption
+    /// public static final java.awt.SystemColor java.awt.SystemColor.activeCaptionText
 
-    private static var inactiveCaption_FieldID: jfieldID?
+    private static var activeCaptionText_FieldID: jfieldID?
 
-    open static var inactiveCaption: SystemColor! {
+    open static var activeCaptionText: SystemColor! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "inactiveCaption", fieldType: "Ljava/awt/SystemColor;", fieldCache: &inactiveCaption_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.inactiveCaptionText
-
-    private static var inactiveCaptionText_FieldID: jfieldID?
-
-    open static var inactiveCaptionText: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "inactiveCaptionText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &inactiveCaptionText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.inactiveCaptionBorder
-
-    private static var inactiveCaptionBorder_FieldID: jfieldID?
-
-    open static var inactiveCaptionBorder: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "inactiveCaptionBorder", fieldType: "Ljava/awt/SystemColor;", fieldCache: &inactiveCaptionBorder_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.window
-
-    private static var window_FieldID: jfieldID?
-
-    open static var window: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "window", fieldType: "Ljava/awt/SystemColor;", fieldCache: &window_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.windowBorder
-
-    private static var windowBorder_FieldID: jfieldID?
-
-    open static var windowBorder: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "windowBorder", fieldType: "Ljava/awt/SystemColor;", fieldCache: &windowBorder_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.windowText
-
-    private static var windowText_FieldID: jfieldID?
-
-    open static var windowText: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "windowText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &windowText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.menu
-
-    private static var menu_FieldID: jfieldID?
-
-    open static var menu: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "menu", fieldType: "Ljava/awt/SystemColor;", fieldCache: &menu_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.menuText
-
-    private static var menuText_FieldID: jfieldID?
-
-    open static var menuText: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "menuText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &menuText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.text
-
-    private static var text_FieldID: jfieldID?
-
-    open static var text: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "text", fieldType: "Ljava/awt/SystemColor;", fieldCache: &text_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.textText
-
-    private static var textText_FieldID: jfieldID?
-
-    open static var textText: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "textText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &textText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.textHighlight
-
-    private static var textHighlight_FieldID: jfieldID?
-
-    open static var textHighlight: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "textHighlight", fieldType: "Ljava/awt/SystemColor;", fieldCache: &textHighlight_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.textHighlightText
-
-    private static var textHighlightText_FieldID: jfieldID?
-
-    open static var textHighlightText: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "textHighlightText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &textHighlightText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.textInactiveText
-
-    private static var textInactiveText_FieldID: jfieldID?
-
-    open static var textInactiveText: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "textInactiveText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &textInactiveText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "activeCaptionText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &activeCaptionText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SystemColor( javaObject: __value ) : nil
         }
     }
@@ -509,50 +356,7 @@ open class SystemColor: Color {
     open static var control: SystemColor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "control", fieldType: "Ljava/awt/SystemColor;", fieldCache: &control_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.controlText
-
-    private static var controlText_FieldID: jfieldID?
-
-    open static var controlText: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "controlText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &controlText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.controlHighlight
-
-    private static var controlHighlight_FieldID: jfieldID?
-
-    open static var controlHighlight: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "controlHighlight", fieldType: "Ljava/awt/SystemColor;", fieldCache: &controlHighlight_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.controlLtHighlight
-
-    private static var controlLtHighlight_FieldID: jfieldID?
-
-    open static var controlLtHighlight: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "controlLtHighlight", fieldType: "Ljava/awt/SystemColor;", fieldCache: &controlLtHighlight_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
-            return __value != nil ? SystemColor( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final java.awt.SystemColor java.awt.SystemColor.controlShadow
-
-    private static var controlShadow_FieldID: jfieldID?
-
-    open static var controlShadow: SystemColor! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "controlShadow", fieldType: "Ljava/awt/SystemColor;", fieldCache: &controlShadow_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SystemColor( javaObject: __value ) : nil
         }
     }
@@ -564,17 +368,103 @@ open class SystemColor: Color {
     open static var controlDkShadow: SystemColor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "controlDkShadow", fieldType: "Ljava/awt/SystemColor;", fieldCache: &controlDkShadow_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SystemColor( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.awt.SystemColor java.awt.SystemColor.scrollbar
+    /// public static final java.awt.SystemColor java.awt.SystemColor.controlHighlight
 
-    private static var scrollbar_FieldID: jfieldID?
+    private static var controlHighlight_FieldID: jfieldID?
 
-    open static var scrollbar: SystemColor! {
+    open static var controlHighlight: SystemColor! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "scrollbar", fieldType: "Ljava/awt/SystemColor;", fieldCache: &scrollbar_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            let __value = JNIField.GetStaticObjectField( fieldName: "controlHighlight", fieldType: "Ljava/awt/SystemColor;", fieldCache: &controlHighlight_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.controlLtHighlight
+
+    private static var controlLtHighlight_FieldID: jfieldID?
+
+    open static var controlLtHighlight: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "controlLtHighlight", fieldType: "Ljava/awt/SystemColor;", fieldCache: &controlLtHighlight_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.controlShadow
+
+    private static var controlShadow_FieldID: jfieldID?
+
+    open static var controlShadow: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "controlShadow", fieldType: "Ljava/awt/SystemColor;", fieldCache: &controlShadow_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.controlText
+
+    private static var controlText_FieldID: jfieldID?
+
+    open static var controlText: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "controlText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &controlText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.desktop
+
+    private static var desktop_FieldID: jfieldID?
+
+    open static var desktop: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "desktop", fieldType: "Ljava/awt/SystemColor;", fieldCache: &desktop_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.inactiveCaption
+
+    private static var inactiveCaption_FieldID: jfieldID?
+
+    open static var inactiveCaption: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "inactiveCaption", fieldType: "Ljava/awt/SystemColor;", fieldCache: &inactiveCaption_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.inactiveCaptionBorder
+
+    private static var inactiveCaptionBorder_FieldID: jfieldID?
+
+    open static var inactiveCaptionBorder: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "inactiveCaptionBorder", fieldType: "Ljava/awt/SystemColor;", fieldCache: &inactiveCaptionBorder_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.inactiveCaptionText
+
+    private static var inactiveCaptionText_FieldID: jfieldID?
+
+    open static var inactiveCaptionText: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "inactiveCaptionText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &inactiveCaptionText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SystemColor( javaObject: __value ) : nil
         }
     }
@@ -586,6 +476,7 @@ open class SystemColor: Color {
     open static var info: SystemColor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "info", fieldType: "Ljava/awt/SystemColor;", fieldCache: &info_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SystemColor( javaObject: __value ) : nil
         }
     }
@@ -597,97 +488,294 @@ open class SystemColor: Color {
     open static var infoText: SystemColor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "infoText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &infoText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.menu
+
+    private static var menu_FieldID: jfieldID?
+
+    open static var menu: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "menu", fieldType: "Ljava/awt/SystemColor;", fieldCache: &menu_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.menuText
+
+    private static var menuText_FieldID: jfieldID?
+
+    open static var menuText: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "menuText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &menuText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.scrollbar
+
+    private static var scrollbar_FieldID: jfieldID?
+
+    open static var scrollbar: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "scrollbar", fieldType: "Ljava/awt/SystemColor;", fieldCache: &scrollbar_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SystemColor( javaObject: __value ) : nil
         }
     }
 
     /// private static final long java.awt.SystemColor.serialVersionUID
 
-    /// private transient int java.awt.SystemColor.index
-
     /// private static java.awt.SystemColor[] java.awt.SystemColor.systemColorObjects
 
-    /// public static final java.awt.Color java.awt.Color.white
+    /// private static int[] java.awt.SystemColor.systemColors
 
-    /// public static final java.awt.Color java.awt.Color.WHITE
+    /// public static final java.awt.SystemColor java.awt.SystemColor.text
 
-    /// public static final java.awt.Color java.awt.Color.lightGray
+    private static var text_FieldID: jfieldID?
 
-    /// public static final java.awt.Color java.awt.Color.LIGHT_GRAY
+    open static var text: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "text", fieldType: "Ljava/awt/SystemColor;", fieldCache: &text_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
 
-    /// public static final java.awt.Color java.awt.Color.gray
+    /// public static final java.awt.SystemColor java.awt.SystemColor.textHighlight
 
-    /// public static final java.awt.Color java.awt.Color.GRAY
+    private static var textHighlight_FieldID: jfieldID?
 
-    /// public static final java.awt.Color java.awt.Color.darkGray
+    open static var textHighlight: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "textHighlight", fieldType: "Ljava/awt/SystemColor;", fieldCache: &textHighlight_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
 
-    /// public static final java.awt.Color java.awt.Color.DARK_GRAY
+    /// public static final java.awt.SystemColor java.awt.SystemColor.textHighlightText
 
-    /// public static final java.awt.Color java.awt.Color.black
+    private static var textHighlightText_FieldID: jfieldID?
+
+    open static var textHighlightText: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "textHighlightText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &textHighlightText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.textInactiveText
+
+    private static var textInactiveText_FieldID: jfieldID?
+
+    open static var textInactiveText: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "textInactiveText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &textInactiveText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.textText
+
+    private static var textText_FieldID: jfieldID?
+
+    open static var textText: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "textText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &textText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.window
+
+    private static var window_FieldID: jfieldID?
+
+    open static var window: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "window", fieldType: "Ljava/awt/SystemColor;", fieldCache: &window_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.windowBorder
+
+    private static var windowBorder_FieldID: jfieldID?
+
+    open static var windowBorder: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "windowBorder", fieldType: "Ljava/awt/SystemColor;", fieldCache: &windowBorder_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.awt.SystemColor java.awt.SystemColor.windowText
+
+    private static var windowText_FieldID: jfieldID?
+
+    open static var windowText: SystemColor! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "windowText", fieldType: "Ljava/awt/SystemColor;", fieldCache: &windowText_FieldID, className: "java/awt/SystemColor", classCache: &SystemColorJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SystemColor( javaObject: __value ) : nil
+        }
+    }
+
+    /// private transient int java.awt.SystemColor.index
 
     /// public static final java.awt.Color java.awt.Color.BLACK
 
-    /// public static final java.awt.Color java.awt.Color.red
-
-    /// public static final java.awt.Color java.awt.Color.RED
-
-    /// public static final java.awt.Color java.awt.Color.pink
-
-    /// public static final java.awt.Color java.awt.Color.PINK
-
-    /// public static final java.awt.Color java.awt.Color.orange
-
-    /// public static final java.awt.Color java.awt.Color.ORANGE
-
-    /// public static final java.awt.Color java.awt.Color.yellow
-
-    /// public static final java.awt.Color java.awt.Color.YELLOW
-
-    /// public static final java.awt.Color java.awt.Color.green
-
-    /// public static final java.awt.Color java.awt.Color.GREEN
-
-    /// public static final java.awt.Color java.awt.Color.magenta
-
-    /// public static final java.awt.Color java.awt.Color.MAGENTA
-
-    /// public static final java.awt.Color java.awt.Color.cyan
-
-    /// public static final java.awt.Color java.awt.Color.CYAN
-
-    /// public static final java.awt.Color java.awt.Color.blue
+    // Skipping field: false true false false false false 
 
     /// public static final java.awt.Color java.awt.Color.BLUE
 
-    /// int java.awt.Color.value
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.CYAN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.DARK_GRAY
+
+    // Skipping field: false true false false false false 
+
+    /// private static final double java.awt.Color.FACTOR
+
+    /// public static final java.awt.Color java.awt.Color.GRAY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.GREEN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.LIGHT_GRAY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.MAGENTA
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.ORANGE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.PINK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.RED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.WHITE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.YELLOW
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.black
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.blue
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.cyan
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.darkGray
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.gray
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.green
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.lightGray
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.magenta
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.orange
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.pink
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.red
+
+    // Skipping field: false true false false false false 
+
+    /// private static final long java.awt.Color.serialVersionUID
+
+    /// public static final java.awt.Color java.awt.Color.white
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.awt.Color java.awt.Color.yellow
+
+    // Skipping field: false true false false false false 
+
+    /// private java.awt.color.ColorSpace java.awt.Color.cs
+
+    /// private float java.awt.Color.falpha
 
     /// private float[] java.awt.Color.frgbvalue
 
     /// private float[] java.awt.Color.fvalue
 
-    /// private float java.awt.Color.falpha
+    /// int java.awt.Color.value
 
-    /// private java.awt.color.ColorSpace java.awt.Color.cs
-
-    /// private static final long java.awt.Color.serialVersionUID
-
-    /// private static final double java.awt.Color.FACTOR
-
-    /// public static final int java.awt.Transparency.OPAQUE
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.Transparency.BITMASK
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Transparency.OPAQUE
+
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.Transparency.TRANSLUCENT
+
+    // Skipping field: false true false false false false 
 
     /// private java.awt.SystemColor(byte)
 
-    /// public java.lang.String java.awt.SystemColor.toString()
+    /// private static void java.awt.SystemColor.updateSystemColors()
 
     /// private java.lang.Object java.awt.SystemColor.readResolve()
 
-    /// private java.lang.Object java.awt.SystemColor.writeReplace() throws java.io.ObjectStreamException
+    /// public java.lang.String java.awt.SystemColor.toString()
 
-    /// private static void java.awt.SystemColor.updateSystemColors()
+    // Skipping method: false true false false false 
+
+    /// private java.lang.Object java.awt.SystemColor.writeReplace() throws java.io.ObjectStreamException
 
 }
 

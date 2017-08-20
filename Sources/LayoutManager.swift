@@ -7,10 +7,6 @@ import java_swift
 
 public protocol LayoutManager: JavaProtocol {
 
-    /// public abstract void java.awt.LayoutManager.removeLayoutComponent(java.awt.Component)
-
-    func removeLayoutComponent( comp: Component? )
-
     /// public abstract void java.awt.LayoutManager.addLayoutComponent(java.lang.String,java.awt.Component)
 
     func addLayoutComponent( name: String?, comp: Component? )
@@ -19,13 +15,17 @@ public protocol LayoutManager: JavaProtocol {
 
     func layoutContainer( parent: Container? )
 
+    /// public abstract java.awt.Dimension java.awt.LayoutManager.minimumLayoutSize(java.awt.Container)
+
+    func minimumLayoutSize( parent: Container? ) -> Dimension!
+
     /// public abstract java.awt.Dimension java.awt.LayoutManager.preferredLayoutSize(java.awt.Container)
 
     func preferredLayoutSize( parent: Container? ) -> Dimension!
 
-    /// public abstract java.awt.Dimension java.awt.LayoutManager.minimumLayoutSize(java.awt.Container)
+    /// public abstract void java.awt.LayoutManager.removeLayoutComponent(java.awt.Component)
 
-    func minimumLayoutSize( parent: Container? ) -> Dimension!
+    func removeLayoutComponent( comp: Component? )
 
 }
 
@@ -34,31 +34,16 @@ open class LayoutManagerForward: JNIObjectForward, LayoutManager {
 
     private static var LayoutManagerJNIClass: jclass?
 
-    /// public abstract void java.awt.LayoutManager.removeLayoutComponent(java.awt.Component)
-
-    private static var removeLayoutComponent_MethodID_6: jmethodID?
-
-    open func removeLayoutComponent( comp: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &LayoutManagerForward.removeLayoutComponent_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func removeLayoutComponent( _ _comp: Component? ) {
-        removeLayoutComponent( comp: _comp )
-    }
-
     /// public abstract void java.awt.LayoutManager.addLayoutComponent(java.lang.String,java.awt.Component)
 
-    private static var addLayoutComponent_MethodID_7: jmethodID?
+    private static var addLayoutComponent_MethodID_6: jmethodID?
 
     open func addLayoutComponent( name: String?, comp: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &LayoutManagerForward.addLayoutComponent_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &LayoutManagerForward.addLayoutComponent_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func addLayoutComponent( _ _name: String?, _ _comp: Component? ) {
@@ -67,17 +52,34 @@ open class LayoutManagerForward: JNIObjectForward, LayoutManager {
 
     /// public abstract void java.awt.LayoutManager.layoutContainer(java.awt.Container)
 
-    private static var layoutContainer_MethodID_8: jmethodID?
+    private static var layoutContainer_MethodID_7: jmethodID?
 
     open func layoutContainer( parent: Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &LayoutManagerForward.layoutContainer_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &LayoutManagerForward.layoutContainer_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func layoutContainer( _ _parent: Container? ) {
         layoutContainer( parent: _parent )
+    }
+
+    /// public abstract java.awt.Dimension java.awt.LayoutManager.minimumLayoutSize(java.awt.Container)
+
+    private static var minimumLayoutSize_MethodID_8: jmethodID?
+
+    open func minimumLayoutSize( parent: Container? ) -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &LayoutManagerForward.minimumLayoutSize_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+    open func minimumLayoutSize( _ _parent: Container? ) -> Dimension! {
+        return minimumLayoutSize( parent: _parent )
     }
 
     /// public abstract java.awt.Dimension java.awt.LayoutManager.preferredLayoutSize(java.awt.Container)
@@ -85,8 +87,8 @@ open class LayoutManagerForward: JNIObjectForward, LayoutManager {
     private static var preferredLayoutSize_MethodID_9: jmethodID?
 
     open func preferredLayoutSize( parent: Container? ) -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &LayoutManagerForward.preferredLayoutSize_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -97,68 +99,55 @@ open class LayoutManagerForward: JNIObjectForward, LayoutManager {
         return preferredLayoutSize( parent: _parent )
     }
 
-    /// public abstract java.awt.Dimension java.awt.LayoutManager.minimumLayoutSize(java.awt.Container)
+    /// public abstract void java.awt.LayoutManager.removeLayoutComponent(java.awt.Component)
 
-    private static var minimumLayoutSize_MethodID_10: jmethodID?
+    private static var removeLayoutComponent_MethodID_10: jmethodID?
 
-    open func minimumLayoutSize( parent: Container? ) -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func removeLayoutComponent( comp: Component? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &LayoutManagerForward.minimumLayoutSize_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &LayoutManagerForward.removeLayoutComponent_MethodID_10, args: &__args, locals: &__locals )
     }
 
-    open func minimumLayoutSize( _ _parent: Container? ) -> Dimension! {
-        return minimumLayoutSize( parent: _parent )
+    open func removeLayoutComponent( _ _comp: Component? ) {
+        removeLayoutComponent( comp: _comp )
     }
 
 }
 
+private typealias LayoutManager_addLayoutComponent_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject?, _: jobject? ) -> ()
 
-private typealias LayoutManager_removeLayoutComponent_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func LayoutManager_removeLayoutComponent_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ comp: jobject? ) -> () {
-    JNI.inNative = true;
-    LayoutManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).removeLayoutComponent( comp: comp != nil ? Component( javaObject: comp ) : nil )
-    JNI.inNative = false;
+private func LayoutManager_addLayoutComponent_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ name: jobject?, _ comp: jobject? ) -> () {
+    LayoutManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).addLayoutComponent( name: name != nil ? String( javaObject: name ) : nil, comp: comp != nil ? Component( javaObject: comp ) : nil )
 }
 
-private typealias LayoutManager_addLayoutComponent_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject?, _: jobject? ) -> ()
+private typealias LayoutManager_layoutContainer_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func LayoutManager_addLayoutComponent_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ name: jobject?, _ comp: jobject? ) -> () {
-    JNI.inNative = true;
-    LayoutManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).addLayoutComponent( name: JNIType.toSwift( type: String(), from: name ), comp: comp != nil ? Component( javaObject: comp ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias LayoutManager_layoutContainer_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func LayoutManager_layoutContainer_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ parent: jobject? ) -> () {
-    JNI.inNative = true;
+private func LayoutManager_layoutContainer_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ parent: jobject? ) -> () {
     LayoutManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).layoutContainer( parent: parent != nil ? Container( javaObject: parent ) : nil )
-    JNI.inNative = false;
+}
+
+private typealias LayoutManager_minimumLayoutSize_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jobject?
+
+private func LayoutManager_minimumLayoutSize_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ parent: jobject? ) -> jobject? {
+    let __return = LayoutManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).minimumLayoutSize( parent: parent != nil ? Container( javaObject: parent ) : nil )
+    var __locals = [jobject]()
+    return JNI.check( JNIType.toJava( value: __return, locals: &__locals ).l, &__locals, removeLast: true )
 }
 
 private typealias LayoutManager_preferredLayoutSize_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jobject?
 
 private func LayoutManager_preferredLayoutSize_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ parent: jobject? ) -> jobject? {
-    JNI.inNative = true;
     let __return = LayoutManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).preferredLayoutSize( parent: parent != nil ? Container( javaObject: parent ) : nil )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).l, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( JNIType.toJava( value: __return, locals: &__locals ).l, &__locals, removeLast: true )
 }
 
-private typealias LayoutManager_minimumLayoutSize_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jobject?
+private typealias LayoutManager_removeLayoutComponent_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func LayoutManager_minimumLayoutSize_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ parent: jobject? ) -> jobject? {
-    JNI.inNative = true;
-    let __return = LayoutManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).minimumLayoutSize( parent: parent != nil ? Container( javaObject: parent ) : nil )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).l, &locals, removeLast: true )
+private func LayoutManager_removeLayoutComponent_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ comp: jobject? ) -> () {
+    LayoutManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).removeLayoutComponent( comp: comp != nil ? Component( javaObject: comp ) : nil )
 }
 
 fileprivate class LayoutManagerLocal_: JNILocalProxy<LayoutManager, Any> {
@@ -166,20 +155,20 @@ fileprivate class LayoutManagerLocal_: JNILocalProxy<LayoutManager, Any> {
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let LayoutManager_removeLayoutComponent_0_thunk: LayoutManager_removeLayoutComponent_0_type = LayoutManager_removeLayoutComponent_0
-        natives.append( JNINativeMethod( name: strdup("__removeLayoutComponent"), signature: strdup("(JLjava/awt/Component;)V"), fnPtr: unsafeBitCast( LayoutManager_removeLayoutComponent_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let LayoutManager_addLayoutComponent_0_thunk: LayoutManager_addLayoutComponent_0_type = LayoutManager_addLayoutComponent_0
+        natives.append( JNINativeMethod( name: strdup("__addLayoutComponent"), signature: strdup("(JLjava/lang/String;Ljava/awt/Component;)V"), fnPtr: unsafeBitCast( LayoutManager_addLayoutComponent_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let LayoutManager_addLayoutComponent_1_thunk: LayoutManager_addLayoutComponent_1_type = LayoutManager_addLayoutComponent_1
-        natives.append( JNINativeMethod( name: strdup("__addLayoutComponent"), signature: strdup("(JLjava/lang/String;Ljava/awt/Component;)V"), fnPtr: unsafeBitCast( LayoutManager_addLayoutComponent_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let LayoutManager_layoutContainer_1_thunk: LayoutManager_layoutContainer_1_type = LayoutManager_layoutContainer_1
+        natives.append( JNINativeMethod( name: strdup("__layoutContainer"), signature: strdup("(JLjava/awt/Container;)V"), fnPtr: unsafeBitCast( LayoutManager_layoutContainer_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let LayoutManager_layoutContainer_2_thunk: LayoutManager_layoutContainer_2_type = LayoutManager_layoutContainer_2
-        natives.append( JNINativeMethod( name: strdup("__layoutContainer"), signature: strdup("(JLjava/awt/Container;)V"), fnPtr: unsafeBitCast( LayoutManager_layoutContainer_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let LayoutManager_minimumLayoutSize_2_thunk: LayoutManager_minimumLayoutSize_2_type = LayoutManager_minimumLayoutSize_2
+        natives.append( JNINativeMethod( name: strdup("__minimumLayoutSize"), signature: strdup("(JLjava/awt/Container;)Ljava/awt/Dimension;"), fnPtr: unsafeBitCast( LayoutManager_minimumLayoutSize_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         let LayoutManager_preferredLayoutSize_3_thunk: LayoutManager_preferredLayoutSize_3_type = LayoutManager_preferredLayoutSize_3
         natives.append( JNINativeMethod( name: strdup("__preferredLayoutSize"), signature: strdup("(JLjava/awt/Container;)Ljava/awt/Dimension;"), fnPtr: unsafeBitCast( LayoutManager_preferredLayoutSize_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let LayoutManager_minimumLayoutSize_4_thunk: LayoutManager_minimumLayoutSize_4_type = LayoutManager_minimumLayoutSize_4
-        natives.append( JNINativeMethod( name: strdup("__minimumLayoutSize"), signature: strdup("(JLjava/awt/Container;)Ljava/awt/Dimension;"), fnPtr: unsafeBitCast( LayoutManager_minimumLayoutSize_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let LayoutManager_removeLayoutComponent_4_thunk: LayoutManager_removeLayoutComponent_4_type = LayoutManager_removeLayoutComponent_4
+        natives.append( JNINativeMethod( name: strdup("__removeLayoutComponent"), signature: strdup("(JLjava/awt/Component;)V"), fnPtr: unsafeBitCast( LayoutManager_removeLayoutComponent_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -212,42 +201,17 @@ open class LayoutManagerBase: LayoutManager {
 
     public init() {}
 
-    /// public abstract void java.awt.LayoutManager.removeLayoutComponent(java.awt.Component)
-
-    open func removeLayoutComponent( comp: Component? ) /**/ {
-    }
-
-    open func removeLayoutComponent( _ _comp: Component? ) /**/ {
-        removeLayoutComponent( comp: _comp )
-    }
-
     /// public abstract void java.awt.LayoutManager.addLayoutComponent(java.lang.String,java.awt.Component)
 
     open func addLayoutComponent( name: String?, comp: Component? ) /**/ {
     }
 
-    open func addLayoutComponent( _ _name: String?, _ _comp: Component? ) /**/ {
-        addLayoutComponent( name: _name, comp: _comp )
-    }
 
     /// public abstract void java.awt.LayoutManager.layoutContainer(java.awt.Container)
 
     open func layoutContainer( parent: Container? ) /**/ {
     }
 
-    open func layoutContainer( _ _parent: Container? ) /**/ {
-        layoutContainer( parent: _parent )
-    }
-
-    /// public abstract java.awt.Dimension java.awt.LayoutManager.preferredLayoutSize(java.awt.Container)
-
-    open func preferredLayoutSize( parent: Container? ) -> Dimension! /**/ {
-        return nil
-    }
-
-    open func preferredLayoutSize( _ _parent: Container? ) -> Dimension! /**/ {
-        return preferredLayoutSize( parent: _parent )
-    }
 
     /// public abstract java.awt.Dimension java.awt.LayoutManager.minimumLayoutSize(java.awt.Container)
 
@@ -255,8 +219,18 @@ open class LayoutManagerBase: LayoutManager {
         return nil
     }
 
-    open func minimumLayoutSize( _ _parent: Container? ) -> Dimension! /**/ {
-        return minimumLayoutSize( parent: _parent )
+
+    /// public abstract java.awt.Dimension java.awt.LayoutManager.preferredLayoutSize(java.awt.Container)
+
+    open func preferredLayoutSize( parent: Container? ) -> Dimension! /**/ {
+        return nil
     }
+
+
+    /// public abstract void java.awt.LayoutManager.removeLayoutComponent(java.awt.Component)
+
+    open func removeLayoutComponent( comp: Component? ) /**/ {
+    }
+
 
 }

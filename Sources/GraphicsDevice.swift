@@ -16,22 +16,14 @@ open class GraphicsDevice: java_swift.JavaObject {
 
     private static var GraphicsDeviceJNIClass: jclass?
 
-    /// private java.awt.Window java.awt.GraphicsDevice.fullScreenWindow
+    /// public static final int java.awt.GraphicsDevice.TYPE_IMAGE_BUFFER
 
-    /// private sun.awt.AppContext java.awt.GraphicsDevice.fullScreenAppContext
+    private static var TYPE_IMAGE_BUFFER_FieldID: jfieldID?
 
-    /// private final java.lang.Object java.awt.GraphicsDevice.fsAppContextLock
-
-    /// private java.awt.Rectangle java.awt.GraphicsDevice.windowedModeBounds
-
-    /// public static final int java.awt.GraphicsDevice.TYPE_RASTER_SCREEN
-
-    private static var TYPE_RASTER_SCREEN_FieldID: jfieldID?
-
-    open static var TYPE_RASTER_SCREEN: Int {
+    open static var TYPE_IMAGE_BUFFER: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_RASTER_SCREEN", fieldType: "I", fieldCache: &TYPE_RASTER_SCREEN_FieldID, className: "java/awt/GraphicsDevice", classCache: &GraphicsDeviceJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_IMAGE_BUFFER", fieldType: "I", fieldCache: &TYPE_IMAGE_BUFFER_FieldID, className: "java/awt/GraphicsDevice", classCache: &GraphicsDeviceJNIClass )
+            return Int(__value)
         }
     }
 
@@ -42,98 +34,70 @@ open class GraphicsDevice: java_swift.JavaObject {
     open static var TYPE_PRINTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_PRINTER", fieldType: "I", fieldCache: &TYPE_PRINTER_FieldID, className: "java/awt/GraphicsDevice", classCache: &GraphicsDeviceJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.GraphicsDevice.TYPE_IMAGE_BUFFER
+    /// public static final int java.awt.GraphicsDevice.TYPE_RASTER_SCREEN
 
-    private static var TYPE_IMAGE_BUFFER_FieldID: jfieldID?
+    private static var TYPE_RASTER_SCREEN_FieldID: jfieldID?
 
-    open static var TYPE_IMAGE_BUFFER: Int {
+    open static var TYPE_RASTER_SCREEN: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_IMAGE_BUFFER", fieldType: "I", fieldCache: &TYPE_IMAGE_BUFFER_FieldID, className: "java/awt/GraphicsDevice", classCache: &GraphicsDeviceJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_RASTER_SCREEN", fieldType: "I", fieldCache: &TYPE_RASTER_SCREEN_FieldID, className: "java/awt/GraphicsDevice", classCache: &GraphicsDeviceJNIClass )
+            return Int(__value)
         }
     }
+
+    /// private final java.lang.Object java.awt.GraphicsDevice.fsAppContextLock
+
+    /// private sun.awt.AppContext java.awt.GraphicsDevice.fullScreenAppContext
+
+    /// private java.awt.Window java.awt.GraphicsDevice.fullScreenWindow
+
+    /// private java.awt.Rectangle java.awt.GraphicsDevice.windowedModeBounds
 
     /// protected java.awt.GraphicsDevice()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/GraphicsDevice", classCache: &GraphicsDevice.GraphicsDeviceJNIClass, methodSig: "()V", methodCache: &GraphicsDevice.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public abstract int java.awt.GraphicsDevice.getType()
+    /// static boolean java.awt.GraphicsDevice.isWindowOpacitySupported()
 
-    private static var getType_MethodID_2: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func getType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// static boolean java.awt.GraphicsDevice.isWindowShapingSupported()
+
+    // Skipping method: true false false false false 
+
+    /// public int java.awt.GraphicsDevice.getAvailableAcceleratedMemory()
+
+    private static var getAvailableAcceleratedMemory_MethodID_2: jmethodID?
+
+    open func getAvailableAcceleratedMemory() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getType", methodSig: "()I", methodCache: &GraphicsDevice.getType_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract java.awt.GraphicsConfiguration java.awt.GraphicsDevice.getDefaultConfiguration()
-
-    private static var getDefaultConfiguration_MethodID_3: jmethodID?
-
-    open func getDefaultConfiguration() -> GraphicsConfiguration! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultConfiguration", methodSig: "()Ljava/awt/GraphicsConfiguration;", methodCache: &GraphicsDevice.getDefaultConfiguration_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? GraphicsConfiguration( javaObject: __return ) : nil
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAvailableAcceleratedMemory", methodSig: "()I", methodCache: &GraphicsDevice.getAvailableAcceleratedMemory_MethodID_2, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-
-    /// public java.awt.Window java.awt.GraphicsDevice.getFullScreenWindow()
-
-    private static var getFullScreenWindow_MethodID_4: jmethodID?
-
-    open func getFullScreenWindow() -> Window! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFullScreenWindow", methodSig: "()Ljava/awt/Window;", methodCache: &GraphicsDevice.getFullScreenWindow_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Window( javaObject: __return ) : nil
-    }
-
-
-    /// public boolean java.awt.GraphicsDevice.isWindowTranslucencySupported(java.awt.GraphicsDevice$WindowTranslucency)
-
-    private static var isWindowTranslucencySupported_MethodID_5: jmethodID?
-
-    open func isWindowTranslucencySupported( translucencyKind: GraphicsDevice_WindowTranslucency? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: translucencyKind, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isWindowTranslucencySupported", methodSig: "(Ljava/awt/GraphicsDevice$WindowTranslucency;)Z", methodCache: &GraphicsDevice.isWindowTranslucencySupported_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isWindowTranslucencySupported( _ _translucencyKind: GraphicsDevice_WindowTranslucency? ) -> Bool {
-        return isWindowTranslucencySupported( translucencyKind: _translucencyKind )
-    }
-
-    /// java.awt.GraphicsConfiguration java.awt.GraphicsDevice.getTranslucencyCapableGC()
 
     /// public java.awt.GraphicsConfiguration java.awt.GraphicsDevice.getBestConfiguration(java.awt.GraphicsConfigTemplate)
 
-    private static var getBestConfiguration_MethodID_6: jmethodID?
+    private static var getBestConfiguration_MethodID_3: jmethodID?
 
     open func getBestConfiguration( gct: GraphicsConfigTemplate? ) -> GraphicsConfiguration! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: gct, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBestConfiguration", methodSig: "(Ljava/awt/GraphicsConfigTemplate;)Ljava/awt/GraphicsConfiguration;", methodCache: &GraphicsDevice.getBestConfiguration_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBestConfiguration", methodSig: "(Ljava/awt/GraphicsConfigTemplate;)Ljava/awt/GraphicsConfiguration;", methodCache: &GraphicsDevice.getBestConfiguration_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GraphicsConfiguration( javaObject: __return ) : nil
     }
@@ -144,78 +108,37 @@ open class GraphicsDevice: java_swift.JavaObject {
 
     /// public abstract java.awt.GraphicsConfiguration[] java.awt.GraphicsDevice.getConfigurations()
 
-    private static var getConfigurations_MethodID_7: jmethodID?
+    private static var getConfigurations_MethodID_4: jmethodID?
 
     open func getConfigurations() -> [GraphicsConfiguration]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getConfigurations", methodSig: "()[Ljava/awt/GraphicsConfiguration;", methodCache: &GraphicsDevice.getConfigurations_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [GraphicsConfiguration](), from: __return )
-    }
-
-
-    /// public boolean java.awt.GraphicsDevice.isFullScreenSupported()
-
-    private static var isFullScreenSupported_MethodID_8: jmethodID?
-
-    open func isFullScreenSupported() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFullScreenSupported", methodSig: "()Z", methodCache: &GraphicsDevice.isFullScreenSupported_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getConfigurations", methodSig: "()[Ljava/awt/GraphicsConfiguration;", methodCache: &GraphicsDevice.getConfigurations_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [GraphicsConfiguration].self, from: __return )
     }
 
 
-    /// public void java.awt.GraphicsDevice.setFullScreenWindow(java.awt.Window)
+    /// public abstract java.awt.GraphicsConfiguration java.awt.GraphicsDevice.getDefaultConfiguration()
 
-    private static var setFullScreenWindow_MethodID_9: jmethodID?
+    private static var getDefaultConfiguration_MethodID_5: jmethodID?
 
-    open func setFullScreenWindow( w: Window? ) {
+    open func getDefaultConfiguration() -> GraphicsConfiguration! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFullScreenWindow", methodSig: "(Ljava/awt/Window;)V", methodCache: &GraphicsDevice.setFullScreenWindow_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultConfiguration", methodSig: "()Ljava/awt/GraphicsConfiguration;", methodCache: &GraphicsDevice.getDefaultConfiguration_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? GraphicsConfiguration( javaObject: __return ) : nil
     }
 
-    open func setFullScreenWindow( _ _w: Window? ) {
-        setFullScreenWindow( w: _w )
-    }
-
-    /// public boolean java.awt.GraphicsDevice.isDisplayChangeSupported()
-
-    private static var isDisplayChangeSupported_MethodID_10: jmethodID?
-
-    open func isDisplayChangeSupported() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDisplayChangeSupported", methodSig: "()Z", methodCache: &GraphicsDevice.isDisplayChangeSupported_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void java.awt.GraphicsDevice.setDisplayMode(java.awt.DisplayMode)
-
-    private static var setDisplayMode_MethodID_11: jmethodID?
-
-    open func setDisplayMode( dm: DisplayMode? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dm, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisplayMode", methodSig: "(Ljava/awt/DisplayMode;)V", methodCache: &GraphicsDevice.setDisplayMode_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setDisplayMode( _ _dm: DisplayMode? ) {
-        setDisplayMode( dm: _dm )
-    }
 
     /// public java.awt.DisplayMode java.awt.GraphicsDevice.getDisplayMode()
 
-    private static var getDisplayMode_MethodID_12: jmethodID?
+    private static var getDisplayMode_MethodID_6: jmethodID?
 
     open func getDisplayMode() -> DisplayMode! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisplayMode", methodSig: "()Ljava/awt/DisplayMode;", methodCache: &GraphicsDevice.getDisplayMode_MethodID_12, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisplayMode", methodSig: "()Ljava/awt/DisplayMode;", methodCache: &GraphicsDevice.getDisplayMode_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DisplayMode( javaObject: __return ) : nil
     }
@@ -223,45 +146,131 @@ open class GraphicsDevice: java_swift.JavaObject {
 
     /// public java.awt.DisplayMode[] java.awt.GraphicsDevice.getDisplayModes()
 
-    private static var getDisplayModes_MethodID_13: jmethodID?
+    private static var getDisplayModes_MethodID_7: jmethodID?
 
     open func getDisplayModes() -> [DisplayMode]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisplayModes", methodSig: "()[Ljava/awt/DisplayMode;", methodCache: &GraphicsDevice.getDisplayModes_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [DisplayMode](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisplayModes", methodSig: "()[Ljava/awt/DisplayMode;", methodCache: &GraphicsDevice.getDisplayModes_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [DisplayMode].self, from: __return )
     }
 
 
-    /// public int java.awt.GraphicsDevice.getAvailableAcceleratedMemory()
+    /// public java.awt.Window java.awt.GraphicsDevice.getFullScreenWindow()
 
-    private static var getAvailableAcceleratedMemory_MethodID_14: jmethodID?
+    private static var getFullScreenWindow_MethodID_8: jmethodID?
 
-    open func getAvailableAcceleratedMemory() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getFullScreenWindow() -> Window! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAvailableAcceleratedMemory", methodSig: "()I", methodCache: &GraphicsDevice.getAvailableAcceleratedMemory_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFullScreenWindow", methodSig: "()Ljava/awt/Window;", methodCache: &GraphicsDevice.getFullScreenWindow_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Window( javaObject: __return ) : nil
     }
 
-
-    /// static boolean java.awt.GraphicsDevice.isWindowShapingSupported()
-
-    /// static boolean java.awt.GraphicsDevice.isWindowOpacitySupported()
-
-    /// boolean java.awt.GraphicsDevice.isWindowPerpixelTranslucencySupported()
 
     /// public abstract java.lang.String java.awt.GraphicsDevice.getIDstring()
 
-    private static var getIDstring_MethodID_15: jmethodID?
+    private static var getIDstring_MethodID_9: jmethodID?
 
     open func getIDstring() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIDstring", methodSig: "()Ljava/lang/String;", methodCache: &GraphicsDevice.getIDstring_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIDstring", methodSig: "()Ljava/lang/String;", methodCache: &GraphicsDevice.getIDstring_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
+
+    /// java.awt.GraphicsConfiguration java.awt.GraphicsDevice.getTranslucencyCapableGC()
+
+    // Skipping method: true false false false false 
+
+    /// public abstract int java.awt.GraphicsDevice.getType()
+
+    private static var getType_MethodID_10: jmethodID?
+
+    open func getType() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getType", methodSig: "()I", methodCache: &GraphicsDevice.getType_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public boolean java.awt.GraphicsDevice.isDisplayChangeSupported()
+
+    private static var isDisplayChangeSupported_MethodID_11: jmethodID?
+
+    open func isDisplayChangeSupported() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDisplayChangeSupported", methodSig: "()Z", methodCache: &GraphicsDevice.isDisplayChangeSupported_MethodID_11, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.GraphicsDevice.isFullScreenSupported()
+
+    private static var isFullScreenSupported_MethodID_12: jmethodID?
+
+    open func isFullScreenSupported() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFullScreenSupported", methodSig: "()Z", methodCache: &GraphicsDevice.isFullScreenSupported_MethodID_12, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// boolean java.awt.GraphicsDevice.isWindowPerpixelTranslucencySupported()
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.GraphicsDevice.isWindowTranslucencySupported(java.awt.GraphicsDevice$WindowTranslucency)
+
+    private static var isWindowTranslucencySupported_MethodID_13: jmethodID?
+
+    open func isWindowTranslucencySupported( translucencyKind: GraphicsDevice_WindowTranslucency? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: translucencyKind, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isWindowTranslucencySupported", methodSig: "(Ljava/awt/GraphicsDevice$WindowTranslucency;)Z", methodCache: &GraphicsDevice.isWindowTranslucencySupported_MethodID_13, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func isWindowTranslucencySupported( _ _translucencyKind: GraphicsDevice_WindowTranslucency? ) -> Bool {
+        return isWindowTranslucencySupported( translucencyKind: _translucencyKind )
+    }
+
+    /// public void java.awt.GraphicsDevice.setDisplayMode(java.awt.DisplayMode)
+
+    private static var setDisplayMode_MethodID_14: jmethodID?
+
+    open func setDisplayMode( dm: DisplayMode? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: dm, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisplayMode", methodSig: "(Ljava/awt/DisplayMode;)V", methodCache: &GraphicsDevice.setDisplayMode_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func setDisplayMode( _ _dm: DisplayMode? ) {
+        setDisplayMode( dm: _dm )
+    }
+
+    /// public void java.awt.GraphicsDevice.setFullScreenWindow(java.awt.Window)
+
+    private static var setFullScreenWindow_MethodID_15: jmethodID?
+
+    open func setFullScreenWindow( w: Window? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: w, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFullScreenWindow", methodSig: "(Ljava/awt/Window;)V", methodCache: &GraphicsDevice.setFullScreenWindow_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func setFullScreenWindow( _ _w: Window? ) {
+        setFullScreenWindow( w: _w )
+    }
 
 }
 

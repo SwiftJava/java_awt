@@ -28,8 +28,8 @@ open class HierarchyBoundsListenerForward: java_util.EventListenerForward, Hiera
     private static var ancestorMoved_MethodID_3: jmethodID?
 
     open func ancestorMoved( e: HierarchyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "ancestorMoved", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &HierarchyBoundsListenerForward.ancestorMoved_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -43,8 +43,8 @@ open class HierarchyBoundsListenerForward: java_util.EventListenerForward, Hiera
     private static var ancestorResized_MethodID_4: jmethodID?
 
     open func ancestorResized( e: HierarchyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "ancestorResized", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &HierarchyBoundsListenerForward.ancestorResized_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -55,21 +55,16 @@ open class HierarchyBoundsListenerForward: java_util.EventListenerForward, Hiera
 
 }
 
-
 private typealias HierarchyBoundsListener_ancestorMoved_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func HierarchyBoundsListener_ancestorMoved_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     HierarchyBoundsListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).ancestorMoved( e: e != nil ? HierarchyEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 private typealias HierarchyBoundsListener_ancestorResized_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func HierarchyBoundsListener_ancestorResized_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     HierarchyBoundsListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).ancestorResized( e: e != nil ? HierarchyEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class HierarchyBoundsListenerLocal_: JNILocalProxy<HierarchyBoundsListener, Any> {
@@ -119,17 +114,11 @@ open class HierarchyBoundsListenerBase: HierarchyBoundsListener {
     open func ancestorMoved( e: HierarchyEvent? ) /**/ {
     }
 
-    open func ancestorMoved( _ _e: HierarchyEvent? ) /**/ {
-        ancestorMoved( e: _e )
-    }
 
     /// public abstract void java.awt.event.HierarchyBoundsListener.ancestorResized(java.awt.event.HierarchyEvent)
 
     open func ancestorResized( e: HierarchyEvent? ) /**/ {
     }
 
-    open func ancestorResized( _ _e: HierarchyEvent? ) /**/ {
-        ancestorResized( e: _e )
-    }
 
 }

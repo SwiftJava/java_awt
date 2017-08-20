@@ -22,34 +22,30 @@ open class MenuItemPeerForward: MenuComponentPeerForward, MenuItemPeer {
 
     private static var MenuItemPeerJNIClass: jclass?
 
+    /// public abstract void java.awt.peer.MenuComponentPeer.dispose()
+
+    private static var dispose_MethodID_3: jmethodID?
+
+    override open func dispose() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &MenuItemPeerForward.dispose_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+
     /// public abstract void java.awt.peer.MenuItemPeer.setEnabled(boolean)
 
-    private static var setEnabled_MethodID_3: jmethodID?
+    private static var setEnabled_MethodID_4: jmethodID?
 
     open func setEnabled( e: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &MenuItemPeerForward.setEnabled_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(e ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &MenuItemPeerForward.setEnabled_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setEnabled( _ _e: Bool ) {
         setEnabled( e: _e )
-    }
-
-    /// public abstract void java.awt.peer.MenuItemPeer.setLabel(java.lang.String)
-
-    private static var setLabel_MethodID_4: jmethodID?
-
-    open func setLabel( label: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &MenuItemPeerForward.setLabel_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func setLabel( _ _label: String? ) {
-        setLabel( label: _label )
     }
 
     /// public abstract void java.awt.peer.MenuComponentPeer.setFont(java.awt.Font)
@@ -57,8 +53,8 @@ open class MenuItemPeerForward: MenuComponentPeerForward, MenuItemPeer {
     private static var setFont_MethodID_5: jmethodID?
 
     override open func setFont( f: Font? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &MenuItemPeerForward.setFont_MethodID_5, args: &__args, locals: &__locals )
     }
@@ -67,17 +63,20 @@ open class MenuItemPeerForward: MenuComponentPeerForward, MenuItemPeer {
         setFont( f: _f )
     }
 
-    /// public abstract void java.awt.peer.MenuComponentPeer.dispose()
+    /// public abstract void java.awt.peer.MenuItemPeer.setLabel(java.lang.String)
 
-    private static var dispose_MethodID_6: jmethodID?
+    private static var setLabel_MethodID_6: jmethodID?
 
-    override open func dispose() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setLabel( label: String? ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &MenuItemPeerForward.dispose_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: label, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &MenuItemPeerForward.setLabel_MethodID_6, args: &__args, locals: &__locals )
     }
 
+    open func setLabel( _ _label: String? ) {
+        setLabel( label: _label )
+    }
 
 }
-
 

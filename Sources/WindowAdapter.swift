@@ -21,71 +21,71 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/event/WindowAdapter", classCache: &WindowAdapter.WindowAdapterJNIClass, methodSig: "()V", methodCache: &WindowAdapter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void java.awt.event.WindowAdapter.windowOpened(java.awt.event.WindowEvent)
+    /// public void java.awt.event.WindowAdapter.windowActivated(java.awt.event.WindowEvent)
 
-    private static var windowOpened_MethodID_2: jmethodID?
+    private static var windowActivated_MethodID_2: jmethodID?
 
-    open func windowOpened( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func windowActivated( e: WindowEvent? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowOpened", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowOpened_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func windowOpened( _ _e: WindowEvent? ) {
-        windowOpened( e: _e )
-    }
-
-    /// public void java.awt.event.WindowAdapter.windowClosing(java.awt.event.WindowEvent)
-
-    private static var windowClosing_MethodID_3: jmethodID?
-
-    open func windowClosing( e: WindowEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosing", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowClosing_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowActivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowActivated_MethodID_2, args: &__args, locals: &__locals )
     }
 
-    open func windowClosing( _ _e: WindowEvent? ) {
-        windowClosing( e: _e )
+    open func windowActivated( _ _e: WindowEvent? ) {
+        windowActivated( e: _e )
     }
 
     /// public void java.awt.event.WindowAdapter.windowClosed(java.awt.event.WindowEvent)
 
-    private static var windowClosed_MethodID_4: jmethodID?
+    private static var windowClosed_MethodID_3: jmethodID?
 
     open func windowClosed( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosed", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowClosed_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosed", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowClosed_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func windowClosed( _ _e: WindowEvent? ) {
         windowClosed( e: _e )
     }
 
-    /// public void java.awt.event.WindowAdapter.windowIconified(java.awt.event.WindowEvent)
+    /// public void java.awt.event.WindowAdapter.windowClosing(java.awt.event.WindowEvent)
 
-    private static var windowIconified_MethodID_5: jmethodID?
+    private static var windowClosing_MethodID_4: jmethodID?
 
-    open func windowIconified( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func windowClosing( e: WindowEvent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowIconified", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowIconified_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosing", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowClosing_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func windowIconified( _ _e: WindowEvent? ) {
-        windowIconified( e: _e )
+    open func windowClosing( _ _e: WindowEvent? ) {
+        windowClosing( e: _e )
+    }
+
+    /// public void java.awt.event.WindowAdapter.windowDeactivated(java.awt.event.WindowEvent)
+
+    private static var windowDeactivated_MethodID_5: jmethodID?
+
+    open func windowDeactivated( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowDeactivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowDeactivated_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func windowDeactivated( _ _e: WindowEvent? ) {
+        windowDeactivated( e: _e )
     }
 
     /// public void java.awt.event.WindowAdapter.windowDeiconified(java.awt.event.WindowEvent)
@@ -93,8 +93,8 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     private static var windowDeiconified_MethodID_6: jmethodID?
 
     open func windowDeiconified( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowDeiconified", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowDeiconified_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -103,64 +103,64 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
         windowDeiconified( e: _e )
     }
 
-    /// public void java.awt.event.WindowAdapter.windowActivated(java.awt.event.WindowEvent)
-
-    private static var windowActivated_MethodID_7: jmethodID?
-
-    open func windowActivated( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowActivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowActivated_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func windowActivated( _ _e: WindowEvent? ) {
-        windowActivated( e: _e )
-    }
-
-    /// public void java.awt.event.WindowAdapter.windowDeactivated(java.awt.event.WindowEvent)
-
-    private static var windowDeactivated_MethodID_8: jmethodID?
-
-    open func windowDeactivated( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowDeactivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowDeactivated_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func windowDeactivated( _ _e: WindowEvent? ) {
-        windowDeactivated( e: _e )
-    }
-
     /// public void java.awt.event.WindowAdapter.windowGainedFocus(java.awt.event.WindowEvent)
 
-    private static var windowGainedFocus_MethodID_9: jmethodID?
+    private static var windowGainedFocus_MethodID_7: jmethodID?
 
     open func windowGainedFocus( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowGainedFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowGainedFocus_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowGainedFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowGainedFocus_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func windowGainedFocus( _ _e: WindowEvent? ) {
         windowGainedFocus( e: _e )
     }
 
+    /// public void java.awt.event.WindowAdapter.windowIconified(java.awt.event.WindowEvent)
+
+    private static var windowIconified_MethodID_8: jmethodID?
+
+    open func windowIconified( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowIconified", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowIconified_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func windowIconified( _ _e: WindowEvent? ) {
+        windowIconified( e: _e )
+    }
+
     /// public void java.awt.event.WindowAdapter.windowLostFocus(java.awt.event.WindowEvent)
 
-    private static var windowLostFocus_MethodID_10: jmethodID?
+    private static var windowLostFocus_MethodID_9: jmethodID?
 
     open func windowLostFocus( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowLostFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowLostFocus_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowLostFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowLostFocus_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func windowLostFocus( _ _e: WindowEvent? ) {
         windowLostFocus( e: _e )
+    }
+
+    /// public void java.awt.event.WindowAdapter.windowOpened(java.awt.event.WindowEvent)
+
+    private static var windowOpened_MethodID_10: jmethodID?
+
+    open func windowOpened( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowOpened", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowOpened_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func windowOpened( _ _e: WindowEvent? ) {
+        windowOpened( e: _e )
     }
 
     /// public void java.awt.event.WindowAdapter.windowStateChanged(java.awt.event.WindowEvent)
@@ -168,8 +168,8 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
     private static var windowStateChanged_MethodID_11: jmethodID?
 
     open func windowStateChanged( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowStateChanged", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowAdapter.windowStateChanged_MethodID_11, args: &__args, locals: &__locals )
     }
@@ -180,114 +180,88 @@ open class WindowAdapter: java_swift.JavaObject, WindowListener, WindowStateList
 
 }
 
-private typealias WindowAdapter_windowOpened_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias WindowAdapter_equals_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
 
-private func WindowAdapter_windowOpened_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowOpened( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias WindowAdapter_windowClosing_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func WindowAdapter_windowClosing_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowClosing( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias WindowAdapter_windowClosed_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func WindowAdapter_windowClosed_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowClosed( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias WindowAdapter_windowIconified_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func WindowAdapter_windowIconified_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowIconified( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias WindowAdapter_windowDeiconified_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func WindowAdapter_windowDeiconified_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowDeiconified( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias WindowAdapter_windowActivated_5_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func WindowAdapter_windowActivated_5( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowActivated( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias WindowAdapter_windowDeactivated_6_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func WindowAdapter_windowDeactivated_6( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowDeactivated( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias WindowAdapter_windowGainedFocus_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func WindowAdapter_windowGainedFocus_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowGainedFocus( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias WindowAdapter_windowLostFocus_8_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func WindowAdapter_windowLostFocus_8( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowLostFocus( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias WindowAdapter_windowStateChanged_9_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func WindowAdapter_windowStateChanged_9( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowStateChanged( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias WindowAdapter_equals_13_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
-
-private func WindowAdapter_equals_13( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
-    JNI.inNative = true;
+private func WindowAdapter_equals_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
     let __return = WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).equals( arg0: arg0 != nil ? java_swift.JavaObject( javaObject: arg0 ) : nil )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).z, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( z: jboolean(__return ? JNI_TRUE : JNI_FALSE) ).z, &__locals, removeLast: true )
 }
 
-private typealias WindowAdapter_toString_14_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+private typealias WindowAdapter_hashCode_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
 
-private func WindowAdapter_toString_14( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
-    JNI.inNative = true;
-    let __return = WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).l, &locals, removeLast: true )
-}
-
-private typealias WindowAdapter_hashCode_15_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
-
-private func WindowAdapter_hashCode_15( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
-    JNI.inNative = true;
+private func WindowAdapter_hashCode_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
     let __return = WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).hashCode( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).i, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( i: jint(__return) ).i, &__locals, removeLast: true )
+}
+
+private typealias WindowAdapter_toString_5_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+
+private func WindowAdapter_toString_5( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
+    let __return = WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
+    var __locals = [jobject]()
+    return JNI.check( JNIType.toJava( value: __return, locals: &__locals ).l, &__locals, removeLast: true )
+}
+
+private typealias WindowAdapter_windowActivated_9_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func WindowAdapter_windowActivated_9( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowActivated( e: e != nil ? WindowEvent( javaObject: e ) : nil )
+}
+
+private typealias WindowAdapter_windowClosed_10_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func WindowAdapter_windowClosed_10( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowClosed( e: e != nil ? WindowEvent( javaObject: e ) : nil )
+}
+
+private typealias WindowAdapter_windowClosing_11_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func WindowAdapter_windowClosing_11( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowClosing( e: e != nil ? WindowEvent( javaObject: e ) : nil )
+}
+
+private typealias WindowAdapter_windowDeactivated_12_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func WindowAdapter_windowDeactivated_12( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowDeactivated( e: e != nil ? WindowEvent( javaObject: e ) : nil )
+}
+
+private typealias WindowAdapter_windowDeiconified_13_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func WindowAdapter_windowDeiconified_13( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowDeiconified( e: e != nil ? WindowEvent( javaObject: e ) : nil )
+}
+
+private typealias WindowAdapter_windowGainedFocus_14_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func WindowAdapter_windowGainedFocus_14( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowGainedFocus( e: e != nil ? WindowEvent( javaObject: e ) : nil )
+}
+
+private typealias WindowAdapter_windowIconified_15_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func WindowAdapter_windowIconified_15( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowIconified( e: e != nil ? WindowEvent( javaObject: e ) : nil )
+}
+
+private typealias WindowAdapter_windowLostFocus_16_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func WindowAdapter_windowLostFocus_16( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowLostFocus( e: e != nil ? WindowEvent( javaObject: e ) : nil )
+}
+
+private typealias WindowAdapter_windowOpened_17_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func WindowAdapter_windowOpened_17( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowOpened( e: e != nil ? WindowEvent( javaObject: e ) : nil )
+}
+
+private typealias WindowAdapter_windowStateChanged_18_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func WindowAdapter_windowStateChanged_18( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    WindowAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowStateChanged( e: e != nil ? WindowEvent( javaObject: e ) : nil )
 }
 
 fileprivate class WindowAdapterLocal_: JNIObjectProxy<WindowAdapter> {
@@ -295,44 +269,44 @@ fileprivate class WindowAdapterLocal_: JNIObjectProxy<WindowAdapter> {
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let WindowAdapter_windowOpened_0_thunk: WindowAdapter_windowOpened_0_type = WindowAdapter_windowOpened_0
-        natives.append( JNINativeMethod( name: strdup("__windowOpened"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowOpened_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_equals_0_thunk: WindowAdapter_equals_0_type = WindowAdapter_equals_0
+        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( WindowAdapter_equals_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_windowClosing_1_thunk: WindowAdapter_windowClosing_1_type = WindowAdapter_windowClosing_1
-        natives.append( JNINativeMethod( name: strdup("__windowClosing"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowClosing_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_hashCode_2_thunk: WindowAdapter_hashCode_2_type = WindowAdapter_hashCode_2
+        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( WindowAdapter_hashCode_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_windowClosed_2_thunk: WindowAdapter_windowClosed_2_type = WindowAdapter_windowClosed_2
-        natives.append( JNINativeMethod( name: strdup("__windowClosed"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowClosed_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_toString_5_thunk: WindowAdapter_toString_5_type = WindowAdapter_toString_5
+        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( WindowAdapter_toString_5_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_windowIconified_3_thunk: WindowAdapter_windowIconified_3_type = WindowAdapter_windowIconified_3
-        natives.append( JNINativeMethod( name: strdup("__windowIconified"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowIconified_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_windowActivated_9_thunk: WindowAdapter_windowActivated_9_type = WindowAdapter_windowActivated_9
+        natives.append( JNINativeMethod( name: strdup("__windowActivated"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowActivated_9_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_windowDeiconified_4_thunk: WindowAdapter_windowDeiconified_4_type = WindowAdapter_windowDeiconified_4
-        natives.append( JNINativeMethod( name: strdup("__windowDeiconified"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowDeiconified_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_windowClosed_10_thunk: WindowAdapter_windowClosed_10_type = WindowAdapter_windowClosed_10
+        natives.append( JNINativeMethod( name: strdup("__windowClosed"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowClosed_10_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_windowActivated_5_thunk: WindowAdapter_windowActivated_5_type = WindowAdapter_windowActivated_5
-        natives.append( JNINativeMethod( name: strdup("__windowActivated"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowActivated_5_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_windowClosing_11_thunk: WindowAdapter_windowClosing_11_type = WindowAdapter_windowClosing_11
+        natives.append( JNINativeMethod( name: strdup("__windowClosing"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowClosing_11_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_windowDeactivated_6_thunk: WindowAdapter_windowDeactivated_6_type = WindowAdapter_windowDeactivated_6
-        natives.append( JNINativeMethod( name: strdup("__windowDeactivated"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowDeactivated_6_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_windowDeactivated_12_thunk: WindowAdapter_windowDeactivated_12_type = WindowAdapter_windowDeactivated_12
+        natives.append( JNINativeMethod( name: strdup("__windowDeactivated"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowDeactivated_12_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_windowGainedFocus_7_thunk: WindowAdapter_windowGainedFocus_7_type = WindowAdapter_windowGainedFocus_7
-        natives.append( JNINativeMethod( name: strdup("__windowGainedFocus"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowGainedFocus_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_windowDeiconified_13_thunk: WindowAdapter_windowDeiconified_13_type = WindowAdapter_windowDeiconified_13
+        natives.append( JNINativeMethod( name: strdup("__windowDeiconified"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowDeiconified_13_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_windowLostFocus_8_thunk: WindowAdapter_windowLostFocus_8_type = WindowAdapter_windowLostFocus_8
-        natives.append( JNINativeMethod( name: strdup("__windowLostFocus"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowLostFocus_8_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_windowGainedFocus_14_thunk: WindowAdapter_windowGainedFocus_14_type = WindowAdapter_windowGainedFocus_14
+        natives.append( JNINativeMethod( name: strdup("__windowGainedFocus"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowGainedFocus_14_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_windowStateChanged_9_thunk: WindowAdapter_windowStateChanged_9_type = WindowAdapter_windowStateChanged_9
-        natives.append( JNINativeMethod( name: strdup("__windowStateChanged"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowStateChanged_9_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_windowIconified_15_thunk: WindowAdapter_windowIconified_15_type = WindowAdapter_windowIconified_15
+        natives.append( JNINativeMethod( name: strdup("__windowIconified"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowIconified_15_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_equals_13_thunk: WindowAdapter_equals_13_type = WindowAdapter_equals_13
-        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( WindowAdapter_equals_13_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_windowLostFocus_16_thunk: WindowAdapter_windowLostFocus_16_type = WindowAdapter_windowLostFocus_16
+        natives.append( JNINativeMethod( name: strdup("__windowLostFocus"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowLostFocus_16_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_toString_14_thunk: WindowAdapter_toString_14_type = WindowAdapter_toString_14
-        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( WindowAdapter_toString_14_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_windowOpened_17_thunk: WindowAdapter_windowOpened_17_type = WindowAdapter_windowOpened_17
+        natives.append( JNINativeMethod( name: strdup("__windowOpened"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowOpened_17_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let WindowAdapter_hashCode_15_thunk: WindowAdapter_hashCode_15_type = WindowAdapter_hashCode_15
-        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( WindowAdapter_hashCode_15_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let WindowAdapter_windowStateChanged_18_thunk: WindowAdapter_windowStateChanged_18_type = WindowAdapter_windowStateChanged_18
+        natives.append( JNINativeMethod( name: strdup("__windowStateChanged"), signature: strdup("(JLjava/awt/event/WindowEvent;)V"), fnPtr: unsafeBitCast( WindowAdapter_windowStateChanged_18_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -375,8 +349,8 @@ open class WindowAdapterBase: WindowAdapter {
     private static var new_MethodID_12: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
 
         self.init( javaObject: nil )
         __args[0] = __local!.swiftValue()

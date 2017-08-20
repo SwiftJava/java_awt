@@ -7,27 +7,33 @@ import java_swift
 
 public protocol InputMethodRequests: JavaProtocol {
 
-    /// public abstract java.awt.Rectangle java.awt.im.InputMethodRequests.getTextLocation(java.awt.font.TextHitInfo)
+    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.cancelLatestCommittedText(java.text.AttributedCharacterIterator$Attribute[])
 
-    func getTextLocation( offset: TextHitInfo? ) -> Rectangle!
-
-    /// public abstract java.awt.font.TextHitInfo java.awt.im.InputMethodRequests.getLocationOffset(int,int)
-
-    func getLocationOffset( x: Int, y: Int ) -> TextHitInfo!
-
-    /// public abstract int java.awt.im.InputMethodRequests.getInsertPositionOffset()
-
-    func getInsertPositionOffset() -> Int
+    // Skipping method: false false true false false 
 
     /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.getCommittedText(int,int,java.text.AttributedCharacterIterator$Attribute[])
+
+    // Skipping method: false false true false false 
 
     /// public abstract int java.awt.im.InputMethodRequests.getCommittedTextLength()
 
     func getCommittedTextLength() -> Int
 
-    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.cancelLatestCommittedText(java.text.AttributedCharacterIterator$Attribute[])
+    /// public abstract int java.awt.im.InputMethodRequests.getInsertPositionOffset()
+
+    func getInsertPositionOffset() -> Int
+
+    /// public abstract java.awt.font.TextHitInfo java.awt.im.InputMethodRequests.getLocationOffset(int,int)
+
+    func getLocationOffset( x: Int, y: Int ) -> TextHitInfo!
 
     /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.getSelectedText(java.text.AttributedCharacterIterator$Attribute[])
+
+    // Skipping method: false false true false false 
+
+    /// public abstract java.awt.Rectangle java.awt.im.InputMethodRequests.getTextLocation(java.awt.font.TextHitInfo)
+
+    func getTextLocation( offset: TextHitInfo? ) -> Rectangle!
 
 }
 
@@ -36,33 +42,48 @@ open class InputMethodRequestsForward: JNIObjectForward, InputMethodRequests {
 
     private static var InputMethodRequestsJNIClass: jclass?
 
-    /// public abstract java.awt.Rectangle java.awt.im.InputMethodRequests.getTextLocation(java.awt.font.TextHitInfo)
+    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.cancelLatestCommittedText(java.text.AttributedCharacterIterator$Attribute[])
 
-    private static var getTextLocation_MethodID_5: jmethodID?
+    // Skipping method: false false true false false 
 
-    open func getTextLocation( offset: TextHitInfo? ) -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.getCommittedText(int,int,java.text.AttributedCharacterIterator$Attribute[])
+
+    // Skipping method: false false true false false 
+
+    /// public abstract int java.awt.im.InputMethodRequests.getCommittedTextLength()
+
+    private static var getCommittedTextLength_MethodID_5: jmethodID?
+
+    open func getCommittedTextLength() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextLocation", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/Rectangle;", methodCache: &InputMethodRequestsForward.getTextLocation_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCommittedTextLength", methodSig: "()I", methodCache: &InputMethodRequestsForward.getCommittedTextLength_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func getTextLocation( _ _offset: TextHitInfo? ) -> Rectangle! {
-        return getTextLocation( offset: _offset )
+
+    /// public abstract int java.awt.im.InputMethodRequests.getInsertPositionOffset()
+
+    private static var getInsertPositionOffset_MethodID_6: jmethodID?
+
+    open func getInsertPositionOffset() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInsertPositionOffset", methodSig: "()I", methodCache: &InputMethodRequestsForward.getInsertPositionOffset_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
     }
+
 
     /// public abstract java.awt.font.TextHitInfo java.awt.im.InputMethodRequests.getLocationOffset(int,int)
 
-    private static var getLocationOffset_MethodID_6: jmethodID?
+    private static var getLocationOffset_MethodID_7: jmethodID?
 
     open func getLocationOffset( x: Int, y: Int ) -> TextHitInfo! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocationOffset", methodSig: "(II)Ljava/awt/font/TextHitInfo;", methodCache: &InputMethodRequestsForward.getLocationOffset_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocationOffset", methodSig: "(II)Ljava/awt/font/TextHitInfo;", methodCache: &InputMethodRequestsForward.getLocationOffset_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextHitInfo( javaObject: __return ) : nil
     }
@@ -71,36 +92,26 @@ open class InputMethodRequestsForward: JNIObjectForward, InputMethodRequests {
         return getLocationOffset( x: _x, y: _y )
     }
 
-    /// public abstract int java.awt.im.InputMethodRequests.getInsertPositionOffset()
-
-    private static var getInsertPositionOffset_MethodID_7: jmethodID?
-
-    open func getInsertPositionOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInsertPositionOffset", methodSig: "()I", methodCache: &InputMethodRequestsForward.getInsertPositionOffset_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.getCommittedText(int,int,java.text.AttributedCharacterIterator$Attribute[])
-
-    /// public abstract int java.awt.im.InputMethodRequests.getCommittedTextLength()
-
-    private static var getCommittedTextLength_MethodID_8: jmethodID?
-
-    open func getCommittedTextLength() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCommittedTextLength", methodSig: "()I", methodCache: &InputMethodRequestsForward.getCommittedTextLength_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.cancelLatestCommittedText(java.text.AttributedCharacterIterator$Attribute[])
-
     /// public abstract java.text.AttributedCharacterIterator java.awt.im.InputMethodRequests.getSelectedText(java.text.AttributedCharacterIterator$Attribute[])
 
-}
+    // Skipping method: false false true false false 
 
+    /// public abstract java.awt.Rectangle java.awt.im.InputMethodRequests.getTextLocation(java.awt.font.TextHitInfo)
+
+    private static var getTextLocation_MethodID_8: jmethodID?
+
+    open func getTextLocation( offset: TextHitInfo? ) -> Rectangle! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextLocation", methodSig: "(Ljava/awt/font/TextHitInfo;)Ljava/awt/Rectangle;", methodCache: &InputMethodRequestsForward.getTextLocation_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
+    open func getTextLocation( _ _offset: TextHitInfo? ) -> Rectangle! {
+        return getTextLocation( offset: _offset )
+    }
+
+}
 

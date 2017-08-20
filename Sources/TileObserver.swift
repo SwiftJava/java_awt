@@ -23,12 +23,12 @@ open class TileObserverForward: JNIObjectForward, TileObserver {
     private static var tileUpdate_MethodID_2: jmethodID?
 
     open func tileUpdate( source: WritableRenderedImage?, tileX: Int, tileY: Int, willBeWritable: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tileX, locals: &__locals )
-        __args[2] = JNIType.toJava( value: tileY, locals: &__locals )
-        __args[3] = JNIType.toJava( value: willBeWritable, locals: &__locals )
+        __args[1] = jvalue( i: jint(tileX) )
+        __args[2] = jvalue( i: jint(tileY) )
+        __args[3] = jvalue( z: jboolean(willBeWritable ? JNI_TRUE : JNI_FALSE) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "tileUpdate", methodSig: "(Ljava/awt/image/WritableRenderedImage;IIZ)V", methodCache: &TileObserverForward.tileUpdate_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -37,5 +37,4 @@ open class TileObserverForward: JNIObjectForward, TileObserver {
     }
 
 }
-
 

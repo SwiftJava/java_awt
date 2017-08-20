@@ -22,9 +22,8 @@ open class BandedSampleModel: ComponentSampleModel {
 
     override open var bandOffsets: [Int32]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "bandOffsets", fieldType: "[I", fieldCache: &BandedSampleModel.bandOffsets_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "bandOffsets", fieldType: "[I", fieldCache: &BandedSampleModel.bandOffsets_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -39,9 +38,8 @@ open class BandedSampleModel: ComponentSampleModel {
 
     override open var bankIndices: [Int32]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "bankIndices", fieldType: "[I", fieldCache: &BandedSampleModel.bankIndices_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "bankIndices", fieldType: "[I", fieldCache: &BandedSampleModel.bankIndices_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -56,13 +54,12 @@ open class BandedSampleModel: ComponentSampleModel {
 
     override open var numBands: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &BandedSampleModel.numBands_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &BandedSampleModel.numBands_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &BandedSampleModel.numBands_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -73,31 +70,13 @@ open class BandedSampleModel: ComponentSampleModel {
 
     override open var numBanks: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "numBanks", fieldType: "I", fieldCache: &BandedSampleModel.numBanks_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "numBanks", fieldType: "I", fieldCache: &BandedSampleModel.numBanks_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "numBanks", fieldType: "I", fieldCache: &BandedSampleModel.numBanks_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int java.awt.image.ComponentSampleModel.scanlineStride
-
-    private static var scanlineStride_FieldID: jfieldID?
-
-    override open var scanlineStride: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &BandedSampleModel.scanlineStride_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &BandedSampleModel.scanlineStride_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -107,31 +86,45 @@ open class BandedSampleModel: ComponentSampleModel {
 
     override open var pixelStride: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "pixelStride", fieldType: "I", fieldCache: &BandedSampleModel.pixelStride_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "pixelStride", fieldType: "I", fieldCache: &BandedSampleModel.pixelStride_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "pixelStride", fieldType: "I", fieldCache: &BandedSampleModel.pixelStride_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// protected int java.awt.image.SampleModel.width
+    /// protected int java.awt.image.ComponentSampleModel.scanlineStride
 
-    private static var width_FieldID: jfieldID?
+    private static var scanlineStride_FieldID: jfieldID?
 
-    override open var width: Int {
+    override open var scanlineStride: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &BandedSampleModel.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &BandedSampleModel.scanlineStride_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &BandedSampleModel.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "scanlineStride", fieldType: "I", fieldCache: &BandedSampleModel.scanlineStride_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected int java.awt.image.SampleModel.dataType
+
+    private static var dataType_FieldID: jfieldID?
+
+    override open var dataType: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &BandedSampleModel.dataType_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &BandedSampleModel.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -141,33 +134,33 @@ open class BandedSampleModel: ComponentSampleModel {
 
     override open var height: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &BandedSampleModel.height_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &BandedSampleModel.height_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "height", fieldType: "I", fieldCache: &BandedSampleModel.height_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
     /// protected int java.awt.image.SampleModel.numBands
 
-    /// protected int java.awt.image.SampleModel.dataType
+    // Skipping field: false false true false false false 
 
-    private static var dataType_FieldID: jfieldID?
+    /// protected int java.awt.image.SampleModel.width
 
-    override open var dataType: Int {
+    private static var width_FieldID: jfieldID?
+
+    override open var width: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &BandedSampleModel.dataType_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &BandedSampleModel.width_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &BandedSampleModel.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &BandedSampleModel.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -176,12 +169,12 @@ open class BandedSampleModel: ComponentSampleModel {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( dataType: Int, w: Int, h: Int, numBands: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: numBands, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(numBands) )
         let __object = JNIMethod.NewObject( className: "java/awt/image/BandedSampleModel", classCache: &BandedSampleModel.BandedSampleModelJNIClass, methodSig: "(IIII)V", methodCache: &BandedSampleModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -196,12 +189,12 @@ open class BandedSampleModel: ComponentSampleModel {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( dataType: Int, w: Int, h: Int, scanlineStride: Int, bankIndices: [Int32]?, bandOffsets: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: scanlineStride, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(scanlineStride) )
         __args[4] = JNIType.toJava( value: bankIndices, locals: &__locals )
         __args[5] = JNIType.toJava( value: bandOffsets, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/BandedSampleModel", classCache: &BandedSampleModel.BandedSampleModelJNIClass, methodSig: "(IIII[I[I)V", methodCache: &BandedSampleModel.new_MethodID_2, args: &__args, locals: &__locals )
@@ -213,45 +206,81 @@ open class BandedSampleModel: ComponentSampleModel {
         self.init( dataType: _dataType, w: _w, h: _h, scanlineStride: _scanlineStride, bankIndices: _bankIndices, bandOffsets: _bandOffsets )
     }
 
-    /// public int java.awt.image.BandedSampleModel.hashCode()
-
-    /// public java.awt.image.DataBuffer java.awt.image.BandedSampleModel.createDataBuffer()
-
-    /// public java.awt.image.SampleModel java.awt.image.BandedSampleModel.createSubsetSampleModel(int[])
-
-    /// public void java.awt.image.BandedSampleModel.setDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.BandedSampleModel.setPixel(int,int,int[],java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.BandedSampleModel.setPixels(int,int,int,int,int[],java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.BandedSampleModel.setSample(int,int,int,float,java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.BandedSampleModel.setSample(int,int,int,int,java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.BandedSampleModel.setSample(int,int,int,double,java.awt.image.DataBuffer)
-
-    /// public void java.awt.image.BandedSampleModel.setSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
-
-    /// public java.lang.Object java.awt.image.BandedSampleModel.getDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
-
-    /// public java.awt.image.SampleModel java.awt.image.BandedSampleModel.createCompatibleSampleModel(int,int)
-
-    /// public int[] java.awt.image.BandedSampleModel.getPixel(int,int,int[],java.awt.image.DataBuffer)
-
-    /// public int[] java.awt.image.BandedSampleModel.getPixels(int,int,int,int,int[],java.awt.image.DataBuffer)
-
-    /// public int java.awt.image.BandedSampleModel.getSample(int,int,int,java.awt.image.DataBuffer)
-
-    /// public float java.awt.image.BandedSampleModel.getSampleFloat(int,int,int,java.awt.image.DataBuffer)
-
-    /// public double java.awt.image.BandedSampleModel.getSampleDouble(int,int,int,java.awt.image.DataBuffer)
-
-    /// public int[] java.awt.image.BandedSampleModel.getSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
+    /// private static int[] java.awt.image.BandedSampleModel.createIndicesArray(int)
 
     /// private static int[] java.awt.image.BandedSampleModel.createOffsetArray(int)
 
-    /// private static int[] java.awt.image.BandedSampleModel.createIndicesArray(int)
+    /// public java.awt.image.SampleModel java.awt.image.BandedSampleModel.createCompatibleSampleModel(int,int)
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.image.DataBuffer java.awt.image.BandedSampleModel.createDataBuffer()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.image.SampleModel java.awt.image.BandedSampleModel.createSubsetSampleModel(int[])
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.Object java.awt.image.BandedSampleModel.getDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public int[] java.awt.image.BandedSampleModel.getPixel(int,int,int[],java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public int[] java.awt.image.BandedSampleModel.getPixels(int,int,int,int,int[],java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.image.BandedSampleModel.getSample(int,int,int,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.image.BandedSampleModel.getSampleDouble(int,int,int,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public float java.awt.image.BandedSampleModel.getSampleFloat(int,int,int,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public int[] java.awt.image.BandedSampleModel.getSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.image.BandedSampleModel.hashCode()
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.BandedSampleModel.setDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.BandedSampleModel.setPixel(int,int,int[],java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.BandedSampleModel.setPixels(int,int,int,int,int[],java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.BandedSampleModel.setSample(int,int,int,double,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.BandedSampleModel.setSample(int,int,int,float,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.BandedSampleModel.setSample(int,int,int,int,java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.image.BandedSampleModel.setSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
+
+    // Skipping method: false true false false false 
 
 }
 

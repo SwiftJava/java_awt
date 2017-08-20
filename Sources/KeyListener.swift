@@ -8,10 +8,6 @@ import java_util
 
 public protocol KeyListener: java_util.EventListener {
 
-    /// public abstract void java.awt.event.KeyListener.keyTyped(java.awt.event.KeyEvent)
-
-    func keyTyped( e: KeyEvent? )
-
     /// public abstract void java.awt.event.KeyListener.keyPressed(java.awt.event.KeyEvent)
 
     func keyPressed( e: KeyEvent? )
@@ -20,6 +16,10 @@ public protocol KeyListener: java_util.EventListener {
 
     func keyReleased( e: KeyEvent? )
 
+    /// public abstract void java.awt.event.KeyListener.keyTyped(java.awt.event.KeyEvent)
+
+    func keyTyped( e: KeyEvent? )
+
 }
 
 
@@ -27,30 +27,15 @@ open class KeyListenerForward: java_util.EventListenerForward, KeyListener {
 
     private static var KeyListenerJNIClass: jclass?
 
-    /// public abstract void java.awt.event.KeyListener.keyTyped(java.awt.event.KeyEvent)
-
-    private static var keyTyped_MethodID_4: jmethodID?
-
-    open func keyTyped( e: KeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyTyped", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyListenerForward.keyTyped_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func keyTyped( _ _e: KeyEvent? ) {
-        keyTyped( e: _e )
-    }
-
     /// public abstract void java.awt.event.KeyListener.keyPressed(java.awt.event.KeyEvent)
 
-    private static var keyPressed_MethodID_5: jmethodID?
+    private static var keyPressed_MethodID_4: jmethodID?
 
     open func keyPressed( e: KeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyPressed", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyListenerForward.keyPressed_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyPressed", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyListenerForward.keyPressed_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func keyPressed( _ _e: KeyEvent? ) {
@@ -59,44 +44,52 @@ open class KeyListenerForward: java_util.EventListenerForward, KeyListener {
 
     /// public abstract void java.awt.event.KeyListener.keyReleased(java.awt.event.KeyEvent)
 
-    private static var keyReleased_MethodID_6: jmethodID?
+    private static var keyReleased_MethodID_5: jmethodID?
 
     open func keyReleased( e: KeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyReleased", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyListenerForward.keyReleased_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyReleased", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyListenerForward.keyReleased_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func keyReleased( _ _e: KeyEvent? ) {
         keyReleased( e: _e )
     }
 
+    /// public abstract void java.awt.event.KeyListener.keyTyped(java.awt.event.KeyEvent)
+
+    private static var keyTyped_MethodID_6: jmethodID?
+
+    open func keyTyped( e: KeyEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyTyped", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &KeyListenerForward.keyTyped_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func keyTyped( _ _e: KeyEvent? ) {
+        keyTyped( e: _e )
+    }
+
 }
 
+private typealias KeyListener_keyPressed_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private typealias KeyListener_keyTyped_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func KeyListener_keyTyped_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    KeyListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).keyTyped( e: e != nil ? KeyEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias KeyListener_keyPressed_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func KeyListener_keyPressed_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
+private func KeyListener_keyPressed_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
     KeyListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).keyPressed( e: e != nil ? KeyEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias KeyListener_keyReleased_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias KeyListener_keyReleased_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func KeyListener_keyReleased_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
+private func KeyListener_keyReleased_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
     KeyListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).keyReleased( e: e != nil ? KeyEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
+}
+
+private typealias KeyListener_keyTyped_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func KeyListener_keyTyped_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    KeyListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).keyTyped( e: e != nil ? KeyEvent( javaObject: e ) : nil )
 }
 
 fileprivate class KeyListenerLocal_: JNILocalProxy<KeyListener, Any> {
@@ -104,14 +97,14 @@ fileprivate class KeyListenerLocal_: JNILocalProxy<KeyListener, Any> {
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let KeyListener_keyTyped_0_thunk: KeyListener_keyTyped_0_type = KeyListener_keyTyped_0
-        natives.append( JNINativeMethod( name: strdup("__keyTyped"), signature: strdup("(JLjava/awt/event/KeyEvent;)V"), fnPtr: unsafeBitCast( KeyListener_keyTyped_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let KeyListener_keyPressed_0_thunk: KeyListener_keyPressed_0_type = KeyListener_keyPressed_0
+        natives.append( JNINativeMethod( name: strdup("__keyPressed"), signature: strdup("(JLjava/awt/event/KeyEvent;)V"), fnPtr: unsafeBitCast( KeyListener_keyPressed_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let KeyListener_keyPressed_1_thunk: KeyListener_keyPressed_1_type = KeyListener_keyPressed_1
-        natives.append( JNINativeMethod( name: strdup("__keyPressed"), signature: strdup("(JLjava/awt/event/KeyEvent;)V"), fnPtr: unsafeBitCast( KeyListener_keyPressed_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let KeyListener_keyReleased_1_thunk: KeyListener_keyReleased_1_type = KeyListener_keyReleased_1
+        natives.append( JNINativeMethod( name: strdup("__keyReleased"), signature: strdup("(JLjava/awt/event/KeyEvent;)V"), fnPtr: unsafeBitCast( KeyListener_keyReleased_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let KeyListener_keyReleased_2_thunk: KeyListener_keyReleased_2_type = KeyListener_keyReleased_2
-        natives.append( JNINativeMethod( name: strdup("__keyReleased"), signature: strdup("(JLjava/awt/event/KeyEvent;)V"), fnPtr: unsafeBitCast( KeyListener_keyReleased_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let KeyListener_keyTyped_2_thunk: KeyListener_keyTyped_2_type = KeyListener_keyTyped_2
+        natives.append( JNINativeMethod( name: strdup("__keyTyped"), signature: strdup("(JLjava/awt/event/KeyEvent;)V"), fnPtr: unsafeBitCast( KeyListener_keyTyped_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -144,31 +137,22 @@ open class KeyListenerBase: KeyListener {
 
     public init() {}
 
-    /// public abstract void java.awt.event.KeyListener.keyTyped(java.awt.event.KeyEvent)
-
-    open func keyTyped( e: KeyEvent? ) /**/ {
-    }
-
-    open func keyTyped( _ _e: KeyEvent? ) /**/ {
-        keyTyped( e: _e )
-    }
-
     /// public abstract void java.awt.event.KeyListener.keyPressed(java.awt.event.KeyEvent)
 
     open func keyPressed( e: KeyEvent? ) /**/ {
     }
 
-    open func keyPressed( _ _e: KeyEvent? ) /**/ {
-        keyPressed( e: _e )
-    }
 
     /// public abstract void java.awt.event.KeyListener.keyReleased(java.awt.event.KeyEvent)
 
     open func keyReleased( e: KeyEvent? ) /**/ {
     }
 
-    open func keyReleased( _ _e: KeyEvent? ) /**/ {
-        keyReleased( e: _e )
+
+    /// public abstract void java.awt.event.KeyListener.keyTyped(java.awt.event.KeyEvent)
+
+    open func keyTyped( e: KeyEvent? ) /**/ {
     }
+
 
 }

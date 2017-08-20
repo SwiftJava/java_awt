@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.font.TransformAttribute ///
 
-open class TransformAttribute: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class TransformAttribute: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,8 +16,6 @@ open class TransformAttribute: java_swift.JavaObject, /* java.io.Serializable */
 
     private static var TransformAttributeJNIClass: jclass?
 
-    /// private java.awt.geom.AffineTransform java.awt.font.TransformAttribute.transform
-
     /// public static final java.awt.font.TransformAttribute java.awt.font.TransformAttribute.IDENTITY
 
     private static var IDENTITY_FieldID: jfieldID?
@@ -25,19 +23,24 @@ open class TransformAttribute: java_swift.JavaObject, /* java.io.Serializable */
     open static var IDENTITY: TransformAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IDENTITY", fieldType: "Ljava/awt/font/TransformAttribute;", fieldCache: &IDENTITY_FieldID, className: "java/awt/font/TransformAttribute", classCache: &TransformAttributeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? TransformAttribute( javaObject: __value ) : nil
         }
     }
 
     /// static final long java.awt.font.TransformAttribute.serialVersionUID
 
+    // Skipping field: true true false false false false 
+
+    /// private java.awt.geom.AffineTransform java.awt.font.TransformAttribute.transform
+
     /// public java.awt.font.TransformAttribute(java.awt.geom.AffineTransform)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( transform: AffineTransform? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: transform, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/font/TransformAttribute", classCache: &TransformAttribute.TransformAttributeJNIClass, methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &TransformAttribute.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -53,47 +56,49 @@ open class TransformAttribute: java_swift.JavaObject, /* java.io.Serializable */
     private static var equals_MethodID_2: jmethodID?
 
     open func equals( rhs: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &TransformAttribute.equals_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _rhs: java_swift.JavaObject? ) -> Bool {
         return equals( rhs: _rhs )
     }
 
+    /// public java.awt.geom.AffineTransform java.awt.font.TransformAttribute.getTransform()
+
+    private static var getTransform_MethodID_3: jmethodID?
+
+    open func getTransform() -> AffineTransform! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransform", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &TransformAttribute.getTransform_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AffineTransform( javaObject: __return ) : nil
+    }
+
+
     /// public int java.awt.font.TransformAttribute.hashCode()
 
-    /// private void java.awt.font.TransformAttribute.writeObject(java.io.ObjectOutputStream) throws java.lang.ClassNotFoundException,java.io.IOException
+    // Skipping method: false true false false false 
 
     /// public boolean java.awt.font.TransformAttribute.isIdentity()
 
-    private static var isIdentity_MethodID_3: jmethodID?
+    private static var isIdentity_MethodID_4: jmethodID?
 
     open func isIdentity() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isIdentity", methodSig: "()Z", methodCache: &TransformAttribute.isIdentity_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isIdentity", methodSig: "()Z", methodCache: &TransformAttribute.isIdentity_MethodID_4, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
     /// private java.lang.Object java.awt.font.TransformAttribute.readResolve() throws java.io.ObjectStreamException
 
-    /// public java.awt.geom.AffineTransform java.awt.font.TransformAttribute.getTransform()
-
-    private static var getTransform_MethodID_4: jmethodID?
-
-    open func getTransform() -> AffineTransform! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransform", methodSig: "()Ljava/awt/geom/AffineTransform;", methodCache: &TransformAttribute.getTransform_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AffineTransform( javaObject: __return ) : nil
-    }
-
+    /// private void java.awt.font.TransformAttribute.writeObject(java.io.ObjectOutputStream) throws java.lang.ClassNotFoundException,java.io.IOException
 
 }
 

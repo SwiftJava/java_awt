@@ -10,19 +10,19 @@ public protocol Pageable: JavaProtocol {
 
     /// public static final int java.awt.print.Pageable.UNKNOWN_NUMBER_OF_PAGES
 
-    static var UNKNOWN_NUMBER_OF_PAGES: Int { get }
+    // Skipping field: false false false false false true 
 
-    /// public abstract java.awt.print.Printable java.awt.print.Pageable.getPrintable(int) throws java.lang.IndexOutOfBoundsException
+    /// public abstract int java.awt.print.Pageable.getNumberOfPages()
 
-    func getPrintable( pageIndex: Int ) throws /* java.lang.IndexOutOfBoundsException */ -> Printable!
+    func getNumberOfPages() -> Int
 
     /// public abstract java.awt.print.PageFormat java.awt.print.Pageable.getPageFormat(int) throws java.lang.IndexOutOfBoundsException
 
     func getPageFormat( pageIndex: Int ) throws /* java.lang.IndexOutOfBoundsException */ -> PageFormat!
 
-    /// public abstract int java.awt.print.Pageable.getNumberOfPages()
+    /// public abstract java.awt.print.Printable java.awt.print.Pageable.getPrintable(int) throws java.lang.IndexOutOfBoundsException
 
-    func getNumberOfPages() -> Int
+    func getPrintable( pageIndex: Int ) throws /* java.lang.IndexOutOfBoundsException */ -> Printable!
 
 }
 
@@ -38,41 +38,34 @@ open class PageableForward: JNIObjectForward, Pageable {
     open static var UNKNOWN_NUMBER_OF_PAGES: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UNKNOWN_NUMBER_OF_PAGES", fieldType: "I", fieldCache: &UNKNOWN_NUMBER_OF_PAGES_FieldID, className: "java/awt/print/Pageable", classCache: &PageableJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public abstract java.awt.print.Printable java.awt.print.Pageable.getPrintable(int) throws java.lang.IndexOutOfBoundsException
+    /// public abstract int java.awt.print.Pageable.getNumberOfPages()
 
-    private static var getPrintable_MethodID_4: jmethodID?
+    private static var getNumberOfPages_MethodID_4: jmethodID?
 
-    open func getPrintable( pageIndex: Int ) throws /* java.lang.IndexOutOfBoundsException */ -> Printable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getNumberOfPages() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pageIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrintable", methodSig: "(I)Ljava/awt/print/Printable;", methodCache: &PageableForward.getPrintable_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.IndexOutOfBoundsException( javaObject: throwable )
-        }
-        return __return != nil ? PrintableForward( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumberOfPages", methodSig: "()I", methodCache: &PageableForward.getNumberOfPages_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func getPrintable( _ _pageIndex: Int ) throws /* java.lang.IndexOutOfBoundsException */ -> Printable! {
-        return try getPrintable( pageIndex: _pageIndex )
-    }
 
     /// public abstract java.awt.print.PageFormat java.awt.print.Pageable.getPageFormat(int) throws java.lang.IndexOutOfBoundsException
 
     private static var getPageFormat_MethodID_5: jmethodID?
 
     open func getPageFormat( pageIndex: Int ) throws /* java.lang.IndexOutOfBoundsException */ -> PageFormat! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pageIndex, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(pageIndex) )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPageFormat", methodSig: "(I)Ljava/awt/print/PageFormat;", methodCache: &PageableForward.getPageFormat_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_lang.IndexOutOfBoundsException( javaObject: throwable )
         }
         return __return != nil ? PageFormat( javaObject: __return ) : nil
@@ -82,18 +75,26 @@ open class PageableForward: JNIObjectForward, Pageable {
         return try getPageFormat( pageIndex: _pageIndex )
     }
 
-    /// public abstract int java.awt.print.Pageable.getNumberOfPages()
+    /// public abstract java.awt.print.Printable java.awt.print.Pageable.getPrintable(int) throws java.lang.IndexOutOfBoundsException
 
-    private static var getNumberOfPages_MethodID_6: jmethodID?
+    private static var getPrintable_MethodID_6: jmethodID?
 
-    open func getNumberOfPages() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getPrintable( pageIndex: Int ) throws /* java.lang.IndexOutOfBoundsException */ -> Printable! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumberOfPages", methodSig: "()I", methodCache: &PageableForward.getNumberOfPages_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(pageIndex) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrintable", methodSig: "(I)Ljava/awt/print/Printable;", methodCache: &PageableForward.getPrintable_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.IndexOutOfBoundsException( javaObject: throwable )
+        }
+        return __return != nil ? PrintableForward( javaObject: __return ) : nil
     }
 
+    open func getPrintable( _ _pageIndex: Int ) throws /* java.lang.IndexOutOfBoundsException */ -> Printable! {
+        return try getPrintable( pageIndex: _pageIndex )
+    }
 
 }
-
 

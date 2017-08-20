@@ -16,26 +16,25 @@ open class GradientPaint: java_swift.JavaObject, Paint {
 
     private static var GradientPaintJNIClass: jclass?
 
-    /// java.awt.geom.Point2D$Float java.awt.GradientPaint.p1
-
-    /// java.awt.geom.Point2D$Float java.awt.GradientPaint.p2
-
     /// java.awt.Color java.awt.GradientPaint.color1
+
+    // Skipping field: true false false false false false 
 
     /// java.awt.Color java.awt.GradientPaint.color2
 
+    // Skipping field: true false false false false false 
+
     /// boolean java.awt.GradientPaint.cyclic
 
-    /// public static final int java.awt.Transparency.OPAQUE
+    // Skipping field: true false false false false false 
 
-    private static var OPAQUE_FieldID: jfieldID?
+    /// java.awt.geom.Point2D$Float java.awt.GradientPaint.p1
 
-    open static var OPAQUE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/GradientPaint", classCache: &GradientPaintJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    // Skipping field: true false false false false false 
+
+    /// java.awt.geom.Point2D$Float java.awt.GradientPaint.p2
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.Transparency.BITMASK
 
@@ -44,7 +43,18 @@ open class GradientPaint: java_swift.JavaObject, Paint {
     open static var BITMASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BITMASK", fieldType: "I", fieldCache: &BITMASK_FieldID, className: "java/awt/GradientPaint", classCache: &GradientPaintJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Transparency.OPAQUE
+
+    private static var OPAQUE_FieldID: jfieldID?
+
+    open static var OPAQUE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/GradientPaint", classCache: &GradientPaintJNIClass )
+            return Int(__value)
         }
     }
 
@@ -55,29 +65,30 @@ open class GradientPaint: java_swift.JavaObject, Paint {
     open static var TRANSLUCENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRANSLUCENT", fieldType: "I", fieldCache: &TRANSLUCENT_FieldID, className: "java/awt/GradientPaint", classCache: &GradientPaintJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public java.awt.GradientPaint(java.awt.geom.Point2D,java.awt.Color,java.awt.geom.Point2D,java.awt.Color,boolean)
+    /// public java.awt.GradientPaint(float,float,java.awt.Color,float,float,java.awt.Color)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( pt1: Point2D?, color1: Color?, pt2: Point2D?, color2: Color?, cyclic: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    public convenience init( x1: Float, y1: Float, color1: Color?, x2: Float, y2: Float, color2: Color? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pt1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: color1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: pt2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: color2, locals: &__locals )
-        __args[4] = JNIType.toJava( value: cyclic, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/GradientPaint", classCache: &GradientPaint.GradientPaintJNIClass, methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/Color;Ljava/awt/geom/Point2D;Ljava/awt/Color;Z)V", methodCache: &GradientPaint.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( f: x1 )
+        __args[1] = jvalue( f: y1 )
+        __args[2] = JNIType.toJava( value: color1, locals: &__locals )
+        __args[3] = jvalue( f: x2 )
+        __args[4] = jvalue( f: y2 )
+        __args[5] = JNIType.toJava( value: color2, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/GradientPaint", classCache: &GradientPaint.GradientPaintJNIClass, methodSig: "(FFLjava/awt/Color;FFLjava/awt/Color;)V", methodCache: &GradientPaint.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _pt1: Point2D?, _ _color1: Color?, _ _pt2: Point2D?, _ _color2: Color?, _ _cyclic: Bool ) {
-        self.init( pt1: _pt1, color1: _color1, pt2: _pt2, color2: _color2, cyclic: _cyclic )
+    public convenience init( _ _x1: Float, _ _y1: Float, _ _color1: Color?, _ _x2: Float, _ _y2: Float, _ _color2: Color? ) {
+        self.init( x1: _x1, y1: _y1, color1: _color1, x2: _x2, y2: _y2, color2: _color2 )
     }
 
     /// public java.awt.GradientPaint(float,float,java.awt.Color,float,float,java.awt.Color,boolean)
@@ -85,15 +96,15 @@ open class GradientPaint: java_swift.JavaObject, Paint {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( x1: Float, y1: Float, color1: Color?, x2: Float, y2: Float, color2: Color?, cyclic: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y1, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( f: x1 )
+        __args[1] = jvalue( f: y1 )
         __args[2] = JNIType.toJava( value: color1, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x2, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y2, locals: &__locals )
+        __args[3] = jvalue( f: x2 )
+        __args[4] = jvalue( f: y2 )
         __args[5] = JNIType.toJava( value: color2, locals: &__locals )
-        __args[6] = JNIType.toJava( value: cyclic, locals: &__locals )
+        __args[6] = jvalue( z: jboolean(cyclic ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "java/awt/GradientPaint", classCache: &GradientPaint.GradientPaintJNIClass, methodSig: "(FFLjava/awt/Color;FFLjava/awt/Color;Z)V", methodCache: &GradientPaint.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -108,8 +119,8 @@ open class GradientPaint: java_swift.JavaObject, Paint {
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( pt1: Point2D?, color1: Color?, pt2: Point2D?, color2: Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: pt1, locals: &__locals )
         __args[1] = JNIType.toJava( value: color1, locals: &__locals )
         __args[2] = JNIType.toJava( value: pt2, locals: &__locals )
@@ -123,105 +134,40 @@ open class GradientPaint: java_swift.JavaObject, Paint {
         self.init( pt1: _pt1, color1: _color1, pt2: _pt2, color2: _color2 )
     }
 
-    /// public java.awt.GradientPaint(float,float,java.awt.Color,float,float,java.awt.Color)
+    /// public java.awt.GradientPaint(java.awt.geom.Point2D,java.awt.Color,java.awt.geom.Point2D,java.awt.Color,boolean)
 
     private static var new_MethodID_4: jmethodID?
 
-    public convenience init( x1: Float, y1: Float, color1: Color?, x2: Float, y2: Float, color2: Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    public convenience init( pt1: Point2D?, color1: Color?, pt2: Point2D?, color2: Color?, cyclic: Bool ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: color1, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x2, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y2, locals: &__locals )
-        __args[5] = JNIType.toJava( value: color2, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/GradientPaint", classCache: &GradientPaint.GradientPaintJNIClass, methodSig: "(FFLjava/awt/Color;FFLjava/awt/Color;)V", methodCache: &GradientPaint.new_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: pt1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: color1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: pt2, locals: &__locals )
+        __args[3] = JNIType.toJava( value: color2, locals: &__locals )
+        __args[4] = jvalue( z: jboolean(cyclic ? JNI_TRUE : JNI_FALSE) )
+        let __object = JNIMethod.NewObject( className: "java/awt/GradientPaint", classCache: &GradientPaint.GradientPaintJNIClass, methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/Color;Ljava/awt/geom/Point2D;Ljava/awt/Color;Z)V", methodCache: &GradientPaint.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _x1: Float, _ _y1: Float, _ _color1: Color?, _ _x2: Float, _ _y2: Float, _ _color2: Color? ) {
-        self.init( x1: _x1, y1: _y1, color1: _color1, x2: _x2, y2: _y2, color2: _color2 )
+    public convenience init( _ _pt1: Point2D?, _ _color1: Color?, _ _pt2: Point2D?, _ _color2: Color?, _ _cyclic: Bool ) {
+        self.init( pt1: _pt1, color1: _color1, pt2: _pt2, color2: _color2, cyclic: _cyclic )
     }
-
-    /// public java.awt.geom.Point2D java.awt.GradientPaint.getPoint1()
-
-    private static var getPoint1_MethodID_5: jmethodID?
-
-    open func getPoint1() -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint1", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &GradientPaint.getPoint1_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point2D( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Color java.awt.GradientPaint.getColor1()
-
-    private static var getColor1_MethodID_6: jmethodID?
-
-    open func getColor1() -> Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor1", methodSig: "()Ljava/awt/Color;", methodCache: &GradientPaint.getColor1_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Color( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.geom.Point2D java.awt.GradientPaint.getPoint2()
-
-    private static var getPoint2_MethodID_7: jmethodID?
-
-    open func getPoint2() -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &GradientPaint.getPoint2_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point2D( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Color java.awt.GradientPaint.getColor2()
-
-    private static var getColor2_MethodID_8: jmethodID?
-
-    open func getColor2() -> Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor2", methodSig: "()Ljava/awt/Color;", methodCache: &GradientPaint.getColor2_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Color( javaObject: __return ) : nil
-    }
-
-
-    /// public boolean java.awt.GradientPaint.isCyclic()
-
-    private static var isCyclic_MethodID_9: jmethodID?
-
-    open func isCyclic() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCyclic", methodSig: "()Z", methodCache: &GradientPaint.isCyclic_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
 
     /// public java.awt.PaintContext java.awt.GradientPaint.createContext(java.awt.image.ColorModel,java.awt.Rectangle,java.awt.geom.Rectangle2D,java.awt.geom.AffineTransform,java.awt.RenderingHints)
 
-    private static var createContext_MethodID_10: jmethodID?
+    private static var createContext_MethodID_5: jmethodID?
 
     open func createContext( cm: ColorModel?, deviceBounds: Rectangle?, userBounds: Rectangle2D?, xform: AffineTransform?, hints: RenderingHints? ) -> PaintContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: cm, locals: &__locals )
         __args[1] = JNIType.toJava( value: deviceBounds, locals: &__locals )
         __args[2] = JNIType.toJava( value: userBounds, locals: &__locals )
         __args[3] = JNIType.toJava( value: xform, locals: &__locals )
         __args[4] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContext", methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/Rectangle;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)Ljava/awt/PaintContext;", methodCache: &GradientPaint.createContext_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContext", methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/Rectangle;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)Ljava/awt/PaintContext;", methodCache: &GradientPaint.createContext_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PaintContextForward( javaObject: __return ) : nil
     }
@@ -230,15 +176,79 @@ open class GradientPaint: java_swift.JavaObject, Paint {
         return createContext( cm: _cm, deviceBounds: _deviceBounds, userBounds: _userBounds, xform: _xform, hints: _hints )
     }
 
+    /// public java.awt.Color java.awt.GradientPaint.getColor1()
+
+    private static var getColor1_MethodID_6: jmethodID?
+
+    open func getColor1() -> Color! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor1", methodSig: "()Ljava/awt/Color;", methodCache: &GradientPaint.getColor1_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Color( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Color java.awt.GradientPaint.getColor2()
+
+    private static var getColor2_MethodID_7: jmethodID?
+
+    open func getColor2() -> Color! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor2", methodSig: "()Ljava/awt/Color;", methodCache: &GradientPaint.getColor2_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Color( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.geom.Point2D java.awt.GradientPaint.getPoint1()
+
+    private static var getPoint1_MethodID_8: jmethodID?
+
+    open func getPoint1() -> Point2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint1", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &GradientPaint.getPoint1_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point2D( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.geom.Point2D java.awt.GradientPaint.getPoint2()
+
+    private static var getPoint2_MethodID_9: jmethodID?
+
+    open func getPoint2() -> Point2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &GradientPaint.getPoint2_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point2D( javaObject: __return ) : nil
+    }
+
+
     /// public int java.awt.GradientPaint.getTransparency()
 
-    private static var getTransparency_MethodID_11: jmethodID?
+    private static var getTransparency_MethodID_10: jmethodID?
 
     open func getTransparency() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &GradientPaint.getTransparency_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &GradientPaint.getTransparency_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public boolean java.awt.GradientPaint.isCyclic()
+
+    private static var isCyclic_MethodID_11: jmethodID?
+
+    open func isCyclic() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCyclic", methodSig: "()Z", methodCache: &GradientPaint.isCyclic_MethodID_11, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 

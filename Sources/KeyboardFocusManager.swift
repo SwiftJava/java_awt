@@ -18,22 +18,9 @@ open class KeyboardFocusManager: java_swift.JavaObject, KeyEventDispatcher, KeyE
 
     private static var KeyboardFocusManagerJNIClass: jclass?
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.KeyboardFocusManager.focusLog
+    /// static final boolean java.awt.KeyboardFocusManager.$assertionsDisabled
 
-    /// transient java.awt.peer.KeyboardFocusManagerPeer java.awt.KeyboardFocusManager.peer
-
-    /// private static final sun.util.logging.PlatformLogger java.awt.KeyboardFocusManager.log
-
-    /// public static final int java.awt.KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS
-
-    private static var FORWARD_TRAVERSAL_KEYS_FieldID: jfieldID?
-
-    open static var FORWARD_TRAVERSAL_KEYS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "FORWARD_TRAVERSAL_KEYS", fieldType: "I", fieldCache: &FORWARD_TRAVERSAL_KEYS_FieldID, className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS
 
@@ -42,18 +29,7 @@ open class KeyboardFocusManager: java_swift.JavaObject, KeyEventDispatcher, KeyE
     open static var BACKWARD_TRAVERSAL_KEYS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BACKWARD_TRAVERSAL_KEYS", fieldType: "I", fieldCache: &BACKWARD_TRAVERSAL_KEYS_FieldID, className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.KeyboardFocusManager.UP_CYCLE_TRAVERSAL_KEYS
-
-    private static var UP_CYCLE_TRAVERSAL_KEYS_FieldID: jfieldID?
-
-    open static var UP_CYCLE_TRAVERSAL_KEYS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "UP_CYCLE_TRAVERSAL_KEYS", fieldType: "I", fieldCache: &UP_CYCLE_TRAVERSAL_KEYS_FieldID, className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -64,320 +40,236 @@ open class KeyboardFocusManager: java_swift.JavaObject, KeyEventDispatcher, KeyE
     open static var DOWN_CYCLE_TRAVERSAL_KEYS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DOWN_CYCLE_TRAVERSAL_KEYS", fieldType: "I", fieldCache: &DOWN_CYCLE_TRAVERSAL_KEYS_FieldID, className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
+    /// public static final int java.awt.KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS
+
+    private static var FORWARD_TRAVERSAL_KEYS_FieldID: jfieldID?
+
+    open static var FORWARD_TRAVERSAL_KEYS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "FORWARD_TRAVERSAL_KEYS", fieldType: "I", fieldCache: &FORWARD_TRAVERSAL_KEYS_FieldID, className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// static final int java.awt.KeyboardFocusManager.SNFH_FAILURE
+
+    // Skipping field: true false false false false false 
+
+    /// static final int java.awt.KeyboardFocusManager.SNFH_SUCCESS_HANDLED
+
+    // Skipping field: true false false false false false 
+
+    /// static final int java.awt.KeyboardFocusManager.SNFH_SUCCESS_PROCEED
+
+    // Skipping field: true false false false false false 
+
     /// static final int java.awt.KeyboardFocusManager.TRAVERSAL_KEY_LENGTH
 
-    /// private static java.awt.Component java.awt.KeyboardFocusManager.focusOwner
+    // Skipping field: true false false false false false 
 
-    /// private static java.awt.Component java.awt.KeyboardFocusManager.permanentFocusOwner
+    /// public static final int java.awt.KeyboardFocusManager.UP_CYCLE_TRAVERSAL_KEYS
 
-    /// private static java.awt.Window java.awt.KeyboardFocusManager.focusedWindow
+    private static var UP_CYCLE_TRAVERSAL_KEYS_FieldID: jfieldID?
+
+    open static var UP_CYCLE_TRAVERSAL_KEYS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "UP_CYCLE_TRAVERSAL_KEYS", fieldType: "I", fieldCache: &UP_CYCLE_TRAVERSAL_KEYS_FieldID, className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass )
+            return Int(__value)
+        }
+    }
 
     /// private static java.awt.Window java.awt.KeyboardFocusManager.activeWindow
 
-    /// private java.awt.FocusTraversalPolicy java.awt.KeyboardFocusManager.defaultPolicy
+    /// private static boolean java.awt.KeyboardFocusManager.allowSyncFocusRequests
+
+    /// private static boolean java.awt.KeyboardFocusManager.clearingCurrentLightweightRequests
+
+    /// private static java.awt.Container java.awt.KeyboardFocusManager.currentFocusCycleRoot
+
+    /// private static java.util.LinkedList java.awt.KeyboardFocusManager.currentLightweightRequests
 
     /// private static final java.lang.String[] java.awt.KeyboardFocusManager.defaultFocusTraversalKeyPropertyNames
 
     /// private static final java.awt.AWTKeyStroke[][] java.awt.KeyboardFocusManager.defaultFocusTraversalKeyStrokes
 
-    /// private java.util.Set[] java.awt.KeyboardFocusManager.defaultFocusTraversalKeys
+    /// private static volatile boolean java.awt.KeyboardFocusManager.disableRestoreFocus
 
-    /// private static java.awt.Container java.awt.KeyboardFocusManager.currentFocusCycleRoot
+    /// private static final sun.util.logging.PlatformLogger java.awt.KeyboardFocusManager.focusLog
 
-    /// private java.beans.VetoableChangeSupport java.awt.KeyboardFocusManager.vetoableSupport
+    /// private static java.awt.Component java.awt.KeyboardFocusManager.focusOwner
+
+    /// private static java.awt.Window java.awt.KeyboardFocusManager.focusedWindow
+
+    /// private static java.util.LinkedList java.awt.KeyboardFocusManager.heavyweightRequests
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.KeyboardFocusManager.log
+
+    /// private static java.util.Map java.awt.KeyboardFocusManager.mostRecentFocusOwners
+
+    /// private static java.awt.Component java.awt.KeyboardFocusManager.newFocusOwner
+
+    /// private static java.awt.Component java.awt.KeyboardFocusManager.permanentFocusOwner
+
+    /// static java.lang.reflect.Field java.awt.KeyboardFocusManager.proxyActive
+
+    // Skipping field: true false false false false false 
+
+    /// private static java.awt.AWTPermission java.awt.KeyboardFocusManager.replaceKeyboardFocusManagerPermission
 
     /// private java.beans.PropertyChangeSupport java.awt.KeyboardFocusManager.changeSupport
+
+    /// transient java.awt.SequencedEvent java.awt.KeyboardFocusManager.currentSequencedEvent
+
+    // Skipping field: true false false false false false 
+
+    /// private java.util.Set[] java.awt.KeyboardFocusManager.defaultFocusTraversalKeys
+
+    /// private java.awt.FocusTraversalPolicy java.awt.KeyboardFocusManager.defaultPolicy
 
     /// private java.util.LinkedList java.awt.KeyboardFocusManager.keyEventDispatchers
 
     /// private java.util.LinkedList java.awt.KeyboardFocusManager.keyEventPostProcessors
 
-    /// private static java.util.Map java.awt.KeyboardFocusManager.mostRecentFocusOwners
+    /// transient java.awt.peer.KeyboardFocusManagerPeer java.awt.KeyboardFocusManager.peer
 
-    /// private static java.awt.AWTPermission java.awt.KeyboardFocusManager.replaceKeyboardFocusManagerPermission
+    // Skipping field: true false false false false false 
 
-    /// transient java.awt.SequencedEvent java.awt.KeyboardFocusManager.currentSequencedEvent
-
-    /// private static java.util.LinkedList java.awt.KeyboardFocusManager.heavyweightRequests
-
-    /// private static java.util.LinkedList java.awt.KeyboardFocusManager.currentLightweightRequests
-
-    /// private static boolean java.awt.KeyboardFocusManager.clearingCurrentLightweightRequests
-
-    /// private static boolean java.awt.KeyboardFocusManager.allowSyncFocusRequests
-
-    /// private static java.awt.Component java.awt.KeyboardFocusManager.newFocusOwner
-
-    /// private static volatile boolean java.awt.KeyboardFocusManager.disableRestoreFocus
-
-    /// static final int java.awt.KeyboardFocusManager.SNFH_FAILURE
-
-    /// static final int java.awt.KeyboardFocusManager.SNFH_SUCCESS_HANDLED
-
-    /// static final int java.awt.KeyboardFocusManager.SNFH_SUCCESS_PROCEED
-
-    /// static java.lang.reflect.Field java.awt.KeyboardFocusManager.proxyActive
-
-    /// static final boolean java.awt.KeyboardFocusManager.$assertionsDisabled
+    /// private java.beans.VetoableChangeSupport java.awt.KeyboardFocusManager.vetoableSupport
 
     /// public java.awt.KeyboardFocusManager()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManager.KeyboardFocusManagerJNIClass, methodSig: "()V", methodCache: &KeyboardFocusManager.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// static sun.util.logging.PlatformLogger java.awt.KeyboardFocusManager.access$100()
-
     /// static java.awt.Container java.awt.KeyboardFocusManager.access$000()
 
-    /// private static native void java.awt.KeyboardFocusManager.initIDs()
+    // Skipping method: true false false false false 
 
-    /// static boolean java.awt.KeyboardFocusManager.isAutoFocusTransferEnabledFor(java.awt.Component)
+    /// static sun.util.logging.PlatformLogger java.awt.KeyboardFocusManager.access$100()
 
-    /// static synchronized java.awt.Component java.awt.KeyboardFocusManager.getMostRecentFocusOwner(java.awt.Window)
+    // Skipping method: true false false false false 
 
-    /// protected abstract void java.awt.KeyboardFocusManager.enqueueKeyEvents(long,java.awt.Component)
-
-    private static var enqueueKeyEvents_MethodID_2: jmethodID?
-
-    open func enqueueKeyEvents( arg0: Int64, arg1: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enqueueKeyEvents", methodSig: "(JLjava/awt/Component;)V", methodCache: &KeyboardFocusManager.enqueueKeyEvents_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func enqueueKeyEvents( _ _arg0: Int64, _ _arg1: Component? ) {
-        enqueueKeyEvents( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// final java.awt.SequencedEvent java.awt.KeyboardFocusManager.getCurrentSequencedEvent()
-
-    /// protected abstract void java.awt.KeyboardFocusManager.dequeueKeyEvents(long,java.awt.Component)
-
-    private static var dequeueKeyEvents_MethodID_3: jmethodID?
-
-    open func dequeueKeyEvents( arg0: Int64, arg1: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dequeueKeyEvents", methodSig: "(JLjava/awt/Component;)V", methodCache: &KeyboardFocusManager.dequeueKeyEvents_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func dequeueKeyEvents( _ _arg0: Int64, _ _arg1: Component? ) {
-        dequeueKeyEvents( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public java.awt.Container java.awt.KeyboardFocusManager.getCurrentFocusCycleRoot()
-
-    private static var getCurrentFocusCycleRoot_MethodID_4: jmethodID?
-
-    open func getCurrentFocusCycleRoot() -> Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentFocusCycleRoot", methodSig: "()Ljava/awt/Container;", methodCache: &KeyboardFocusManager.getCurrentFocusCycleRoot_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Container( javaObject: __return ) : nil
-    }
-
-
-    /// void java.awt.KeyboardFocusManager.setGlobalCurrentFocusCycleRootPriv(java.awt.Container)
-
-    /// static synchronized void java.awt.KeyboardFocusManager.setMostRecentFocusOwner(java.awt.Window,java.awt.Component)
-
-    /// static void java.awt.KeyboardFocusManager.setMostRecentFocusOwner(java.awt.Component)
-
-    /// public synchronized java.awt.FocusTraversalPolicy java.awt.KeyboardFocusManager.getDefaultFocusTraversalPolicy()
-
-    private static var getDefaultFocusTraversalPolicy_MethodID_5: jmethodID?
-
-    open func getDefaultFocusTraversalPolicy() -> FocusTraversalPolicy! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultFocusTraversalPolicy", methodSig: "()Ljava/awt/FocusTraversalPolicy;", methodCache: &KeyboardFocusManager.getDefaultFocusTraversalPolicy_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? FocusTraversalPolicy( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.KeyboardFocusManager.removePropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var removePropertyChangeListener_MethodID_6: jmethodID?
-
-    open func removePropertyChangeListener( arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &KeyboardFocusManager.removePropertyChangeListener_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func removePropertyChangeListener( _ _arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        removePropertyChangeListener( arg0: _arg0 )
-    }
-
-    /// public void java.awt.KeyboardFocusManager.removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
-
-    private static var removePropertyChangeListener_MethodID_7: jmethodID?
-
-    open func removePropertyChangeListener( arg0: String?, arg1: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &KeyboardFocusManager.removePropertyChangeListener_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func removePropertyChangeListener( _ _arg0: String?, _ _arg1: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        removePropertyChangeListener( arg0: _arg0, arg1: _arg1 )
-    }
+    /// private static void java.awt.KeyboardFocusManager.checkReplaceKFMPermission() throws java.lang.SecurityException
 
     /// static void java.awt.KeyboardFocusManager.clearMostRecentFocusOwner(java.awt.Component)
 
+    // Skipping method: true false false false false 
+
+    /// private static java.lang.Throwable java.awt.KeyboardFocusManager.dispatchAndCatchException(java.lang.Throwable,java.awt.Component,java.awt.event.FocusEvent)
+
+    /// private static boolean java.awt.KeyboardFocusManager.focusedWindowChanged(java.awt.Component,java.awt.Component)
+
+    /// static synchronized java.awt.KeyboardFocusManager java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager(sun.awt.AppContext)
+
+    // Skipping method: true false false false false 
+
+    /// public static java.awt.KeyboardFocusManager java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager()
+
+    private static var getCurrentKeyboardFocusManager_MethodID_2: jmethodID?
+
+    open class func getCurrentKeyboardFocusManager() -> KeyboardFocusManager! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass, methodName: "getCurrentKeyboardFocusManager", methodSig: "()Ljava/awt/KeyboardFocusManager;", methodCache: &getCurrentKeyboardFocusManager_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? KeyboardFocusManager( javaObject: __return ) : nil
+    }
+
+
+    /// private static java.awt.KeyboardFocusManager$HeavyweightFocusRequest java.awt.KeyboardFocusManager.getFirstHWRequest()
+
+    /// static java.awt.Component java.awt.KeyboardFocusManager.getHeavyweight(java.awt.Component)
+
+    // Skipping method: true false false false false 
+
+    /// private static java.awt.KeyboardFocusManager$HeavyweightFocusRequest java.awt.KeyboardFocusManager.getLastHWRequest()
+
+    /// static synchronized java.awt.Component java.awt.KeyboardFocusManager.getMostRecentFocusOwner(java.awt.Window)
+
+    // Skipping method: true false false false false 
+
+    /// private static void java.awt.KeyboardFocusManager.handleException(java.lang.Throwable)
+
+    /// static java.util.Set java.awt.KeyboardFocusManager.initFocusTraversalKeysSet(java.lang.String,java.util.Set)
+
+    // Skipping method: true false false false false 
+
+    /// private static native void java.awt.KeyboardFocusManager.initIDs()
+
     /// static boolean java.awt.KeyboardFocusManager.isAutoFocusTransferEnabled()
 
-    /// static java.awt.AWTEvent java.awt.KeyboardFocusManager.retargetFocusEvent(java.awt.AWTEvent)
+    // Skipping method: true false false false false 
 
-    /// public java.awt.Component java.awt.KeyboardFocusManager.getPermanentFocusOwner()
+    /// static boolean java.awt.KeyboardFocusManager.isAutoFocusTransferEnabledFor(java.awt.Component)
 
-    private static var getPermanentFocusOwner_MethodID_8: jmethodID?
-
-    open func getPermanentFocusOwner() -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPermanentFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &KeyboardFocusManager.getPermanentFocusOwner_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-
-    /// protected void java.awt.KeyboardFocusManager.setGlobalPermanentFocusOwner(java.awt.Component) throws java.lang.SecurityException
-
-    private static var setGlobalPermanentFocusOwner_MethodID_9: jmethodID?
-
-    open func setGlobalPermanentFocusOwner( arg0: Component? ) throws /* java.lang.SecurityException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlobalPermanentFocusOwner", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.setGlobalPermanentFocusOwner_MethodID_9, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
-    }
-
-    open func setGlobalPermanentFocusOwner( _ _arg0: Component? ) throws /* java.lang.SecurityException */ {
-        try setGlobalPermanentFocusOwner( arg0: _arg0 )
-    }
-
-    /// protected abstract void java.awt.KeyboardFocusManager.discardKeyEvents(java.awt.Component)
-
-    private static var discardKeyEvents_MethodID_10: jmethodID?
-
-    open func discardKeyEvents( arg0: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "discardKeyEvents", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.discardKeyEvents_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func discardKeyEvents( _ _arg0: Component? ) {
-        discardKeyEvents( arg0: _arg0 )
-    }
-
-    /// public java.util.Set java.awt.KeyboardFocusManager.getDefaultFocusTraversalKeys(int)
-
-    private static var getDefaultFocusTraversalKeys_MethodID_11: jmethodID?
-
-    open func getDefaultFocusTraversalKeys( arg0: Int ) -> java_swift.JavaSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultFocusTraversalKeys", methodSig: "(I)Ljava/util/Set;", methodCache: &KeyboardFocusManager.getDefaultFocusTraversalKeys_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaSetForward( javaObject: __return ) : nil
-    }
-
-    open func getDefaultFocusTraversalKeys( _ _arg0: Int ) -> java_swift.JavaSet! {
-        return getDefaultFocusTraversalKeys( arg0: _arg0 )
-    }
-
-    /// void java.awt.KeyboardFocusManager.clearGlobalFocusOwnerPriv()
-
-    /// protected void java.awt.KeyboardFocusManager.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
-
-    private static var firePropertyChange_MethodID_12: jmethodID?
-
-    open func firePropertyChange( arg0: String?, arg1: java_swift.JavaObject?, arg2: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &KeyboardFocusManager.firePropertyChange_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func firePropertyChange( _ _arg0: String?, _ _arg1: java_swift.JavaObject?, _ _arg2: java_swift.JavaObject? ) {
-        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public java.awt.Window java.awt.KeyboardFocusManager.getActiveWindow()
-
-    private static var getActiveWindow_MethodID_13: jmethodID?
-
-    open func getActiveWindow() -> Window! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActiveWindow", methodSig: "()Ljava/awt/Window;", methodCache: &KeyboardFocusManager.getActiveWindow_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Window( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.Window java.awt.KeyboardFocusManager.getGlobalFocusedWindow() throws java.lang.SecurityException
-
-    private static var getGlobalFocusedWindow_MethodID_14: jmethodID?
-
-    open func getGlobalFocusedWindow() throws /* java.lang.SecurityException */ -> Window! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlobalFocusedWindow", methodSig: "()Ljava/awt/Window;", methodCache: &KeyboardFocusManager.getGlobalFocusedWindow_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
-        return __return != nil ? Window( javaObject: __return ) : nil
-    }
-
-
-    /// static java.awt.event.FocusEvent java.awt.KeyboardFocusManager.retargetFocusGained(java.awt.event.FocusEvent)
-
-    /// static void java.awt.KeyboardFocusManager.processCurrentLightweightRequests()
+    // Skipping method: true false false false false 
 
     /// static boolean java.awt.KeyboardFocusManager.isProxyActive(java.awt.event.KeyEvent)
 
+    // Skipping method: true false false false false 
+
     /// private static boolean java.awt.KeyboardFocusManager.isProxyActiveImpl(java.awt.event.KeyEvent)
+
+    /// private static boolean java.awt.KeyboardFocusManager.isTemporary(java.awt.Component,java.awt.Component)
+
+    /// static java.awt.Window java.awt.KeyboardFocusManager.markClearGlobalFocusOwner()
+
+    // Skipping method: true false false false false 
+
+    /// static void java.awt.KeyboardFocusManager.processCurrentLightweightRequests()
+
+    // Skipping method: true false false false false 
+
+    /// static boolean java.awt.KeyboardFocusManager.processSynchronousLightweightTransfer(java.awt.Component,java.awt.Component,boolean,boolean,long)
+
+    // Skipping method: true false false false false 
+
+    /// static boolean java.awt.KeyboardFocusManager.removeFirstRequest()
+
+    // Skipping method: true false false false false 
+
+    /// static void java.awt.KeyboardFocusManager.removeLastFocusRequest(java.awt.Component)
+
+    // Skipping method: true false false false false 
+
+    /// static java.awt.AWTEvent java.awt.KeyboardFocusManager.retargetFocusEvent(java.awt.AWTEvent)
+
+    // Skipping method: true false false false false 
+
+    /// static java.awt.event.FocusEvent java.awt.KeyboardFocusManager.retargetFocusGained(java.awt.event.FocusEvent)
+
+    // Skipping method: true false false false false 
+
+    /// static java.awt.event.FocusEvent java.awt.KeyboardFocusManager.retargetFocusLost(java.awt.event.FocusEvent)
+
+    // Skipping method: true false false false false 
+
+    /// static java.awt.event.FocusEvent java.awt.KeyboardFocusManager.retargetUnexpectedFocusEvent(java.awt.event.FocusEvent)
+
+    // Skipping method: true false false false false 
 
     /// public static void java.awt.KeyboardFocusManager.setCurrentKeyboardFocusManager(java.awt.KeyboardFocusManager) throws java.lang.SecurityException
 
-    private static var setCurrentKeyboardFocusManager_MethodID_15: jmethodID?
+    private static var setCurrentKeyboardFocusManager_MethodID_3: jmethodID?
 
     open class func setCurrentKeyboardFocusManager( arg0: KeyboardFocusManager? ) throws /* java.lang.SecurityException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass, methodName: "setCurrentKeyboardFocusManager", methodSig: "(Ljava/awt/KeyboardFocusManager;)V", methodCache: &setCurrentKeyboardFocusManager_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass, methodName: "setCurrentKeyboardFocusManager", methodSig: "(Ljava/awt/KeyboardFocusManager;)V", methodCache: &setCurrentKeyboardFocusManager_MethodID_3, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_lang.JavaSecurityException( javaObject: throwable )
         }
     }
@@ -386,430 +278,220 @@ open class KeyboardFocusManager: java_swift.JavaObject, KeyEventDispatcher, KeyE
         try setCurrentKeyboardFocusManager( arg0: _arg0 )
     }
 
-    /// final void java.awt.KeyboardFocusManager.setCurrentSequencedEvent(java.awt.SequencedEvent)
+    /// static void java.awt.KeyboardFocusManager.setMostRecentFocusOwner(java.awt.Component)
 
-    /// static java.util.Set java.awt.KeyboardFocusManager.initFocusTraversalKeysSet(java.lang.String,java.util.Set)
+    // Skipping method: true false false false false 
 
-    /// private void java.awt.KeyboardFocusManager.initPeer()
+    /// static synchronized void java.awt.KeyboardFocusManager.setMostRecentFocusOwner(java.awt.Window,java.awt.Component)
 
-    /// protected java.awt.Component java.awt.KeyboardFocusManager.getGlobalFocusOwner() throws java.lang.SecurityException
+    // Skipping method: true false false false false 
 
-    private static var getGlobalFocusOwner_MethodID_16: jmethodID?
+    /// static int java.awt.KeyboardFocusManager.shouldNativelyFocusHeavyweight(java.awt.Component,java.awt.Component,boolean,boolean,long,sun.awt.CausedFocusEvent$Cause)
 
-    open func getGlobalFocusOwner() throws /* java.lang.SecurityException */ -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlobalFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &KeyboardFocusManager.getGlobalFocusOwner_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-
-    /// protected void java.awt.KeyboardFocusManager.setGlobalFocusOwner(java.awt.Component) throws java.lang.SecurityException
-
-    private static var setGlobalFocusOwner_MethodID_17: jmethodID?
-
-    open func setGlobalFocusOwner( arg0: Component? ) throws /* java.lang.SecurityException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlobalFocusOwner", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.setGlobalFocusOwner_MethodID_17, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
-    }
-
-    open func setGlobalFocusOwner( _ _arg0: Component? ) throws /* java.lang.SecurityException */ {
-        try setGlobalFocusOwner( arg0: _arg0 )
-    }
-
-    /// public void java.awt.KeyboardFocusManager.clearFocusOwner()
-
-    private static var clearFocusOwner_MethodID_18: jmethodID?
-
-    open func clearFocusOwner() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearFocusOwner", methodSig: "()V", methodCache: &KeyboardFocusManager.clearFocusOwner_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void java.awt.KeyboardFocusManager.clearGlobalFocusOwner() throws java.lang.SecurityException
-
-    private static var clearGlobalFocusOwner_MethodID_19: jmethodID?
-
-    open func clearGlobalFocusOwner() throws /* java.lang.SecurityException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearGlobalFocusOwner", methodSig: "()V", methodCache: &KeyboardFocusManager.clearGlobalFocusOwner_MethodID_19, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
-    }
-
+    // Skipping method: true false false false false 
 
     /// private void java.awt.KeyboardFocusManager._clearGlobalFocusOwner()
 
-    /// java.awt.Component java.awt.KeyboardFocusManager.getNativeFocusOwner()
-
-    /// void java.awt.KeyboardFocusManager.setNativeFocusOwner(java.awt.Component)
-
-    /// java.awt.Window java.awt.KeyboardFocusManager.getNativeFocusedWindow()
-
-    /// protected java.awt.Component java.awt.KeyboardFocusManager.getGlobalPermanentFocusOwner() throws java.lang.SecurityException
-
-    private static var getGlobalPermanentFocusOwner_MethodID_20: jmethodID?
-
-    open func getGlobalPermanentFocusOwner() throws /* java.lang.SecurityException */ -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlobalPermanentFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &KeyboardFocusManager.getGlobalPermanentFocusOwner_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Window java.awt.KeyboardFocusManager.getFocusedWindow()
-
-    private static var getFocusedWindow_MethodID_21: jmethodID?
-
-    open func getFocusedWindow() -> Window! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusedWindow", methodSig: "()Ljava/awt/Window;", methodCache: &KeyboardFocusManager.getFocusedWindow_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Window( javaObject: __return ) : nil
-    }
-
-
-    /// protected void java.awt.KeyboardFocusManager.setGlobalFocusedWindow(java.awt.Window) throws java.lang.SecurityException
-
-    private static var setGlobalFocusedWindow_MethodID_22: jmethodID?
-
-    open func setGlobalFocusedWindow( arg0: Window? ) throws /* java.lang.SecurityException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlobalFocusedWindow", methodSig: "(Ljava/awt/Window;)V", methodCache: &KeyboardFocusManager.setGlobalFocusedWindow_MethodID_22, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
-    }
-
-    open func setGlobalFocusedWindow( _ _arg0: Window? ) throws /* java.lang.SecurityException */ {
-        try setGlobalFocusedWindow( arg0: _arg0 )
-    }
-
-    /// protected java.awt.Window java.awt.KeyboardFocusManager.getGlobalActiveWindow() throws java.lang.SecurityException
-
-    private static var getGlobalActiveWindow_MethodID_23: jmethodID?
-
-    open func getGlobalActiveWindow() throws /* java.lang.SecurityException */ -> Window! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlobalActiveWindow", methodSig: "()Ljava/awt/Window;", methodCache: &KeyboardFocusManager.getGlobalActiveWindow_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
-        return __return != nil ? Window( javaObject: __return ) : nil
-    }
-
-
-    /// protected void java.awt.KeyboardFocusManager.setGlobalActiveWindow(java.awt.Window) throws java.lang.SecurityException
-
-    private static var setGlobalActiveWindow_MethodID_24: jmethodID?
-
-    open func setGlobalActiveWindow( arg0: Window? ) throws /* java.lang.SecurityException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlobalActiveWindow", methodSig: "(Ljava/awt/Window;)V", methodCache: &KeyboardFocusManager.setGlobalActiveWindow_MethodID_24, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
-    }
-
-    open func setGlobalActiveWindow( _ _arg0: Window? ) throws /* java.lang.SecurityException */ {
-        try setGlobalActiveWindow( arg0: _arg0 )
-    }
-
-    /// public void java.awt.KeyboardFocusManager.setDefaultFocusTraversalPolicy(java.awt.FocusTraversalPolicy)
-
-    private static var setDefaultFocusTraversalPolicy_MethodID_25: jmethodID?
-
-    open func setDefaultFocusTraversalPolicy( arg0: FocusTraversalPolicy? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultFocusTraversalPolicy", methodSig: "(Ljava/awt/FocusTraversalPolicy;)V", methodCache: &KeyboardFocusManager.setDefaultFocusTraversalPolicy_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-    open func setDefaultFocusTraversalPolicy( _ _arg0: FocusTraversalPolicy? ) {
-        setDefaultFocusTraversalPolicy( arg0: _arg0 )
-    }
-
-    /// public void java.awt.KeyboardFocusManager.setDefaultFocusTraversalKeys(int,java.util.Set)
-
-    private static var setDefaultFocusTraversalKeys_MethodID_26: jmethodID?
-
-    open func setDefaultFocusTraversalKeys( arg0: Int, arg1: java_swift.JavaSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultFocusTraversalKeys", methodSig: "(ILjava/util/Set;)V", methodCache: &KeyboardFocusManager.setDefaultFocusTraversalKeys_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func setDefaultFocusTraversalKeys( _ _arg0: Int, _ _arg1: java_swift.JavaSet? ) {
-        setDefaultFocusTraversalKeys( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// protected java.awt.Container java.awt.KeyboardFocusManager.getGlobalCurrentFocusCycleRoot() throws java.lang.SecurityException
-
-    private static var getGlobalCurrentFocusCycleRoot_MethodID_27: jmethodID?
-
-    open func getGlobalCurrentFocusCycleRoot() throws /* java.lang.SecurityException */ -> Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlobalCurrentFocusCycleRoot", methodSig: "()Ljava/awt/Container;", methodCache: &KeyboardFocusManager.getGlobalCurrentFocusCycleRoot_MethodID_27, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
-        return __return != nil ? Container( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.KeyboardFocusManager.setGlobalCurrentFocusCycleRoot(java.awt.Container) throws java.lang.SecurityException
-
-    private static var setGlobalCurrentFocusCycleRoot_MethodID_28: jmethodID?
-
-    open func setGlobalCurrentFocusCycleRoot( arg0: Container? ) throws /* java.lang.SecurityException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlobalCurrentFocusCycleRoot", methodSig: "(Ljava/awt/Container;)V", methodCache: &KeyboardFocusManager.setGlobalCurrentFocusCycleRoot_MethodID_28, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
-    }
-
-    open func setGlobalCurrentFocusCycleRoot( _ _arg0: Container? ) throws /* java.lang.SecurityException */ {
-        try setGlobalCurrentFocusCycleRoot( arg0: _arg0 )
-    }
-
     /// public void java.awt.KeyboardFocusManager.addKeyEventDispatcher(java.awt.KeyEventDispatcher)
 
-    private static var addKeyEventDispatcher_MethodID_29: jmethodID?
+    private static var addKeyEventDispatcher_MethodID_4: jmethodID?
 
     open func addKeyEventDispatcher( arg0: KeyEventDispatcher? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addKeyEventDispatcher", methodSig: "(Ljava/awt/KeyEventDispatcher;)V", methodCache: &KeyboardFocusManager.addKeyEventDispatcher_MethodID_29, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addKeyEventDispatcher", methodSig: "(Ljava/awt/KeyEventDispatcher;)V", methodCache: &KeyboardFocusManager.addKeyEventDispatcher_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func addKeyEventDispatcher( _ _arg0: KeyEventDispatcher? ) {
         addKeyEventDispatcher( arg0: _arg0 )
     }
 
-    /// public void java.awt.KeyboardFocusManager.removeKeyEventDispatcher(java.awt.KeyEventDispatcher)
-
-    private static var removeKeyEventDispatcher_MethodID_30: jmethodID?
-
-    open func removeKeyEventDispatcher( arg0: KeyEventDispatcher? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeKeyEventDispatcher", methodSig: "(Ljava/awt/KeyEventDispatcher;)V", methodCache: &KeyboardFocusManager.removeKeyEventDispatcher_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    open func removeKeyEventDispatcher( _ _arg0: KeyEventDispatcher? ) {
-        removeKeyEventDispatcher( arg0: _arg0 )
-    }
-
-    /// protected synchronized java.util.List java.awt.KeyboardFocusManager.getKeyEventDispatchers()
-
-    private static var getKeyEventDispatchers_MethodID_31: jmethodID?
-
-    open func getKeyEventDispatchers() -> java_util.List! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeyEventDispatchers", methodSig: "()Ljava/util/List;", methodCache: &KeyboardFocusManager.getKeyEventDispatchers_MethodID_31, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
-    }
-
-
     /// public void java.awt.KeyboardFocusManager.addKeyEventPostProcessor(java.awt.KeyEventPostProcessor)
 
-    private static var addKeyEventPostProcessor_MethodID_32: jmethodID?
+    private static var addKeyEventPostProcessor_MethodID_5: jmethodID?
 
     open func addKeyEventPostProcessor( arg0: KeyEventPostProcessor? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addKeyEventPostProcessor", methodSig: "(Ljava/awt/KeyEventPostProcessor;)V", methodCache: &KeyboardFocusManager.addKeyEventPostProcessor_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addKeyEventPostProcessor", methodSig: "(Ljava/awt/KeyEventPostProcessor;)V", methodCache: &KeyboardFocusManager.addKeyEventPostProcessor_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func addKeyEventPostProcessor( _ _arg0: KeyEventPostProcessor? ) {
         addKeyEventPostProcessor( arg0: _arg0 )
     }
 
-    /// public void java.awt.KeyboardFocusManager.removeKeyEventPostProcessor(java.awt.KeyEventPostProcessor)
+    /// public void java.awt.KeyboardFocusManager.addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
 
-    private static var removeKeyEventPostProcessor_MethodID_33: jmethodID?
+    private static var addPropertyChangeListener_MethodID_6: jmethodID?
 
-    open func removeKeyEventPostProcessor( arg0: KeyEventPostProcessor? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addPropertyChangeListener( arg0: String?, arg1: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeKeyEventPostProcessor", methodSig: "(Ljava/awt/KeyEventPostProcessor;)V", methodCache: &KeyboardFocusManager.removeKeyEventPostProcessor_MethodID_33, args: &__args, locals: &__locals )
-    }
-
-    open func removeKeyEventPostProcessor( _ _arg0: KeyEventPostProcessor? ) {
-        removeKeyEventPostProcessor( arg0: _arg0 )
-    }
-
-    /// protected java.util.List java.awt.KeyboardFocusManager.getKeyEventPostProcessors()
-
-    private static var getKeyEventPostProcessors_MethodID_34: jmethodID?
-
-    open func getKeyEventPostProcessors() -> java_util.List! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeyEventPostProcessors", methodSig: "()Ljava/util/List;", methodCache: &KeyboardFocusManager.getKeyEventPostProcessors_MethodID_34, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
-    }
-
-
-    /// public final void java.awt.KeyboardFocusManager.redispatchEvent(java.awt.Component,java.awt.AWTEvent)
-
-    private static var redispatchEvent_MethodID_35: jmethodID?
-
-    open func redispatchEvent( arg0: Component?, arg1: AWTEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "redispatchEvent", methodSig: "(Ljava/awt/Component;Ljava/awt/AWTEvent;)V", methodCache: &KeyboardFocusManager.redispatchEvent_MethodID_35, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &KeyboardFocusManager.addPropertyChangeListener_MethodID_6, args: &__args, locals: &__locals )
     }
 
-    open func redispatchEvent( _ _arg0: Component?, _ _arg1: AWTEvent? ) {
-        redispatchEvent( arg0: _arg0, arg1: _arg1 )
+    open func addPropertyChangeListener( _ _arg0: String?, _ _arg1: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        addPropertyChangeListener( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.KeyboardFocusManager.addPropertyChangeListener(java.beans.PropertyChangeListener)
+
+    private static var addPropertyChangeListener_MethodID_7: jmethodID?
+
+    open func addPropertyChangeListener( arg0: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &KeyboardFocusManager.addPropertyChangeListener_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func addPropertyChangeListener( _ _arg0: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        addPropertyChangeListener( arg0: _arg0 )
+    }
+
+    /// public void java.awt.KeyboardFocusManager.addVetoableChangeListener(java.lang.String,java.beans.VetoableChangeListener)
+
+    private static var addVetoableChangeListener_MethodID_8: jmethodID?
+
+    open func addVetoableChangeListener( arg0: String?, arg1: /* interface java.beans.VetoableChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addVetoableChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/VetoableChangeListener;)V", methodCache: &KeyboardFocusManager.addVetoableChangeListener_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func addVetoableChangeListener( _ _arg0: String?, _ _arg1: /* interface java.beans.VetoableChangeListener */ UnavailableProtocol? ) {
+        addVetoableChangeListener( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.KeyboardFocusManager.addVetoableChangeListener(java.beans.VetoableChangeListener)
+
+    private static var addVetoableChangeListener_MethodID_9: jmethodID?
+
+    open func addVetoableChangeListener( arg0: /* interface java.beans.VetoableChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addVetoableChangeListener", methodSig: "(Ljava/beans/VetoableChangeListener;)V", methodCache: &KeyboardFocusManager.addVetoableChangeListener_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func addVetoableChangeListener( _ _arg0: /* interface java.beans.VetoableChangeListener */ UnavailableProtocol? ) {
+        addVetoableChangeListener( arg0: _arg0 )
+    }
+
+    /// private void java.awt.KeyboardFocusManager.checkKFMSecurity() throws java.lang.SecurityException
+
+    /// public void java.awt.KeyboardFocusManager.clearFocusOwner()
+
+    private static var clearFocusOwner_MethodID_10: jmethodID?
+
+    open func clearFocusOwner() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearFocusOwner", methodSig: "()V", methodCache: &KeyboardFocusManager.clearFocusOwner_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void java.awt.KeyboardFocusManager.clearGlobalFocusOwner() throws java.lang.SecurityException
+
+    private static var clearGlobalFocusOwner_MethodID_11: jmethodID?
+
+    open func clearGlobalFocusOwner() throws /* java.lang.SecurityException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearGlobalFocusOwner", methodSig: "()V", methodCache: &KeyboardFocusManager.clearGlobalFocusOwner_MethodID_11, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+    }
+
+
+    /// void java.awt.KeyboardFocusManager.clearGlobalFocusOwnerPriv()
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.KeyboardFocusManager.clearMarkers()
+
+    // Skipping method: true false false false false 
+
+    /// protected abstract void java.awt.KeyboardFocusManager.dequeueKeyEvents(long,java.awt.Component)
+
+    private static var dequeueKeyEvents_MethodID_12: jmethodID?
+
+    open func dequeueKeyEvents( arg0: Int64, arg1: Component? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( j: arg0 )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dequeueKeyEvents", methodSig: "(JLjava/awt/Component;)V", methodCache: &KeyboardFocusManager.dequeueKeyEvents_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func dequeueKeyEvents( _ _arg0: Int64, _ _arg1: Component? ) {
+        dequeueKeyEvents( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// protected abstract void java.awt.KeyboardFocusManager.discardKeyEvents(java.awt.Component)
+
+    private static var discardKeyEvents_MethodID_13: jmethodID?
+
+    open func discardKeyEvents( arg0: Component? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "discardKeyEvents", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.discardKeyEvents_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func discardKeyEvents( _ _arg0: Component? ) {
+        discardKeyEvents( arg0: _arg0 )
+    }
+
+    /// public abstract boolean java.awt.KeyboardFocusManager.dispatchEvent(java.awt.AWTEvent)
+
+    private static var dispatchEvent_MethodID_14: jmethodID?
+
+    open func dispatchEvent( arg0: AWTEvent? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "dispatchEvent", methodSig: "(Ljava/awt/AWTEvent;)Z", methodCache: &KeyboardFocusManager.dispatchEvent_MethodID_14, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func dispatchEvent( _ _arg0: AWTEvent? ) -> Bool {
+        return dispatchEvent( arg0: _arg0 )
     }
 
     /// public abstract boolean java.awt.KeyboardFocusManager.dispatchKeyEvent(java.awt.event.KeyEvent)
 
-    private static var dispatchKeyEvent_MethodID_36: jmethodID?
+    private static var dispatchKeyEvent_MethodID_15: jmethodID?
 
     open func dispatchKeyEvent( e: KeyEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "dispatchKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)Z", methodCache: &KeyboardFocusManager.dispatchKeyEvent_MethodID_36, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "dispatchKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)Z", methodCache: &KeyboardFocusManager.dispatchKeyEvent_MethodID_15, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func dispatchKeyEvent( _ _e: KeyEvent? ) -> Bool {
         return dispatchKeyEvent( e: _e )
     }
 
-    /// public abstract void java.awt.KeyboardFocusManager.focusNextComponent(java.awt.Component)
-
-    private static var focusNextComponent_MethodID_37: jmethodID?
-
-    open func focusNextComponent( arg0: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusNextComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.focusNextComponent_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-    open func focusNextComponent( _ _arg0: Component? ) {
-        focusNextComponent( arg0: _arg0 )
-    }
-
-    /// public final void java.awt.KeyboardFocusManager.focusNextComponent()
-
-    private static var focusNextComponent_MethodID_38: jmethodID?
-
-    open func focusNextComponent() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusNextComponent", methodSig: "()V", methodCache: &KeyboardFocusManager.focusNextComponent_MethodID_38, args: &__args, locals: &__locals )
-    }
-
-
-    /// public final void java.awt.KeyboardFocusManager.focusPreviousComponent()
-
-    private static var focusPreviousComponent_MethodID_39: jmethodID?
-
-    open func focusPreviousComponent() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusPreviousComponent", methodSig: "()V", methodCache: &KeyboardFocusManager.focusPreviousComponent_MethodID_39, args: &__args, locals: &__locals )
-    }
-
-
-    /// public abstract void java.awt.KeyboardFocusManager.focusPreviousComponent(java.awt.Component)
-
-    private static var focusPreviousComponent_MethodID_40: jmethodID?
-
-    open func focusPreviousComponent( arg0: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusPreviousComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.focusPreviousComponent_MethodID_40, args: &__args, locals: &__locals )
-    }
-
-    open func focusPreviousComponent( _ _arg0: Component? ) {
-        focusPreviousComponent( arg0: _arg0 )
-    }
-
-    /// public final void java.awt.KeyboardFocusManager.upFocusCycle()
-
-    private static var upFocusCycle_MethodID_41: jmethodID?
-
-    open func upFocusCycle() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "upFocusCycle", methodSig: "()V", methodCache: &KeyboardFocusManager.upFocusCycle_MethodID_41, args: &__args, locals: &__locals )
-    }
-
-
-    /// public abstract void java.awt.KeyboardFocusManager.upFocusCycle(java.awt.Component)
-
-    private static var upFocusCycle_MethodID_42: jmethodID?
-
-    open func upFocusCycle( arg0: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "upFocusCycle", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.upFocusCycle_MethodID_42, args: &__args, locals: &__locals )
-    }
-
-    open func upFocusCycle( _ _arg0: Component? ) {
-        upFocusCycle( arg0: _arg0 )
-    }
-
     /// public abstract void java.awt.KeyboardFocusManager.downFocusCycle(java.awt.Container)
 
-    private static var downFocusCycle_MethodID_43: jmethodID?
+    private static var downFocusCycle_MethodID_16: jmethodID?
 
     open func downFocusCycle( arg0: Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "downFocusCycle", methodSig: "(Ljava/awt/Container;)V", methodCache: &KeyboardFocusManager.downFocusCycle_MethodID_43, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "downFocusCycle", methodSig: "(Ljava/awt/Container;)V", methodCache: &KeyboardFocusManager.downFocusCycle_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func downFocusCycle( _ _arg0: Container? ) {
@@ -818,82 +500,66 @@ open class KeyboardFocusManager: java_swift.JavaObject, KeyEventDispatcher, KeyE
 
     /// public final void java.awt.KeyboardFocusManager.downFocusCycle()
 
-    private static var downFocusCycle_MethodID_44: jmethodID?
+    private static var downFocusCycle_MethodID_17: jmethodID?
 
     open func downFocusCycle() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "downFocusCycle", methodSig: "()V", methodCache: &KeyboardFocusManager.downFocusCycle_MethodID_44, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "downFocusCycle", methodSig: "()V", methodCache: &KeyboardFocusManager.downFocusCycle_MethodID_17, args: &__args, locals: &__locals )
     }
 
 
     /// void java.awt.KeyboardFocusManager.dumpRequests()
 
-    /// static boolean java.awt.KeyboardFocusManager.processSynchronousLightweightTransfer(java.awt.Component,java.awt.Component,boolean,boolean,long)
+    // Skipping method: true false false false false 
 
-    /// static int java.awt.KeyboardFocusManager.shouldNativelyFocusHeavyweight(java.awt.Component,java.awt.Component,boolean,boolean,long,sun.awt.CausedFocusEvent$Cause)
+    /// protected abstract void java.awt.KeyboardFocusManager.enqueueKeyEvents(long,java.awt.Component)
 
-    /// static java.awt.Window java.awt.KeyboardFocusManager.markClearGlobalFocusOwner()
+    private static var enqueueKeyEvents_MethodID_18: jmethodID?
 
-    /// java.awt.Component java.awt.KeyboardFocusManager.getCurrentWaitingRequest(java.awt.Component)
-
-    /// private static java.lang.Throwable java.awt.KeyboardFocusManager.dispatchAndCatchException(java.lang.Throwable,java.awt.Component,java.awt.event.FocusEvent)
-
-    /// private static void java.awt.KeyboardFocusManager.handleException(java.lang.Throwable)
-
-    /// static java.awt.event.FocusEvent java.awt.KeyboardFocusManager.retargetUnexpectedFocusEvent(java.awt.event.FocusEvent)
-
-    /// static java.awt.event.FocusEvent java.awt.KeyboardFocusManager.retargetFocusLost(java.awt.event.FocusEvent)
-
-    /// void java.awt.KeyboardFocusManager.clearMarkers()
-
-    /// static boolean java.awt.KeyboardFocusManager.removeFirstRequest()
-
-    /// static void java.awt.KeyboardFocusManager.removeLastFocusRequest(java.awt.Component)
-
-    /// private static boolean java.awt.KeyboardFocusManager.focusedWindowChanged(java.awt.Component,java.awt.Component)
-
-    /// private static boolean java.awt.KeyboardFocusManager.isTemporary(java.awt.Component,java.awt.Component)
-
-    /// static java.awt.Component java.awt.KeyboardFocusManager.getHeavyweight(java.awt.Component)
-
-    /// private static java.awt.KeyboardFocusManager$HeavyweightFocusRequest java.awt.KeyboardFocusManager.getLastHWRequest()
-
-    /// private static java.awt.KeyboardFocusManager$HeavyweightFocusRequest java.awt.KeyboardFocusManager.getFirstHWRequest()
-
-    /// private static void java.awt.KeyboardFocusManager.checkReplaceKFMPermission() throws java.lang.SecurityException
-
-    /// private void java.awt.KeyboardFocusManager.checkKFMSecurity() throws java.lang.SecurityException
-
-    /// public abstract void java.awt.KeyboardFocusManager.processKeyEvent(java.awt.Component,java.awt.event.KeyEvent)
-
-    private static var processKeyEvent_MethodID_45: jmethodID?
-
-    open func processKeyEvent( arg0: Component?, arg1: KeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func enqueueKeyEvents( arg0: Int64, arg1: Component? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( j: arg0 )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processKeyEvent", methodSig: "(Ljava/awt/Component;Ljava/awt/event/KeyEvent;)V", methodCache: &KeyboardFocusManager.processKeyEvent_MethodID_45, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enqueueKeyEvents", methodSig: "(JLjava/awt/Component;)V", methodCache: &KeyboardFocusManager.enqueueKeyEvents_MethodID_18, args: &__args, locals: &__locals )
     }
 
-    open func processKeyEvent( _ _arg0: Component?, _ _arg1: KeyEvent? ) {
-        processKeyEvent( arg0: _arg0, arg1: _arg1 )
+    open func enqueueKeyEvents( _ _arg0: Int64, _ _arg1: Component? ) {
+        enqueueKeyEvents( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// protected void java.awt.KeyboardFocusManager.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
+
+    private static var firePropertyChange_MethodID_19: jmethodID?
+
+    open func firePropertyChange( arg0: String?, arg1: java_swift.JavaObject?, arg2: java_swift.JavaObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &KeyboardFocusManager.firePropertyChange_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func firePropertyChange( _ _arg0: String?, _ _arg1: java_swift.JavaObject?, _ _arg2: java_swift.JavaObject? ) {
+        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
     /// protected void java.awt.KeyboardFocusManager.fireVetoableChange(java.lang.String,java.lang.Object,java.lang.Object) throws java.beans.PropertyVetoException
 
-    private static var fireVetoableChange_MethodID_46: jmethodID?
+    private static var fireVetoableChange_MethodID_20: jmethodID?
 
     open func fireVetoableChange( arg0: String?, arg1: java_swift.JavaObject?, arg2: java_swift.JavaObject? ) throws /* java.beans.PropertyVetoException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireVetoableChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &KeyboardFocusManager.fireVetoableChange_MethodID_46, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireVetoableChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &KeyboardFocusManager.fireVetoableChange_MethodID_20, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.beans.PropertyVetoException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.beans.PropertyVetoException */ UnavailableObject( javaObject: throwable )
         }
     }
 
@@ -901,212 +567,639 @@ open class KeyboardFocusManager: java_swift.JavaObject, KeyEventDispatcher, KeyE
         try fireVetoableChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
-    /// public void java.awt.KeyboardFocusManager.addVetoableChangeListener(java.lang.String,java.beans.VetoableChangeListener)
+    /// public abstract void java.awt.KeyboardFocusManager.focusNextComponent(java.awt.Component)
 
-    private static var addVetoableChangeListener_MethodID_47: jmethodID?
+    private static var focusNextComponent_MethodID_21: jmethodID?
 
-    open func addVetoableChangeListener( arg0: String?, arg1: /* java.beans.VetoableChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func focusNextComponent( arg0: Component? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addVetoableChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/VetoableChangeListener;)V", methodCache: &KeyboardFocusManager.addVetoableChangeListener_MethodID_47, args: &__args, locals: &__locals )
-    }
-
-    open func addVetoableChangeListener( _ _arg0: String?, _ _arg1: /* java.beans.VetoableChangeListener */ UnclassedProtocol? ) {
-        addVetoableChangeListener( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public void java.awt.KeyboardFocusManager.addVetoableChangeListener(java.beans.VetoableChangeListener)
-
-    private static var addVetoableChangeListener_MethodID_48: jmethodID?
-
-    open func addVetoableChangeListener( arg0: /* java.beans.VetoableChangeListener */ UnclassedProtocol? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addVetoableChangeListener", methodSig: "(Ljava/beans/VetoableChangeListener;)V", methodCache: &KeyboardFocusManager.addVetoableChangeListener_MethodID_48, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusNextComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.focusNextComponent_MethodID_21, args: &__args, locals: &__locals )
     }
 
-    open func addVetoableChangeListener( _ _arg0: /* java.beans.VetoableChangeListener */ UnclassedProtocol? ) {
-        addVetoableChangeListener( arg0: _arg0 )
+    open func focusNextComponent( _ _arg0: Component? ) {
+        focusNextComponent( arg0: _arg0 )
     }
 
-    /// public void java.awt.KeyboardFocusManager.removeVetoableChangeListener(java.beans.VetoableChangeListener)
+    /// public final void java.awt.KeyboardFocusManager.focusNextComponent()
 
-    private static var removeVetoableChangeListener_MethodID_49: jmethodID?
+    private static var focusNextComponent_MethodID_22: jmethodID?
 
-    open func removeVetoableChangeListener( arg0: /* java.beans.VetoableChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func focusNextComponent() {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusNextComponent", methodSig: "()V", methodCache: &KeyboardFocusManager.focusNextComponent_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+
+    /// public abstract void java.awt.KeyboardFocusManager.focusPreviousComponent(java.awt.Component)
+
+    private static var focusPreviousComponent_MethodID_23: jmethodID?
+
+    open func focusPreviousComponent( arg0: Component? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeVetoableChangeListener", methodSig: "(Ljava/beans/VetoableChangeListener;)V", methodCache: &KeyboardFocusManager.removeVetoableChangeListener_MethodID_49, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusPreviousComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.focusPreviousComponent_MethodID_23, args: &__args, locals: &__locals )
     }
 
-    open func removeVetoableChangeListener( _ _arg0: /* java.beans.VetoableChangeListener */ UnclassedProtocol? ) {
-        removeVetoableChangeListener( arg0: _arg0 )
+    open func focusPreviousComponent( _ _arg0: Component? ) {
+        focusPreviousComponent( arg0: _arg0 )
     }
 
-    /// public void java.awt.KeyboardFocusManager.removeVetoableChangeListener(java.lang.String,java.beans.VetoableChangeListener)
+    /// public final void java.awt.KeyboardFocusManager.focusPreviousComponent()
 
-    private static var removeVetoableChangeListener_MethodID_50: jmethodID?
+    private static var focusPreviousComponent_MethodID_24: jmethodID?
 
-    open func removeVetoableChangeListener( arg0: String?, arg1: /* java.beans.VetoableChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func focusPreviousComponent() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeVetoableChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/VetoableChangeListener;)V", methodCache: &KeyboardFocusManager.removeVetoableChangeListener_MethodID_50, args: &__args, locals: &__locals )
-    }
-
-    open func removeVetoableChangeListener( _ _arg0: String?, _ _arg1: /* java.beans.VetoableChangeListener */ UnclassedProtocol? ) {
-        removeVetoableChangeListener( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public synchronized java.beans.VetoableChangeListener[] java.awt.KeyboardFocusManager.getVetoableChangeListeners()
-
-    private static var getVetoableChangeListeners_MethodID_51: jmethodID?
-
-    open func getVetoableChangeListeners() -> [/* java.beans.VetoableChangeListener */ UnclassedProtocol]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVetoableChangeListeners", methodSig: "()[Ljava/beans/VetoableChangeListener;", methodCache: &KeyboardFocusManager.getVetoableChangeListeners_MethodID_51, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.VetoableChangeListener */ UnclassedProtocolForward](), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusPreviousComponent", methodSig: "()V", methodCache: &KeyboardFocusManager.focusPreviousComponent_MethodID_24, args: &__args, locals: &__locals )
     }
 
 
-    /// public synchronized java.beans.VetoableChangeListener[] java.awt.KeyboardFocusManager.getVetoableChangeListeners(java.lang.String)
+    /// public java.awt.Window java.awt.KeyboardFocusManager.getActiveWindow()
 
-    private static var getVetoableChangeListeners_MethodID_52: jmethodID?
+    private static var getActiveWindow_MethodID_25: jmethodID?
 
-    open func getVetoableChangeListeners( arg0: String? ) -> [/* java.beans.VetoableChangeListener */ UnclassedProtocol]! {
+    open func getActiveWindow() -> Window! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActiveWindow", methodSig: "()Ljava/awt/Window;", methodCache: &KeyboardFocusManager.getActiveWindow_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Window( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Container java.awt.KeyboardFocusManager.getCurrentFocusCycleRoot()
+
+    private static var getCurrentFocusCycleRoot_MethodID_26: jmethodID?
+
+    open func getCurrentFocusCycleRoot() -> Container! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVetoableChangeListeners", methodSig: "(Ljava/lang/String;)[Ljava/beans/VetoableChangeListener;", methodCache: &KeyboardFocusManager.getVetoableChangeListeners_MethodID_52, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.VetoableChangeListener */ UnclassedProtocolForward](), from: __return )
-    }
-
-    open func getVetoableChangeListeners( _ _arg0: String? ) -> [/* java.beans.VetoableChangeListener */ UnclassedProtocol]! {
-        return getVetoableChangeListeners( arg0: _arg0 )
-    }
-
-    /// public synchronized java.beans.PropertyChangeListener[] java.awt.KeyboardFocusManager.getPropertyChangeListeners()
-
-    private static var getPropertyChangeListeners_MethodID_53: jmethodID?
-
-    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentFocusCycleRoot", methodSig: "()Ljava/awt/Container;", methodCache: &KeyboardFocusManager.getCurrentFocusCycleRoot_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Container( javaObject: __return ) : nil
+    }
+
+
+    /// final java.awt.SequencedEvent java.awt.KeyboardFocusManager.getCurrentSequencedEvent()
+
+    // Skipping method: true false false false false 
+
+    /// java.awt.Component java.awt.KeyboardFocusManager.getCurrentWaitingRequest(java.awt.Component)
+
+    // Skipping method: true false false false false 
+
+    /// public java.util.Set java.awt.KeyboardFocusManager.getDefaultFocusTraversalKeys(int)
+
+    private static var getDefaultFocusTraversalKeys_MethodID_27: jmethodID?
+
+    open func getDefaultFocusTraversalKeys( arg0: Int ) -> java_swift.JavaSet! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &KeyboardFocusManager.getPropertyChangeListeners_MethodID_53, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(arg0) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultFocusTraversalKeys", methodSig: "(I)Ljava/util/Set;", methodCache: &KeyboardFocusManager.getDefaultFocusTraversalKeys_MethodID_27, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaSetForward( javaObject: __return ) : nil
+    }
+
+    open func getDefaultFocusTraversalKeys( _ _arg0: Int ) -> java_swift.JavaSet! {
+        return getDefaultFocusTraversalKeys( arg0: _arg0 )
+    }
+
+    /// public synchronized java.awt.FocusTraversalPolicy java.awt.KeyboardFocusManager.getDefaultFocusTraversalPolicy()
+
+    private static var getDefaultFocusTraversalPolicy_MethodID_28: jmethodID?
+
+    open func getDefaultFocusTraversalPolicy() -> FocusTraversalPolicy! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultFocusTraversalPolicy", methodSig: "()Ljava/awt/FocusTraversalPolicy;", methodCache: &KeyboardFocusManager.getDefaultFocusTraversalPolicy_MethodID_28, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? FocusTraversalPolicy( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Component java.awt.KeyboardFocusManager.getFocusOwner()
+
+    private static var getFocusOwner_MethodID_29: jmethodID?
+
+    open func getFocusOwner() -> Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &KeyboardFocusManager.getFocusOwner_MethodID_29, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Window java.awt.KeyboardFocusManager.getFocusedWindow()
+
+    private static var getFocusedWindow_MethodID_30: jmethodID?
+
+    open func getFocusedWindow() -> Window! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusedWindow", methodSig: "()Ljava/awt/Window;", methodCache: &KeyboardFocusManager.getFocusedWindow_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Window( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Window java.awt.KeyboardFocusManager.getGlobalActiveWindow() throws java.lang.SecurityException
+
+    private static var getGlobalActiveWindow_MethodID_31: jmethodID?
+
+    open func getGlobalActiveWindow() throws /* java.lang.SecurityException */ -> Window! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlobalActiveWindow", methodSig: "()Ljava/awt/Window;", methodCache: &KeyboardFocusManager.getGlobalActiveWindow_MethodID_31, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+        return __return != nil ? Window( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Container java.awt.KeyboardFocusManager.getGlobalCurrentFocusCycleRoot() throws java.lang.SecurityException
+
+    private static var getGlobalCurrentFocusCycleRoot_MethodID_32: jmethodID?
+
+    open func getGlobalCurrentFocusCycleRoot() throws /* java.lang.SecurityException */ -> Container! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlobalCurrentFocusCycleRoot", methodSig: "()Ljava/awt/Container;", methodCache: &KeyboardFocusManager.getGlobalCurrentFocusCycleRoot_MethodID_32, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+        return __return != nil ? Container( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Component java.awt.KeyboardFocusManager.getGlobalFocusOwner() throws java.lang.SecurityException
+
+    private static var getGlobalFocusOwner_MethodID_33: jmethodID?
+
+    open func getGlobalFocusOwner() throws /* java.lang.SecurityException */ -> Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlobalFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &KeyboardFocusManager.getGlobalFocusOwner_MethodID_33, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+        return __return != nil ? Component( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Window java.awt.KeyboardFocusManager.getGlobalFocusedWindow() throws java.lang.SecurityException
+
+    private static var getGlobalFocusedWindow_MethodID_34: jmethodID?
+
+    open func getGlobalFocusedWindow() throws /* java.lang.SecurityException */ -> Window! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlobalFocusedWindow", methodSig: "()Ljava/awt/Window;", methodCache: &KeyboardFocusManager.getGlobalFocusedWindow_MethodID_34, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+        return __return != nil ? Window( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Component java.awt.KeyboardFocusManager.getGlobalPermanentFocusOwner() throws java.lang.SecurityException
+
+    private static var getGlobalPermanentFocusOwner_MethodID_35: jmethodID?
+
+    open func getGlobalPermanentFocusOwner() throws /* java.lang.SecurityException */ -> Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlobalPermanentFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &KeyboardFocusManager.getGlobalPermanentFocusOwner_MethodID_35, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+        return __return != nil ? Component( javaObject: __return ) : nil
+    }
+
+
+    /// protected synchronized java.util.List java.awt.KeyboardFocusManager.getKeyEventDispatchers()
+
+    private static var getKeyEventDispatchers_MethodID_36: jmethodID?
+
+    open func getKeyEventDispatchers() -> java_util.List! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeyEventDispatchers", methodSig: "()Ljava/util/List;", methodCache: &KeyboardFocusManager.getKeyEventDispatchers_MethodID_36, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.util.List java.awt.KeyboardFocusManager.getKeyEventPostProcessors()
+
+    private static var getKeyEventPostProcessors_MethodID_37: jmethodID?
+
+    open func getKeyEventPostProcessors() -> java_util.List! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeyEventPostProcessors", methodSig: "()Ljava/util/List;", methodCache: &KeyboardFocusManager.getKeyEventPostProcessors_MethodID_37, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
+    }
+
+
+    /// java.awt.Component java.awt.KeyboardFocusManager.getNativeFocusOwner()
+
+    // Skipping method: true false false false false 
+
+    /// java.awt.Window java.awt.KeyboardFocusManager.getNativeFocusedWindow()
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Component java.awt.KeyboardFocusManager.getPermanentFocusOwner()
+
+    private static var getPermanentFocusOwner_MethodID_38: jmethodID?
+
+    open func getPermanentFocusOwner() -> Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPermanentFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &KeyboardFocusManager.getPermanentFocusOwner_MethodID_38, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component( javaObject: __return ) : nil
     }
 
 
     /// public synchronized java.beans.PropertyChangeListener[] java.awt.KeyboardFocusManager.getPropertyChangeListeners(java.lang.String)
 
-    private static var getPropertyChangeListeners_MethodID_54: jmethodID?
+    private static var getPropertyChangeListeners_MethodID_39: jmethodID?
 
-    open func getPropertyChangeListeners( arg0: String? ) -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getPropertyChangeListeners( arg0: String? ) -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "(Ljava/lang/String;)[Ljava/beans/PropertyChangeListener;", methodCache: &KeyboardFocusManager.getPropertyChangeListeners_MethodID_54, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "(Ljava/lang/String;)[Ljava/beans/PropertyChangeListener;", methodCache: &KeyboardFocusManager.getPropertyChangeListeners_MethodID_39, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward].self, from: __return )
     }
 
-    open func getPropertyChangeListeners( _ _arg0: String? ) -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
+    open func getPropertyChangeListeners( _ _arg0: String? ) -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
         return getPropertyChangeListeners( arg0: _arg0 )
     }
 
+    /// public synchronized java.beans.PropertyChangeListener[] java.awt.KeyboardFocusManager.getPropertyChangeListeners()
+
+    private static var getPropertyChangeListeners_MethodID_40: jmethodID?
+
+    open func getPropertyChangeListeners() -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &KeyboardFocusManager.getPropertyChangeListeners_MethodID_40, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward].self, from: __return )
+    }
+
+
+    /// public synchronized java.beans.VetoableChangeListener[] java.awt.KeyboardFocusManager.getVetoableChangeListeners(java.lang.String)
+
+    private static var getVetoableChangeListeners_MethodID_41: jmethodID?
+
+    open func getVetoableChangeListeners( arg0: String? ) -> [/* interface java.beans.VetoableChangeListener */ UnavailableProtocol]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVetoableChangeListeners", methodSig: "(Ljava/lang/String;)[Ljava/beans/VetoableChangeListener;", methodCache: &KeyboardFocusManager.getVetoableChangeListeners_MethodID_41, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* interface java.beans.VetoableChangeListener */ UnavailableProtocolForward].self, from: __return )
+    }
+
+    open func getVetoableChangeListeners( _ _arg0: String? ) -> [/* interface java.beans.VetoableChangeListener */ UnavailableProtocol]! {
+        return getVetoableChangeListeners( arg0: _arg0 )
+    }
+
+    /// public synchronized java.beans.VetoableChangeListener[] java.awt.KeyboardFocusManager.getVetoableChangeListeners()
+
+    private static var getVetoableChangeListeners_MethodID_42: jmethodID?
+
+    open func getVetoableChangeListeners() -> [/* interface java.beans.VetoableChangeListener */ UnavailableProtocol]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVetoableChangeListeners", methodSig: "()[Ljava/beans/VetoableChangeListener;", methodCache: &KeyboardFocusManager.getVetoableChangeListeners_MethodID_42, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* interface java.beans.VetoableChangeListener */ UnavailableProtocolForward].self, from: __return )
+    }
+
+
+    /// private void java.awt.KeyboardFocusManager.initPeer()
+
     /// public abstract boolean java.awt.KeyboardFocusManager.postProcessKeyEvent(java.awt.event.KeyEvent)
 
-    private static var postProcessKeyEvent_MethodID_55: jmethodID?
+    private static var postProcessKeyEvent_MethodID_43: jmethodID?
 
     open func postProcessKeyEvent( e: KeyEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "postProcessKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)Z", methodCache: &KeyboardFocusManager.postProcessKeyEvent_MethodID_55, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "postProcessKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)Z", methodCache: &KeyboardFocusManager.postProcessKeyEvent_MethodID_43, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func postProcessKeyEvent( _ _e: KeyEvent? ) -> Bool {
         return postProcessKeyEvent( e: _e )
     }
 
-    /// public void java.awt.KeyboardFocusManager.addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
+    /// public abstract void java.awt.KeyboardFocusManager.processKeyEvent(java.awt.Component,java.awt.event.KeyEvent)
 
-    private static var addPropertyChangeListener_MethodID_56: jmethodID?
+    private static var processKeyEvent_MethodID_44: jmethodID?
 
-    open func addPropertyChangeListener( arg0: String?, arg1: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func processKeyEvent( arg0: Component?, arg1: KeyEvent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &KeyboardFocusManager.addPropertyChangeListener_MethodID_56, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processKeyEvent", methodSig: "(Ljava/awt/Component;Ljava/awt/event/KeyEvent;)V", methodCache: &KeyboardFocusManager.processKeyEvent_MethodID_44, args: &__args, locals: &__locals )
     }
 
-    open func addPropertyChangeListener( _ _arg0: String?, _ _arg1: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        addPropertyChangeListener( arg0: _arg0, arg1: _arg1 )
+    open func processKeyEvent( _ _arg0: Component?, _ _arg1: KeyEvent? ) {
+        processKeyEvent( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public void java.awt.KeyboardFocusManager.addPropertyChangeListener(java.beans.PropertyChangeListener)
+    /// public final void java.awt.KeyboardFocusManager.redispatchEvent(java.awt.Component,java.awt.AWTEvent)
 
-    private static var addPropertyChangeListener_MethodID_57: jmethodID?
+    private static var redispatchEvent_MethodID_45: jmethodID?
 
-    open func addPropertyChangeListener( arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func redispatchEvent( arg0: Component?, arg1: AWTEvent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &KeyboardFocusManager.addPropertyChangeListener_MethodID_57, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "redispatchEvent", methodSig: "(Ljava/awt/Component;Ljava/awt/AWTEvent;)V", methodCache: &KeyboardFocusManager.redispatchEvent_MethodID_45, args: &__args, locals: &__locals )
     }
 
-    open func addPropertyChangeListener( _ _arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        addPropertyChangeListener( arg0: _arg0 )
+    open func redispatchEvent( _ _arg0: Component?, _ _arg1: AWTEvent? ) {
+        redispatchEvent( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public abstract boolean java.awt.KeyboardFocusManager.dispatchEvent(java.awt.AWTEvent)
+    /// public void java.awt.KeyboardFocusManager.removeKeyEventDispatcher(java.awt.KeyEventDispatcher)
 
-    private static var dispatchEvent_MethodID_58: jmethodID?
+    private static var removeKeyEventDispatcher_MethodID_46: jmethodID?
 
-    open func dispatchEvent( arg0: AWTEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func removeKeyEventDispatcher( arg0: KeyEventDispatcher? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "dispatchEvent", methodSig: "(Ljava/awt/AWTEvent;)Z", methodCache: &KeyboardFocusManager.dispatchEvent_MethodID_58, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeKeyEventDispatcher", methodSig: "(Ljava/awt/KeyEventDispatcher;)V", methodCache: &KeyboardFocusManager.removeKeyEventDispatcher_MethodID_46, args: &__args, locals: &__locals )
     }
 
-    open func dispatchEvent( _ _arg0: AWTEvent? ) -> Bool {
-        return dispatchEvent( arg0: _arg0 )
+    open func removeKeyEventDispatcher( _ _arg0: KeyEventDispatcher? ) {
+        removeKeyEventDispatcher( arg0: _arg0 )
     }
 
-    /// static synchronized java.awt.KeyboardFocusManager java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager(sun.awt.AppContext)
+    /// public void java.awt.KeyboardFocusManager.removeKeyEventPostProcessor(java.awt.KeyEventPostProcessor)
 
-    /// public static java.awt.KeyboardFocusManager java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager()
+    private static var removeKeyEventPostProcessor_MethodID_47: jmethodID?
 
-    private static var getCurrentKeyboardFocusManager_MethodID_59: jmethodID?
-
-    open class func getCurrentKeyboardFocusManager() -> KeyboardFocusManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func removeKeyEventPostProcessor( arg0: KeyEventPostProcessor? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass, methodName: "getCurrentKeyboardFocusManager", methodSig: "()Ljava/awt/KeyboardFocusManager;", methodCache: &getCurrentKeyboardFocusManager_MethodID_59, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? KeyboardFocusManager( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeKeyEventPostProcessor", methodSig: "(Ljava/awt/KeyEventPostProcessor;)V", methodCache: &KeyboardFocusManager.removeKeyEventPostProcessor_MethodID_47, args: &__args, locals: &__locals )
     }
 
+    open func removeKeyEventPostProcessor( _ _arg0: KeyEventPostProcessor? ) {
+        removeKeyEventPostProcessor( arg0: _arg0 )
+    }
 
-    /// public java.awt.Component java.awt.KeyboardFocusManager.getFocusOwner()
+    /// public void java.awt.KeyboardFocusManager.removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
 
-    private static var getFocusOwner_MethodID_60: jmethodID?
+    private static var removePropertyChangeListener_MethodID_48: jmethodID?
 
-    open func getFocusOwner() -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func removePropertyChangeListener( arg0: String?, arg1: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &KeyboardFocusManager.getFocusOwner_MethodID_60, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &KeyboardFocusManager.removePropertyChangeListener_MethodID_48, args: &__args, locals: &__locals )
+    }
+
+    open func removePropertyChangeListener( _ _arg0: String?, _ _arg1: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        removePropertyChangeListener( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.KeyboardFocusManager.removePropertyChangeListener(java.beans.PropertyChangeListener)
+
+    private static var removePropertyChangeListener_MethodID_49: jmethodID?
+
+    open func removePropertyChangeListener( arg0: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &KeyboardFocusManager.removePropertyChangeListener_MethodID_49, args: &__args, locals: &__locals )
+    }
+
+    open func removePropertyChangeListener( _ _arg0: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        removePropertyChangeListener( arg0: _arg0 )
+    }
+
+    /// public void java.awt.KeyboardFocusManager.removeVetoableChangeListener(java.lang.String,java.beans.VetoableChangeListener)
+
+    private static var removeVetoableChangeListener_MethodID_50: jmethodID?
+
+    open func removeVetoableChangeListener( arg0: String?, arg1: /* interface java.beans.VetoableChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeVetoableChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/VetoableChangeListener;)V", methodCache: &KeyboardFocusManager.removeVetoableChangeListener_MethodID_50, args: &__args, locals: &__locals )
+    }
+
+    open func removeVetoableChangeListener( _ _arg0: String?, _ _arg1: /* interface java.beans.VetoableChangeListener */ UnavailableProtocol? ) {
+        removeVetoableChangeListener( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.KeyboardFocusManager.removeVetoableChangeListener(java.beans.VetoableChangeListener)
+
+    private static var removeVetoableChangeListener_MethodID_51: jmethodID?
+
+    open func removeVetoableChangeListener( arg0: /* interface java.beans.VetoableChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeVetoableChangeListener", methodSig: "(Ljava/beans/VetoableChangeListener;)V", methodCache: &KeyboardFocusManager.removeVetoableChangeListener_MethodID_51, args: &__args, locals: &__locals )
+    }
+
+    open func removeVetoableChangeListener( _ _arg0: /* interface java.beans.VetoableChangeListener */ UnavailableProtocol? ) {
+        removeVetoableChangeListener( arg0: _arg0 )
+    }
+
+    /// final void java.awt.KeyboardFocusManager.setCurrentSequencedEvent(java.awt.SequencedEvent)
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.KeyboardFocusManager.setDefaultFocusTraversalKeys(int,java.util.Set)
+
+    private static var setDefaultFocusTraversalKeys_MethodID_52: jmethodID?
+
+    open func setDefaultFocusTraversalKeys( arg0: Int, arg1: java_swift.JavaSet? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultFocusTraversalKeys", methodSig: "(ILjava/util/Set;)V", methodCache: &KeyboardFocusManager.setDefaultFocusTraversalKeys_MethodID_52, args: &__args, locals: &__locals )
+    }
+
+    open func setDefaultFocusTraversalKeys( _ _arg0: Int, _ _arg1: java_swift.JavaSet? ) {
+        setDefaultFocusTraversalKeys( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.KeyboardFocusManager.setDefaultFocusTraversalPolicy(java.awt.FocusTraversalPolicy)
+
+    private static var setDefaultFocusTraversalPolicy_MethodID_53: jmethodID?
+
+    open func setDefaultFocusTraversalPolicy( arg0: FocusTraversalPolicy? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultFocusTraversalPolicy", methodSig: "(Ljava/awt/FocusTraversalPolicy;)V", methodCache: &KeyboardFocusManager.setDefaultFocusTraversalPolicy_MethodID_53, args: &__args, locals: &__locals )
+    }
+
+    open func setDefaultFocusTraversalPolicy( _ _arg0: FocusTraversalPolicy? ) {
+        setDefaultFocusTraversalPolicy( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.KeyboardFocusManager.setGlobalActiveWindow(java.awt.Window) throws java.lang.SecurityException
+
+    private static var setGlobalActiveWindow_MethodID_54: jmethodID?
+
+    open func setGlobalActiveWindow( arg0: Window? ) throws /* java.lang.SecurityException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlobalActiveWindow", methodSig: "(Ljava/awt/Window;)V", methodCache: &KeyboardFocusManager.setGlobalActiveWindow_MethodID_54, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+    }
+
+    open func setGlobalActiveWindow( _ _arg0: Window? ) throws /* java.lang.SecurityException */ {
+        try setGlobalActiveWindow( arg0: _arg0 )
+    }
+
+    /// public void java.awt.KeyboardFocusManager.setGlobalCurrentFocusCycleRoot(java.awt.Container) throws java.lang.SecurityException
+
+    private static var setGlobalCurrentFocusCycleRoot_MethodID_55: jmethodID?
+
+    open func setGlobalCurrentFocusCycleRoot( arg0: Container? ) throws /* java.lang.SecurityException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlobalCurrentFocusCycleRoot", methodSig: "(Ljava/awt/Container;)V", methodCache: &KeyboardFocusManager.setGlobalCurrentFocusCycleRoot_MethodID_55, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+    }
+
+    open func setGlobalCurrentFocusCycleRoot( _ _arg0: Container? ) throws /* java.lang.SecurityException */ {
+        try setGlobalCurrentFocusCycleRoot( arg0: _arg0 )
+    }
+
+    /// void java.awt.KeyboardFocusManager.setGlobalCurrentFocusCycleRootPriv(java.awt.Container)
+
+    // Skipping method: true false false false false 
+
+    /// protected void java.awt.KeyboardFocusManager.setGlobalFocusOwner(java.awt.Component) throws java.lang.SecurityException
+
+    private static var setGlobalFocusOwner_MethodID_56: jmethodID?
+
+    open func setGlobalFocusOwner( arg0: Component? ) throws /* java.lang.SecurityException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlobalFocusOwner", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.setGlobalFocusOwner_MethodID_56, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+    }
+
+    open func setGlobalFocusOwner( _ _arg0: Component? ) throws /* java.lang.SecurityException */ {
+        try setGlobalFocusOwner( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.KeyboardFocusManager.setGlobalFocusedWindow(java.awt.Window) throws java.lang.SecurityException
+
+    private static var setGlobalFocusedWindow_MethodID_57: jmethodID?
+
+    open func setGlobalFocusedWindow( arg0: Window? ) throws /* java.lang.SecurityException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlobalFocusedWindow", methodSig: "(Ljava/awt/Window;)V", methodCache: &KeyboardFocusManager.setGlobalFocusedWindow_MethodID_57, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+    }
+
+    open func setGlobalFocusedWindow( _ _arg0: Window? ) throws /* java.lang.SecurityException */ {
+        try setGlobalFocusedWindow( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.KeyboardFocusManager.setGlobalPermanentFocusOwner(java.awt.Component) throws java.lang.SecurityException
+
+    private static var setGlobalPermanentFocusOwner_MethodID_58: jmethodID?
+
+    open func setGlobalPermanentFocusOwner( arg0: Component? ) throws /* java.lang.SecurityException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlobalPermanentFocusOwner", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.setGlobalPermanentFocusOwner_MethodID_58, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+    }
+
+    open func setGlobalPermanentFocusOwner( _ _arg0: Component? ) throws /* java.lang.SecurityException */ {
+        try setGlobalPermanentFocusOwner( arg0: _arg0 )
+    }
+
+    /// void java.awt.KeyboardFocusManager.setNativeFocusOwner(java.awt.Component)
+
+    // Skipping method: true false false false false 
+
+    /// public abstract void java.awt.KeyboardFocusManager.upFocusCycle(java.awt.Component)
+
+    private static var upFocusCycle_MethodID_59: jmethodID?
+
+    open func upFocusCycle( arg0: Component? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "upFocusCycle", methodSig: "(Ljava/awt/Component;)V", methodCache: &KeyboardFocusManager.upFocusCycle_MethodID_59, args: &__args, locals: &__locals )
+    }
+
+    open func upFocusCycle( _ _arg0: Component? ) {
+        upFocusCycle( arg0: _arg0 )
+    }
+
+    /// public final void java.awt.KeyboardFocusManager.upFocusCycle()
+
+    private static var upFocusCycle_MethodID_60: jmethodID?
+
+    open func upFocusCycle() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "upFocusCycle", methodSig: "()V", methodCache: &KeyboardFocusManager.upFocusCycle_MethodID_60, args: &__args, locals: &__locals )
     }
 
 

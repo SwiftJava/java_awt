@@ -16,17 +16,6 @@ open class Arc2D: RectangularShape {
 
     private static var Arc2DJNIClass: jclass?
 
-    /// public static final int java.awt.geom.Arc2D.OPEN
-
-    private static var OPEN_FieldID: jfieldID?
-
-    open static var OPEN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "OPEN", fieldType: "I", fieldCache: &OPEN_FieldID, className: "java/awt/geom/Arc2D", classCache: &Arc2DJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.geom.Arc2D.CHORD
 
     private static var CHORD_FieldID: jfieldID?
@@ -34,7 +23,18 @@ open class Arc2D: RectangularShape {
     open static var CHORD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CHORD", fieldType: "I", fieldCache: &CHORD_FieldID, className: "java/awt/geom/Arc2D", classCache: &Arc2DJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.geom.Arc2D.OPEN
+
+    private static var OPEN_FieldID: jfieldID?
+
+    open static var OPEN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "OPEN", fieldType: "I", fieldCache: &OPEN_FieldID, className: "java/awt/geom/Arc2D", classCache: &Arc2DJNIClass )
+            return Int(__value)
         }
     }
 
@@ -45,7 +45,7 @@ open class Arc2D: RectangularShape {
     open static var PIE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PIE", fieldType: "I", fieldCache: &PIE_FieldID, className: "java/awt/geom/Arc2D", classCache: &Arc2DJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -56,8 +56,8 @@ open class Arc2D: RectangularShape {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Arc2D", classCache: &Arc2D.Arc2DJNIClass, methodSig: "()V", methodCache: &Arc2D.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -68,9 +68,9 @@ open class Arc2D: RectangularShape {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( type: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(type) )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Arc2D", classCache: &Arc2D.Arc2DJNIClass, methodSig: "(I)V", methodCache: &Arc2D.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -80,63 +80,65 @@ open class Arc2D: RectangularShape {
         self.init( type: _type )
     }
 
+    /// static double java.awt.geom.Arc2D.normalizeDegrees(double)
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.geom.Arc2D.contains(double,double)
+
+    // Skipping method: false true false false false 
+
+    /// public boolean java.awt.geom.Arc2D.contains(double,double,double,double)
+
+    // Skipping method: false true false false false 
+
+    /// private boolean java.awt.geom.Arc2D.contains(double,double,double,double,java.awt.geom.Rectangle2D)
+
+    /// public boolean java.awt.geom.Arc2D.contains(java.awt.geom.Rectangle2D)
+
+    // Skipping method: false true false false false 
+
+    /// public boolean java.awt.geom.Arc2D.containsAngle(double)
+
+    private static var containsAngle_MethodID_3: jmethodID?
+
+    open func containsAngle( angle: Double ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( d: angle )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAngle", methodSig: "(D)Z", methodCache: &Arc2D.containsAngle_MethodID_3, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func containsAngle( _ _angle: Double ) -> Bool {
+        return containsAngle( angle: _angle )
+    }
+
     /// public boolean java.awt.geom.Arc2D.equals(java.lang.Object)
 
-    private static var equals_MethodID_3: jmethodID?
+    private static var equals_MethodID_4: jmethodID?
 
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: obj, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &Arc2D.equals_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &Arc2D.equals_MethodID_4, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _obj: java_swift.JavaObject? ) -> Bool {
         return equals( obj: _obj )
     }
 
-    /// public int java.awt.geom.Arc2D.hashCode()
+    /// public abstract double java.awt.geom.Arc2D.getAngleExtent()
 
-    /// public boolean java.awt.geom.Arc2D.contains(double,double)
+    private static var getAngleExtent_MethodID_5: jmethodID?
 
-    /// public boolean java.awt.geom.Arc2D.contains(double,double,double,double)
-
-    /// public boolean java.awt.geom.Arc2D.contains(java.awt.geom.Rectangle2D)
-
-    /// private boolean java.awt.geom.Arc2D.contains(double,double,double,double,java.awt.geom.Rectangle2D)
-
-    /// public boolean java.awt.geom.Arc2D.intersects(double,double,double,double)
-
-    /// public java.awt.geom.PathIterator java.awt.geom.Arc2D.getPathIterator(java.awt.geom.AffineTransform)
-
-    /// public java.awt.geom.Rectangle2D java.awt.geom.Arc2D.getBounds2D()
-
-    /// public void java.awt.geom.Arc2D.setFrame(double,double,double,double)
-
-    /// public java.awt.geom.Point2D java.awt.geom.Arc2D.getStartPoint()
-
-    private static var getStartPoint_MethodID_4: jmethodID?
-
-    open func getStartPoint() -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getAngleExtent() -> Double {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStartPoint", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &Arc2D.getStartPoint_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point2D( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.geom.Point2D java.awt.geom.Arc2D.getEndPoint()
-
-    private static var getEndPoint_MethodID_5: jmethodID?
-
-    open func getEndPoint() -> Point2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEndPoint", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &Arc2D.getEndPoint_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point2D( javaObject: __return ) : nil
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getAngleExtent", methodSig: "()D", methodCache: &Arc2D.getAngleExtent_MethodID_5, args: &__args, locals: &__locals )
+        return __return
     }
 
 
@@ -145,155 +147,79 @@ open class Arc2D: RectangularShape {
     private static var getAngleStart_MethodID_6: jmethodID?
 
     open func getAngleStart() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getAngleStart", methodSig: "()D", methodCache: &Arc2D.getAngleStart_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        return __return
     }
 
 
-    /// public abstract double java.awt.geom.Arc2D.getAngleExtent()
+    /// public int java.awt.geom.Arc2D.getArcType()
 
-    private static var getAngleExtent_MethodID_7: jmethodID?
+    private static var getArcType_MethodID_7: jmethodID?
 
-    open func getAngleExtent() -> Double {
+    open func getArcType() -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getAngleExtent", methodSig: "()D", methodCache: &Arc2D.getAngleExtent_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getArcType", methodSig: "()I", methodCache: &Arc2D.getArcType_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public void java.awt.geom.Arc2D.setArc(java.awt.geom.Arc2D)
+    /// public java.awt.geom.Rectangle2D java.awt.geom.Arc2D.getBounds2D()
 
-    private static var setArc_MethodID_8: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func setArc( a: Arc2D? ) {
+    /// public java.awt.geom.Point2D java.awt.geom.Arc2D.getEndPoint()
+
+    private static var getEndPoint_MethodID_8: jmethodID?
+
+    open func getEndPoint() -> Point2D! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEndPoint", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &Arc2D.getEndPoint_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point2D( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.geom.PathIterator java.awt.geom.Arc2D.getPathIterator(java.awt.geom.AffineTransform)
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.geom.Point2D java.awt.geom.Arc2D.getStartPoint()
+
+    private static var getStartPoint_MethodID_9: jmethodID?
+
+    open func getStartPoint() -> Point2D! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArc", methodSig: "(Ljava/awt/geom/Arc2D;)V", methodCache: &Arc2D.setArc_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setArc( _ _a: Arc2D? ) {
-        setArc( a: _a )
-    }
-
-    /// public void java.awt.geom.Arc2D.setArc(java.awt.geom.Rectangle2D,double,double,int)
-
-    private static var setArc_MethodID_9: jmethodID?
-
-    open func setArc( rect: Rectangle2D?, angSt: Double, angExt: Double, closure: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rect, locals: &__locals )
-        __args[1] = JNIType.toJava( value: angSt, locals: &__locals )
-        __args[2] = JNIType.toJava( value: angExt, locals: &__locals )
-        __args[3] = JNIType.toJava( value: closure, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArc", methodSig: "(Ljava/awt/geom/Rectangle2D;DDI)V", methodCache: &Arc2D.setArc_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func setArc( _ _rect: Rectangle2D?, _ _angSt: Double, _ _angExt: Double, _ _closure: Int ) {
-        setArc( rect: _rect, angSt: _angSt, angExt: _angExt, closure: _closure )
-    }
-
-    /// public void java.awt.geom.Arc2D.setArc(java.awt.geom.Point2D,java.awt.geom.Dimension2D,double,double,int)
-
-    private static var setArc_MethodID_10: jmethodID?
-
-    open func setArc( loc: Point2D?, size: Dimension2D?, angSt: Double, angExt: Double, closure: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: loc, locals: &__locals )
-        __args[1] = JNIType.toJava( value: size, locals: &__locals )
-        __args[2] = JNIType.toJava( value: angSt, locals: &__locals )
-        __args[3] = JNIType.toJava( value: angExt, locals: &__locals )
-        __args[4] = JNIType.toJava( value: closure, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArc", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Dimension2D;DDI)V", methodCache: &Arc2D.setArc_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func setArc( _ _loc: Point2D?, _ _size: Dimension2D?, _ _angSt: Double, _ _angExt: Double, _ _closure: Int ) {
-        setArc( loc: _loc, size: _size, angSt: _angSt, angExt: _angExt, closure: _closure )
-    }
-
-    /// public abstract void java.awt.geom.Arc2D.setArc(double,double,double,double,double,double,int)
-
-    private static var setArc_MethodID_11: jmethodID?
-
-    open func setArc( x: Double, y: Double, w: Double, h: Double, angSt: Double, angExt: Double, closure: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: angSt, locals: &__locals )
-        __args[5] = JNIType.toJava( value: angExt, locals: &__locals )
-        __args[6] = JNIType.toJava( value: closure, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArc", methodSig: "(DDDDDDI)V", methodCache: &Arc2D.setArc_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setArc( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double, _ _angSt: Double, _ _angExt: Double, _ _closure: Int ) {
-        setArc( x: _x, y: _y, w: _w, h: _h, angSt: _angSt, angExt: _angExt, closure: _closure )
-    }
-
-    /// public void java.awt.geom.Arc2D.setAngleStart(java.awt.geom.Point2D)
-
-    private static var setAngleStart_MethodID_12: jmethodID?
-
-    open func setAngleStart( p: Point2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngleStart", methodSig: "(Ljava/awt/geom/Point2D;)V", methodCache: &Arc2D.setAngleStart_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStartPoint", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &Arc2D.getStartPoint_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point2D( javaObject: __return ) : nil
     }
 
-    open func setAngleStart( _ _p: Point2D? ) {
-        setAngleStart( p: _p )
-    }
 
-    /// public abstract void java.awt.geom.Arc2D.setAngleStart(double)
+    /// public int java.awt.geom.Arc2D.hashCode()
 
-    private static var setAngleStart_MethodID_13: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func setAngleStart( angSt: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: angSt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngleStart", methodSig: "(D)V", methodCache: &Arc2D.setAngleStart_MethodID_13, args: &__args, locals: &__locals )
-    }
+    /// public boolean java.awt.geom.Arc2D.intersects(double,double,double,double)
 
-    open func setAngleStart( _ _angSt: Double ) {
-        setAngleStart( angSt: _angSt )
-    }
-
-    /// public abstract void java.awt.geom.Arc2D.setAngleExtent(double)
-
-    private static var setAngleExtent_MethodID_14: jmethodID?
-
-    open func setAngleExtent( angExt: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: angExt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngleExtent", methodSig: "(D)V", methodCache: &Arc2D.setAngleExtent_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setAngleExtent( _ _angExt: Double ) {
-        setAngleExtent( angExt: _angExt )
-    }
+    // Skipping method: false true false false false 
 
     /// protected abstract java.awt.geom.Rectangle2D java.awt.geom.Arc2D.makeBounds(double,double,double,double)
 
-    private static var makeBounds_MethodID_15: jmethodID?
+    private static var makeBounds_MethodID_10: jmethodID?
 
     open func makeBounds( x: Double, y: Double, w: Double, h: Double ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "makeBounds", methodSig: "(DDDD)Ljava/awt/geom/Rectangle2D;", methodCache: &Arc2D.makeBounds_MethodID_15, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: w )
+        __args[3] = jvalue( d: h )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "makeBounds", methodSig: "(DDDD)Ljava/awt/geom/Rectangle2D;", methodCache: &Arc2D.makeBounds_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
     }
@@ -302,83 +228,63 @@ open class Arc2D: RectangularShape {
         return makeBounds( x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void java.awt.geom.Arc2D.setArcType(int)
+    /// public abstract void java.awt.geom.Arc2D.setAngleExtent(double)
 
-    private static var setArcType_MethodID_16: jmethodID?
+    private static var setAngleExtent_MethodID_11: jmethodID?
 
-    open func setArcType( type: Int ) {
+    open func setAngleExtent( angExt: Double ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( d: angExt )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngleExtent", methodSig: "(D)V", methodCache: &Arc2D.setAngleExtent_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func setAngleExtent( _ _angExt: Double ) {
+        setAngleExtent( angExt: _angExt )
+    }
+
+    /// public abstract void java.awt.geom.Arc2D.setAngleStart(double)
+
+    private static var setAngleStart_MethodID_12: jmethodID?
+
+    open func setAngleStart( angSt: Double ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArcType", methodSig: "(I)V", methodCache: &Arc2D.setArcType_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setArcType( _ _type: Int ) {
-        setArcType( type: _type )
-    }
-
-    /// public int java.awt.geom.Arc2D.getArcType()
-
-    private static var getArcType_MethodID_17: jmethodID?
-
-    open func getArcType() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( d: angSt )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngleStart", methodSig: "(D)V", methodCache: &Arc2D.setAngleStart_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func setAngleStart( _ _angSt: Double ) {
+        setAngleStart( angSt: _angSt )
+    }
+
+    /// public void java.awt.geom.Arc2D.setAngleStart(java.awt.geom.Point2D)
+
+    private static var setAngleStart_MethodID_13: jmethodID?
+
+    open func setAngleStart( p: Point2D? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getArcType", methodSig: "()I", methodCache: &Arc2D.getArcType_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngleStart", methodSig: "(Ljava/awt/geom/Point2D;)V", methodCache: &Arc2D.setAngleStart_MethodID_13, args: &__args, locals: &__locals )
     }
 
-
-    /// public void java.awt.geom.Arc2D.setArcByCenter(double,double,double,double,double,int)
-
-    private static var setArcByCenter_MethodID_18: jmethodID?
-
-    open func setArcByCenter( x: Double, y: Double, radius: Double, angSt: Double, angExt: Double, closure: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: radius, locals: &__locals )
-        __args[3] = JNIType.toJava( value: angSt, locals: &__locals )
-        __args[4] = JNIType.toJava( value: angExt, locals: &__locals )
-        __args[5] = JNIType.toJava( value: closure, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArcByCenter", methodSig: "(DDDDDI)V", methodCache: &Arc2D.setArcByCenter_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func setArcByCenter( _ _x: Double, _ _y: Double, _ _radius: Double, _ _angSt: Double, _ _angExt: Double, _ _closure: Int ) {
-        setArcByCenter( x: _x, y: _y, radius: _radius, angSt: _angSt, angExt: _angExt, closure: _closure )
-    }
-
-    /// public void java.awt.geom.Arc2D.setArcByTangent(java.awt.geom.Point2D,java.awt.geom.Point2D,java.awt.geom.Point2D,double)
-
-    private static var setArcByTangent_MethodID_19: jmethodID?
-
-    open func setArcByTangent( p1: Point2D?, p2: Point2D?, p3: Point2D?, radius: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p2, locals: &__locals )
-        __args[2] = JNIType.toJava( value: p3, locals: &__locals )
-        __args[3] = JNIType.toJava( value: radius, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArcByTangent", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;D)V", methodCache: &Arc2D.setArcByTangent_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setArcByTangent( _ _p1: Point2D?, _ _p2: Point2D?, _ _p3: Point2D?, _ _radius: Double ) {
-        setArcByTangent( p1: _p1, p2: _p2, p3: _p3, radius: _radius )
+    open func setAngleStart( _ _p: Point2D? ) {
+        setAngleStart( p: _p )
     }
 
     /// public void java.awt.geom.Arc2D.setAngles(double,double,double,double)
 
-    private static var setAngles_MethodID_20: jmethodID?
+    private static var setAngles_MethodID_14: jmethodID?
 
     open func setAngles( x1: Double, y1: Double, x2: Double, y2: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngles", methodSig: "(DDDD)V", methodCache: &Arc2D.setAngles_MethodID_20, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( d: x1 )
+        __args[1] = jvalue( d: y1 )
+        __args[2] = jvalue( d: x2 )
+        __args[3] = jvalue( d: y2 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngles", methodSig: "(DDDD)V", methodCache: &Arc2D.setAngles_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setAngles( _ _x1: Double, _ _y1: Double, _ _x2: Double, _ _y2: Double ) {
@@ -387,37 +293,149 @@ open class Arc2D: RectangularShape {
 
     /// public void java.awt.geom.Arc2D.setAngles(java.awt.geom.Point2D,java.awt.geom.Point2D)
 
-    private static var setAngles_MethodID_21: jmethodID?
+    private static var setAngles_MethodID_15: jmethodID?
 
     open func setAngles( p1: Point2D?, p2: Point2D? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: p1, locals: &__locals )
         __args[1] = JNIType.toJava( value: p2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngles", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &Arc2D.setAngles_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAngles", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &Arc2D.setAngles_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func setAngles( _ _p1: Point2D?, _ _p2: Point2D? ) {
         setAngles( p1: _p1, p2: _p2 )
     }
 
-    /// static double java.awt.geom.Arc2D.normalizeDegrees(double)
+    /// public void java.awt.geom.Arc2D.setArc(java.awt.geom.Arc2D)
 
-    /// public boolean java.awt.geom.Arc2D.containsAngle(double)
+    private static var setArc_MethodID_16: jmethodID?
 
-    private static var containsAngle_MethodID_22: jmethodID?
-
-    open func containsAngle( angle: Double ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setArc( a: Arc2D? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: angle, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAngle", methodSig: "(D)Z", methodCache: &Arc2D.containsAngle_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArc", methodSig: "(Ljava/awt/geom/Arc2D;)V", methodCache: &Arc2D.setArc_MethodID_16, args: &__args, locals: &__locals )
     }
 
-    open func containsAngle( _ _angle: Double ) -> Bool {
-        return containsAngle( angle: _angle )
+    open func setArc( _ _a: Arc2D? ) {
+        setArc( a: _a )
     }
+
+    /// public abstract void java.awt.geom.Arc2D.setArc(double,double,double,double,double,double,int)
+
+    private static var setArc_MethodID_17: jmethodID?
+
+    open func setArc( x: Double, y: Double, w: Double, h: Double, angSt: Double, angExt: Double, closure: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: w )
+        __args[3] = jvalue( d: h )
+        __args[4] = jvalue( d: angSt )
+        __args[5] = jvalue( d: angExt )
+        __args[6] = jvalue( i: jint(closure) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArc", methodSig: "(DDDDDDI)V", methodCache: &Arc2D.setArc_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func setArc( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double, _ _angSt: Double, _ _angExt: Double, _ _closure: Int ) {
+        setArc( x: _x, y: _y, w: _w, h: _h, angSt: _angSt, angExt: _angExt, closure: _closure )
+    }
+
+    /// public void java.awt.geom.Arc2D.setArc(java.awt.geom.Point2D,java.awt.geom.Dimension2D,double,double,int)
+
+    private static var setArc_MethodID_18: jmethodID?
+
+    open func setArc( loc: Point2D?, size: Dimension2D?, angSt: Double, angExt: Double, closure: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: loc, locals: &__locals )
+        __args[1] = JNIType.toJava( value: size, locals: &__locals )
+        __args[2] = jvalue( d: angSt )
+        __args[3] = jvalue( d: angExt )
+        __args[4] = jvalue( i: jint(closure) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArc", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Dimension2D;DDI)V", methodCache: &Arc2D.setArc_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setArc( _ _loc: Point2D?, _ _size: Dimension2D?, _ _angSt: Double, _ _angExt: Double, _ _closure: Int ) {
+        setArc( loc: _loc, size: _size, angSt: _angSt, angExt: _angExt, closure: _closure )
+    }
+
+    /// public void java.awt.geom.Arc2D.setArc(java.awt.geom.Rectangle2D,double,double,int)
+
+    private static var setArc_MethodID_19: jmethodID?
+
+    open func setArc( rect: Rectangle2D?, angSt: Double, angExt: Double, closure: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: rect, locals: &__locals )
+        __args[1] = jvalue( d: angSt )
+        __args[2] = jvalue( d: angExt )
+        __args[3] = jvalue( i: jint(closure) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArc", methodSig: "(Ljava/awt/geom/Rectangle2D;DDI)V", methodCache: &Arc2D.setArc_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func setArc( _ _rect: Rectangle2D?, _ _angSt: Double, _ _angExt: Double, _ _closure: Int ) {
+        setArc( rect: _rect, angSt: _angSt, angExt: _angExt, closure: _closure )
+    }
+
+    /// public void java.awt.geom.Arc2D.setArcByCenter(double,double,double,double,double,int)
+
+    private static var setArcByCenter_MethodID_20: jmethodID?
+
+    open func setArcByCenter( x: Double, y: Double, radius: Double, angSt: Double, angExt: Double, closure: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: radius )
+        __args[3] = jvalue( d: angSt )
+        __args[4] = jvalue( d: angExt )
+        __args[5] = jvalue( i: jint(closure) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArcByCenter", methodSig: "(DDDDDI)V", methodCache: &Arc2D.setArcByCenter_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func setArcByCenter( _ _x: Double, _ _y: Double, _ _radius: Double, _ _angSt: Double, _ _angExt: Double, _ _closure: Int ) {
+        setArcByCenter( x: _x, y: _y, radius: _radius, angSt: _angSt, angExt: _angExt, closure: _closure )
+    }
+
+    /// public void java.awt.geom.Arc2D.setArcByTangent(java.awt.geom.Point2D,java.awt.geom.Point2D,java.awt.geom.Point2D,double)
+
+    private static var setArcByTangent_MethodID_21: jmethodID?
+
+    open func setArcByTangent( p1: Point2D?, p2: Point2D?, p3: Point2D?, radius: Double ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p2, locals: &__locals )
+        __args[2] = JNIType.toJava( value: p3, locals: &__locals )
+        __args[3] = jvalue( d: radius )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArcByTangent", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;D)V", methodCache: &Arc2D.setArcByTangent_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func setArcByTangent( _ _p1: Point2D?, _ _p2: Point2D?, _ _p3: Point2D?, _ _radius: Double ) {
+        setArcByTangent( p1: _p1, p2: _p2, p3: _p3, radius: _radius )
+    }
+
+    /// public void java.awt.geom.Arc2D.setArcType(int)
+
+    private static var setArcType_MethodID_22: jmethodID?
+
+    open func setArcType( type: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(type) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArcType", methodSig: "(I)V", methodCache: &Arc2D.setArcType_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func setArcType( _ _type: Int ) {
+        setArcType( type: _type )
+    }
+
+    /// public void java.awt.geom.Arc2D.setFrame(double,double,double,double)
+
+    // Skipping method: false true false false false 
 
 }
 

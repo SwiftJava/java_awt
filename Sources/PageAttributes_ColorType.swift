@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.PageAttributes$ColorType ///
 
-open class PageAttributes_ColorType: /* java.awt.AttributeValue */ UnclassedObject {
+open class PageAttributes_ColorType: /* class java.awt.AttributeValue */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,12 +16,6 @@ open class PageAttributes_ColorType: /* java.awt.AttributeValue */ UnclassedObje
 
     private static var PageAttributes_ColorTypeJNIClass: jclass?
 
-    /// private static final int java.awt.PageAttributes$ColorType.I_COLOR
-
-    /// private static final int java.awt.PageAttributes$ColorType.I_MONOCHROME
-
-    /// private static final java.lang.String[] java.awt.PageAttributes$ColorType.NAMES
-
     /// public static final java.awt.PageAttributes$ColorType java.awt.PageAttributes$ColorType.COLOR
 
     private static var COLOR_FieldID: jfieldID?
@@ -29,9 +23,14 @@ open class PageAttributes_ColorType: /* java.awt.AttributeValue */ UnclassedObje
     open static var COLOR: PageAttributes_ColorType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COLOR", fieldType: "Ljava/awt/PageAttributes$ColorType;", fieldCache: &COLOR_FieldID, className: "java/awt/PageAttributes$ColorType", classCache: &PageAttributes_ColorTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_ColorType( javaObject: __value ) : nil
         }
     }
+
+    /// private static final int java.awt.PageAttributes$ColorType.I_COLOR
+
+    /// private static final int java.awt.PageAttributes$ColorType.I_MONOCHROME
 
     /// public static final java.awt.PageAttributes$ColorType java.awt.PageAttributes$ColorType.MONOCHROME
 
@@ -40,21 +39,45 @@ open class PageAttributes_ColorType: /* java.awt.AttributeValue */ UnclassedObje
     open static var MONOCHROME: PageAttributes_ColorType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MONOCHROME", fieldType: "Ljava/awt/PageAttributes$ColorType;", fieldCache: &MONOCHROME_FieldID, className: "java/awt/PageAttributes$ColorType", classCache: &PageAttributes_ColorTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? PageAttributes_ColorType( javaObject: __value ) : nil
         }
     }
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.AttributeValue.log
+    /// private static final java.lang.String[] java.awt.PageAttributes$ColorType.NAMES
 
-    /// private final int java.awt.AttributeValue.value
+    /// private static final sun.util.logging.PlatformLogger java.awt.AttributeValue.log
 
     /// private final java.lang.String[] java.awt.AttributeValue.names
 
+    /// private final int java.awt.AttributeValue.value
+
     /// private java.awt.PageAttributes$ColorType(int)
+
+    /// public int java.awt.PageAttributes$ColorType.hashCode()
+
+    private static var hashCode_MethodID_1: jmethodID?
+
+    override open func hashCode() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "hashCode", methodSig: "()I", methodCache: &PageAttributes_ColorType.hashCode_MethodID_1, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
 
     /// public java.lang.String java.awt.PageAttributes$ColorType.toString()
 
-    /// public int java.awt.PageAttributes$ColorType.hashCode()
+    private static var toString_MethodID_2: jmethodID?
+
+    override open func toString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toString", methodSig: "()Ljava/lang/String;", methodCache: &PageAttributes_ColorType.toString_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
 }
 

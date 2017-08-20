@@ -16,9 +16,16 @@ open class ShapeGraphicAttribute: GraphicAttribute {
 
     private static var ShapeGraphicAttributeJNIClass: jclass?
 
-    /// private java.awt.Shape java.awt.font.ShapeGraphicAttribute.fShape
+    /// public static final boolean java.awt.font.ShapeGraphicAttribute.FILL
 
-    /// private boolean java.awt.font.ShapeGraphicAttribute.fStroke
+    private static var FILL_FieldID: jfieldID?
+
+    open static var FILL: Bool {
+        get {
+            let __value = JNIField.GetStaticBooleanField( fieldName: "FILL", fieldType: "Z", fieldCache: &FILL_FieldID, className: "java/awt/font/ShapeGraphicAttribute", classCache: &ShapeGraphicAttributeJNIClass )
+            return __value != jboolean(JNI_FALSE)
+        }
+    }
 
     /// public static final boolean java.awt.font.ShapeGraphicAttribute.STROKE
 
@@ -27,45 +34,48 @@ open class ShapeGraphicAttribute: GraphicAttribute {
     open static var STROKE: Bool {
         get {
             let __value = JNIField.GetStaticBooleanField( fieldName: "STROKE", fieldType: "Z", fieldCache: &STROKE_FieldID, className: "java/awt/font/ShapeGraphicAttribute", classCache: &ShapeGraphicAttributeJNIClass )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            return __value != jboolean(JNI_FALSE)
         }
     }
 
-    /// public static final boolean java.awt.font.ShapeGraphicAttribute.FILL
-
-    private static var FILL_FieldID: jfieldID?
-
-    open static var FILL: Bool {
-        get {
-            let __value = JNIField.GetStaticBooleanField( fieldName: "FILL", fieldType: "Z", fieldCache: &FILL_FieldID, className: "java/awt/font/ShapeGraphicAttribute", classCache: &ShapeGraphicAttributeJNIClass )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-    }
+    /// private java.awt.Shape java.awt.font.ShapeGraphicAttribute.fShape
 
     /// private java.awt.geom.Rectangle2D java.awt.font.ShapeGraphicAttribute.fShapeBounds
 
-    /// private int java.awt.font.GraphicAttribute.fAlignment
-
-    /// public static final int java.awt.font.GraphicAttribute.TOP_ALIGNMENT
+    /// private boolean java.awt.font.ShapeGraphicAttribute.fStroke
 
     /// public static final int java.awt.font.GraphicAttribute.BOTTOM_ALIGNMENT
 
-    /// public static final int java.awt.font.GraphicAttribute.ROMAN_BASELINE
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.font.GraphicAttribute.CENTER_BASELINE
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.font.GraphicAttribute.HANGING_BASELINE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.font.GraphicAttribute.ROMAN_BASELINE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.font.GraphicAttribute.TOP_ALIGNMENT
+
+    // Skipping field: false true false false false false 
+
+    /// private int java.awt.font.GraphicAttribute.fAlignment
 
     /// public java.awt.font.ShapeGraphicAttribute(java.awt.Shape,int,boolean)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( shape: Shape?, alignment: Int, stroke: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: shape, locals: &__locals )
-        __args[1] = JNIType.toJava( value: alignment, locals: &__locals )
-        __args[2] = JNIType.toJava( value: stroke, locals: &__locals )
+        __args[1] = jvalue( i: jint(alignment) )
+        __args[2] = jvalue( z: jboolean(stroke ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "java/awt/font/ShapeGraphicAttribute", classCache: &ShapeGraphicAttribute.ShapeGraphicAttributeJNIClass, methodSig: "(Ljava/awt/Shape;IZ)V", methodCache: &ShapeGraphicAttribute.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -75,51 +85,65 @@ open class ShapeGraphicAttribute: GraphicAttribute {
         self.init( shape: _shape, alignment: _alignment, stroke: _stroke )
     }
 
-    /// public boolean java.awt.font.ShapeGraphicAttribute.equals(java.lang.Object)
+    /// public void java.awt.font.ShapeGraphicAttribute.draw(java.awt.Graphics2D,float,float)
 
-    private static var equals_MethodID_2: jmethodID?
-
-    open func equals( rhs: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &ShapeGraphicAttribute.equals_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func equals( _ _rhs: java_swift.JavaObject? ) -> Bool {
-        return equals( rhs: _rhs )
-    }
+    // Skipping method: false true false false false 
 
     /// public boolean java.awt.font.ShapeGraphicAttribute.equals(java.awt.font.ShapeGraphicAttribute)
 
-    private static var equals_MethodID_3: jmethodID?
+    private static var equals_MethodID_2: jmethodID?
 
     open func equals( rhs: ShapeGraphicAttribute? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/font/ShapeGraphicAttribute;)Z", methodCache: &ShapeGraphicAttribute.equals_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/font/ShapeGraphicAttribute;)Z", methodCache: &ShapeGraphicAttribute.equals_MethodID_2, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func equals( _ _rhs: ShapeGraphicAttribute? ) -> Bool {
         return equals( rhs: _rhs )
     }
 
-    /// public int java.awt.font.ShapeGraphicAttribute.hashCode()
+    /// public boolean java.awt.font.ShapeGraphicAttribute.equals(java.lang.Object)
 
-    /// public java.awt.geom.Rectangle2D java.awt.font.ShapeGraphicAttribute.getBounds()
+    private static var equals_MethodID_3: jmethodID?
 
-    /// public float java.awt.font.ShapeGraphicAttribute.getAscent()
+    open func equals( rhs: java_swift.JavaObject? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &ShapeGraphicAttribute.equals_MethodID_3, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    override open func equals( _ _rhs: java_swift.JavaObject? ) -> Bool {
+        return equals( rhs: _rhs )
+    }
 
     /// public float java.awt.font.ShapeGraphicAttribute.getAdvance()
 
+    // Skipping method: false true false false false 
+
+    /// public float java.awt.font.ShapeGraphicAttribute.getAscent()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.geom.Rectangle2D java.awt.font.ShapeGraphicAttribute.getBounds()
+
+    // Skipping method: false true false false false 
+
     /// public float java.awt.font.ShapeGraphicAttribute.getDescent()
+
+    // Skipping method: false true false false false 
 
     /// public java.awt.Shape java.awt.font.ShapeGraphicAttribute.getOutline(java.awt.geom.AffineTransform)
 
-    /// public void java.awt.font.ShapeGraphicAttribute.draw(java.awt.Graphics2D,float,float)
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.font.ShapeGraphicAttribute.hashCode()
+
+    // Skipping method: false true false false false 
 
 }
 

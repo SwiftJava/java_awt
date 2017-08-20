@@ -18,38 +18,41 @@ open class DataBufferFloat: DataBuffer {
 
     /// float[][] java.awt.image.DataBufferFloat.bankdata
 
+    // Skipping field: true false false false false false 
+
     /// float[] java.awt.image.DataBufferFloat.data
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.image.DataBuffer.TYPE_BYTE
 
-    /// public static final int java.awt.image.DataBuffer.TYPE_USHORT
-
-    /// public static final int java.awt.image.DataBuffer.TYPE_SHORT
-
-    /// public static final int java.awt.image.DataBuffer.TYPE_INT
-
-    /// public static final int java.awt.image.DataBuffer.TYPE_FLOAT
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.image.DataBuffer.TYPE_DOUBLE
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.DataBuffer.TYPE_FLOAT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.DataBuffer.TYPE_INT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.DataBuffer.TYPE_SHORT
+
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.image.DataBuffer.TYPE_UNDEFINED
 
-    /// protected int java.awt.image.DataBuffer.dataType
+    // Skipping field: false true false false false false 
 
-    private static var dataType_FieldID: jfieldID?
+    /// public static final int java.awt.image.DataBuffer.TYPE_USHORT
 
-    override open var dataType: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &DataBufferFloat.dataType_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &DataBufferFloat.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
+    // Skipping field: false true false false false false 
+
+    /// private static final int[] java.awt.image.DataBuffer.dataTypeSize
 
     /// protected int java.awt.image.DataBuffer.banks
 
@@ -57,14 +60,29 @@ open class DataBufferFloat: DataBuffer {
 
     override open var banks: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "banks", fieldType: "I", fieldCache: &DataBufferFloat.banks_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "banks", fieldType: "I", fieldCache: &DataBufferFloat.banks_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "banks", fieldType: "I", fieldCache: &DataBufferFloat.banks_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected int java.awt.image.DataBuffer.dataType
+
+    private static var dataType_FieldID: jfieldID?
+
+    override open var dataType: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &DataBufferFloat.dataType_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &DataBufferFloat.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -74,31 +92,13 @@ open class DataBufferFloat: DataBuffer {
 
     override open var offset: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "offset", fieldType: "I", fieldCache: &DataBufferFloat.offset_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "offset", fieldType: "I", fieldCache: &DataBufferFloat.offset_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "offset", fieldType: "I", fieldCache: &DataBufferFloat.offset_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int java.awt.image.DataBuffer.size
-
-    private static var size_FieldID: jfieldID?
-
-    override open var size: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "size", fieldType: "I", fieldCache: &DataBufferFloat.size_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "size", fieldType: "I", fieldCache: &DataBufferFloat.size_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -108,9 +108,8 @@ open class DataBufferFloat: DataBuffer {
 
     override open var offsets: [Int32]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "offsets", fieldType: "[I", fieldCache: &DataBufferFloat.offsets_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "offsets", fieldType: "[I", fieldCache: &DataBufferFloat.offsets_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -119,75 +118,35 @@ open class DataBufferFloat: DataBuffer {
         }
     }
 
+    /// protected int java.awt.image.DataBuffer.size
+
+    private static var size_FieldID: jfieldID?
+
+    override open var size: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "size", fieldType: "I", fieldCache: &DataBufferFloat.size_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "size", fieldType: "I", fieldCache: &DataBufferFloat.size_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
     /// sun.java2d.StateTrackableDelegate java.awt.image.DataBuffer.theTrackable
 
-    /// private static final int[] java.awt.image.DataBuffer.dataTypeSize
-
-    /// public java.awt.image.DataBufferFloat(float[][],int,int[])
-
-    private static var new_MethodID_1: jmethodID?
-
-    public convenience init( dataArray: [[Float]]?, size: Int, offsets: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataArray, locals: &__locals )
-        __args[1] = JNIType.toJava( value: size, locals: &__locals )
-        __args[2] = JNIType.toJava( value: offsets, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "([[FI[I)V", methodCache: &DataBufferFloat.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _dataArray: [[Float]]?, _ _size: Int, _ _offsets: [Int32]? ) {
-        self.init( dataArray: _dataArray, size: _size, offsets: _offsets )
-    }
-
-    /// public java.awt.image.DataBufferFloat(float[][],int)
-
-    private static var new_MethodID_2: jmethodID?
-
-    public convenience init( dataArray: [[Float]]?, size: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataArray, locals: &__locals )
-        __args[1] = JNIType.toJava( value: size, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "([[FI)V", methodCache: &DataBufferFloat.new_MethodID_2, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _dataArray: [[Float]]?, _ _size: Int ) {
-        self.init( dataArray: _dataArray, size: _size )
-    }
-
-    /// public java.awt.image.DataBufferFloat(float[],int,int)
-
-    private static var new_MethodID_3: jmethodID?
-
-    public convenience init( dataArray: [Float]?, size: Int, offset: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataArray, locals: &__locals )
-        __args[1] = JNIType.toJava( value: size, locals: &__locals )
-        __args[2] = JNIType.toJava( value: offset, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "([FII)V", methodCache: &DataBufferFloat.new_MethodID_3, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _dataArray: [Float]?, _ _size: Int, _ _offset: Int ) {
-        self.init( dataArray: _dataArray, size: _size, offset: _offset )
-    }
+    // Skipping field: true false false false false false 
 
     /// public java.awt.image.DataBufferFloat(int)
 
-    private static var new_MethodID_4: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( size: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: size, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "(I)V", methodCache: &DataBufferFloat.new_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(size) )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "(I)V", methodCache: &DataBufferFloat.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -198,14 +157,14 @@ open class DataBufferFloat: DataBuffer {
 
     /// public java.awt.image.DataBufferFloat(int,int)
 
-    private static var new_MethodID_5: jmethodID?
+    private static var new_MethodID_2: jmethodID?
 
     public convenience init( size: Int, numBanks: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: size, locals: &__locals )
-        __args[1] = JNIType.toJava( value: numBanks, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "(II)V", methodCache: &DataBufferFloat.new_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(size) )
+        __args[1] = jvalue( i: jint(numBanks) )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "(II)V", methodCache: &DataBufferFloat.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -216,14 +175,14 @@ open class DataBufferFloat: DataBuffer {
 
     /// public java.awt.image.DataBufferFloat(float[],int)
 
-    private static var new_MethodID_6: jmethodID?
+    private static var new_MethodID_3: jmethodID?
 
     public convenience init( dataArray: [Float]?, size: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: dataArray, locals: &__locals )
-        __args[1] = JNIType.toJava( value: size, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "([FI)V", methodCache: &DataBufferFloat.new_MethodID_6, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(size) )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "([FI)V", methodCache: &DataBufferFloat.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -232,16 +191,84 @@ open class DataBufferFloat: DataBuffer {
         self.init( dataArray: _dataArray, size: _size )
     }
 
+    /// public java.awt.image.DataBufferFloat(float[],int,int)
+
+    private static var new_MethodID_4: jmethodID?
+
+    public convenience init( dataArray: [Float]?, size: Int, offset: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: dataArray, locals: &__locals )
+        __args[1] = jvalue( i: jint(size) )
+        __args[2] = jvalue( i: jint(offset) )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "([FII)V", methodCache: &DataBufferFloat.new_MethodID_4, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _dataArray: [Float]?, _ _size: Int, _ _offset: Int ) {
+        self.init( dataArray: _dataArray, size: _size, offset: _offset )
+    }
+
+    /// public java.awt.image.DataBufferFloat(float[][],int)
+
+    private static var new_MethodID_5: jmethodID?
+
+    public convenience init( dataArray: [[Float]]?, size: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: dataArray, locals: &__locals )
+        __args[1] = jvalue( i: jint(size) )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "([[FI)V", methodCache: &DataBufferFloat.new_MethodID_5, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _dataArray: [[Float]]?, _ _size: Int ) {
+        self.init( dataArray: _dataArray, size: _size )
+    }
+
+    /// public java.awt.image.DataBufferFloat(float[][],int,int[])
+
+    private static var new_MethodID_6: jmethodID?
+
+    public convenience init( dataArray: [[Float]]?, size: Int, offsets: [Int32]? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: dataArray, locals: &__locals )
+        __args[1] = jvalue( i: jint(size) )
+        __args[2] = JNIType.toJava( value: offsets, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/DataBufferFloat", classCache: &DataBufferFloat.DataBufferFloatJNIClass, methodSig: "([[FI[I)V", methodCache: &DataBufferFloat.new_MethodID_6, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _dataArray: [[Float]]?, _ _size: Int, _ _offsets: [Int32]? ) {
+        self.init( dataArray: _dataArray, size: _size, offsets: _offsets )
+    }
+
+    /// public float[][] java.awt.image.DataBufferFloat.getBankData()
+
+    private static var getBankData_MethodID_7: jmethodID?
+
+    open func getBankData() -> [[Float]]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBankData", methodSig: "()[[F", methodCache: &DataBufferFloat.getBankData_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [[Float]].self, from: __return )
+    }
+
+
     /// public float[] java.awt.image.DataBufferFloat.getData(int)
 
-    private static var getData_MethodID_7: jmethodID?
+    private static var getData_MethodID_8: jmethodID?
 
     open func getData( bank: Int ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bank, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "(I)[F", methodCache: &DataBufferFloat.getData_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(bank) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "(I)[F", methodCache: &DataBufferFloat.getData_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
     open func getData( _ _bank: Int ) -> [Float]! {
@@ -250,51 +277,63 @@ open class DataBufferFloat: DataBuffer {
 
     /// public float[] java.awt.image.DataBufferFloat.getData()
 
-    private static var getData_MethodID_8: jmethodID?
+    private static var getData_MethodID_9: jmethodID?
 
     open func getData() -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "()[F", methodCache: &DataBufferFloat.getData_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "()[F", methodCache: &DataBufferFloat.getData_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
-
-    /// public int java.awt.image.DataBufferFloat.getElem(int,int)
 
     /// public int java.awt.image.DataBufferFloat.getElem(int)
 
-    /// public float java.awt.image.DataBufferFloat.getElemFloat(int)
+    // Skipping method: false true false false false 
 
-    /// public float java.awt.image.DataBufferFloat.getElemFloat(int,int)
+    /// public int java.awt.image.DataBufferFloat.getElem(int,int)
+
+    // Skipping method: false true false false false 
 
     /// public double java.awt.image.DataBufferFloat.getElemDouble(int)
 
+    // Skipping method: false true false false false 
+
     /// public double java.awt.image.DataBufferFloat.getElemDouble(int,int)
 
-    /// public void java.awt.image.DataBufferFloat.setElem(int,int,int)
+    // Skipping method: false true false false false 
+
+    /// public float java.awt.image.DataBufferFloat.getElemFloat(int)
+
+    // Skipping method: false true false false false 
+
+    /// public float java.awt.image.DataBufferFloat.getElemFloat(int,int)
+
+    // Skipping method: false true false false false 
 
     /// public void java.awt.image.DataBufferFloat.setElem(int,int)
 
-    /// public void java.awt.image.DataBufferFloat.setElemFloat(int,float)
+    // Skipping method: false true false false false 
 
-    /// public void java.awt.image.DataBufferFloat.setElemFloat(int,int,float)
+    /// public void java.awt.image.DataBufferFloat.setElem(int,int,int)
+
+    // Skipping method: false true false false false 
 
     /// public void java.awt.image.DataBufferFloat.setElemDouble(int,double)
 
+    // Skipping method: false true false false false 
+
     /// public void java.awt.image.DataBufferFloat.setElemDouble(int,int,double)
 
-    /// public float[][] java.awt.image.DataBufferFloat.getBankData()
+    // Skipping method: false true false false false 
 
-    private static var getBankData_MethodID_9: jmethodID?
+    /// public void java.awt.image.DataBufferFloat.setElemFloat(int,float)
 
-    open func getBankData() -> [[Float]]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBankData", methodSig: "()[[F", methodCache: &DataBufferFloat.getBankData_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [[Float]](), from: __return )
-    }
+    // Skipping method: false true false false false 
 
+    /// public void java.awt.image.DataBufferFloat.setElemFloat(int,int,float)
+
+    // Skipping method: false true false false false 
 
 }
 

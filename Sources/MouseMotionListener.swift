@@ -8,13 +8,13 @@ import java_util
 
 public protocol MouseMotionListener: java_util.EventListener {
 
-    /// public abstract void java.awt.event.MouseMotionListener.mouseMoved(java.awt.event.MouseEvent)
-
-    func mouseMoved( e: MouseEvent? )
-
     /// public abstract void java.awt.event.MouseMotionListener.mouseDragged(java.awt.event.MouseEvent)
 
     func mouseDragged( e: MouseEvent? )
+
+    /// public abstract void java.awt.event.MouseMotionListener.mouseMoved(java.awt.event.MouseEvent)
+
+    func mouseMoved( e: MouseEvent? )
 
 }
 
@@ -23,53 +23,48 @@ open class MouseMotionListenerForward: java_util.EventListenerForward, MouseMoti
 
     private static var MouseMotionListenerJNIClass: jclass?
 
-    /// public abstract void java.awt.event.MouseMotionListener.mouseMoved(java.awt.event.MouseEvent)
-
-    private static var mouseMoved_MethodID_3: jmethodID?
-
-    open func mouseMoved( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseMotionListenerForward.mouseMoved_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func mouseMoved( _ _e: MouseEvent? ) {
-        mouseMoved( e: _e )
-    }
-
     /// public abstract void java.awt.event.MouseMotionListener.mouseDragged(java.awt.event.MouseEvent)
 
-    private static var mouseDragged_MethodID_4: jmethodID?
+    private static var mouseDragged_MethodID_3: jmethodID?
 
     open func mouseDragged( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseMotionListenerForward.mouseDragged_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseMotionListenerForward.mouseDragged_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func mouseDragged( _ _e: MouseEvent? ) {
         mouseDragged( e: _e )
     }
 
+    /// public abstract void java.awt.event.MouseMotionListener.mouseMoved(java.awt.event.MouseEvent)
+
+    private static var mouseMoved_MethodID_4: jmethodID?
+
+    open func mouseMoved( e: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseMotionListenerForward.mouseMoved_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func mouseMoved( _ _e: MouseEvent? ) {
+        mouseMoved( e: _e )
+    }
+
 }
 
+private typealias MouseMotionListener_mouseDragged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private typealias MouseMotionListener_mouseMoved_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MouseMotionListener_mouseMoved_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MouseMotionListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseMoved( e: e != nil ? MouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias MouseMotionListener_mouseDragged_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MouseMotionListener_mouseDragged_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
+private func MouseMotionListener_mouseDragged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
     MouseMotionListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseDragged( e: e != nil ? MouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
+}
+
+private typealias MouseMotionListener_mouseMoved_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func MouseMotionListener_mouseMoved_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MouseMotionListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseMoved( e: e != nil ? MouseEvent( javaObject: e ) : nil )
 }
 
 fileprivate class MouseMotionListenerLocal_: JNILocalProxy<MouseMotionListener, Any> {
@@ -77,11 +72,11 @@ fileprivate class MouseMotionListenerLocal_: JNILocalProxy<MouseMotionListener, 
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let MouseMotionListener_mouseMoved_0_thunk: MouseMotionListener_mouseMoved_0_type = MouseMotionListener_mouseMoved_0
-        natives.append( JNINativeMethod( name: strdup("__mouseMoved"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseMotionListener_mouseMoved_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseMotionListener_mouseDragged_0_thunk: MouseMotionListener_mouseDragged_0_type = MouseMotionListener_mouseDragged_0
+        natives.append( JNINativeMethod( name: strdup("__mouseDragged"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseMotionListener_mouseDragged_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MouseMotionListener_mouseDragged_1_thunk: MouseMotionListener_mouseDragged_1_type = MouseMotionListener_mouseDragged_1
-        natives.append( JNINativeMethod( name: strdup("__mouseDragged"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseMotionListener_mouseDragged_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MouseMotionListener_mouseMoved_1_thunk: MouseMotionListener_mouseMoved_1_type = MouseMotionListener_mouseMoved_1
+        natives.append( JNINativeMethod( name: strdup("__mouseMoved"), signature: strdup("(JLjava/awt/event/MouseEvent;)V"), fnPtr: unsafeBitCast( MouseMotionListener_mouseMoved_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -114,22 +109,16 @@ open class MouseMotionListenerBase: MouseMotionListener {
 
     public init() {}
 
-    /// public abstract void java.awt.event.MouseMotionListener.mouseMoved(java.awt.event.MouseEvent)
-
-    open func mouseMoved( e: MouseEvent? ) /**/ {
-    }
-
-    open func mouseMoved( _ _e: MouseEvent? ) /**/ {
-        mouseMoved( e: _e )
-    }
-
     /// public abstract void java.awt.event.MouseMotionListener.mouseDragged(java.awt.event.MouseEvent)
 
     open func mouseDragged( e: MouseEvent? ) /**/ {
     }
 
-    open func mouseDragged( _ _e: MouseEvent? ) /**/ {
-        mouseDragged( e: _e )
+
+    /// public abstract void java.awt.event.MouseMotionListener.mouseMoved(java.awt.event.MouseEvent)
+
+    open func mouseMoved( e: MouseEvent? ) /**/ {
     }
+
 
 }

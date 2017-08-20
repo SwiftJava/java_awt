@@ -23,8 +23,8 @@ open class RenderedImageFactoryForward: JNIObjectForward, RenderedImageFactory {
     private static var create_MethodID_2: jmethodID?
 
     open func create( paramBlock: ParameterBlock?, hints: RenderingHints? ) -> RenderedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: paramBlock, locals: &__locals )
         __args[1] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "create", methodSig: "(Ljava/awt/image/renderable/ParameterBlock;Ljava/awt/RenderingHints;)Ljava/awt/image/RenderedImage;", methodCache: &RenderedImageFactoryForward.create_MethodID_2, args: &__args, locals: &__locals )
@@ -37,5 +37,4 @@ open class RenderedImageFactoryForward: JNIObjectForward, RenderedImageFactory {
     }
 
 }
-
 

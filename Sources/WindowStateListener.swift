@@ -24,8 +24,8 @@ open class WindowStateListenerForward: java_util.EventListenerForward, WindowSta
     private static var windowStateChanged_MethodID_2: jmethodID?
 
     open func windowStateChanged( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowStateChanged", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &WindowStateListenerForward.windowStateChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class WindowStateListenerForward: java_util.EventListenerForward, WindowSta
 
 }
 
-
 private typealias WindowStateListener_windowStateChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func WindowStateListener_windowStateChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     WindowStateListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).windowStateChanged( e: e != nil ? WindowEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class WindowStateListenerLocal_: JNILocalProxy<WindowStateListener, Any> {
@@ -89,8 +86,5 @@ open class WindowStateListenerBase: WindowStateListener {
     open func windowStateChanged( e: WindowEvent? ) /**/ {
     }
 
-    open func windowStateChanged( _ _e: WindowEvent? ) /**/ {
-        windowStateChanged( e: _e )
-    }
 
 }

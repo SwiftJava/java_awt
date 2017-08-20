@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.geom.Path2D$Double ///
 
-open class Path2D_Double: Path2D, /* java.io.Serializable */ UnclassedProtocol {
+open class Path2D_Double: Path2D, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -20,101 +20,121 @@ open class Path2D_Double: Path2D, /* java.io.Serializable */ UnclassedProtocol {
 
     private static var Path2D_DoubleJNIClass: jclass?
 
-    /// transient double[] java.awt.geom.Path2D$Double.doubleCoords
+    /// static final boolean java.awt.geom.Path2D$Double.$assertionsDisabled
+
+    // Skipping field: true false false false false false 
 
     /// private static final long java.awt.geom.Path2D$Double.serialVersionUID
 
-    /// static final boolean java.awt.geom.Path2D$Double.$assertionsDisabled
+    /// transient double[] java.awt.geom.Path2D$Double.doubleCoords
 
-    /// public static final int java.awt.geom.Path2D.WIND_EVEN_ODD
-
-    /// public static final int java.awt.geom.Path2D.WIND_NON_ZERO
-
-    /// private static final byte java.awt.geom.Path2D.SEG_MOVETO
-
-    /// private static final byte java.awt.geom.Path2D.SEG_LINETO
-
-    /// private static final byte java.awt.geom.Path2D.SEG_QUADTO
-
-    /// private static final byte java.awt.geom.Path2D.SEG_CUBICTO
-
-    /// private static final byte java.awt.geom.Path2D.SEG_CLOSE
-
-    /// transient byte[] java.awt.geom.Path2D.pointTypes
-
-    /// transient int java.awt.geom.Path2D.numTypes
-
-    /// transient int java.awt.geom.Path2D.numCoords
-
-    /// transient int java.awt.geom.Path2D.windingRule
-
-    /// static final int java.awt.geom.Path2D.INIT_SIZE
-
-    /// static final int java.awt.geom.Path2D.EXPAND_MAX
-
-    /// static final int java.awt.geom.Path2D.EXPAND_MAX_COORDS
-
-    /// static final int java.awt.geom.Path2D.EXPAND_MIN
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_STORAGE_FLT_ARRAY
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_STORAGE_DBL_ARRAY
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_MOVETO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_LINETO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_QUADTO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_CUBICTO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_MOVETO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_LINETO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_QUADTO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_CUBICTO
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_CLOSE
-
-    /// private static final byte java.awt.geom.Path2D.SERIAL_PATH_END
+    // Skipping field: true false false false false false 
 
     /// static final boolean java.awt.geom.Path2D.$assertionsDisabled
 
-    /// public java.awt.geom.Path2D$Double(java.awt.Shape,java.awt.geom.AffineTransform)
+    // Skipping field: true false false false false false 
+
+    /// static final int java.awt.geom.Path2D.EXPAND_MAX
+
+    // Skipping field: true false false false false false 
+
+    /// static final int java.awt.geom.Path2D.EXPAND_MAX_COORDS
+
+    // Skipping field: true false false false false false 
+
+    /// static final int java.awt.geom.Path2D.EXPAND_MIN
+
+    // Skipping field: true false false false false false 
+
+    /// static final int java.awt.geom.Path2D.INIT_SIZE
+
+    // Skipping field: true false false false false false 
+
+    /// private static final byte java.awt.geom.Path2D.SEG_CLOSE
+
+    /// private static final byte java.awt.geom.Path2D.SEG_CUBICTO
+
+    /// private static final byte java.awt.geom.Path2D.SEG_LINETO
+
+    /// private static final byte java.awt.geom.Path2D.SEG_MOVETO
+
+    /// private static final byte java.awt.geom.Path2D.SEG_QUADTO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_PATH_END
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_CLOSE
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_CUBICTO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_LINETO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_MOVETO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_DBL_QUADTO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_CUBICTO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_LINETO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_MOVETO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_SEG_FLT_QUADTO
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_STORAGE_DBL_ARRAY
+
+    /// private static final byte java.awt.geom.Path2D.SERIAL_STORAGE_FLT_ARRAY
+
+    /// public static final int java.awt.geom.Path2D.WIND_EVEN_ODD
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.geom.Path2D.WIND_NON_ZERO
+
+    // Skipping field: false true false false false false 
+
+    /// transient int java.awt.geom.Path2D.numCoords
+
+    // Skipping field: true false false false false false 
+
+    /// transient int java.awt.geom.Path2D.numTypes
+
+    // Skipping field: true false false false false false 
+
+    /// transient byte[] java.awt.geom.Path2D.pointTypes
+
+    // Skipping field: true false false false false false 
+
+    /// transient int java.awt.geom.Path2D.windingRule
+
+    // Skipping field: true false false false false false 
+
+    /// public java.awt.geom.Path2D$Double()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( s: Shape?, at: AffineTransform? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        __args[1] = JNIType.toJava( value: at, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/Path2D$Double", classCache: &Path2D_Double.Path2D_DoubleJNIClass, methodSig: "(Ljava/awt/Shape;Ljava/awt/geom/AffineTransform;)V", methodCache: &Path2D_Double.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/Path2D$Double", classCache: &Path2D_Double.Path2D_DoubleJNIClass, methodSig: "()V", methodCache: &Path2D_Double.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _s: Shape?, _ _at: AffineTransform? ) {
-        self.init( s: _s, at: _at )
-    }
-
-    /// public java.awt.geom.Path2D$Double(java.awt.Shape)
+    /// public java.awt.geom.Path2D$Double(int)
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( s: Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( rule: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/Path2D$Double", classCache: &Path2D_Double.Path2D_DoubleJNIClass, methodSig: "(Ljava/awt/Shape;)V", methodCache: &Path2D_Double.new_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(rule) )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/Path2D$Double", classCache: &Path2D_Double.Path2D_DoubleJNIClass, methodSig: "(I)V", methodCache: &Path2D_Double.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _s: Shape? ) {
-        self.init( s: _s )
+    public convenience init( _ _rule: Int ) {
+        self.init( rule: _rule )
     }
 
     /// public java.awt.geom.Path2D$Double(int,int)
@@ -122,10 +142,10 @@ open class Path2D_Double: Path2D, /* java.io.Serializable */ UnclassedProtocol {
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( rule: Int, initialCapacity: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rule, locals: &__locals )
-        __args[1] = JNIType.toJava( value: initialCapacity, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(rule) )
+        __args[1] = jvalue( i: jint(initialCapacity) )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Path2D$Double", classCache: &Path2D_Double.Path2D_DoubleJNIClass, methodSig: "(II)V", methodCache: &Path2D_Double.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -135,74 +155,116 @@ open class Path2D_Double: Path2D, /* java.io.Serializable */ UnclassedProtocol {
         self.init( rule: _rule, initialCapacity: _initialCapacity )
     }
 
-    /// public java.awt.geom.Path2D$Double(int)
+    /// public java.awt.geom.Path2D$Double(java.awt.Shape)
 
     private static var new_MethodID_4: jmethodID?
 
-    public convenience init( rule: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( s: Shape? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rule, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/Path2D$Double", classCache: &Path2D_Double.Path2D_DoubleJNIClass, methodSig: "(I)V", methodCache: &Path2D_Double.new_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/Path2D$Double", classCache: &Path2D_Double.Path2D_DoubleJNIClass, methodSig: "(Ljava/awt/Shape;)V", methodCache: &Path2D_Double.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _rule: Int ) {
-        self.init( rule: _rule )
+    public convenience init( _ _s: Shape? ) {
+        self.init( s: _s )
     }
 
-    /// public java.awt.geom.Path2D$Double()
+    /// public java.awt.geom.Path2D$Double(java.awt.Shape,java.awt.geom.AffineTransform)
 
     private static var new_MethodID_5: jmethodID?
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( s: Shape?, at: AffineTransform? ) {
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/Path2D$Double", classCache: &Path2D_Double.Path2D_DoubleJNIClass, methodSig: "()V", methodCache: &Path2D_Double.new_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        __args[1] = JNIType.toJava( value: at, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/Path2D$Double", classCache: &Path2D_Double.Path2D_DoubleJNIClass, methodSig: "(Ljava/awt/Shape;Ljava/awt/geom/AffineTransform;)V", methodCache: &Path2D_Double.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// void java.awt.geom.Path2D$Double.append(double,double)
-
-    /// void java.awt.geom.Path2D$Double.append(float,float)
-
-    /// public final void java.awt.geom.Path2D$Double.append(java.awt.geom.PathIterator,boolean)
-
-    /// public final java.lang.Object java.awt.geom.Path2D$Double.clone()
-
-    /// private void java.awt.geom.Path2D$Double.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
-
-    /// private void java.awt.geom.Path2D$Double.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
-
-    /// public final java.awt.geom.PathIterator java.awt.geom.Path2D$Double.getPathIterator(java.awt.geom.AffineTransform)
-
-    /// public final void java.awt.geom.Path2D$Double.transform(java.awt.geom.AffineTransform)
-
-    /// public final synchronized java.awt.geom.Rectangle2D java.awt.geom.Path2D$Double.getBounds2D()
-
-    /// java.awt.geom.Point2D java.awt.geom.Path2D$Double.getPoint(int)
-
-    /// public final synchronized void java.awt.geom.Path2D$Double.moveTo(double,double)
-
-    /// public final synchronized void java.awt.geom.Path2D$Double.lineTo(double,double)
-
-    /// float[] java.awt.geom.Path2D$Double.cloneCoordsFloat(java.awt.geom.AffineTransform)
-
-    /// double[] java.awt.geom.Path2D$Double.cloneCoordsDouble(java.awt.geom.AffineTransform)
-
-    /// void java.awt.geom.Path2D$Double.needRoom(boolean,int)
+    public convenience init( _ _s: Shape?, _ _at: AffineTransform? ) {
+        self.init( s: _s, at: _at )
+    }
 
     /// static double[] java.awt.geom.Path2D$Double.expandCoords(double[],int)
 
-    /// public final synchronized void java.awt.geom.Path2D$Double.quadTo(double,double,double,double)
+    // Skipping method: true false false false false 
+
+    /// void java.awt.geom.Path2D$Double.append(double,double)
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.geom.Path2D$Double.append(float,float)
+
+    // Skipping method: true false false false false 
+
+    /// public final void java.awt.geom.Path2D$Double.append(java.awt.geom.PathIterator,boolean)
+
+    // Skipping method: false true false false false 
+
+    /// public final java.lang.Object java.awt.geom.Path2D$Double.clone()
+
+    // Skipping method: false true false false false 
+
+    /// double[] java.awt.geom.Path2D$Double.cloneCoordsDouble(java.awt.geom.AffineTransform)
+
+    // Skipping method: true false false false false 
+
+    /// float[] java.awt.geom.Path2D$Double.cloneCoordsFloat(java.awt.geom.AffineTransform)
+
+    // Skipping method: true false false false false 
 
     /// public final synchronized void java.awt.geom.Path2D$Double.curveTo(double,double,double,double,double,double)
 
+    // Skipping method: false true false false false 
+
+    /// public final synchronized java.awt.geom.Rectangle2D java.awt.geom.Path2D$Double.getBounds2D()
+
+    // Skipping method: false true false false false 
+
+    /// public final java.awt.geom.PathIterator java.awt.geom.Path2D$Double.getPathIterator(java.awt.geom.AffineTransform)
+
+    // Skipping method: false true false false false 
+
+    /// java.awt.geom.Point2D java.awt.geom.Path2D$Double.getPoint(int)
+
+    // Skipping method: true false false false false 
+
+    /// public final synchronized void java.awt.geom.Path2D$Double.lineTo(double,double)
+
+    // Skipping method: false true false false false 
+
+    /// public final synchronized void java.awt.geom.Path2D$Double.moveTo(double,double)
+
+    // Skipping method: false true false false false 
+
+    /// void java.awt.geom.Path2D$Double.needRoom(boolean,int)
+
+    // Skipping method: true false false false false 
+
     /// int java.awt.geom.Path2D$Double.pointCrossings(double,double)
 
+    // Skipping method: true false false false false 
+
+    /// public final synchronized void java.awt.geom.Path2D$Double.quadTo(double,double,double,double)
+
+    // Skipping method: false true false false false 
+
+    /// private void java.awt.geom.Path2D$Double.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
+
     /// int java.awt.geom.Path2D$Double.rectCrossings(double,double,double,double)
+
+    // Skipping method: true false false false false 
+
+    /// public final void java.awt.geom.Path2D$Double.transform(java.awt.geom.AffineTransform)
+
+    // Skipping method: false true false false false 
+
+    /// private void java.awt.geom.Path2D$Double.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
 }
 

@@ -16,55 +16,45 @@ open class TrayIcon: java_swift.JavaObject {
 
     private static var TrayIconJNIClass: jclass?
 
-    /// private java.awt.Image java.awt.TrayIcon.image
+    /// private final java.security.AccessControlContext java.awt.TrayIcon.acc
 
-    /// private java.lang.String java.awt.TrayIcon.tooltip
+    /// private java.lang.String java.awt.TrayIcon.actionCommand
 
-    /// private java.awt.PopupMenu java.awt.TrayIcon.popup
+    /// transient java.awt.event.ActionListener java.awt.TrayIcon.actionListener
+
+    // Skipping field: true false false false false false 
 
     /// private boolean java.awt.TrayIcon.autosize
 
     /// private int java.awt.TrayIcon.id
 
-    /// private java.lang.String java.awt.TrayIcon.actionCommand
-
-    /// private transient java.awt.peer.TrayIconPeer java.awt.TrayIcon.peer
+    /// private java.awt.Image java.awt.TrayIcon.image
 
     /// transient java.awt.event.MouseListener java.awt.TrayIcon.mouseListener
 
+    // Skipping field: true false false false false false 
+
     /// transient java.awt.event.MouseMotionListener java.awt.TrayIcon.mouseMotionListener
 
-    /// transient java.awt.event.ActionListener java.awt.TrayIcon.actionListener
+    // Skipping field: true false false false false false 
 
-    /// private final java.security.AccessControlContext java.awt.TrayIcon.acc
+    /// private transient java.awt.peer.TrayIconPeer java.awt.TrayIcon.peer
 
-    /// public java.awt.TrayIcon(java.awt.Image,java.lang.String)
+    /// private java.awt.PopupMenu java.awt.TrayIcon.popup
 
-    private static var new_MethodID_1: jmethodID?
+    /// private java.lang.String java.awt.TrayIcon.tooltip
 
-    public convenience init( image: Image?, tooltip: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tooltip, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/TrayIcon", classCache: &TrayIcon.TrayIconJNIClass, methodSig: "(Ljava/awt/Image;Ljava/lang/String;)V", methodCache: &TrayIcon.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _image: Image?, _ _tooltip: String? ) {
-        self.init( image: _image, tooltip: _tooltip )
-    }
+    /// private java.awt.TrayIcon() throws java.lang.UnsupportedOperationException,java.awt.HeadlessException,java.lang.SecurityException
 
     /// public java.awt.TrayIcon(java.awt.Image)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( image: Image? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: image, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/TrayIcon", classCache: &TrayIcon.TrayIconJNIClass, methodSig: "(Ljava/awt/Image;)V", methodCache: &TrayIcon.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/TrayIcon", classCache: &TrayIcon.TrayIconJNIClass, methodSig: "(Ljava/awt/Image;)V", methodCache: &TrayIcon.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -73,15 +63,31 @@ open class TrayIcon: java_swift.JavaObject {
         self.init( image: _image )
     }
 
-    /// private java.awt.TrayIcon() throws java.lang.UnsupportedOperationException,java.awt.HeadlessException,java.lang.SecurityException
+    /// public java.awt.TrayIcon(java.awt.Image,java.lang.String)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( image: Image?, tooltip: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tooltip, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/TrayIcon", classCache: &TrayIcon.TrayIconJNIClass, methodSig: "(Ljava/awt/Image;Ljava/lang/String;)V", methodCache: &TrayIcon.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _image: Image?, _ _tooltip: String? ) {
+        self.init( image: _image, tooltip: _tooltip )
+    }
 
     /// public java.awt.TrayIcon(java.awt.Image,java.lang.String,java.awt.PopupMenu)
 
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( image: Image?, tooltip: String?, popup: PopupMenu? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: image, locals: &__locals )
         __args[1] = JNIType.toJava( value: tooltip, locals: &__locals )
         __args[2] = JNIType.toJava( value: popup, locals: &__locals )
@@ -94,32 +100,30 @@ open class TrayIcon: java_swift.JavaObject {
         self.init( image: _image, tooltip: _tooltip, popup: _popup )
     }
 
-    /// public java.awt.Dimension java.awt.TrayIcon.getSize()
-
-    private static var getSize_MethodID_4: jmethodID?
-
-    open func getSize() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &TrayIcon.getSize_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
-
     /// private static native void java.awt.TrayIcon.initIDs()
 
-    /// int java.awt.TrayIcon.getID()
+    /// public synchronized void java.awt.TrayIcon.addActionListener(java.awt.event.ActionListener)
 
-    /// final java.security.AccessControlContext java.awt.TrayIcon.getAccessControlContext()
+    private static var addActionListener_MethodID_4: jmethodID?
+
+    open func addActionListener( listener: ActionListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &TrayIcon.addActionListener_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func addActionListener( _ _listener: ActionListener? ) {
+        addActionListener( listener: _listener )
+    }
 
     /// public synchronized void java.awt.TrayIcon.addMouseListener(java.awt.event.MouseListener)
 
     private static var addMouseListener_MethodID_5: jmethodID?
 
     open func addMouseListener( listener: MouseListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMouseListener", methodSig: "(Ljava/awt/event/MouseListener;)V", methodCache: &TrayIcon.addMouseListener_MethodID_5, args: &__args, locals: &__locals )
     }
@@ -128,222 +132,239 @@ open class TrayIcon: java_swift.JavaObject {
         addMouseListener( listener: _listener )
     }
 
-    /// public synchronized void java.awt.TrayIcon.removeMouseListener(java.awt.event.MouseListener)
-
-    private static var removeMouseListener_MethodID_6: jmethodID?
-
-    open func removeMouseListener( listener: MouseListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMouseListener", methodSig: "(Ljava/awt/event/MouseListener;)V", methodCache: &TrayIcon.removeMouseListener_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func removeMouseListener( _ _listener: MouseListener? ) {
-        removeMouseListener( listener: _listener )
-    }
-
-    /// public synchronized java.awt.event.MouseListener[] java.awt.TrayIcon.getMouseListeners()
-
-    private static var getMouseListeners_MethodID_7: jmethodID?
-
-    open func getMouseListeners() -> [MouseListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseListeners", methodSig: "()[Ljava/awt/event/MouseListener;", methodCache: &TrayIcon.getMouseListeners_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [MouseListenerForward](), from: __return )
-    }
-
-
     /// public synchronized void java.awt.TrayIcon.addMouseMotionListener(java.awt.event.MouseMotionListener)
 
-    private static var addMouseMotionListener_MethodID_8: jmethodID?
+    private static var addMouseMotionListener_MethodID_6: jmethodID?
 
     open func addMouseMotionListener( listener: MouseMotionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMouseMotionListener", methodSig: "(Ljava/awt/event/MouseMotionListener;)V", methodCache: &TrayIcon.addMouseMotionListener_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMouseMotionListener", methodSig: "(Ljava/awt/event/MouseMotionListener;)V", methodCache: &TrayIcon.addMouseMotionListener_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func addMouseMotionListener( _ _listener: MouseMotionListener? ) {
         addMouseMotionListener( listener: _listener )
     }
 
-    /// public synchronized void java.awt.TrayIcon.removeMouseMotionListener(java.awt.event.MouseMotionListener)
-
-    private static var removeMouseMotionListener_MethodID_9: jmethodID?
-
-    open func removeMouseMotionListener( listener: MouseMotionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMouseMotionListener", methodSig: "(Ljava/awt/event/MouseMotionListener;)V", methodCache: &TrayIcon.removeMouseMotionListener_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func removeMouseMotionListener( _ _listener: MouseMotionListener? ) {
-        removeMouseMotionListener( listener: _listener )
-    }
-
-    /// public synchronized java.awt.event.MouseMotionListener[] java.awt.TrayIcon.getMouseMotionListeners()
-
-    private static var getMouseMotionListeners_MethodID_10: jmethodID?
-
-    open func getMouseMotionListeners() -> [MouseMotionListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseMotionListeners", methodSig: "()[Ljava/awt/event/MouseMotionListener;", methodCache: &TrayIcon.getMouseMotionListeners_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [MouseMotionListenerForward](), from: __return )
-    }
-
-
-    /// void java.awt.TrayIcon.processMouseEvent(java.awt.event.MouseEvent)
-
-    /// void java.awt.TrayIcon.processMouseMotionEvent(java.awt.event.MouseEvent)
-
     /// void java.awt.TrayIcon.addNotify() throws java.awt.AWTException
 
-    /// void java.awt.TrayIcon.removeNotify()
-
-    /// void java.awt.TrayIcon.processEvent(java.awt.AWTEvent)
+    // Skipping method: true false false false false 
 
     /// void java.awt.TrayIcon.dispatchEvent(java.awt.AWTEvent)
 
-    /// void java.awt.TrayIcon.setID(int)
-
-    /// public void java.awt.TrayIcon.setImage(java.awt.Image)
-
-    private static var setImage_MethodID_11: jmethodID?
-
-    open func setImage( image: Image? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: image, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &TrayIcon.setImage_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setImage( _ _image: Image? ) {
-        setImage( image: _image )
-    }
-
-    /// public void java.awt.TrayIcon.setPopupMenu(java.awt.PopupMenu)
-
-    private static var setPopupMenu_MethodID_12: jmethodID?
-
-    open func setPopupMenu( popup: PopupMenu? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: popup, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPopupMenu", methodSig: "(Ljava/awt/PopupMenu;)V", methodCache: &TrayIcon.setPopupMenu_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func setPopupMenu( _ _popup: PopupMenu? ) {
-        setPopupMenu( popup: _popup )
-    }
-
-    /// public java.awt.PopupMenu java.awt.TrayIcon.getPopupMenu()
-
-    private static var getPopupMenu_MethodID_13: jmethodID?
-
-    open func getPopupMenu() -> PopupMenu! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPopupMenu", methodSig: "()Ljava/awt/PopupMenu;", methodCache: &TrayIcon.getPopupMenu_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PopupMenu( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.TrayIcon.setToolTip(java.lang.String)
-
-    private static var setToolTip_MethodID_14: jmethodID?
-
-    open func setToolTip( tooltip: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tooltip, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToolTip", methodSig: "(Ljava/lang/String;)V", methodCache: &TrayIcon.setToolTip_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setToolTip( _ _tooltip: String? ) {
-        setToolTip( tooltip: _tooltip )
-    }
-
-    /// public java.lang.String java.awt.TrayIcon.getToolTip()
-
-    private static var getToolTip_MethodID_15: jmethodID?
-
-    open func getToolTip() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTip", methodSig: "()Ljava/lang/String;", methodCache: &TrayIcon.getToolTip_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public void java.awt.TrayIcon.setImageAutoSize(boolean)
-
-    private static var setImageAutoSize_MethodID_16: jmethodID?
-
-    open func setImageAutoSize( autosize: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: autosize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImageAutoSize", methodSig: "(Z)V", methodCache: &TrayIcon.setImageAutoSize_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setImageAutoSize( _ _autosize: Bool ) {
-        setImageAutoSize( autosize: _autosize )
-    }
-
-    /// public boolean java.awt.TrayIcon.isImageAutoSize()
-
-    private static var isImageAutoSize_MethodID_17: jmethodID?
-
-    open func isImageAutoSize() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isImageAutoSize", methodSig: "()Z", methodCache: &TrayIcon.isImageAutoSize_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
+    // Skipping method: true false false false false 
 
     /// public void java.awt.TrayIcon.displayMessage(java.lang.String,java.lang.String,java.awt.TrayIcon$MessageType)
 
-    private static var displayMessage_MethodID_18: jmethodID?
+    private static var displayMessage_MethodID_7: jmethodID?
 
     open func displayMessage( caption: String?, text: String?, messageType: TrayIcon_MessageType? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: caption, locals: &__locals )
         __args[1] = JNIType.toJava( value: text, locals: &__locals )
         __args[2] = JNIType.toJava( value: messageType, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "displayMessage", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/awt/TrayIcon$MessageType;)V", methodCache: &TrayIcon.displayMessage_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "displayMessage", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/awt/TrayIcon$MessageType;)V", methodCache: &TrayIcon.displayMessage_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func displayMessage( _ _caption: String?, _ _text: String?, _ _messageType: TrayIcon_MessageType? ) {
         displayMessage( caption: _caption, text: _text, messageType: _messageType )
     }
 
+    /// final java.security.AccessControlContext java.awt.TrayIcon.getAccessControlContext()
+
+    // Skipping method: true false false false false 
+
     /// public java.lang.String java.awt.TrayIcon.getActionCommand()
 
-    private static var getActionCommand_MethodID_19: jmethodID?
+    private static var getActionCommand_MethodID_8: jmethodID?
 
     open func getActionCommand() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &TrayIcon.getActionCommand_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &TrayIcon.getActionCommand_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
+
+    /// public synchronized java.awt.event.ActionListener[] java.awt.TrayIcon.getActionListeners()
+
+    private static var getActionListeners_MethodID_9: jmethodID?
+
+    open func getActionListeners() -> [ActionListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &TrayIcon.getActionListeners_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ActionListenerForward].self, from: __return )
+    }
+
+
+    /// int java.awt.TrayIcon.getID()
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Image java.awt.TrayIcon.getImage()
+
+    private static var getImage_MethodID_10: jmethodID?
+
+    open func getImage() -> Image! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "()Ljava/awt/Image;", methodCache: &TrayIcon.getImage_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Image( javaObject: __return ) : nil
+    }
+
+
+    /// public synchronized java.awt.event.MouseListener[] java.awt.TrayIcon.getMouseListeners()
+
+    private static var getMouseListeners_MethodID_11: jmethodID?
+
+    open func getMouseListeners() -> [MouseListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseListeners", methodSig: "()[Ljava/awt/event/MouseListener;", methodCache: &TrayIcon.getMouseListeners_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [MouseListenerForward].self, from: __return )
+    }
+
+
+    /// public synchronized java.awt.event.MouseMotionListener[] java.awt.TrayIcon.getMouseMotionListeners()
+
+    private static var getMouseMotionListeners_MethodID_12: jmethodID?
+
+    open func getMouseMotionListeners() -> [MouseMotionListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseMotionListeners", methodSig: "()[Ljava/awt/event/MouseMotionListener;", methodCache: &TrayIcon.getMouseMotionListeners_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [MouseMotionListenerForward].self, from: __return )
+    }
+
+
+    /// public java.awt.PopupMenu java.awt.TrayIcon.getPopupMenu()
+
+    private static var getPopupMenu_MethodID_13: jmethodID?
+
+    open func getPopupMenu() -> PopupMenu! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPopupMenu", methodSig: "()Ljava/awt/PopupMenu;", methodCache: &TrayIcon.getPopupMenu_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PopupMenu( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Dimension java.awt.TrayIcon.getSize()
+
+    private static var getSize_MethodID_14: jmethodID?
+
+    open func getSize() -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &TrayIcon.getSize_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.String java.awt.TrayIcon.getToolTip()
+
+    private static var getToolTip_MethodID_15: jmethodID?
+
+    open func getToolTip() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTip", methodSig: "()Ljava/lang/String;", methodCache: &TrayIcon.getToolTip_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public boolean java.awt.TrayIcon.isImageAutoSize()
+
+    private static var isImageAutoSize_MethodID_16: jmethodID?
+
+    open func isImageAutoSize() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isImageAutoSize", methodSig: "()Z", methodCache: &TrayIcon.isImageAutoSize_MethodID_16, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// void java.awt.TrayIcon.processActionEvent(java.awt.event.ActionEvent)
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.TrayIcon.processEvent(java.awt.AWTEvent)
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.TrayIcon.processMouseEvent(java.awt.event.MouseEvent)
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.TrayIcon.processMouseMotionEvent(java.awt.event.MouseEvent)
+
+    // Skipping method: true false false false false 
+
+    /// public synchronized void java.awt.TrayIcon.removeActionListener(java.awt.event.ActionListener)
+
+    private static var removeActionListener_MethodID_17: jmethodID?
+
+    open func removeActionListener( listener: ActionListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &TrayIcon.removeActionListener_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func removeActionListener( _ _listener: ActionListener? ) {
+        removeActionListener( listener: _listener )
+    }
+
+    /// public synchronized void java.awt.TrayIcon.removeMouseListener(java.awt.event.MouseListener)
+
+    private static var removeMouseListener_MethodID_18: jmethodID?
+
+    open func removeMouseListener( listener: MouseListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMouseListener", methodSig: "(Ljava/awt/event/MouseListener;)V", methodCache: &TrayIcon.removeMouseListener_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func removeMouseListener( _ _listener: MouseListener? ) {
+        removeMouseListener( listener: _listener )
+    }
+
+    /// public synchronized void java.awt.TrayIcon.removeMouseMotionListener(java.awt.event.MouseMotionListener)
+
+    private static var removeMouseMotionListener_MethodID_19: jmethodID?
+
+    open func removeMouseMotionListener( listener: MouseMotionListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMouseMotionListener", methodSig: "(Ljava/awt/event/MouseMotionListener;)V", methodCache: &TrayIcon.removeMouseMotionListener_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func removeMouseMotionListener( _ _listener: MouseMotionListener? ) {
+        removeMouseMotionListener( listener: _listener )
+    }
+
+    /// void java.awt.TrayIcon.removeNotify()
+
+    // Skipping method: true false false false false 
 
     /// public void java.awt.TrayIcon.setActionCommand(java.lang.String)
 
     private static var setActionCommand_MethodID_20: jmethodID?
 
     open func setActionCommand( command: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: command, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &TrayIcon.setActionCommand_MethodID_20, args: &__args, locals: &__locals )
     }
@@ -352,62 +373,69 @@ open class TrayIcon: java_swift.JavaObject {
         setActionCommand( command: _command )
     }
 
-    /// public synchronized void java.awt.TrayIcon.addActionListener(java.awt.event.ActionListener)
+    /// void java.awt.TrayIcon.setID(int)
 
-    private static var addActionListener_MethodID_21: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func addActionListener( listener: ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// public void java.awt.TrayIcon.setImage(java.awt.Image)
+
+    private static var setImage_MethodID_21: jmethodID?
+
+    open func setImage( image: Image? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &TrayIcon.addActionListener_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open func addActionListener( _ _listener: ActionListener? ) {
-        addActionListener( listener: _listener )
-    }
-
-    /// public synchronized void java.awt.TrayIcon.removeActionListener(java.awt.event.ActionListener)
-
-    private static var removeActionListener_MethodID_22: jmethodID?
-
-    open func removeActionListener( listener: ActionListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: image, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &TrayIcon.setImage_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func setImage( _ _image: Image? ) {
+        setImage( image: _image )
+    }
+
+    /// public void java.awt.TrayIcon.setImageAutoSize(boolean)
+
+    private static var setImageAutoSize_MethodID_22: jmethodID?
+
+    open func setImageAutoSize( autosize: Bool ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &TrayIcon.removeActionListener_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func removeActionListener( _ _listener: ActionListener? ) {
-        removeActionListener( listener: _listener )
-    }
-
-    /// public synchronized java.awt.event.ActionListener[] java.awt.TrayIcon.getActionListeners()
-
-    private static var getActionListeners_MethodID_23: jmethodID?
-
-    open func getActionListeners() -> [ActionListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &TrayIcon.getActionListeners_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
+        __args[0] = jvalue( z: jboolean(autosize ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImageAutoSize", methodSig: "(Z)V", methodCache: &TrayIcon.setImageAutoSize_MethodID_22, args: &__args, locals: &__locals )
     }
 
+    open func setImageAutoSize( _ _autosize: Bool ) {
+        setImageAutoSize( autosize: _autosize )
+    }
 
-    /// void java.awt.TrayIcon.processActionEvent(java.awt.event.ActionEvent)
+    /// public void java.awt.TrayIcon.setPopupMenu(java.awt.PopupMenu)
 
-    /// public java.awt.Image java.awt.TrayIcon.getImage()
+    private static var setPopupMenu_MethodID_23: jmethodID?
 
-    private static var getImage_MethodID_24: jmethodID?
-
-    open func getImage() -> Image! {
+    open func setPopupMenu( popup: PopupMenu? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "()Ljava/awt/Image;", methodCache: &TrayIcon.getImage_MethodID_24, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Image( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: popup, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPopupMenu", methodSig: "(Ljava/awt/PopupMenu;)V", methodCache: &TrayIcon.setPopupMenu_MethodID_23, args: &__args, locals: &__locals )
     }
 
+    open func setPopupMenu( _ _popup: PopupMenu? ) {
+        setPopupMenu( popup: _popup )
+    }
+
+    /// public void java.awt.TrayIcon.setToolTip(java.lang.String)
+
+    private static var setToolTip_MethodID_24: jmethodID?
+
+    open func setToolTip( tooltip: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: tooltip, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setToolTip", methodSig: "(Ljava/lang/String;)V", methodCache: &TrayIcon.setToolTip_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func setToolTip( _ _tooltip: String? ) {
+        setToolTip( tooltip: _tooltip )
+    }
 
 }
 

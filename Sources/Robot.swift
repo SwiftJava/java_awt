@@ -16,29 +16,29 @@ open class Robot: java_swift.JavaObject {
 
     private static var RobotJNIClass: jclass?
 
-    /// private static final int java.awt.Robot.MAX_DELAY
-
-    /// private java.awt.peer.RobotPeer java.awt.Robot.peer
-
-    /// private boolean java.awt.Robot.isAutoWaitForIdle
-
-    /// private int java.awt.Robot.autoDelay
-
     /// private static int java.awt.Robot.LEGAL_BUTTON_MASK
 
-    /// private java.awt.image.DirectColorModel java.awt.Robot.screenCapCM
+    /// private static final int java.awt.Robot.MAX_DELAY
 
     /// private transient java.lang.Object java.awt.Robot.anchor
 
+    /// private int java.awt.Robot.autoDelay
+
     /// private transient java.awt.Robot$RobotDisposer java.awt.Robot.disposer
+
+    /// private boolean java.awt.Robot.isAutoWaitForIdle
+
+    /// private java.awt.peer.RobotPeer java.awt.Robot.peer
+
+    /// private java.awt.image.DirectColorModel java.awt.Robot.screenCapCM
 
     /// public java.awt.Robot() throws java.awt.AWTException
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/Robot", classCache: &Robot.RobotJNIClass, methodSig: "()V", methodCache: &Robot.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -49,11 +49,12 @@ open class Robot: java_swift.JavaObject {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( screen: GraphicsDevice? ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: screen, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/Robot", classCache: &Robot.RobotJNIClass, methodSig: "(Ljava/awt/GraphicsDevice;)V", methodCache: &Robot.new_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw AWTException( javaObject: throwable )
         }
         self.init( javaObject: __object )
@@ -64,178 +65,41 @@ open class Robot: java_swift.JavaObject {
         try self.init( screen: _screen )
     }
 
-    /// public synchronized java.lang.String java.awt.Robot.toString()
+    /// private static void java.awt.Robot.checkScreenCaptureAllowed()
 
-    /// private void java.awt.Robot.init(java.awt.GraphicsDevice) throws java.awt.AWTException
-
-    /// public synchronized void java.awt.Robot.delay(int)
-
-    private static var delay_MethodID_3: jmethodID?
-
-    open func delay( ms: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ms, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "delay", methodSig: "(I)V", methodCache: &Robot.delay_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func delay( _ _ms: Int ) {
-        delay( ms: _ms )
-    }
-
-    /// public synchronized void java.awt.Robot.mouseMove(int,int)
-
-    private static var mouseMove_MethodID_4: jmethodID?
-
-    open func mouseMove( x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMove", methodSig: "(II)V", methodCache: &Robot.mouseMove_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func mouseMove( _ _x: Int, _ _y: Int ) {
-        mouseMove( x: _x, y: _y )
-    }
-
-    /// public synchronized void java.awt.Robot.waitForIdle()
-
-    private static var waitForIdle_MethodID_5: jmethodID?
-
-    open func waitForIdle() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "waitForIdle", methodSig: "()V", methodCache: &Robot.waitForIdle_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// public synchronized boolean java.awt.Robot.isAutoWaitForIdle()
-
-    private static var isAutoWaitForIdle_MethodID_6: jmethodID?
-
-    open func isAutoWaitForIdle() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAutoWaitForIdle", methodSig: "()Z", methodCache: &Robot.isAutoWaitForIdle_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// private void java.awt.Robot.autoDelay()
+    /// private static void java.awt.Robot.checkValidRect(java.awt.Rectangle)
 
     /// private static synchronized void java.awt.Robot.initLegalButtonMask()
 
-    /// private void java.awt.Robot.checkRobotAllowed()
+    /// private void java.awt.Robot.init(java.awt.GraphicsDevice) throws java.awt.AWTException
 
-    /// private void java.awt.Robot.checkIsScreenDevice(java.awt.GraphicsDevice)
+    /// private void java.awt.Robot.afterEvent()
 
-    /// public synchronized void java.awt.Robot.mousePress(int)
+    /// private void java.awt.Robot.autoDelay()
 
-    private static var mousePress_MethodID_7: jmethodID?
-
-    open func mousePress( buttons: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: buttons, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePress", methodSig: "(I)V", methodCache: &Robot.mousePress_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func mousePress( _ _buttons: Int ) {
-        mousePress( buttons: _buttons )
-    }
-
-    /// public synchronized void java.awt.Robot.mouseRelease(int)
-
-    private static var mouseRelease_MethodID_8: jmethodID?
-
-    open func mouseRelease( buttons: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: buttons, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseRelease", methodSig: "(I)V", methodCache: &Robot.mouseRelease_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func mouseRelease( _ _buttons: Int ) {
-        mouseRelease( buttons: _buttons )
-    }
+    /// private void java.awt.Robot.autoWaitForIdle()
 
     /// private void java.awt.Robot.checkButtonsArgument(int)
 
-    /// public synchronized void java.awt.Robot.mouseWheel(int)
+    /// private void java.awt.Robot.checkDelayArgument(int)
 
-    private static var mouseWheel_MethodID_9: jmethodID?
-
-    open func mouseWheel( wheelAmt: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: wheelAmt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseWheel", methodSig: "(I)V", methodCache: &Robot.mouseWheel_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func mouseWheel( _ _wheelAmt: Int ) {
-        mouseWheel( wheelAmt: _wheelAmt )
-    }
-
-    /// public synchronized void java.awt.Robot.keyPress(int)
-
-    private static var keyPress_MethodID_10: jmethodID?
-
-    open func keyPress( keycode: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keycode, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyPress", methodSig: "(I)V", methodCache: &Robot.keyPress_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func keyPress( _ _keycode: Int ) {
-        keyPress( keycode: _keycode )
-    }
-
-    /// public synchronized void java.awt.Robot.keyRelease(int)
-
-    private static var keyRelease_MethodID_11: jmethodID?
-
-    open func keyRelease( keycode: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keycode, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyRelease", methodSig: "(I)V", methodCache: &Robot.keyRelease_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func keyRelease( _ _keycode: Int ) {
-        keyRelease( keycode: _keycode )
-    }
+    /// private void java.awt.Robot.checkIsScreenDevice(java.awt.GraphicsDevice)
 
     /// private void java.awt.Robot.checkKeycodeArgument(int)
 
-    /// public synchronized java.awt.Color java.awt.Robot.getPixelColor(int,int)
+    /// private void java.awt.Robot.checkNotDispatchThread()
 
-    private static var getPixelColor_MethodID_12: jmethodID?
-
-    open func getPixelColor( x: Int, y: Int ) -> Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixelColor", methodSig: "(II)Ljava/awt/Color;", methodCache: &Robot.getPixelColor_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Color( javaObject: __return ) : nil
-    }
-
-    open func getPixelColor( _ _x: Int, _ _y: Int ) -> Color! {
-        return getPixelColor( x: _x, y: _y )
-    }
+    /// private void java.awt.Robot.checkRobotAllowed()
 
     /// public synchronized java.awt.image.BufferedImage java.awt.Robot.createScreenCapture(java.awt.Rectangle)
 
-    private static var createScreenCapture_MethodID_13: jmethodID?
+    private static var createScreenCapture_MethodID_3: jmethodID?
 
     open func createScreenCapture( screenRect: Rectangle? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: screenRect, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScreenCapture", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/image/BufferedImage;", methodCache: &Robot.createScreenCapture_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScreenCapture", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/image/BufferedImage;", methodCache: &Robot.createScreenCapture_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImage( javaObject: __return ) : nil
     }
@@ -244,59 +108,198 @@ open class Robot: java_swift.JavaObject {
         return createScreenCapture( screenRect: _screenRect )
     }
 
-    /// private static void java.awt.Robot.checkValidRect(java.awt.Rectangle)
+    /// public synchronized void java.awt.Robot.delay(int)
 
-    /// private static void java.awt.Robot.checkScreenCaptureAllowed()
+    private static var delay_MethodID_4: jmethodID?
 
-    /// private void java.awt.Robot.afterEvent()
-
-    /// public synchronized void java.awt.Robot.setAutoWaitForIdle(boolean)
-
-    private static var setAutoWaitForIdle_MethodID_14: jmethodID?
-
-    open func setAutoWaitForIdle( isOn: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func delay( ms: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: isOn, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAutoWaitForIdle", methodSig: "(Z)V", methodCache: &Robot.setAutoWaitForIdle_MethodID_14, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(ms) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "delay", methodSig: "(I)V", methodCache: &Robot.delay_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func setAutoWaitForIdle( _ _isOn: Bool ) {
-        setAutoWaitForIdle( isOn: _isOn )
+    open func delay( _ _ms: Int ) {
+        delay( ms: _ms )
     }
-
-    /// private void java.awt.Robot.autoWaitForIdle()
 
     /// public synchronized int java.awt.Robot.getAutoDelay()
 
-    private static var getAutoDelay_MethodID_15: jmethodID?
+    private static var getAutoDelay_MethodID_5: jmethodID?
 
     open func getAutoDelay() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAutoDelay", methodSig: "()I", methodCache: &Robot.getAutoDelay_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAutoDelay", methodSig: "()I", methodCache: &Robot.getAutoDelay_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
+    /// public synchronized java.awt.Color java.awt.Robot.getPixelColor(int,int)
+
+    private static var getPixelColor_MethodID_6: jmethodID?
+
+    open func getPixelColor( x: Int, y: Int ) -> Color! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixelColor", methodSig: "(II)Ljava/awt/Color;", methodCache: &Robot.getPixelColor_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Color( javaObject: __return ) : nil
+    }
+
+    open func getPixelColor( _ _x: Int, _ _y: Int ) -> Color! {
+        return getPixelColor( x: _x, y: _y )
+    }
+
+    /// public synchronized boolean java.awt.Robot.isAutoWaitForIdle()
+
+    private static var isAutoWaitForIdle_MethodID_7: jmethodID?
+
+    open func isAutoWaitForIdle() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAutoWaitForIdle", methodSig: "()Z", methodCache: &Robot.isAutoWaitForIdle_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public synchronized void java.awt.Robot.keyPress(int)
+
+    private static var keyPress_MethodID_8: jmethodID?
+
+    open func keyPress( keycode: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(keycode) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyPress", methodSig: "(I)V", methodCache: &Robot.keyPress_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func keyPress( _ _keycode: Int ) {
+        keyPress( keycode: _keycode )
+    }
+
+    /// public synchronized void java.awt.Robot.keyRelease(int)
+
+    private static var keyRelease_MethodID_9: jmethodID?
+
+    open func keyRelease( keycode: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(keycode) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyRelease", methodSig: "(I)V", methodCache: &Robot.keyRelease_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func keyRelease( _ _keycode: Int ) {
+        keyRelease( keycode: _keycode )
+    }
+
+    /// public synchronized void java.awt.Robot.mouseMove(int,int)
+
+    private static var mouseMove_MethodID_10: jmethodID?
+
+    open func mouseMove( x: Int, y: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMove", methodSig: "(II)V", methodCache: &Robot.mouseMove_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func mouseMove( _ _x: Int, _ _y: Int ) {
+        mouseMove( x: _x, y: _y )
+    }
+
+    /// public synchronized void java.awt.Robot.mousePress(int)
+
+    private static var mousePress_MethodID_11: jmethodID?
+
+    open func mousePress( buttons: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(buttons) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePress", methodSig: "(I)V", methodCache: &Robot.mousePress_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func mousePress( _ _buttons: Int ) {
+        mousePress( buttons: _buttons )
+    }
+
+    /// public synchronized void java.awt.Robot.mouseRelease(int)
+
+    private static var mouseRelease_MethodID_12: jmethodID?
+
+    open func mouseRelease( buttons: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(buttons) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseRelease", methodSig: "(I)V", methodCache: &Robot.mouseRelease_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func mouseRelease( _ _buttons: Int ) {
+        mouseRelease( buttons: _buttons )
+    }
+
+    /// public synchronized void java.awt.Robot.mouseWheel(int)
+
+    private static var mouseWheel_MethodID_13: jmethodID?
+
+    open func mouseWheel( wheelAmt: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(wheelAmt) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseWheel", methodSig: "(I)V", methodCache: &Robot.mouseWheel_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func mouseWheel( _ _wheelAmt: Int ) {
+        mouseWheel( wheelAmt: _wheelAmt )
+    }
+
     /// public synchronized void java.awt.Robot.setAutoDelay(int)
 
-    private static var setAutoDelay_MethodID_16: jmethodID?
+    private static var setAutoDelay_MethodID_14: jmethodID?
 
     open func setAutoDelay( ms: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ms, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAutoDelay", methodSig: "(I)V", methodCache: &Robot.setAutoDelay_MethodID_16, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(ms) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAutoDelay", methodSig: "(I)V", methodCache: &Robot.setAutoDelay_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setAutoDelay( _ _ms: Int ) {
         setAutoDelay( ms: _ms )
     }
 
-    /// private void java.awt.Robot.checkDelayArgument(int)
+    /// public synchronized void java.awt.Robot.setAutoWaitForIdle(boolean)
 
-    /// private void java.awt.Robot.checkNotDispatchThread()
+    private static var setAutoWaitForIdle_MethodID_15: jmethodID?
+
+    open func setAutoWaitForIdle( isOn: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(isOn ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAutoWaitForIdle", methodSig: "(Z)V", methodCache: &Robot.setAutoWaitForIdle_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func setAutoWaitForIdle( _ _isOn: Bool ) {
+        setAutoWaitForIdle( isOn: _isOn )
+    }
+
+    /// public synchronized java.lang.String java.awt.Robot.toString()
+
+    // Skipping method: false true false false false 
+
+    /// public synchronized void java.awt.Robot.waitForIdle()
+
+    private static var waitForIdle_MethodID_16: jmethodID?
+
+    open func waitForIdle() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "waitForIdle", methodSig: "()V", methodCache: &Robot.waitForIdle_MethodID_16, args: &__args, locals: &__locals )
+    }
+
 
 }
 

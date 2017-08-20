@@ -16,33 +16,14 @@ open class Image: java_swift.JavaObject {
 
     private static var ImageJNIClass: jclass?
 
-    /// private static java.awt.ImageCapabilities java.awt.Image.defaultImageCaps
+    /// public static final int java.awt.Image.SCALE_AREA_AVERAGING
 
-    /// protected float java.awt.Image.accelerationPriority
+    private static var SCALE_AREA_AVERAGING_FieldID: jfieldID?
 
-    private static var accelerationPriority_FieldID: jfieldID?
-
-    open var accelerationPriority: Float {
+    open static var SCALE_AREA_AVERAGING: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "accelerationPriority", fieldType: "F", fieldCache: &Image.accelerationPriority_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetFloatField( fieldName: "accelerationPriority", fieldType: "F", fieldCache: &Image.accelerationPriority_FieldID, object: javaObject, value: __value.f, locals: &__locals )
-        }
-    }
-
-    /// public static final java.lang.Object java.awt.Image.UndefinedProperty
-
-    private static var UndefinedProperty_FieldID: jfieldID?
-
-    open static var UndefinedProperty: java_swift.JavaObject! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "UndefinedProperty", fieldType: "Ljava/lang/Object;", fieldCache: &UndefinedProperty_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+            let __value = JNIField.GetStaticIntField( fieldName: "SCALE_AREA_AVERAGING", fieldType: "I", fieldCache: &SCALE_AREA_AVERAGING_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
+            return Int(__value)
         }
     }
 
@@ -53,7 +34,7 @@ open class Image: java_swift.JavaObject {
     open static var SCALE_DEFAULT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCALE_DEFAULT", fieldType: "I", fieldCache: &SCALE_DEFAULT_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -64,18 +45,7 @@ open class Image: java_swift.JavaObject {
     open static var SCALE_FAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCALE_FAST", fieldType: "I", fieldCache: &SCALE_FAST_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.Image.SCALE_SMOOTH
-
-    private static var SCALE_SMOOTH_FieldID: jfieldID?
-
-    open static var SCALE_SMOOTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCALE_SMOOTH", fieldType: "I", fieldCache: &SCALE_SMOOTH_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -86,86 +56,99 @@ open class Image: java_swift.JavaObject {
     open static var SCALE_REPLICATE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCALE_REPLICATE", fieldType: "I", fieldCache: &SCALE_REPLICATE_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.Image.SCALE_AREA_AVERAGING
+    /// public static final int java.awt.Image.SCALE_SMOOTH
 
-    private static var SCALE_AREA_AVERAGING_FieldID: jfieldID?
+    private static var SCALE_SMOOTH_FieldID: jfieldID?
 
-    open static var SCALE_AREA_AVERAGING: Int {
+    open static var SCALE_SMOOTH: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SCALE_AREA_AVERAGING", fieldType: "I", fieldCache: &SCALE_AREA_AVERAGING_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "SCALE_SMOOTH", fieldType: "I", fieldCache: &SCALE_SMOOTH_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final java.lang.Object java.awt.Image.UndefinedProperty
+
+    private static var UndefinedProperty_FieldID: jfieldID?
+
+    open static var UndefinedProperty: java_swift.JavaObject! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "UndefinedProperty", fieldType: "Ljava/lang/Object;", fieldCache: &UndefinedProperty_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+        }
+    }
+
+    /// private static java.awt.ImageCapabilities java.awt.Image.defaultImageCaps
+
+    /// protected float java.awt.Image.accelerationPriority
+
+    private static var accelerationPriority_FieldID: jfieldID?
+
+    open var accelerationPriority: Float {
+        get {
+            let __value = JNIField.GetFloatField( fieldName: "accelerationPriority", fieldType: "F", fieldCache: &Image.accelerationPriority_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( f: newValue )
+            JNIField.SetFloatField( fieldName: "accelerationPriority", fieldType: "F", fieldCache: &Image.accelerationPriority_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
 
     /// sun.awt.image.SurfaceManager java.awt.Image.surfaceManager
+
+    // Skipping field: true false false false false false 
 
     /// public java.awt.Image()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/Image", classCache: &Image.ImageJNIClass, methodSig: "()V", methodCache: &Image.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public abstract java.lang.Object java.awt.Image.getProperty(java.lang.String,java.awt.image.ImageObserver)
-
-    private static var getProperty_MethodID_2: jmethodID?
-
-    open func getProperty( name: String?, observer: ImageObserver? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: observer, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProperty", methodSig: "(Ljava/lang/String;Ljava/awt/image/ImageObserver;)Ljava/lang/Object;", methodCache: &Image.getProperty_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open func getProperty( _ _name: String?, _ _observer: ImageObserver? ) -> java_swift.JavaObject! {
-        return getProperty( name: _name, observer: _observer )
-    }
-
     /// public void java.awt.Image.flush()
 
-    private static var flush_MethodID_3: jmethodID?
+    private static var flush_MethodID_2: jmethodID?
 
     open func flush() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "flush", methodSig: "()V", methodCache: &Image.flush_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "flush", methodSig: "()V", methodCache: &Image.flush_MethodID_2, args: &__args, locals: &__locals )
     }
 
 
-    /// public abstract java.awt.image.ImageProducer java.awt.Image.getSource()
+    /// public float java.awt.Image.getAccelerationPriority()
 
-    private static var getSource_MethodID_4: jmethodID?
+    private static var getAccelerationPriority_MethodID_3: jmethodID?
 
-    open func getSource() -> ImageProducer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getAccelerationPriority() -> Float {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSource", methodSig: "()Ljava/awt/image/ImageProducer;", methodCache: &Image.getSource_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ImageProducerForward( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAccelerationPriority", methodSig: "()F", methodCache: &Image.getAccelerationPriority_MethodID_3, args: &__args, locals: &__locals )
+        return __return
     }
 
 
     /// public java.awt.ImageCapabilities java.awt.Image.getCapabilities(java.awt.GraphicsConfiguration)
 
-    private static var getCapabilities_MethodID_5: jmethodID?
+    private static var getCapabilities_MethodID_4: jmethodID?
 
     open func getCapabilities( gc: GraphicsConfiguration? ) -> ImageCapabilities! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: gc, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCapabilities", methodSig: "(Ljava/awt/GraphicsConfiguration;)Ljava/awt/ImageCapabilities;", methodCache: &Image.getCapabilities_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCapabilities", methodSig: "(Ljava/awt/GraphicsConfiguration;)Ljava/awt/ImageCapabilities;", methodCache: &Image.getCapabilities_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ImageCapabilities( javaObject: __return ) : nil
     }
@@ -174,17 +157,64 @@ open class Image: java_swift.JavaObject {
         return getCapabilities( gc: _gc )
     }
 
+    /// public abstract java.awt.Graphics java.awt.Image.getGraphics()
+
+    private static var getGraphics_MethodID_5: jmethodID?
+
+    open func getGraphics() -> Graphics! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphics", methodSig: "()Ljava/awt/Graphics;", methodCache: &Image.getGraphics_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Graphics( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract int java.awt.Image.getHeight(java.awt.image.ImageObserver)
+
+    private static var getHeight_MethodID_6: jmethodID?
+
+    open func getHeight( observer: ImageObserver? ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: observer, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "(Ljava/awt/image/ImageObserver;)I", methodCache: &Image.getHeight_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getHeight( _ _observer: ImageObserver? ) -> Int {
+        return getHeight( observer: _observer )
+    }
+
+    /// public abstract java.lang.Object java.awt.Image.getProperty(java.lang.String,java.awt.image.ImageObserver)
+
+    private static var getProperty_MethodID_7: jmethodID?
+
+    open func getProperty( name: String?, observer: ImageObserver? ) -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: observer, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProperty", methodSig: "(Ljava/lang/String;Ljava/awt/image/ImageObserver;)Ljava/lang/Object;", methodCache: &Image.getProperty_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    open func getProperty( _ _name: String?, _ _observer: ImageObserver? ) -> java_swift.JavaObject! {
+        return getProperty( name: _name, observer: _observer )
+    }
+
     /// public java.awt.Image java.awt.Image.getScaledInstance(int,int,int)
 
-    private static var getScaledInstance_MethodID_6: jmethodID?
+    private static var getScaledInstance_MethodID_8: jmethodID?
 
     open func getScaledInstance( width: Int, height: Int, hints: Int ) -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        __args[2] = JNIType.toJava( value: hints, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScaledInstance", methodSig: "(III)Ljava/awt/Image;", methodCache: &Image.getScaledInstance_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(width) )
+        __args[1] = jvalue( i: jint(height) )
+        __args[2] = jvalue( i: jint(hints) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScaledInstance", methodSig: "(III)Ljava/awt/Image;", methodCache: &Image.getScaledInstance_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Image( javaObject: __return ) : nil
     }
@@ -193,43 +223,16 @@ open class Image: java_swift.JavaObject {
         return getScaledInstance( width: _width, height: _height, hints: _hints )
     }
 
-    /// public void java.awt.Image.setAccelerationPriority(float)
+    /// public abstract java.awt.image.ImageProducer java.awt.Image.getSource()
 
-    private static var setAccelerationPriority_MethodID_7: jmethodID?
+    private static var getSource_MethodID_9: jmethodID?
 
-    open func setAccelerationPriority( priority: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getSource() -> ImageProducer! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: priority, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAccelerationPriority", methodSig: "(F)V", methodCache: &Image.setAccelerationPriority_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setAccelerationPriority( _ _priority: Float ) {
-        setAccelerationPriority( priority: _priority )
-    }
-
-    /// public float java.awt.Image.getAccelerationPriority()
-
-    private static var getAccelerationPriority_MethodID_8: jmethodID?
-
-    open func getAccelerationPriority() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAccelerationPriority", methodSig: "()F", methodCache: &Image.getAccelerationPriority_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
-    /// public abstract java.awt.Graphics java.awt.Image.getGraphics()
-
-    private static var getGraphics_MethodID_9: jmethodID?
-
-    open func getGraphics() -> Graphics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphics", methodSig: "()Ljava/awt/Graphics;", methodCache: &Image.getGraphics_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSource", methodSig: "()Ljava/awt/image/ImageProducer;", methodCache: &Image.getSource_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Graphics( javaObject: __return ) : nil
+        return __return != nil ? ImageProducerForward( javaObject: __return ) : nil
     }
 
 
@@ -238,31 +241,30 @@ open class Image: java_swift.JavaObject {
     private static var getWidth_MethodID_10: jmethodID?
 
     open func getWidth( observer: ImageObserver? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: observer, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "(Ljava/awt/image/ImageObserver;)I", methodCache: &Image.getWidth_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     open func getWidth( _ _observer: ImageObserver? ) -> Int {
         return getWidth( observer: _observer )
     }
 
-    /// public abstract int java.awt.Image.getHeight(java.awt.image.ImageObserver)
+    /// public void java.awt.Image.setAccelerationPriority(float)
 
-    private static var getHeight_MethodID_11: jmethodID?
+    private static var setAccelerationPriority_MethodID_11: jmethodID?
 
-    open func getHeight( observer: ImageObserver? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setAccelerationPriority( priority: Float ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: observer, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "(Ljava/awt/image/ImageObserver;)I", methodCache: &Image.getHeight_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( f: priority )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAccelerationPriority", methodSig: "(F)V", methodCache: &Image.setAccelerationPriority_MethodID_11, args: &__args, locals: &__locals )
     }
 
-    open func getHeight( _ _observer: ImageObserver? ) -> Int {
-        return getHeight( observer: _observer )
+    open func setAccelerationPriority( _ _priority: Float ) {
+        setAccelerationPriority( priority: _priority )
     }
 
 }

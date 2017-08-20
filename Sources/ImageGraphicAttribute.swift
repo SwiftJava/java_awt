@@ -18,35 +18,45 @@ open class ImageGraphicAttribute: GraphicAttribute {
 
     /// private java.awt.Image java.awt.font.ImageGraphicAttribute.fImage
 
-    /// private float java.awt.font.ImageGraphicAttribute.fImageWidth
-
     /// private float java.awt.font.ImageGraphicAttribute.fImageHeight
+
+    /// private float java.awt.font.ImageGraphicAttribute.fImageWidth
 
     /// private float java.awt.font.ImageGraphicAttribute.fOriginX
 
     /// private float java.awt.font.ImageGraphicAttribute.fOriginY
 
-    /// private int java.awt.font.GraphicAttribute.fAlignment
-
-    /// public static final int java.awt.font.GraphicAttribute.TOP_ALIGNMENT
-
     /// public static final int java.awt.font.GraphicAttribute.BOTTOM_ALIGNMENT
 
-    /// public static final int java.awt.font.GraphicAttribute.ROMAN_BASELINE
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.font.GraphicAttribute.CENTER_BASELINE
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.font.GraphicAttribute.HANGING_BASELINE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.font.GraphicAttribute.ROMAN_BASELINE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.font.GraphicAttribute.TOP_ALIGNMENT
+
+    // Skipping field: false true false false false false 
+
+    /// private int java.awt.font.GraphicAttribute.fAlignment
 
     /// public java.awt.font.ImageGraphicAttribute(java.awt.Image,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( image: Image?, alignment: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: image, locals: &__locals )
-        __args[1] = JNIType.toJava( value: alignment, locals: &__locals )
+        __args[1] = jvalue( i: jint(alignment) )
         let __object = JNIMethod.NewObject( className: "java/awt/font/ImageGraphicAttribute", classCache: &ImageGraphicAttribute.ImageGraphicAttributeJNIClass, methodSig: "(Ljava/awt/Image;I)V", methodCache: &ImageGraphicAttribute.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -61,12 +71,12 @@ open class ImageGraphicAttribute: GraphicAttribute {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( image: Image?, alignment: Int, originX: Float, originY: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: image, locals: &__locals )
-        __args[1] = JNIType.toJava( value: alignment, locals: &__locals )
-        __args[2] = JNIType.toJava( value: originX, locals: &__locals )
-        __args[3] = JNIType.toJava( value: originY, locals: &__locals )
+        __args[1] = jvalue( i: jint(alignment) )
+        __args[2] = jvalue( f: originX )
+        __args[3] = jvalue( f: originY )
         let __object = JNIMethod.NewObject( className: "java/awt/font/ImageGraphicAttribute", classCache: &ImageGraphicAttribute.ImageGraphicAttributeJNIClass, methodSig: "(Ljava/awt/Image;IFF)V", methodCache: &ImageGraphicAttribute.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -76,16 +86,20 @@ open class ImageGraphicAttribute: GraphicAttribute {
         self.init( image: _image, alignment: _alignment, originX: _originX, originY: _originY )
     }
 
+    /// public void java.awt.font.ImageGraphicAttribute.draw(java.awt.Graphics2D,float,float)
+
+    // Skipping method: false true false false false 
+
     /// public boolean java.awt.font.ImageGraphicAttribute.equals(java.awt.font.ImageGraphicAttribute)
 
     private static var equals_MethodID_3: jmethodID?
 
     open func equals( rhs: ImageGraphicAttribute? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/font/ImageGraphicAttribute;)Z", methodCache: &ImageGraphicAttribute.equals_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func equals( _ _rhs: ImageGraphicAttribute? ) -> Bool {
@@ -97,28 +111,36 @@ open class ImageGraphicAttribute: GraphicAttribute {
     private static var equals_MethodID_4: jmethodID?
 
     open func equals( rhs: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &ImageGraphicAttribute.equals_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _rhs: java_swift.JavaObject? ) -> Bool {
         return equals( rhs: _rhs )
     }
 
-    /// public int java.awt.font.ImageGraphicAttribute.hashCode()
+    /// public float java.awt.font.ImageGraphicAttribute.getAdvance()
 
-    /// public java.awt.geom.Rectangle2D java.awt.font.ImageGraphicAttribute.getBounds()
+    // Skipping method: false true false false false 
 
     /// public float java.awt.font.ImageGraphicAttribute.getAscent()
 
-    /// public float java.awt.font.ImageGraphicAttribute.getAdvance()
+    // Skipping method: false true false false false 
+
+    /// public java.awt.geom.Rectangle2D java.awt.font.ImageGraphicAttribute.getBounds()
+
+    // Skipping method: false true false false false 
 
     /// public float java.awt.font.ImageGraphicAttribute.getDescent()
 
-    /// public void java.awt.font.ImageGraphicAttribute.draw(java.awt.Graphics2D,float,float)
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.font.ImageGraphicAttribute.hashCode()
+
+    // Skipping method: false true false false false 
 
 }
 

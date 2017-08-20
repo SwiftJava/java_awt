@@ -23,18 +23,7 @@ open class FocusEvent: ComponentEvent {
     open static var FOCUS_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FOCUS_FIRST", fieldType: "I", fieldCache: &FOCUS_FIRST_FieldID, className: "java/awt/event/FocusEvent", classCache: &FocusEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.event.FocusEvent.FOCUS_LAST
-
-    private static var FOCUS_LAST_FieldID: jfieldID?
-
-    open static var FOCUS_LAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "FOCUS_LAST", fieldType: "I", fieldCache: &FOCUS_LAST_FieldID, className: "java/awt/event/FocusEvent", classCache: &FocusEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -45,7 +34,18 @@ open class FocusEvent: ComponentEvent {
     open static var FOCUS_GAINED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FOCUS_GAINED", fieldType: "I", fieldCache: &FOCUS_GAINED_FieldID, className: "java/awt/event/FocusEvent", classCache: &FocusEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.event.FocusEvent.FOCUS_LAST
+
+    private static var FOCUS_LAST_FieldID: jfieldID?
+
+    open static var FOCUS_LAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "FOCUS_LAST", fieldType: "I", fieldCache: &FOCUS_LAST_FieldID, className: "java/awt/event/FocusEvent", classCache: &FocusEventJNIClass )
+            return Int(__value)
         }
     }
 
@@ -56,50 +56,139 @@ open class FocusEvent: ComponentEvent {
     open static var FOCUS_LOST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FOCUS_LOST", fieldType: "I", fieldCache: &FOCUS_LOST_FieldID, className: "java/awt/event/FocusEvent", classCache: &FocusEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
-
-    /// boolean java.awt.event.FocusEvent.temporary
-
-    /// transient java.awt.Component java.awt.event.FocusEvent.opposite
 
     /// private static final long java.awt.event.FocusEvent.serialVersionUID
 
+    /// transient java.awt.Component java.awt.event.FocusEvent.opposite
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.event.FocusEvent.temporary
+
+    // Skipping field: true false false false false false 
+
     /// public static final int java.awt.event.ComponentEvent.COMPONENT_FIRST
 
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_LAST
-
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_MOVED
-
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_RESIZED
-
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_SHOWN
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.event.ComponentEvent.COMPONENT_HIDDEN
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_LAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_MOVED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_RESIZED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_SHOWN
+
+    // Skipping field: false true false false false false 
+
     /// private static final long java.awt.event.ComponentEvent.serialVersionUID
+
+    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
+
+    // Skipping field: true false false false false false 
+
+    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AWTEvent.log
 
+    /// private static final long java.awt.AWTEvent.serialVersionUID
+
+    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
+
     /// private byte[] java.awt.AWTEvent.bdata
-
-    /// protected int java.awt.AWTEvent.id
-
-    private static var id_FieldID: jfieldID?
-
-    override open var id: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &FocusEvent.id_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &FocusEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
 
     /// protected boolean java.awt.AWTEvent.consumed
 
@@ -107,70 +196,41 @@ open class FocusEvent: ComponentEvent {
 
     override open var consumed: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &FocusEvent.consumed_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &FocusEvent.consumed_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &FocusEvent.consumed_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
-
     /// transient boolean java.awt.AWTEvent.focusManagerIsDispatching
+
+    // Skipping field: true false false false false false 
+
+    /// protected int java.awt.AWTEvent.id
+
+    private static var id_FieldID: jfieldID?
+
+    override open var id: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &FocusEvent.id_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &FocusEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
     /// transient boolean java.awt.AWTEvent.isPosted
 
+    // Skipping field: true false false false false false 
+
     /// private transient boolean java.awt.AWTEvent.isSystemGenerated
-
-    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
-
-    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
-
-    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
-
-    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
-
-    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
-
-    /// private static final long java.awt.AWTEvent.serialVersionUID
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -180,8 +240,8 @@ open class FocusEvent: ComponentEvent {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &FocusEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &FocusEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -196,10 +256,10 @@ open class FocusEvent: ComponentEvent {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: Component?, id: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
         let __object = JNIMethod.NewObject( className: "java/awt/event/FocusEvent", classCache: &FocusEvent.FocusEventJNIClass, methodSig: "(Ljava/awt/Component;I)V", methodCache: &FocusEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -214,11 +274,11 @@ open class FocusEvent: ComponentEvent {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( source: Component?, id: Int, temporary: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: temporary, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
+        __args[2] = jvalue( z: jboolean(temporary ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "java/awt/event/FocusEvent", classCache: &FocusEvent.FocusEventJNIClass, methodSig: "(Ljava/awt/Component;IZ)V", methodCache: &FocusEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -233,11 +293,11 @@ open class FocusEvent: ComponentEvent {
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( source: Component?, id: Int, temporary: Bool, opposite: Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: temporary, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
+        __args[2] = jvalue( z: jboolean(temporary ? JNI_TRUE : JNI_FALSE) )
         __args[3] = JNIType.toJava( value: opposite, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/event/FocusEvent", classCache: &FocusEvent.FocusEventJNIClass, methodSig: "(Ljava/awt/Component;IZLjava/awt/Component;)V", methodCache: &FocusEvent.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -248,32 +308,34 @@ open class FocusEvent: ComponentEvent {
         self.init( source: _source, id: _id, temporary: _temporary, opposite: _opposite )
     }
 
-    /// public java.lang.String java.awt.event.FocusEvent.paramString()
-
-    /// public boolean java.awt.event.FocusEvent.isTemporary()
-
-    private static var isTemporary_MethodID_4: jmethodID?
-
-    open func isTemporary() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTemporary", methodSig: "()Z", methodCache: &FocusEvent.isTemporary_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public java.awt.Component java.awt.event.FocusEvent.getOppositeComponent()
 
-    private static var getOppositeComponent_MethodID_5: jmethodID?
+    private static var getOppositeComponent_MethodID_4: jmethodID?
 
     open func getOppositeComponent() -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOppositeComponent", methodSig: "()Ljava/awt/Component;", methodCache: &FocusEvent.getOppositeComponent_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOppositeComponent", methodSig: "()Ljava/awt/Component;", methodCache: &FocusEvent.getOppositeComponent_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
     }
 
+
+    /// public boolean java.awt.event.FocusEvent.isTemporary()
+
+    private static var isTemporary_MethodID_5: jmethodID?
+
+    open func isTemporary() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTemporary", methodSig: "()Z", methodCache: &FocusEvent.isTemporary_MethodID_5, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public java.lang.String java.awt.event.FocusEvent.paramString()
+
+    // Skipping method: false true false false false 
 
 }
 

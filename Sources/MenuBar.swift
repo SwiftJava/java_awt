@@ -17,25 +17,45 @@ open class MenuBar: MenuComponent, MenuContainer {
 
     private static var MenuBarJNIClass: jclass?
 
-    /// java.util.Vector java.awt.MenuBar.menus
-
-    /// java.awt.Menu java.awt.MenuBar.helpMenu
-
     /// private static final java.lang.String java.awt.MenuBar.base
 
     /// private static int java.awt.MenuBar.nameCounter
 
     /// private static final long java.awt.MenuBar.serialVersionUID
 
+    /// java.awt.Menu java.awt.MenuBar.helpMenu
+
+    // Skipping field: true false false false false false 
+
     /// private int java.awt.MenuBar.menuBarSerializedDataVersion
 
-    /// transient java.awt.peer.MenuComponentPeer java.awt.MenuComponent.peer
+    /// java.util.Vector java.awt.MenuBar.menus
 
-    /// transient java.awt.MenuContainer java.awt.MenuComponent.parent
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.MenuComponent.actionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.MenuComponent.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final long java.awt.MenuComponent.serialVersionUID
+
+    /// private transient volatile java.security.AccessControlContext java.awt.MenuComponent.acc
+
+    /// javax.accessibility.AccessibleContext java.awt.MenuComponent.accessibleContext
+
+    // Skipping field: true false false false false false 
 
     /// transient sun.awt.AppContext java.awt.MenuComponent.appContext
 
+    // Skipping field: true false false false false false 
+
     /// java.awt.Font java.awt.MenuComponent.font
+
+    // Skipping field: true false false false false false 
 
     /// private java.lang.String java.awt.MenuComponent.name
 
@@ -43,35 +63,37 @@ open class MenuBar: MenuComponent, MenuContainer {
 
     /// boolean java.awt.MenuComponent.newEventsOnly
 
-    /// private transient volatile java.security.AccessControlContext java.awt.MenuComponent.acc
+    // Skipping field: true false false false false false 
 
-    /// static final java.lang.String java.awt.MenuComponent.actionListenerK
+    /// transient java.awt.MenuContainer java.awt.MenuComponent.parent
 
-    /// static final java.lang.String java.awt.MenuComponent.itemListenerK
+    // Skipping field: true false false false false false 
 
-    /// private static final long java.awt.MenuComponent.serialVersionUID
+    /// transient java.awt.peer.MenuComponentPeer java.awt.MenuComponent.peer
 
-    /// javax.accessibility.AccessibleContext java.awt.MenuComponent.accessibleContext
+    // Skipping field: true false false false false false 
 
     /// public java.awt.MenuBar() throws java.awt.HeadlessException
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/MenuBar", classCache: &MenuBar.MenuBarJNIClass, methodSig: "()V", methodCache: &MenuBar.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
+
+    /// private static native void java.awt.MenuBar.initIDs()
 
     /// public java.awt.Menu java.awt.MenuBar.add(java.awt.Menu)
 
     private static var add_MethodID_2: jmethodID?
 
     open func add( m: Menu? ) -> Menu! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: m, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Menu;)Ljava/awt/Menu;", methodCache: &MenuBar.add_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -82,92 +104,78 @@ open class MenuBar: MenuComponent, MenuContainer {
         return add( m: _m )
     }
 
-    /// public void java.awt.MenuBar.remove(int)
+    /// public void java.awt.MenuBar.addNotify()
 
-    private static var remove_MethodID_3: jmethodID?
+    private static var addNotify_MethodID_3: jmethodID?
 
-    open func remove( index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addNotify() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(I)V", methodCache: &MenuBar.remove_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func remove( _ _index: Int ) {
-        remove( index: _index )
-    }
-
-    /// public void java.awt.MenuBar.remove(java.awt.MenuComponent)
-
-    private static var remove_MethodID_4: jmethodID?
-
-    open func remove( comp: MenuComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &MenuBar.remove_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addNotify", methodSig: "()V", methodCache: &MenuBar.addNotify_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    open func remove( _ _comp: MenuComponent? ) {
-        remove( comp: _comp )
-    }
 
-    /// private void java.awt.MenuBar.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
+    /// java.lang.String java.awt.MenuBar.constructComponentName()
 
-    /// private void java.awt.MenuBar.writeObject(java.io.ObjectOutputStream) throws java.lang.ClassNotFoundException,java.io.IOException
-
-    /// private static native void java.awt.MenuBar.initIDs()
-
-    /// public void java.awt.MenuBar.setHelpMenu(java.awt.Menu)
-
-    private static var setHelpMenu_MethodID_5: jmethodID?
-
-    open func setHelpMenu( m: Menu? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHelpMenu", methodSig: "(Ljava/awt/Menu;)V", methodCache: &MenuBar.setHelpMenu_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func setHelpMenu( _ _m: Menu? ) {
-        setHelpMenu( m: _m )
-    }
-
-    /// public int java.awt.MenuBar.getMenuCount()
-
-    private static var getMenuCount_MethodID_6: jmethodID?
-
-    open func getMenuCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMenuCount", methodSig: "()I", methodCache: &MenuBar.getMenuCount_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
+    // Skipping method: true false false false false 
 
     /// public int java.awt.MenuBar.countMenus()
 
-    private static var countMenus_MethodID_7: jmethodID?
+    private static var countMenus_MethodID_4: jmethodID?
 
     open func countMenus() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "countMenus", methodSig: "()I", methodCache: &MenuBar.countMenus_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "countMenus", methodSig: "()I", methodCache: &MenuBar.countMenus_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// final int java.awt.MenuBar.getMenuCountImpl()
+    /// public void java.awt.MenuBar.deleteShortcut(java.awt.MenuShortcut)
+
+    private static var deleteShortcut_MethodID_5: jmethodID?
+
+    open func deleteShortcut( s: MenuShortcut? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deleteShortcut", methodSig: "(Ljava/awt/MenuShortcut;)V", methodCache: &MenuBar.deleteShortcut_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func deleteShortcut( _ _s: MenuShortcut? ) {
+        deleteShortcut( s: _s )
+    }
+
+    /// int java.awt.MenuBar.getAccessibleChildIndex(java.awt.MenuComponent)
+
+    // Skipping method: true false false false false 
+
+    /// public javax.accessibility.AccessibleContext java.awt.MenuBar.getAccessibleContext()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Menu java.awt.MenuBar.getHelpMenu()
+
+    private static var getHelpMenu_MethodID_6: jmethodID?
+
+    open func getHelpMenu() -> Menu! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHelpMenu", methodSig: "()Ljava/awt/Menu;", methodCache: &MenuBar.getHelpMenu_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Menu( javaObject: __return ) : nil
+    }
+
 
     /// public java.awt.Menu java.awt.MenuBar.getMenu(int)
 
-    private static var getMenu_MethodID_8: jmethodID?
+    private static var getMenu_MethodID_7: jmethodID?
 
     open func getMenu( i: Int ) -> Menu! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenu", methodSig: "(I)Ljava/awt/Menu;", methodCache: &MenuBar.getMenu_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(i) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenu", methodSig: "(I)Ljava/awt/Menu;", methodCache: &MenuBar.getMenu_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Menu( javaObject: __return ) : nil
     }
@@ -176,21 +184,33 @@ open class MenuBar: MenuComponent, MenuContainer {
         return getMenu( i: _i )
     }
 
+    /// public int java.awt.MenuBar.getMenuCount()
+
+    private static var getMenuCount_MethodID_8: jmethodID?
+
+    open func getMenuCount() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMenuCount", methodSig: "()I", methodCache: &MenuBar.getMenuCount_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// final int java.awt.MenuBar.getMenuCountImpl()
+
+    // Skipping method: true false false false false 
+
     /// final java.awt.Menu java.awt.MenuBar.getMenuImpl(int)
 
-    /// java.lang.String java.awt.MenuBar.constructComponentName()
-
-    /// public javax.accessibility.AccessibleContext java.awt.MenuBar.getAccessibleContext()
-
-    /// boolean java.awt.MenuBar.handleShortcut(java.awt.event.KeyEvent)
+    // Skipping method: true false false false false 
 
     /// public java.awt.MenuItem java.awt.MenuBar.getShortcutMenuItem(java.awt.MenuShortcut)
 
     private static var getShortcutMenuItem_MethodID_9: jmethodID?
 
     open func getShortcutMenuItem( s: MenuShortcut? ) -> MenuItem! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShortcutMenuItem", methodSig: "(Ljava/awt/MenuShortcut;)Ljava/awt/MenuItem;", methodCache: &MenuBar.getShortcutMenuItem_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -201,69 +221,89 @@ open class MenuBar: MenuComponent, MenuContainer {
         return getShortcutMenuItem( s: _s )
     }
 
+    /// boolean java.awt.MenuBar.handleShortcut(java.awt.event.KeyEvent)
+
+    // Skipping method: true false false false false 
+
+    /// private void java.awt.MenuBar.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
+
+    /// public void java.awt.MenuBar.remove(int)
+
+    private static var remove_MethodID_10: jmethodID?
+
+    open func remove( index: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(I)V", methodCache: &MenuBar.remove_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func remove( _ _index: Int ) {
+        remove( index: _index )
+    }
+
+    /// public void java.awt.MenuBar.remove(java.awt.MenuComponent)
+
+    private static var remove_MethodID_11: jmethodID?
+
+    open func remove( comp: MenuComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &MenuBar.remove_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func remove( _ _comp: MenuComponent? ) {
+        remove( comp: _comp )
+    }
+
+    /// public void java.awt.MenuBar.removeNotify()
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.MenuBar.setHelpMenu(java.awt.Menu)
+
+    private static var setHelpMenu_MethodID_12: jmethodID?
+
+    open func setHelpMenu( m: Menu? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: m, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHelpMenu", methodSig: "(Ljava/awt/Menu;)V", methodCache: &MenuBar.setHelpMenu_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func setHelpMenu( _ _m: Menu? ) {
+        setHelpMenu( m: _m )
+    }
+
     /// public synchronized java.util.Enumeration java.awt.MenuBar.shortcuts()
 
-    private static var shortcuts_MethodID_10: jmethodID?
+    private static var shortcuts_MethodID_13: jmethodID?
 
     open func shortcuts() -> java_util.Enumeration! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "shortcuts", methodSig: "()Ljava/util/Enumeration;", methodCache: &MenuBar.shortcuts_MethodID_10, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "shortcuts", methodSig: "()Ljava/util/Enumeration;", methodCache: &MenuBar.shortcuts_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
     }
 
 
-    /// public void java.awt.MenuBar.deleteShortcut(java.awt.MenuShortcut)
-
-    private static var deleteShortcut_MethodID_11: jmethodID?
-
-    open func deleteShortcut( s: MenuShortcut? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deleteShortcut", methodSig: "(Ljava/awt/MenuShortcut;)V", methodCache: &MenuBar.deleteShortcut_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func deleteShortcut( _ _s: MenuShortcut? ) {
-        deleteShortcut( s: _s )
-    }
-
-    /// int java.awt.MenuBar.getAccessibleChildIndex(java.awt.MenuComponent)
-
-    /// public java.awt.Menu java.awt.MenuBar.getHelpMenu()
-
-    private static var getHelpMenu_MethodID_12: jmethodID?
-
-    open func getHelpMenu() -> Menu! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHelpMenu", methodSig: "()Ljava/awt/Menu;", methodCache: &MenuBar.getHelpMenu_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Menu( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.MenuBar.addNotify()
-
-    private static var addNotify_MethodID_13: jmethodID?
-
-    open func addNotify() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addNotify", methodSig: "()V", methodCache: &MenuBar.addNotify_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void java.awt.MenuBar.removeNotify()
+    /// private void java.awt.MenuBar.writeObject(java.io.ObjectOutputStream) throws java.lang.ClassNotFoundException,java.io.IOException
 
     /// In declared protocol but not defined.. ///
 
-    /// public abstract java.awt.Font java.awt.MenuContainer.getFont()
-
     /// public abstract javax.accessibility.AccessibleContext javax.accessibility.Accessible.getAccessibleContext()
 
+    // Skipping method: false true false false false 
+
+    /// public abstract java.awt.Font java.awt.MenuContainer.getFont()
+
+    // Skipping method: false true false false false 
+
     /// public abstract boolean java.awt.MenuContainer.postEvent(java.awt.Event)
+
+    // Skipping method: false true false false false 
 
 }
 

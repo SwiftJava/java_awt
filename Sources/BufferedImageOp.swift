@@ -7,6 +7,10 @@ import java_swift
 
 public protocol BufferedImageOp: JavaProtocol {
 
+    /// public abstract java.awt.image.BufferedImage java.awt.image.BufferedImageOp.createCompatibleDestImage(java.awt.image.BufferedImage,java.awt.image.ColorModel)
+
+    func createCompatibleDestImage( src: BufferedImage?, destCM: ColorModel? ) -> BufferedImage!
+
     /// public abstract java.awt.image.BufferedImage java.awt.image.BufferedImageOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
 
     func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage!
@@ -15,17 +19,13 @@ public protocol BufferedImageOp: JavaProtocol {
 
     func getBounds2D( src: BufferedImage? ) -> Rectangle2D!
 
-    /// public abstract java.awt.RenderingHints java.awt.image.BufferedImageOp.getRenderingHints()
-
-    func getRenderingHints() -> RenderingHints!
-
-    /// public abstract java.awt.image.BufferedImage java.awt.image.BufferedImageOp.createCompatibleDestImage(java.awt.image.BufferedImage,java.awt.image.ColorModel)
-
-    func createCompatibleDestImage( src: BufferedImage?, destCM: ColorModel? ) -> BufferedImage!
-
     /// public abstract java.awt.geom.Point2D java.awt.image.BufferedImageOp.getPoint2D(java.awt.geom.Point2D,java.awt.geom.Point2D)
 
     func getPoint2D( srcPt: Point2D?, dstPt: Point2D? ) -> Point2D!
+
+    /// public abstract java.awt.RenderingHints java.awt.image.BufferedImageOp.getRenderingHints()
+
+    func getRenderingHints() -> RenderingHints!
 
 }
 
@@ -34,16 +34,34 @@ open class BufferedImageOpForward: JNIObjectForward, BufferedImageOp {
 
     private static var BufferedImageOpJNIClass: jclass?
 
+    /// public abstract java.awt.image.BufferedImage java.awt.image.BufferedImageOp.createCompatibleDestImage(java.awt.image.BufferedImage,java.awt.image.ColorModel)
+
+    private static var createCompatibleDestImage_MethodID_6: jmethodID?
+
+    open func createCompatibleDestImage( src: BufferedImage?, destCM: ColorModel? ) -> BufferedImage! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: destCM, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &BufferedImageOpForward.createCompatibleDestImage_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BufferedImage( javaObject: __return ) : nil
+    }
+
+    open func createCompatibleDestImage( _ _src: BufferedImage?, _ _destCM: ColorModel? ) -> BufferedImage! {
+        return createCompatibleDestImage( src: _src, destCM: _destCM )
+    }
+
     /// public abstract java.awt.image.BufferedImage java.awt.image.BufferedImageOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
 
-    private static var filter_MethodID_6: jmethodID?
+    private static var filter_MethodID_7: jmethodID?
 
     open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
         __args[1] = JNIType.toJava( value: dest, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &BufferedImageOpForward.filter_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &BufferedImageOpForward.filter_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImage( javaObject: __return ) : nil
     }
@@ -54,13 +72,13 @@ open class BufferedImageOpForward: JNIObjectForward, BufferedImageOp {
 
     /// public abstract java.awt.geom.Rectangle2D java.awt.image.BufferedImageOp.getBounds2D(java.awt.image.BufferedImage)
 
-    private static var getBounds2D_MethodID_7: jmethodID?
+    private static var getBounds2D_MethodID_8: jmethodID?
 
     open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &BufferedImageOpForward.getBounds2D_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &BufferedImageOpForward.getBounds2D_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle2D( javaObject: __return ) : nil
     }
@@ -69,47 +87,16 @@ open class BufferedImageOpForward: JNIObjectForward, BufferedImageOp {
         return getBounds2D( src: _src )
     }
 
-    /// public abstract java.awt.RenderingHints java.awt.image.BufferedImageOp.getRenderingHints()
-
-    private static var getRenderingHints_MethodID_8: jmethodID?
-
-    open func getRenderingHints() -> RenderingHints! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &BufferedImageOpForward.getRenderingHints_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: RenderingHints(), from: __return )
-    }
-
-
-    /// public abstract java.awt.image.BufferedImage java.awt.image.BufferedImageOp.createCompatibleDestImage(java.awt.image.BufferedImage,java.awt.image.ColorModel)
-
-    private static var createCompatibleDestImage_MethodID_9: jmethodID?
-
-    open func createCompatibleDestImage( src: BufferedImage?, destCM: ColorModel? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: destCM, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &BufferedImageOpForward.createCompatibleDestImage_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BufferedImage( javaObject: __return ) : nil
-    }
-
-    open func createCompatibleDestImage( _ _src: BufferedImage?, _ _destCM: ColorModel? ) -> BufferedImage! {
-        return createCompatibleDestImage( src: _src, destCM: _destCM )
-    }
-
     /// public abstract java.awt.geom.Point2D java.awt.image.BufferedImageOp.getPoint2D(java.awt.geom.Point2D,java.awt.geom.Point2D)
 
-    private static var getPoint2D_MethodID_10: jmethodID?
+    private static var getPoint2D_MethodID_9: jmethodID?
 
     open func getPoint2D( srcPt: Point2D?, dstPt: Point2D? ) -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: srcPt, locals: &__locals )
         __args[1] = JNIType.toJava( value: dstPt, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &BufferedImageOpForward.getPoint2D_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &BufferedImageOpForward.getPoint2D_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point2D( javaObject: __return ) : nil
     }
@@ -118,6 +105,17 @@ open class BufferedImageOpForward: JNIObjectForward, BufferedImageOp {
         return getPoint2D( srcPt: _srcPt, dstPt: _dstPt )
     }
 
-}
+    /// public abstract java.awt.RenderingHints java.awt.image.BufferedImageOp.getRenderingHints()
 
+    private static var getRenderingHints_MethodID_10: jmethodID?
+
+    open func getRenderingHints() -> RenderingHints! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &BufferedImageOpForward.getRenderingHints_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: RenderingHints.self, from: __return )
+    }
+
+
+}
 

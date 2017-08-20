@@ -8,21 +8,21 @@ import java_util
 
 public protocol ComponentListener: java_util.EventListener {
 
-    /// public abstract void java.awt.event.ComponentListener.componentResized(java.awt.event.ComponentEvent)
+    /// public abstract void java.awt.event.ComponentListener.componentHidden(java.awt.event.ComponentEvent)
 
-    func componentResized( e: ComponentEvent? )
+    func componentHidden( e: ComponentEvent? )
 
     /// public abstract void java.awt.event.ComponentListener.componentMoved(java.awt.event.ComponentEvent)
 
     func componentMoved( e: ComponentEvent? )
 
+    /// public abstract void java.awt.event.ComponentListener.componentResized(java.awt.event.ComponentEvent)
+
+    func componentResized( e: ComponentEvent? )
+
     /// public abstract void java.awt.event.ComponentListener.componentShown(java.awt.event.ComponentEvent)
 
     func componentShown( e: ComponentEvent? )
-
-    /// public abstract void java.awt.event.ComponentListener.componentHidden(java.awt.event.ComponentEvent)
-
-    func componentHidden( e: ComponentEvent? )
 
 }
 
@@ -31,19 +31,19 @@ open class ComponentListenerForward: java_util.EventListenerForward, ComponentLi
 
     private static var ComponentListenerJNIClass: jclass?
 
-    /// public abstract void java.awt.event.ComponentListener.componentResized(java.awt.event.ComponentEvent)
+    /// public abstract void java.awt.event.ComponentListener.componentHidden(java.awt.event.ComponentEvent)
 
-    private static var componentResized_MethodID_5: jmethodID?
+    private static var componentHidden_MethodID_5: jmethodID?
 
-    open func componentResized( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func componentHidden( e: ComponentEvent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentResized", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentListenerForward.componentResized_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentHidden", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentListenerForward.componentHidden_MethodID_5, args: &__args, locals: &__locals )
     }
 
-    open func componentResized( _ _e: ComponentEvent? ) {
-        componentResized( e: _e )
+    open func componentHidden( _ _e: ComponentEvent? ) {
+        componentHidden( e: _e )
     }
 
     /// public abstract void java.awt.event.ComponentListener.componentMoved(java.awt.event.ComponentEvent)
@@ -51,8 +51,8 @@ open class ComponentListenerForward: java_util.EventListenerForward, ComponentLi
     private static var componentMoved_MethodID_6: jmethodID?
 
     open func componentMoved( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentMoved", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentListenerForward.componentMoved_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -61,69 +61,60 @@ open class ComponentListenerForward: java_util.EventListenerForward, ComponentLi
         componentMoved( e: _e )
     }
 
+    /// public abstract void java.awt.event.ComponentListener.componentResized(java.awt.event.ComponentEvent)
+
+    private static var componentResized_MethodID_7: jmethodID?
+
+    open func componentResized( e: ComponentEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentResized", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentListenerForward.componentResized_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func componentResized( _ _e: ComponentEvent? ) {
+        componentResized( e: _e )
+    }
+
     /// public abstract void java.awt.event.ComponentListener.componentShown(java.awt.event.ComponentEvent)
 
-    private static var componentShown_MethodID_7: jmethodID?
+    private static var componentShown_MethodID_8: jmethodID?
 
     open func componentShown( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentShown", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentListenerForward.componentShown_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentShown", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentListenerForward.componentShown_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func componentShown( _ _e: ComponentEvent? ) {
         componentShown( e: _e )
     }
 
-    /// public abstract void java.awt.event.ComponentListener.componentHidden(java.awt.event.ComponentEvent)
-
-    private static var componentHidden_MethodID_8: jmethodID?
-
-    open func componentHidden( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentHidden", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentListenerForward.componentHidden_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func componentHidden( _ _e: ComponentEvent? ) {
-        componentHidden( e: _e )
-    }
-
 }
 
+private typealias ComponentListener_componentHidden_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private typealias ComponentListener_componentResized_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func ComponentListener_componentResized_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    ComponentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentResized( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
+private func ComponentListener_componentHidden_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    ComponentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentHidden( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
 }
 
 private typealias ComponentListener_componentMoved_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func ComponentListener_componentMoved_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     ComponentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentMoved( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias ComponentListener_componentShown_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias ComponentListener_componentResized_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func ComponentListener_componentShown_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
+private func ComponentListener_componentResized_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    ComponentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentResized( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
+}
+
+private typealias ComponentListener_componentShown_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func ComponentListener_componentShown_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
     ComponentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentShown( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias ComponentListener_componentHidden_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func ComponentListener_componentHidden_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    ComponentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentHidden( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class ComponentListenerLocal_: JNILocalProxy<ComponentListener, Any> {
@@ -131,17 +122,17 @@ fileprivate class ComponentListenerLocal_: JNILocalProxy<ComponentListener, Any>
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let ComponentListener_componentResized_0_thunk: ComponentListener_componentResized_0_type = ComponentListener_componentResized_0
-        natives.append( JNINativeMethod( name: strdup("__componentResized"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentListener_componentResized_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ComponentListener_componentHidden_0_thunk: ComponentListener_componentHidden_0_type = ComponentListener_componentHidden_0
+        natives.append( JNINativeMethod( name: strdup("__componentHidden"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentListener_componentHidden_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         let ComponentListener_componentMoved_1_thunk: ComponentListener_componentMoved_1_type = ComponentListener_componentMoved_1
         natives.append( JNINativeMethod( name: strdup("__componentMoved"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentListener_componentMoved_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let ComponentListener_componentShown_2_thunk: ComponentListener_componentShown_2_type = ComponentListener_componentShown_2
-        natives.append( JNINativeMethod( name: strdup("__componentShown"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentListener_componentShown_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ComponentListener_componentResized_2_thunk: ComponentListener_componentResized_2_type = ComponentListener_componentResized_2
+        natives.append( JNINativeMethod( name: strdup("__componentResized"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentListener_componentResized_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let ComponentListener_componentHidden_3_thunk: ComponentListener_componentHidden_3_type = ComponentListener_componentHidden_3
-        natives.append( JNINativeMethod( name: strdup("__componentHidden"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentListener_componentHidden_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ComponentListener_componentShown_3_thunk: ComponentListener_componentShown_3_type = ComponentListener_componentShown_3
+        natives.append( JNINativeMethod( name: strdup("__componentShown"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentListener_componentShown_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -174,40 +165,28 @@ open class ComponentListenerBase: ComponentListener {
 
     public init() {}
 
-    /// public abstract void java.awt.event.ComponentListener.componentResized(java.awt.event.ComponentEvent)
+    /// public abstract void java.awt.event.ComponentListener.componentHidden(java.awt.event.ComponentEvent)
 
-    open func componentResized( e: ComponentEvent? ) /**/ {
+    open func componentHidden( e: ComponentEvent? ) /**/ {
     }
 
-    open func componentResized( _ _e: ComponentEvent? ) /**/ {
-        componentResized( e: _e )
-    }
 
     /// public abstract void java.awt.event.ComponentListener.componentMoved(java.awt.event.ComponentEvent)
 
     open func componentMoved( e: ComponentEvent? ) /**/ {
     }
 
-    open func componentMoved( _ _e: ComponentEvent? ) /**/ {
-        componentMoved( e: _e )
+
+    /// public abstract void java.awt.event.ComponentListener.componentResized(java.awt.event.ComponentEvent)
+
+    open func componentResized( e: ComponentEvent? ) /**/ {
     }
+
 
     /// public abstract void java.awt.event.ComponentListener.componentShown(java.awt.event.ComponentEvent)
 
     open func componentShown( e: ComponentEvent? ) /**/ {
     }
 
-    open func componentShown( _ _e: ComponentEvent? ) /**/ {
-        componentShown( e: _e )
-    }
-
-    /// public abstract void java.awt.event.ComponentListener.componentHidden(java.awt.event.ComponentEvent)
-
-    open func componentHidden( e: ComponentEvent? ) /**/ {
-    }
-
-    open func componentHidden( _ _e: ComponentEvent? ) /**/ {
-        componentHidden( e: _e )
-    }
 
 }

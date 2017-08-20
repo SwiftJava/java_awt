@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.JobAttributes$MultipleDocumentHandlingType ///
 
-open class JobAttributes_MultipleDocumentHandlingType: /* java.awt.AttributeValue */ UnclassedObject {
+open class JobAttributes_MultipleDocumentHandlingType: /* class java.awt.AttributeValue */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -29,6 +29,7 @@ open class JobAttributes_MultipleDocumentHandlingType: /* java.awt.AttributeValu
     open static var SEPARATE_DOCUMENTS_COLLATED_COPIES: JobAttributes_MultipleDocumentHandlingType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SEPARATE_DOCUMENTS_COLLATED_COPIES", fieldType: "Ljava/awt/JobAttributes$MultipleDocumentHandlingType;", fieldCache: &SEPARATE_DOCUMENTS_COLLATED_COPIES_FieldID, className: "java/awt/JobAttributes$MultipleDocumentHandlingType", classCache: &JobAttributes_MultipleDocumentHandlingTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JobAttributes_MultipleDocumentHandlingType( javaObject: __value ) : nil
         }
     }
@@ -40,21 +41,43 @@ open class JobAttributes_MultipleDocumentHandlingType: /* java.awt.AttributeValu
     open static var SEPARATE_DOCUMENTS_UNCOLLATED_COPIES: JobAttributes_MultipleDocumentHandlingType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SEPARATE_DOCUMENTS_UNCOLLATED_COPIES", fieldType: "Ljava/awt/JobAttributes$MultipleDocumentHandlingType;", fieldCache: &SEPARATE_DOCUMENTS_UNCOLLATED_COPIES_FieldID, className: "java/awt/JobAttributes$MultipleDocumentHandlingType", classCache: &JobAttributes_MultipleDocumentHandlingTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JobAttributes_MultipleDocumentHandlingType( javaObject: __value ) : nil
         }
     }
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AttributeValue.log
 
-    /// private final int java.awt.AttributeValue.value
-
     /// private final java.lang.String[] java.awt.AttributeValue.names
+
+    /// private final int java.awt.AttributeValue.value
 
     /// private java.awt.JobAttributes$MultipleDocumentHandlingType(int)
 
+    /// public int java.awt.JobAttributes$MultipleDocumentHandlingType.hashCode()
+
+    private static var hashCode_MethodID_1: jmethodID?
+
+    override open func hashCode() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "hashCode", methodSig: "()I", methodCache: &JobAttributes_MultipleDocumentHandlingType.hashCode_MethodID_1, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public java.lang.String java.awt.JobAttributes$MultipleDocumentHandlingType.toString()
 
-    /// public int java.awt.JobAttributes$MultipleDocumentHandlingType.hashCode()
+    private static var toString_MethodID_2: jmethodID?
+
+    override open func toString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toString", methodSig: "()Ljava/lang/String;", methodCache: &JobAttributes_MultipleDocumentHandlingType.toString_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
 }
 

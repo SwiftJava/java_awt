@@ -23,8 +23,8 @@ open class SystemTrayPeerForward: JNIObjectForward, SystemTrayPeer {
     private static var getTrayIconSize_MethodID_2: jmethodID?
 
     open func getTrayIconSize() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTrayIconSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &SystemTrayPeerForward.getTrayIconSize_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
@@ -32,5 +32,4 @@ open class SystemTrayPeerForward: JNIObjectForward, SystemTrayPeer {
 
 
 }
-
 

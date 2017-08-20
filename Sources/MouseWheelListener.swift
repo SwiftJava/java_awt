@@ -24,8 +24,8 @@ open class MouseWheelListenerForward: java_util.EventListenerForward, MouseWheel
     private static var mouseWheelMoved_MethodID_2: jmethodID?
 
     open func mouseWheelMoved( e: MouseWheelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseWheelMoved", methodSig: "(Ljava/awt/event/MouseWheelEvent;)V", methodCache: &MouseWheelListenerForward.mouseWheelMoved_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class MouseWheelListenerForward: java_util.EventListenerForward, MouseWheel
 
 }
 
-
 private typealias MouseWheelListener_mouseWheelMoved_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func MouseWheelListener_mouseWheelMoved_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     MouseWheelListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).mouseWheelMoved( e: e != nil ? MouseWheelEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class MouseWheelListenerLocal_: JNILocalProxy<MouseWheelListener, Any> {
@@ -89,8 +86,5 @@ open class MouseWheelListenerBase: MouseWheelListener {
     open func mouseWheelMoved( e: MouseWheelEvent? ) /**/ {
     }
 
-    open func mouseWheelMoved( _ _e: MouseWheelEvent? ) /**/ {
-        mouseWheelMoved( e: _e )
-    }
 
 }

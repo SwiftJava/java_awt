@@ -18,291 +18,535 @@ open class ICC_ProfileGray: ICC_Profile {
 
     /// static final long java.awt.color.ICC_ProfileGray.serialVersionUID
 
+    // Skipping field: true true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.CLASS_ABSTRACT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.CLASS_COLORSPACECONVERSION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.CLASS_DEVICELINK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.CLASS_DISPLAY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.CLASS_INPUT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.CLASS_NAMEDCOLOR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.CLASS_OUTPUT
+
+    // Skipping field: false true false false false false 
+
+    /// private static java.awt.color.ICC_Profile java.awt.color.ICC_Profile.GRAYprofile
+
+    /// private static java.awt.color.ICC_Profile java.awt.color.ICC_Profile.LINEAR_RGBprofile
+
+    /// private static java.awt.color.ICC_Profile java.awt.color.ICC_Profile.PYCCprofile
+
+    /// private static java.awt.color.ICC_Profile java.awt.color.ICC_Profile.XYZprofile
+
+    /// public static final int java.awt.color.ICC_Profile.icAbsoluteColorimetric
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icCurveCount
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icCurveData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrAttributes
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrCmmId
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrColorSpace
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrCreator
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrDate
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrDeviceClass
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrFlags
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrIlluminant
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrMagic
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrManufacturer
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrModel
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrPcs
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrPlatform
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrProfileID
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrRenderingIntent
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrSize
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icHdrVersion
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icICCAbsoluteColorimetric
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icMediaRelativeColorimetric
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icPerceptual
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icRelativeColorimetric
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSaturation
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigAToB0Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigAToB1Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigAToB2Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigAbstractClass
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigBToA0Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigBToA1Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigBToA2Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigBlueColorantTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigBlueMatrixColumnTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigBlueTRCTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigCalibrationDateTimeTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigCharTargetTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigChromaticAdaptationTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigChromaticityTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigCmyData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigCmykData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigColorSpaceClass
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigColorantOrderTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigColorantTableTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigCopyrightTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigCrdInfoTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigDeviceMfgDescTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigDeviceModelDescTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigDeviceSettingsTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigDisplayClass
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigGamutTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigGrayData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigGrayTRCTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigGreenColorantTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigGreenMatrixColumnTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigGreenTRCTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigHead
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigHlsData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigHsvData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigInputClass
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigLabData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigLinkClass
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigLuminanceTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigLuvData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigMeasurementTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigMediaBlackPointTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigMediaWhitePointTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigNamedColor2Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigNamedColorClass
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigOutputClass
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigOutputResponseTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigPreview0Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigPreview1Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigPreview2Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigProfileDescriptionTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigProfileSequenceDescTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigPs2CRD0Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigPs2CRD1Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigPs2CRD2Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigPs2CRD3Tag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigPs2CSATag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigPs2RenderingIntentTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigRedColorantTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigRedMatrixColumnTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigRedTRCTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigRgbData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigScreeningDescTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigScreeningTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpace2CLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpace3CLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpace4CLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpace5CLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpace6CLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpace7CLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpace8CLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpace9CLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpaceACLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpaceBCLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpaceCCLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpaceDCLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpaceECLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigSpaceFCLR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigTechnologyTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigUcrBgTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigViewingCondDescTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigViewingConditionsTag
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigXYZData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigYCbCrData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icSigYxyData
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icTagReserved
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icTagType
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ICC_Profile.icXYZNumberX
+
+    // Skipping field: false true false false false false 
+
+    /// private static java.awt.color.ICC_Profile java.awt.color.ICC_Profile.sRGBprofile
+
     /// private static final long java.awt.color.ICC_Profile.serialVersionUID
 
     /// private transient sun.java2d.cmm.Profile java.awt.color.ICC_Profile.cmmProfile
 
     /// private transient sun.java2d.cmm.ProfileDeferralInfo java.awt.color.ICC_Profile.deferralInfo
 
-    /// private transient sun.java2d.cmm.ProfileActivator java.awt.color.ICC_Profile.profileActivator
-
-    /// private static java.awt.color.ICC_Profile java.awt.color.ICC_Profile.sRGBprofile
-
-    /// private static java.awt.color.ICC_Profile java.awt.color.ICC_Profile.XYZprofile
-
-    /// private static java.awt.color.ICC_Profile java.awt.color.ICC_Profile.PYCCprofile
-
-    /// private static java.awt.color.ICC_Profile java.awt.color.ICC_Profile.GRAYprofile
-
-    /// private static java.awt.color.ICC_Profile java.awt.color.ICC_Profile.LINEAR_RGBprofile
-
-    /// public static final int java.awt.color.ICC_Profile.CLASS_INPUT
-
-    /// public static final int java.awt.color.ICC_Profile.CLASS_DISPLAY
-
-    /// public static final int java.awt.color.ICC_Profile.CLASS_OUTPUT
-
-    /// public static final int java.awt.color.ICC_Profile.CLASS_DEVICELINK
-
-    /// public static final int java.awt.color.ICC_Profile.CLASS_COLORSPACECONVERSION
-
-    /// public static final int java.awt.color.ICC_Profile.CLASS_ABSTRACT
-
-    /// public static final int java.awt.color.ICC_Profile.CLASS_NAMEDCOLOR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigXYZData
-
-    /// public static final int java.awt.color.ICC_Profile.icSigLabData
-
-    /// public static final int java.awt.color.ICC_Profile.icSigLuvData
-
-    /// public static final int java.awt.color.ICC_Profile.icSigYCbCrData
-
-    /// public static final int java.awt.color.ICC_Profile.icSigYxyData
-
-    /// public static final int java.awt.color.ICC_Profile.icSigRgbData
-
-    /// public static final int java.awt.color.ICC_Profile.icSigGrayData
-
-    /// public static final int java.awt.color.ICC_Profile.icSigHsvData
-
-    /// public static final int java.awt.color.ICC_Profile.icSigHlsData
-
-    /// public static final int java.awt.color.ICC_Profile.icSigCmykData
-
-    /// public static final int java.awt.color.ICC_Profile.icSigCmyData
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpace2CLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpace3CLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpace4CLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpace5CLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpace6CLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpace7CLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpace8CLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpace9CLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpaceACLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpaceBCLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpaceCCLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpaceDCLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpaceECLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigSpaceFCLR
-
-    /// public static final int java.awt.color.ICC_Profile.icSigInputClass
-
-    /// public static final int java.awt.color.ICC_Profile.icSigDisplayClass
-
-    /// public static final int java.awt.color.ICC_Profile.icSigOutputClass
-
-    /// public static final int java.awt.color.ICC_Profile.icSigLinkClass
-
-    /// public static final int java.awt.color.ICC_Profile.icSigAbstractClass
-
-    /// public static final int java.awt.color.ICC_Profile.icSigColorSpaceClass
-
-    /// public static final int java.awt.color.ICC_Profile.icSigNamedColorClass
-
-    /// public static final int java.awt.color.ICC_Profile.icPerceptual
-
-    /// public static final int java.awt.color.ICC_Profile.icRelativeColorimetric
-
-    /// public static final int java.awt.color.ICC_Profile.icMediaRelativeColorimetric
-
-    /// public static final int java.awt.color.ICC_Profile.icSaturation
-
-    /// public static final int java.awt.color.ICC_Profile.icAbsoluteColorimetric
-
-    /// public static final int java.awt.color.ICC_Profile.icICCAbsoluteColorimetric
-
-    /// public static final int java.awt.color.ICC_Profile.icSigHead
-
-    /// public static final int java.awt.color.ICC_Profile.icSigAToB0Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigAToB1Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigAToB2Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigBlueColorantTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigBlueMatrixColumnTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigBlueTRCTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigBToA0Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigBToA1Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigBToA2Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigCalibrationDateTimeTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigCharTargetTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigCopyrightTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigCrdInfoTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigDeviceMfgDescTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigDeviceModelDescTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigDeviceSettingsTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigGamutTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigGrayTRCTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigGreenColorantTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigGreenMatrixColumnTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigGreenTRCTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigLuminanceTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigMeasurementTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigMediaBlackPointTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigMediaWhitePointTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigNamedColor2Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigOutputResponseTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigPreview0Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigPreview1Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigPreview2Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigProfileDescriptionTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigProfileSequenceDescTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigPs2CRD0Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigPs2CRD1Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigPs2CRD2Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigPs2CRD3Tag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigPs2CSATag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigPs2RenderingIntentTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigRedColorantTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigRedMatrixColumnTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigRedTRCTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigScreeningDescTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigScreeningTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigTechnologyTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigUcrBgTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigViewingCondDescTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigViewingConditionsTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigChromaticityTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigChromaticAdaptationTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigColorantOrderTag
-
-    /// public static final int java.awt.color.ICC_Profile.icSigColorantTableTag
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrSize
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrCmmId
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrVersion
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrDeviceClass
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrColorSpace
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrPcs
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrDate
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrMagic
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrPlatform
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrFlags
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrManufacturer
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrModel
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrAttributes
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrRenderingIntent
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrIlluminant
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrCreator
-
-    /// public static final int java.awt.color.ICC_Profile.icHdrProfileID
-
-    /// public static final int java.awt.color.ICC_Profile.icTagType
-
-    /// public static final int java.awt.color.ICC_Profile.icTagReserved
-
-    /// public static final int java.awt.color.ICC_Profile.icCurveCount
-
-    /// public static final int java.awt.color.ICC_Profile.icCurveData
-
-    /// public static final int java.awt.color.ICC_Profile.icXYZNumberX
-
     /// private int java.awt.color.ICC_Profile.iccProfileSerializedDataVersion
+
+    /// private transient sun.java2d.cmm.ProfileActivator java.awt.color.ICC_Profile.profileActivator
 
     /// private transient java.awt.color.ICC_Profile java.awt.color.ICC_Profile.resolvedDeserializedProfile
 
     /// java.awt.color.ICC_ProfileGray(sun.java2d.cmm.Profile)
 
+    // Skipping init: true false false 
+
     /// java.awt.color.ICC_ProfileGray(sun.java2d.cmm.ProfileDeferralInfo)
 
-    /// public float[] java.awt.color.ICC_ProfileGray.getMediaWhitePoint()
-
-    private static var getMediaWhitePoint_MethodID_1: jmethodID?
-
-    open func getMediaWhitePoint() -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMediaWhitePoint", methodSig: "()[F", methodCache: &ICC_ProfileGray.getMediaWhitePoint_MethodID_1, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
-    }
-
+    // Skipping init: true false false 
 
     /// public float java.awt.color.ICC_ProfileGray.getGamma()
 
-    private static var getGamma_MethodID_2: jmethodID?
+    private static var getGamma_MethodID_1: jmethodID?
 
     open func getGamma() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getGamma", methodSig: "()F", methodCache: &ICC_ProfileGray.getGamma_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getGamma", methodSig: "()F", methodCache: &ICC_ProfileGray.getGamma_MethodID_1, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public float[] java.awt.color.ICC_ProfileGray.getMediaWhitePoint()
+
+    private static var getMediaWhitePoint_MethodID_2: jmethodID?
+
+    open func getMediaWhitePoint() -> [Float]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMediaWhitePoint", methodSig: "()[F", methodCache: &ICC_ProfileGray.getMediaWhitePoint_MethodID_2, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
 
@@ -311,10 +555,10 @@ open class ICC_ProfileGray: ICC_Profile {
     private static var getTRC_MethodID_3: jmethodID?
 
     open func getTRC() -> [Int16]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTRC", methodSig: "()[S", methodCache: &ICC_ProfileGray.getTRC_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int16](), from: __return )
+        return JNIType.toSwift( type: [Int16].self, from: __return )
     }
 
 

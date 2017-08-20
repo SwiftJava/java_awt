@@ -7,13 +7,13 @@ import java_swift
 
 public protocol CompositeContext: JavaProtocol {
 
-    /// public abstract void java.awt.CompositeContext.dispose()
-
-    func dispose()
-
     /// public abstract void java.awt.CompositeContext.compose(java.awt.image.Raster,java.awt.image.Raster,java.awt.image.WritableRaster)
 
     func compose( src: Raster?, dstIn: Raster?, dstOut: WritableRaster? )
+
+    /// public abstract void java.awt.CompositeContext.dispose()
+
+    func dispose()
 
 }
 
@@ -22,34 +22,33 @@ open class CompositeContextForward: JNIObjectForward, CompositeContext {
 
     private static var CompositeContextJNIClass: jclass?
 
-    /// public abstract void java.awt.CompositeContext.dispose()
-
-    private static var dispose_MethodID_3: jmethodID?
-
-    open func dispose() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &CompositeContextForward.dispose_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-
     /// public abstract void java.awt.CompositeContext.compose(java.awt.image.Raster,java.awt.image.Raster,java.awt.image.WritableRaster)
 
-    private static var compose_MethodID_4: jmethodID?
+    private static var compose_MethodID_3: jmethodID?
 
     open func compose( src: Raster?, dstIn: Raster?, dstOut: WritableRaster? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
         __args[1] = JNIType.toJava( value: dstIn, locals: &__locals )
         __args[2] = JNIType.toJava( value: dstOut, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "compose", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)V", methodCache: &CompositeContextForward.compose_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "compose", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)V", methodCache: &CompositeContextForward.compose_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func compose( _ _src: Raster?, _ _dstIn: Raster?, _ _dstOut: WritableRaster? ) {
         compose( src: _src, dstIn: _dstIn, dstOut: _dstOut )
     }
 
-}
+    /// public abstract void java.awt.CompositeContext.dispose()
 
+    private static var dispose_MethodID_4: jmethodID?
+
+    open func dispose() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &CompositeContextForward.dispose_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+
+}
 

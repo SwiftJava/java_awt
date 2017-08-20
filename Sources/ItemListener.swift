@@ -24,8 +24,8 @@ open class ItemListenerForward: java_util.EventListenerForward, ItemListener {
     private static var itemStateChanged_MethodID_2: jmethodID?
 
     open func itemStateChanged( e: ItemEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "itemStateChanged", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &ItemListenerForward.itemStateChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class ItemListenerForward: java_util.EventListenerForward, ItemListener {
 
 }
 
-
 private typealias ItemListener_itemStateChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func ItemListener_itemStateChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     ItemListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).itemStateChanged( e: e != nil ? ItemEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class ItemListenerLocal_: JNILocalProxy<ItemListener, Any> {
@@ -89,8 +86,5 @@ open class ItemListenerBase: ItemListener {
     open func itemStateChanged( e: ItemEvent? ) /**/ {
     }
 
-    open func itemStateChanged( _ _e: ItemEvent? ) /**/ {
-        itemStateChanged( e: _e )
-    }
 
 }

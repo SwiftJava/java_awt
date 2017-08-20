@@ -7,13 +7,13 @@ import java_swift
 
 public protocol FlavorMap: JavaProtocol {
 
-    /// public abstract java.util.Map java.awt.datatransfer.FlavorMap.getNativesForFlavors(java.awt.datatransfer.DataFlavor[])
-
-    func getNativesForFlavors( flavors: [DataFlavor]? ) -> java_swift.JavaMap!
-
     /// public abstract java.util.Map java.awt.datatransfer.FlavorMap.getFlavorsForNatives(java.lang.String[])
 
     func getFlavorsForNatives( natives: [String]? ) -> java_swift.JavaMap!
+
+    /// public abstract java.util.Map java.awt.datatransfer.FlavorMap.getNativesForFlavors(java.awt.datatransfer.DataFlavor[])
+
+    func getNativesForFlavors( flavors: [DataFlavor]? ) -> java_swift.JavaMap!
 
 }
 
@@ -22,40 +22,37 @@ open class FlavorMapForward: JNIObjectForward, FlavorMap {
 
     private static var FlavorMapJNIClass: jclass?
 
-    /// public abstract java.util.Map java.awt.datatransfer.FlavorMap.getNativesForFlavors(java.awt.datatransfer.DataFlavor[])
-
-    private static var getNativesForFlavors_MethodID_3: jmethodID?
-
-    open func getNativesForFlavors( flavors: [DataFlavor]? ) -> java_swift.JavaMap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: flavors, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNativesForFlavors", methodSig: "([Ljava/awt/datatransfer/DataFlavor;)Ljava/util/Map;", methodCache: &FlavorMapForward.getNativesForFlavors_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: java_swift.JavaMapForward(), from: __return )
-    }
-
-    open func getNativesForFlavors( _ _flavors: [DataFlavor]? ) -> java_swift.JavaMap! {
-        return getNativesForFlavors( flavors: _flavors )
-    }
-
     /// public abstract java.util.Map java.awt.datatransfer.FlavorMap.getFlavorsForNatives(java.lang.String[])
 
-    private static var getFlavorsForNatives_MethodID_4: jmethodID?
+    private static var getFlavorsForNatives_MethodID_3: jmethodID?
 
     open func getFlavorsForNatives( natives: [String]? ) -> java_swift.JavaMap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: natives, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFlavorsForNatives", methodSig: "([Ljava/lang/String;)Ljava/util/Map;", methodCache: &FlavorMapForward.getFlavorsForNatives_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: java_swift.JavaMapForward(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFlavorsForNatives", methodSig: "([Ljava/lang/String;)Ljava/util/Map;", methodCache: &FlavorMapForward.getFlavorsForNatives_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: java_swift.JavaMapForward.self, from: __return )
     }
 
     open func getFlavorsForNatives( _ _natives: [String]? ) -> java_swift.JavaMap! {
         return getFlavorsForNatives( natives: _natives )
     }
 
-}
+    /// public abstract java.util.Map java.awt.datatransfer.FlavorMap.getNativesForFlavors(java.awt.datatransfer.DataFlavor[])
 
+    private static var getNativesForFlavors_MethodID_4: jmethodID?
+
+    open func getNativesForFlavors( flavors: [DataFlavor]? ) -> java_swift.JavaMap! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: flavors, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNativesForFlavors", methodSig: "([Ljava/awt/datatransfer/DataFlavor;)Ljava/util/Map;", methodCache: &FlavorMapForward.getNativesForFlavors_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: java_swift.JavaMapForward.self, from: __return )
+    }
+
+    open func getNativesForFlavors( _ _flavors: [DataFlavor]? ) -> java_swift.JavaMap! {
+        return getNativesForFlavors( flavors: _flavors )
+    }
+
+}
 

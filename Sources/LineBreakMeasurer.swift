@@ -18,23 +18,23 @@ open class LineBreakMeasurer: java_swift.JavaObject {
 
     /// private java.text.BreakIterator java.awt.font.LineBreakMeasurer.breakIter
 
-    /// private int java.awt.font.LineBreakMeasurer.start
-
-    /// private int java.awt.font.LineBreakMeasurer.pos
+    /// private java.awt.font.CharArrayIterator java.awt.font.LineBreakMeasurer.charIter
 
     /// private int java.awt.font.LineBreakMeasurer.limit
 
     /// private java.awt.font.TextMeasurer java.awt.font.LineBreakMeasurer.measurer
 
-    /// private java.awt.font.CharArrayIterator java.awt.font.LineBreakMeasurer.charIter
+    /// private int java.awt.font.LineBreakMeasurer.pos
+
+    /// private int java.awt.font.LineBreakMeasurer.start
 
     /// public java.awt.font.LineBreakMeasurer(java.text.AttributedCharacterIterator,java.awt.font.FontRenderContext)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, frc: FontRenderContext? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( text: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, frc: FontRenderContext? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: text, locals: &__locals )
         __args[1] = JNIType.toJava( value: frc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/font/LineBreakMeasurer", classCache: &LineBreakMeasurer.LineBreakMeasurerJNIClass, methodSig: "(Ljava/text/AttributedCharacterIterator;Ljava/awt/font/FontRenderContext;)V", methodCache: &LineBreakMeasurer.new_MethodID_1, args: &__args, locals: &__locals )
@@ -42,7 +42,7 @@ open class LineBreakMeasurer: java_swift.JavaObject {
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, _ _frc: FontRenderContext? ) {
+    public convenience init( _ _text: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, _ _frc: FontRenderContext? ) {
         self.init( text: _text, frc: _frc )
     }
 
@@ -50,9 +50,9 @@ open class LineBreakMeasurer: java_swift.JavaObject {
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, breakIter: /* java.text.BreakIterator */ UnclassedObject?, frc: FontRenderContext? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    public convenience init( text: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, breakIter: /* class java.text.BreakIterator */ UnavailableObject?, frc: FontRenderContext? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: text, locals: &__locals )
         __args[1] = JNIType.toJava( value: breakIter, locals: &__locals )
         __args[2] = JNIType.toJava( value: frc, locals: &__locals )
@@ -61,50 +61,63 @@ open class LineBreakMeasurer: java_swift.JavaObject {
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _text: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, _ _breakIter: /* java.text.BreakIterator */ UnclassedObject?, _ _frc: FontRenderContext? ) {
+    public convenience init( _ _text: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, _ _breakIter: /* class java.text.BreakIterator */ UnavailableObject?, _ _frc: FontRenderContext? ) {
         self.init( text: _text, breakIter: _breakIter, frc: _frc )
+    }
+
+    /// public void java.awt.font.LineBreakMeasurer.deleteChar(java.text.AttributedCharacterIterator,int)
+
+    private static var deleteChar_MethodID_3: jmethodID?
+
+    open func deleteChar( newParagraph: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, deletePos: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: newParagraph, locals: &__locals )
+        __args[1] = jvalue( i: jint(deletePos) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deleteChar", methodSig: "(Ljava/text/AttributedCharacterIterator;I)V", methodCache: &LineBreakMeasurer.deleteChar_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func deleteChar( _ _newParagraph: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, _ _deletePos: Int ) {
+        deleteChar( newParagraph: _newParagraph, deletePos: _deletePos )
     }
 
     /// public int java.awt.font.LineBreakMeasurer.getPosition()
 
-    private static var getPosition_MethodID_3: jmethodID?
+    private static var getPosition_MethodID_4: jmethodID?
 
     open func getPosition() -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPosition", methodSig: "()I", methodCache: &LineBreakMeasurer.getPosition_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPosition", methodSig: "()I", methodCache: &LineBreakMeasurer.getPosition_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public java.awt.font.TextLayout java.awt.font.LineBreakMeasurer.nextLayout(float,int,boolean)
+    /// public void java.awt.font.LineBreakMeasurer.insertChar(java.text.AttributedCharacterIterator,int)
 
-    private static var nextLayout_MethodID_4: jmethodID?
+    private static var insertChar_MethodID_5: jmethodID?
 
-    open func nextLayout( wrappingWidth: Float, offsetLimit: Int, requireNextWord: Bool ) -> TextLayout! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open func insertChar( newParagraph: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, insertPos: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: wrappingWidth, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offsetLimit, locals: &__locals )
-        __args[2] = JNIType.toJava( value: requireNextWord, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "nextLayout", methodSig: "(FIZ)Ljava/awt/font/TextLayout;", methodCache: &LineBreakMeasurer.nextLayout_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TextLayout( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: newParagraph, locals: &__locals )
+        __args[1] = jvalue( i: jint(insertPos) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertChar", methodSig: "(Ljava/text/AttributedCharacterIterator;I)V", methodCache: &LineBreakMeasurer.insertChar_MethodID_5, args: &__args, locals: &__locals )
     }
 
-    open func nextLayout( _ _wrappingWidth: Float, _ _offsetLimit: Int, _ _requireNextWord: Bool ) -> TextLayout! {
-        return nextLayout( wrappingWidth: _wrappingWidth, offsetLimit: _offsetLimit, requireNextWord: _requireNextWord )
+    open func insertChar( _ _newParagraph: /* interface java.text.AttributedCharacterIterator */ UnavailableProtocol?, _ _insertPos: Int ) {
+        insertChar( newParagraph: _newParagraph, insertPos: _insertPos )
     }
 
     /// public java.awt.font.TextLayout java.awt.font.LineBreakMeasurer.nextLayout(float)
 
-    private static var nextLayout_MethodID_5: jmethodID?
+    private static var nextLayout_MethodID_6: jmethodID?
 
     open func nextLayout( wrappingWidth: Float ) -> TextLayout! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: wrappingWidth, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "nextLayout", methodSig: "(F)Ljava/awt/font/TextLayout;", methodCache: &LineBreakMeasurer.nextLayout_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( f: wrappingWidth )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "nextLayout", methodSig: "(F)Ljava/awt/font/TextLayout;", methodCache: &LineBreakMeasurer.nextLayout_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextLayout( javaObject: __return ) : nil
     }
@@ -113,63 +126,35 @@ open class LineBreakMeasurer: java_swift.JavaObject {
         return nextLayout( wrappingWidth: _wrappingWidth )
     }
 
-    /// public void java.awt.font.LineBreakMeasurer.setPosition(int)
+    /// public java.awt.font.TextLayout java.awt.font.LineBreakMeasurer.nextLayout(float,int,boolean)
 
-    private static var setPosition_MethodID_6: jmethodID?
+    private static var nextLayout_MethodID_7: jmethodID?
 
-    open func setPosition( newPosition: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func nextLayout( wrappingWidth: Float, offsetLimit: Int, requireNextWord: Bool ) -> TextLayout! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newPosition, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPosition", methodSig: "(I)V", methodCache: &LineBreakMeasurer.setPosition_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( f: wrappingWidth )
+        __args[1] = jvalue( i: jint(offsetLimit) )
+        __args[2] = jvalue( z: jboolean(requireNextWord ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "nextLayout", methodSig: "(FIZ)Ljava/awt/font/TextLayout;", methodCache: &LineBreakMeasurer.nextLayout_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TextLayout( javaObject: __return ) : nil
     }
 
-    open func setPosition( _ _newPosition: Int ) {
-        setPosition( newPosition: _newPosition )
-    }
-
-    /// public void java.awt.font.LineBreakMeasurer.insertChar(java.text.AttributedCharacterIterator,int)
-
-    private static var insertChar_MethodID_7: jmethodID?
-
-    open func insertChar( newParagraph: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, insertPos: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newParagraph, locals: &__locals )
-        __args[1] = JNIType.toJava( value: insertPos, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertChar", methodSig: "(Ljava/text/AttributedCharacterIterator;I)V", methodCache: &LineBreakMeasurer.insertChar_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func insertChar( _ _newParagraph: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, _ _insertPos: Int ) {
-        insertChar( newParagraph: _newParagraph, insertPos: _insertPos )
-    }
-
-    /// public void java.awt.font.LineBreakMeasurer.deleteChar(java.text.AttributedCharacterIterator,int)
-
-    private static var deleteChar_MethodID_8: jmethodID?
-
-    open func deleteChar( newParagraph: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, deletePos: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newParagraph, locals: &__locals )
-        __args[1] = JNIType.toJava( value: deletePos, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deleteChar", methodSig: "(Ljava/text/AttributedCharacterIterator;I)V", methodCache: &LineBreakMeasurer.deleteChar_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func deleteChar( _ _newParagraph: /* java.text.AttributedCharacterIterator */ UnclassedProtocol?, _ _deletePos: Int ) {
-        deleteChar( newParagraph: _newParagraph, deletePos: _deletePos )
+    open func nextLayout( _ _wrappingWidth: Float, _ _offsetLimit: Int, _ _requireNextWord: Bool ) -> TextLayout! {
+        return nextLayout( wrappingWidth: _wrappingWidth, offsetLimit: _offsetLimit, requireNextWord: _requireNextWord )
     }
 
     /// public int java.awt.font.LineBreakMeasurer.nextOffset(float)
 
-    private static var nextOffset_MethodID_9: jmethodID?
+    private static var nextOffset_MethodID_8: jmethodID?
 
     open func nextOffset( wrappingWidth: Float ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: wrappingWidth, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "nextOffset", methodSig: "(F)I", methodCache: &LineBreakMeasurer.nextOffset_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( f: wrappingWidth )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "nextOffset", methodSig: "(F)I", methodCache: &LineBreakMeasurer.nextOffset_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func nextOffset( _ _wrappingWidth: Float ) -> Int {
@@ -178,20 +163,35 @@ open class LineBreakMeasurer: java_swift.JavaObject {
 
     /// public int java.awt.font.LineBreakMeasurer.nextOffset(float,int,boolean)
 
-    private static var nextOffset_MethodID_10: jmethodID?
+    private static var nextOffset_MethodID_9: jmethodID?
 
     open func nextOffset( wrappingWidth: Float, offsetLimit: Int, requireNextWord: Bool ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: wrappingWidth, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offsetLimit, locals: &__locals )
-        __args[2] = JNIType.toJava( value: requireNextWord, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "nextOffset", methodSig: "(FIZ)I", methodCache: &LineBreakMeasurer.nextOffset_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( f: wrappingWidth )
+        __args[1] = jvalue( i: jint(offsetLimit) )
+        __args[2] = jvalue( z: jboolean(requireNextWord ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "nextOffset", methodSig: "(FIZ)I", methodCache: &LineBreakMeasurer.nextOffset_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func nextOffset( _ _wrappingWidth: Float, _ _offsetLimit: Int, _ _requireNextWord: Bool ) -> Int {
         return nextOffset( wrappingWidth: _wrappingWidth, offsetLimit: _offsetLimit, requireNextWord: _requireNextWord )
+    }
+
+    /// public void java.awt.font.LineBreakMeasurer.setPosition(int)
+
+    private static var setPosition_MethodID_10: jmethodID?
+
+    open func setPosition( newPosition: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(newPosition) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPosition", methodSig: "(I)V", methodCache: &LineBreakMeasurer.setPosition_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func setPosition( _ _newPosition: Int ) {
+        setPosition( newPosition: _newPosition )
     }
 
 }

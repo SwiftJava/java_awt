@@ -16,31 +16,14 @@ open class Raster: java_swift.JavaObject {
 
     private static var RasterJNIClass: jclass?
 
-    /// protected java.awt.image.SampleModel java.awt.image.Raster.sampleModel
-
-    private static var sampleModel_FieldID: jfieldID?
-
-    open var sampleModel: SampleModel! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "sampleModel", fieldType: "Ljava/awt/image/SampleModel;", fieldCache: &Raster.sampleModel_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? SampleModel( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "sampleModel", fieldType: "Ljava/awt/image/SampleModel;", fieldCache: &Raster.sampleModel_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected java.awt.image.DataBuffer java.awt.image.Raster.dataBuffer
 
     private static var dataBuffer_FieldID: jfieldID?
 
     open var dataBuffer: DataBuffer! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "dataBuffer", fieldType: "Ljava/awt/image/DataBuffer;", fieldCache: &Raster.dataBuffer_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "dataBuffer", fieldType: "Ljava/awt/image/DataBuffer;", fieldCache: &Raster.dataBuffer_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? DataBuffer( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -50,19 +33,34 @@ open class Raster: java_swift.JavaObject {
         }
     }
 
+    /// protected int java.awt.image.Raster.height
+
+    private static var height_FieldID: jfieldID?
+
+    open var height: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &Raster.height_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "height", fieldType: "I", fieldCache: &Raster.height_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
     /// protected int java.awt.image.Raster.minX
 
     private static var minX_FieldID: jfieldID?
 
     open var minX: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "minX", fieldType: "I", fieldCache: &Raster.minX_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "minX", fieldType: "I", fieldCache: &Raster.minX_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "minX", fieldType: "I", fieldCache: &Raster.minX_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -73,82 +71,13 @@ open class Raster: java_swift.JavaObject {
 
     open var minY: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "minY", fieldType: "I", fieldCache: &Raster.minY_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "minY", fieldType: "I", fieldCache: &Raster.minY_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "minY", fieldType: "I", fieldCache: &Raster.minY_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int java.awt.image.Raster.width
-
-    private static var width_FieldID: jfieldID?
-
-    open var width: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &Raster.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &Raster.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int java.awt.image.Raster.height
-
-    private static var height_FieldID: jfieldID?
-
-    open var height: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &Raster.height_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "height", fieldType: "I", fieldCache: &Raster.height_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int java.awt.image.Raster.sampleModelTranslateX
-
-    private static var sampleModelTranslateX_FieldID: jfieldID?
-
-    open var sampleModelTranslateX: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "sampleModelTranslateX", fieldType: "I", fieldCache: &Raster.sampleModelTranslateX_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "sampleModelTranslateX", fieldType: "I", fieldCache: &Raster.sampleModelTranslateX_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int java.awt.image.Raster.sampleModelTranslateY
-
-    private static var sampleModelTranslateY_FieldID: jfieldID?
-
-    open var sampleModelTranslateY: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "sampleModelTranslateY", fieldType: "I", fieldCache: &Raster.sampleModelTranslateY_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "sampleModelTranslateY", fieldType: "I", fieldCache: &Raster.sampleModelTranslateY_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -158,13 +87,12 @@ open class Raster: java_swift.JavaObject {
 
     open var numBands: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &Raster.numBands_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &Raster.numBands_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &Raster.numBands_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -175,13 +103,12 @@ open class Raster: java_swift.JavaObject {
 
     open var numDataElements: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "numDataElements", fieldType: "I", fieldCache: &Raster.numDataElements_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "numDataElements", fieldType: "I", fieldCache: &Raster.numDataElements_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "numDataElements", fieldType: "I", fieldCache: &Raster.numDataElements_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -192,8 +119,8 @@ open class Raster: java_swift.JavaObject {
 
     open var parent: Raster! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "parent", fieldType: "Ljava/awt/image/Raster;", fieldCache: &Raster.parent_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "parent", fieldType: "Ljava/awt/image/Raster;", fieldCache: &Raster.parent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? Raster( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -203,13 +130,78 @@ open class Raster: java_swift.JavaObject {
         }
     }
 
+    /// protected java.awt.image.SampleModel java.awt.image.Raster.sampleModel
+
+    private static var sampleModel_FieldID: jfieldID?
+
+    open var sampleModel: SampleModel! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "sampleModel", fieldType: "Ljava/awt/image/SampleModel;", fieldCache: &Raster.sampleModel_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? SampleModel( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "sampleModel", fieldType: "Ljava/awt/image/SampleModel;", fieldCache: &Raster.sampleModel_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected int java.awt.image.Raster.sampleModelTranslateX
+
+    private static var sampleModelTranslateX_FieldID: jfieldID?
+
+    open var sampleModelTranslateX: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "sampleModelTranslateX", fieldType: "I", fieldCache: &Raster.sampleModelTranslateX_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "sampleModelTranslateX", fieldType: "I", fieldCache: &Raster.sampleModelTranslateX_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected int java.awt.image.Raster.sampleModelTranslateY
+
+    private static var sampleModelTranslateY_FieldID: jfieldID?
+
+    open var sampleModelTranslateY: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "sampleModelTranslateY", fieldType: "I", fieldCache: &Raster.sampleModelTranslateY_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "sampleModelTranslateY", fieldType: "I", fieldCache: &Raster.sampleModelTranslateY_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected int java.awt.image.Raster.width
+
+    private static var width_FieldID: jfieldID?
+
+    open var width: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &Raster.width_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &Raster.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
     /// protected java.awt.image.Raster(java.awt.image.SampleModel,java.awt.image.DataBuffer,java.awt.Point)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( sampleModel: SampleModel?, dataBuffer: DataBuffer?, origin: Point? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: sampleModel, locals: &__locals )
         __args[1] = JNIType.toJava( value: dataBuffer, locals: &__locals )
         __args[2] = JNIType.toJava( value: origin, locals: &__locals )
@@ -222,37 +214,19 @@ open class Raster: java_swift.JavaObject {
         self.init( sampleModel: _sampleModel, dataBuffer: _dataBuffer, origin: _origin )
     }
 
-    /// protected java.awt.image.Raster(java.awt.image.SampleModel,java.awt.Point)
+    /// protected java.awt.image.Raster(java.awt.image.SampleModel,java.awt.image.DataBuffer,java.awt.Rectangle,java.awt.Point,java.awt.image.Raster)
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( sampleModel: SampleModel?, origin: Point? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sampleModel, locals: &__locals )
-        __args[1] = JNIType.toJava( value: origin, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/Raster", classCache: &Raster.RasterJNIClass, methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/Point;)V", methodCache: &Raster.new_MethodID_2, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _sampleModel: SampleModel?, _ _origin: Point? ) {
-        self.init( sampleModel: _sampleModel, origin: _origin )
-    }
-
-    /// protected java.awt.image.Raster(java.awt.image.SampleModel,java.awt.image.DataBuffer,java.awt.Rectangle,java.awt.Point,java.awt.image.Raster)
-
-    private static var new_MethodID_3: jmethodID?
-
     public convenience init( sampleModel: SampleModel?, dataBuffer: DataBuffer?, aRegion: Rectangle?, sampleModelTranslate: Point?, parent: Raster? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: sampleModel, locals: &__locals )
         __args[1] = JNIType.toJava( value: dataBuffer, locals: &__locals )
         __args[2] = JNIType.toJava( value: aRegion, locals: &__locals )
         __args[3] = JNIType.toJava( value: sampleModelTranslate, locals: &__locals )
         __args[4] = JNIType.toJava( value: parent, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/Raster", classCache: &Raster.RasterJNIClass, methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/image/DataBuffer;Ljava/awt/Rectangle;Ljava/awt/Point;Ljava/awt/image/Raster;)V", methodCache: &Raster.new_MethodID_3, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/Raster", classCache: &Raster.RasterJNIClass, methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/image/DataBuffer;Ljava/awt/Rectangle;Ljava/awt/Point;Ljava/awt/image/Raster;)V", methodCache: &Raster.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -261,247 +235,39 @@ open class Raster: java_swift.JavaObject {
         self.init( sampleModel: _sampleModel, dataBuffer: _dataBuffer, aRegion: _aRegion, sampleModelTranslate: _sampleModelTranslate, parent: _parent )
     }
 
-    /// public java.awt.image.Raster java.awt.image.Raster.getParent()
+    /// protected java.awt.image.Raster(java.awt.image.SampleModel,java.awt.Point)
 
-    private static var getParent_MethodID_4: jmethodID?
+    private static var new_MethodID_3: jmethodID?
 
-    open func getParent() -> Raster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( sampleModel: SampleModel?, origin: Point? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParent", methodSig: "()Ljava/awt/image/Raster;", methodCache: &Raster.getParent_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Raster( javaObject: __return ) : nil
-    }
-
-
-    /// private static native void java.awt.image.Raster.initIDs()
-
-    /// public java.awt.image.WritableRaster java.awt.image.Raster.createCompatibleWritableRaster(int,int,int,int)
-
-    private static var createCompatibleWritableRaster_MethodID_5: jmethodID?
-
-    open func createCompatibleWritableRaster( x: Int, y: Int, w: Int, h: Int ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "(IIII)Ljava/awt/image/WritableRaster;", methodCache: &Raster.createCompatibleWritableRaster_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open func createCompatibleWritableRaster( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) -> WritableRaster! {
-        return createCompatibleWritableRaster( x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public java.awt.image.WritableRaster java.awt.image.Raster.createCompatibleWritableRaster(java.awt.Rectangle)
-
-    private static var createCompatibleWritableRaster_MethodID_6: jmethodID?
-
-    open func createCompatibleWritableRaster( rect: Rectangle? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rect, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/image/WritableRaster;", methodCache: &Raster.createCompatibleWritableRaster_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open func createCompatibleWritableRaster( _ _rect: Rectangle? ) -> WritableRaster! {
-        return createCompatibleWritableRaster( rect: _rect )
-    }
-
-    /// public java.awt.image.WritableRaster java.awt.image.Raster.createCompatibleWritableRaster()
-
-    private static var createCompatibleWritableRaster_MethodID_7: jmethodID?
-
-    open func createCompatibleWritableRaster() -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "()Ljava/awt/image/WritableRaster;", methodCache: &Raster.createCompatibleWritableRaster_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.image.WritableRaster java.awt.image.Raster.createCompatibleWritableRaster(int,int)
-
-    private static var createCompatibleWritableRaster_MethodID_8: jmethodID?
-
-    open func createCompatibleWritableRaster( w: Int, h: Int ) -> WritableRaster! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "(II)Ljava/awt/image/WritableRaster;", methodCache: &Raster.createCompatibleWritableRaster_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: sampleModel, locals: &__locals )
+        __args[1] = JNIType.toJava( value: origin, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/Raster", classCache: &Raster.RasterJNIClass, methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/Point;)V", methodCache: &Raster.new_MethodID_3, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
     }
 
-    open func createCompatibleWritableRaster( _ _w: Int, _ _h: Int ) -> WritableRaster! {
-        return createCompatibleWritableRaster( w: _w, h: _h )
-    }
-
-    /// public final int java.awt.image.Raster.getTransferType()
-
-    private static var getTransferType_MethodID_9: jmethodID?
-
-    open func getTransferType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransferType", methodSig: "()I", methodCache: &Raster.getTransferType_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.lang.Object java.awt.image.Raster.getDataElements(int,int,java.lang.Object)
-
-    private static var getDataElements_MethodID_10: jmethodID?
-
-    open func getDataElements( x: Int, y: Int, outData: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: outData, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "(IILjava/lang/Object;)Ljava/lang/Object;", methodCache: &Raster.getDataElements_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open func getDataElements( _ _x: Int, _ _y: Int, _ _outData: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        return getDataElements( x: _x, y: _y, outData: _outData )
-    }
-
-    /// public java.lang.Object java.awt.image.Raster.getDataElements(int,int,int,int,java.lang.Object)
-
-    private static var getDataElements_MethodID_11: jmethodID?
-
-    open func getDataElements( x: Int, y: Int, w: Int, h: Int, outData: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: outData, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "(IIIILjava/lang/Object;)Ljava/lang/Object;", methodCache: &Raster.getDataElements_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open func getDataElements( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _outData: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        return getDataElements( x: _x, y: _y, w: _w, h: _h, outData: _outData )
-    }
-
-    /// public final int java.awt.image.Raster.getMinX()
-
-    private static var getMinX_MethodID_12: jmethodID?
-
-    open func getMinX() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinX", methodSig: "()I", methodCache: &Raster.getMinX_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public final int java.awt.image.Raster.getMinY()
-
-    private static var getMinY_MethodID_13: jmethodID?
-
-    open func getMinY() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinY", methodSig: "()I", methodCache: &Raster.getMinY_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createInterleavedRaster(int,int,int,int,int,int[],java.awt.Point)
-
-    private static var createInterleavedRaster_MethodID_14: jmethodID?
-
-    open class func createInterleavedRaster( dataType: Int, w: Int, h: Int, scanlineStride: Int, pixelStride: Int, bandOffsets: [Int32]?, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: scanlineStride, locals: &__locals )
-        __args[4] = JNIType.toJava( value: pixelStride, locals: &__locals )
-        __args[5] = JNIType.toJava( value: bandOffsets, locals: &__locals )
-        __args[6] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createInterleavedRaster", methodSig: "(IIIII[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createInterleavedRaster_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open class func createInterleavedRaster( _ _dataType: Int, _ _w: Int, _ _h: Int, _ _scanlineStride: Int, _ _pixelStride: Int, _ _bandOffsets: [Int32]?, _ _location: Point? ) -> WritableRaster! {
-        return createInterleavedRaster( dataType: _dataType, w: _w, h: _h, scanlineStride: _scanlineStride, pixelStride: _pixelStride, bandOffsets: _bandOffsets, location: _location )
-    }
-
-    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createInterleavedRaster(java.awt.image.DataBuffer,int,int,int,int,int[],java.awt.Point)
-
-    private static var createInterleavedRaster_MethodID_15: jmethodID?
-
-    open class func createInterleavedRaster( dataBuffer: DataBuffer?, w: Int, h: Int, scanlineStride: Int, pixelStride: Int, bandOffsets: [Int32]?, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataBuffer, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: scanlineStride, locals: &__locals )
-        __args[4] = JNIType.toJava( value: pixelStride, locals: &__locals )
-        __args[5] = JNIType.toJava( value: bandOffsets, locals: &__locals )
-        __args[6] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createInterleavedRaster", methodSig: "(Ljava/awt/image/DataBuffer;IIII[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createInterleavedRaster_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open class func createInterleavedRaster( _ _dataBuffer: DataBuffer?, _ _w: Int, _ _h: Int, _ _scanlineStride: Int, _ _pixelStride: Int, _ _bandOffsets: [Int32]?, _ _location: Point? ) -> WritableRaster! {
-        return createInterleavedRaster( dataBuffer: _dataBuffer, w: _w, h: _h, scanlineStride: _scanlineStride, pixelStride: _pixelStride, bandOffsets: _bandOffsets, location: _location )
-    }
-
-    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createInterleavedRaster(int,int,int,int,java.awt.Point)
-
-    private static var createInterleavedRaster_MethodID_16: jmethodID?
-
-    open class func createInterleavedRaster( dataType: Int, w: Int, h: Int, bands: Int, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: bands, locals: &__locals )
-        __args[4] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createInterleavedRaster", methodSig: "(IIIILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createInterleavedRaster_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open class func createInterleavedRaster( _ _dataType: Int, _ _w: Int, _ _h: Int, _ _bands: Int, _ _location: Point? ) -> WritableRaster! {
-        return createInterleavedRaster( dataType: _dataType, w: _w, h: _h, bands: _bands, location: _location )
+    public convenience init( _ _sampleModel: SampleModel?, _ _origin: Point? ) {
+        self.init( sampleModel: _sampleModel, origin: _origin )
     }
 
     /// public static java.awt.image.WritableRaster java.awt.image.Raster.createBandedRaster(java.awt.image.DataBuffer,int,int,int,int[],int[],java.awt.Point)
 
-    private static var createBandedRaster_MethodID_17: jmethodID?
+    private static var createBandedRaster_MethodID_4: jmethodID?
 
     open class func createBandedRaster( dataBuffer: DataBuffer?, w: Int, h: Int, scanlineStride: Int, bankIndices: [Int32]?, bandOffsets: [Int32]?, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: dataBuffer, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: scanlineStride, locals: &__locals )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(scanlineStride) )
         __args[4] = JNIType.toJava( value: bankIndices, locals: &__locals )
         __args[5] = JNIType.toJava( value: bandOffsets, locals: &__locals )
         __args[6] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createBandedRaster", methodSig: "(Ljava/awt/image/DataBuffer;III[I[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createBandedRaster_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createBandedRaster", methodSig: "(Ljava/awt/image/DataBuffer;III[I[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createBandedRaster_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -510,42 +276,19 @@ open class Raster: java_swift.JavaObject {
         return createBandedRaster( dataBuffer: _dataBuffer, w: _w, h: _h, scanlineStride: _scanlineStride, bankIndices: _bankIndices, bandOffsets: _bandOffsets, location: _location )
     }
 
-    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createBandedRaster(int,int,int,int,int[],int[],java.awt.Point)
-
-    private static var createBandedRaster_MethodID_18: jmethodID?
-
-    open class func createBandedRaster( dataType: Int, w: Int, h: Int, scanlineStride: Int, bankIndices: [Int32]?, bandOffsets: [Int32]?, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: scanlineStride, locals: &__locals )
-        __args[4] = JNIType.toJava( value: bankIndices, locals: &__locals )
-        __args[5] = JNIType.toJava( value: bandOffsets, locals: &__locals )
-        __args[6] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createBandedRaster", methodSig: "(IIII[I[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createBandedRaster_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open class func createBandedRaster( _ _dataType: Int, _ _w: Int, _ _h: Int, _ _scanlineStride: Int, _ _bankIndices: [Int32]?, _ _bandOffsets: [Int32]?, _ _location: Point? ) -> WritableRaster! {
-        return createBandedRaster( dataType: _dataType, w: _w, h: _h, scanlineStride: _scanlineStride, bankIndices: _bankIndices, bandOffsets: _bandOffsets, location: _location )
-    }
-
     /// public static java.awt.image.WritableRaster java.awt.image.Raster.createBandedRaster(int,int,int,int,java.awt.Point)
 
-    private static var createBandedRaster_MethodID_19: jmethodID?
+    private static var createBandedRaster_MethodID_5: jmethodID?
 
     open class func createBandedRaster( dataType: Int, w: Int, h: Int, bands: Int, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: bands, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(bands) )
         __args[4] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createBandedRaster", methodSig: "(IIIILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createBandedRaster_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createBandedRaster", methodSig: "(IIIILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createBandedRaster_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -554,20 +297,153 @@ open class Raster: java_swift.JavaObject {
         return createBandedRaster( dataType: _dataType, w: _w, h: _h, bands: _bands, location: _location )
     }
 
+    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createBandedRaster(int,int,int,int,int[],int[],java.awt.Point)
+
+    private static var createBandedRaster_MethodID_6: jmethodID?
+
+    open class func createBandedRaster( dataType: Int, w: Int, h: Int, scanlineStride: Int, bankIndices: [Int32]?, bandOffsets: [Int32]?, location: Point? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(scanlineStride) )
+        __args[4] = JNIType.toJava( value: bankIndices, locals: &__locals )
+        __args[5] = JNIType.toJava( value: bandOffsets, locals: &__locals )
+        __args[6] = JNIType.toJava( value: location, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createBandedRaster", methodSig: "(IIII[I[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createBandedRaster_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open class func createBandedRaster( _ _dataType: Int, _ _w: Int, _ _h: Int, _ _scanlineStride: Int, _ _bankIndices: [Int32]?, _ _bandOffsets: [Int32]?, _ _location: Point? ) -> WritableRaster! {
+        return createBandedRaster( dataType: _dataType, w: _w, h: _h, scanlineStride: _scanlineStride, bankIndices: _bankIndices, bandOffsets: _bandOffsets, location: _location )
+    }
+
+    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createInterleavedRaster(java.awt.image.DataBuffer,int,int,int,int,int[],java.awt.Point)
+
+    private static var createInterleavedRaster_MethodID_7: jmethodID?
+
+    open class func createInterleavedRaster( dataBuffer: DataBuffer?, w: Int, h: Int, scanlineStride: Int, pixelStride: Int, bandOffsets: [Int32]?, location: Point? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: dataBuffer, locals: &__locals )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(scanlineStride) )
+        __args[4] = jvalue( i: jint(pixelStride) )
+        __args[5] = JNIType.toJava( value: bandOffsets, locals: &__locals )
+        __args[6] = JNIType.toJava( value: location, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createInterleavedRaster", methodSig: "(Ljava/awt/image/DataBuffer;IIII[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createInterleavedRaster_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open class func createInterleavedRaster( _ _dataBuffer: DataBuffer?, _ _w: Int, _ _h: Int, _ _scanlineStride: Int, _ _pixelStride: Int, _ _bandOffsets: [Int32]?, _ _location: Point? ) -> WritableRaster! {
+        return createInterleavedRaster( dataBuffer: _dataBuffer, w: _w, h: _h, scanlineStride: _scanlineStride, pixelStride: _pixelStride, bandOffsets: _bandOffsets, location: _location )
+    }
+
+    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createInterleavedRaster(int,int,int,int,int,int[],java.awt.Point)
+
+    private static var createInterleavedRaster_MethodID_8: jmethodID?
+
+    open class func createInterleavedRaster( dataType: Int, w: Int, h: Int, scanlineStride: Int, pixelStride: Int, bandOffsets: [Int32]?, location: Point? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(scanlineStride) )
+        __args[4] = jvalue( i: jint(pixelStride) )
+        __args[5] = JNIType.toJava( value: bandOffsets, locals: &__locals )
+        __args[6] = JNIType.toJava( value: location, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createInterleavedRaster", methodSig: "(IIIII[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createInterleavedRaster_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open class func createInterleavedRaster( _ _dataType: Int, _ _w: Int, _ _h: Int, _ _scanlineStride: Int, _ _pixelStride: Int, _ _bandOffsets: [Int32]?, _ _location: Point? ) -> WritableRaster! {
+        return createInterleavedRaster( dataType: _dataType, w: _w, h: _h, scanlineStride: _scanlineStride, pixelStride: _pixelStride, bandOffsets: _bandOffsets, location: _location )
+    }
+
+    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createInterleavedRaster(int,int,int,int,java.awt.Point)
+
+    private static var createInterleavedRaster_MethodID_9: jmethodID?
+
+    open class func createInterleavedRaster( dataType: Int, w: Int, h: Int, bands: Int, location: Point? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(bands) )
+        __args[4] = JNIType.toJava( value: location, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createInterleavedRaster", methodSig: "(IIIILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createInterleavedRaster_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open class func createInterleavedRaster( _ _dataType: Int, _ _w: Int, _ _h: Int, _ _bands: Int, _ _location: Point? ) -> WritableRaster! {
+        return createInterleavedRaster( dataType: _dataType, w: _w, h: _h, bands: _bands, location: _location )
+    }
+
+    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createPackedRaster(java.awt.image.DataBuffer,int,int,int,java.awt.Point)
+
+    private static var createPackedRaster_MethodID_10: jmethodID?
+
+    open class func createPackedRaster( dataBuffer: DataBuffer?, w: Int, h: Int, bitsPerPixel: Int, location: Point? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: dataBuffer, locals: &__locals )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(bitsPerPixel) )
+        __args[4] = JNIType.toJava( value: location, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createPackedRaster", methodSig: "(Ljava/awt/image/DataBuffer;IIILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createPackedRaster_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open class func createPackedRaster( _ _dataBuffer: DataBuffer?, _ _w: Int, _ _h: Int, _ _bitsPerPixel: Int, _ _location: Point? ) -> WritableRaster! {
+        return createPackedRaster( dataBuffer: _dataBuffer, w: _w, h: _h, bitsPerPixel: _bitsPerPixel, location: _location )
+    }
+
+    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createPackedRaster(java.awt.image.DataBuffer,int,int,int,int[],java.awt.Point)
+
+    private static var createPackedRaster_MethodID_11: jmethodID?
+
+    open class func createPackedRaster( dataBuffer: DataBuffer?, w: Int, h: Int, scanlineStride: Int, bandMasks: [Int32]?, location: Point? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: dataBuffer, locals: &__locals )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(scanlineStride) )
+        __args[4] = JNIType.toJava( value: bandMasks, locals: &__locals )
+        __args[5] = JNIType.toJava( value: location, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createPackedRaster", methodSig: "(Ljava/awt/image/DataBuffer;III[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createPackedRaster_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open class func createPackedRaster( _ _dataBuffer: DataBuffer?, _ _w: Int, _ _h: Int, _ _scanlineStride: Int, _ _bandMasks: [Int32]?, _ _location: Point? ) -> WritableRaster! {
+        return createPackedRaster( dataBuffer: _dataBuffer, w: _w, h: _h, scanlineStride: _scanlineStride, bandMasks: _bandMasks, location: _location )
+    }
+
     /// public static java.awt.image.WritableRaster java.awt.image.Raster.createPackedRaster(int,int,int,int,int,java.awt.Point)
 
-    private static var createPackedRaster_MethodID_20: jmethodID?
+    private static var createPackedRaster_MethodID_12: jmethodID?
 
     open class func createPackedRaster( dataType: Int, w: Int, h: Int, bands: Int, bitsPerBand: Int, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: bands, locals: &__locals )
-        __args[4] = JNIType.toJava( value: bitsPerBand, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(bands) )
+        __args[4] = jvalue( i: jint(bitsPerBand) )
         __args[5] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createPackedRaster", methodSig: "(IIIIILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createPackedRaster_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createPackedRaster", methodSig: "(IIIIILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createPackedRaster_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -578,17 +454,17 @@ open class Raster: java_swift.JavaObject {
 
     /// public static java.awt.image.WritableRaster java.awt.image.Raster.createPackedRaster(int,int,int,int[],java.awt.Point)
 
-    private static var createPackedRaster_MethodID_21: jmethodID?
+    private static var createPackedRaster_MethodID_13: jmethodID?
 
     open class func createPackedRaster( dataType: Int, w: Int, h: Int, bandMasks: [Int32]?, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
         __args[3] = JNIType.toJava( value: bandMasks, locals: &__locals )
         __args[4] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createPackedRaster", methodSig: "(III[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createPackedRaster_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createPackedRaster", methodSig: "(III[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createPackedRaster_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -597,60 +473,17 @@ open class Raster: java_swift.JavaObject {
         return createPackedRaster( dataType: _dataType, w: _w, h: _h, bandMasks: _bandMasks, location: _location )
     }
 
-    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createPackedRaster(java.awt.image.DataBuffer,int,int,int,int[],java.awt.Point)
-
-    private static var createPackedRaster_MethodID_22: jmethodID?
-
-    open class func createPackedRaster( dataBuffer: DataBuffer?, w: Int, h: Int, scanlineStride: Int, bandMasks: [Int32]?, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataBuffer, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: scanlineStride, locals: &__locals )
-        __args[4] = JNIType.toJava( value: bandMasks, locals: &__locals )
-        __args[5] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createPackedRaster", methodSig: "(Ljava/awt/image/DataBuffer;III[ILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createPackedRaster_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open class func createPackedRaster( _ _dataBuffer: DataBuffer?, _ _w: Int, _ _h: Int, _ _scanlineStride: Int, _ _bandMasks: [Int32]?, _ _location: Point? ) -> WritableRaster! {
-        return createPackedRaster( dataBuffer: _dataBuffer, w: _w, h: _h, scanlineStride: _scanlineStride, bandMasks: _bandMasks, location: _location )
-    }
-
-    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createPackedRaster(java.awt.image.DataBuffer,int,int,int,java.awt.Point)
-
-    private static var createPackedRaster_MethodID_23: jmethodID?
-
-    open class func createPackedRaster( dataBuffer: DataBuffer?, w: Int, h: Int, bitsPerPixel: Int, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataBuffer, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: bitsPerPixel, locals: &__locals )
-        __args[4] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createPackedRaster", methodSig: "(Ljava/awt/image/DataBuffer;IIILjava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createPackedRaster_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open class func createPackedRaster( _ _dataBuffer: DataBuffer?, _ _w: Int, _ _h: Int, _ _bitsPerPixel: Int, _ _location: Point? ) -> WritableRaster! {
-        return createPackedRaster( dataBuffer: _dataBuffer, w: _w, h: _h, bitsPerPixel: _bitsPerPixel, location: _location )
-    }
-
     /// public static java.awt.image.Raster java.awt.image.Raster.createRaster(java.awt.image.SampleModel,java.awt.image.DataBuffer,java.awt.Point)
 
-    private static var createRaster_MethodID_24: jmethodID?
+    private static var createRaster_MethodID_14: jmethodID?
 
     open class func createRaster( sm: SampleModel?, db: DataBuffer?, location: Point? ) -> Raster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: sm, locals: &__locals )
         __args[1] = JNIType.toJava( value: db, locals: &__locals )
         __args[2] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createRaster", methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/image/DataBuffer;Ljava/awt/Point;)Ljava/awt/image/Raster;", methodCache: &createRaster_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createRaster", methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/image/DataBuffer;Ljava/awt/Point;)Ljava/awt/image/Raster;", methodCache: &createRaster_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Raster( javaObject: __return ) : nil
     }
@@ -659,35 +492,17 @@ open class Raster: java_swift.JavaObject {
         return createRaster( sm: _sm, db: _db, location: _location )
     }
 
-    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createWritableRaster(java.awt.image.SampleModel,java.awt.Point)
-
-    private static var createWritableRaster_MethodID_25: jmethodID?
-
-    open class func createWritableRaster( sm: SampleModel?, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sm, locals: &__locals )
-        __args[1] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createWritableRaster", methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createWritableRaster_MethodID_25, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open class func createWritableRaster( _ _sm: SampleModel?, _ _location: Point? ) -> WritableRaster! {
-        return createWritableRaster( sm: _sm, location: _location )
-    }
-
     /// public static java.awt.image.WritableRaster java.awt.image.Raster.createWritableRaster(java.awt.image.SampleModel,java.awt.image.DataBuffer,java.awt.Point)
 
-    private static var createWritableRaster_MethodID_26: jmethodID?
+    private static var createWritableRaster_MethodID_15: jmethodID?
 
     open class func createWritableRaster( sm: SampleModel?, db: DataBuffer?, location: Point? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: sm, locals: &__locals )
         __args[1] = JNIType.toJava( value: db, locals: &__locals )
         __args[2] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createWritableRaster", methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/image/DataBuffer;Ljava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createWritableRaster_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createWritableRaster", methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/image/DataBuffer;Ljava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createWritableRaster_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -696,63 +511,41 @@ open class Raster: java_swift.JavaObject {
         return createWritableRaster( sm: _sm, db: _db, location: _location )
     }
 
-    /// public final int java.awt.image.Raster.getSampleModelTranslateX()
+    /// public static java.awt.image.WritableRaster java.awt.image.Raster.createWritableRaster(java.awt.image.SampleModel,java.awt.Point)
 
-    private static var getSampleModelTranslateX_MethodID_27: jmethodID?
+    private static var createWritableRaster_MethodID_16: jmethodID?
 
-    open func getSampleModelTranslateX() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func createWritableRaster( sm: SampleModel?, location: Point? ) -> WritableRaster! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSampleModelTranslateX", methodSig: "()I", methodCache: &Raster.getSampleModelTranslateX_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public final int java.awt.image.Raster.getSampleModelTranslateY()
-
-    private static var getSampleModelTranslateY_MethodID_28: jmethodID?
-
-    open func getSampleModelTranslateY() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSampleModelTranslateY", methodSig: "()I", methodCache: &Raster.getSampleModelTranslateY_MethodID_28, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.awt.image.Raster java.awt.image.Raster.createTranslatedChild(int,int)
-
-    private static var createTranslatedChild_MethodID_29: jmethodID?
-
-    open func createTranslatedChild( childMinX: Int, childMinY: Int ) -> Raster! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: childMinX, locals: &__locals )
-        __args[1] = JNIType.toJava( value: childMinY, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTranslatedChild", methodSig: "(II)Ljava/awt/image/Raster;", methodCache: &Raster.createTranslatedChild_MethodID_29, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sm, locals: &__locals )
+        __args[1] = JNIType.toJava( value: location, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/image/Raster", classCache: &RasterJNIClass, methodName: "createWritableRaster", methodSig: "(Ljava/awt/image/SampleModel;Ljava/awt/Point;)Ljava/awt/image/WritableRaster;", methodCache: &createWritableRaster_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Raster( javaObject: __return ) : nil
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
 
-    open func createTranslatedChild( _ _childMinX: Int, _ _childMinY: Int ) -> Raster! {
-        return createTranslatedChild( childMinX: _childMinX, childMinY: _childMinY )
+    open class func createWritableRaster( _ _sm: SampleModel?, _ _location: Point? ) -> WritableRaster! {
+        return createWritableRaster( sm: _sm, location: _location )
     }
+
+    /// private static native void java.awt.image.Raster.initIDs()
 
     /// public java.awt.image.Raster java.awt.image.Raster.createChild(int,int,int,int,int,int,int[])
 
-    private static var createChild_MethodID_30: jmethodID?
+    private static var createChild_MethodID_17: jmethodID?
 
     open func createChild( parentX: Int, parentY: Int, width: Int, height: Int, childMinX: Int, childMinY: Int, bandList: [Int32]? ) -> Raster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentX, locals: &__locals )
-        __args[1] = JNIType.toJava( value: parentY, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        __args[4] = JNIType.toJava( value: childMinX, locals: &__locals )
-        __args[5] = JNIType.toJava( value: childMinY, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(parentX) )
+        __args[1] = jvalue( i: jint(parentY) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        __args[4] = jvalue( i: jint(childMinX) )
+        __args[5] = jvalue( i: jint(childMinY) )
         __args[6] = JNIType.toJava( value: bandList, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChild", methodSig: "(IIIIII[I)Ljava/awt/image/Raster;", methodCache: &Raster.createChild_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChild", methodSig: "(IIIIII[I)Ljava/awt/image/Raster;", methodCache: &Raster.createChild_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Raster( javaObject: __return ) : nil
     }
@@ -761,86 +554,243 @@ open class Raster: java_swift.JavaObject {
         return createChild( parentX: _parentX, parentY: _parentY, width: _width, height: _height, childMinX: _childMinX, childMinY: _childMinY, bandList: _bandList )
     }
 
-    /// public final int java.awt.image.Raster.getNumBands()
+    /// public java.awt.image.WritableRaster java.awt.image.Raster.createCompatibleWritableRaster(int,int)
 
-    private static var getNumBands_MethodID_31: jmethodID?
+    private static var createCompatibleWritableRaster_MethodID_18: jmethodID?
 
-    open func getNumBands() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createCompatibleWritableRaster( w: Int, h: Int ) -> WritableRaster! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumBands", methodSig: "()I", methodCache: &Raster.getNumBands_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(w) )
+        __args[1] = jvalue( i: jint(h) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "(II)Ljava/awt/image/WritableRaster;", methodCache: &Raster.createCompatibleWritableRaster_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open func createCompatibleWritableRaster( _ _w: Int, _ _h: Int ) -> WritableRaster! {
+        return createCompatibleWritableRaster( w: _w, h: _h )
+    }
+
+    /// public java.awt.image.WritableRaster java.awt.image.Raster.createCompatibleWritableRaster(int,int,int,int)
+
+    private static var createCompatibleWritableRaster_MethodID_19: jmethodID?
+
+    open func createCompatibleWritableRaster( x: Int, y: Int, w: Int, h: Int ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "(IIII)Ljava/awt/image/WritableRaster;", methodCache: &Raster.createCompatibleWritableRaster_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open func createCompatibleWritableRaster( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) -> WritableRaster! {
+        return createCompatibleWritableRaster( x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public java.awt.image.WritableRaster java.awt.image.Raster.createCompatibleWritableRaster(java.awt.Rectangle)
+
+    private static var createCompatibleWritableRaster_MethodID_20: jmethodID?
+
+    open func createCompatibleWritableRaster( rect: Rectangle? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: rect, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/image/WritableRaster;", methodCache: &Raster.createCompatibleWritableRaster_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open func createCompatibleWritableRaster( _ _rect: Rectangle? ) -> WritableRaster! {
+        return createCompatibleWritableRaster( rect: _rect )
+    }
+
+    /// public java.awt.image.WritableRaster java.awt.image.Raster.createCompatibleWritableRaster()
+
+    private static var createCompatibleWritableRaster_MethodID_21: jmethodID?
+
+    open func createCompatibleWritableRaster() -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleWritableRaster", methodSig: "()Ljava/awt/image/WritableRaster;", methodCache: &Raster.createCompatibleWritableRaster_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
 
 
-    /// public final int java.awt.image.Raster.getNumDataElements()
+    /// public java.awt.image.Raster java.awt.image.Raster.createTranslatedChild(int,int)
 
-    private static var getNumDataElements_MethodID_32: jmethodID?
+    private static var createTranslatedChild_MethodID_22: jmethodID?
 
-    open func getNumDataElements() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createTranslatedChild( childMinX: Int, childMinY: Int ) -> Raster! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumDataElements", methodSig: "()I", methodCache: &Raster.getNumDataElements_MethodID_32, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(childMinX) )
+        __args[1] = jvalue( i: jint(childMinY) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTranslatedChild", methodSig: "(II)Ljava/awt/image/Raster;", methodCache: &Raster.createTranslatedChild_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Raster( javaObject: __return ) : nil
+    }
+
+    open func createTranslatedChild( _ _childMinX: Int, _ _childMinY: Int ) -> Raster! {
+        return createTranslatedChild( childMinX: _childMinX, childMinY: _childMinY )
+    }
+
+    /// public java.awt.Rectangle java.awt.image.Raster.getBounds()
+
+    private static var getBounds_MethodID_23: jmethodID?
+
+    open func getBounds() -> Rectangle! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Raster.getBounds_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
 
 
     /// public java.awt.image.DataBuffer java.awt.image.Raster.getDataBuffer()
 
-    private static var getDataBuffer_MethodID_33: jmethodID?
+    private static var getDataBuffer_MethodID_24: jmethodID?
 
     open func getDataBuffer() -> DataBuffer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataBuffer", methodSig: "()Ljava/awt/image/DataBuffer;", methodCache: &Raster.getDataBuffer_MethodID_33, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataBuffer", methodSig: "()Ljava/awt/image/DataBuffer;", methodCache: &Raster.getDataBuffer_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DataBuffer( javaObject: __return ) : nil
     }
 
 
-    /// public java.awt.image.SampleModel java.awt.image.Raster.getSampleModel()
+    /// public java.lang.Object java.awt.image.Raster.getDataElements(int,int,int,int,java.lang.Object)
 
-    private static var getSampleModel_MethodID_34: jmethodID?
+    private static var getDataElements_MethodID_25: jmethodID?
 
-    open func getSampleModel() -> SampleModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getDataElements( x: Int, y: Int, w: Int, h: Int, outData: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSampleModel", methodSig: "()Ljava/awt/image/SampleModel;", methodCache: &Raster.getSampleModel_MethodID_34, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = JNIType.toJava( value: outData, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "(IIIILjava/lang/Object;)Ljava/lang/Object;", methodCache: &Raster.getDataElements_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SampleModel( javaObject: __return ) : nil
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
+    open func getDataElements( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _outData: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        return getDataElements( x: _x, y: _y, w: _w, h: _h, outData: _outData )
+    }
 
-    /// public int[] java.awt.image.Raster.getPixel(int,int,int[])
+    /// public java.lang.Object java.awt.image.Raster.getDataElements(int,int,java.lang.Object)
 
-    private static var getPixel_MethodID_35: jmethodID?
+    private static var getDataElements_MethodID_26: jmethodID?
 
-    open func getPixel( x: Int, y: Int, iArray: [Int32]? ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open func getDataElements( x: Int, y: Int, outData: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: iArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[I)[I", methodCache: &Raster.getPixel_MethodID_35, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = JNIType.toJava( value: outData, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "(IILjava/lang/Object;)Ljava/lang/Object;", methodCache: &Raster.getDataElements_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
-    open func getPixel( _ _x: Int, _ _y: Int, _ _iArray: [Int32]? ) -> [Int32]! {
-        return getPixel( x: _x, y: _y, iArray: _iArray )
+    open func getDataElements( _ _x: Int, _ _y: Int, _ _outData: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        return getDataElements( x: _x, y: _y, outData: _outData )
     }
+
+    /// public final int java.awt.image.Raster.getHeight()
+
+    private static var getHeight_MethodID_27: jmethodID?
+
+    open func getHeight() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &Raster.getHeight_MethodID_27, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public final int java.awt.image.Raster.getMinX()
+
+    private static var getMinX_MethodID_28: jmethodID?
+
+    open func getMinX() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinX", methodSig: "()I", methodCache: &Raster.getMinX_MethodID_28, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public final int java.awt.image.Raster.getMinY()
+
+    private static var getMinY_MethodID_29: jmethodID?
+
+    open func getMinY() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinY", methodSig: "()I", methodCache: &Raster.getMinY_MethodID_29, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public final int java.awt.image.Raster.getNumBands()
+
+    private static var getNumBands_MethodID_30: jmethodID?
+
+    open func getNumBands() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumBands", methodSig: "()I", methodCache: &Raster.getNumBands_MethodID_30, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public final int java.awt.image.Raster.getNumDataElements()
+
+    private static var getNumDataElements_MethodID_31: jmethodID?
+
+    open func getNumDataElements() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumDataElements", methodSig: "()I", methodCache: &Raster.getNumDataElements_MethodID_31, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.awt.image.Raster java.awt.image.Raster.getParent()
+
+    private static var getParent_MethodID_32: jmethodID?
+
+    open func getParent() -> Raster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParent", methodSig: "()Ljava/awt/image/Raster;", methodCache: &Raster.getParent_MethodID_32, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Raster( javaObject: __return ) : nil
+    }
+
 
     /// public double[] java.awt.image.Raster.getPixel(int,int,double[])
 
-    private static var getPixel_MethodID_36: jmethodID?
+    private static var getPixel_MethodID_33: jmethodID?
 
     open func getPixel( x: Int, y: Int, dArray: [Double]? ) -> [Double]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
         __args[2] = JNIType.toJava( value: dArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[D)[D", methodCache: &Raster.getPixel_MethodID_36, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Double](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[D)[D", methodCache: &Raster.getPixel_MethodID_33, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Double].self, from: __return )
     }
 
     open func getPixel( _ _x: Int, _ _y: Int, _ _dArray: [Double]? ) -> [Double]! {
@@ -849,36 +799,74 @@ open class Raster: java_swift.JavaObject {
 
     /// public float[] java.awt.image.Raster.getPixel(int,int,float[])
 
-    private static var getPixel_MethodID_37: jmethodID?
+    private static var getPixel_MethodID_34: jmethodID?
 
     open func getPixel( x: Int, y: Int, fArray: [Float]? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
         __args[2] = JNIType.toJava( value: fArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[F)[F", methodCache: &Raster.getPixel_MethodID_37, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[F)[F", methodCache: &Raster.getPixel_MethodID_34, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
     open func getPixel( _ _x: Int, _ _y: Int, _ _fArray: [Float]? ) -> [Float]! {
         return getPixel( x: _x, y: _y, fArray: _fArray )
     }
 
+    /// public int[] java.awt.image.Raster.getPixel(int,int,int[])
+
+    private static var getPixel_MethodID_35: jmethodID?
+
+    open func getPixel( x: Int, y: Int, iArray: [Int32]? ) -> [Int32]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = JNIType.toJava( value: iArray, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[I)[I", methodCache: &Raster.getPixel_MethodID_35, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
+    }
+
+    open func getPixel( _ _x: Int, _ _y: Int, _ _iArray: [Int32]? ) -> [Int32]! {
+        return getPixel( x: _x, y: _y, iArray: _iArray )
+    }
+
+    /// public double[] java.awt.image.Raster.getPixels(int,int,int,int,double[])
+
+    private static var getPixels_MethodID_36: jmethodID?
+
+    open func getPixels( x: Int, y: Int, w: Int, h: Int, dArray: [Double]? ) -> [Double]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = JNIType.toJava( value: dArray, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[D)[D", methodCache: &Raster.getPixels_MethodID_36, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Double].self, from: __return )
+    }
+
+    open func getPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _dArray: [Double]? ) -> [Double]! {
+        return getPixels( x: _x, y: _y, w: _w, h: _h, dArray: _dArray )
+    }
+
     /// public float[] java.awt.image.Raster.getPixels(int,int,int,int,float[])
 
-    private static var getPixels_MethodID_38: jmethodID?
+    private static var getPixels_MethodID_37: jmethodID?
 
     open func getPixels( x: Int, y: Int, w: Int, h: Int, fArray: [Float]? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
         __args[4] = JNIType.toJava( value: fArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[F)[F", methodCache: &Raster.getPixels_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[F)[F", methodCache: &Raster.getPixels_MethodID_37, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
     open func getPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _fArray: [Float]? ) -> [Float]! {
@@ -887,134 +875,130 @@ open class Raster: java_swift.JavaObject {
 
     /// public int[] java.awt.image.Raster.getPixels(int,int,int,int,int[])
 
-    private static var getPixels_MethodID_39: jmethodID?
+    private static var getPixels_MethodID_38: jmethodID?
 
     open func getPixels( x: Int, y: Int, w: Int, h: Int, iArray: [Int32]? ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
         __args[4] = JNIType.toJava( value: iArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[I)[I", methodCache: &Raster.getPixels_MethodID_39, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[I)[I", methodCache: &Raster.getPixels_MethodID_38, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
     }
 
     open func getPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _iArray: [Int32]? ) -> [Int32]! {
         return getPixels( x: _x, y: _y, w: _w, h: _h, iArray: _iArray )
     }
 
-    /// public double[] java.awt.image.Raster.getPixels(int,int,int,int,double[])
-
-    private static var getPixels_MethodID_40: jmethodID?
-
-    open func getPixels( x: Int, y: Int, w: Int, h: Int, dArray: [Double]? ) -> [Double]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: dArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[D)[D", methodCache: &Raster.getPixels_MethodID_40, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Double](), from: __return )
-    }
-
-    open func getPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _dArray: [Double]? ) -> [Double]! {
-        return getPixels( x: _x, y: _y, w: _w, h: _h, dArray: _dArray )
-    }
-
     /// public int java.awt.image.Raster.getSample(int,int,int)
 
-    private static var getSample_MethodID_41: jmethodID?
+    private static var getSample_MethodID_39: jmethodID?
 
     open func getSample( x: Int, y: Int, b: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSample", methodSig: "(III)I", methodCache: &Raster.getSample_MethodID_41, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(b) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSample", methodSig: "(III)I", methodCache: &Raster.getSample_MethodID_39, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getSample( _ _x: Int, _ _y: Int, _ _b: Int ) -> Int {
         return getSample( x: _x, y: _y, b: _b )
     }
 
-    /// public float java.awt.image.Raster.getSampleFloat(int,int,int)
-
-    private static var getSampleFloat_MethodID_42: jmethodID?
-
-    open func getSampleFloat( x: Int, y: Int, b: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getSampleFloat", methodSig: "(III)F", methodCache: &Raster.getSampleFloat_MethodID_42, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    open func getSampleFloat( _ _x: Int, _ _y: Int, _ _b: Int ) -> Float {
-        return getSampleFloat( x: _x, y: _y, b: _b )
-    }
-
     /// public double java.awt.image.Raster.getSampleDouble(int,int,int)
 
-    private static var getSampleDouble_MethodID_43: jmethodID?
+    private static var getSampleDouble_MethodID_40: jmethodID?
 
     open func getSampleDouble( x: Int, y: Int, b: Int ) -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getSampleDouble", methodSig: "(III)D", methodCache: &Raster.getSampleDouble_MethodID_43, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(b) )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getSampleDouble", methodSig: "(III)D", methodCache: &Raster.getSampleDouble_MethodID_40, args: &__args, locals: &__locals )
+        return __return
     }
 
     open func getSampleDouble( _ _x: Int, _ _y: Int, _ _b: Int ) -> Double {
         return getSampleDouble( x: _x, y: _y, b: _b )
     }
 
-    /// public int[] java.awt.image.Raster.getSamples(int,int,int,int,int,int[])
+    /// public float java.awt.image.Raster.getSampleFloat(int,int,int)
 
-    private static var getSamples_MethodID_44: jmethodID?
+    private static var getSampleFloat_MethodID_41: jmethodID?
 
-    open func getSamples( x: Int, y: Int, w: Int, h: Int, b: Int, iArray: [Int32]? ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    open func getSampleFloat( x: Int, y: Int, b: Int ) -> Float {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: b, locals: &__locals )
-        __args[5] = JNIType.toJava( value: iArray, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSamples", methodSig: "(IIIII[I)[I", methodCache: &Raster.getSamples_MethodID_44, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(b) )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getSampleFloat", methodSig: "(III)F", methodCache: &Raster.getSampleFloat_MethodID_41, args: &__args, locals: &__locals )
+        return __return
     }
 
-    open func getSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _iArray: [Int32]? ) -> [Int32]! {
-        return getSamples( x: _x, y: _y, w: _w, h: _h, b: _b, iArray: _iArray )
+    open func getSampleFloat( _ _x: Int, _ _y: Int, _ _b: Int ) -> Float {
+        return getSampleFloat( x: _x, y: _y, b: _b )
     }
+
+    /// public java.awt.image.SampleModel java.awt.image.Raster.getSampleModel()
+
+    private static var getSampleModel_MethodID_42: jmethodID?
+
+    open func getSampleModel() -> SampleModel! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSampleModel", methodSig: "()Ljava/awt/image/SampleModel;", methodCache: &Raster.getSampleModel_MethodID_42, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SampleModel( javaObject: __return ) : nil
+    }
+
+
+    /// public final int java.awt.image.Raster.getSampleModelTranslateX()
+
+    private static var getSampleModelTranslateX_MethodID_43: jmethodID?
+
+    open func getSampleModelTranslateX() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSampleModelTranslateX", methodSig: "()I", methodCache: &Raster.getSampleModelTranslateX_MethodID_43, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public final int java.awt.image.Raster.getSampleModelTranslateY()
+
+    private static var getSampleModelTranslateY_MethodID_44: jmethodID?
+
+    open func getSampleModelTranslateY() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSampleModelTranslateY", methodSig: "()I", methodCache: &Raster.getSampleModelTranslateY_MethodID_44, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
 
     /// public double[] java.awt.image.Raster.getSamples(int,int,int,int,int,double[])
 
     private static var getSamples_MethodID_45: jmethodID?
 
     open func getSamples( x: Int, y: Int, w: Int, h: Int, b: Int, dArray: [Double]? ) -> [Double]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: b, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = jvalue( i: jint(b) )
         __args[5] = JNIType.toJava( value: dArray, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSamples", methodSig: "(IIIII[D)[D", methodCache: &Raster.getSamples_MethodID_45, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Double](), from: __return )
+        return JNIType.toSwift( type: [Double].self, from: __return )
     }
 
     open func getSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _dArray: [Double]? ) -> [Double]! {
@@ -1026,56 +1010,64 @@ open class Raster: java_swift.JavaObject {
     private static var getSamples_MethodID_46: jmethodID?
 
     open func getSamples( x: Int, y: Int, w: Int, h: Int, b: Int, fArray: [Float]? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: b, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = jvalue( i: jint(b) )
         __args[5] = JNIType.toJava( value: fArray, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSamples", methodSig: "(IIIII[F)[F", methodCache: &Raster.getSamples_MethodID_46, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
     open func getSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _fArray: [Float]? ) -> [Float]! {
         return getSamples( x: _x, y: _y, w: _w, h: _h, b: _b, fArray: _fArray )
     }
 
-    /// public java.awt.Rectangle java.awt.image.Raster.getBounds()
+    /// public int[] java.awt.image.Raster.getSamples(int,int,int,int,int,int[])
 
-    private static var getBounds_MethodID_47: jmethodID?
+    private static var getSamples_MethodID_47: jmethodID?
 
-    open func getBounds() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getSamples( x: Int, y: Int, w: Int, h: Int, b: Int, iArray: [Int32]? ) -> [Int32]! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Raster.getBounds_MethodID_47, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = jvalue( i: jint(b) )
+        __args[5] = JNIType.toJava( value: iArray, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSamples", methodSig: "(IIIII[I)[I", methodCache: &Raster.getSamples_MethodID_47, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
+    }
+
+    open func getSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _iArray: [Int32]? ) -> [Int32]! {
+        return getSamples( x: _x, y: _y, w: _w, h: _h, b: _b, iArray: _iArray )
+    }
+
+    /// public final int java.awt.image.Raster.getTransferType()
+
+    private static var getTransferType_MethodID_48: jmethodID?
+
+    open func getTransferType() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransferType", methodSig: "()I", methodCache: &Raster.getTransferType_MethodID_48, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
     /// public final int java.awt.image.Raster.getWidth()
 
-    private static var getWidth_MethodID_48: jmethodID?
+    private static var getWidth_MethodID_49: jmethodID?
 
     open func getWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &Raster.getWidth_MethodID_48, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public final int java.awt.image.Raster.getHeight()
-
-    private static var getHeight_MethodID_49: jmethodID?
-
-    open func getHeight() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &Raster.getHeight_MethodID_49, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &Raster.getWidth_MethodID_49, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 

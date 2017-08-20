@@ -17,14 +17,6 @@ open class Checkbox: Component, ItemSelectable {
 
     private static var CheckboxJNIClass: jclass?
 
-    /// java.lang.String java.awt.Checkbox.label
-
-    /// boolean java.awt.Checkbox.state
-
-    /// java.awt.CheckboxGroup java.awt.Checkbox.group
-
-    /// transient java.awt.event.ItemListener java.awt.Checkbox.itemListener
-
     /// private static final java.lang.String java.awt.Checkbox.base
 
     /// private static int java.awt.Checkbox.nameCounter
@@ -33,209 +25,165 @@ open class Checkbox: Component, ItemSelectable {
 
     /// private int java.awt.Checkbox.checkboxSerializedDataVersion
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+    /// java.awt.CheckboxGroup java.awt.Checkbox.group
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+    /// transient java.awt.event.ItemListener java.awt.Checkbox.itemListener
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+    // Skipping field: true false false false false false 
 
-    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+    /// java.lang.String java.awt.Checkbox.label
 
-    /// transient java.awt.Container java.awt.Component.parent
+    // Skipping field: true false false false false false 
 
-    /// transient sun.awt.AppContext java.awt.Component.appContext
+    /// boolean java.awt.Checkbox.state
 
-    /// int java.awt.Component.x
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.y
+    /// static final boolean java.awt.Component.$assertionsDisabled
 
-    /// int java.awt.Component.width
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.height
+    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
 
-    /// java.awt.Color java.awt.Component.foreground
+    // Skipping field: false true false false false false 
 
-    /// java.awt.Color java.awt.Component.background
+    /// public static final float java.awt.Component.CENTER_ALIGNMENT
 
-    /// volatile java.awt.Font java.awt.Component.font
-
-    /// java.awt.Font java.awt.Component.peerFont
-
-    /// java.awt.Cursor java.awt.Component.cursor
-
-    /// java.util.Locale java.awt.Component.locale
-
-    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
-
-    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
-
-    /// boolean java.awt.Component.ignoreRepaint
-
-    /// boolean java.awt.Component.visible
-
-    /// boolean java.awt.Component.enabled
-
-    /// private volatile boolean java.awt.Component.valid
-
-    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
-
-    /// java.util.Vector java.awt.Component.popups
-
-    /// private java.lang.String java.awt.Component.name
-
-    /// private boolean java.awt.Component.nameExplicitlySet
-
-    /// private boolean java.awt.Component.focusable
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
+    // Skipping field: false true false false false false 
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
 
-    /// private int java.awt.Component.isFocusTraversableOverridden
-
-    /// java.util.Set[] java.awt.Component.focusTraversalKeys
-
-    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
-
-    /// private boolean java.awt.Component.focusTraversalKeysEnabled
-
-    /// static final java.lang.Object java.awt.Component.LOCK
-
-    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
-
-    /// java.awt.Dimension java.awt.Component.minSize
-
-    /// boolean java.awt.Component.minSizeSet
-
-    /// java.awt.Dimension java.awt.Component.prefSize
-
-    /// boolean java.awt.Component.prefSizeSet
-
-    /// java.awt.Dimension java.awt.Component.maxSize
-
-    /// boolean java.awt.Component.maxSizeSet
-
-    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
-
-    /// boolean java.awt.Component.newEventsOnly
-
-    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
-
-    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
-
-    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
-
-    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
-
-    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
-
-    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
-
-    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
-
-    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
-
-    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
-
-    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
-
-    /// static final java.lang.String java.awt.Component.actionListenerK
-
-    /// static final java.lang.String java.awt.Component.adjustmentListenerK
-
-    /// static final java.lang.String java.awt.Component.componentListenerK
-
-    /// static final java.lang.String java.awt.Component.containerListenerK
-
-    /// static final java.lang.String java.awt.Component.focusListenerK
-
-    /// static final java.lang.String java.awt.Component.itemListenerK
-
-    /// static final java.lang.String java.awt.Component.keyListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
-
-    /// static final java.lang.String java.awt.Component.textListenerK
-
-    /// static final java.lang.String java.awt.Component.ownedWindowK
-
-    /// static final java.lang.String java.awt.Component.windowListenerK
-
-    /// static final java.lang.String java.awt.Component.inputMethodListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
-
-    /// static final java.lang.String java.awt.Component.windowStateListenerK
-
-    /// static final java.lang.String java.awt.Component.windowFocusListenerK
-
-    /// long java.awt.Component.eventMask
-
-    /// static boolean java.awt.Component.isInc
-
-    /// static int java.awt.Component.incRate
-
-    /// public static final float java.awt.Component.TOP_ALIGNMENT
-
-    /// public static final float java.awt.Component.CENTER_ALIGNMENT
-
-    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
 
     /// public static final float java.awt.Component.LEFT_ALIGNMENT
 
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.Object java.awt.Component.LOCK
+
+    // Skipping field: true false false false false false 
+
     /// public static final float java.awt.Component.RIGHT_ALIGNMENT
 
-    /// private static final long java.awt.Component.serialVersionUID
+    // Skipping field: false true false false false false 
 
-    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+    /// public static final float java.awt.Component.TOP_ALIGNMENT
 
-    /// private transient java.lang.Object java.awt.Component.objectLock
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Component.isPacked
+    /// static final java.lang.String java.awt.Component.actionListenerK
 
-    /// private int java.awt.Component.boundsOp
+    // Skipping field: true false false false false false 
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+    /// static final java.lang.String java.awt.Component.adjustmentListenerK
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
-
-    /// private transient boolean java.awt.Component.isAddNotifyComplete
-
-    /// transient boolean java.awt.Component.backgroundEraseDisabled
-
-    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
-
-    /// private transient boolean java.awt.Component.coalescingEnabled
-
-    /// private static final java.util.Map java.awt.Component.coalesceMap
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Class[] java.awt.Component.coalesceEventsParams
 
+    /// private static final java.util.Map java.awt.Component.coalesceMap
+
+    /// static final java.lang.String java.awt.Component.componentListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.containerListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+
+    /// static final java.lang.String java.awt.Component.focusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+
+    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
+
+    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.hierarchyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static int java.awt.Component.incRate
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.inputMethodListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static boolean java.awt.Component.isInc
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.keyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+
+    /// static final java.lang.String java.awt.Component.mouseListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.ownedWindowK
+
+    // Skipping field: true false false false false false 
+
     /// private static sun.awt.RequestFocusController java.awt.Component.requestFocusController
 
-    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
+    /// private static final long java.awt.Component.serialVersionUID
 
-    /// private int java.awt.Component.componentSerializedDataVersion
+    /// static final java.lang.String java.awt.Component.textListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowFocusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowStateListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
 
     /// protected javax.accessibility.AccessibleContext java.awt.Component.accessibleContext
 
     private static var accessibleContext_FieldID: jfieldID?
 
-    override open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+    override open var accessibleContext: /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Checkbox.accessibleContext_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Checkbox.accessibleContext_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -244,36 +192,306 @@ open class Checkbox: Component, ItemSelectable {
         }
     }
 
-    /// static final boolean java.awt.Component.$assertionsDisabled
+    /// transient sun.awt.AppContext java.awt.Component.appContext
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
+    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
 
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+    /// java.awt.Color java.awt.Component.background
 
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+    /// transient boolean java.awt.Component.backgroundEraseDisabled
 
-    /// public static final int java.awt.image.ImageObserver.ALLBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.ERROR
+    /// private int java.awt.Component.boundsOp
+
+    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+
+    // Skipping field: true false false false false false 
+
+    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+
+    /// private transient boolean java.awt.Component.coalescingEnabled
+
+    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.componentSerializedDataVersion
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+
+    /// java.awt.Cursor java.awt.Component.cursor
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.Component.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Set[] java.awt.Component.focusTraversalKeys
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Component.focusTraversalKeysEnabled
+
+    /// private boolean java.awt.Component.focusable
+
+    /// volatile java.awt.Font java.awt.Component.font
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color java.awt.Component.foreground
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+
+    /// int java.awt.Component.height
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.ignoreRepaint
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Component.isAddNotifyComplete
+
+    /// private int java.awt.Component.isFocusTraversableOverridden
+
+    /// boolean java.awt.Component.isPacked
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Locale java.awt.Component.locale
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.maxSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.maxSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.minSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.minSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
+
+    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.String java.awt.Component.name
+
+    /// private boolean java.awt.Component.nameExplicitlySet
+
+    /// boolean java.awt.Component.newEventsOnly
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Component.objectLock
+
+    /// transient java.awt.Container java.awt.Component.parent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font java.awt.Component.peerFont
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Component.popups
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.prefSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.prefSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Component.valid
+
+    /// boolean java.awt.Component.visible
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.width
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.x
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.y
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.image.ImageObserver.ABORT
 
-    /// public java.awt.Checkbox(java.lang.String,boolean,java.awt.CheckboxGroup) throws java.awt.HeadlessException
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ALLBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ERROR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    // Skipping field: false true false false false false 
+
+    /// public java.awt.Checkbox() throws java.awt.HeadlessException
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( label: String?, state: Bool, group: CheckboxGroup? ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    public convenience init() {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "()V", methodCache: &Checkbox.new_MethodID_1, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    /// public java.awt.Checkbox(java.lang.String) throws java.awt.HeadlessException
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( label: String? ) throws {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        __args[1] = JNIType.toJava( value: state, locals: &__locals )
-        __args[2] = JNIType.toJava( value: group, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;ZLjava/awt/CheckboxGroup;)V", methodCache: &Checkbox.new_MethodID_1, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &Checkbox.new_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw HeadlessException( javaObject: throwable )
+        }
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _label: String? ) throws {
+        try self.init( label: _label )
+    }
+
+    /// public java.awt.Checkbox(java.lang.String,boolean) throws java.awt.HeadlessException
+
+    private static var new_MethodID_3: jmethodID?
+
+    public convenience init( label: String?, state: Bool ) throws {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: label, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(state ? JNI_TRUE : JNI_FALSE) )
+        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;Z)V", methodCache: &Checkbox.new_MethodID_3, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw HeadlessException( javaObject: throwable )
+        }
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _label: String?, _ _state: Bool ) throws {
+        try self.init( label: _label, state: _state )
+    }
+
+    /// public java.awt.Checkbox(java.lang.String,boolean,java.awt.CheckboxGroup) throws java.awt.HeadlessException
+
+    private static var new_MethodID_4: jmethodID?
+
+    public convenience init( label: String?, state: Bool, group: CheckboxGroup? ) throws {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: label, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(state ? JNI_TRUE : JNI_FALSE) )
+        __args[2] = JNIType.toJava( value: group, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;ZLjava/awt/CheckboxGroup;)V", methodCache: &Checkbox.new_MethodID_4, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw HeadlessException( javaObject: throwable )
         }
         self.init( javaObject: __object )
@@ -286,16 +504,17 @@ open class Checkbox: Component, ItemSelectable {
 
     /// public java.awt.Checkbox(java.lang.String,java.awt.CheckboxGroup,boolean) throws java.awt.HeadlessException
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_5: jmethodID?
 
     public convenience init( label: String?, group: CheckboxGroup?, state: Bool ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: label, locals: &__locals )
         __args[1] = JNIType.toJava( value: group, locals: &__locals )
-        __args[2] = JNIType.toJava( value: state, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/CheckboxGroup;Z)V", methodCache: &Checkbox.new_MethodID_2, args: &__args, locals: &__locals )
+        __args[2] = jvalue( z: jboolean(state ? JNI_TRUE : JNI_FALSE) )
+        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/CheckboxGroup;Z)V", methodCache: &Checkbox.new_MethodID_5, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw HeadlessException( javaObject: throwable )
         }
         self.init( javaObject: __object )
@@ -306,135 +525,91 @@ open class Checkbox: Component, ItemSelectable {
         try self.init( label: _label, group: _group, state: _state )
     }
 
-    /// public java.awt.Checkbox(java.lang.String) throws java.awt.HeadlessException
-
-    private static var new_MethodID_3: jmethodID?
-
-    public convenience init( label: String? ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &Checkbox.new_MethodID_3, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw HeadlessException( javaObject: throwable )
-        }
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _label: String? ) throws {
-        try self.init( label: _label )
-    }
-
-    /// public java.awt.Checkbox() throws java.awt.HeadlessException
-
-    private static var new_MethodID_4: jmethodID?
-
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "()V", methodCache: &Checkbox.new_MethodID_4, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    /// public java.awt.Checkbox(java.lang.String,boolean) throws java.awt.HeadlessException
-
-    private static var new_MethodID_5: jmethodID?
-
-    public convenience init( label: String?, state: Bool ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        __args[1] = JNIType.toJava( value: state, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Checkbox", classCache: &Checkbox.CheckboxJNIClass, methodSig: "(Ljava/lang/String;Z)V", methodCache: &Checkbox.new_MethodID_5, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw HeadlessException( javaObject: throwable )
-        }
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _label: String?, _ _state: Bool ) throws {
-        try self.init( label: _label, state: _state )
-    }
-
-    /// private void java.awt.Checkbox.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
-
-    /// private void java.awt.Checkbox.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
-
-    /// public boolean java.awt.Checkbox.getState()
-
-    private static var getState_MethodID_6: jmethodID?
-
-    open func getState() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getState", methodSig: "()Z", methodCache: &Checkbox.getState_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected java.lang.String java.awt.Checkbox.paramString()
-
-    private static var paramString_MethodID_7: jmethodID?
-
-    override open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &Checkbox.paramString_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
     /// private static native void java.awt.Checkbox.initIDs()
-
-    /// java.lang.String java.awt.Checkbox.constructComponentName()
-
-    /// public java.lang.String java.awt.Checkbox.getLabel()
-
-    private static var getLabel_MethodID_8: jmethodID?
-
-    open func getLabel() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabel", methodSig: "()Ljava/lang/String;", methodCache: &Checkbox.getLabel_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public javax.accessibility.AccessibleContext java.awt.Checkbox.getAccessibleContext()
 
     /// public synchronized void java.awt.Checkbox.addItemListener(java.awt.event.ItemListener)
 
-    private static var addItemListener_MethodID_9: jmethodID?
+    private static var addItemListener_MethodID_6: jmethodID?
 
     open func addItemListener( l: ItemListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &Checkbox.addItemListener_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &Checkbox.addItemListener_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func addItemListener( _ _l: ItemListener? ) {
         addItemListener( l: _l )
     }
 
-    /// void java.awt.Checkbox.setStateInternal(boolean)
+    /// public void java.awt.Checkbox.addNotify()
 
-    /// public void java.awt.Checkbox.setState(boolean)
+    // Skipping method: false true false false false 
 
-    private static var setState_MethodID_10: jmethodID?
+    /// java.lang.String java.awt.Checkbox.constructComponentName()
 
-    open func setState( state: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    // Skipping method: true false false false false 
+
+    /// boolean java.awt.Checkbox.eventEnabled(java.awt.AWTEvent)
+
+    // Skipping method: true false false false false 
+
+    /// public javax.accessibility.AccessibleContext java.awt.Checkbox.getAccessibleContext()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.CheckboxGroup java.awt.Checkbox.getCheckboxGroup()
+
+    private static var getCheckboxGroup_MethodID_7: jmethodID?
+
+    open func getCheckboxGroup() -> CheckboxGroup! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: state, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setState", methodSig: "(Z)V", methodCache: &Checkbox.setState_MethodID_10, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCheckboxGroup", methodSig: "()Ljava/awt/CheckboxGroup;", methodCache: &Checkbox.getCheckboxGroup_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? CheckboxGroup( javaObject: __return ) : nil
     }
 
-    open func setState( _ _state: Bool ) {
-        setState( state: _state )
+
+    /// public synchronized java.awt.event.ItemListener[] java.awt.Checkbox.getItemListeners()
+
+    private static var getItemListeners_MethodID_8: jmethodID?
+
+    open func getItemListeners() -> [ItemListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemListeners", methodSig: "()[Ljava/awt/event/ItemListener;", methodCache: &Checkbox.getItemListeners_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ItemListenerForward].self, from: __return )
+    }
+
+
+    /// public java.lang.String java.awt.Checkbox.getLabel()
+
+    private static var getLabel_MethodID_9: jmethodID?
+
+    open func getLabel() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabel", methodSig: "()Ljava/lang/String;", methodCache: &Checkbox.getLabel_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public java.util.EventListener[] java.awt.Checkbox.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_10: jmethodID?
+
+    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &Checkbox.getListeners_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward].self, from: __return )
+    }
+
+    override open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( listenerType: _listenerType )
     }
 
     /// public java.lang.Object[] java.awt.Checkbox.getSelectedObjects()
@@ -442,136 +617,141 @@ open class Checkbox: Component, ItemSelectable {
     private static var getSelectedObjects_MethodID_11: jmethodID?
 
     open func getSelectedObjects() -> [JavaObject]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedObjects", methodSig: "()[Ljava/lang/Object;", methodCache: &Checkbox.getSelectedObjects_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [JavaObject](), from: __return )
+        return JNIType.toSwift( type: [JavaObject].self, from: __return )
     }
 
 
-    /// public java.awt.CheckboxGroup java.awt.Checkbox.getCheckboxGroup()
+    /// public boolean java.awt.Checkbox.getState()
 
-    private static var getCheckboxGroup_MethodID_12: jmethodID?
+    private static var getState_MethodID_12: jmethodID?
 
-    open func getCheckboxGroup() -> CheckboxGroup! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getState() -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCheckboxGroup", methodSig: "()Ljava/awt/CheckboxGroup;", methodCache: &Checkbox.getCheckboxGroup_MethodID_12, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getState", methodSig: "()Z", methodCache: &Checkbox.getState_MethodID_12, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// protected java.lang.String java.awt.Checkbox.paramString()
+
+    private static var paramString_MethodID_13: jmethodID?
+
+    override open func paramString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &Checkbox.paramString_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? CheckboxGroup( javaObject: __return ) : nil
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
-
-    /// public void java.awt.Checkbox.setCheckboxGroup(java.awt.CheckboxGroup)
-
-    private static var setCheckboxGroup_MethodID_13: jmethodID?
-
-    open func setCheckboxGroup( g: CheckboxGroup? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCheckboxGroup", methodSig: "(Ljava/awt/CheckboxGroup;)V", methodCache: &Checkbox.setCheckboxGroup_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setCheckboxGroup( _ _g: CheckboxGroup? ) {
-        setCheckboxGroup( g: _g )
-    }
-
-    /// public synchronized void java.awt.Checkbox.removeItemListener(java.awt.event.ItemListener)
-
-    private static var removeItemListener_MethodID_14: jmethodID?
-
-    open func removeItemListener( l: ItemListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &Checkbox.removeItemListener_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func removeItemListener( _ _l: ItemListener? ) {
-        removeItemListener( l: _l )
-    }
-
-    /// public synchronized java.awt.event.ItemListener[] java.awt.Checkbox.getItemListeners()
-
-    private static var getItemListeners_MethodID_15: jmethodID?
-
-    open func getItemListeners() -> [ItemListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemListeners", methodSig: "()[Ljava/awt/event/ItemListener;", methodCache: &Checkbox.getItemListeners_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ItemListenerForward](), from: __return )
-    }
-
-
-    /// protected void java.awt.Checkbox.processItemEvent(java.awt.event.ItemEvent)
-
-    private static var processItemEvent_MethodID_16: jmethodID?
-
-    open func processItemEvent( e: ItemEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processItemEvent", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &Checkbox.processItemEvent_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func processItemEvent( _ _e: ItemEvent? ) {
-        processItemEvent( e: _e )
-    }
-
-    /// public java.util.EventListener[] java.awt.Checkbox.getListeners(java.lang.Class)
-
-    private static var getListeners_MethodID_17: jmethodID?
-
-    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &Checkbox.getListeners_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    override open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( listenerType: _listenerType )
-    }
-
-    /// public void java.awt.Checkbox.addNotify()
-
-    /// boolean java.awt.Checkbox.eventEnabled(java.awt.AWTEvent)
 
     /// protected void java.awt.Checkbox.processEvent(java.awt.AWTEvent)
 
-    private static var processEvent_MethodID_18: jmethodID?
+    private static var processEvent_MethodID_14: jmethodID?
 
     open func processEvent( e: AWTEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Checkbox.processEvent_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Checkbox.processEvent_MethodID_14, args: &__args, locals: &__locals )
     }
 
     override open func processEvent( _ _e: AWTEvent? ) {
         processEvent( e: _e )
     }
 
+    /// protected void java.awt.Checkbox.processItemEvent(java.awt.event.ItemEvent)
+
+    private static var processItemEvent_MethodID_15: jmethodID?
+
+    open func processItemEvent( e: ItemEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processItemEvent", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &Checkbox.processItemEvent_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func processItemEvent( _ _e: ItemEvent? ) {
+        processItemEvent( e: _e )
+    }
+
+    /// private void java.awt.Checkbox.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
+
+    /// public synchronized void java.awt.Checkbox.removeItemListener(java.awt.event.ItemListener)
+
+    private static var removeItemListener_MethodID_16: jmethodID?
+
+    open func removeItemListener( l: ItemListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &Checkbox.removeItemListener_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func removeItemListener( _ _l: ItemListener? ) {
+        removeItemListener( l: _l )
+    }
+
+    /// public void java.awt.Checkbox.setCheckboxGroup(java.awt.CheckboxGroup)
+
+    private static var setCheckboxGroup_MethodID_17: jmethodID?
+
+    open func setCheckboxGroup( g: CheckboxGroup? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCheckboxGroup", methodSig: "(Ljava/awt/CheckboxGroup;)V", methodCache: &Checkbox.setCheckboxGroup_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func setCheckboxGroup( _ _g: CheckboxGroup? ) {
+        setCheckboxGroup( g: _g )
+    }
+
     /// public void java.awt.Checkbox.setLabel(java.lang.String)
 
-    private static var setLabel_MethodID_19: jmethodID?
+    private static var setLabel_MethodID_18: jmethodID?
 
     open func setLabel( label: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &Checkbox.setLabel_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &Checkbox.setLabel_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setLabel( _ _label: String? ) {
         setLabel( label: _label )
     }
 
+    /// public void java.awt.Checkbox.setState(boolean)
+
+    private static var setState_MethodID_19: jmethodID?
+
+    open func setState( state: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(state ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setState", methodSig: "(Z)V", methodCache: &Checkbox.setState_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func setState( _ _state: Bool ) {
+        setState( state: _state )
+    }
+
+    /// void java.awt.Checkbox.setStateInternal(boolean)
+
+    // Skipping method: true false false false false 
+
+    /// private void java.awt.Checkbox.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
+
     /// In declared protocol but not defined.. ///
 
     /// public abstract javax.accessibility.AccessibleContext javax.accessibility.Accessible.getAccessibleContext()
+
+    // Skipping method: false true false false false 
 
 }
 

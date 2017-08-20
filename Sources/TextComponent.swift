@@ -17,15 +17,31 @@ open class TextComponent: Component {
 
     private static var TextComponentJNIClass: jclass?
 
-    /// java.lang.String java.awt.TextComponent.text
+    /// private static final long java.awt.TextComponent.serialVersionUID
+
+    /// boolean java.awt.TextComponent.backgroundSetByClientCode
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.TextComponent.checkForEnableIM
 
     /// boolean java.awt.TextComponent.editable
 
-    /// int java.awt.TextComponent.selectionStart
+    // Skipping field: true false false false false false 
 
     /// int java.awt.TextComponent.selectionEnd
 
-    /// boolean java.awt.TextComponent.backgroundSetByClientCode
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.TextComponent.selectionStart
+
+    // Skipping field: true false false false false false 
+
+    /// java.lang.String java.awt.TextComponent.text
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.TextComponent.textComponentSerializedDataVersion
 
     /// protected transient java.awt.event.TextListener java.awt.TextComponent.textListener
 
@@ -33,8 +49,8 @@ open class TextComponent: Component {
 
     open var textListener: TextListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "textListener", fieldType: "Ljava/awt/event/TextListener;", fieldCache: &TextComponent.textListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "textListener", fieldType: "Ljava/awt/event/TextListener;", fieldCache: &TextComponent.textListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? TextListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -44,215 +60,149 @@ open class TextComponent: Component {
         }
     }
 
-    /// private static final long java.awt.TextComponent.serialVersionUID
+    /// static final boolean java.awt.Component.$assertionsDisabled
 
-    /// private int java.awt.TextComponent.textComponentSerializedDataVersion
+    // Skipping field: true false false false false false 
 
-    /// private boolean java.awt.TextComponent.checkForEnableIM
+    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+    // Skipping field: false true false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+    /// public static final float java.awt.Component.CENTER_ALIGNMENT
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
-
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
-
-    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
-
-    /// transient java.awt.Container java.awt.Component.parent
-
-    /// transient sun.awt.AppContext java.awt.Component.appContext
-
-    /// int java.awt.Component.x
-
-    /// int java.awt.Component.y
-
-    /// int java.awt.Component.width
-
-    /// int java.awt.Component.height
-
-    /// java.awt.Color java.awt.Component.foreground
-
-    /// java.awt.Color java.awt.Component.background
-
-    /// volatile java.awt.Font java.awt.Component.font
-
-    /// java.awt.Font java.awt.Component.peerFont
-
-    /// java.awt.Cursor java.awt.Component.cursor
-
-    /// java.util.Locale java.awt.Component.locale
-
-    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
-
-    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
-
-    /// boolean java.awt.Component.ignoreRepaint
-
-    /// boolean java.awt.Component.visible
-
-    /// boolean java.awt.Component.enabled
-
-    /// private volatile boolean java.awt.Component.valid
-
-    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
-
-    /// java.util.Vector java.awt.Component.popups
-
-    /// private java.lang.String java.awt.Component.name
-
-    /// private boolean java.awt.Component.nameExplicitlySet
-
-    /// private boolean java.awt.Component.focusable
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
+    // Skipping field: false true false false false false 
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
 
-    /// private int java.awt.Component.isFocusTraversableOverridden
-
-    /// java.util.Set[] java.awt.Component.focusTraversalKeys
-
-    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
-
-    /// private boolean java.awt.Component.focusTraversalKeysEnabled
-
-    /// static final java.lang.Object java.awt.Component.LOCK
-
-    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
-
-    /// java.awt.Dimension java.awt.Component.minSize
-
-    /// boolean java.awt.Component.minSizeSet
-
-    /// java.awt.Dimension java.awt.Component.prefSize
-
-    /// boolean java.awt.Component.prefSizeSet
-
-    /// java.awt.Dimension java.awt.Component.maxSize
-
-    /// boolean java.awt.Component.maxSizeSet
-
-    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
-
-    /// boolean java.awt.Component.newEventsOnly
-
-    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
-
-    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
-
-    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
-
-    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
-
-    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
-
-    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
-
-    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
-
-    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
-
-    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
-
-    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
-
-    /// static final java.lang.String java.awt.Component.actionListenerK
-
-    /// static final java.lang.String java.awt.Component.adjustmentListenerK
-
-    /// static final java.lang.String java.awt.Component.componentListenerK
-
-    /// static final java.lang.String java.awt.Component.containerListenerK
-
-    /// static final java.lang.String java.awt.Component.focusListenerK
-
-    /// static final java.lang.String java.awt.Component.itemListenerK
-
-    /// static final java.lang.String java.awt.Component.keyListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
-
-    /// static final java.lang.String java.awt.Component.textListenerK
-
-    /// static final java.lang.String java.awt.Component.ownedWindowK
-
-    /// static final java.lang.String java.awt.Component.windowListenerK
-
-    /// static final java.lang.String java.awt.Component.inputMethodListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
-
-    /// static final java.lang.String java.awt.Component.windowStateListenerK
-
-    /// static final java.lang.String java.awt.Component.windowFocusListenerK
-
-    /// long java.awt.Component.eventMask
-
-    /// static boolean java.awt.Component.isInc
-
-    /// static int java.awt.Component.incRate
-
-    /// public static final float java.awt.Component.TOP_ALIGNMENT
-
-    /// public static final float java.awt.Component.CENTER_ALIGNMENT
-
-    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
 
     /// public static final float java.awt.Component.LEFT_ALIGNMENT
 
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.Object java.awt.Component.LOCK
+
+    // Skipping field: true false false false false false 
+
     /// public static final float java.awt.Component.RIGHT_ALIGNMENT
 
-    /// private static final long java.awt.Component.serialVersionUID
+    // Skipping field: false true false false false false 
 
-    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+    /// public static final float java.awt.Component.TOP_ALIGNMENT
 
-    /// private transient java.lang.Object java.awt.Component.objectLock
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Component.isPacked
+    /// static final java.lang.String java.awt.Component.actionListenerK
 
-    /// private int java.awt.Component.boundsOp
+    // Skipping field: true false false false false false 
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+    /// static final java.lang.String java.awt.Component.adjustmentListenerK
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
-
-    /// private transient boolean java.awt.Component.isAddNotifyComplete
-
-    /// transient boolean java.awt.Component.backgroundEraseDisabled
-
-    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
-
-    /// private transient boolean java.awt.Component.coalescingEnabled
-
-    /// private static final java.util.Map java.awt.Component.coalesceMap
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Class[] java.awt.Component.coalesceEventsParams
 
+    /// private static final java.util.Map java.awt.Component.coalesceMap
+
+    /// static final java.lang.String java.awt.Component.componentListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.containerListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+
+    /// static final java.lang.String java.awt.Component.focusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+
+    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
+
+    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.hierarchyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static int java.awt.Component.incRate
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.inputMethodListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static boolean java.awt.Component.isInc
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.keyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+
+    /// static final java.lang.String java.awt.Component.mouseListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.ownedWindowK
+
+    // Skipping field: true false false false false false 
+
     /// private static sun.awt.RequestFocusController java.awt.Component.requestFocusController
 
-    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
+    /// private static final long java.awt.Component.serialVersionUID
 
-    /// private int java.awt.Component.componentSerializedDataVersion
+    /// static final java.lang.String java.awt.Component.textListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowFocusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowStateListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
 
     /// protected javax.accessibility.AccessibleContext java.awt.Component.accessibleContext
 
     private static var accessibleContext_FieldID: jfieldID?
 
-    override open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+    override open var accessibleContext: /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &TextComponent.accessibleContext_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &TextComponent.accessibleContext_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -261,50 +211,275 @@ open class TextComponent: Component {
         }
     }
 
-    /// static final boolean java.awt.Component.$assertionsDisabled
+    /// transient sun.awt.AppContext java.awt.Component.appContext
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
+    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
 
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+    /// java.awt.Color java.awt.Component.background
 
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+    /// transient boolean java.awt.Component.backgroundEraseDisabled
 
-    /// public static final int java.awt.image.ImageObserver.ALLBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.ERROR
+    /// private int java.awt.Component.boundsOp
+
+    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+
+    // Skipping field: true false false false false false 
+
+    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+
+    /// private transient boolean java.awt.Component.coalescingEnabled
+
+    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.componentSerializedDataVersion
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+
+    /// java.awt.Cursor java.awt.Component.cursor
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.Component.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Set[] java.awt.Component.focusTraversalKeys
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Component.focusTraversalKeysEnabled
+
+    /// private boolean java.awt.Component.focusable
+
+    /// volatile java.awt.Font java.awt.Component.font
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color java.awt.Component.foreground
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+
+    /// int java.awt.Component.height
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.ignoreRepaint
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Component.isAddNotifyComplete
+
+    /// private int java.awt.Component.isFocusTraversableOverridden
+
+    /// boolean java.awt.Component.isPacked
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Locale java.awt.Component.locale
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.maxSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.maxSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.minSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.minSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
+
+    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.String java.awt.Component.name
+
+    /// private boolean java.awt.Component.nameExplicitlySet
+
+    /// boolean java.awt.Component.newEventsOnly
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Component.objectLock
+
+    /// transient java.awt.Container java.awt.Component.parent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font java.awt.Component.peerFont
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Component.popups
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.prefSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.prefSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Component.valid
+
+    /// boolean java.awt.Component.visible
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.width
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.x
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.y
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.image.ImageObserver.ABORT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ALLBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ERROR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    // Skipping field: false true false false false false 
+
     /// java.awt.TextComponent(java.lang.String) throws java.awt.HeadlessException
 
-    /// private void java.awt.TextComponent.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
+    // Skipping init: true false false 
 
-    /// private void java.awt.TextComponent.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
+    /// public void java.awt.TextComponent.addNotify()
 
-    /// protected java.lang.String java.awt.TextComponent.paramString()
+    // Skipping method: false true false false false 
 
-    private static var paramString_MethodID_1: jmethodID?
+    /// public synchronized void java.awt.TextComponent.addTextListener(java.awt.event.TextListener)
 
-    override open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var addTextListener_MethodID_1: jmethodID?
+
+    open func addTextListener( l: TextListener? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &TextComponent.paramString_MethodID_1, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTextListener", methodSig: "(Ljava/awt/event/TextListener;)V", methodCache: &TextComponent.addTextListener_MethodID_1, args: &__args, locals: &__locals )
     }
 
+    open func addTextListener( _ _l: TextListener? ) {
+        addTextListener( l: _l )
+    }
+
+    /// boolean java.awt.TextComponent.areInputMethodsEnabled()
+
+    // Skipping method: true false false false false 
+
+    /// private boolean java.awt.TextComponent.canAccessClipboard()
 
     /// public void java.awt.TextComponent.enableInputMethods(boolean)
 
     private static var enableInputMethods_MethodID_2: jmethodID?
 
     open func enableInputMethods( enable: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: enable, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(enable ? JNI_TRUE : JNI_FALSE) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableInputMethods", methodSig: "(Z)V", methodCache: &TextComponent.enableInputMethods_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -312,304 +487,314 @@ open class TextComponent: Component {
         enableInputMethods( enable: _enable )
     }
 
-    /// boolean java.awt.TextComponent.areInputMethodsEnabled()
+    /// private void java.awt.TextComponent.enableInputMethodsIfNecessary()
 
-    /// public java.awt.im.InputMethodRequests java.awt.TextComponent.getInputMethodRequests()
+    /// boolean java.awt.TextComponent.eventEnabled(java.awt.AWTEvent)
 
-    /// public synchronized java.lang.String java.awt.TextComponent.getText()
-
-    private static var getText_MethodID_3: jmethodID?
-
-    open func getText() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &TextComponent.getText_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public synchronized void java.awt.TextComponent.setText(java.lang.String)
-
-    private static var setText_MethodID_4: jmethodID?
-
-    open func setText( t: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &TextComponent.setText_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func setText( _ _t: String? ) {
-        setText( t: _t )
-    }
-
-    /// public void java.awt.TextComponent.setBackground(java.awt.Color)
-
-    private static var setBackground_MethodID_5: jmethodID?
-
-    open func setBackground( c: Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &TextComponent.setBackground_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func setBackground( _ _c: Color? ) {
-        setBackground( c: _c )
-    }
-
-    /// public java.awt.Color java.awt.TextComponent.getBackground()
+    // Skipping method: true false false false false 
 
     /// public javax.accessibility.AccessibleContext java.awt.TextComponent.getAccessibleContext()
 
-    /// public synchronized java.lang.String java.awt.TextComponent.getSelectedText()
+    // Skipping method: false true false false false 
 
-    private static var getSelectedText_MethodID_6: jmethodID?
+    /// public java.awt.Color java.awt.TextComponent.getBackground()
 
-    open func getSelectedText() -> String! {
+    // Skipping method: false true false false false 
+
+    /// public synchronized int java.awt.TextComponent.getCaretPosition()
+
+    private static var getCaretPosition_MethodID_3: jmethodID?
+
+    open func getCaretPosition() -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedText", methodSig: "()Ljava/lang/String;", methodCache: &TextComponent.getSelectedText_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCaretPosition", methodSig: "()I", methodCache: &TextComponent.getCaretPosition_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public synchronized void java.awt.TextComponent.select(int,int)
+    /// public java.awt.im.InputMethodRequests java.awt.TextComponent.getInputMethodRequests()
 
-    private static var select_MethodID_7: jmethodID?
-
-    open func select( selectionStart: Int, selectionEnd: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: selectionStart, locals: &__locals )
-        __args[1] = JNIType.toJava( value: selectionEnd, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "select", methodSig: "(II)V", methodCache: &TextComponent.select_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func select( _ _selectionStart: Int, _ _selectionEnd: Int ) {
-        select( selectionStart: _selectionStart, selectionEnd: _selectionEnd )
-    }
+    // Skipping method: false true false false false 
 
     /// public java.util.EventListener[] java.awt.TextComponent.getListeners(java.lang.Class)
 
-    private static var getListeners_MethodID_8: jmethodID?
+    private static var getListeners_MethodID_4: jmethodID?
 
     open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &TextComponent.getListeners_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &TextComponent.getListeners_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward].self, from: __return )
     }
 
     override open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
         return getListeners( listenerType: _listenerType )
     }
 
-    /// public void java.awt.TextComponent.addNotify()
+    /// public synchronized java.lang.String java.awt.TextComponent.getSelectedText()
 
-    /// public void java.awt.TextComponent.removeNotify()
+    private static var getSelectedText_MethodID_5: jmethodID?
 
-    /// boolean java.awt.TextComponent.eventEnabled(java.awt.AWTEvent)
+    open func getSelectedText() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedText", methodSig: "()Ljava/lang/String;", methodCache: &TextComponent.getSelectedText_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public synchronized int java.awt.TextComponent.getSelectionEnd()
+
+    private static var getSelectionEnd_MethodID_6: jmethodID?
+
+    open func getSelectionEnd() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionEnd", methodSig: "()I", methodCache: &TextComponent.getSelectionEnd_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public synchronized int java.awt.TextComponent.getSelectionStart()
+
+    private static var getSelectionStart_MethodID_7: jmethodID?
+
+    open func getSelectionStart() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionStart", methodSig: "()I", methodCache: &TextComponent.getSelectionStart_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public synchronized java.lang.String java.awt.TextComponent.getText()
+
+    private static var getText_MethodID_8: jmethodID?
+
+    open func getText() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &TextComponent.getText_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public synchronized java.awt.event.TextListener[] java.awt.TextComponent.getTextListeners()
+
+    private static var getTextListeners_MethodID_9: jmethodID?
+
+    open func getTextListeners() -> [TextListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextListeners", methodSig: "()[Ljava/awt/event/TextListener;", methodCache: &TextComponent.getTextListeners_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [TextListenerForward].self, from: __return )
+    }
+
+
+    /// public boolean java.awt.TextComponent.isEditable()
+
+    private static var isEditable_MethodID_10: jmethodID?
+
+    open func isEditable() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditable", methodSig: "()Z", methodCache: &TextComponent.isEditable_MethodID_10, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// protected java.lang.String java.awt.TextComponent.paramString()
+
+    private static var paramString_MethodID_11: jmethodID?
+
+    override open func paramString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &TextComponent.paramString_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
     /// protected void java.awt.TextComponent.processEvent(java.awt.AWTEvent)
 
-    private static var processEvent_MethodID_9: jmethodID?
+    private static var processEvent_MethodID_12: jmethodID?
 
     open func processEvent( e: AWTEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &TextComponent.processEvent_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &TextComponent.processEvent_MethodID_12, args: &__args, locals: &__locals )
     }
 
     override open func processEvent( _ _e: AWTEvent? ) {
         processEvent( e: _e )
     }
 
-    /// public synchronized int java.awt.TextComponent.getCaretPosition()
-
-    private static var getCaretPosition_MethodID_10: jmethodID?
-
-    open func getCaretPosition() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCaretPosition", methodSig: "()I", methodCache: &TextComponent.getCaretPosition_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public synchronized int java.awt.TextComponent.getSelectionStart()
-
-    private static var getSelectionStart_MethodID_11: jmethodID?
-
-    open func getSelectionStart() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionStart", methodSig: "()I", methodCache: &TextComponent.getSelectionStart_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public synchronized int java.awt.TextComponent.getSelectionEnd()
-
-    private static var getSelectionEnd_MethodID_12: jmethodID?
-
-    open func getSelectionEnd() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionEnd", methodSig: "()I", methodCache: &TextComponent.getSelectionEnd_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public synchronized void java.awt.TextComponent.addTextListener(java.awt.event.TextListener)
-
-    private static var addTextListener_MethodID_13: jmethodID?
-
-    open func addTextListener( l: TextListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTextListener", methodSig: "(Ljava/awt/event/TextListener;)V", methodCache: &TextComponent.addTextListener_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func addTextListener( _ _l: TextListener? ) {
-        addTextListener( l: _l )
-    }
-
-    /// public boolean java.awt.TextComponent.isEditable()
-
-    private static var isEditable_MethodID_14: jmethodID?
-
-    open func isEditable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditable", methodSig: "()Z", methodCache: &TextComponent.isEditable_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// private void java.awt.TextComponent.enableInputMethodsIfNecessary()
-
-    /// public synchronized void java.awt.TextComponent.setEditable(boolean)
-
-    private static var setEditable_MethodID_15: jmethodID?
-
-    open func setEditable( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditable", methodSig: "(Z)V", methodCache: &TextComponent.setEditable_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setEditable( _ _b: Bool ) {
-        setEditable( b: _b )
-    }
-
-    /// public synchronized void java.awt.TextComponent.setSelectionStart(int)
-
-    private static var setSelectionStart_MethodID_16: jmethodID?
-
-    open func setSelectionStart( selectionStart: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: selectionStart, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionStart", methodSig: "(I)V", methodCache: &TextComponent.setSelectionStart_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectionStart( _ _selectionStart: Int ) {
-        setSelectionStart( selectionStart: _selectionStart )
-    }
-
-    /// public synchronized void java.awt.TextComponent.setSelectionEnd(int)
-
-    private static var setSelectionEnd_MethodID_17: jmethodID?
-
-    open func setSelectionEnd( selectionEnd: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: selectionEnd, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionEnd", methodSig: "(I)V", methodCache: &TextComponent.setSelectionEnd_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectionEnd( _ _selectionEnd: Int ) {
-        setSelectionEnd( selectionEnd: _selectionEnd )
-    }
-
-    /// public synchronized void java.awt.TextComponent.selectAll()
-
-    private static var selectAll_MethodID_18: jmethodID?
-
-    open func selectAll() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectAll", methodSig: "()V", methodCache: &TextComponent.selectAll_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-
-    /// public synchronized void java.awt.TextComponent.setCaretPosition(int)
-
-    private static var setCaretPosition_MethodID_19: jmethodID?
-
-    open func setCaretPosition( position: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: position, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCaretPosition", methodSig: "(I)V", methodCache: &TextComponent.setCaretPosition_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setCaretPosition( _ _position: Int ) {
-        setCaretPosition( position: _position )
-    }
-
-    /// public synchronized void java.awt.TextComponent.removeTextListener(java.awt.event.TextListener)
-
-    private static var removeTextListener_MethodID_20: jmethodID?
-
-    open func removeTextListener( l: TextListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeTextListener", methodSig: "(Ljava/awt/event/TextListener;)V", methodCache: &TextComponent.removeTextListener_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func removeTextListener( _ _l: TextListener? ) {
-        removeTextListener( l: _l )
-    }
-
-    /// public synchronized java.awt.event.TextListener[] java.awt.TextComponent.getTextListeners()
-
-    private static var getTextListeners_MethodID_21: jmethodID?
-
-    open func getTextListeners() -> [TextListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextListeners", methodSig: "()[Ljava/awt/event/TextListener;", methodCache: &TextComponent.getTextListeners_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [TextListenerForward](), from: __return )
-    }
-
-
     /// protected void java.awt.TextComponent.processTextEvent(java.awt.event.TextEvent)
 
-    private static var processTextEvent_MethodID_22: jmethodID?
+    private static var processTextEvent_MethodID_13: jmethodID?
 
     open func processTextEvent( e: TextEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processTextEvent", methodSig: "(Ljava/awt/event/TextEvent;)V", methodCache: &TextComponent.processTextEvent_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processTextEvent", methodSig: "(Ljava/awt/event/TextEvent;)V", methodCache: &TextComponent.processTextEvent_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func processTextEvent( _ _e: TextEvent? ) {
         processTextEvent( e: _e )
     }
 
-    /// private boolean java.awt.TextComponent.canAccessClipboard()
+    /// private void java.awt.TextComponent.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException,java.awt.HeadlessException
+
+    /// public void java.awt.TextComponent.removeNotify()
+
+    // Skipping method: false true false false false 
+
+    /// public synchronized void java.awt.TextComponent.removeTextListener(java.awt.event.TextListener)
+
+    private static var removeTextListener_MethodID_14: jmethodID?
+
+    open func removeTextListener( l: TextListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeTextListener", methodSig: "(Ljava/awt/event/TextListener;)V", methodCache: &TextComponent.removeTextListener_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func removeTextListener( _ _l: TextListener? ) {
+        removeTextListener( l: _l )
+    }
+
+    /// public synchronized void java.awt.TextComponent.select(int,int)
+
+    private static var select_MethodID_15: jmethodID?
+
+    open func select( selectionStart: Int, selectionEnd: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(selectionStart) )
+        __args[1] = jvalue( i: jint(selectionEnd) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "select", methodSig: "(II)V", methodCache: &TextComponent.select_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func select( _ _selectionStart: Int, _ _selectionEnd: Int ) {
+        select( selectionStart: _selectionStart, selectionEnd: _selectionEnd )
+    }
+
+    /// public synchronized void java.awt.TextComponent.selectAll()
+
+    private static var selectAll_MethodID_16: jmethodID?
+
+    open func selectAll() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectAll", methodSig: "()V", methodCache: &TextComponent.selectAll_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void java.awt.TextComponent.setBackground(java.awt.Color)
+
+    private static var setBackground_MethodID_17: jmethodID?
+
+    open func setBackground( c: Color? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &TextComponent.setBackground_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    override open func setBackground( _ _c: Color? ) {
+        setBackground( c: _c )
+    }
+
+    /// public synchronized void java.awt.TextComponent.setCaretPosition(int)
+
+    private static var setCaretPosition_MethodID_18: jmethodID?
+
+    open func setCaretPosition( position: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(position) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCaretPosition", methodSig: "(I)V", methodCache: &TextComponent.setCaretPosition_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setCaretPosition( _ _position: Int ) {
+        setCaretPosition( position: _position )
+    }
+
+    /// public synchronized void java.awt.TextComponent.setEditable(boolean)
+
+    private static var setEditable_MethodID_19: jmethodID?
+
+    open func setEditable( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditable", methodSig: "(Z)V", methodCache: &TextComponent.setEditable_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func setEditable( _ _b: Bool ) {
+        setEditable( b: _b )
+    }
+
+    /// public synchronized void java.awt.TextComponent.setSelectionEnd(int)
+
+    private static var setSelectionEnd_MethodID_20: jmethodID?
+
+    open func setSelectionEnd( selectionEnd: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(selectionEnd) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionEnd", methodSig: "(I)V", methodCache: &TextComponent.setSelectionEnd_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectionEnd( _ _selectionEnd: Int ) {
+        setSelectionEnd( selectionEnd: _selectionEnd )
+    }
+
+    /// public synchronized void java.awt.TextComponent.setSelectionStart(int)
+
+    private static var setSelectionStart_MethodID_21: jmethodID?
+
+    open func setSelectionStart( selectionStart: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(selectionStart) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionStart", methodSig: "(I)V", methodCache: &TextComponent.setSelectionStart_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectionStart( _ _selectionStart: Int ) {
+        setSelectionStart( selectionStart: _selectionStart )
+    }
+
+    /// public synchronized void java.awt.TextComponent.setText(java.lang.String)
+
+    private static var setText_MethodID_22: jmethodID?
+
+    open func setText( t: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &TextComponent.setText_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func setText( _ _t: String? ) {
+        setText( t: _t )
+    }
+
+    /// private void java.awt.TextComponent.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
     /// In declared protocol but not defined.. ///
 
     /// public abstract javax.accessibility.AccessibleContext javax.accessibility.Accessible.getAccessibleContext()
+
+    // Skipping method: false true false false false 
 
 }
 

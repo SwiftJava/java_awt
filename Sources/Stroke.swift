@@ -23,8 +23,8 @@ open class StrokeForward: JNIObjectForward, Stroke {
     private static var createStrokedShape_MethodID_2: jmethodID?
 
     open func createStrokedShape( p: Shape? ) -> Shape! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: p, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createStrokedShape", methodSig: "(Ljava/awt/Shape;)Ljava/awt/Shape;", methodCache: &StrokeForward.createStrokedShape_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -36,5 +36,4 @@ open class StrokeForward: JNIObjectForward, Stroke {
     }
 
 }
-
 

@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.Polygon ///
 
-open class Polygon: java_swift.JavaObject, Shape, /* java.io.Serializable */ UnclassedProtocol {
+open class Polygon: java_swift.JavaObject, Shape, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,19 +16,39 @@ open class Polygon: java_swift.JavaObject, Shape, /* java.io.Serializable */ Unc
 
     private static var PolygonJNIClass: jclass?
 
+    /// private static final int java.awt.Polygon.MIN_LENGTH
+
+    /// private static final long java.awt.Polygon.serialVersionUID
+
+    /// protected java.awt.Rectangle java.awt.Polygon.bounds
+
+    private static var bounds_FieldID: jfieldID?
+
+    open var bounds: Rectangle! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "bounds", fieldType: "Ljava/awt/Rectangle;", fieldCache: &Polygon.bounds_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? Rectangle( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "bounds", fieldType: "Ljava/awt/Rectangle;", fieldCache: &Polygon.bounds_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// public int java.awt.Polygon.npoints
 
     private static var npoints_FieldID: jfieldID?
 
     open var npoints: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "npoints", fieldType: "I", fieldCache: &Polygon.npoints_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "npoints", fieldType: "I", fieldCache: &Polygon.npoints_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "npoints", fieldType: "I", fieldCache: &Polygon.npoints_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -39,9 +59,8 @@ open class Polygon: java_swift.JavaObject, Shape, /* java.io.Serializable */ Unc
 
     open var xpoints: [Int32]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "xpoints", fieldType: "[I", fieldCache: &Polygon.xpoints_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "xpoints", fieldType: "[I", fieldCache: &Polygon.xpoints_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -56,9 +75,8 @@ open class Polygon: java_swift.JavaObject, Shape, /* java.io.Serializable */ Unc
 
     open var ypoints: [Int32]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "ypoints", fieldType: "[I", fieldCache: &Polygon.ypoints_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "ypoints", fieldType: "[I", fieldCache: &Polygon.ypoints_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -67,34 +85,13 @@ open class Polygon: java_swift.JavaObject, Shape, /* java.io.Serializable */ Unc
         }
     }
 
-    /// protected java.awt.Rectangle java.awt.Polygon.bounds
-
-    private static var bounds_FieldID: jfieldID?
-
-    open var bounds: Rectangle! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "bounds", fieldType: "Ljava/awt/Rectangle;", fieldCache: &Polygon.bounds_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? Rectangle( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "bounds", fieldType: "Ljava/awt/Rectangle;", fieldCache: &Polygon.bounds_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// private static final long java.awt.Polygon.serialVersionUID
-
-    /// private static final int java.awt.Polygon.MIN_LENGTH
-
     /// public java.awt.Polygon()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/Polygon", classCache: &Polygon.PolygonJNIClass, methodSig: "()V", methodCache: &Polygon.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -105,11 +102,11 @@ open class Polygon: java_swift.JavaObject, Shape, /* java.io.Serializable */ Unc
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( xpoints: [Int32]?, ypoints: [Int32]?, npoints: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: xpoints, locals: &__locals )
         __args[1] = JNIType.toJava( value: ypoints, locals: &__locals )
-        __args[2] = JNIType.toJava( value: npoints, locals: &__locals )
+        __args[2] = jvalue( i: jint(npoints) )
         let __object = JNIMethod.NewObject( className: "java/awt/Polygon", classCache: &Polygon.PolygonJNIClass, methodSig: "([I[II)V", methodCache: &Polygon.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -119,195 +116,177 @@ open class Polygon: java_swift.JavaObject, Shape, /* java.io.Serializable */ Unc
         self.init( xpoints: _xpoints, ypoints: _ypoints, npoints: _npoints )
     }
 
-    /// public boolean java.awt.Polygon.contains(int,int)
+    /// public void java.awt.Polygon.addPoint(int,int)
 
-    private static var contains_MethodID_3: jmethodID?
+    private static var addPoint_MethodID_3: jmethodID?
 
-    open func contains( x: Int, y: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func addPoint( x: Int, y: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(II)Z", methodCache: &Polygon.contains_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPoint", methodSig: "(II)V", methodCache: &Polygon.addPoint_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    open func contains( _ _x: Int, _ _y: Int ) -> Bool {
-        return contains( x: _x, y: _y )
+    open func addPoint( _ _x: Int, _ _y: Int ) {
+        addPoint( x: _x, y: _y )
     }
+
+    /// void java.awt.Polygon.calculateBounds(int[],int[],int)
+
+    // Skipping method: true false false false false 
 
     /// public boolean java.awt.Polygon.contains(double,double)
 
     private static var contains_MethodID_4: jmethodID?
 
     open func contains( x: Double, y: Double ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DD)Z", methodCache: &Polygon.contains_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func contains( _ _x: Double, _ _y: Double ) -> Bool {
         return contains( x: _x, y: _y )
     }
 
-    /// public boolean java.awt.Polygon.contains(java.awt.Point)
+    /// public boolean java.awt.Polygon.contains(double,double,double,double)
 
     private static var contains_MethodID_5: jmethodID?
 
-    open func contains( p: Point? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/Point;)Z", methodCache: &Polygon.contains_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func contains( _ _p: Point? ) -> Bool {
-        return contains( p: _p )
-    }
-
-    /// public boolean java.awt.Polygon.contains(java.awt.geom.Point2D)
-
-    private static var contains_MethodID_6: jmethodID?
-
-    open func contains( p: Point2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &Polygon.contains_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func contains( _ _p: Point2D? ) -> Bool {
-        return contains( p: _p )
-    }
-
-    /// public boolean java.awt.Polygon.contains(double,double,double,double)
-
-    private static var contains_MethodID_7: jmethodID?
-
     open func contains( x: Double, y: Double, w: Double, h: Double ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DDDD)Z", methodCache: &Polygon.contains_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: w )
+        __args[3] = jvalue( d: h )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DDDD)Z", methodCache: &Polygon.contains_MethodID_5, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func contains( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Bool {
         return contains( x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public boolean java.awt.Polygon.contains(java.awt.geom.Rectangle2D)
+    /// public boolean java.awt.Polygon.contains(int,int)
+
+    private static var contains_MethodID_6: jmethodID?
+
+    open func contains( x: Int, y: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(II)Z", methodCache: &Polygon.contains_MethodID_6, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func contains( _ _x: Int, _ _y: Int ) -> Bool {
+        return contains( x: _x, y: _y )
+    }
+
+    /// public boolean java.awt.Polygon.contains(java.awt.geom.Point2D)
+
+    private static var contains_MethodID_7: jmethodID?
+
+    open func contains( p: Point2D? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &Polygon.contains_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func contains( _ _p: Point2D? ) -> Bool {
+        return contains( p: _p )
+    }
+
+    /// public boolean java.awt.Polygon.contains(java.awt.Point)
 
     private static var contains_MethodID_8: jmethodID?
 
-    open func contains( r: Rectangle2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func contains( p: Point? ) -> Bool {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/Point;)Z", methodCache: &Polygon.contains_MethodID_8, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func contains( _ _p: Point? ) -> Bool {
+        return contains( p: _p )
+    }
+
+    /// public boolean java.awt.Polygon.contains(java.awt.geom.Rectangle2D)
+
+    private static var contains_MethodID_9: jmethodID?
+
+    open func contains( r: Rectangle2D? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: r, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Polygon.contains_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Polygon.contains_MethodID_9, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func contains( _ _r: Rectangle2D? ) -> Bool {
         return contains( r: _r )
     }
 
-    /// public void java.awt.Polygon.reset()
+    /// public java.awt.Rectangle java.awt.Polygon.getBoundingBox()
 
-    private static var reset_MethodID_9: jmethodID?
+    private static var getBoundingBox_MethodID_10: jmethodID?
 
-    open func reset() {
+    open func getBoundingBox() -> Rectangle! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBoundingBox", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Polygon.getBoundingBox_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Rectangle java.awt.Polygon.getBounds()
+
+    private static var getBounds_MethodID_11: jmethodID?
+
+    open func getBounds() -> Rectangle! {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reset", methodSig: "()V", methodCache: &Polygon.reset_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// public boolean java.awt.Polygon.intersects(double,double,double,double)
-
-    private static var intersects_MethodID_10: jmethodID?
-
-    open func intersects( x: Double, y: Double, w: Double, h: Double ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(DDDD)Z", methodCache: &Polygon.intersects_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func intersects( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Bool {
-        return intersects( x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public boolean java.awt.Polygon.intersects(java.awt.geom.Rectangle2D)
-
-    private static var intersects_MethodID_11: jmethodID?
-
-    open func intersects( r: Rectangle2D? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Polygon.getBounds_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.geom.Rectangle2D java.awt.Polygon.getBounds2D()
+
+    private static var getBounds2D_MethodID_12: jmethodID?
+
+    open func getBounds2D() -> Rectangle2D! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Polygon.intersects_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &Polygon.getBounds2D_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
     }
 
-    open func intersects( _ _r: Rectangle2D? ) -> Bool {
-        return intersects( r: _r )
-    }
 
-    /// public void java.awt.Polygon.translate(int,int)
-
-    private static var translate_MethodID_12: jmethodID?
-
-    open func translate( deltaX: Int, deltaY: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: deltaX, locals: &__locals )
-        __args[1] = JNIType.toJava( value: deltaY, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Polygon.translate_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func translate( _ _deltaX: Int, _ _deltaY: Int ) {
-        translate( deltaX: _deltaX, deltaY: _deltaY )
-    }
-
-    /// public boolean java.awt.Polygon.inside(int,int)
-
-    private static var inside_MethodID_13: jmethodID?
-
-    open func inside( x: Int, y: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inside", methodSig: "(II)Z", methodCache: &Polygon.inside_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func inside( _ _x: Int, _ _y: Int ) -> Bool {
-        return inside( x: _x, y: _y )
-    }
+    /// private sun.awt.geom.Crossings java.awt.Polygon.getCrossings(double,double,double,double)
 
     /// public java.awt.geom.PathIterator java.awt.Polygon.getPathIterator(java.awt.geom.AffineTransform)
 
-    private static var getPathIterator_MethodID_14: jmethodID?
+    private static var getPathIterator_MethodID_13: jmethodID?
 
     open func getPathIterator( at: AffineTransform? ) -> PathIterator! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: at, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &Polygon.getPathIterator_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &Polygon.getPathIterator_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
     }
@@ -318,14 +297,14 @@ open class Polygon: java_swift.JavaObject, Shape, /* java.io.Serializable */ Unc
 
     /// public java.awt.geom.PathIterator java.awt.Polygon.getPathIterator(java.awt.geom.AffineTransform,double)
 
-    private static var getPathIterator_MethodID_15: jmethodID?
+    private static var getPathIterator_MethodID_14: jmethodID?
 
     open func getPathIterator( at: AffineTransform?, flatness: Double ) -> PathIterator! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: at, locals: &__locals )
-        __args[1] = JNIType.toJava( value: flatness, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &Polygon.getPathIterator_MethodID_15, args: &__args, locals: &__locals )
+        __args[1] = jvalue( d: flatness )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &Polygon.getPathIterator_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
     }
@@ -334,77 +313,99 @@ open class Polygon: java_swift.JavaObject, Shape, /* java.io.Serializable */ Unc
         return getPathIterator( at: _at, flatness: _flatness )
     }
 
-    /// public java.awt.geom.Rectangle2D java.awt.Polygon.getBounds2D()
+    /// public boolean java.awt.Polygon.inside(int,int)
 
-    private static var getBounds2D_MethodID_16: jmethodID?
+    private static var inside_MethodID_15: jmethodID?
 
-    open func getBounds2D() -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func inside( x: Int, y: Int ) -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &Polygon.getBounds2D_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inside", methodSig: "(II)Z", methodCache: &Polygon.inside_MethodID_15, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-
-    /// public java.awt.Rectangle java.awt.Polygon.getBounds()
-
-    private static var getBounds_MethodID_17: jmethodID?
-
-    open func getBounds() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Polygon.getBounds_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    open func inside( _ _x: Int, _ _y: Int ) -> Bool {
+        return inside( x: _x, y: _y )
     }
 
+    /// public boolean java.awt.Polygon.intersects(double,double,double,double)
+
+    private static var intersects_MethodID_16: jmethodID?
+
+    open func intersects( x: Double, y: Double, w: Double, h: Double ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: w )
+        __args[3] = jvalue( d: h )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(DDDD)Z", methodCache: &Polygon.intersects_MethodID_16, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func intersects( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Bool {
+        return intersects( x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public boolean java.awt.Polygon.intersects(java.awt.geom.Rectangle2D)
+
+    private static var intersects_MethodID_17: jmethodID?
+
+    open func intersects( r: Rectangle2D? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Polygon.intersects_MethodID_17, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func intersects( _ _r: Rectangle2D? ) -> Bool {
+        return intersects( r: _r )
+    }
 
     /// public void java.awt.Polygon.invalidate()
 
     private static var invalidate_MethodID_18: jmethodID?
 
     open func invalidate() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidate", methodSig: "()V", methodCache: &Polygon.invalidate_MethodID_18, args: &__args, locals: &__locals )
     }
 
 
-    /// void java.awt.Polygon.calculateBounds(int[],int[],int)
+    /// public void java.awt.Polygon.reset()
+
+    private static var reset_MethodID_19: jmethodID?
+
+    open func reset() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reset", methodSig: "()V", methodCache: &Polygon.reset_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void java.awt.Polygon.translate(int,int)
+
+    private static var translate_MethodID_20: jmethodID?
+
+    open func translate( deltaX: Int, deltaY: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(deltaX) )
+        __args[1] = jvalue( i: jint(deltaY) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Polygon.translate_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func translate( _ _deltaX: Int, _ _deltaY: Int ) {
+        translate( deltaX: _deltaX, deltaY: _deltaY )
+    }
 
     /// void java.awt.Polygon.updateBounds(int,int)
 
-    /// public void java.awt.Polygon.addPoint(int,int)
-
-    private static var addPoint_MethodID_19: jmethodID?
-
-    open func addPoint( x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPoint", methodSig: "(II)V", methodCache: &Polygon.addPoint_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func addPoint( _ _x: Int, _ _y: Int ) {
-        addPoint( x: _x, y: _y )
-    }
-
-    /// public java.awt.Rectangle java.awt.Polygon.getBoundingBox()
-
-    private static var getBoundingBox_MethodID_20: jmethodID?
-
-    open func getBoundingBox() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBoundingBox", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Polygon.getBoundingBox_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
-    }
-
-
-    /// private sun.awt.geom.Crossings java.awt.Polygon.getCrossings(double,double,double,double)
+    // Skipping method: true false false false false 
 
 }
 

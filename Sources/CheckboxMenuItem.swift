@@ -16,10 +16,6 @@ open class CheckboxMenuItem: MenuItem, ItemSelectable {
 
     private static var CheckboxMenuItemJNIClass: jclass?
 
-    /// boolean java.awt.CheckboxMenuItem.state
-
-    /// transient java.awt.event.ItemListener java.awt.CheckboxMenuItem.itemListener
-
     /// private static final java.lang.String java.awt.CheckboxMenuItem.base
 
     /// private static int java.awt.CheckboxMenuItem.nameCounter
@@ -28,17 +24,13 @@ open class CheckboxMenuItem: MenuItem, ItemSelectable {
 
     /// private int java.awt.CheckboxMenuItem.checkboxMenuItemSerializedDataVersion
 
-    /// boolean java.awt.MenuItem.enabled
+    /// transient java.awt.event.ItemListener java.awt.CheckboxMenuItem.itemListener
 
-    /// java.lang.String java.awt.MenuItem.label
+    // Skipping field: true false false false false false 
 
-    /// java.lang.String java.awt.MenuItem.actionCommand
+    /// boolean java.awt.CheckboxMenuItem.state
 
-    /// long java.awt.MenuItem.eventMask
-
-    /// transient java.awt.event.ActionListener java.awt.MenuItem.actionListener
-
-    /// private java.awt.MenuShortcut java.awt.MenuItem.shortcut
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.String java.awt.MenuItem.base
 
@@ -46,15 +38,53 @@ open class CheckboxMenuItem: MenuItem, ItemSelectable {
 
     /// private static final long java.awt.MenuItem.serialVersionUID
 
+    /// java.lang.String java.awt.MenuItem.actionCommand
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.ActionListener java.awt.MenuItem.actionListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.MenuItem.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.MenuItem.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// java.lang.String java.awt.MenuItem.label
+
+    // Skipping field: true false false false false false 
+
     /// private int java.awt.MenuItem.menuItemSerializedDataVersion
 
-    /// transient java.awt.peer.MenuComponentPeer java.awt.MenuComponent.peer
+    /// private java.awt.MenuShortcut java.awt.MenuItem.shortcut
 
-    /// transient java.awt.MenuContainer java.awt.MenuComponent.parent
+    /// static final java.lang.String java.awt.MenuComponent.actionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.MenuComponent.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final long java.awt.MenuComponent.serialVersionUID
+
+    /// private transient volatile java.security.AccessControlContext java.awt.MenuComponent.acc
+
+    /// javax.accessibility.AccessibleContext java.awt.MenuComponent.accessibleContext
+
+    // Skipping field: true false false false false false 
 
     /// transient sun.awt.AppContext java.awt.MenuComponent.appContext
 
+    // Skipping field: true false false false false false 
+
     /// java.awt.Font java.awt.MenuComponent.font
+
+    // Skipping field: true false false false false false 
 
     /// private java.lang.String java.awt.MenuComponent.name
 
@@ -62,35 +92,26 @@ open class CheckboxMenuItem: MenuItem, ItemSelectable {
 
     /// boolean java.awt.MenuComponent.newEventsOnly
 
-    /// private transient volatile java.security.AccessControlContext java.awt.MenuComponent.acc
+    // Skipping field: true false false false false false 
 
-    /// static final java.lang.String java.awt.MenuComponent.actionListenerK
+    /// transient java.awt.MenuContainer java.awt.MenuComponent.parent
 
-    /// static final java.lang.String java.awt.MenuComponent.itemListenerK
+    // Skipping field: true false false false false false 
 
-    /// private static final long java.awt.MenuComponent.serialVersionUID
+    /// transient java.awt.peer.MenuComponentPeer java.awt.MenuComponent.peer
 
-    /// javax.accessibility.AccessibleContext java.awt.MenuComponent.accessibleContext
+    // Skipping field: true false false false false false 
 
-    /// public java.awt.CheckboxMenuItem(java.lang.String,boolean) throws java.awt.HeadlessException
+    /// public java.awt.CheckboxMenuItem() throws java.awt.HeadlessException
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( label: String?, state: Bool ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        __args[1] = JNIType.toJava( value: state, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/CheckboxMenuItem", classCache: &CheckboxMenuItem.CheckboxMenuItemJNIClass, methodSig: "(Ljava/lang/String;Z)V", methodCache: &CheckboxMenuItem.new_MethodID_1, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw HeadlessException( javaObject: throwable )
-        }
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "java/awt/CheckboxMenuItem", classCache: &CheckboxMenuItem.CheckboxMenuItemJNIClass, methodSig: "()V", methodCache: &CheckboxMenuItem.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _label: String?, _ _state: Bool ) throws {
-        try self.init( label: _label, state: _state )
     }
 
     /// public java.awt.CheckboxMenuItem(java.lang.String) throws java.awt.HeadlessException
@@ -98,11 +119,12 @@ open class CheckboxMenuItem: MenuItem, ItemSelectable {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( label: String? ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: label, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/CheckboxMenuItem", classCache: &CheckboxMenuItem.CheckboxMenuItemJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &CheckboxMenuItem.new_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw HeadlessException( javaObject: throwable )
         }
         self.init( javaObject: __object )
@@ -113,152 +135,178 @@ open class CheckboxMenuItem: MenuItem, ItemSelectable {
         try self.init( label: _label )
     }
 
-    /// public java.awt.CheckboxMenuItem() throws java.awt.HeadlessException
+    /// public java.awt.CheckboxMenuItem(java.lang.String,boolean) throws java.awt.HeadlessException
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( label: String?, state: Bool ) throws {
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "java/awt/CheckboxMenuItem", classCache: &CheckboxMenuItem.CheckboxMenuItemJNIClass, methodSig: "()V", methodCache: &CheckboxMenuItem.new_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: label, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(state ? JNI_TRUE : JNI_FALSE) )
+        let __object = JNIMethod.NewObject( className: "java/awt/CheckboxMenuItem", classCache: &CheckboxMenuItem.CheckboxMenuItemJNIClass, methodSig: "(Ljava/lang/String;Z)V", methodCache: &CheckboxMenuItem.new_MethodID_3, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw HeadlessException( javaObject: throwable )
+        }
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// private void java.awt.CheckboxMenuItem.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
-
-    /// private void java.awt.CheckboxMenuItem.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
-
-    /// public boolean java.awt.CheckboxMenuItem.getState()
-
-    private static var getState_MethodID_4: jmethodID?
-
-    open func getState() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getState", methodSig: "()Z", methodCache: &CheckboxMenuItem.getState_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+    public convenience init( _ _label: String?, _ _state: Bool ) throws {
+        try self.init( label: _label, state: _state )
     }
-
-
-    /// public java.lang.String java.awt.CheckboxMenuItem.paramString()
 
     /// private static native void java.awt.CheckboxMenuItem.initIDs()
 
-    /// java.lang.String java.awt.CheckboxMenuItem.constructComponentName()
-
-    /// public javax.accessibility.AccessibleContext java.awt.CheckboxMenuItem.getAccessibleContext()
-
-    /// void java.awt.CheckboxMenuItem.doMenuEvent(long,int)
-
     /// public synchronized void java.awt.CheckboxMenuItem.addItemListener(java.awt.event.ItemListener)
 
-    private static var addItemListener_MethodID_5: jmethodID?
+    private static var addItemListener_MethodID_4: jmethodID?
 
     open func addItemListener( l: ItemListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &CheckboxMenuItem.addItemListener_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &CheckboxMenuItem.addItemListener_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func addItemListener( _ _l: ItemListener? ) {
         addItemListener( l: _l )
     }
 
-    /// public synchronized void java.awt.CheckboxMenuItem.setState(boolean)
-
-    private static var setState_MethodID_6: jmethodID?
-
-    open func setState( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setState", methodSig: "(Z)V", methodCache: &CheckboxMenuItem.setState_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setState( _ _b: Bool ) {
-        setState( b: _b )
-    }
-
-    /// public synchronized java.lang.Object[] java.awt.CheckboxMenuItem.getSelectedObjects()
-
-    private static var getSelectedObjects_MethodID_7: jmethodID?
-
-    open func getSelectedObjects() -> [JavaObject]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedObjects", methodSig: "()[Ljava/lang/Object;", methodCache: &CheckboxMenuItem.getSelectedObjects_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [JavaObject](), from: __return )
-    }
-
-
-    /// public synchronized void java.awt.CheckboxMenuItem.removeItemListener(java.awt.event.ItemListener)
-
-    private static var removeItemListener_MethodID_8: jmethodID?
-
-    open func removeItemListener( l: ItemListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &CheckboxMenuItem.removeItemListener_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func removeItemListener( _ _l: ItemListener? ) {
-        removeItemListener( l: _l )
-    }
-
-    /// public synchronized java.awt.event.ItemListener[] java.awt.CheckboxMenuItem.getItemListeners()
-
-    private static var getItemListeners_MethodID_9: jmethodID?
-
-    open func getItemListeners() -> [ItemListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemListeners", methodSig: "()[Ljava/awt/event/ItemListener;", methodCache: &CheckboxMenuItem.getItemListeners_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ItemListenerForward](), from: __return )
-    }
-
-
-    /// protected void java.awt.CheckboxMenuItem.processItemEvent(java.awt.event.ItemEvent)
-
-    private static var processItemEvent_MethodID_10: jmethodID?
-
-    open func processItemEvent( e: ItemEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processItemEvent", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &CheckboxMenuItem.processItemEvent_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func processItemEvent( _ _e: ItemEvent? ) {
-        processItemEvent( e: _e )
-    }
-
-    /// public java.util.EventListener[] java.awt.CheckboxMenuItem.getListeners(java.lang.Class)
-
     /// public void java.awt.CheckboxMenuItem.addNotify()
+
+    // Skipping method: false true false false false 
+
+    /// java.lang.String java.awt.CheckboxMenuItem.constructComponentName()
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.CheckboxMenuItem.doMenuEvent(long,int)
+
+    // Skipping method: true false false false false 
 
     /// boolean java.awt.CheckboxMenuItem.eventEnabled(java.awt.AWTEvent)
 
+    // Skipping method: true false false false false 
+
+    /// public javax.accessibility.AccessibleContext java.awt.CheckboxMenuItem.getAccessibleContext()
+
+    // Skipping method: false true false false false 
+
+    /// public synchronized java.awt.event.ItemListener[] java.awt.CheckboxMenuItem.getItemListeners()
+
+    private static var getItemListeners_MethodID_5: jmethodID?
+
+    open func getItemListeners() -> [ItemListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemListeners", methodSig: "()[Ljava/awt/event/ItemListener;", methodCache: &CheckboxMenuItem.getItemListeners_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ItemListenerForward].self, from: __return )
+    }
+
+
+    /// public java.util.EventListener[] java.awt.CheckboxMenuItem.getListeners(java.lang.Class)
+
+    // Skipping method: false true false false false 
+
+    /// public synchronized java.lang.Object[] java.awt.CheckboxMenuItem.getSelectedObjects()
+
+    private static var getSelectedObjects_MethodID_6: jmethodID?
+
+    open func getSelectedObjects() -> [JavaObject]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedObjects", methodSig: "()[Ljava/lang/Object;", methodCache: &CheckboxMenuItem.getSelectedObjects_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [JavaObject].self, from: __return )
+    }
+
+
+    /// public boolean java.awt.CheckboxMenuItem.getState()
+
+    private static var getState_MethodID_7: jmethodID?
+
+    open func getState() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getState", methodSig: "()Z", methodCache: &CheckboxMenuItem.getState_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public java.lang.String java.awt.CheckboxMenuItem.paramString()
+
+    // Skipping method: false true false false false 
+
     /// protected void java.awt.CheckboxMenuItem.processEvent(java.awt.AWTEvent)
 
-    private static var processEvent_MethodID_11: jmethodID?
+    private static var processEvent_MethodID_8: jmethodID?
 
     override open func processEvent( e: AWTEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &CheckboxMenuItem.processEvent_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &CheckboxMenuItem.processEvent_MethodID_8, args: &__args, locals: &__locals )
     }
 
     override open func processEvent( _ _e: AWTEvent? ) {
         processEvent( e: _e )
     }
 
+    /// protected void java.awt.CheckboxMenuItem.processItemEvent(java.awt.event.ItemEvent)
+
+    private static var processItemEvent_MethodID_9: jmethodID?
+
+    open func processItemEvent( e: ItemEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processItemEvent", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &CheckboxMenuItem.processItemEvent_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func processItemEvent( _ _e: ItemEvent? ) {
+        processItemEvent( e: _e )
+    }
+
+    /// private void java.awt.CheckboxMenuItem.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
+
+    /// public synchronized void java.awt.CheckboxMenuItem.removeItemListener(java.awt.event.ItemListener)
+
+    private static var removeItemListener_MethodID_10: jmethodID?
+
+    open func removeItemListener( l: ItemListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &CheckboxMenuItem.removeItemListener_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func removeItemListener( _ _l: ItemListener? ) {
+        removeItemListener( l: _l )
+    }
+
+    /// public synchronized void java.awt.CheckboxMenuItem.setState(boolean)
+
+    private static var setState_MethodID_11: jmethodID?
+
+    open func setState( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setState", methodSig: "(Z)V", methodCache: &CheckboxMenuItem.setState_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func setState( _ _b: Bool ) {
+        setState( b: _b )
+    }
+
+    /// private void java.awt.CheckboxMenuItem.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
+
     /// In declared protocol but not defined.. ///
 
     /// public abstract javax.accessibility.AccessibleContext javax.accessibility.Accessible.getAccessibleContext()
+
+    // Skipping method: false true false false false 
 
 }
 

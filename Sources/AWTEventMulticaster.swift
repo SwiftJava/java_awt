@@ -23,8 +23,8 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
 
     open var a: java_util.EventListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "a", fieldType: "Ljava/util/EventListener;", fieldCache: &AWTEventMulticaster.a_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "a", fieldType: "Ljava/util/EventListener;", fieldCache: &AWTEventMulticaster.a_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_util.EventListenerForward( javaObject: __value ) : nil
         }
     }
@@ -35,8 +35,8 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
 
     open var b: java_util.EventListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "b", fieldType: "Ljava/util/EventListener;", fieldCache: &AWTEventMulticaster.b_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "b", fieldType: "Ljava/util/EventListener;", fieldCache: &AWTEventMulticaster.b_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_util.EventListenerForward( javaObject: __value ) : nil
         }
     }
@@ -46,8 +46,8 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( a: java_util.EventListener?, b: java_util.EventListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticaster.AWTEventMulticasterJNIClass, methodSig: "(Ljava/util/EventListener;Ljava/util/EventListener;)V", methodCache: &AWTEventMulticaster.new_MethodID_1, args: &__args, locals: &__locals )
@@ -59,106 +59,52 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
         self.init( a: _a, b: _b )
     }
 
-    /// public static java.awt.event.WindowListener java.awt.AWTEventMulticaster.add(java.awt.event.WindowListener,java.awt.event.WindowListener)
+    /// public static java.awt.event.ActionListener java.awt.AWTEventMulticaster.add(java.awt.event.ActionListener,java.awt.event.ActionListener)
 
     private static var add_MethodID_2: jmethodID?
 
-    open class func add( a: WindowListener?, b: WindowListener? ) -> WindowListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func add( a: ActionListener?, b: ActionListener? ) -> ActionListener! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/WindowListener;Ljava/awt/event/WindowListener;)Ljava/awt/event/WindowListener;", methodCache: &add_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/ActionListener;Ljava/awt/event/ActionListener;)Ljava/awt/event/ActionListener;", methodCache: &add_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WindowListenerForward( javaObject: __return ) : nil
+        return __return != nil ? ActionListenerForward( javaObject: __return ) : nil
     }
 
-    open class func add( _ _a: WindowListener?, _ _b: WindowListener? ) -> WindowListener! {
+    open class func add( _ _a: ActionListener?, _ _b: ActionListener? ) -> ActionListener! {
         return add( a: _a, b: _b )
     }
 
-    /// public static java.awt.event.MouseMotionListener java.awt.AWTEventMulticaster.add(java.awt.event.MouseMotionListener,java.awt.event.MouseMotionListener)
+    /// public static java.awt.event.AdjustmentListener java.awt.AWTEventMulticaster.add(java.awt.event.AdjustmentListener,java.awt.event.AdjustmentListener)
 
     private static var add_MethodID_3: jmethodID?
 
-    open class func add( a: MouseMotionListener?, b: MouseMotionListener? ) -> MouseMotionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func add( a: AdjustmentListener?, b: AdjustmentListener? ) -> AdjustmentListener! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/MouseMotionListener;Ljava/awt/event/MouseMotionListener;)Ljava/awt/event/MouseMotionListener;", methodCache: &add_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/AdjustmentListener;Ljava/awt/event/AdjustmentListener;)Ljava/awt/event/AdjustmentListener;", methodCache: &add_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MouseMotionListenerForward( javaObject: __return ) : nil
+        return __return != nil ? AdjustmentListenerForward( javaObject: __return ) : nil
     }
 
-    open class func add( _ _a: MouseMotionListener?, _ _b: MouseMotionListener? ) -> MouseMotionListener! {
-        return add( a: _a, b: _b )
-    }
-
-    /// public static java.awt.event.MouseListener java.awt.AWTEventMulticaster.add(java.awt.event.MouseListener,java.awt.event.MouseListener)
-
-    private static var add_MethodID_4: jmethodID?
-
-    open class func add( a: MouseListener?, b: MouseListener? ) -> MouseListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/MouseListener;Ljava/awt/event/MouseListener;)Ljava/awt/event/MouseListener;", methodCache: &add_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MouseListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func add( _ _a: MouseListener?, _ _b: MouseListener? ) -> MouseListener! {
-        return add( a: _a, b: _b )
-    }
-
-    /// public static java.awt.event.WindowStateListener java.awt.AWTEventMulticaster.add(java.awt.event.WindowStateListener,java.awt.event.WindowStateListener)
-
-    private static var add_MethodID_5: jmethodID?
-
-    open class func add( a: WindowStateListener?, b: WindowStateListener? ) -> WindowStateListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/WindowStateListener;Ljava/awt/event/WindowStateListener;)Ljava/awt/event/WindowStateListener;", methodCache: &add_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WindowStateListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func add( _ _a: WindowStateListener?, _ _b: WindowStateListener? ) -> WindowStateListener! {
-        return add( a: _a, b: _b )
-    }
-
-    /// public static java.awt.event.WindowFocusListener java.awt.AWTEventMulticaster.add(java.awt.event.WindowFocusListener,java.awt.event.WindowFocusListener)
-
-    private static var add_MethodID_6: jmethodID?
-
-    open class func add( a: WindowFocusListener?, b: WindowFocusListener? ) -> WindowFocusListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/WindowFocusListener;Ljava/awt/event/WindowFocusListener;)Ljava/awt/event/WindowFocusListener;", methodCache: &add_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WindowFocusListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func add( _ _a: WindowFocusListener?, _ _b: WindowFocusListener? ) -> WindowFocusListener! {
+    open class func add( _ _a: AdjustmentListener?, _ _b: AdjustmentListener? ) -> AdjustmentListener! {
         return add( a: _a, b: _b )
     }
 
     /// public static java.awt.event.ComponentListener java.awt.AWTEventMulticaster.add(java.awt.event.ComponentListener,java.awt.event.ComponentListener)
 
-    private static var add_MethodID_7: jmethodID?
+    private static var add_MethodID_4: jmethodID?
 
     open class func add( a: ComponentListener?, b: ComponentListener? ) -> ComponentListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/ComponentListener;Ljava/awt/event/ComponentListener;)Ljava/awt/event/ComponentListener;", methodCache: &add_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/ComponentListener;Ljava/awt/event/ComponentListener;)Ljava/awt/event/ComponentListener;", methodCache: &add_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentListenerForward( javaObject: __return ) : nil
     }
@@ -169,14 +115,14 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
 
     /// public static java.awt.event.ContainerListener java.awt.AWTEventMulticaster.add(java.awt.event.ContainerListener,java.awt.event.ContainerListener)
 
-    private static var add_MethodID_8: jmethodID?
+    private static var add_MethodID_5: jmethodID?
 
     open class func add( a: ContainerListener?, b: ContainerListener? ) -> ContainerListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/ContainerListener;Ljava/awt/event/ContainerListener;)Ljava/awt/event/ContainerListener;", methodCache: &add_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/ContainerListener;Ljava/awt/event/ContainerListener;)Ljava/awt/event/ContainerListener;", methodCache: &add_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ContainerListenerForward( javaObject: __return ) : nil
     }
@@ -187,14 +133,14 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
 
     /// public static java.awt.event.FocusListener java.awt.AWTEventMulticaster.add(java.awt.event.FocusListener,java.awt.event.FocusListener)
 
-    private static var add_MethodID_9: jmethodID?
+    private static var add_MethodID_6: jmethodID?
 
     open class func add( a: FocusListener?, b: FocusListener? ) -> FocusListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/FocusListener;Ljava/awt/event/FocusListener;)Ljava/awt/event/FocusListener;", methodCache: &add_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/FocusListener;Ljava/awt/event/FocusListener;)Ljava/awt/event/FocusListener;", methodCache: &add_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? FocusListenerForward( javaObject: __return ) : nil
     }
@@ -203,70 +149,16 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
         return add( a: _a, b: _b )
     }
 
-    /// public static java.awt.event.KeyListener java.awt.AWTEventMulticaster.add(java.awt.event.KeyListener,java.awt.event.KeyListener)
-
-    private static var add_MethodID_10: jmethodID?
-
-    open class func add( a: KeyListener?, b: KeyListener? ) -> KeyListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/KeyListener;Ljava/awt/event/KeyListener;)Ljava/awt/event/KeyListener;", methodCache: &add_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? KeyListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func add( _ _a: KeyListener?, _ _b: KeyListener? ) -> KeyListener! {
-        return add( a: _a, b: _b )
-    }
-
-    /// public static java.awt.event.InputMethodListener java.awt.AWTEventMulticaster.add(java.awt.event.InputMethodListener,java.awt.event.InputMethodListener)
-
-    private static var add_MethodID_11: jmethodID?
-
-    open class func add( a: InputMethodListener?, b: InputMethodListener? ) -> InputMethodListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/InputMethodListener;Ljava/awt/event/InputMethodListener;)Ljava/awt/event/InputMethodListener;", methodCache: &add_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? InputMethodListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func add( _ _a: InputMethodListener?, _ _b: InputMethodListener? ) -> InputMethodListener! {
-        return add( a: _a, b: _b )
-    }
-
-    /// public static java.awt.event.HierarchyListener java.awt.AWTEventMulticaster.add(java.awt.event.HierarchyListener,java.awt.event.HierarchyListener)
-
-    private static var add_MethodID_12: jmethodID?
-
-    open class func add( a: HierarchyListener?, b: HierarchyListener? ) -> HierarchyListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/HierarchyListener;Ljava/awt/event/HierarchyListener;)Ljava/awt/event/HierarchyListener;", methodCache: &add_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? HierarchyListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func add( _ _a: HierarchyListener?, _ _b: HierarchyListener? ) -> HierarchyListener! {
-        return add( a: _a, b: _b )
-    }
-
     /// public static java.awt.event.HierarchyBoundsListener java.awt.AWTEventMulticaster.add(java.awt.event.HierarchyBoundsListener,java.awt.event.HierarchyBoundsListener)
 
-    private static var add_MethodID_13: jmethodID?
+    private static var add_MethodID_7: jmethodID?
 
     open class func add( a: HierarchyBoundsListener?, b: HierarchyBoundsListener? ) -> HierarchyBoundsListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/HierarchyBoundsListener;Ljava/awt/event/HierarchyBoundsListener;)Ljava/awt/event/HierarchyBoundsListener;", methodCache: &add_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/HierarchyBoundsListener;Ljava/awt/event/HierarchyBoundsListener;)Ljava/awt/event/HierarchyBoundsListener;", methodCache: &add_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? HierarchyBoundsListenerForward( javaObject: __return ) : nil
     }
@@ -275,13 +167,121 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
         return add( a: _a, b: _b )
     }
 
+    /// public static java.awt.event.HierarchyListener java.awt.AWTEventMulticaster.add(java.awt.event.HierarchyListener,java.awt.event.HierarchyListener)
+
+    private static var add_MethodID_8: jmethodID?
+
+    open class func add( a: HierarchyListener?, b: HierarchyListener? ) -> HierarchyListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/HierarchyListener;Ljava/awt/event/HierarchyListener;)Ljava/awt/event/HierarchyListener;", methodCache: &add_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? HierarchyListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func add( _ _a: HierarchyListener?, _ _b: HierarchyListener? ) -> HierarchyListener! {
+        return add( a: _a, b: _b )
+    }
+
+    /// public static java.awt.event.InputMethodListener java.awt.AWTEventMulticaster.add(java.awt.event.InputMethodListener,java.awt.event.InputMethodListener)
+
+    private static var add_MethodID_9: jmethodID?
+
+    open class func add( a: InputMethodListener?, b: InputMethodListener? ) -> InputMethodListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/InputMethodListener;Ljava/awt/event/InputMethodListener;)Ljava/awt/event/InputMethodListener;", methodCache: &add_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? InputMethodListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func add( _ _a: InputMethodListener?, _ _b: InputMethodListener? ) -> InputMethodListener! {
+        return add( a: _a, b: _b )
+    }
+
+    /// public static java.awt.event.ItemListener java.awt.AWTEventMulticaster.add(java.awt.event.ItemListener,java.awt.event.ItemListener)
+
+    private static var add_MethodID_10: jmethodID?
+
+    open class func add( a: ItemListener?, b: ItemListener? ) -> ItemListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/ItemListener;Ljava/awt/event/ItemListener;)Ljava/awt/event/ItemListener;", methodCache: &add_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ItemListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func add( _ _a: ItemListener?, _ _b: ItemListener? ) -> ItemListener! {
+        return add( a: _a, b: _b )
+    }
+
+    /// public static java.awt.event.KeyListener java.awt.AWTEventMulticaster.add(java.awt.event.KeyListener,java.awt.event.KeyListener)
+
+    private static var add_MethodID_11: jmethodID?
+
+    open class func add( a: KeyListener?, b: KeyListener? ) -> KeyListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/KeyListener;Ljava/awt/event/KeyListener;)Ljava/awt/event/KeyListener;", methodCache: &add_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? KeyListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func add( _ _a: KeyListener?, _ _b: KeyListener? ) -> KeyListener! {
+        return add( a: _a, b: _b )
+    }
+
+    /// public static java.awt.event.MouseListener java.awt.AWTEventMulticaster.add(java.awt.event.MouseListener,java.awt.event.MouseListener)
+
+    private static var add_MethodID_12: jmethodID?
+
+    open class func add( a: MouseListener?, b: MouseListener? ) -> MouseListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/MouseListener;Ljava/awt/event/MouseListener;)Ljava/awt/event/MouseListener;", methodCache: &add_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MouseListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func add( _ _a: MouseListener?, _ _b: MouseListener? ) -> MouseListener! {
+        return add( a: _a, b: _b )
+    }
+
+    /// public static java.awt.event.MouseMotionListener java.awt.AWTEventMulticaster.add(java.awt.event.MouseMotionListener,java.awt.event.MouseMotionListener)
+
+    private static var add_MethodID_13: jmethodID?
+
+    open class func add( a: MouseMotionListener?, b: MouseMotionListener? ) -> MouseMotionListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/MouseMotionListener;Ljava/awt/event/MouseMotionListener;)Ljava/awt/event/MouseMotionListener;", methodCache: &add_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MouseMotionListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func add( _ _a: MouseMotionListener?, _ _b: MouseMotionListener? ) -> MouseMotionListener! {
+        return add( a: _a, b: _b )
+    }
+
     /// public static java.awt.event.MouseWheelListener java.awt.AWTEventMulticaster.add(java.awt.event.MouseWheelListener,java.awt.event.MouseWheelListener)
 
     private static var add_MethodID_14: jmethodID?
 
     open class func add( a: MouseWheelListener?, b: MouseWheelListener? ) -> MouseWheelListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/MouseWheelListener;Ljava/awt/event/MouseWheelListener;)Ljava/awt/event/MouseWheelListener;", methodCache: &add_MethodID_14, args: &__args, locals: &__locals )
@@ -293,70 +293,16 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
         return add( a: _a, b: _b )
     }
 
-    /// public static java.awt.event.ActionListener java.awt.AWTEventMulticaster.add(java.awt.event.ActionListener,java.awt.event.ActionListener)
+    /// public static java.awt.event.TextListener java.awt.AWTEventMulticaster.add(java.awt.event.TextListener,java.awt.event.TextListener)
 
     private static var add_MethodID_15: jmethodID?
 
-    open class func add( a: ActionListener?, b: ActionListener? ) -> ActionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/ActionListener;Ljava/awt/event/ActionListener;)Ljava/awt/event/ActionListener;", methodCache: &add_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ActionListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func add( _ _a: ActionListener?, _ _b: ActionListener? ) -> ActionListener! {
-        return add( a: _a, b: _b )
-    }
-
-    /// public static java.awt.event.ItemListener java.awt.AWTEventMulticaster.add(java.awt.event.ItemListener,java.awt.event.ItemListener)
-
-    private static var add_MethodID_16: jmethodID?
-
-    open class func add( a: ItemListener?, b: ItemListener? ) -> ItemListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/ItemListener;Ljava/awt/event/ItemListener;)Ljava/awt/event/ItemListener;", methodCache: &add_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ItemListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func add( _ _a: ItemListener?, _ _b: ItemListener? ) -> ItemListener! {
-        return add( a: _a, b: _b )
-    }
-
-    /// public static java.awt.event.AdjustmentListener java.awt.AWTEventMulticaster.add(java.awt.event.AdjustmentListener,java.awt.event.AdjustmentListener)
-
-    private static var add_MethodID_17: jmethodID?
-
-    open class func add( a: AdjustmentListener?, b: AdjustmentListener? ) -> AdjustmentListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/AdjustmentListener;Ljava/awt/event/AdjustmentListener;)Ljava/awt/event/AdjustmentListener;", methodCache: &add_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AdjustmentListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func add( _ _a: AdjustmentListener?, _ _b: AdjustmentListener? ) -> AdjustmentListener! {
-        return add( a: _a, b: _b )
-    }
-
-    /// public static java.awt.event.TextListener java.awt.AWTEventMulticaster.add(java.awt.event.TextListener,java.awt.event.TextListener)
-
-    private static var add_MethodID_18: jmethodID?
-
     open class func add( a: TextListener?, b: TextListener? ) -> TextListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/TextListener;Ljava/awt/event/TextListener;)Ljava/awt/event/TextListener;", methodCache: &add_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/TextListener;Ljava/awt/event/TextListener;)Ljava/awt/event/TextListener;", methodCache: &add_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextListenerForward( javaObject: __return ) : nil
     }
@@ -365,88 +311,109 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
         return add( a: _a, b: _b )
     }
 
-    /// public static java.awt.event.MouseMotionListener java.awt.AWTEventMulticaster.remove(java.awt.event.MouseMotionListener,java.awt.event.MouseMotionListener)
+    /// public static java.awt.event.WindowFocusListener java.awt.AWTEventMulticaster.add(java.awt.event.WindowFocusListener,java.awt.event.WindowFocusListener)
 
-    private static var remove_MethodID_19: jmethodID?
+    private static var add_MethodID_16: jmethodID?
 
-    open class func remove( l: MouseMotionListener?, oldl: MouseMotionListener? ) -> MouseMotionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func add( a: WindowFocusListener?, b: WindowFocusListener? ) -> WindowFocusListener! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/MouseMotionListener;Ljava/awt/event/MouseMotionListener;)Ljava/awt/event/MouseMotionListener;", methodCache: &remove_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MouseMotionListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func remove( _ _l: MouseMotionListener?, _ _oldl: MouseMotionListener? ) -> MouseMotionListener! {
-        return remove( l: _l, oldl: _oldl )
-    }
-
-    /// public static java.awt.event.WindowListener java.awt.AWTEventMulticaster.remove(java.awt.event.WindowListener,java.awt.event.WindowListener)
-
-    private static var remove_MethodID_20: jmethodID?
-
-    open class func remove( l: WindowListener?, oldl: WindowListener? ) -> WindowListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/WindowListener;Ljava/awt/event/WindowListener;)Ljava/awt/event/WindowListener;", methodCache: &remove_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WindowListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func remove( _ _l: WindowListener?, _ _oldl: WindowListener? ) -> WindowListener! {
-        return remove( l: _l, oldl: _oldl )
-    }
-
-    /// public static java.awt.event.WindowStateListener java.awt.AWTEventMulticaster.remove(java.awt.event.WindowStateListener,java.awt.event.WindowStateListener)
-
-    private static var remove_MethodID_21: jmethodID?
-
-    open class func remove( l: WindowStateListener?, oldl: WindowStateListener? ) -> WindowStateListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/WindowStateListener;Ljava/awt/event/WindowStateListener;)Ljava/awt/event/WindowStateListener;", methodCache: &remove_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WindowStateListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func remove( _ _l: WindowStateListener?, _ _oldl: WindowStateListener? ) -> WindowStateListener! {
-        return remove( l: _l, oldl: _oldl )
-    }
-
-    /// public static java.awt.event.WindowFocusListener java.awt.AWTEventMulticaster.remove(java.awt.event.WindowFocusListener,java.awt.event.WindowFocusListener)
-
-    private static var remove_MethodID_22: jmethodID?
-
-    open class func remove( l: WindowFocusListener?, oldl: WindowFocusListener? ) -> WindowFocusListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/WindowFocusListener;Ljava/awt/event/WindowFocusListener;)Ljava/awt/event/WindowFocusListener;", methodCache: &remove_MethodID_22, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/WindowFocusListener;Ljava/awt/event/WindowFocusListener;)Ljava/awt/event/WindowFocusListener;", methodCache: &add_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WindowFocusListenerForward( javaObject: __return ) : nil
     }
 
-    open class func remove( _ _l: WindowFocusListener?, _ _oldl: WindowFocusListener? ) -> WindowFocusListener! {
-        return remove( l: _l, oldl: _oldl )
+    open class func add( _ _a: WindowFocusListener?, _ _b: WindowFocusListener? ) -> WindowFocusListener! {
+        return add( a: _a, b: _b )
     }
+
+    /// public static java.awt.event.WindowListener java.awt.AWTEventMulticaster.add(java.awt.event.WindowListener,java.awt.event.WindowListener)
+
+    private static var add_MethodID_17: jmethodID?
+
+    open class func add( a: WindowListener?, b: WindowListener? ) -> WindowListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/WindowListener;Ljava/awt/event/WindowListener;)Ljava/awt/event/WindowListener;", methodCache: &add_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WindowListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func add( _ _a: WindowListener?, _ _b: WindowListener? ) -> WindowListener! {
+        return add( a: _a, b: _b )
+    }
+
+    /// public static java.awt.event.WindowStateListener java.awt.AWTEventMulticaster.add(java.awt.event.WindowStateListener,java.awt.event.WindowStateListener)
+
+    private static var add_MethodID_18: jmethodID?
+
+    open class func add( a: WindowStateListener?, b: WindowStateListener? ) -> WindowStateListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "add", methodSig: "(Ljava/awt/event/WindowStateListener;Ljava/awt/event/WindowStateListener;)Ljava/awt/event/WindowStateListener;", methodCache: &add_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WindowStateListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func add( _ _a: WindowStateListener?, _ _b: WindowStateListener? ) -> WindowStateListener! {
+        return add( a: _a, b: _b )
+    }
+
+    /// protected static java.util.EventListener java.awt.AWTEventMulticaster.addInternal(java.util.EventListener,java.util.EventListener)
+
+    private static var addInternal_MethodID_19: jmethodID?
+
+    open class func addInternal( a: java_util.EventListener?, b: java_util.EventListener? ) -> java_util.EventListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "addInternal", methodSig: "(Ljava/util/EventListener;Ljava/util/EventListener;)Ljava/util/EventListener;", methodCache: &addInternal_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.EventListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func addInternal( _ _a: java_util.EventListener?, _ _b: java_util.EventListener? ) -> java_util.EventListener! {
+        return addInternal( a: _a, b: _b )
+    }
+
+    /// private static int java.awt.AWTEventMulticaster.getListenerCount(java.util.EventListener,java.lang.Class)
+
+    /// public static java.util.EventListener[] java.awt.AWTEventMulticaster.getListeners(java.util.EventListener,java.lang.Class)
+
+    private static var getListeners_MethodID_20: jmethodID?
+
+    open class func getListeners( l: java_util.EventListener?, listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        __args[1] = JNIType.toJava( value: listenerType, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "getListeners", methodSig: "(Ljava/util/EventListener;Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &getListeners_MethodID_20, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward].self, from: __return )
+    }
+
+    open class func getListeners( _ _l: java_util.EventListener?, _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( l: _l, listenerType: _listenerType )
+    }
+
+    /// private static int java.awt.AWTEventMulticaster.populateListenerArray(java.util.EventListener[],java.util.EventListener,int)
 
     /// public static java.awt.event.ActionListener java.awt.AWTEventMulticaster.remove(java.awt.event.ActionListener,java.awt.event.ActionListener)
 
-    private static var remove_MethodID_23: jmethodID?
+    private static var remove_MethodID_21: jmethodID?
 
     open class func remove( l: ActionListener?, oldl: ActionListener? ) -> ActionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/ActionListener;Ljava/awt/event/ActionListener;)Ljava/awt/event/ActionListener;", methodCache: &remove_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/ActionListener;Ljava/awt/event/ActionListener;)Ljava/awt/event/ActionListener;", methodCache: &remove_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ActionListenerForward( javaObject: __return ) : nil
     }
@@ -455,33 +422,34 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
         return remove( l: _l, oldl: _oldl )
     }
 
-    /// protected java.util.EventListener java.awt.AWTEventMulticaster.remove(java.util.EventListener)
+    /// public static java.awt.event.AdjustmentListener java.awt.AWTEventMulticaster.remove(java.awt.event.AdjustmentListener,java.awt.event.AdjustmentListener)
 
-    private static var remove_MethodID_24: jmethodID?
+    private static var remove_MethodID_22: jmethodID?
 
-    open func remove( oldl: java_util.EventListener? ) -> java_util.EventListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func remove( l: AdjustmentListener?, oldl: AdjustmentListener? ) -> AdjustmentListener! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/util/EventListener;)Ljava/util/EventListener;", methodCache: &AWTEventMulticaster.remove_MethodID_24, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/AdjustmentListener;Ljava/awt/event/AdjustmentListener;)Ljava/awt/event/AdjustmentListener;", methodCache: &remove_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.EventListenerForward( javaObject: __return ) : nil
+        return __return != nil ? AdjustmentListenerForward( javaObject: __return ) : nil
     }
 
-    open func remove( _ _oldl: java_util.EventListener? ) -> java_util.EventListener! {
-        return remove( oldl: _oldl )
+    open class func remove( _ _l: AdjustmentListener?, _ _oldl: AdjustmentListener? ) -> AdjustmentListener! {
+        return remove( l: _l, oldl: _oldl )
     }
 
     /// public static java.awt.event.ComponentListener java.awt.AWTEventMulticaster.remove(java.awt.event.ComponentListener,java.awt.event.ComponentListener)
 
-    private static var remove_MethodID_25: jmethodID?
+    private static var remove_MethodID_23: jmethodID?
 
     open class func remove( l: ComponentListener?, oldl: ComponentListener? ) -> ComponentListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/ComponentListener;Ljava/awt/event/ComponentListener;)Ljava/awt/event/ComponentListener;", methodCache: &remove_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/ComponentListener;Ljava/awt/event/ComponentListener;)Ljava/awt/event/ComponentListener;", methodCache: &remove_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentListenerForward( javaObject: __return ) : nil
     }
@@ -492,14 +460,14 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
 
     /// public static java.awt.event.ContainerListener java.awt.AWTEventMulticaster.remove(java.awt.event.ContainerListener,java.awt.event.ContainerListener)
 
-    private static var remove_MethodID_26: jmethodID?
+    private static var remove_MethodID_24: jmethodID?
 
     open class func remove( l: ContainerListener?, oldl: ContainerListener? ) -> ContainerListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/ContainerListener;Ljava/awt/event/ContainerListener;)Ljava/awt/event/ContainerListener;", methodCache: &remove_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/ContainerListener;Ljava/awt/event/ContainerListener;)Ljava/awt/event/ContainerListener;", methodCache: &remove_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ContainerListenerForward( javaObject: __return ) : nil
     }
@@ -508,16 +476,106 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
         return remove( l: _l, oldl: _oldl )
     }
 
-    /// public static java.awt.event.KeyListener java.awt.AWTEventMulticaster.remove(java.awt.event.KeyListener,java.awt.event.KeyListener)
+    /// public static java.awt.event.FocusListener java.awt.AWTEventMulticaster.remove(java.awt.event.FocusListener,java.awt.event.FocusListener)
+
+    private static var remove_MethodID_25: jmethodID?
+
+    open class func remove( l: FocusListener?, oldl: FocusListener? ) -> FocusListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/FocusListener;Ljava/awt/event/FocusListener;)Ljava/awt/event/FocusListener;", methodCache: &remove_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? FocusListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func remove( _ _l: FocusListener?, _ _oldl: FocusListener? ) -> FocusListener! {
+        return remove( l: _l, oldl: _oldl )
+    }
+
+    /// public static java.awt.event.HierarchyBoundsListener java.awt.AWTEventMulticaster.remove(java.awt.event.HierarchyBoundsListener,java.awt.event.HierarchyBoundsListener)
+
+    private static var remove_MethodID_26: jmethodID?
+
+    open class func remove( l: HierarchyBoundsListener?, oldl: HierarchyBoundsListener? ) -> HierarchyBoundsListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/HierarchyBoundsListener;Ljava/awt/event/HierarchyBoundsListener;)Ljava/awt/event/HierarchyBoundsListener;", methodCache: &remove_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? HierarchyBoundsListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func remove( _ _l: HierarchyBoundsListener?, _ _oldl: HierarchyBoundsListener? ) -> HierarchyBoundsListener! {
+        return remove( l: _l, oldl: _oldl )
+    }
+
+    /// public static java.awt.event.HierarchyListener java.awt.AWTEventMulticaster.remove(java.awt.event.HierarchyListener,java.awt.event.HierarchyListener)
 
     private static var remove_MethodID_27: jmethodID?
 
-    open class func remove( l: KeyListener?, oldl: KeyListener? ) -> KeyListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func remove( l: HierarchyListener?, oldl: HierarchyListener? ) -> HierarchyListener! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/KeyListener;Ljava/awt/event/KeyListener;)Ljava/awt/event/KeyListener;", methodCache: &remove_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/HierarchyListener;Ljava/awt/event/HierarchyListener;)Ljava/awt/event/HierarchyListener;", methodCache: &remove_MethodID_27, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? HierarchyListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func remove( _ _l: HierarchyListener?, _ _oldl: HierarchyListener? ) -> HierarchyListener! {
+        return remove( l: _l, oldl: _oldl )
+    }
+
+    /// public static java.awt.event.InputMethodListener java.awt.AWTEventMulticaster.remove(java.awt.event.InputMethodListener,java.awt.event.InputMethodListener)
+
+    private static var remove_MethodID_28: jmethodID?
+
+    open class func remove( l: InputMethodListener?, oldl: InputMethodListener? ) -> InputMethodListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/InputMethodListener;Ljava/awt/event/InputMethodListener;)Ljava/awt/event/InputMethodListener;", methodCache: &remove_MethodID_28, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? InputMethodListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func remove( _ _l: InputMethodListener?, _ _oldl: InputMethodListener? ) -> InputMethodListener! {
+        return remove( l: _l, oldl: _oldl )
+    }
+
+    /// public static java.awt.event.ItemListener java.awt.AWTEventMulticaster.remove(java.awt.event.ItemListener,java.awt.event.ItemListener)
+
+    private static var remove_MethodID_29: jmethodID?
+
+    open class func remove( l: ItemListener?, oldl: ItemListener? ) -> ItemListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/ItemListener;Ljava/awt/event/ItemListener;)Ljava/awt/event/ItemListener;", methodCache: &remove_MethodID_29, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ItemListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func remove( _ _l: ItemListener?, _ _oldl: ItemListener? ) -> ItemListener! {
+        return remove( l: _l, oldl: _oldl )
+    }
+
+    /// public static java.awt.event.KeyListener java.awt.AWTEventMulticaster.remove(java.awt.event.KeyListener,java.awt.event.KeyListener)
+
+    private static var remove_MethodID_30: jmethodID?
+
+    open class func remove( l: KeyListener?, oldl: KeyListener? ) -> KeyListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/KeyListener;Ljava/awt/event/KeyListener;)Ljava/awt/event/KeyListener;", methodCache: &remove_MethodID_30, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? KeyListenerForward( javaObject: __return ) : nil
     }
@@ -528,14 +586,14 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
 
     /// public static java.awt.event.MouseListener java.awt.AWTEventMulticaster.remove(java.awt.event.MouseListener,java.awt.event.MouseListener)
 
-    private static var remove_MethodID_28: jmethodID?
+    private static var remove_MethodID_31: jmethodID?
 
     open class func remove( l: MouseListener?, oldl: MouseListener? ) -> MouseListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/MouseListener;Ljava/awt/event/MouseListener;)Ljava/awt/event/MouseListener;", methodCache: &remove_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/MouseListener;Ljava/awt/event/MouseListener;)Ljava/awt/event/MouseListener;", methodCache: &remove_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MouseListenerForward( javaObject: __return ) : nil
     }
@@ -544,52 +602,34 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
         return remove( l: _l, oldl: _oldl )
     }
 
-    /// public static java.awt.event.HierarchyListener java.awt.AWTEventMulticaster.remove(java.awt.event.HierarchyListener,java.awt.event.HierarchyListener)
+    /// public static java.awt.event.MouseMotionListener java.awt.AWTEventMulticaster.remove(java.awt.event.MouseMotionListener,java.awt.event.MouseMotionListener)
 
-    private static var remove_MethodID_29: jmethodID?
+    private static var remove_MethodID_32: jmethodID?
 
-    open class func remove( l: HierarchyListener?, oldl: HierarchyListener? ) -> HierarchyListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func remove( l: MouseMotionListener?, oldl: MouseMotionListener? ) -> MouseMotionListener! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/HierarchyListener;Ljava/awt/event/HierarchyListener;)Ljava/awt/event/HierarchyListener;", methodCache: &remove_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/MouseMotionListener;Ljava/awt/event/MouseMotionListener;)Ljava/awt/event/MouseMotionListener;", methodCache: &remove_MethodID_32, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? HierarchyListenerForward( javaObject: __return ) : nil
+        return __return != nil ? MouseMotionListenerForward( javaObject: __return ) : nil
     }
 
-    open class func remove( _ _l: HierarchyListener?, _ _oldl: HierarchyListener? ) -> HierarchyListener! {
-        return remove( l: _l, oldl: _oldl )
-    }
-
-    /// public static java.awt.event.HierarchyBoundsListener java.awt.AWTEventMulticaster.remove(java.awt.event.HierarchyBoundsListener,java.awt.event.HierarchyBoundsListener)
-
-    private static var remove_MethodID_30: jmethodID?
-
-    open class func remove( l: HierarchyBoundsListener?, oldl: HierarchyBoundsListener? ) -> HierarchyBoundsListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/HierarchyBoundsListener;Ljava/awt/event/HierarchyBoundsListener;)Ljava/awt/event/HierarchyBoundsListener;", methodCache: &remove_MethodID_30, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? HierarchyBoundsListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func remove( _ _l: HierarchyBoundsListener?, _ _oldl: HierarchyBoundsListener? ) -> HierarchyBoundsListener! {
+    open class func remove( _ _l: MouseMotionListener?, _ _oldl: MouseMotionListener? ) -> MouseMotionListener! {
         return remove( l: _l, oldl: _oldl )
     }
 
     /// public static java.awt.event.MouseWheelListener java.awt.AWTEventMulticaster.remove(java.awt.event.MouseWheelListener,java.awt.event.MouseWheelListener)
 
-    private static var remove_MethodID_31: jmethodID?
+    private static var remove_MethodID_33: jmethodID?
 
     open class func remove( l: MouseWheelListener?, oldl: MouseWheelListener? ) -> MouseWheelListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/MouseWheelListener;Ljava/awt/event/MouseWheelListener;)Ljava/awt/event/MouseWheelListener;", methodCache: &remove_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/MouseWheelListener;Ljava/awt/event/MouseWheelListener;)Ljava/awt/event/MouseWheelListener;", methodCache: &remove_MethodID_33, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MouseWheelListenerForward( javaObject: __return ) : nil
     }
@@ -598,70 +638,16 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
         return remove( l: _l, oldl: _oldl )
     }
 
-    /// public static java.awt.event.FocusListener java.awt.AWTEventMulticaster.remove(java.awt.event.FocusListener,java.awt.event.FocusListener)
-
-    private static var remove_MethodID_32: jmethodID?
-
-    open class func remove( l: FocusListener?, oldl: FocusListener? ) -> FocusListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/FocusListener;Ljava/awt/event/FocusListener;)Ljava/awt/event/FocusListener;", methodCache: &remove_MethodID_32, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? FocusListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func remove( _ _l: FocusListener?, _ _oldl: FocusListener? ) -> FocusListener! {
-        return remove( l: _l, oldl: _oldl )
-    }
-
-    /// public static java.awt.event.ItemListener java.awt.AWTEventMulticaster.remove(java.awt.event.ItemListener,java.awt.event.ItemListener)
-
-    private static var remove_MethodID_33: jmethodID?
-
-    open class func remove( l: ItemListener?, oldl: ItemListener? ) -> ItemListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/ItemListener;Ljava/awt/event/ItemListener;)Ljava/awt/event/ItemListener;", methodCache: &remove_MethodID_33, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ItemListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func remove( _ _l: ItemListener?, _ _oldl: ItemListener? ) -> ItemListener! {
-        return remove( l: _l, oldl: _oldl )
-    }
-
-    /// public static java.awt.event.AdjustmentListener java.awt.AWTEventMulticaster.remove(java.awt.event.AdjustmentListener,java.awt.event.AdjustmentListener)
+    /// public static java.awt.event.TextListener java.awt.AWTEventMulticaster.remove(java.awt.event.TextListener,java.awt.event.TextListener)
 
     private static var remove_MethodID_34: jmethodID?
 
-    open class func remove( l: AdjustmentListener?, oldl: AdjustmentListener? ) -> AdjustmentListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/AdjustmentListener;Ljava/awt/event/AdjustmentListener;)Ljava/awt/event/AdjustmentListener;", methodCache: &remove_MethodID_34, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AdjustmentListenerForward( javaObject: __return ) : nil
-    }
-
-    open class func remove( _ _l: AdjustmentListener?, _ _oldl: AdjustmentListener? ) -> AdjustmentListener! {
-        return remove( l: _l, oldl: _oldl )
-    }
-
-    /// public static java.awt.event.TextListener java.awt.AWTEventMulticaster.remove(java.awt.event.TextListener,java.awt.event.TextListener)
-
-    private static var remove_MethodID_35: jmethodID?
-
     open class func remove( l: TextListener?, oldl: TextListener? ) -> TextListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/TextListener;Ljava/awt/event/TextListener;)Ljava/awt/event/TextListener;", methodCache: &remove_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/TextListener;Ljava/awt/event/TextListener;)Ljava/awt/event/TextListener;", methodCache: &remove_MethodID_34, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TextListenerForward( javaObject: __return ) : nil
     }
@@ -670,567 +656,70 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
         return remove( l: _l, oldl: _oldl )
     }
 
-    /// public static java.awt.event.InputMethodListener java.awt.AWTEventMulticaster.remove(java.awt.event.InputMethodListener,java.awt.event.InputMethodListener)
+    /// public static java.awt.event.WindowFocusListener java.awt.AWTEventMulticaster.remove(java.awt.event.WindowFocusListener,java.awt.event.WindowFocusListener)
 
-    private static var remove_MethodID_36: jmethodID?
+    private static var remove_MethodID_35: jmethodID?
 
-    open class func remove( l: InputMethodListener?, oldl: InputMethodListener? ) -> InputMethodListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func remove( l: WindowFocusListener?, oldl: WindowFocusListener? ) -> WindowFocusListener! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/InputMethodListener;Ljava/awt/event/InputMethodListener;)Ljava/awt/event/InputMethodListener;", methodCache: &remove_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/WindowFocusListener;Ljava/awt/event/WindowFocusListener;)Ljava/awt/event/WindowFocusListener;", methodCache: &remove_MethodID_35, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? InputMethodListenerForward( javaObject: __return ) : nil
+        return __return != nil ? WindowFocusListenerForward( javaObject: __return ) : nil
     }
 
-    open class func remove( _ _l: InputMethodListener?, _ _oldl: InputMethodListener? ) -> InputMethodListener! {
+    open class func remove( _ _l: WindowFocusListener?, _ _oldl: WindowFocusListener? ) -> WindowFocusListener! {
         return remove( l: _l, oldl: _oldl )
     }
 
-    /// protected static void java.awt.AWTEventMulticaster.save(java.io.ObjectOutputStream,java.lang.String,java.util.EventListener) throws java.io.IOException
+    /// public static java.awt.event.WindowListener java.awt.AWTEventMulticaster.remove(java.awt.event.WindowListener,java.awt.event.WindowListener)
 
-    private static var save_MethodID_37: jmethodID?
+    private static var remove_MethodID_36: jmethodID?
 
-    open class func save( s: /* java.io.ObjectOutputStream */ UnclassedObject?, k: String?, l: java_util.EventListener? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open class func remove( l: WindowListener?, oldl: WindowListener? ) -> WindowListener! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        __args[1] = JNIType.toJava( value: k, locals: &__locals )
-        __args[2] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "save", methodSig: "(Ljava/io/ObjectOutputStream;Ljava/lang/String;Ljava/util/EventListener;)V", methodCache: &save_MethodID_37, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open class func save( _ _s: /* java.io.ObjectOutputStream */ UnclassedObject?, _ _k: String?, _ _l: java_util.EventListener? ) throws /* java.io.IOException */ {
-        try save( s: _s, k: _k, l: _l )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.componentRemoved(java.awt.event.ContainerEvent)
-
-    private static var componentRemoved_MethodID_38: jmethodID?
-
-    open func componentRemoved( e: ContainerEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentRemoved", methodSig: "(Ljava/awt/event/ContainerEvent;)V", methodCache: &AWTEventMulticaster.componentRemoved_MethodID_38, args: &__args, locals: &__locals )
-    }
-
-    open func componentRemoved( _ _e: ContainerEvent? ) {
-        componentRemoved( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.componentResized(java.awt.event.ComponentEvent)
-
-    private static var componentResized_MethodID_39: jmethodID?
-
-    open func componentResized( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentResized", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &AWTEventMulticaster.componentResized_MethodID_39, args: &__args, locals: &__locals )
-    }
-
-    open func componentResized( _ _e: ComponentEvent? ) {
-        componentResized( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.componentMoved(java.awt.event.ComponentEvent)
-
-    private static var componentMoved_MethodID_40: jmethodID?
-
-    open func componentMoved( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentMoved", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &AWTEventMulticaster.componentMoved_MethodID_40, args: &__args, locals: &__locals )
-    }
-
-    open func componentMoved( _ _e: ComponentEvent? ) {
-        componentMoved( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.componentShown(java.awt.event.ComponentEvent)
-
-    private static var componentShown_MethodID_41: jmethodID?
-
-    open func componentShown( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentShown", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &AWTEventMulticaster.componentShown_MethodID_41, args: &__args, locals: &__locals )
-    }
-
-    open func componentShown( _ _e: ComponentEvent? ) {
-        componentShown( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.componentHidden(java.awt.event.ComponentEvent)
-
-    private static var componentHidden_MethodID_42: jmethodID?
-
-    open func componentHidden( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentHidden", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &AWTEventMulticaster.componentHidden_MethodID_42, args: &__args, locals: &__locals )
-    }
-
-    open func componentHidden( _ _e: ComponentEvent? ) {
-        componentHidden( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.focusGained(java.awt.event.FocusEvent)
-
-    private static var focusGained_MethodID_43: jmethodID?
-
-    open func focusGained( e: FocusEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusGained", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &AWTEventMulticaster.focusGained_MethodID_43, args: &__args, locals: &__locals )
-    }
-
-    open func focusGained( _ _e: FocusEvent? ) {
-        focusGained( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.focusLost(java.awt.event.FocusEvent)
-
-    private static var focusLost_MethodID_44: jmethodID?
-
-    open func focusLost( e: FocusEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusLost", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &AWTEventMulticaster.focusLost_MethodID_44, args: &__args, locals: &__locals )
-    }
-
-    open func focusLost( _ _e: FocusEvent? ) {
-        focusLost( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.keyTyped(java.awt.event.KeyEvent)
-
-    private static var keyTyped_MethodID_45: jmethodID?
-
-    open func keyTyped( e: KeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyTyped", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &AWTEventMulticaster.keyTyped_MethodID_45, args: &__args, locals: &__locals )
-    }
-
-    open func keyTyped( _ _e: KeyEvent? ) {
-        keyTyped( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.keyPressed(java.awt.event.KeyEvent)
-
-    private static var keyPressed_MethodID_46: jmethodID?
-
-    open func keyPressed( e: KeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyPressed", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &AWTEventMulticaster.keyPressed_MethodID_46, args: &__args, locals: &__locals )
-    }
-
-    open func keyPressed( _ _e: KeyEvent? ) {
-        keyPressed( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.keyReleased(java.awt.event.KeyEvent)
-
-    private static var keyReleased_MethodID_47: jmethodID?
-
-    open func keyReleased( e: KeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyReleased", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &AWTEventMulticaster.keyReleased_MethodID_47, args: &__args, locals: &__locals )
-    }
-
-    open func keyReleased( _ _e: KeyEvent? ) {
-        keyReleased( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.mousePressed(java.awt.event.MouseEvent)
-
-    private static var mousePressed_MethodID_48: jmethodID?
-
-    open func mousePressed( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mousePressed_MethodID_48, args: &__args, locals: &__locals )
-    }
-
-    open func mousePressed( _ _e: MouseEvent? ) {
-        mousePressed( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.mouseReleased(java.awt.event.MouseEvent)
-
-    private static var mouseReleased_MethodID_49: jmethodID?
-
-    open func mouseReleased( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseReleased_MethodID_49, args: &__args, locals: &__locals )
-    }
-
-    open func mouseReleased( _ _e: MouseEvent? ) {
-        mouseReleased( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.mouseClicked(java.awt.event.MouseEvent)
-
-    private static var mouseClicked_MethodID_50: jmethodID?
-
-    open func mouseClicked( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseClicked_MethodID_50, args: &__args, locals: &__locals )
-    }
-
-    open func mouseClicked( _ _e: MouseEvent? ) {
-        mouseClicked( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.mouseExited(java.awt.event.MouseEvent)
-
-    private static var mouseExited_MethodID_51: jmethodID?
-
-    open func mouseExited( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseExited", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseExited_MethodID_51, args: &__args, locals: &__locals )
-    }
-
-    open func mouseExited( _ _e: MouseEvent? ) {
-        mouseExited( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.mouseEntered(java.awt.event.MouseEvent)
-
-    private static var mouseEntered_MethodID_52: jmethodID?
-
-    open func mouseEntered( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseEntered_MethodID_52, args: &__args, locals: &__locals )
-    }
-
-    open func mouseEntered( _ _e: MouseEvent? ) {
-        mouseEntered( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.mouseMoved(java.awt.event.MouseEvent)
-
-    private static var mouseMoved_MethodID_53: jmethodID?
-
-    open func mouseMoved( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseMoved_MethodID_53, args: &__args, locals: &__locals )
-    }
-
-    open func mouseMoved( _ _e: MouseEvent? ) {
-        mouseMoved( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.mouseDragged(java.awt.event.MouseEvent)
-
-    private static var mouseDragged_MethodID_54: jmethodID?
-
-    open func mouseDragged( e: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseDragged_MethodID_54, args: &__args, locals: &__locals )
-    }
-
-    open func mouseDragged( _ _e: MouseEvent? ) {
-        mouseDragged( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.mouseWheelMoved(java.awt.event.MouseWheelEvent)
-
-    private static var mouseWheelMoved_MethodID_55: jmethodID?
-
-    open func mouseWheelMoved( e: MouseWheelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseWheelMoved", methodSig: "(Ljava/awt/event/MouseWheelEvent;)V", methodCache: &AWTEventMulticaster.mouseWheelMoved_MethodID_55, args: &__args, locals: &__locals )
-    }
-
-    open func mouseWheelMoved( _ _e: MouseWheelEvent? ) {
-        mouseWheelMoved( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.inputMethodTextChanged(java.awt.event.InputMethodEvent)
-
-    private static var inputMethodTextChanged_MethodID_56: jmethodID?
-
-    open func inputMethodTextChanged( event: InputMethodEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "inputMethodTextChanged", methodSig: "(Ljava/awt/event/InputMethodEvent;)V", methodCache: &AWTEventMulticaster.inputMethodTextChanged_MethodID_56, args: &__args, locals: &__locals )
-    }
-
-    open func inputMethodTextChanged( _ _event: InputMethodEvent? ) {
-        inputMethodTextChanged( event: _event )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.caretPositionChanged(java.awt.event.InputMethodEvent)
-
-    private static var caretPositionChanged_MethodID_57: jmethodID?
-
-    open func caretPositionChanged( event: InputMethodEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "caretPositionChanged", methodSig: "(Ljava/awt/event/InputMethodEvent;)V", methodCache: &AWTEventMulticaster.caretPositionChanged_MethodID_57, args: &__args, locals: &__locals )
-    }
-
-    open func caretPositionChanged( _ _event: InputMethodEvent? ) {
-        caretPositionChanged( event: _event )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.hierarchyChanged(java.awt.event.HierarchyEvent)
-
-    private static var hierarchyChanged_MethodID_58: jmethodID?
-
-    open func hierarchyChanged( e: HierarchyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "hierarchyChanged", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &AWTEventMulticaster.hierarchyChanged_MethodID_58, args: &__args, locals: &__locals )
-    }
-
-    open func hierarchyChanged( _ _e: HierarchyEvent? ) {
-        hierarchyChanged( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.ancestorMoved(java.awt.event.HierarchyEvent)
-
-    private static var ancestorMoved_MethodID_59: jmethodID?
-
-    open func ancestorMoved( e: HierarchyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ancestorMoved", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &AWTEventMulticaster.ancestorMoved_MethodID_59, args: &__args, locals: &__locals )
-    }
-
-    open func ancestorMoved( _ _e: HierarchyEvent? ) {
-        ancestorMoved( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.ancestorResized(java.awt.event.HierarchyEvent)
-
-    private static var ancestorResized_MethodID_60: jmethodID?
-
-    open func ancestorResized( e: HierarchyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ancestorResized", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &AWTEventMulticaster.ancestorResized_MethodID_60, args: &__args, locals: &__locals )
-    }
-
-    open func ancestorResized( _ _e: HierarchyEvent? ) {
-        ancestorResized( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.windowOpened(java.awt.event.WindowEvent)
-
-    private static var windowOpened_MethodID_61: jmethodID?
-
-    open func windowOpened( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowOpened", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowOpened_MethodID_61, args: &__args, locals: &__locals )
-    }
-
-    open func windowOpened( _ _e: WindowEvent? ) {
-        windowOpened( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.windowClosing(java.awt.event.WindowEvent)
-
-    private static var windowClosing_MethodID_62: jmethodID?
-
-    open func windowClosing( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosing", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowClosing_MethodID_62, args: &__args, locals: &__locals )
-    }
-
-    open func windowClosing( _ _e: WindowEvent? ) {
-        windowClosing( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.windowClosed(java.awt.event.WindowEvent)
-
-    private static var windowClosed_MethodID_63: jmethodID?
-
-    open func windowClosed( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosed", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowClosed_MethodID_63, args: &__args, locals: &__locals )
-    }
-
-    open func windowClosed( _ _e: WindowEvent? ) {
-        windowClosed( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.windowIconified(java.awt.event.WindowEvent)
-
-    private static var windowIconified_MethodID_64: jmethodID?
-
-    open func windowIconified( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowIconified", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowIconified_MethodID_64, args: &__args, locals: &__locals )
-    }
-
-    open func windowIconified( _ _e: WindowEvent? ) {
-        windowIconified( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.windowDeiconified(java.awt.event.WindowEvent)
-
-    private static var windowDeiconified_MethodID_65: jmethodID?
-
-    open func windowDeiconified( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowDeiconified", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowDeiconified_MethodID_65, args: &__args, locals: &__locals )
-    }
-
-    open func windowDeiconified( _ _e: WindowEvent? ) {
-        windowDeiconified( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.windowActivated(java.awt.event.WindowEvent)
-
-    private static var windowActivated_MethodID_66: jmethodID?
-
-    open func windowActivated( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowActivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowActivated_MethodID_66, args: &__args, locals: &__locals )
-    }
-
-    open func windowActivated( _ _e: WindowEvent? ) {
-        windowActivated( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.windowDeactivated(java.awt.event.WindowEvent)
-
-    private static var windowDeactivated_MethodID_67: jmethodID?
-
-    open func windowDeactivated( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowDeactivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowDeactivated_MethodID_67, args: &__args, locals: &__locals )
-    }
-
-    open func windowDeactivated( _ _e: WindowEvent? ) {
-        windowDeactivated( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.windowGainedFocus(java.awt.event.WindowEvent)
-
-    private static var windowGainedFocus_MethodID_68: jmethodID?
-
-    open func windowGainedFocus( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowGainedFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowGainedFocus_MethodID_68, args: &__args, locals: &__locals )
-    }
-
-    open func windowGainedFocus( _ _e: WindowEvent? ) {
-        windowGainedFocus( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.windowLostFocus(java.awt.event.WindowEvent)
-
-    private static var windowLostFocus_MethodID_69: jmethodID?
-
-    open func windowLostFocus( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowLostFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowLostFocus_MethodID_69, args: &__args, locals: &__locals )
-    }
-
-    open func windowLostFocus( _ _e: WindowEvent? ) {
-        windowLostFocus( e: _e )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.windowStateChanged(java.awt.event.WindowEvent)
-
-    private static var windowStateChanged_MethodID_70: jmethodID?
-
-    open func windowStateChanged( e: WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowStateChanged", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowStateChanged_MethodID_70, args: &__args, locals: &__locals )
-    }
-
-    open func windowStateChanged( _ _e: WindowEvent? ) {
-        windowStateChanged( e: _e )
-    }
-
-    /// protected static java.util.EventListener java.awt.AWTEventMulticaster.addInternal(java.util.EventListener,java.util.EventListener)
-
-    private static var addInternal_MethodID_71: jmethodID?
-
-    open class func addInternal( a: java_util.EventListener?, b: java_util.EventListener? ) -> java_util.EventListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "addInternal", methodSig: "(Ljava/util/EventListener;Ljava/util/EventListener;)Ljava/util/EventListener;", methodCache: &addInternal_MethodID_71, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/WindowListener;Ljava/awt/event/WindowListener;)Ljava/awt/event/WindowListener;", methodCache: &remove_MethodID_36, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.EventListenerForward( javaObject: __return ) : nil
+        return __return != nil ? WindowListenerForward( javaObject: __return ) : nil
     }
 
-    open class func addInternal( _ _a: java_util.EventListener?, _ _b: java_util.EventListener? ) -> java_util.EventListener! {
-        return addInternal( a: _a, b: _b )
+    open class func remove( _ _l: WindowListener?, _ _oldl: WindowListener? ) -> WindowListener! {
+        return remove( l: _l, oldl: _oldl )
+    }
+
+    /// public static java.awt.event.WindowStateListener java.awt.AWTEventMulticaster.remove(java.awt.event.WindowStateListener,java.awt.event.WindowStateListener)
+
+    private static var remove_MethodID_37: jmethodID?
+
+    open class func remove( l: WindowStateListener?, oldl: WindowStateListener? ) -> WindowStateListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "remove", methodSig: "(Ljava/awt/event/WindowStateListener;Ljava/awt/event/WindowStateListener;)Ljava/awt/event/WindowStateListener;", methodCache: &remove_MethodID_37, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WindowStateListenerForward( javaObject: __return ) : nil
+    }
+
+    open class func remove( _ _l: WindowStateListener?, _ _oldl: WindowStateListener? ) -> WindowStateListener! {
+        return remove( l: _l, oldl: _oldl )
     }
 
     /// protected static java.util.EventListener java.awt.AWTEventMulticaster.removeInternal(java.util.EventListener,java.util.EventListener)
 
-    private static var removeInternal_MethodID_72: jmethodID?
+    private static var removeInternal_MethodID_38: jmethodID?
 
     open class func removeInternal( l: java_util.EventListener?, oldl: java_util.EventListener? ) -> java_util.EventListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldl, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "removeInternal", methodSig: "(Ljava/util/EventListener;Ljava/util/EventListener;)Ljava/util/EventListener;", methodCache: &removeInternal_MethodID_72, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "removeInternal", methodSig: "(Ljava/util/EventListener;Ljava/util/EventListener;)Ljava/util/EventListener;", methodCache: &removeInternal_MethodID_38, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.EventListenerForward( javaObject: __return ) : nil
     }
@@ -1239,119 +728,632 @@ open class AWTEventMulticaster: java_swift.JavaObject, ComponentListener, Contai
         return removeInternal( l: _l, oldl: _oldl )
     }
 
-    /// protected void java.awt.AWTEventMulticaster.saveInternal(java.io.ObjectOutputStream,java.lang.String) throws java.io.IOException
+    /// protected static void java.awt.AWTEventMulticaster.save(java.io.ObjectOutputStream,java.lang.String,java.util.EventListener) throws java.io.IOException
 
-    private static var saveInternal_MethodID_73: jmethodID?
+    private static var save_MethodID_39: jmethodID?
 
-    open func saveInternal( s: /* java.io.ObjectOutputStream */ UnclassedObject?, k: String? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func save( s: /* class java.io.ObjectOutputStream */ UnavailableObject?, k: String?, l: java_util.EventListener? ) throws /* java.io.IOException */ {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
         __args[1] = JNIType.toJava( value: k, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "saveInternal", methodSig: "(Ljava/io/ObjectOutputStream;Ljava/lang/String;)V", methodCache: &AWTEventMulticaster.saveInternal_MethodID_73, args: &__args, locals: &__locals )
+        __args[2] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "save", methodSig: "(Ljava/io/ObjectOutputStream;Ljava/lang/String;Ljava/util/EventListener;)V", methodCache: &save_MethodID_39, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
-    open func saveInternal( _ _s: /* java.io.ObjectOutputStream */ UnclassedObject?, _ _k: String? ) throws /* java.io.IOException */ {
-        try saveInternal( s: _s, k: _k )
+    open class func save( _ _s: /* class java.io.ObjectOutputStream */ UnavailableObject?, _ _k: String?, _ _l: java_util.EventListener? ) throws /* java.io.IOException */ {
+        try save( s: _s, k: _k, l: _l )
     }
 
-    /// private static int java.awt.AWTEventMulticaster.getListenerCount(java.util.EventListener,java.lang.Class)
+    /// public void java.awt.AWTEventMulticaster.actionPerformed(java.awt.event.ActionEvent)
 
-    /// private static int java.awt.AWTEventMulticaster.populateListenerArray(java.util.EventListener[],java.util.EventListener,int)
+    private static var actionPerformed_MethodID_40: jmethodID?
 
-    /// public void java.awt.AWTEventMulticaster.itemStateChanged(java.awt.event.ItemEvent)
-
-    private static var itemStateChanged_MethodID_74: jmethodID?
-
-    open func itemStateChanged( e: ItemEvent? ) {
+    open func actionPerformed( e: ActionEvent? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "itemStateChanged", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &AWTEventMulticaster.itemStateChanged_MethodID_74, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &AWTEventMulticaster.actionPerformed_MethodID_40, args: &__args, locals: &__locals )
     }
 
-    open func itemStateChanged( _ _e: ItemEvent? ) {
-        itemStateChanged( e: _e )
-    }
-
-    /// public static java.util.EventListener[] java.awt.AWTEventMulticaster.getListeners(java.util.EventListener,java.lang.Class)
-
-    private static var getListeners_MethodID_75: jmethodID?
-
-    open class func getListeners( l: java_util.EventListener?, listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        __args[1] = JNIType.toJava( value: listenerType, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/AWTEventMulticaster", classCache: &AWTEventMulticasterJNIClass, methodName: "getListeners", methodSig: "(Ljava/util/EventListener;Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &getListeners_MethodID_75, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open class func getListeners( _ _l: java_util.EventListener?, _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( l: _l, listenerType: _listenerType )
-    }
-
-    /// public void java.awt.AWTEventMulticaster.componentAdded(java.awt.event.ContainerEvent)
-
-    private static var componentAdded_MethodID_76: jmethodID?
-
-    open func componentAdded( e: ContainerEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentAdded", methodSig: "(Ljava/awt/event/ContainerEvent;)V", methodCache: &AWTEventMulticaster.componentAdded_MethodID_76, args: &__args, locals: &__locals )
-    }
-
-    open func componentAdded( _ _e: ContainerEvent? ) {
-        componentAdded( e: _e )
+    open func actionPerformed( _ _e: ActionEvent? ) {
+        actionPerformed( e: _e )
     }
 
     /// public void java.awt.AWTEventMulticaster.adjustmentValueChanged(java.awt.event.AdjustmentEvent)
 
-    private static var adjustmentValueChanged_MethodID_77: jmethodID?
+    private static var adjustmentValueChanged_MethodID_41: jmethodID?
 
     open func adjustmentValueChanged( e: AdjustmentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "adjustmentValueChanged", methodSig: "(Ljava/awt/event/AdjustmentEvent;)V", methodCache: &AWTEventMulticaster.adjustmentValueChanged_MethodID_77, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "adjustmentValueChanged", methodSig: "(Ljava/awt/event/AdjustmentEvent;)V", methodCache: &AWTEventMulticaster.adjustmentValueChanged_MethodID_41, args: &__args, locals: &__locals )
     }
 
     open func adjustmentValueChanged( _ _e: AdjustmentEvent? ) {
         adjustmentValueChanged( e: _e )
     }
 
+    /// public void java.awt.AWTEventMulticaster.ancestorMoved(java.awt.event.HierarchyEvent)
+
+    private static var ancestorMoved_MethodID_42: jmethodID?
+
+    open func ancestorMoved( e: HierarchyEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ancestorMoved", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &AWTEventMulticaster.ancestorMoved_MethodID_42, args: &__args, locals: &__locals )
+    }
+
+    open func ancestorMoved( _ _e: HierarchyEvent? ) {
+        ancestorMoved( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.ancestorResized(java.awt.event.HierarchyEvent)
+
+    private static var ancestorResized_MethodID_43: jmethodID?
+
+    open func ancestorResized( e: HierarchyEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ancestorResized", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &AWTEventMulticaster.ancestorResized_MethodID_43, args: &__args, locals: &__locals )
+    }
+
+    open func ancestorResized( _ _e: HierarchyEvent? ) {
+        ancestorResized( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.caretPositionChanged(java.awt.event.InputMethodEvent)
+
+    private static var caretPositionChanged_MethodID_44: jmethodID?
+
+    open func caretPositionChanged( event: InputMethodEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "caretPositionChanged", methodSig: "(Ljava/awt/event/InputMethodEvent;)V", methodCache: &AWTEventMulticaster.caretPositionChanged_MethodID_44, args: &__args, locals: &__locals )
+    }
+
+    open func caretPositionChanged( _ _event: InputMethodEvent? ) {
+        caretPositionChanged( event: _event )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.componentAdded(java.awt.event.ContainerEvent)
+
+    private static var componentAdded_MethodID_45: jmethodID?
+
+    open func componentAdded( e: ContainerEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentAdded", methodSig: "(Ljava/awt/event/ContainerEvent;)V", methodCache: &AWTEventMulticaster.componentAdded_MethodID_45, args: &__args, locals: &__locals )
+    }
+
+    open func componentAdded( _ _e: ContainerEvent? ) {
+        componentAdded( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.componentHidden(java.awt.event.ComponentEvent)
+
+    private static var componentHidden_MethodID_46: jmethodID?
+
+    open func componentHidden( e: ComponentEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentHidden", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &AWTEventMulticaster.componentHidden_MethodID_46, args: &__args, locals: &__locals )
+    }
+
+    open func componentHidden( _ _e: ComponentEvent? ) {
+        componentHidden( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.componentMoved(java.awt.event.ComponentEvent)
+
+    private static var componentMoved_MethodID_47: jmethodID?
+
+    open func componentMoved( e: ComponentEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentMoved", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &AWTEventMulticaster.componentMoved_MethodID_47, args: &__args, locals: &__locals )
+    }
+
+    open func componentMoved( _ _e: ComponentEvent? ) {
+        componentMoved( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.componentRemoved(java.awt.event.ContainerEvent)
+
+    private static var componentRemoved_MethodID_48: jmethodID?
+
+    open func componentRemoved( e: ContainerEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentRemoved", methodSig: "(Ljava/awt/event/ContainerEvent;)V", methodCache: &AWTEventMulticaster.componentRemoved_MethodID_48, args: &__args, locals: &__locals )
+    }
+
+    open func componentRemoved( _ _e: ContainerEvent? ) {
+        componentRemoved( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.componentResized(java.awt.event.ComponentEvent)
+
+    private static var componentResized_MethodID_49: jmethodID?
+
+    open func componentResized( e: ComponentEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentResized", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &AWTEventMulticaster.componentResized_MethodID_49, args: &__args, locals: &__locals )
+    }
+
+    open func componentResized( _ _e: ComponentEvent? ) {
+        componentResized( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.componentShown(java.awt.event.ComponentEvent)
+
+    private static var componentShown_MethodID_50: jmethodID?
+
+    open func componentShown( e: ComponentEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentShown", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &AWTEventMulticaster.componentShown_MethodID_50, args: &__args, locals: &__locals )
+    }
+
+    open func componentShown( _ _e: ComponentEvent? ) {
+        componentShown( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.focusGained(java.awt.event.FocusEvent)
+
+    private static var focusGained_MethodID_51: jmethodID?
+
+    open func focusGained( e: FocusEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusGained", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &AWTEventMulticaster.focusGained_MethodID_51, args: &__args, locals: &__locals )
+    }
+
+    open func focusGained( _ _e: FocusEvent? ) {
+        focusGained( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.focusLost(java.awt.event.FocusEvent)
+
+    private static var focusLost_MethodID_52: jmethodID?
+
+    open func focusLost( e: FocusEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusLost", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &AWTEventMulticaster.focusLost_MethodID_52, args: &__args, locals: &__locals )
+    }
+
+    open func focusLost( _ _e: FocusEvent? ) {
+        focusLost( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.hierarchyChanged(java.awt.event.HierarchyEvent)
+
+    private static var hierarchyChanged_MethodID_53: jmethodID?
+
+    open func hierarchyChanged( e: HierarchyEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "hierarchyChanged", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &AWTEventMulticaster.hierarchyChanged_MethodID_53, args: &__args, locals: &__locals )
+    }
+
+    open func hierarchyChanged( _ _e: HierarchyEvent? ) {
+        hierarchyChanged( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.inputMethodTextChanged(java.awt.event.InputMethodEvent)
+
+    private static var inputMethodTextChanged_MethodID_54: jmethodID?
+
+    open func inputMethodTextChanged( event: InputMethodEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "inputMethodTextChanged", methodSig: "(Ljava/awt/event/InputMethodEvent;)V", methodCache: &AWTEventMulticaster.inputMethodTextChanged_MethodID_54, args: &__args, locals: &__locals )
+    }
+
+    open func inputMethodTextChanged( _ _event: InputMethodEvent? ) {
+        inputMethodTextChanged( event: _event )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.itemStateChanged(java.awt.event.ItemEvent)
+
+    private static var itemStateChanged_MethodID_55: jmethodID?
+
+    open func itemStateChanged( e: ItemEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "itemStateChanged", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &AWTEventMulticaster.itemStateChanged_MethodID_55, args: &__args, locals: &__locals )
+    }
+
+    open func itemStateChanged( _ _e: ItemEvent? ) {
+        itemStateChanged( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.keyPressed(java.awt.event.KeyEvent)
+
+    private static var keyPressed_MethodID_56: jmethodID?
+
+    open func keyPressed( e: KeyEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyPressed", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &AWTEventMulticaster.keyPressed_MethodID_56, args: &__args, locals: &__locals )
+    }
+
+    open func keyPressed( _ _e: KeyEvent? ) {
+        keyPressed( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.keyReleased(java.awt.event.KeyEvent)
+
+    private static var keyReleased_MethodID_57: jmethodID?
+
+    open func keyReleased( e: KeyEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyReleased", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &AWTEventMulticaster.keyReleased_MethodID_57, args: &__args, locals: &__locals )
+    }
+
+    open func keyReleased( _ _e: KeyEvent? ) {
+        keyReleased( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.keyTyped(java.awt.event.KeyEvent)
+
+    private static var keyTyped_MethodID_58: jmethodID?
+
+    open func keyTyped( e: KeyEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyTyped", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &AWTEventMulticaster.keyTyped_MethodID_58, args: &__args, locals: &__locals )
+    }
+
+    open func keyTyped( _ _e: KeyEvent? ) {
+        keyTyped( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.mouseClicked(java.awt.event.MouseEvent)
+
+    private static var mouseClicked_MethodID_59: jmethodID?
+
+    open func mouseClicked( e: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseClicked_MethodID_59, args: &__args, locals: &__locals )
+    }
+
+    open func mouseClicked( _ _e: MouseEvent? ) {
+        mouseClicked( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.mouseDragged(java.awt.event.MouseEvent)
+
+    private static var mouseDragged_MethodID_60: jmethodID?
+
+    open func mouseDragged( e: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseDragged_MethodID_60, args: &__args, locals: &__locals )
+    }
+
+    open func mouseDragged( _ _e: MouseEvent? ) {
+        mouseDragged( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.mouseEntered(java.awt.event.MouseEvent)
+
+    private static var mouseEntered_MethodID_61: jmethodID?
+
+    open func mouseEntered( e: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseEntered_MethodID_61, args: &__args, locals: &__locals )
+    }
+
+    open func mouseEntered( _ _e: MouseEvent? ) {
+        mouseEntered( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.mouseExited(java.awt.event.MouseEvent)
+
+    private static var mouseExited_MethodID_62: jmethodID?
+
+    open func mouseExited( e: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseExited", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseExited_MethodID_62, args: &__args, locals: &__locals )
+    }
+
+    open func mouseExited( _ _e: MouseEvent? ) {
+        mouseExited( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.mouseMoved(java.awt.event.MouseEvent)
+
+    private static var mouseMoved_MethodID_63: jmethodID?
+
+    open func mouseMoved( e: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseMoved_MethodID_63, args: &__args, locals: &__locals )
+    }
+
+    open func mouseMoved( _ _e: MouseEvent? ) {
+        mouseMoved( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.mousePressed(java.awt.event.MouseEvent)
+
+    private static var mousePressed_MethodID_64: jmethodID?
+
+    open func mousePressed( e: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mousePressed_MethodID_64, args: &__args, locals: &__locals )
+    }
+
+    open func mousePressed( _ _e: MouseEvent? ) {
+        mousePressed( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.mouseReleased(java.awt.event.MouseEvent)
+
+    private static var mouseReleased_MethodID_65: jmethodID?
+
+    open func mouseReleased( e: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &AWTEventMulticaster.mouseReleased_MethodID_65, args: &__args, locals: &__locals )
+    }
+
+    open func mouseReleased( _ _e: MouseEvent? ) {
+        mouseReleased( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.mouseWheelMoved(java.awt.event.MouseWheelEvent)
+
+    private static var mouseWheelMoved_MethodID_66: jmethodID?
+
+    open func mouseWheelMoved( e: MouseWheelEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseWheelMoved", methodSig: "(Ljava/awt/event/MouseWheelEvent;)V", methodCache: &AWTEventMulticaster.mouseWheelMoved_MethodID_66, args: &__args, locals: &__locals )
+    }
+
+    open func mouseWheelMoved( _ _e: MouseWheelEvent? ) {
+        mouseWheelMoved( e: _e )
+    }
+
+    /// protected java.util.EventListener java.awt.AWTEventMulticaster.remove(java.util.EventListener)
+
+    private static var remove_MethodID_67: jmethodID?
+
+    open func remove( oldl: java_util.EventListener? ) -> java_util.EventListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: oldl, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/util/EventListener;)Ljava/util/EventListener;", methodCache: &AWTEventMulticaster.remove_MethodID_67, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.EventListenerForward( javaObject: __return ) : nil
+    }
+
+    open func remove( _ _oldl: java_util.EventListener? ) -> java_util.EventListener! {
+        return remove( oldl: _oldl )
+    }
+
+    /// protected void java.awt.AWTEventMulticaster.saveInternal(java.io.ObjectOutputStream,java.lang.String) throws java.io.IOException
+
+    private static var saveInternal_MethodID_68: jmethodID?
+
+    open func saveInternal( s: /* class java.io.ObjectOutputStream */ UnavailableObject?, k: String? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        __args[1] = JNIType.toJava( value: k, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "saveInternal", methodSig: "(Ljava/io/ObjectOutputStream;Ljava/lang/String;)V", methodCache: &AWTEventMulticaster.saveInternal_MethodID_68, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func saveInternal( _ _s: /* class java.io.ObjectOutputStream */ UnavailableObject?, _ _k: String? ) throws /* java.io.IOException */ {
+        try saveInternal( s: _s, k: _k )
+    }
+
     /// public void java.awt.AWTEventMulticaster.textValueChanged(java.awt.event.TextEvent)
 
-    private static var textValueChanged_MethodID_78: jmethodID?
+    private static var textValueChanged_MethodID_69: jmethodID?
 
     open func textValueChanged( e: TextEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "textValueChanged", methodSig: "(Ljava/awt/event/TextEvent;)V", methodCache: &AWTEventMulticaster.textValueChanged_MethodID_78, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "textValueChanged", methodSig: "(Ljava/awt/event/TextEvent;)V", methodCache: &AWTEventMulticaster.textValueChanged_MethodID_69, args: &__args, locals: &__locals )
     }
 
     open func textValueChanged( _ _e: TextEvent? ) {
         textValueChanged( e: _e )
     }
 
-    /// public void java.awt.AWTEventMulticaster.actionPerformed(java.awt.event.ActionEvent)
+    /// public void java.awt.AWTEventMulticaster.windowActivated(java.awt.event.WindowEvent)
 
-    private static var actionPerformed_MethodID_79: jmethodID?
+    private static var windowActivated_MethodID_70: jmethodID?
 
-    open func actionPerformed( e: ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func windowActivated( e: WindowEvent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &AWTEventMulticaster.actionPerformed_MethodID_79, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowActivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowActivated_MethodID_70, args: &__args, locals: &__locals )
     }
 
-    open func actionPerformed( _ _e: ActionEvent? ) {
-        actionPerformed( e: _e )
+    open func windowActivated( _ _e: WindowEvent? ) {
+        windowActivated( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.windowClosed(java.awt.event.WindowEvent)
+
+    private static var windowClosed_MethodID_71: jmethodID?
+
+    open func windowClosed( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosed", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowClosed_MethodID_71, args: &__args, locals: &__locals )
+    }
+
+    open func windowClosed( _ _e: WindowEvent? ) {
+        windowClosed( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.windowClosing(java.awt.event.WindowEvent)
+
+    private static var windowClosing_MethodID_72: jmethodID?
+
+    open func windowClosing( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowClosing", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowClosing_MethodID_72, args: &__args, locals: &__locals )
+    }
+
+    open func windowClosing( _ _e: WindowEvent? ) {
+        windowClosing( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.windowDeactivated(java.awt.event.WindowEvent)
+
+    private static var windowDeactivated_MethodID_73: jmethodID?
+
+    open func windowDeactivated( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowDeactivated", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowDeactivated_MethodID_73, args: &__args, locals: &__locals )
+    }
+
+    open func windowDeactivated( _ _e: WindowEvent? ) {
+        windowDeactivated( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.windowDeiconified(java.awt.event.WindowEvent)
+
+    private static var windowDeiconified_MethodID_74: jmethodID?
+
+    open func windowDeiconified( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowDeiconified", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowDeiconified_MethodID_74, args: &__args, locals: &__locals )
+    }
+
+    open func windowDeiconified( _ _e: WindowEvent? ) {
+        windowDeiconified( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.windowGainedFocus(java.awt.event.WindowEvent)
+
+    private static var windowGainedFocus_MethodID_75: jmethodID?
+
+    open func windowGainedFocus( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowGainedFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowGainedFocus_MethodID_75, args: &__args, locals: &__locals )
+    }
+
+    open func windowGainedFocus( _ _e: WindowEvent? ) {
+        windowGainedFocus( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.windowIconified(java.awt.event.WindowEvent)
+
+    private static var windowIconified_MethodID_76: jmethodID?
+
+    open func windowIconified( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowIconified", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowIconified_MethodID_76, args: &__args, locals: &__locals )
+    }
+
+    open func windowIconified( _ _e: WindowEvent? ) {
+        windowIconified( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.windowLostFocus(java.awt.event.WindowEvent)
+
+    private static var windowLostFocus_MethodID_77: jmethodID?
+
+    open func windowLostFocus( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowLostFocus", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowLostFocus_MethodID_77, args: &__args, locals: &__locals )
+    }
+
+    open func windowLostFocus( _ _e: WindowEvent? ) {
+        windowLostFocus( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.windowOpened(java.awt.event.WindowEvent)
+
+    private static var windowOpened_MethodID_78: jmethodID?
+
+    open func windowOpened( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowOpened", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowOpened_MethodID_78, args: &__args, locals: &__locals )
+    }
+
+    open func windowOpened( _ _e: WindowEvent? ) {
+        windowOpened( e: _e )
+    }
+
+    /// public void java.awt.AWTEventMulticaster.windowStateChanged(java.awt.event.WindowEvent)
+
+    private static var windowStateChanged_MethodID_79: jmethodID?
+
+    open func windowStateChanged( e: WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowStateChanged", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &AWTEventMulticaster.windowStateChanged_MethodID_79, args: &__args, locals: &__locals )
+    }
+
+    open func windowStateChanged( _ _e: WindowEvent? ) {
+        windowStateChanged( e: _e )
     }
 
 }

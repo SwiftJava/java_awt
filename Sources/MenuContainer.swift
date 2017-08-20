@@ -7,17 +7,17 @@ import java_swift
 
 public protocol MenuContainer: JavaProtocol {
 
-    /// public abstract void java.awt.MenuContainer.remove(java.awt.MenuComponent)
+    /// public abstract java.awt.Font java.awt.MenuContainer.getFont()
 
-    func remove( comp: MenuComponent? )
+    func getFont() -> Font!
 
     /// public abstract boolean java.awt.MenuContainer.postEvent(java.awt.Event)
 
     func postEvent( evt: Event? ) -> Bool
 
-    /// public abstract java.awt.Font java.awt.MenuContainer.getFont()
+    /// public abstract void java.awt.MenuContainer.remove(java.awt.MenuComponent)
 
-    func getFont() -> Font!
+    func remove( comp: MenuComponent? )
 
 }
 
@@ -26,50 +26,49 @@ open class MenuContainerForward: JNIObjectForward, MenuContainer {
 
     private static var MenuContainerJNIClass: jclass?
 
-    /// public abstract void java.awt.MenuContainer.remove(java.awt.MenuComponent)
+    /// public abstract java.awt.Font java.awt.MenuContainer.getFont()
 
-    private static var remove_MethodID_4: jmethodID?
+    private static var getFont_MethodID_4: jmethodID?
 
-    open func remove( comp: MenuComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getFont() -> Font! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &MenuContainerForward.remove_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &MenuContainerForward.getFont_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Font( javaObject: __return ) : nil
     }
 
-    open func remove( _ _comp: MenuComponent? ) {
-        remove( comp: _comp )
-    }
 
     /// public abstract boolean java.awt.MenuContainer.postEvent(java.awt.Event)
 
     private static var postEvent_MethodID_5: jmethodID?
 
     open func postEvent( evt: Event? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: evt, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "postEvent", methodSig: "(Ljava/awt/Event;)Z", methodCache: &MenuContainerForward.postEvent_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func postEvent( _ _evt: Event? ) -> Bool {
         return postEvent( evt: _evt )
     }
 
-    /// public abstract java.awt.Font java.awt.MenuContainer.getFont()
+    /// public abstract void java.awt.MenuContainer.remove(java.awt.MenuComponent)
 
-    private static var getFont_MethodID_6: jmethodID?
+    private static var remove_MethodID_6: jmethodID?
 
-    open func getFont() -> Font! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func remove( comp: MenuComponent? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &MenuContainerForward.getFont_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Font( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &MenuContainerForward.remove_MethodID_6, args: &__args, locals: &__locals )
     }
 
+    open func remove( _ _comp: MenuComponent? ) {
+        remove( comp: _comp )
+    }
 
 }
-
 

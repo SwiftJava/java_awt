@@ -27,7 +27,7 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
     open static var LANDSCAPE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LANDSCAPE", fieldType: "I", fieldCache: &LANDSCAPE_FieldID, className: "java/awt/print/PageFormat", classCache: &PageFormatJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -38,7 +38,7 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
     open static var PORTRAIT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PORTRAIT", fieldType: "I", fieldCache: &PORTRAIT_FieldID, className: "java/awt/print/PageFormat", classCache: &PageFormatJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -49,21 +49,21 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
     open static var REVERSE_LANDSCAPE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "REVERSE_LANDSCAPE", fieldType: "I", fieldCache: &REVERSE_LANDSCAPE_FieldID, className: "java/awt/print/PageFormat", classCache: &PageFormatJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// private java.awt.print.Paper java.awt.print.PageFormat.mPaper
-
     /// private int java.awt.print.PageFormat.mOrientation
+
+    /// private java.awt.print.Paper java.awt.print.PageFormat.mPaper
 
     /// public java.awt.print.PageFormat()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/print/PageFormat", classCache: &PageFormat.PageFormatJNIClass, methodSig: "()V", methodCache: &PageFormat.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -74,35 +74,35 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
     private static var clone_MethodID_2: jmethodID?
 
     override open func clone() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &PageFormat.clone_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
 
-    /// public double java.awt.print.PageFormat.getImageableX()
+    /// public double java.awt.print.PageFormat.getHeight()
 
-    private static var getImageableX_MethodID_3: jmethodID?
+    private static var getHeight_MethodID_3: jmethodID?
 
-    open func getImageableX() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getHeight() -> Double {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableX", methodSig: "()D", methodCache: &PageFormat.getImageableX_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getHeight", methodSig: "()D", methodCache: &PageFormat.getHeight_MethodID_3, args: &__args, locals: &__locals )
+        return __return
     }
 
 
-    /// public double java.awt.print.PageFormat.getImageableY()
+    /// public double java.awt.print.PageFormat.getImageableHeight()
 
-    private static var getImageableY_MethodID_4: jmethodID?
+    private static var getImageableHeight_MethodID_4: jmethodID?
 
-    open func getImageableY() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getImageableHeight() -> Double {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableY", methodSig: "()D", methodCache: &PageFormat.getImageableY_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableHeight", methodSig: "()D", methodCache: &PageFormat.getImageableHeight_MethodID_4, args: &__args, locals: &__locals )
+        return __return
     }
 
 
@@ -111,74 +111,71 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
     private static var getImageableWidth_MethodID_5: jmethodID?
 
     open func getImageableWidth() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableWidth", methodSig: "()D", methodCache: &PageFormat.getImageableWidth_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        return __return
     }
 
 
-    /// public double java.awt.print.PageFormat.getImageableHeight()
+    /// public double java.awt.print.PageFormat.getImageableX()
 
-    private static var getImageableHeight_MethodID_6: jmethodID?
+    private static var getImageableX_MethodID_6: jmethodID?
 
-    open func getImageableHeight() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getImageableX() -> Double {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableHeight", methodSig: "()D", methodCache: &PageFormat.getImageableHeight_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public java.awt.print.Paper java.awt.print.PageFormat.getPaper()
-
-    private static var getPaper_MethodID_7: jmethodID?
-
-    open func getPaper() -> Paper! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPaper", methodSig: "()Ljava/awt/print/Paper;", methodCache: &PageFormat.getPaper_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Paper( javaObject: __return ) : nil
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableX", methodSig: "()D", methodCache: &PageFormat.getImageableX_MethodID_6, args: &__args, locals: &__locals )
+        return __return
     }
 
 
-    /// public void java.awt.print.PageFormat.setPaper(java.awt.print.Paper)
+    /// public double java.awt.print.PageFormat.getImageableY()
 
-    private static var setPaper_MethodID_8: jmethodID?
+    private static var getImageableY_MethodID_7: jmethodID?
 
-    open func setPaper( paper: Paper? ) {
+    open func getImageableY() -> Double {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: paper, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPaper", methodSig: "(Ljava/awt/print/Paper;)V", methodCache: &PageFormat.setPaper_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableY", methodSig: "()D", methodCache: &PageFormat.getImageableY_MethodID_7, args: &__args, locals: &__locals )
+        return __return
     }
 
-    open func setPaper( _ _paper: Paper? ) {
-        setPaper( paper: _paper )
+
+    /// public double[] java.awt.print.PageFormat.getMatrix()
+
+    private static var getMatrix_MethodID_8: jmethodID?
+
+    open func getMatrix() -> [Double]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMatrix", methodSig: "()[D", methodCache: &PageFormat.getMatrix_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Double].self, from: __return )
     }
+
 
     /// public int java.awt.print.PageFormat.getOrientation()
 
     private static var getOrientation_MethodID_9: jmethodID?
 
     open func getOrientation() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &PageFormat.getOrientation_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
-    /// public double[] java.awt.print.PageFormat.getMatrix()
+    /// public java.awt.print.Paper java.awt.print.PageFormat.getPaper()
 
-    private static var getMatrix_MethodID_10: jmethodID?
+    private static var getPaper_MethodID_10: jmethodID?
 
-    open func getMatrix() -> [Double]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getPaper() -> Paper! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMatrix", methodSig: "()[D", methodCache: &PageFormat.getMatrix_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Double](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPaper", methodSig: "()Ljava/awt/print/Paper;", methodCache: &PageFormat.getPaper_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Paper( javaObject: __return ) : nil
     }
 
 
@@ -187,41 +184,45 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
     private static var getWidth_MethodID_11: jmethodID?
 
     open func getWidth() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getWidth", methodSig: "()D", methodCache: &PageFormat.getWidth_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public double java.awt.print.PageFormat.getHeight()
-
-    private static var getHeight_MethodID_12: jmethodID?
-
-    open func getHeight() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getHeight", methodSig: "()D", methodCache: &PageFormat.getHeight_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        return __return
     }
 
 
     /// public void java.awt.print.PageFormat.setOrientation(int) throws java.lang.IllegalArgumentException
 
-    private static var setOrientation_MethodID_13: jmethodID?
+    private static var setOrientation_MethodID_12: jmethodID?
 
     open func setOrientation( orientation: Int ) throws /* java.lang.IllegalArgumentException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &PageFormat.setOrientation_MethodID_13, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &PageFormat.setOrientation_MethodID_12, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_lang.IllegalArgumentException( javaObject: throwable )
         }
     }
 
     open func setOrientation( _ _orientation: Int ) throws /* java.lang.IllegalArgumentException */ {
         try setOrientation( orientation: _orientation )
+    }
+
+    /// public void java.awt.print.PageFormat.setPaper(java.awt.print.Paper)
+
+    private static var setPaper_MethodID_13: jmethodID?
+
+    open func setPaper( paper: Paper? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: paper, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPaper", methodSig: "(Ljava/awt/print/Paper;)V", methodCache: &PageFormat.setPaper_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func setPaper( _ _paper: Paper? ) {
+        setPaper( paper: _paper )
     }
 
 }

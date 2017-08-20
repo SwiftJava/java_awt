@@ -7,217 +7,213 @@ import java_swift
 
 public protocol OpenType: JavaProtocol {
 
-    /// public static final int java.awt.font.OpenType.TAG_CMAP
-
-    static var TAG_CMAP: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_HEAD
-
-    static var TAG_HEAD: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_NAME
-
-    static var TAG_NAME: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_GLYF
-
-    static var TAG_GLYF: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_MAXP
-
-    static var TAG_MAXP: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_PREP
-
-    static var TAG_PREP: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_HMTX
-
-    static var TAG_HMTX: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_KERN
-
-    static var TAG_KERN: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_HDMX
-
-    static var TAG_HDMX: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_LOCA
-
-    static var TAG_LOCA: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_POST
-
-    static var TAG_POST: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_OS2
-
-    static var TAG_OS2: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_CVT
-
-    static var TAG_CVT: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_GASP
-
-    static var TAG_GASP: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_VDMX
-
-    static var TAG_VDMX: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_VMTX
-
-    static var TAG_VMTX: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_VHEA
-
-    static var TAG_VHEA: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_HHEA
-
-    static var TAG_HHEA: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_TYP1
-
-    static var TAG_TYP1: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_BSLN
-
-    static var TAG_BSLN: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_GSUB
-
-    static var TAG_GSUB: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_DSIG
-
-    static var TAG_DSIG: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_FPGM
-
-    static var TAG_FPGM: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_FVAR
-
-    static var TAG_FVAR: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_GVAR
-
-    static var TAG_GVAR: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_CFF
-
-    static var TAG_CFF: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_MMSD
-
-    static var TAG_MMSD: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_MMFX
-
-    static var TAG_MMFX: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_BASE
-
-    static var TAG_BASE: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_GDEF
-
-    static var TAG_GDEF: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_GPOS
-
-    static var TAG_GPOS: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_JSTF
-
-    static var TAG_JSTF: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_EBDT
-
-    static var TAG_EBDT: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_EBLC
-
-    static var TAG_EBLC: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_EBSC
-
-    static var TAG_EBSC: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_LTSH
-
-    static var TAG_LTSH: Int { get }
-
-    /// public static final int java.awt.font.OpenType.TAG_PCLT
-
-    static var TAG_PCLT: Int { get }
-
     /// public static final int java.awt.font.OpenType.TAG_ACNT
 
-    static var TAG_ACNT: Int { get }
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_AVAR
 
-    static var TAG_AVAR: Int { get }
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_BASE
+
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_BDAT
 
-    static var TAG_BDAT: Int { get }
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_BLOC
 
-    static var TAG_BLOC: Int { get }
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_BSLN
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_CFF
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_CMAP
+
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_CVAR
 
-    static var TAG_CVAR: Int { get }
+    // Skipping field: false false false false false true 
 
-    /// public static final int java.awt.font.OpenType.TAG_FEAT
+    /// public static final int java.awt.font.OpenType.TAG_CVT
 
-    static var TAG_FEAT: Int { get }
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_DSIG
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_EBDT
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_EBLC
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_EBSC
+
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_FDSC
 
-    static var TAG_FDSC: Int { get }
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_FEAT
+
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_FMTX
 
-    static var TAG_FMTX: Int { get }
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_FPGM
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_FVAR
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_GASP
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_GDEF
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_GLYF
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_GPOS
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_GSUB
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_GVAR
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_HDMX
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_HEAD
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_HHEA
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_HMTX
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_JSTF
+
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_JUST
 
-    static var TAG_JUST: Int { get }
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_KERN
+
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_LCAR
 
-    static var TAG_LCAR: Int { get }
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_LOCA
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_LTSH
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_MAXP
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_MMFX
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_MMSD
+
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_MORT
 
-    static var TAG_MORT: Int { get }
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_NAME
+
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_OPBD
 
-    static var TAG_OPBD: Int { get }
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_OS2
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_PCLT
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_POST
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_PREP
+
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_PROP
 
-    static var TAG_PROP: Int { get }
+    // Skipping field: false false false false false true 
 
     /// public static final int java.awt.font.OpenType.TAG_TRAK
 
-    static var TAG_TRAK: Int { get }
+    // Skipping field: false false false false false true 
 
-    /// public abstract int java.awt.font.OpenType.getVersion()
+    /// public static final int java.awt.font.OpenType.TAG_TYP1
 
-    func getVersion() -> Int
+    // Skipping field: false false false false false true 
 
-    /// public abstract byte[] java.awt.font.OpenType.getFontTable(java.lang.String,int,int)
+    /// public static final int java.awt.font.OpenType.TAG_VDMX
 
-    func getFontTable( strSfntTag: String?, offset: Int, count: Int ) -> [Int8]!
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_VHEA
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int java.awt.font.OpenType.TAG_VMTX
+
+    // Skipping field: false false false false false true 
+
+    /// public abstract byte[] java.awt.font.OpenType.getFontTable(int)
+
+    func getFontTable( sfntTag: Int ) -> [Int8]!
 
     /// public abstract byte[] java.awt.font.OpenType.getFontTable(int,int,int)
 
@@ -227,17 +223,21 @@ public protocol OpenType: JavaProtocol {
 
     func getFontTable( strSfntTag: String? ) -> [Int8]!
 
-    /// public abstract byte[] java.awt.font.OpenType.getFontTable(int)
+    /// public abstract byte[] java.awt.font.OpenType.getFontTable(java.lang.String,int,int)
 
-    func getFontTable( sfntTag: Int ) -> [Int8]!
+    func getFontTable( strSfntTag: String?, offset: Int, count: Int ) -> [Int8]!
+
+    /// public abstract int java.awt.font.OpenType.getFontTableSize(int)
+
+    func getFontTableSize( sfntTag: Int ) -> Int
 
     /// public abstract int java.awt.font.OpenType.getFontTableSize(java.lang.String)
 
     func getFontTableSize( strSfntTag: String? ) -> Int
 
-    /// public abstract int java.awt.font.OpenType.getFontTableSize(int)
+    /// public abstract int java.awt.font.OpenType.getVersion()
 
-    func getFontTableSize( sfntTag: Int ) -> Int
+    func getVersion() -> Int
 
 }
 
@@ -246,413 +246,6 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var OpenTypeJNIClass: jclass?
 
-    /// public static final int java.awt.font.OpenType.TAG_CMAP
-
-    private static var TAG_CMAP_FieldID: jfieldID?
-
-    open static var TAG_CMAP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_CMAP", fieldType: "I", fieldCache: &TAG_CMAP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_HEAD
-
-    private static var TAG_HEAD_FieldID: jfieldID?
-
-    open static var TAG_HEAD: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_HEAD", fieldType: "I", fieldCache: &TAG_HEAD_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_NAME
-
-    private static var TAG_NAME_FieldID: jfieldID?
-
-    open static var TAG_NAME: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_NAME", fieldType: "I", fieldCache: &TAG_NAME_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_GLYF
-
-    private static var TAG_GLYF_FieldID: jfieldID?
-
-    open static var TAG_GLYF: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GLYF", fieldType: "I", fieldCache: &TAG_GLYF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_MAXP
-
-    private static var TAG_MAXP_FieldID: jfieldID?
-
-    open static var TAG_MAXP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_MAXP", fieldType: "I", fieldCache: &TAG_MAXP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_PREP
-
-    private static var TAG_PREP_FieldID: jfieldID?
-
-    open static var TAG_PREP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_PREP", fieldType: "I", fieldCache: &TAG_PREP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_HMTX
-
-    private static var TAG_HMTX_FieldID: jfieldID?
-
-    open static var TAG_HMTX: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_HMTX", fieldType: "I", fieldCache: &TAG_HMTX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_KERN
-
-    private static var TAG_KERN_FieldID: jfieldID?
-
-    open static var TAG_KERN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_KERN", fieldType: "I", fieldCache: &TAG_KERN_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_HDMX
-
-    private static var TAG_HDMX_FieldID: jfieldID?
-
-    open static var TAG_HDMX: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_HDMX", fieldType: "I", fieldCache: &TAG_HDMX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_LOCA
-
-    private static var TAG_LOCA_FieldID: jfieldID?
-
-    open static var TAG_LOCA: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_LOCA", fieldType: "I", fieldCache: &TAG_LOCA_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_POST
-
-    private static var TAG_POST_FieldID: jfieldID?
-
-    open static var TAG_POST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_POST", fieldType: "I", fieldCache: &TAG_POST_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_OS2
-
-    private static var TAG_OS2_FieldID: jfieldID?
-
-    open static var TAG_OS2: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_OS2", fieldType: "I", fieldCache: &TAG_OS2_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_CVT
-
-    private static var TAG_CVT_FieldID: jfieldID?
-
-    open static var TAG_CVT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_CVT", fieldType: "I", fieldCache: &TAG_CVT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_GASP
-
-    private static var TAG_GASP_FieldID: jfieldID?
-
-    open static var TAG_GASP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GASP", fieldType: "I", fieldCache: &TAG_GASP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_VDMX
-
-    private static var TAG_VDMX_FieldID: jfieldID?
-
-    open static var TAG_VDMX: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_VDMX", fieldType: "I", fieldCache: &TAG_VDMX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_VMTX
-
-    private static var TAG_VMTX_FieldID: jfieldID?
-
-    open static var TAG_VMTX: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_VMTX", fieldType: "I", fieldCache: &TAG_VMTX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_VHEA
-
-    private static var TAG_VHEA_FieldID: jfieldID?
-
-    open static var TAG_VHEA: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_VHEA", fieldType: "I", fieldCache: &TAG_VHEA_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_HHEA
-
-    private static var TAG_HHEA_FieldID: jfieldID?
-
-    open static var TAG_HHEA: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_HHEA", fieldType: "I", fieldCache: &TAG_HHEA_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_TYP1
-
-    private static var TAG_TYP1_FieldID: jfieldID?
-
-    open static var TAG_TYP1: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_TYP1", fieldType: "I", fieldCache: &TAG_TYP1_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_BSLN
-
-    private static var TAG_BSLN_FieldID: jfieldID?
-
-    open static var TAG_BSLN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_BSLN", fieldType: "I", fieldCache: &TAG_BSLN_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_GSUB
-
-    private static var TAG_GSUB_FieldID: jfieldID?
-
-    open static var TAG_GSUB: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GSUB", fieldType: "I", fieldCache: &TAG_GSUB_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_DSIG
-
-    private static var TAG_DSIG_FieldID: jfieldID?
-
-    open static var TAG_DSIG: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_DSIG", fieldType: "I", fieldCache: &TAG_DSIG_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_FPGM
-
-    private static var TAG_FPGM_FieldID: jfieldID?
-
-    open static var TAG_FPGM: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_FPGM", fieldType: "I", fieldCache: &TAG_FPGM_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_FVAR
-
-    private static var TAG_FVAR_FieldID: jfieldID?
-
-    open static var TAG_FVAR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_FVAR", fieldType: "I", fieldCache: &TAG_FVAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_GVAR
-
-    private static var TAG_GVAR_FieldID: jfieldID?
-
-    open static var TAG_GVAR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GVAR", fieldType: "I", fieldCache: &TAG_GVAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_CFF
-
-    private static var TAG_CFF_FieldID: jfieldID?
-
-    open static var TAG_CFF: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_CFF", fieldType: "I", fieldCache: &TAG_CFF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_MMSD
-
-    private static var TAG_MMSD_FieldID: jfieldID?
-
-    open static var TAG_MMSD: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_MMSD", fieldType: "I", fieldCache: &TAG_MMSD_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_MMFX
-
-    private static var TAG_MMFX_FieldID: jfieldID?
-
-    open static var TAG_MMFX: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_MMFX", fieldType: "I", fieldCache: &TAG_MMFX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_BASE
-
-    private static var TAG_BASE_FieldID: jfieldID?
-
-    open static var TAG_BASE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_BASE", fieldType: "I", fieldCache: &TAG_BASE_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_GDEF
-
-    private static var TAG_GDEF_FieldID: jfieldID?
-
-    open static var TAG_GDEF: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GDEF", fieldType: "I", fieldCache: &TAG_GDEF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_GPOS
-
-    private static var TAG_GPOS_FieldID: jfieldID?
-
-    open static var TAG_GPOS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GPOS", fieldType: "I", fieldCache: &TAG_GPOS_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_JSTF
-
-    private static var TAG_JSTF_FieldID: jfieldID?
-
-    open static var TAG_JSTF: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_JSTF", fieldType: "I", fieldCache: &TAG_JSTF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_EBDT
-
-    private static var TAG_EBDT_FieldID: jfieldID?
-
-    open static var TAG_EBDT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_EBDT", fieldType: "I", fieldCache: &TAG_EBDT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_EBLC
-
-    private static var TAG_EBLC_FieldID: jfieldID?
-
-    open static var TAG_EBLC: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_EBLC", fieldType: "I", fieldCache: &TAG_EBLC_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_EBSC
-
-    private static var TAG_EBSC_FieldID: jfieldID?
-
-    open static var TAG_EBSC: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_EBSC", fieldType: "I", fieldCache: &TAG_EBSC_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_LTSH
-
-    private static var TAG_LTSH_FieldID: jfieldID?
-
-    open static var TAG_LTSH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_LTSH", fieldType: "I", fieldCache: &TAG_LTSH_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.OpenType.TAG_PCLT
-
-    private static var TAG_PCLT_FieldID: jfieldID?
-
-    open static var TAG_PCLT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_PCLT", fieldType: "I", fieldCache: &TAG_PCLT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.font.OpenType.TAG_ACNT
 
     private static var TAG_ACNT_FieldID: jfieldID?
@@ -660,7 +253,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_ACNT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_ACNT", fieldType: "I", fieldCache: &TAG_ACNT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -671,7 +264,18 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_AVAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_AVAR", fieldType: "I", fieldCache: &TAG_AVAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_BASE
+
+    private static var TAG_BASE_FieldID: jfieldID?
+
+    open static var TAG_BASE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_BASE", fieldType: "I", fieldCache: &TAG_BASE_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
         }
     }
 
@@ -682,7 +286,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_BDAT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_BDAT", fieldType: "I", fieldCache: &TAG_BDAT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -693,7 +297,40 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_BLOC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_BLOC", fieldType: "I", fieldCache: &TAG_BLOC_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_BSLN
+
+    private static var TAG_BSLN_FieldID: jfieldID?
+
+    open static var TAG_BSLN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_BSLN", fieldType: "I", fieldCache: &TAG_BSLN_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_CFF
+
+    private static var TAG_CFF_FieldID: jfieldID?
+
+    open static var TAG_CFF: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_CFF", fieldType: "I", fieldCache: &TAG_CFF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_CMAP
+
+    private static var TAG_CMAP_FieldID: jfieldID?
+
+    open static var TAG_CMAP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_CMAP", fieldType: "I", fieldCache: &TAG_CMAP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
         }
     }
 
@@ -704,18 +341,62 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_CVAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_CVAR", fieldType: "I", fieldCache: &TAG_CVAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.font.OpenType.TAG_FEAT
+    /// public static final int java.awt.font.OpenType.TAG_CVT
 
-    private static var TAG_FEAT_FieldID: jfieldID?
+    private static var TAG_CVT_FieldID: jfieldID?
 
-    open static var TAG_FEAT: Int {
+    open static var TAG_CVT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TAG_FEAT", fieldType: "I", fieldCache: &TAG_FEAT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_CVT", fieldType: "I", fieldCache: &TAG_CVT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_DSIG
+
+    private static var TAG_DSIG_FieldID: jfieldID?
+
+    open static var TAG_DSIG: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_DSIG", fieldType: "I", fieldCache: &TAG_DSIG_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_EBDT
+
+    private static var TAG_EBDT_FieldID: jfieldID?
+
+    open static var TAG_EBDT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_EBDT", fieldType: "I", fieldCache: &TAG_EBDT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_EBLC
+
+    private static var TAG_EBLC_FieldID: jfieldID?
+
+    open static var TAG_EBLC: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_EBLC", fieldType: "I", fieldCache: &TAG_EBLC_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_EBSC
+
+    private static var TAG_EBSC_FieldID: jfieldID?
+
+    open static var TAG_EBSC: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_EBSC", fieldType: "I", fieldCache: &TAG_EBSC_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
         }
     }
 
@@ -726,7 +407,18 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_FDSC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_FDSC", fieldType: "I", fieldCache: &TAG_FDSC_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_FEAT
+
+    private static var TAG_FEAT_FieldID: jfieldID?
+
+    open static var TAG_FEAT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_FEAT", fieldType: "I", fieldCache: &TAG_FEAT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
         }
     }
 
@@ -737,7 +429,150 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_FMTX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_FMTX", fieldType: "I", fieldCache: &TAG_FMTX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_FPGM
+
+    private static var TAG_FPGM_FieldID: jfieldID?
+
+    open static var TAG_FPGM: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_FPGM", fieldType: "I", fieldCache: &TAG_FPGM_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_FVAR
+
+    private static var TAG_FVAR_FieldID: jfieldID?
+
+    open static var TAG_FVAR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_FVAR", fieldType: "I", fieldCache: &TAG_FVAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_GASP
+
+    private static var TAG_GASP_FieldID: jfieldID?
+
+    open static var TAG_GASP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GASP", fieldType: "I", fieldCache: &TAG_GASP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_GDEF
+
+    private static var TAG_GDEF_FieldID: jfieldID?
+
+    open static var TAG_GDEF: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GDEF", fieldType: "I", fieldCache: &TAG_GDEF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_GLYF
+
+    private static var TAG_GLYF_FieldID: jfieldID?
+
+    open static var TAG_GLYF: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GLYF", fieldType: "I", fieldCache: &TAG_GLYF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_GPOS
+
+    private static var TAG_GPOS_FieldID: jfieldID?
+
+    open static var TAG_GPOS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GPOS", fieldType: "I", fieldCache: &TAG_GPOS_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_GSUB
+
+    private static var TAG_GSUB_FieldID: jfieldID?
+
+    open static var TAG_GSUB: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GSUB", fieldType: "I", fieldCache: &TAG_GSUB_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_GVAR
+
+    private static var TAG_GVAR_FieldID: jfieldID?
+
+    open static var TAG_GVAR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_GVAR", fieldType: "I", fieldCache: &TAG_GVAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_HDMX
+
+    private static var TAG_HDMX_FieldID: jfieldID?
+
+    open static var TAG_HDMX: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_HDMX", fieldType: "I", fieldCache: &TAG_HDMX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_HEAD
+
+    private static var TAG_HEAD_FieldID: jfieldID?
+
+    open static var TAG_HEAD: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_HEAD", fieldType: "I", fieldCache: &TAG_HEAD_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_HHEA
+
+    private static var TAG_HHEA_FieldID: jfieldID?
+
+    open static var TAG_HHEA: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_HHEA", fieldType: "I", fieldCache: &TAG_HHEA_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_HMTX
+
+    private static var TAG_HMTX_FieldID: jfieldID?
+
+    open static var TAG_HMTX: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_HMTX", fieldType: "I", fieldCache: &TAG_HMTX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_JSTF
+
+    private static var TAG_JSTF_FieldID: jfieldID?
+
+    open static var TAG_JSTF: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_JSTF", fieldType: "I", fieldCache: &TAG_JSTF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
         }
     }
 
@@ -748,7 +583,18 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_JUST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_JUST", fieldType: "I", fieldCache: &TAG_JUST_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_KERN
+
+    private static var TAG_KERN_FieldID: jfieldID?
+
+    open static var TAG_KERN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_KERN", fieldType: "I", fieldCache: &TAG_KERN_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
         }
     }
 
@@ -759,7 +605,62 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_LCAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_LCAR", fieldType: "I", fieldCache: &TAG_LCAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_LOCA
+
+    private static var TAG_LOCA_FieldID: jfieldID?
+
+    open static var TAG_LOCA: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_LOCA", fieldType: "I", fieldCache: &TAG_LOCA_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_LTSH
+
+    private static var TAG_LTSH_FieldID: jfieldID?
+
+    open static var TAG_LTSH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_LTSH", fieldType: "I", fieldCache: &TAG_LTSH_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_MAXP
+
+    private static var TAG_MAXP_FieldID: jfieldID?
+
+    open static var TAG_MAXP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_MAXP", fieldType: "I", fieldCache: &TAG_MAXP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_MMFX
+
+    private static var TAG_MMFX_FieldID: jfieldID?
+
+    open static var TAG_MMFX: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_MMFX", fieldType: "I", fieldCache: &TAG_MMFX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_MMSD
+
+    private static var TAG_MMSD_FieldID: jfieldID?
+
+    open static var TAG_MMSD: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_MMSD", fieldType: "I", fieldCache: &TAG_MMSD_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
         }
     }
 
@@ -770,7 +671,18 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_MORT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_MORT", fieldType: "I", fieldCache: &TAG_MORT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_NAME
+
+    private static var TAG_NAME_FieldID: jfieldID?
+
+    open static var TAG_NAME: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_NAME", fieldType: "I", fieldCache: &TAG_NAME_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
         }
     }
 
@@ -781,7 +693,51 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_OPBD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_OPBD", fieldType: "I", fieldCache: &TAG_OPBD_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_OS2
+
+    private static var TAG_OS2_FieldID: jfieldID?
+
+    open static var TAG_OS2: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_OS2", fieldType: "I", fieldCache: &TAG_OS2_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_PCLT
+
+    private static var TAG_PCLT_FieldID: jfieldID?
+
+    open static var TAG_PCLT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_PCLT", fieldType: "I", fieldCache: &TAG_PCLT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_POST
+
+    private static var TAG_POST_FieldID: jfieldID?
+
+    open static var TAG_POST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_POST", fieldType: "I", fieldCache: &TAG_POST_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_PREP
+
+    private static var TAG_PREP_FieldID: jfieldID?
+
+    open static var TAG_PREP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_PREP", fieldType: "I", fieldCache: &TAG_PREP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
         }
     }
 
@@ -792,7 +748,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_PROP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_PROP", fieldType: "I", fieldCache: &TAG_PROP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -803,52 +759,82 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     open static var TAG_TRAK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_TRAK", fieldType: "I", fieldCache: &TAG_TRAK_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public abstract int java.awt.font.OpenType.getVersion()
+    /// public static final int java.awt.font.OpenType.TAG_TYP1
 
-    private static var getVersion_MethodID_8: jmethodID?
+    private static var TAG_TYP1_FieldID: jfieldID?
 
-    open func getVersion() -> Int {
+    open static var TAG_TYP1: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_TYP1", fieldType: "I", fieldCache: &TAG_TYP1_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_VDMX
+
+    private static var TAG_VDMX_FieldID: jfieldID?
+
+    open static var TAG_VDMX: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_VDMX", fieldType: "I", fieldCache: &TAG_VDMX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_VHEA
+
+    private static var TAG_VHEA_FieldID: jfieldID?
+
+    open static var TAG_VHEA: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_VHEA", fieldType: "I", fieldCache: &TAG_VHEA_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.OpenType.TAG_VMTX
+
+    private static var TAG_VMTX_FieldID: jfieldID?
+
+    open static var TAG_VMTX: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TAG_VMTX", fieldType: "I", fieldCache: &TAG_VMTX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public abstract byte[] java.awt.font.OpenType.getFontTable(int)
+
+    private static var getFontTable_MethodID_8: jmethodID?
+
+    open func getFontTable( sfntTag: Int ) -> [Int8]! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVersion", methodSig: "()I", methodCache: &OpenTypeForward.getVersion_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[0] = jvalue( i: jint(sfntTag) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontTable", methodSig: "(I)[B", methodCache: &OpenTypeForward.getFontTable_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int8].self, from: __return )
     }
 
-
-    /// public abstract byte[] java.awt.font.OpenType.getFontTable(java.lang.String,int,int)
-
-    private static var getFontTable_MethodID_9: jmethodID?
-
-    open func getFontTable( strSfntTag: String?, offset: Int, count: Int ) -> [Int8]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: strSfntTag, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: count, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontTable", methodSig: "(Ljava/lang/String;II)[B", methodCache: &OpenTypeForward.getFontTable_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int8](), from: __return )
-    }
-
-    open func getFontTable( _ _strSfntTag: String?, _ _offset: Int, _ _count: Int ) -> [Int8]! {
-        return getFontTable( strSfntTag: _strSfntTag, offset: _offset, count: _count )
+    open func getFontTable( _ _sfntTag: Int ) -> [Int8]! {
+        return getFontTable( sfntTag: _sfntTag )
     }
 
     /// public abstract byte[] java.awt.font.OpenType.getFontTable(int,int,int)
 
-    private static var getFontTable_MethodID_10: jmethodID?
+    private static var getFontTable_MethodID_9: jmethodID?
 
     open func getFontTable( sfntTag: Int, offset: Int, count: Int ) -> [Int8]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sfntTag, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: count, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontTable", methodSig: "(III)[B", methodCache: &OpenTypeForward.getFontTable_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int8](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(sfntTag) )
+        __args[1] = jvalue( i: jint(offset) )
+        __args[2] = jvalue( i: jint(count) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontTable", methodSig: "(III)[B", methodCache: &OpenTypeForward.getFontTable_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int8].self, from: __return )
     }
 
     open func getFontTable( _ _sfntTag: Int, _ _offset: Int, _ _count: Int ) -> [Int8]! {
@@ -857,34 +843,52 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     /// public abstract byte[] java.awt.font.OpenType.getFontTable(java.lang.String)
 
-    private static var getFontTable_MethodID_11: jmethodID?
+    private static var getFontTable_MethodID_10: jmethodID?
 
     open func getFontTable( strSfntTag: String? ) -> [Int8]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: strSfntTag, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontTable", methodSig: "(Ljava/lang/String;)[B", methodCache: &OpenTypeForward.getFontTable_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int8](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontTable", methodSig: "(Ljava/lang/String;)[B", methodCache: &OpenTypeForward.getFontTable_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int8].self, from: __return )
     }
 
     open func getFontTable( _ _strSfntTag: String? ) -> [Int8]! {
         return getFontTable( strSfntTag: _strSfntTag )
     }
 
-    /// public abstract byte[] java.awt.font.OpenType.getFontTable(int)
+    /// public abstract byte[] java.awt.font.OpenType.getFontTable(java.lang.String,int,int)
 
-    private static var getFontTable_MethodID_12: jmethodID?
+    private static var getFontTable_MethodID_11: jmethodID?
 
-    open func getFontTable( sfntTag: Int ) -> [Int8]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getFontTable( strSfntTag: String?, offset: Int, count: Int ) -> [Int8]! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sfntTag, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontTable", methodSig: "(I)[B", methodCache: &OpenTypeForward.getFontTable_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int8](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: strSfntTag, locals: &__locals )
+        __args[1] = jvalue( i: jint(offset) )
+        __args[2] = jvalue( i: jint(count) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontTable", methodSig: "(Ljava/lang/String;II)[B", methodCache: &OpenTypeForward.getFontTable_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int8].self, from: __return )
     }
 
-    open func getFontTable( _ _sfntTag: Int ) -> [Int8]! {
-        return getFontTable( sfntTag: _sfntTag )
+    open func getFontTable( _ _strSfntTag: String?, _ _offset: Int, _ _count: Int ) -> [Int8]! {
+        return getFontTable( strSfntTag: _strSfntTag, offset: _offset, count: _count )
+    }
+
+    /// public abstract int java.awt.font.OpenType.getFontTableSize(int)
+
+    private static var getFontTableSize_MethodID_12: jmethodID?
+
+    open func getFontTableSize( sfntTag: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(sfntTag) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFontTableSize", methodSig: "(I)I", methodCache: &OpenTypeForward.getFontTableSize_MethodID_12, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getFontTableSize( _ _sfntTag: Int ) -> Int {
+        return getFontTableSize( sfntTag: _sfntTag )
     }
 
     /// public abstract int java.awt.font.OpenType.getFontTableSize(java.lang.String)
@@ -892,33 +896,28 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
     private static var getFontTableSize_MethodID_13: jmethodID?
 
     open func getFontTableSize( strSfntTag: String? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: strSfntTag, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFontTableSize", methodSig: "(Ljava/lang/String;)I", methodCache: &OpenTypeForward.getFontTableSize_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     open func getFontTableSize( _ _strSfntTag: String? ) -> Int {
         return getFontTableSize( strSfntTag: _strSfntTag )
     }
 
-    /// public abstract int java.awt.font.OpenType.getFontTableSize(int)
+    /// public abstract int java.awt.font.OpenType.getVersion()
 
-    private static var getFontTableSize_MethodID_14: jmethodID?
+    private static var getVersion_MethodID_14: jmethodID?
 
-    open func getFontTableSize( sfntTag: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getVersion() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sfntTag, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFontTableSize", methodSig: "(I)I", methodCache: &OpenTypeForward.getFontTableSize_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVersion", methodSig: "()I", methodCache: &OpenTypeForward.getVersion_MethodID_14, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func getFontTableSize( _ _sfntTag: Int ) -> Int {
-        return getFontTableSize( sfntTag: _sfntTag )
-    }
 
 }
-
 

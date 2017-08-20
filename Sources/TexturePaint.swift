@@ -18,24 +18,23 @@ open class TexturePaint: java_swift.JavaObject, Paint {
 
     /// java.awt.image.BufferedImage java.awt.TexturePaint.bufImg
 
-    /// double java.awt.TexturePaint.tx
-
-    /// double java.awt.TexturePaint.ty
+    // Skipping field: true false false false false false 
 
     /// double java.awt.TexturePaint.sx
 
+    // Skipping field: true false false false false false 
+
     /// double java.awt.TexturePaint.sy
 
-    /// public static final int java.awt.Transparency.OPAQUE
+    // Skipping field: true false false false false false 
 
-    private static var OPAQUE_FieldID: jfieldID?
+    /// double java.awt.TexturePaint.tx
 
-    open static var OPAQUE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/TexturePaint", classCache: &TexturePaintJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    // Skipping field: true false false false false false 
+
+    /// double java.awt.TexturePaint.ty
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.Transparency.BITMASK
 
@@ -44,7 +43,18 @@ open class TexturePaint: java_swift.JavaObject, Paint {
     open static var BITMASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BITMASK", fieldType: "I", fieldCache: &BITMASK_FieldID, className: "java/awt/TexturePaint", classCache: &TexturePaintJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Transparency.OPAQUE
+
+    private static var OPAQUE_FieldID: jfieldID?
+
+    open static var OPAQUE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/TexturePaint", classCache: &TexturePaintJNIClass )
+            return Int(__value)
         }
     }
 
@@ -55,7 +65,7 @@ open class TexturePaint: java_swift.JavaObject, Paint {
     open static var TRANSLUCENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRANSLUCENT", fieldType: "I", fieldCache: &TRANSLUCENT_FieldID, className: "java/awt/TexturePaint", classCache: &TexturePaintJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -64,8 +74,8 @@ open class TexturePaint: java_swift.JavaObject, Paint {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( txtr: BufferedImage?, anchor: Rectangle2D? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: txtr, locals: &__locals )
         __args[1] = JNIType.toJava( value: anchor, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/TexturePaint", classCache: &TexturePaint.TexturePaintJNIClass, methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/geom/Rectangle2D;)V", methodCache: &TexturePaint.new_MethodID_1, args: &__args, locals: &__locals )
@@ -82,8 +92,8 @@ open class TexturePaint: java_swift.JavaObject, Paint {
     private static var createContext_MethodID_2: jmethodID?
 
     open func createContext( cm: ColorModel?, deviceBounds: Rectangle?, userBounds: Rectangle2D?, xform: AffineTransform?, hints: RenderingHints? ) -> PaintContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: cm, locals: &__locals )
         __args[1] = JNIType.toJava( value: deviceBounds, locals: &__locals )
         __args[2] = JNIType.toJava( value: userBounds, locals: &__locals )
@@ -98,15 +108,16 @@ open class TexturePaint: java_swift.JavaObject, Paint {
         return createContext( cm: _cm, deviceBounds: _deviceBounds, userBounds: _userBounds, xform: _xform, hints: _hints )
     }
 
-    /// public int java.awt.TexturePaint.getTransparency()
+    /// public java.awt.geom.Rectangle2D java.awt.TexturePaint.getAnchorRect()
 
-    private static var getTransparency_MethodID_3: jmethodID?
+    private static var getAnchorRect_MethodID_3: jmethodID?
 
-    open func getTransparency() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getAnchorRect() -> Rectangle2D! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &TexturePaint.getTransparency_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAnchorRect", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &TexturePaint.getAnchorRect_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
     }
 
 
@@ -115,24 +126,23 @@ open class TexturePaint: java_swift.JavaObject, Paint {
     private static var getImage_MethodID_4: jmethodID?
 
     open func getImage() -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "()Ljava/awt/image/BufferedImage;", methodCache: &TexturePaint.getImage_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImage( javaObject: __return ) : nil
     }
 
 
-    /// public java.awt.geom.Rectangle2D java.awt.TexturePaint.getAnchorRect()
+    /// public int java.awt.TexturePaint.getTransparency()
 
-    private static var getAnchorRect_MethodID_5: jmethodID?
+    private static var getTransparency_MethodID_5: jmethodID?
 
-    open func getAnchorRect() -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getTransparency() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAnchorRect", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &TexturePaint.getAnchorRect_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &TexturePaint.getTransparency_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 

@@ -21,8 +21,8 @@ open class HierarchyBoundsAdapter: java_swift.JavaObject, HierarchyBoundsListene
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/event/HierarchyBoundsAdapter", classCache: &HierarchyBoundsAdapter.HierarchyBoundsAdapterJNIClass, methodSig: "()V", methodCache: &HierarchyBoundsAdapter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -33,8 +33,8 @@ open class HierarchyBoundsAdapter: java_swift.JavaObject, HierarchyBoundsListene
     private static var ancestorMoved_MethodID_2: jmethodID?
 
     open func ancestorMoved( e: HierarchyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "ancestorMoved", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &HierarchyBoundsAdapter.ancestorMoved_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -48,8 +48,8 @@ open class HierarchyBoundsAdapter: java_swift.JavaObject, HierarchyBoundsListene
     private static var ancestorResized_MethodID_3: jmethodID?
 
     open func ancestorResized( e: HierarchyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "ancestorResized", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &HierarchyBoundsAdapter.ancestorResized_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -63,47 +63,37 @@ open class HierarchyBoundsAdapter: java_swift.JavaObject, HierarchyBoundsListene
 private typealias HierarchyBoundsAdapter_ancestorMoved_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func HierarchyBoundsAdapter_ancestorMoved_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     HierarchyBoundsAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).ancestorMoved( e: e != nil ? HierarchyEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 private typealias HierarchyBoundsAdapter_ancestorResized_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func HierarchyBoundsAdapter_ancestorResized_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     HierarchyBoundsAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).ancestorResized( e: e != nil ? HierarchyEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias HierarchyBoundsAdapter_equals_5_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
+private typealias HierarchyBoundsAdapter_equals_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
 
-private func HierarchyBoundsAdapter_equals_5( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
-    JNI.inNative = true;
+private func HierarchyBoundsAdapter_equals_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
     let __return = HierarchyBoundsAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).equals( arg0: arg0 != nil ? java_swift.JavaObject( javaObject: arg0 ) : nil )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).z, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( z: jboolean(__return ? JNI_TRUE : JNI_FALSE) ).z, &__locals, removeLast: true )
 }
 
-private typealias HierarchyBoundsAdapter_toString_6_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+private typealias HierarchyBoundsAdapter_hashCode_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
 
-private func HierarchyBoundsAdapter_toString_6( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
-    JNI.inNative = true;
-    let __return = HierarchyBoundsAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).l, &locals, removeLast: true )
-}
-
-private typealias HierarchyBoundsAdapter_hashCode_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
-
-private func HierarchyBoundsAdapter_hashCode_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
-    JNI.inNative = true;
+private func HierarchyBoundsAdapter_hashCode_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
     let __return = HierarchyBoundsAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).hashCode( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).i, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( i: jint(__return) ).i, &__locals, removeLast: true )
+}
+
+private typealias HierarchyBoundsAdapter_toString_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+
+private func HierarchyBoundsAdapter_toString_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
+    let __return = HierarchyBoundsAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
+    var __locals = [jobject]()
+    return JNI.check( JNIType.toJava( value: __return, locals: &__locals ).l, &__locals, removeLast: true )
 }
 
 fileprivate class HierarchyBoundsAdapterLocal_: JNIObjectProxy<HierarchyBoundsAdapter> {
@@ -117,14 +107,14 @@ fileprivate class HierarchyBoundsAdapterLocal_: JNIObjectProxy<HierarchyBoundsAd
         let HierarchyBoundsAdapter_ancestorResized_1_thunk: HierarchyBoundsAdapter_ancestorResized_1_type = HierarchyBoundsAdapter_ancestorResized_1
         natives.append( JNINativeMethod( name: strdup("__ancestorResized"), signature: strdup("(JLjava/awt/event/HierarchyEvent;)V"), fnPtr: unsafeBitCast( HierarchyBoundsAdapter_ancestorResized_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let HierarchyBoundsAdapter_equals_5_thunk: HierarchyBoundsAdapter_equals_5_type = HierarchyBoundsAdapter_equals_5
-        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( HierarchyBoundsAdapter_equals_5_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let HierarchyBoundsAdapter_equals_2_thunk: HierarchyBoundsAdapter_equals_2_type = HierarchyBoundsAdapter_equals_2
+        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( HierarchyBoundsAdapter_equals_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let HierarchyBoundsAdapter_toString_6_thunk: HierarchyBoundsAdapter_toString_6_type = HierarchyBoundsAdapter_toString_6
-        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( HierarchyBoundsAdapter_toString_6_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let HierarchyBoundsAdapter_hashCode_4_thunk: HierarchyBoundsAdapter_hashCode_4_type = HierarchyBoundsAdapter_hashCode_4
+        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( HierarchyBoundsAdapter_hashCode_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let HierarchyBoundsAdapter_hashCode_7_thunk: HierarchyBoundsAdapter_hashCode_7_type = HierarchyBoundsAdapter_hashCode_7
-        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( HierarchyBoundsAdapter_hashCode_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let HierarchyBoundsAdapter_toString_7_thunk: HierarchyBoundsAdapter_toString_7_type = HierarchyBoundsAdapter_toString_7
+        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( HierarchyBoundsAdapter_toString_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -167,8 +157,8 @@ open class HierarchyBoundsAdapterBase: HierarchyBoundsAdapter {
     private static var new_MethodID_4: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
 
         self.init( javaObject: nil )
         __args[0] = __local!.swiftValue()

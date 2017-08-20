@@ -23,8 +23,8 @@ open class PaintForward: TransparencyForward, Paint {
     private static var createContext_MethodID_2: jmethodID?
 
     open func createContext( cm: ColorModel?, deviceBounds: Rectangle?, userBounds: Rectangle2D?, xform: AffineTransform?, hints: RenderingHints? ) -> PaintContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: cm, locals: &__locals )
         __args[1] = JNIType.toJava( value: deviceBounds, locals: &__locals )
         __args[2] = JNIType.toJava( value: userBounds, locals: &__locals )
@@ -44,13 +44,12 @@ open class PaintForward: TransparencyForward, Paint {
     private static var getTransparency_MethodID_3: jmethodID?
 
     override open func getTransparency() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &PaintForward.getTransparency_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
 }
-
 

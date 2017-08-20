@@ -16,19 +16,21 @@ open class LookupOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     private static var LookupOpJNIClass: jclass?
 
+    /// java.awt.RenderingHints java.awt.image.LookupOp.hints
+
+    // Skipping field: true false false false false false 
+
     /// private java.awt.image.LookupTable java.awt.image.LookupOp.ltable
 
     /// private int java.awt.image.LookupOp.numComponents
-
-    /// java.awt.RenderingHints java.awt.image.LookupOp.hints
 
     /// public java.awt.image.LookupOp(java.awt.image.LookupTable,java.awt.RenderingHints)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( lookup: LookupTable?, hints: RenderingHints? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: lookup, locals: &__locals )
         __args[1] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/LookupOp", classCache: &LookupOp.LookupOpJNIClass, methodSig: "(Ljava/awt/image/LookupTable;Ljava/awt/RenderingHints;)V", methodCache: &LookupOp.new_MethodID_1, args: &__args, locals: &__locals )
@@ -40,116 +42,18 @@ open class LookupOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         self.init( lookup: _lookup, hints: _hints )
     }
 
-    /// public final java.awt.image.WritableRaster java.awt.image.LookupOp.filter(java.awt.image.Raster,java.awt.image.WritableRaster)
-
-    private static var filter_MethodID_2: jmethodID?
-
-    open func filter( src: Raster?, dest: WritableRaster? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &LookupOp.filter_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open func filter( _ _src: Raster?, _ _dest: WritableRaster? ) -> WritableRaster! {
-        return filter( src: _src, dest: _dest )
-    }
-
-    /// public final java.awt.image.BufferedImage java.awt.image.LookupOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
-
-    private static var filter_MethodID_3: jmethodID?
-
-    open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &LookupOp.filter_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BufferedImage( javaObject: __return ) : nil
-    }
-
-    open func filter( _ _src: BufferedImage?, _ _dest: BufferedImage? ) -> BufferedImage! {
-        return filter( src: _src, dest: _dest )
-    }
-
-    /// public final java.awt.image.LookupTable java.awt.image.LookupOp.getTable()
-
-    private static var getTable_MethodID_4: jmethodID?
-
-    open func getTable() -> LookupTable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTable", methodSig: "()Ljava/awt/image/LookupTable;", methodCache: &LookupOp.getTable_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? LookupTable( javaObject: __return ) : nil
-    }
-
-
     /// private final void java.awt.image.LookupOp.byteFilter(java.awt.image.ByteLookupTable,java.awt.image.Raster,java.awt.image.WritableRaster,int,int,int)
-
-    /// private final void java.awt.image.LookupOp.shortFilter(java.awt.image.ShortLookupTable,java.awt.image.Raster,java.awt.image.WritableRaster,int,int,int)
-
-    /// public final java.awt.geom.Rectangle2D java.awt.image.LookupOp.getBounds2D(java.awt.image.Raster)
-
-    private static var getBounds2D_MethodID_5: jmethodID?
-
-    open func getBounds2D( src: Raster? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &LookupOp.getBounds2D_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-    open func getBounds2D( _ _src: Raster? ) -> Rectangle2D! {
-        return getBounds2D( src: _src )
-    }
-
-    /// public final java.awt.geom.Rectangle2D java.awt.image.LookupOp.getBounds2D(java.awt.image.BufferedImage)
-
-    private static var getBounds2D_MethodID_6: jmethodID?
-
-    open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &LookupOp.getBounds2D_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-    open func getBounds2D( _ _src: BufferedImage? ) -> Rectangle2D! {
-        return getBounds2D( src: _src )
-    }
-
-    /// public final java.awt.RenderingHints java.awt.image.LookupOp.getRenderingHints()
-
-    private static var getRenderingHints_MethodID_7: jmethodID?
-
-    open func getRenderingHints() -> RenderingHints! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &LookupOp.getRenderingHints_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: RenderingHints(), from: __return )
-    }
-
 
     /// public java.awt.image.BufferedImage java.awt.image.LookupOp.createCompatibleDestImage(java.awt.image.BufferedImage,java.awt.image.ColorModel)
 
-    private static var createCompatibleDestImage_MethodID_8: jmethodID?
+    private static var createCompatibleDestImage_MethodID_2: jmethodID?
 
     open func createCompatibleDestImage( src: BufferedImage?, destCM: ColorModel? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
         __args[1] = JNIType.toJava( value: destCM, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &LookupOp.createCompatibleDestImage_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &LookupOp.createCompatibleDestImage_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImage( javaObject: __return ) : nil
     }
@@ -160,13 +64,13 @@ open class LookupOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     /// public java.awt.image.WritableRaster java.awt.image.LookupOp.createCompatibleDestRaster(java.awt.image.Raster)
 
-    private static var createCompatibleDestRaster_MethodID_9: jmethodID?
+    private static var createCompatibleDestRaster_MethodID_3: jmethodID?
 
     open func createCompatibleDestRaster( src: Raster? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestRaster", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;", methodCache: &LookupOp.createCompatibleDestRaster_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestRaster", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;", methodCache: &LookupOp.createCompatibleDestRaster_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -175,16 +79,86 @@ open class LookupOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         return createCompatibleDestRaster( src: _src )
     }
 
+    /// public final java.awt.image.BufferedImage java.awt.image.LookupOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
+
+    private static var filter_MethodID_4: jmethodID?
+
+    open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &LookupOp.filter_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BufferedImage( javaObject: __return ) : nil
+    }
+
+    open func filter( _ _src: BufferedImage?, _ _dest: BufferedImage? ) -> BufferedImage! {
+        return filter( src: _src, dest: _dest )
+    }
+
+    /// public final java.awt.image.WritableRaster java.awt.image.LookupOp.filter(java.awt.image.Raster,java.awt.image.WritableRaster)
+
+    private static var filter_MethodID_5: jmethodID?
+
+    open func filter( src: Raster?, dest: WritableRaster? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &LookupOp.filter_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open func filter( _ _src: Raster?, _ _dest: WritableRaster? ) -> WritableRaster! {
+        return filter( src: _src, dest: _dest )
+    }
+
+    /// public final java.awt.geom.Rectangle2D java.awt.image.LookupOp.getBounds2D(java.awt.image.BufferedImage)
+
+    private static var getBounds2D_MethodID_6: jmethodID?
+
+    open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &LookupOp.getBounds2D_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getBounds2D( _ _src: BufferedImage? ) -> Rectangle2D! {
+        return getBounds2D( src: _src )
+    }
+
+    /// public final java.awt.geom.Rectangle2D java.awt.image.LookupOp.getBounds2D(java.awt.image.Raster)
+
+    private static var getBounds2D_MethodID_7: jmethodID?
+
+    open func getBounds2D( src: Raster? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &LookupOp.getBounds2D_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getBounds2D( _ _src: Raster? ) -> Rectangle2D! {
+        return getBounds2D( src: _src )
+    }
+
     /// public final java.awt.geom.Point2D java.awt.image.LookupOp.getPoint2D(java.awt.geom.Point2D,java.awt.geom.Point2D)
 
-    private static var getPoint2D_MethodID_10: jmethodID?
+    private static var getPoint2D_MethodID_8: jmethodID?
 
     open func getPoint2D( srcPt: Point2D?, dstPt: Point2D? ) -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: srcPt, locals: &__locals )
         __args[1] = JNIType.toJava( value: dstPt, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &LookupOp.getPoint2D_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &LookupOp.getPoint2D_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point2D( javaObject: __return ) : nil
     }
@@ -192,6 +166,33 @@ open class LookupOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
     open func getPoint2D( _ _srcPt: Point2D?, _ _dstPt: Point2D? ) -> Point2D! {
         return getPoint2D( srcPt: _srcPt, dstPt: _dstPt )
     }
+
+    /// public final java.awt.RenderingHints java.awt.image.LookupOp.getRenderingHints()
+
+    private static var getRenderingHints_MethodID_9: jmethodID?
+
+    open func getRenderingHints() -> RenderingHints! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &LookupOp.getRenderingHints_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: RenderingHints.self, from: __return )
+    }
+
+
+    /// public final java.awt.image.LookupTable java.awt.image.LookupOp.getTable()
+
+    private static var getTable_MethodID_10: jmethodID?
+
+    open func getTable() -> LookupTable! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTable", methodSig: "()Ljava/awt/image/LookupTable;", methodCache: &LookupOp.getTable_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? LookupTable( javaObject: __return ) : nil
+    }
+
+
+    /// private final void java.awt.image.LookupOp.shortFilter(java.awt.image.ShortLookupTable,java.awt.image.Raster,java.awt.image.WritableRaster,int,int,int)
 
 }
 

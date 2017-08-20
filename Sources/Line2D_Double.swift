@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.geom.Line2D$Double ///
 
-open class Line2D_Double: Line2D, /* java.io.Serializable */ UnclassedProtocol {
+open class Line2D_Double: Line2D, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -20,37 +20,21 @@ open class Line2D_Double: Line2D, /* java.io.Serializable */ UnclassedProtocol {
 
     private static var Line2D_DoubleJNIClass: jclass?
 
+    /// private static final long java.awt.geom.Line2D$Double.serialVersionUID
+
     /// public double java.awt.geom.Line2D$Double.x1
 
     private static var x1_FieldID: jfieldID?
 
     open var x1: Double {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "x1", fieldType: "D", fieldCache: &Line2D_Double.x1_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
+            let __value = JNIField.GetDoubleField( fieldName: "x1", fieldType: "D", fieldCache: &Line2D_Double.x1_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( d: newValue )
             JNIField.SetDoubleField( fieldName: "x1", fieldType: "D", fieldCache: &Line2D_Double.x1_FieldID, object: javaObject, value: __value.d, locals: &__locals )
-        }
-    }
-
-    /// public double java.awt.geom.Line2D$Double.y1
-
-    private static var y1_FieldID: jfieldID?
-
-    open var y1: Double {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "y1", fieldType: "D", fieldCache: &Line2D_Double.y1_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetDoubleField( fieldName: "y1", fieldType: "D", fieldCache: &Line2D_Double.y1_FieldID, object: javaObject, value: __value.d, locals: &__locals )
         }
     }
 
@@ -60,14 +44,29 @@ open class Line2D_Double: Line2D, /* java.io.Serializable */ UnclassedProtocol {
 
     open var x2: Double {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "x2", fieldType: "D", fieldCache: &Line2D_Double.x2_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
+            let __value = JNIField.GetDoubleField( fieldName: "x2", fieldType: "D", fieldCache: &Line2D_Double.x2_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( d: newValue )
             JNIField.SetDoubleField( fieldName: "x2", fieldType: "D", fieldCache: &Line2D_Double.x2_FieldID, object: javaObject, value: __value.d, locals: &__locals )
+        }
+    }
+
+    /// public double java.awt.geom.Line2D$Double.y1
+
+    private static var y1_FieldID: jfieldID?
+
+    open var y1: Double {
+        get {
+            let __value = JNIField.GetDoubleField( fieldName: "y1", fieldType: "D", fieldCache: &Line2D_Double.y1_FieldID, object: javaObject )
+            return __value
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( d: newValue )
+            JNIField.SetDoubleField( fieldName: "y1", fieldType: "D", fieldCache: &Line2D_Double.y1_FieldID, object: javaObject, value: __value.d, locals: &__locals )
         }
     }
 
@@ -77,35 +76,26 @@ open class Line2D_Double: Line2D, /* java.io.Serializable */ UnclassedProtocol {
 
     open var y2: Double {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetDoubleField( fieldName: "y2", fieldType: "D", fieldCache: &Line2D_Double.y2_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Double(), from: __value )
+            let __value = JNIField.GetDoubleField( fieldName: "y2", fieldType: "D", fieldCache: &Line2D_Double.y2_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( d: newValue )
             JNIField.SetDoubleField( fieldName: "y2", fieldType: "D", fieldCache: &Line2D_Double.y2_FieldID, object: javaObject, value: __value.d, locals: &__locals )
         }
     }
 
-    /// private static final long java.awt.geom.Line2D$Double.serialVersionUID
-
-    /// public java.awt.geom.Line2D$Double(java.awt.geom.Point2D,java.awt.geom.Point2D)
+    /// public java.awt.geom.Line2D$Double()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( p1: Point2D?, p2: Point2D? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p2, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/Line2D$Double", classCache: &Line2D_Double.Line2D_DoubleJNIClass, methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &Line2D_Double.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/Line2D$Double", classCache: &Line2D_Double.Line2D_DoubleJNIClass, methodSig: "()V", methodCache: &Line2D_Double.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _p1: Point2D?, _ _p2: Point2D? ) {
-        self.init( p1: _p1, p2: _p2 )
     }
 
     /// public java.awt.geom.Line2D$Double(double,double,double,double)
@@ -113,12 +103,12 @@ open class Line2D_Double: Line2D, /* java.io.Serializable */ UnclassedProtocol {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( x1: Double, y1: Double, x2: Double, y2: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y2, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( d: x1 )
+        __args[1] = jvalue( d: y1 )
+        __args[2] = jvalue( d: x2 )
+        __args[3] = jvalue( d: y2 )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Line2D$Double", classCache: &Line2D_Double.Line2D_DoubleJNIClass, methodSig: "(DDDD)V", methodCache: &Line2D_Double.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -128,33 +118,55 @@ open class Line2D_Double: Line2D, /* java.io.Serializable */ UnclassedProtocol {
         self.init( x1: _x1, y1: _y1, x2: _x2, y2: _y2 )
     }
 
-    /// public java.awt.geom.Line2D$Double()
+    /// public java.awt.geom.Line2D$Double(java.awt.geom.Point2D,java.awt.geom.Point2D)
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( p1: Point2D?, p2: Point2D? ) {
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "java/awt/geom/Line2D$Double", classCache: &Line2D_Double.Line2D_DoubleJNIClass, methodSig: "()V", methodCache: &Line2D_Double.new_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p2, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/geom/Line2D$Double", classCache: &Line2D_Double.Line2D_DoubleJNIClass, methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)V", methodCache: &Line2D_Double.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
+    public convenience init( _ _p1: Point2D?, _ _p2: Point2D? ) {
+        self.init( p1: _p1, p2: _p2 )
+    }
+
     /// public java.awt.geom.Rectangle2D java.awt.geom.Line2D$Double.getBounds2D()
 
-    /// public double java.awt.geom.Line2D$Double.getX1()
-
-    /// public double java.awt.geom.Line2D$Double.getY1()
-
-    /// public double java.awt.geom.Line2D$Double.getX2()
-
-    /// public double java.awt.geom.Line2D$Double.getY2()
-
-    /// public void java.awt.geom.Line2D$Double.setLine(double,double,double,double)
+    // Skipping method: false true false false false 
 
     /// public java.awt.geom.Point2D java.awt.geom.Line2D$Double.getP1()
 
+    // Skipping method: false true false false false 
+
     /// public java.awt.geom.Point2D java.awt.geom.Line2D$Double.getP2()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Line2D$Double.getX1()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Line2D$Double.getX2()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Line2D$Double.getY1()
+
+    // Skipping method: false true false false false 
+
+    /// public double java.awt.geom.Line2D$Double.getY2()
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.geom.Line2D$Double.setLine(double,double,double,double)
+
+    // Skipping method: false true false false false 
 
 }
 

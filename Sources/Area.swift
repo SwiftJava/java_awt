@@ -22,17 +22,17 @@ open class Area: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     /// private static java.util.Vector java.awt.geom.Area.EmptyCurves
 
-    /// private java.util.Vector java.awt.geom.Area.curves
-
     /// private java.awt.geom.Rectangle2D java.awt.geom.Area.cachedBounds
+
+    /// private java.util.Vector java.awt.geom.Area.curves
 
     /// public java.awt.geom.Area()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Area", classCache: &Area.AreaJNIClass, methodSig: "()V", methodCache: &Area.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -43,8 +43,8 @@ open class Area: java_swift.JavaObject, Shape, java_lang.Cloneable {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( s: Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/Area", classCache: &Area.AreaJNIClass, methodSig: "(Ljava/awt/Shape;)V", methodCache: &Area.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -55,13 +55,15 @@ open class Area: java_swift.JavaObject, Shape, java_lang.Cloneable {
         self.init( s: _s )
     }
 
+    /// private static java.util.Vector java.awt.geom.Area.pathToCurves(java.awt.geom.PathIterator)
+
     /// public void java.awt.geom.Area.add(java.awt.geom.Area)
 
     private static var add_MethodID_3: jmethodID?
 
     open func add( rhs: Area? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/geom/Area;)V", methodCache: &Area.add_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -70,182 +72,189 @@ open class Area: java_swift.JavaObject, Shape, java_lang.Cloneable {
         add( rhs: _rhs )
     }
 
-    /// public boolean java.awt.geom.Area.equals(java.awt.geom.Area)
-
-    private static var equals_MethodID_4: jmethodID?
-
-    open func equals( other: Area? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: other, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/geom/Area;)Z", methodCache: &Area.equals_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func equals( _ _other: Area? ) -> Bool {
-        return equals( other: _other )
-    }
-
     /// public java.lang.Object java.awt.geom.Area.clone()
 
-    private static var clone_MethodID_5: jmethodID?
+    private static var clone_MethodID_4: jmethodID?
 
     override open func clone() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &Area.clone_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &Area.clone_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
 
-    /// public boolean java.awt.geom.Area.isEmpty()
-
-    private static var isEmpty_MethodID_6: jmethodID?
-
-    open func isEmpty() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEmpty", methodSig: "()Z", methodCache: &Area.isEmpty_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.geom.Area.contains(java.awt.geom.Rectangle2D)
-
-    private static var contains_MethodID_7: jmethodID?
-
-    open func contains( r: Rectangle2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Area.contains_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func contains( _ _r: Rectangle2D? ) -> Bool {
-        return contains( r: _r )
-    }
-
-    /// public boolean java.awt.geom.Area.contains(double,double,double,double)
-
-    private static var contains_MethodID_8: jmethodID?
-
-    open func contains( x: Double, y: Double, w: Double, h: Double ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DDDD)Z", methodCache: &Area.contains_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func contains( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Bool {
-        return contains( x: _x, y: _y, w: _w, h: _h )
-    }
-
     /// public boolean java.awt.geom.Area.contains(double,double)
 
-    private static var contains_MethodID_9: jmethodID?
+    private static var contains_MethodID_5: jmethodID?
 
     open func contains( x: Double, y: Double ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DD)Z", methodCache: &Area.contains_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DD)Z", methodCache: &Area.contains_MethodID_5, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func contains( _ _x: Double, _ _y: Double ) -> Bool {
         return contains( x: _x, y: _y )
     }
 
+    /// public boolean java.awt.geom.Area.contains(double,double,double,double)
+
+    private static var contains_MethodID_6: jmethodID?
+
+    open func contains( x: Double, y: Double, w: Double, h: Double ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: w )
+        __args[3] = jvalue( d: h )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(DDDD)Z", methodCache: &Area.contains_MethodID_6, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func contains( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Bool {
+        return contains( x: _x, y: _y, w: _w, h: _h )
+    }
+
     /// public boolean java.awt.geom.Area.contains(java.awt.geom.Point2D)
 
-    private static var contains_MethodID_10: jmethodID?
+    private static var contains_MethodID_7: jmethodID?
 
     open func contains( p: Point2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &Area.contains_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Point2D;)Z", methodCache: &Area.contains_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func contains( _ _p: Point2D? ) -> Bool {
         return contains( p: _p )
     }
 
-    /// public void java.awt.geom.Area.reset()
+    /// public boolean java.awt.geom.Area.contains(java.awt.geom.Rectangle2D)
 
-    private static var reset_MethodID_11: jmethodID?
+    private static var contains_MethodID_8: jmethodID?
 
-    open func reset() {
+    open func contains( r: Rectangle2D? ) -> Bool {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reset", methodSig: "()V", methodCache: &Area.reset_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-
-    /// public boolean java.awt.geom.Area.intersects(double,double,double,double)
-
-    private static var intersects_MethodID_12: jmethodID?
-
-    open func intersects( x: Double, y: Double, w: Double, h: Double ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(DDDD)Z", methodCache: &Area.intersects_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func intersects( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Bool {
-        return intersects( x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public boolean java.awt.geom.Area.intersects(java.awt.geom.Rectangle2D)
-
-    private static var intersects_MethodID_13: jmethodID?
-
-    open func intersects( r: Rectangle2D? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: r, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Area.intersects_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Area.contains_MethodID_8, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    open func intersects( _ _r: Rectangle2D? ) -> Bool {
-        return intersects( r: _r )
+    open func contains( _ _r: Rectangle2D? ) -> Bool {
+        return contains( r: _r )
     }
 
-    /// public boolean java.awt.geom.Area.isRectangular()
+    /// public java.awt.geom.Area java.awt.geom.Area.createTransformedArea(java.awt.geom.AffineTransform)
 
-    private static var isRectangular_MethodID_14: jmethodID?
+    private static var createTransformedArea_MethodID_9: jmethodID?
 
-    open func isRectangular() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createTransformedArea( t: AffineTransform? ) -> Area! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRectangular", methodSig: "()Z", methodCache: &Area.isRectangular_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTransformedArea", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/Area;", methodCache: &Area.createTransformedArea_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Area( javaObject: __return ) : nil
     }
 
+    open func createTransformedArea( _ _t: AffineTransform? ) -> Area! {
+        return createTransformedArea( t: _t )
+    }
+
+    /// public boolean java.awt.geom.Area.equals(java.awt.geom.Area)
+
+    private static var equals_MethodID_10: jmethodID?
+
+    open func equals( other: Area? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: other, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/awt/geom/Area;)Z", methodCache: &Area.equals_MethodID_10, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func equals( _ _other: Area? ) -> Bool {
+        return equals( other: _other )
+    }
+
+    /// public void java.awt.geom.Area.exclusiveOr(java.awt.geom.Area)
+
+    private static var exclusiveOr_MethodID_11: jmethodID?
+
+    open func exclusiveOr( rhs: Area? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "exclusiveOr", methodSig: "(Ljava/awt/geom/Area;)V", methodCache: &Area.exclusiveOr_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func exclusiveOr( _ _rhs: Area? ) {
+        exclusiveOr( rhs: _rhs )
+    }
+
+    /// public java.awt.Rectangle java.awt.geom.Area.getBounds()
+
+    private static var getBounds_MethodID_12: jmethodID?
+
+    open func getBounds() -> Rectangle! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Area.getBounds_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.geom.Rectangle2D java.awt.geom.Area.getBounds2D()
+
+    private static var getBounds2D_MethodID_13: jmethodID?
+
+    open func getBounds2D() -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &Area.getBounds2D_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+
+    /// private java.awt.geom.Rectangle2D java.awt.geom.Area.getCachedBounds()
+
+    /// public java.awt.geom.PathIterator java.awt.geom.Area.getPathIterator(java.awt.geom.AffineTransform)
+
+    private static var getPathIterator_MethodID_14: jmethodID?
+
+    open func getPathIterator( at: AffineTransform? ) -> PathIterator! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: at, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &Area.getPathIterator_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
+    }
+
+    open func getPathIterator( _ _at: AffineTransform? ) -> PathIterator! {
+        return getPathIterator( at: _at )
+    }
 
     /// public java.awt.geom.PathIterator java.awt.geom.Area.getPathIterator(java.awt.geom.AffineTransform,double)
 
     private static var getPathIterator_MethodID_15: jmethodID?
 
     open func getPathIterator( at: AffineTransform?, flatness: Double ) -> PathIterator! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: at, locals: &__locals )
-        __args[1] = JNIType.toJava( value: flatness, locals: &__locals )
+        __args[1] = jvalue( d: flatness )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;D)Ljava/awt/geom/PathIterator;", methodCache: &Area.getPathIterator_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
@@ -255,154 +264,145 @@ open class Area: java_swift.JavaObject, Shape, java_lang.Cloneable {
         return getPathIterator( at: _at, flatness: _flatness )
     }
 
-    /// public java.awt.geom.PathIterator java.awt.geom.Area.getPathIterator(java.awt.geom.AffineTransform)
-
-    private static var getPathIterator_MethodID_16: jmethodID?
-
-    open func getPathIterator( at: AffineTransform? ) -> PathIterator! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: at, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathIterator", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/PathIterator;", methodCache: &Area.getPathIterator_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PathIteratorForward( javaObject: __return ) : nil
-    }
-
-    open func getPathIterator( _ _at: AffineTransform? ) -> PathIterator! {
-        return getPathIterator( at: _at )
-    }
-
-    /// public void java.awt.geom.Area.transform(java.awt.geom.AffineTransform)
-
-    private static var transform_MethodID_17: jmethodID?
-
-    open func transform( t: AffineTransform? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &Area.transform_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func transform( _ _t: AffineTransform? ) {
-        transform( t: _t )
-    }
-
-    /// public java.awt.geom.Rectangle2D java.awt.geom.Area.getBounds2D()
-
-    private static var getBounds2D_MethodID_18: jmethodID?
-
-    open func getBounds2D() -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "()Ljava/awt/geom/Rectangle2D;", methodCache: &Area.getBounds2D_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-
     /// public void java.awt.geom.Area.intersect(java.awt.geom.Area)
 
-    private static var intersect_MethodID_19: jmethodID?
+    private static var intersect_MethodID_16: jmethodID?
 
     open func intersect( rhs: Area? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "intersect", methodSig: "(Ljava/awt/geom/Area;)V", methodCache: &Area.intersect_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "intersect", methodSig: "(Ljava/awt/geom/Area;)V", methodCache: &Area.intersect_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func intersect( _ _rhs: Area? ) {
         intersect( rhs: _rhs )
     }
 
-    /// public java.awt.Rectangle java.awt.geom.Area.getBounds()
+    /// public boolean java.awt.geom.Area.intersects(double,double,double,double)
 
-    private static var getBounds_MethodID_20: jmethodID?
+    private static var intersects_MethodID_17: jmethodID?
 
-    open func getBounds() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func intersects( x: Double, y: Double, w: Double, h: Double ) -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Area.getBounds_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: w )
+        __args[3] = jvalue( d: h )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(DDDD)Z", methodCache: &Area.intersects_MethodID_17, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func intersects( _ _x: Double, _ _y: Double, _ _w: Double, _ _h: Double ) -> Bool {
+        return intersects( x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public boolean java.awt.geom.Area.intersects(java.awt.geom.Rectangle2D)
+
+    private static var intersects_MethodID_18: jmethodID?
+
+    open func intersects( r: Rectangle2D? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "intersects", methodSig: "(Ljava/awt/geom/Rectangle2D;)Z", methodCache: &Area.intersects_MethodID_18, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func intersects( _ _r: Rectangle2D? ) -> Bool {
+        return intersects( r: _r )
+    }
+
+    /// private void java.awt.geom.Area.invalidateBounds()
+
+    /// public boolean java.awt.geom.Area.isEmpty()
+
+    private static var isEmpty_MethodID_19: jmethodID?
+
+    open func isEmpty() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEmpty", methodSig: "()Z", methodCache: &Area.isEmpty_MethodID_19, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// private static java.util.Vector java.awt.geom.Area.pathToCurves(java.awt.geom.PathIterator)
+    /// public boolean java.awt.geom.Area.isPolygonal()
+
+    private static var isPolygonal_MethodID_20: jmethodID?
+
+    open func isPolygonal() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPolygonal", methodSig: "()Z", methodCache: &Area.isPolygonal_MethodID_20, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.geom.Area.isRectangular()
+
+    private static var isRectangular_MethodID_21: jmethodID?
+
+    open func isRectangular() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRectangular", methodSig: "()Z", methodCache: &Area.isRectangular_MethodID_21, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.geom.Area.isSingular()
+
+    private static var isSingular_MethodID_22: jmethodID?
+
+    open func isSingular() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSingular", methodSig: "()Z", methodCache: &Area.isSingular_MethodID_22, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public void java.awt.geom.Area.reset()
+
+    private static var reset_MethodID_23: jmethodID?
+
+    open func reset() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reset", methodSig: "()V", methodCache: &Area.reset_MethodID_23, args: &__args, locals: &__locals )
+    }
+
 
     /// public void java.awt.geom.Area.subtract(java.awt.geom.Area)
 
-    private static var subtract_MethodID_21: jmethodID?
+    private static var subtract_MethodID_24: jmethodID?
 
     open func subtract( rhs: Area? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "subtract", methodSig: "(Ljava/awt/geom/Area;)V", methodCache: &Area.subtract_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "subtract", methodSig: "(Ljava/awt/geom/Area;)V", methodCache: &Area.subtract_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func subtract( _ _rhs: Area? ) {
         subtract( rhs: _rhs )
     }
 
-    /// public void java.awt.geom.Area.exclusiveOr(java.awt.geom.Area)
+    /// public void java.awt.geom.Area.transform(java.awt.geom.AffineTransform)
 
-    private static var exclusiveOr_MethodID_22: jmethodID?
+    private static var transform_MethodID_25: jmethodID?
 
-    open func exclusiveOr( rhs: Area? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func transform( t: AffineTransform? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rhs, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "exclusiveOr", methodSig: "(Ljava/awt/geom/Area;)V", methodCache: &Area.exclusiveOr_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func exclusiveOr( _ _rhs: Area? ) {
-        exclusiveOr( rhs: _rhs )
-    }
-
-    /// public boolean java.awt.geom.Area.isPolygonal()
-
-    private static var isPolygonal_MethodID_23: jmethodID?
-
-    open func isPolygonal() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPolygonal", methodSig: "()Z", methodCache: &Area.isPolygonal_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.geom.Area.isSingular()
-
-    private static var isSingular_MethodID_24: jmethodID?
-
-    open func isSingular() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSingular", methodSig: "()Z", methodCache: &Area.isSingular_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// private void java.awt.geom.Area.invalidateBounds()
-
-    /// private java.awt.geom.Rectangle2D java.awt.geom.Area.getCachedBounds()
-
-    /// public java.awt.geom.Area java.awt.geom.Area.createTransformedArea(java.awt.geom.AffineTransform)
-
-    private static var createTransformedArea_MethodID_25: jmethodID?
-
-    open func createTransformedArea( t: AffineTransform? ) -> Area! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: t, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTransformedArea", methodSig: "(Ljava/awt/geom/AffineTransform;)Ljava/awt/geom/Area;", methodCache: &Area.createTransformedArea_MethodID_25, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Area( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transform", methodSig: "(Ljava/awt/geom/AffineTransform;)V", methodCache: &Area.transform_MethodID_25, args: &__args, locals: &__locals )
     }
 
-    open func createTransformedArea( _ _t: AffineTransform? ) -> Area! {
-        return createTransformedArea( t: _t )
+    open func transform( _ _t: AffineTransform? ) {
+        transform( t: _t )
     }
 
 }

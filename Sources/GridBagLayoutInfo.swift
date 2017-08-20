@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.GridBagLayoutInfo ///
 
-open class GridBagLayoutInfo: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class GridBagLayoutInfo: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -18,35 +18,65 @@ open class GridBagLayoutInfo: java_swift.JavaObject, /* java.io.Serializable */ 
 
     /// private static final long java.awt.GridBagLayoutInfo.serialVersionUID
 
-    /// int java.awt.GridBagLayoutInfo.width
+    /// short[] java.awt.GridBagLayoutInfo.baselineType
 
-    /// int java.awt.GridBagLayoutInfo.height
-
-    /// int java.awt.GridBagLayoutInfo.startx
-
-    /// int java.awt.GridBagLayoutInfo.starty
-
-    /// int[] java.awt.GridBagLayoutInfo.minWidth
-
-    /// int[] java.awt.GridBagLayoutInfo.minHeight
-
-    /// double[] java.awt.GridBagLayoutInfo.weightX
-
-    /// double[] java.awt.GridBagLayoutInfo.weightY
+    // Skipping field: true false false false false false 
 
     /// boolean java.awt.GridBagLayoutInfo.hasBaseline
 
-    /// short[] java.awt.GridBagLayoutInfo.baselineType
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.GridBagLayoutInfo.height
+
+    // Skipping field: true false false false false false 
 
     /// int[] java.awt.GridBagLayoutInfo.maxAscent
 
+    // Skipping field: true false false false false false 
+
     /// int[] java.awt.GridBagLayoutInfo.maxDescent
+
+    // Skipping field: true false false false false false 
+
+    /// int[] java.awt.GridBagLayoutInfo.minHeight
+
+    // Skipping field: true false false false false false 
+
+    /// int[] java.awt.GridBagLayoutInfo.minWidth
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.GridBagLayoutInfo.startx
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.GridBagLayoutInfo.starty
+
+    // Skipping field: true false false false false false 
+
+    /// double[] java.awt.GridBagLayoutInfo.weightX
+
+    // Skipping field: true false false false false false 
+
+    /// double[] java.awt.GridBagLayoutInfo.weightY
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.GridBagLayoutInfo.width
+
+    // Skipping field: true false false false false false 
 
     /// java.awt.GridBagLayoutInfo(int,int)
 
+    // Skipping init: true false false 
+
     /// boolean java.awt.GridBagLayoutInfo.hasBaseline(int)
 
+    // Skipping method: true false false false false 
+
     /// boolean java.awt.GridBagLayoutInfo.hasConstantDescent(int)
+
+    // Skipping method: true false false false false 
 
 }
 

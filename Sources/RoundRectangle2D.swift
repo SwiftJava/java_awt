@@ -21,78 +21,92 @@ open class RoundRectangle2D: RectangularShape {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/geom/RoundRectangle2D", classCache: &RoundRectangle2D.RoundRectangle2DJNIClass, methodSig: "()V", methodCache: &RoundRectangle2D.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
+
+    /// private int java.awt.geom.RoundRectangle2D.classify(double,double,double,double)
+
+    /// public boolean java.awt.geom.RoundRectangle2D.contains(double,double)
+
+    // Skipping method: false true false false false 
+
+    /// public boolean java.awt.geom.RoundRectangle2D.contains(double,double,double,double)
+
+    // Skipping method: false true false false false 
 
     /// public boolean java.awt.geom.RoundRectangle2D.equals(java.lang.Object)
 
     private static var equals_MethodID_2: jmethodID?
 
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RoundRectangle2D.equals_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _obj: java_swift.JavaObject? ) -> Bool {
         return equals( obj: _obj )
     }
 
-    /// public int java.awt.geom.RoundRectangle2D.hashCode()
+    /// public abstract double java.awt.geom.RoundRectangle2D.getArcHeight()
 
-    /// public boolean java.awt.geom.RoundRectangle2D.contains(double,double,double,double)
+    private static var getArcHeight_MethodID_3: jmethodID?
 
-    /// public boolean java.awt.geom.RoundRectangle2D.contains(double,double)
+    open func getArcHeight() -> Double {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getArcHeight", methodSig: "()D", methodCache: &RoundRectangle2D.getArcHeight_MethodID_3, args: &__args, locals: &__locals )
+        return __return
+    }
 
-    /// public boolean java.awt.geom.RoundRectangle2D.intersects(double,double,double,double)
-
-    /// public java.awt.geom.PathIterator java.awt.geom.RoundRectangle2D.getPathIterator(java.awt.geom.AffineTransform)
-
-    /// public void java.awt.geom.RoundRectangle2D.setFrame(double,double,double,double)
 
     /// public abstract double java.awt.geom.RoundRectangle2D.getArcWidth()
 
-    private static var getArcWidth_MethodID_3: jmethodID?
+    private static var getArcWidth_MethodID_4: jmethodID?
 
     open func getArcWidth() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getArcWidth", methodSig: "()D", methodCache: &RoundRectangle2D.getArcWidth_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getArcWidth", methodSig: "()D", methodCache: &RoundRectangle2D.getArcWidth_MethodID_4, args: &__args, locals: &__locals )
+        return __return
     }
 
 
-    /// public abstract double java.awt.geom.RoundRectangle2D.getArcHeight()
+    /// public java.awt.geom.PathIterator java.awt.geom.RoundRectangle2D.getPathIterator(java.awt.geom.AffineTransform)
 
-    private static var getArcHeight_MethodID_4: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func getArcHeight() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getArcHeight", methodSig: "()D", methodCache: &RoundRectangle2D.getArcHeight_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
+    /// public int java.awt.geom.RoundRectangle2D.hashCode()
 
+    // Skipping method: false true false false false 
+
+    /// public boolean java.awt.geom.RoundRectangle2D.intersects(double,double,double,double)
+
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.geom.RoundRectangle2D.setFrame(double,double,double,double)
+
+    // Skipping method: false true false false false 
 
     /// public abstract void java.awt.geom.RoundRectangle2D.setRoundRect(double,double,double,double,double,double)
 
     private static var setRoundRect_MethodID_5: jmethodID?
 
     open func setRoundRect( x: Double, y: Double, w: Double, h: Double, arcWidth: Double, arcHeight: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arcWidth, locals: &__locals )
-        __args[5] = JNIType.toJava( value: arcHeight, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: w )
+        __args[3] = jvalue( d: h )
+        __args[4] = jvalue( d: arcWidth )
+        __args[5] = jvalue( d: arcHeight )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRoundRect", methodSig: "(DDDDDD)V", methodCache: &RoundRectangle2D.setRoundRect_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -105,8 +119,8 @@ open class RoundRectangle2D: RectangularShape {
     private static var setRoundRect_MethodID_6: jmethodID?
 
     open func setRoundRect( rr: RoundRectangle2D? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: rr, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRoundRect", methodSig: "(Ljava/awt/geom/RoundRectangle2D;)V", methodCache: &RoundRectangle2D.setRoundRect_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -114,8 +128,6 @@ open class RoundRectangle2D: RectangularShape {
     open func setRoundRect( _ _rr: RoundRectangle2D? ) {
         setRoundRect( rr: _rr )
     }
-
-    /// private int java.awt.geom.RoundRectangle2D.classify(double,double,double,double)
 
 }
 

@@ -18,111 +18,175 @@ open class ICC_ColorSpace: ColorSpace {
 
     /// static final long java.awt.color.ICC_ColorSpace.serialVersionUID
 
-    /// private java.awt.color.ICC_Profile java.awt.color.ICC_ColorSpace.thisProfile
-
-    /// private float[] java.awt.color.ICC_ColorSpace.minVal
-
-    /// private float[] java.awt.color.ICC_ColorSpace.maxVal
+    // Skipping field: true true false false false false 
 
     /// private float[] java.awt.color.ICC_ColorSpace.diffMinMax
 
     /// private float[] java.awt.color.ICC_ColorSpace.invDiffMinMax
 
-    /// private boolean java.awt.color.ICC_ColorSpace.needScaleInit
+    /// private float[] java.awt.color.ICC_ColorSpace.maxVal
 
-    /// private transient sun.java2d.cmm.ColorTransform java.awt.color.ICC_ColorSpace.this2srgb
+    /// private float[] java.awt.color.ICC_ColorSpace.minVal
+
+    /// private boolean java.awt.color.ICC_ColorSpace.needScaleInit
 
     /// private transient sun.java2d.cmm.ColorTransform java.awt.color.ICC_ColorSpace.srgb2this
 
+    /// private transient sun.java2d.cmm.ColorTransform java.awt.color.ICC_ColorSpace.this2srgb
+
     /// private transient sun.java2d.cmm.ColorTransform java.awt.color.ICC_ColorSpace.this2xyz
+
+    /// private java.awt.color.ICC_Profile java.awt.color.ICC_ColorSpace.thisProfile
 
     /// private transient sun.java2d.cmm.ColorTransform java.awt.color.ICC_ColorSpace.xyz2this
 
-    /// static final long java.awt.color.ColorSpace.serialVersionUID
+    /// public static final int java.awt.color.ColorSpace.CS_CIEXYZ
 
-    /// private int java.awt.color.ColorSpace.type
+    // Skipping field: false true false false false false 
 
-    /// private int java.awt.color.ColorSpace.numComponents
+    /// public static final int java.awt.color.ColorSpace.CS_GRAY
 
-    /// private transient java.lang.String[] java.awt.color.ColorSpace.compName
+    // Skipping field: false true false false false false 
 
-    /// private static java.awt.color.ColorSpace java.awt.color.ColorSpace.sRGBspace
+    /// public static final int java.awt.color.ColorSpace.CS_LINEAR_RGB
 
-    /// private static java.awt.color.ColorSpace java.awt.color.ColorSpace.XYZspace
+    // Skipping field: false true false false false false 
 
-    /// private static java.awt.color.ColorSpace java.awt.color.ColorSpace.PYCCspace
+    /// public static final int java.awt.color.ColorSpace.CS_PYCC
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ColorSpace.CS_sRGB
+
+    // Skipping field: false true false false false false 
 
     /// private static java.awt.color.ColorSpace java.awt.color.ColorSpace.GRAYspace
 
     /// private static java.awt.color.ColorSpace java.awt.color.ColorSpace.LINEAR_RGBspace
 
-    /// public static final int java.awt.color.ColorSpace.TYPE_XYZ
-
-    /// public static final int java.awt.color.ColorSpace.TYPE_Lab
-
-    /// public static final int java.awt.color.ColorSpace.TYPE_Luv
-
-    /// public static final int java.awt.color.ColorSpace.TYPE_YCbCr
-
-    /// public static final int java.awt.color.ColorSpace.TYPE_Yxy
-
-    /// public static final int java.awt.color.ColorSpace.TYPE_RGB
-
-    /// public static final int java.awt.color.ColorSpace.TYPE_GRAY
-
-    /// public static final int java.awt.color.ColorSpace.TYPE_HSV
-
-    /// public static final int java.awt.color.ColorSpace.TYPE_HLS
-
-    /// public static final int java.awt.color.ColorSpace.TYPE_CMYK
-
-    /// public static final int java.awt.color.ColorSpace.TYPE_CMY
+    /// private static java.awt.color.ColorSpace java.awt.color.ColorSpace.PYCCspace
 
     /// public static final int java.awt.color.ColorSpace.TYPE_2CLR
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.color.ColorSpace.TYPE_3CLR
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.color.ColorSpace.TYPE_4CLR
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.color.ColorSpace.TYPE_5CLR
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.color.ColorSpace.TYPE_6CLR
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.color.ColorSpace.TYPE_7CLR
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.color.ColorSpace.TYPE_8CLR
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.color.ColorSpace.TYPE_9CLR
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.color.ColorSpace.TYPE_ACLR
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.color.ColorSpace.TYPE_BCLR
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.color.ColorSpace.TYPE_CCLR
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ColorSpace.TYPE_CMY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ColorSpace.TYPE_CMYK
+
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.color.ColorSpace.TYPE_DCLR
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.color.ColorSpace.TYPE_ECLR
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.color.ColorSpace.TYPE_FCLR
 
-    /// public static final int java.awt.color.ColorSpace.CS_sRGB
+    // Skipping field: false true false false false false 
 
-    /// public static final int java.awt.color.ColorSpace.CS_LINEAR_RGB
+    /// public static final int java.awt.color.ColorSpace.TYPE_GRAY
 
-    /// public static final int java.awt.color.ColorSpace.CS_CIEXYZ
+    // Skipping field: false true false false false false 
 
-    /// public static final int java.awt.color.ColorSpace.CS_PYCC
+    /// public static final int java.awt.color.ColorSpace.TYPE_HLS
 
-    /// public static final int java.awt.color.ColorSpace.CS_GRAY
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ColorSpace.TYPE_HSV
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ColorSpace.TYPE_Lab
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ColorSpace.TYPE_Luv
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ColorSpace.TYPE_RGB
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ColorSpace.TYPE_XYZ
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ColorSpace.TYPE_YCbCr
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.color.ColorSpace.TYPE_Yxy
+
+    // Skipping field: false true false false false false 
+
+    /// private static java.awt.color.ColorSpace java.awt.color.ColorSpace.XYZspace
+
+    /// private static java.awt.color.ColorSpace java.awt.color.ColorSpace.sRGBspace
+
+    /// static final long java.awt.color.ColorSpace.serialVersionUID
+
+    // Skipping field: true true false false false false 
+
+    /// private transient java.lang.String[] java.awt.color.ColorSpace.compName
+
+    /// private int java.awt.color.ColorSpace.numComponents
+
+    /// private int java.awt.color.ColorSpace.type
 
     /// public java.awt.color.ICC_ColorSpace(java.awt.color.ICC_Profile)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( arg0: ICC_Profile? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/color/ICC_ColorSpace", classCache: &ICC_ColorSpace.ICC_ColorSpaceJNIClass, methodSig: "(Ljava/awt/color/ICC_Profile;)V", methodCache: &ICC_ColorSpace.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -133,34 +197,46 @@ open class ICC_ColorSpace: ColorSpace {
         self.init( arg0: _arg0 )
     }
 
+    /// public float[] java.awt.color.ICC_ColorSpace.fromCIEXYZ(float[])
+
+    // Skipping method: false true false false false 
+
+    /// public float[] java.awt.color.ICC_ColorSpace.fromRGB(float[])
+
+    // Skipping method: false true false false false 
+
+    /// public float java.awt.color.ICC_ColorSpace.getMaxValue(int)
+
+    // Skipping method: false true false false false 
+
+    /// public float java.awt.color.ICC_ColorSpace.getMinValue(int)
+
+    // Skipping method: false true false false false 
+
     /// public java.awt.color.ICC_Profile java.awt.color.ICC_ColorSpace.getProfile()
 
     private static var getProfile_MethodID_2: jmethodID?
 
     open func getProfile() -> ICC_Profile! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProfile", methodSig: "()Ljava/awt/color/ICC_Profile;", methodCache: &ICC_ColorSpace.getProfile_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ICC_Profile( javaObject: __return ) : nil
     }
 
 
-    /// public float java.awt.color.ICC_ColorSpace.getMinValue(int)
-
-    /// public float java.awt.color.ICC_ColorSpace.getMaxValue(int)
-
-    /// public float[] java.awt.color.ICC_ColorSpace.fromRGB(float[])
+    /// private void java.awt.color.ICC_ColorSpace.setComponentScaling()
 
     /// private void java.awt.color.ICC_ColorSpace.setMinMax()
 
-    /// private void java.awt.color.ICC_ColorSpace.setComponentScaling()
+    /// public float[] java.awt.color.ICC_ColorSpace.toCIEXYZ(float[])
+
+    // Skipping method: false true false false false 
 
     /// public float[] java.awt.color.ICC_ColorSpace.toRGB(float[])
 
-    /// public float[] java.awt.color.ICC_ColorSpace.toCIEXYZ(float[])
-
-    /// public float[] java.awt.color.ICC_ColorSpace.fromCIEXYZ(float[])
+    // Skipping method: false true false false false 
 
 }
 

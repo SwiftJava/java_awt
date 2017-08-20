@@ -22,29 +22,31 @@ open class PointerInfo: java_swift.JavaObject {
 
     /// java.awt.PointerInfo(java.awt.GraphicsDevice,java.awt.Point)
 
-    /// public java.awt.Point java.awt.PointerInfo.getLocation()
-
-    private static var getLocation_MethodID_1: jmethodID?
-
-    open func getLocation() -> Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocation", methodSig: "()Ljava/awt/Point;", methodCache: &PointerInfo.getLocation_MethodID_1, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point( javaObject: __return ) : nil
-    }
-
+    // Skipping init: true false false 
 
     /// public java.awt.GraphicsDevice java.awt.PointerInfo.getDevice()
 
-    private static var getDevice_MethodID_2: jmethodID?
+    private static var getDevice_MethodID_1: jmethodID?
 
     open func getDevice() -> GraphicsDevice! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDevice", methodSig: "()Ljava/awt/GraphicsDevice;", methodCache: &PointerInfo.getDevice_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDevice", methodSig: "()Ljava/awt/GraphicsDevice;", methodCache: &PointerInfo.getDevice_MethodID_1, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GraphicsDevice( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Point java.awt.PointerInfo.getLocation()
+
+    private static var getLocation_MethodID_2: jmethodID?
+
+    open func getLocation() -> Point! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocation", methodSig: "()Ljava/awt/Point;", methodCache: &PointerInfo.getLocation_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point( javaObject: __return ) : nil
     }
 
 

@@ -22,23 +22,23 @@ open class Paper: java_swift.JavaObject, java_lang.Cloneable {
 
     /// private static final int java.awt.print.Paper.INCH
 
-    /// private static final double java.awt.print.Paper.LETTER_WIDTH
-
     /// private static final double java.awt.print.Paper.LETTER_HEIGHT
+
+    /// private static final double java.awt.print.Paper.LETTER_WIDTH
 
     /// private double java.awt.print.Paper.mHeight
 
-    /// private double java.awt.print.Paper.mWidth
-
     /// private java.awt.geom.Rectangle2D java.awt.print.Paper.mImageableArea
+
+    /// private double java.awt.print.Paper.mWidth
 
     /// public java.awt.print.Paper()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/print/Paper", classCache: &Paper.PaperJNIClass, methodSig: "()V", methodCache: &Paper.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -49,119 +49,119 @@ open class Paper: java_swift.JavaObject, java_lang.Cloneable {
     private static var clone_MethodID_2: jmethodID?
 
     override open func clone() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &Paper.clone_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
 
-    /// public void java.awt.print.Paper.setSize(double,double)
+    /// public double java.awt.print.Paper.getHeight()
 
-    private static var setSize_MethodID_3: jmethodID?
+    private static var getHeight_MethodID_3: jmethodID?
 
-    open func setSize( width: Double, height: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getHeight() -> Double {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSize", methodSig: "(DD)V", methodCache: &Paper.setSize_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func setSize( _ _width: Double, _ _height: Double ) {
-        setSize( width: _width, height: _height )
-    }
-
-    /// public double java.awt.print.Paper.getImageableX()
-
-    private static var getImageableX_MethodID_4: jmethodID?
-
-    open func getImageableX() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableX", methodSig: "()D", methodCache: &Paper.getImageableX_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public double java.awt.print.Paper.getImageableY()
-
-    private static var getImageableY_MethodID_5: jmethodID?
-
-    open func getImageableY() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableY", methodSig: "()D", methodCache: &Paper.getImageableY_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public double java.awt.print.Paper.getImageableWidth()
-
-    private static var getImageableWidth_MethodID_6: jmethodID?
-
-    open func getImageableWidth() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableWidth", methodSig: "()D", methodCache: &Paper.getImageableWidth_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getHeight", methodSig: "()D", methodCache: &Paper.getHeight_MethodID_3, args: &__args, locals: &__locals )
+        return __return
     }
 
 
     /// public double java.awt.print.Paper.getImageableHeight()
 
-    private static var getImageableHeight_MethodID_7: jmethodID?
+    private static var getImageableHeight_MethodID_4: jmethodID?
 
     open func getImageableHeight() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableHeight", methodSig: "()D", methodCache: &Paper.getImageableHeight_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableHeight", methodSig: "()D", methodCache: &Paper.getImageableHeight_MethodID_4, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public double java.awt.print.Paper.getImageableWidth()
+
+    private static var getImageableWidth_MethodID_5: jmethodID?
+
+    open func getImageableWidth() -> Double {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableWidth", methodSig: "()D", methodCache: &Paper.getImageableWidth_MethodID_5, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public double java.awt.print.Paper.getImageableX()
+
+    private static var getImageableX_MethodID_6: jmethodID?
+
+    open func getImageableX() -> Double {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableX", methodSig: "()D", methodCache: &Paper.getImageableX_MethodID_6, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public double java.awt.print.Paper.getImageableY()
+
+    private static var getImageableY_MethodID_7: jmethodID?
+
+    open func getImageableY() -> Double {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getImageableY", methodSig: "()D", methodCache: &Paper.getImageableY_MethodID_7, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public double java.awt.print.Paper.getWidth()
+
+    private static var getWidth_MethodID_8: jmethodID?
+
+    open func getWidth() -> Double {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getWidth", methodSig: "()D", methodCache: &Paper.getWidth_MethodID_8, args: &__args, locals: &__locals )
+        return __return
     }
 
 
     /// public void java.awt.print.Paper.setImageableArea(double,double,double,double)
 
-    private static var setImageableArea_MethodID_8: jmethodID?
+    private static var setImageableArea_MethodID_9: jmethodID?
 
     open func setImageableArea( x: Double, y: Double, width: Double, height: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImageableArea", methodSig: "(DDDD)V", methodCache: &Paper.setImageableArea_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( d: x )
+        __args[1] = jvalue( d: y )
+        __args[2] = jvalue( d: width )
+        __args[3] = jvalue( d: height )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImageableArea", methodSig: "(DDDD)V", methodCache: &Paper.setImageableArea_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setImageableArea( _ _x: Double, _ _y: Double, _ _width: Double, _ _height: Double ) {
         setImageableArea( x: _x, y: _y, width: _width, height: _height )
     }
 
-    /// public double java.awt.print.Paper.getWidth()
+    /// public void java.awt.print.Paper.setSize(double,double)
 
-    private static var getWidth_MethodID_9: jmethodID?
+    private static var setSize_MethodID_10: jmethodID?
 
-    open func getWidth() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setSize( width: Double, height: Double ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getWidth", methodSig: "()D", methodCache: &Paper.getWidth_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( d: width )
+        __args[1] = jvalue( d: height )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSize", methodSig: "(DD)V", methodCache: &Paper.setSize_MethodID_10, args: &__args, locals: &__locals )
     }
 
-
-    /// public double java.awt.print.Paper.getHeight()
-
-    private static var getHeight_MethodID_10: jmethodID?
-
-    open func getHeight() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getHeight", methodSig: "()D", methodCache: &Paper.getHeight_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+    open func setSize( _ _width: Double, _ _height: Double ) {
+        setSize( width: _width, height: _height )
     }
-
 
 }
 

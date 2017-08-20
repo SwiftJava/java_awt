@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.JobAttributes$SidesType ///
 
-open class JobAttributes_SidesType: /* java.awt.AttributeValue */ UnclassedObject {
+open class JobAttributes_SidesType: /* class java.awt.AttributeValue */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -31,6 +31,7 @@ open class JobAttributes_SidesType: /* java.awt.AttributeValue */ UnclassedObjec
     open static var ONE_SIDED: JobAttributes_SidesType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ONE_SIDED", fieldType: "Ljava/awt/JobAttributes$SidesType;", fieldCache: &ONE_SIDED_FieldID, className: "java/awt/JobAttributes$SidesType", classCache: &JobAttributes_SidesTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JobAttributes_SidesType( javaObject: __value ) : nil
         }
     }
@@ -42,6 +43,7 @@ open class JobAttributes_SidesType: /* java.awt.AttributeValue */ UnclassedObjec
     open static var TWO_SIDED_LONG_EDGE: JobAttributes_SidesType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TWO_SIDED_LONG_EDGE", fieldType: "Ljava/awt/JobAttributes$SidesType;", fieldCache: &TWO_SIDED_LONG_EDGE_FieldID, className: "java/awt/JobAttributes$SidesType", classCache: &JobAttributes_SidesTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JobAttributes_SidesType( javaObject: __value ) : nil
         }
     }
@@ -53,21 +55,43 @@ open class JobAttributes_SidesType: /* java.awt.AttributeValue */ UnclassedObjec
     open static var TWO_SIDED_SHORT_EDGE: JobAttributes_SidesType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TWO_SIDED_SHORT_EDGE", fieldType: "Ljava/awt/JobAttributes$SidesType;", fieldCache: &TWO_SIDED_SHORT_EDGE_FieldID, className: "java/awt/JobAttributes$SidesType", classCache: &JobAttributes_SidesTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JobAttributes_SidesType( javaObject: __value ) : nil
         }
     }
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AttributeValue.log
 
-    /// private final int java.awt.AttributeValue.value
-
     /// private final java.lang.String[] java.awt.AttributeValue.names
+
+    /// private final int java.awt.AttributeValue.value
 
     /// private java.awt.JobAttributes$SidesType(int)
 
+    /// public int java.awt.JobAttributes$SidesType.hashCode()
+
+    private static var hashCode_MethodID_1: jmethodID?
+
+    override open func hashCode() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "hashCode", methodSig: "()I", methodCache: &JobAttributes_SidesType.hashCode_MethodID_1, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public java.lang.String java.awt.JobAttributes$SidesType.toString()
 
-    /// public int java.awt.JobAttributes$SidesType.hashCode()
+    private static var toString_MethodID_2: jmethodID?
+
+    override open func toString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toString", methodSig: "()Ljava/lang/String;", methodCache: &JobAttributes_SidesType.toString_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
 }
 

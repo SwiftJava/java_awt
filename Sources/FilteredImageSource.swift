@@ -16,19 +16,23 @@ open class FilteredImageSource: java_swift.JavaObject, ImageProducer {
 
     private static var FilteredImageSourceJNIClass: jclass?
 
-    /// java.awt.image.ImageProducer java.awt.image.FilteredImageSource.src
-
     /// java.awt.image.ImageFilter java.awt.image.FilteredImageSource.filter
 
+    // Skipping field: true false false false false false 
+
     /// private java.util.Hashtable java.awt.image.FilteredImageSource.proxies
+
+    /// java.awt.image.ImageProducer java.awt.image.FilteredImageSource.src
+
+    // Skipping field: true false false false false false 
 
     /// public java.awt.image.FilteredImageSource(java.awt.image.ImageProducer,java.awt.image.ImageFilter)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( orig: ImageProducer?, imgf: ImageFilter? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: orig, locals: &__locals )
         __args[1] = JNIType.toJava( value: imgf, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "java/awt/image/FilteredImageSource", classCache: &FilteredImageSource.FilteredImageSourceJNIClass, methodSig: "(Ljava/awt/image/ImageProducer;Ljava/awt/image/ImageFilter;)V", methodCache: &FilteredImageSource.new_MethodID_1, args: &__args, locals: &__locals )
@@ -45,8 +49,8 @@ open class FilteredImageSource: java_swift.JavaObject, ImageProducer {
     private static var addConsumer_MethodID_2: jmethodID?
 
     open func addConsumer( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ic, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &FilteredImageSource.addConsumer_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -60,11 +64,11 @@ open class FilteredImageSource: java_swift.JavaObject, ImageProducer {
     private static var isConsumer_MethodID_3: jmethodID?
 
     open func isConsumer( ic: ImageConsumer? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ic, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)Z", methodCache: &FilteredImageSource.isConsumer_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isConsumer( _ _ic: ImageConsumer? ) -> Bool {
@@ -76,8 +80,8 @@ open class FilteredImageSource: java_swift.JavaObject, ImageProducer {
     private static var removeConsumer_MethodID_4: jmethodID?
 
     open func removeConsumer( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ic, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeConsumer", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &FilteredImageSource.removeConsumer_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -86,34 +90,34 @@ open class FilteredImageSource: java_swift.JavaObject, ImageProducer {
         removeConsumer( ic: _ic )
     }
 
-    /// public void java.awt.image.FilteredImageSource.startProduction(java.awt.image.ImageConsumer)
-
-    private static var startProduction_MethodID_5: jmethodID?
-
-    open func startProduction( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startProduction", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &FilteredImageSource.startProduction_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func startProduction( _ _ic: ImageConsumer? ) {
-        startProduction( ic: _ic )
-    }
-
     /// public void java.awt.image.FilteredImageSource.requestTopDownLeftRightResend(java.awt.image.ImageConsumer)
 
-    private static var requestTopDownLeftRightResend_MethodID_6: jmethodID?
+    private static var requestTopDownLeftRightResend_MethodID_5: jmethodID?
 
     open func requestTopDownLeftRightResend( ic: ImageConsumer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "requestTopDownLeftRightResend", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &FilteredImageSource.requestTopDownLeftRightResend_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "requestTopDownLeftRightResend", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &FilteredImageSource.requestTopDownLeftRightResend_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func requestTopDownLeftRightResend( _ _ic: ImageConsumer? ) {
         requestTopDownLeftRightResend( ic: _ic )
+    }
+
+    /// public void java.awt.image.FilteredImageSource.startProduction(java.awt.image.ImageConsumer)
+
+    private static var startProduction_MethodID_6: jmethodID?
+
+    open func startProduction( ic: ImageConsumer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: ic, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startProduction", methodSig: "(Ljava/awt/image/ImageConsumer;)V", methodCache: &FilteredImageSource.startProduction_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func startProduction( _ _ic: ImageConsumer? ) {
+        startProduction( ic: _ic )
     }
 
 }

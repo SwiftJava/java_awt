@@ -27,9 +27,9 @@ open class ImageCapabilities: java_swift.JavaObject, java_lang.Cloneable {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( accelerated: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: accelerated, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(accelerated ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "java/awt/ImageCapabilities", classCache: &ImageCapabilities.ImageCapabilitiesJNIClass, methodSig: "(Z)V", methodCache: &ImageCapabilities.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -44,8 +44,8 @@ open class ImageCapabilities: java_swift.JavaObject, java_lang.Cloneable {
     private static var clone_MethodID_2: jmethodID?
 
     override open func clone() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &ImageCapabilities.clone_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
@@ -57,10 +57,10 @@ open class ImageCapabilities: java_swift.JavaObject, java_lang.Cloneable {
     private static var isAccelerated_MethodID_3: jmethodID?
 
     open func isAccelerated() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAccelerated", methodSig: "()Z", methodCache: &ImageCapabilities.isAccelerated_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
@@ -69,10 +69,10 @@ open class ImageCapabilities: java_swift.JavaObject, java_lang.Cloneable {
     private static var isTrueVolatile_MethodID_4: jmethodID?
 
     open func isTrueVolatile() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTrueVolatile", methodSig: "()Z", methodCache: &ImageCapabilities.isTrueVolatile_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 

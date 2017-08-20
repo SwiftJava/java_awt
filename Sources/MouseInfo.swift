@@ -18,38 +18,42 @@ open class MouseInfo: java_swift.JavaObject {
 
     /// static final boolean java.awt.MouseInfo.$assertionsDisabled
 
+    // Skipping field: true false false false false false 
+
     /// private java.awt.MouseInfo()
-
-    /// public static java.awt.PointerInfo java.awt.MouseInfo.getPointerInfo() throws java.awt.HeadlessException
-
-    private static var getPointerInfo_MethodID_1: jmethodID?
-
-    open class func getPointerInfo() throws /* java.awt.HeadlessException */ -> PointerInfo! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/MouseInfo", classCache: &MouseInfoJNIClass, methodName: "getPointerInfo", methodSig: "()Ljava/awt/PointerInfo;", methodCache: &getPointerInfo_MethodID_1, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw HeadlessException( javaObject: throwable )
-        }
-        return __return != nil ? PointerInfo( javaObject: __return ) : nil
-    }
-
 
     /// private static boolean java.awt.MouseInfo.areScreenDevicesIndependent(java.awt.GraphicsDevice[])
 
     /// public static int java.awt.MouseInfo.getNumberOfButtons() throws java.awt.HeadlessException
 
-    private static var getNumberOfButtons_MethodID_2: jmethodID?
+    private static var getNumberOfButtons_MethodID_1: jmethodID?
 
     open class func getNumberOfButtons() throws /* java.awt.HeadlessException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticIntMethod( className: "java/awt/MouseInfo", classCache: &MouseInfoJNIClass, methodName: "getNumberOfButtons", methodSig: "()I", methodCache: &getNumberOfButtons_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticIntMethod( className: "java/awt/MouseInfo", classCache: &MouseInfoJNIClass, methodName: "getNumberOfButtons", methodSig: "()I", methodCache: &getNumberOfButtons_MethodID_1, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw HeadlessException( javaObject: throwable )
         }
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
+    }
+
+
+    /// public static java.awt.PointerInfo java.awt.MouseInfo.getPointerInfo() throws java.awt.HeadlessException
+
+    private static var getPointerInfo_MethodID_2: jmethodID?
+
+    open class func getPointerInfo() throws /* java.awt.HeadlessException */ -> PointerInfo! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/MouseInfo", classCache: &MouseInfoJNIClass, methodName: "getPointerInfo", methodSig: "()Ljava/awt/PointerInfo;", methodCache: &getPointerInfo_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw HeadlessException( javaObject: throwable )
+        }
+        return __return != nil ? PointerInfo( javaObject: __return ) : nil
     }
 
 

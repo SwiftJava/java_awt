@@ -16,17 +16,6 @@ open class DnDConstants: java_swift.JavaObject {
 
     private static var DnDConstantsJNIClass: jclass?
 
-    /// public static final int java.awt.dnd.DnDConstants.ACTION_NONE
-
-    private static var ACTION_NONE_FieldID: jfieldID?
-
-    open static var ACTION_NONE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ACTION_NONE", fieldType: "I", fieldCache: &ACTION_NONE_FieldID, className: "java/awt/dnd/DnDConstants", classCache: &DnDConstantsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.dnd.DnDConstants.ACTION_COPY
 
     private static var ACTION_COPY_FieldID: jfieldID?
@@ -34,18 +23,7 @@ open class DnDConstants: java_swift.JavaObject {
     open static var ACTION_COPY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ACTION_COPY", fieldType: "I", fieldCache: &ACTION_COPY_FieldID, className: "java/awt/dnd/DnDConstants", classCache: &DnDConstantsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.dnd.DnDConstants.ACTION_MOVE
-
-    private static var ACTION_MOVE_FieldID: jfieldID?
-
-    open static var ACTION_MOVE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ACTION_MOVE", fieldType: "I", fieldCache: &ACTION_MOVE_FieldID, className: "java/awt/dnd/DnDConstants", classCache: &DnDConstantsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -56,7 +34,7 @@ open class DnDConstants: java_swift.JavaObject {
     open static var ACTION_COPY_OR_MOVE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ACTION_COPY_OR_MOVE", fieldType: "I", fieldCache: &ACTION_COPY_OR_MOVE_FieldID, className: "java/awt/dnd/DnDConstants", classCache: &DnDConstantsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -67,7 +45,29 @@ open class DnDConstants: java_swift.JavaObject {
     open static var ACTION_LINK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ACTION_LINK", fieldType: "I", fieldCache: &ACTION_LINK_FieldID, className: "java/awt/dnd/DnDConstants", classCache: &DnDConstantsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.dnd.DnDConstants.ACTION_MOVE
+
+    private static var ACTION_MOVE_FieldID: jfieldID?
+
+    open static var ACTION_MOVE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "ACTION_MOVE", fieldType: "I", fieldCache: &ACTION_MOVE_FieldID, className: "java/awt/dnd/DnDConstants", classCache: &DnDConstantsJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.dnd.DnDConstants.ACTION_NONE
+
+    private static var ACTION_NONE_FieldID: jfieldID?
+
+    open static var ACTION_NONE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "ACTION_NONE", fieldType: "I", fieldCache: &ACTION_NONE_FieldID, className: "java/awt/dnd/DnDConstants", classCache: &DnDConstantsJNIClass )
+            return Int(__value)
         }
     }
 
@@ -78,7 +78,7 @@ open class DnDConstants: java_swift.JavaObject {
     open static var ACTION_REFERENCE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ACTION_REFERENCE", fieldType: "I", fieldCache: &ACTION_REFERENCE_FieldID, className: "java/awt/dnd/DnDConstants", classCache: &DnDConstantsJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 

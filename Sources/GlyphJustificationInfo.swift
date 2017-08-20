@@ -16,28 +16,6 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
 
     private static var GlyphJustificationInfoJNIClass: jclass?
 
-    /// public static final int java.awt.font.GlyphJustificationInfo.PRIORITY_KASHIDA
-
-    private static var PRIORITY_KASHIDA_FieldID: jfieldID?
-
-    open static var PRIORITY_KASHIDA: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PRIORITY_KASHIDA", fieldType: "I", fieldCache: &PRIORITY_KASHIDA_FieldID, className: "java/awt/font/GlyphJustificationInfo", classCache: &GlyphJustificationInfoJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.font.GlyphJustificationInfo.PRIORITY_WHITESPACE
-
-    private static var PRIORITY_WHITESPACE_FieldID: jfieldID?
-
-    open static var PRIORITY_WHITESPACE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PRIORITY_WHITESPACE", fieldType: "I", fieldCache: &PRIORITY_WHITESPACE_FieldID, className: "java/awt/font/GlyphJustificationInfo", classCache: &GlyphJustificationInfoJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.font.GlyphJustificationInfo.PRIORITY_INTERCHAR
 
     private static var PRIORITY_INTERCHAR_FieldID: jfieldID?
@@ -45,7 +23,18 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
     open static var PRIORITY_INTERCHAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PRIORITY_INTERCHAR", fieldType: "I", fieldCache: &PRIORITY_INTERCHAR_FieldID, className: "java/awt/font/GlyphJustificationInfo", classCache: &GlyphJustificationInfoJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.font.GlyphJustificationInfo.PRIORITY_KASHIDA
+
+    private static var PRIORITY_KASHIDA_FieldID: jfieldID?
+
+    open static var PRIORITY_KASHIDA: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PRIORITY_KASHIDA", fieldType: "I", fieldCache: &PRIORITY_KASHIDA_FieldID, className: "java/awt/font/GlyphJustificationInfo", classCache: &GlyphJustificationInfoJNIClass )
+            return Int(__value)
         }
     }
 
@@ -56,31 +45,18 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
     open static var PRIORITY_NONE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PRIORITY_NONE", fieldType: "I", fieldCache: &PRIORITY_NONE_FieldID, className: "java/awt/font/GlyphJustificationInfo", classCache: &GlyphJustificationInfoJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public final float java.awt.font.GlyphJustificationInfo.weight
+    /// public static final int java.awt.font.GlyphJustificationInfo.PRIORITY_WHITESPACE
 
-    private static var weight_FieldID: jfieldID?
+    private static var PRIORITY_WHITESPACE_FieldID: jfieldID?
 
-    open var weight: Float {
+    open static var PRIORITY_WHITESPACE: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "weight", fieldType: "F", fieldCache: &GlyphJustificationInfo.weight_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
-        }
-    }
-
-    /// public final int java.awt.font.GlyphJustificationInfo.growPriority
-
-    private static var growPriority_FieldID: jfieldID?
-
-    open var growPriority: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "growPriority", fieldType: "I", fieldCache: &GlyphJustificationInfo.growPriority_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "PRIORITY_WHITESPACE", fieldType: "I", fieldCache: &PRIORITY_WHITESPACE_FieldID, className: "java/awt/font/GlyphJustificationInfo", classCache: &GlyphJustificationInfoJNIClass )
+            return Int(__value)
         }
     }
 
@@ -90,9 +66,8 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
 
     open var growAbsorb: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "growAbsorb", fieldType: "Z", fieldCache: &GlyphJustificationInfo.growAbsorb_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "growAbsorb", fieldType: "Z", fieldCache: &GlyphJustificationInfo.growAbsorb_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
     }
 
@@ -102,9 +77,19 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
 
     open var growLeftLimit: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "growLeftLimit", fieldType: "F", fieldCache: &GlyphJustificationInfo.growLeftLimit_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "growLeftLimit", fieldType: "F", fieldCache: &GlyphJustificationInfo.growLeftLimit_FieldID, object: javaObject )
+            return __value
+        }
+    }
+
+    /// public final int java.awt.font.GlyphJustificationInfo.growPriority
+
+    private static var growPriority_FieldID: jfieldID?
+
+    open var growPriority: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "growPriority", fieldType: "I", fieldCache: &GlyphJustificationInfo.growPriority_FieldID, object: javaObject )
+            return Int(__value)
         }
     }
 
@@ -114,21 +99,8 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
 
     open var growRightLimit: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "growRightLimit", fieldType: "F", fieldCache: &GlyphJustificationInfo.growRightLimit_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
-        }
-    }
-
-    /// public final int java.awt.font.GlyphJustificationInfo.shrinkPriority
-
-    private static var shrinkPriority_FieldID: jfieldID?
-
-    open var shrinkPriority: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "shrinkPriority", fieldType: "I", fieldCache: &GlyphJustificationInfo.shrinkPriority_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "growRightLimit", fieldType: "F", fieldCache: &GlyphJustificationInfo.growRightLimit_FieldID, object: javaObject )
+            return __value
         }
     }
 
@@ -138,9 +110,8 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
 
     open var shrinkAbsorb: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "shrinkAbsorb", fieldType: "Z", fieldCache: &GlyphJustificationInfo.shrinkAbsorb_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "shrinkAbsorb", fieldType: "Z", fieldCache: &GlyphJustificationInfo.shrinkAbsorb_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
     }
 
@@ -150,9 +121,19 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
 
     open var shrinkLeftLimit: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "shrinkLeftLimit", fieldType: "F", fieldCache: &GlyphJustificationInfo.shrinkLeftLimit_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "shrinkLeftLimit", fieldType: "F", fieldCache: &GlyphJustificationInfo.shrinkLeftLimit_FieldID, object: javaObject )
+            return __value
+        }
+    }
+
+    /// public final int java.awt.font.GlyphJustificationInfo.shrinkPriority
+
+    private static var shrinkPriority_FieldID: jfieldID?
+
+    open var shrinkPriority: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "shrinkPriority", fieldType: "I", fieldCache: &GlyphJustificationInfo.shrinkPriority_FieldID, object: javaObject )
+            return Int(__value)
         }
     }
 
@@ -162,9 +143,19 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
 
     open var shrinkRightLimit: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "shrinkRightLimit", fieldType: "F", fieldCache: &GlyphJustificationInfo.shrinkRightLimit_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "shrinkRightLimit", fieldType: "F", fieldCache: &GlyphJustificationInfo.shrinkRightLimit_FieldID, object: javaObject )
+            return __value
+        }
+    }
+
+    /// public final float java.awt.font.GlyphJustificationInfo.weight
+
+    private static var weight_FieldID: jfieldID?
+
+    open var weight: Float {
+        get {
+            let __value = JNIField.GetFloatField( fieldName: "weight", fieldType: "F", fieldCache: &GlyphJustificationInfo.weight_FieldID, object: javaObject )
+            return __value
         }
     }
 
@@ -173,17 +164,17 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( weight: Float, growAbsorb: Bool, growPriority: Int, growLeftLimit: Float, growRightLimit: Float, shrinkAbsorb: Bool, shrinkPriority: Int, shrinkLeftLimit: Float, shrinkRightLimit: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 9 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: weight, locals: &__locals )
-        __args[1] = JNIType.toJava( value: growAbsorb, locals: &__locals )
-        __args[2] = JNIType.toJava( value: growPriority, locals: &__locals )
-        __args[3] = JNIType.toJava( value: growLeftLimit, locals: &__locals )
-        __args[4] = JNIType.toJava( value: growRightLimit, locals: &__locals )
-        __args[5] = JNIType.toJava( value: shrinkAbsorb, locals: &__locals )
-        __args[6] = JNIType.toJava( value: shrinkPriority, locals: &__locals )
-        __args[7] = JNIType.toJava( value: shrinkLeftLimit, locals: &__locals )
-        __args[8] = JNIType.toJava( value: shrinkRightLimit, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 9 )
+        __args[0] = jvalue( f: weight )
+        __args[1] = jvalue( z: jboolean(growAbsorb ? JNI_TRUE : JNI_FALSE) )
+        __args[2] = jvalue( i: jint(growPriority) )
+        __args[3] = jvalue( f: growLeftLimit )
+        __args[4] = jvalue( f: growRightLimit )
+        __args[5] = jvalue( z: jboolean(shrinkAbsorb ? JNI_TRUE : JNI_FALSE) )
+        __args[6] = jvalue( i: jint(shrinkPriority) )
+        __args[7] = jvalue( f: shrinkLeftLimit )
+        __args[8] = jvalue( f: shrinkRightLimit )
         let __object = JNIMethod.NewObject( className: "java/awt/font/GlyphJustificationInfo", classCache: &GlyphJustificationInfo.GlyphJustificationInfoJNIClass, methodSig: "(FZIFFZIFF)V", methodCache: &GlyphJustificationInfo.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

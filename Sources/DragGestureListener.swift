@@ -24,8 +24,8 @@ open class DragGestureListenerForward: java_util.EventListenerForward, DragGestu
     private static var dragGestureRecognized_MethodID_2: jmethodID?
 
     open func dragGestureRecognized( dge: DragGestureEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dge, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragGestureRecognized", methodSig: "(Ljava/awt/dnd/DragGestureEvent;)V", methodCache: &DragGestureListenerForward.dragGestureRecognized_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class DragGestureListenerForward: java_util.EventListenerForward, DragGestu
 
 }
 
-
 private typealias DragGestureListener_dragGestureRecognized_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func DragGestureListener_dragGestureRecognized_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ dge: jobject? ) -> () {
-    JNI.inNative = true;
     DragGestureListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragGestureRecognized( dge: dge != nil ? DragGestureEvent( javaObject: dge ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class DragGestureListenerLocal_: JNILocalProxy<DragGestureListener, Any> {
@@ -89,8 +86,5 @@ open class DragGestureListenerBase: DragGestureListener {
     open func dragGestureRecognized( dge: DragGestureEvent? ) /**/ {
     }
 
-    open func dragGestureRecognized( _ _dge: DragGestureEvent? ) /**/ {
-        dragGestureRecognized( dge: _dge )
-    }
 
 }

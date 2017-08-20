@@ -6,7 +6,7 @@ import java_util
 
 /// class java.awt.Component ///
 
-open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* java.io.Serializable */ UnclassedProtocol {
+open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -17,166 +17,18 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
 
     private static var ComponentJNIClass: jclass?
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+    /// static final boolean java.awt.Component.$assertionsDisabled
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+    private static var BOTTOM_ALIGNMENT_FieldID: jfieldID?
 
-    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
-
-    /// transient java.awt.Container java.awt.Component.parent
-
-    /// transient sun.awt.AppContext java.awt.Component.appContext
-
-    /// int java.awt.Component.x
-
-    /// int java.awt.Component.y
-
-    /// int java.awt.Component.width
-
-    /// int java.awt.Component.height
-
-    /// java.awt.Color java.awt.Component.foreground
-
-    /// java.awt.Color java.awt.Component.background
-
-    /// volatile java.awt.Font java.awt.Component.font
-
-    /// java.awt.Font java.awt.Component.peerFont
-
-    /// java.awt.Cursor java.awt.Component.cursor
-
-    /// java.util.Locale java.awt.Component.locale
-
-    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
-
-    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
-
-    /// boolean java.awt.Component.ignoreRepaint
-
-    /// boolean java.awt.Component.visible
-
-    /// boolean java.awt.Component.enabled
-
-    /// private volatile boolean java.awt.Component.valid
-
-    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
-
-    /// java.util.Vector java.awt.Component.popups
-
-    /// private java.lang.String java.awt.Component.name
-
-    /// private boolean java.awt.Component.nameExplicitlySet
-
-    /// private boolean java.awt.Component.focusable
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
-
-    /// private int java.awt.Component.isFocusTraversableOverridden
-
-    /// java.util.Set[] java.awt.Component.focusTraversalKeys
-
-    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
-
-    /// private boolean java.awt.Component.focusTraversalKeysEnabled
-
-    /// static final java.lang.Object java.awt.Component.LOCK
-
-    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
-
-    /// java.awt.Dimension java.awt.Component.minSize
-
-    /// boolean java.awt.Component.minSizeSet
-
-    /// java.awt.Dimension java.awt.Component.prefSize
-
-    /// boolean java.awt.Component.prefSizeSet
-
-    /// java.awt.Dimension java.awt.Component.maxSize
-
-    /// boolean java.awt.Component.maxSizeSet
-
-    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
-
-    /// boolean java.awt.Component.newEventsOnly
-
-    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
-
-    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
-
-    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
-
-    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
-
-    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
-
-    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
-
-    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
-
-    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
-
-    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
-
-    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
-
-    /// static final java.lang.String java.awt.Component.actionListenerK
-
-    /// static final java.lang.String java.awt.Component.adjustmentListenerK
-
-    /// static final java.lang.String java.awt.Component.componentListenerK
-
-    /// static final java.lang.String java.awt.Component.containerListenerK
-
-    /// static final java.lang.String java.awt.Component.focusListenerK
-
-    /// static final java.lang.String java.awt.Component.itemListenerK
-
-    /// static final java.lang.String java.awt.Component.keyListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
-
-    /// static final java.lang.String java.awt.Component.textListenerK
-
-    /// static final java.lang.String java.awt.Component.ownedWindowK
-
-    /// static final java.lang.String java.awt.Component.windowListenerK
-
-    /// static final java.lang.String java.awt.Component.inputMethodListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
-
-    /// static final java.lang.String java.awt.Component.windowStateListenerK
-
-    /// static final java.lang.String java.awt.Component.windowFocusListenerK
-
-    /// long java.awt.Component.eventMask
-
-    /// static boolean java.awt.Component.isInc
-
-    /// static int java.awt.Component.incRate
-
-    /// public static final float java.awt.Component.TOP_ALIGNMENT
-
-    private static var TOP_ALIGNMENT_FieldID: jfieldID?
-
-    open static var TOP_ALIGNMENT: Float {
+    open static var BOTTOM_ALIGNMENT: Float {
         get {
-            let __value = JNIField.GetStaticFloatField( fieldName: "TOP_ALIGNMENT", fieldType: "F", fieldCache: &TOP_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetStaticFloatField( fieldName: "BOTTOM_ALIGNMENT", fieldType: "F", fieldCache: &BOTTOM_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
+            return __value
         }
     }
 
@@ -187,20 +39,15 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
     open static var CENTER_ALIGNMENT: Float {
         get {
             let __value = JNIField.GetStaticFloatField( fieldName: "CENTER_ALIGNMENT", fieldType: "F", fieldCache: &CENTER_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Float(), from: __value )
+            return __value
         }
     }
 
-    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
 
-    private static var BOTTOM_ALIGNMENT_FieldID: jfieldID?
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
 
-    open static var BOTTOM_ALIGNMENT: Float {
-        get {
-            let __value = JNIField.GetStaticFloatField( fieldName: "BOTTOM_ALIGNMENT", fieldType: "F", fieldCache: &BOTTOM_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Float(), from: __value )
-        }
-    }
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
 
     /// public static final float java.awt.Component.LEFT_ALIGNMENT
 
@@ -209,9 +56,13 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
     open static var LEFT_ALIGNMENT: Float {
         get {
             let __value = JNIField.GetStaticFloatField( fieldName: "LEFT_ALIGNMENT", fieldType: "F", fieldCache: &LEFT_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Float(), from: __value )
+            return __value
         }
     }
+
+    /// static final java.lang.Object java.awt.Component.LOCK
+
+    // Skipping field: true false false false false false 
 
     /// public static final float java.awt.Component.RIGHT_ALIGNMENT
 
@@ -220,51 +71,130 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
     open static var RIGHT_ALIGNMENT: Float {
         get {
             let __value = JNIField.GetStaticFloatField( fieldName: "RIGHT_ALIGNMENT", fieldType: "F", fieldCache: &RIGHT_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Float(), from: __value )
+            return __value
         }
     }
 
-    /// private static final long java.awt.Component.serialVersionUID
+    /// public static final float java.awt.Component.TOP_ALIGNMENT
 
-    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+    private static var TOP_ALIGNMENT_FieldID: jfieldID?
 
-    /// private transient java.lang.Object java.awt.Component.objectLock
+    open static var TOP_ALIGNMENT: Float {
+        get {
+            let __value = JNIField.GetStaticFloatField( fieldName: "TOP_ALIGNMENT", fieldType: "F", fieldCache: &TOP_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
+            return __value
+        }
+    }
 
-    /// boolean java.awt.Component.isPacked
+    /// static final java.lang.String java.awt.Component.actionListenerK
 
-    /// private int java.awt.Component.boundsOp
+    // Skipping field: true false false false false false 
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+    /// static final java.lang.String java.awt.Component.adjustmentListenerK
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
-
-    /// private transient boolean java.awt.Component.isAddNotifyComplete
-
-    /// transient boolean java.awt.Component.backgroundEraseDisabled
-
-    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
-
-    /// private transient boolean java.awt.Component.coalescingEnabled
-
-    /// private static final java.util.Map java.awt.Component.coalesceMap
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Class[] java.awt.Component.coalesceEventsParams
 
+    /// private static final java.util.Map java.awt.Component.coalesceMap
+
+    /// static final java.lang.String java.awt.Component.componentListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.containerListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+
+    /// static final java.lang.String java.awt.Component.focusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+
+    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
+
+    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.hierarchyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static int java.awt.Component.incRate
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.inputMethodListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static boolean java.awt.Component.isInc
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.keyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+
+    /// static final java.lang.String java.awt.Component.mouseListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.ownedWindowK
+
+    // Skipping field: true false false false false false 
+
     /// private static sun.awt.RequestFocusController java.awt.Component.requestFocusController
 
-    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
+    /// private static final long java.awt.Component.serialVersionUID
 
-    /// private int java.awt.Component.componentSerializedDataVersion
+    /// static final java.lang.String java.awt.Component.textListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowFocusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowStateListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
 
     /// protected javax.accessibility.AccessibleContext java.awt.Component.accessibleContext
 
     private static var accessibleContext_FieldID: jfieldID?
 
-    open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+    open var accessibleContext: /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Component.accessibleContext_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Component.accessibleContext_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -273,60 +203,214 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
         }
     }
 
-    /// static final boolean java.awt.Component.$assertionsDisabled
+    /// transient sun.awt.AppContext java.awt.Component.appContext
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    // Skipping field: true false false false false false 
 
-    private static var WIDTH_FieldID: jfieldID?
+    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
 
-    open static var WIDTH: Int {
+    /// java.awt.Color java.awt.Component.background
+
+    // Skipping field: true false false false false false 
+
+    /// transient boolean java.awt.Component.backgroundEraseDisabled
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.boundsOp
+
+    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+
+    // Skipping field: true false false false false false 
+
+    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+
+    /// private transient boolean java.awt.Component.coalescingEnabled
+
+    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.componentSerializedDataVersion
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+
+    /// java.awt.Cursor java.awt.Component.cursor
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.Component.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Set[] java.awt.Component.focusTraversalKeys
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Component.focusTraversalKeysEnabled
+
+    /// private boolean java.awt.Component.focusable
+
+    /// volatile java.awt.Font java.awt.Component.font
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color java.awt.Component.foreground
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+
+    /// int java.awt.Component.height
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.ignoreRepaint
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Component.isAddNotifyComplete
+
+    /// private int java.awt.Component.isFocusTraversableOverridden
+
+    /// boolean java.awt.Component.isPacked
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Locale java.awt.Component.locale
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.maxSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.maxSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.minSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.minSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
+
+    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.String java.awt.Component.name
+
+    /// private boolean java.awt.Component.nameExplicitlySet
+
+    /// boolean java.awt.Component.newEventsOnly
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Component.objectLock
+
+    /// transient java.awt.Container java.awt.Component.parent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font java.awt.Component.peerFont
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Component.popups
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.prefSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.prefSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Component.valid
+
+    /// boolean java.awt.Component.visible
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.width
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.x
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.y
+
+    // Skipping field: true false false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ABORT
+
+    private static var ABORT_FieldID: jfieldID?
+
+    open static var ABORT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WIDTH", fieldType: "I", fieldCache: &WIDTH_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
-
-    private static var HEIGHT_FieldID: jfieldID?
-
-    open static var HEIGHT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "HEIGHT", fieldType: "I", fieldCache: &HEIGHT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
-
-    private static var PROPERTIES_FieldID: jfieldID?
-
-    open static var PROPERTIES: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PROPERTIES", fieldType: "I", fieldCache: &PROPERTIES_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
-
-    private static var SOMEBITS_FieldID: jfieldID?
-
-    open static var SOMEBITS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOMEBITS", fieldType: "I", fieldCache: &SOMEBITS_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
-
-    private static var FRAMEBITS_FieldID: jfieldID?
-
-    open static var FRAMEBITS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "FRAMEBITS", fieldType: "I", fieldCache: &FRAMEBITS_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "ABORT", fieldType: "I", fieldCache: &ABORT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
+            return Int(__value)
         }
     }
 
@@ -337,7 +421,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
     open static var ALLBITS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALLBITS", fieldType: "I", fieldCache: &ALLBITS_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -348,18 +432,62 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
     open static var ERROR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ERROR", fieldType: "I", fieldCache: &ERROR_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.image.ImageObserver.ABORT
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
 
-    private static var ABORT_FieldID: jfieldID?
+    private static var FRAMEBITS_FieldID: jfieldID?
 
-    open static var ABORT: Int {
+    open static var FRAMEBITS: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ABORT", fieldType: "I", fieldCache: &ABORT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "FRAMEBITS", fieldType: "I", fieldCache: &FRAMEBITS_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
+
+    private static var HEIGHT_FieldID: jfieldID?
+
+    open static var HEIGHT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "HEIGHT", fieldType: "I", fieldCache: &HEIGHT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    private static var PROPERTIES_FieldID: jfieldID?
+
+    open static var PROPERTIES: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PROPERTIES", fieldType: "I", fieldCache: &PROPERTIES_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    private static var SOMEBITS_FieldID: jfieldID?
+
+    open static var SOMEBITS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOMEBITS", fieldType: "I", fieldCache: &SOMEBITS_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    private static var WIDTH_FieldID: jfieldID?
+
+    open static var WIDTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WIDTH", fieldType: "I", fieldCache: &WIDTH_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
+            return Int(__value)
         }
     }
 
@@ -368,786 +496,472 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/Component", classCache: &Component.ComponentJNIClass, methodSig: "()V", methodCache: &Component.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void java.awt.Component.add(java.awt.PopupMenu)
+    /// static sun.java2d.pipe.Region java.awt.Component.access$002(java.awt.Component,sun.java2d.pipe.Region)
 
-    private static var add_MethodID_2: jmethodID?
-
-    open func add( arg0: PopupMenu? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/PopupMenu;)V", methodCache: &Component.add_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func add( _ _arg0: PopupMenu? ) {
-        add( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.remove(java.awt.MenuComponent)
-
-    private static var remove_MethodID_3: jmethodID?
-
-    open func remove( comp: MenuComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &Component.remove_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func remove( _ _comp: MenuComponent? ) {
-        remove( comp: _comp )
-    }
-
-    /// public java.lang.String java.awt.Component.toString()
-
-    /// public void java.awt.Component.update(java.awt.Graphics)
-
-    private static var update_MethodID_4: jmethodID?
-
-    open func update( arg0: Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Component.update_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func update( _ _arg0: Graphics? ) {
-        update( arg0: _arg0 )
-    }
-
-    /// public java.lang.String java.awt.Component.getName()
-
-    private static var getName_MethodID_5: jmethodID?
-
-    open func getName() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getName", methodSig: "()Ljava/lang/String;", methodCache: &Component.getName_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public boolean java.awt.Component.contains(java.awt.Point)
-
-    private static var contains_MethodID_6: jmethodID?
-
-    open func contains( arg0: Point? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/Point;)Z", methodCache: &Component.contains_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func contains( _ _arg0: Point? ) -> Bool {
-        return contains( arg0: _arg0 )
-    }
-
-    /// public boolean java.awt.Component.contains(int,int)
-
-    private static var contains_MethodID_7: jmethodID?
-
-    open func contains( arg0: Int, arg1: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(II)Z", methodCache: &Component.contains_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func contains( _ _arg0: Int, _ _arg1: Int ) -> Bool {
-        return contains( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public void java.awt.Component.list(java.io.PrintStream)
-
-    private static var list_MethodID_8: jmethodID?
-
-    open func list( arg0: /* java.io.PrintStream */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "list", methodSig: "(Ljava/io/PrintStream;)V", methodCache: &Component.list_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func list( _ _arg0: /* java.io.PrintStream */ UnclassedObject? ) {
-        list( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.list(java.io.PrintWriter,int)
-
-    private static var list_MethodID_9: jmethodID?
-
-    open func list( arg0: /* java.io.PrintWriter */ UnclassedObject?, arg1: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "list", methodSig: "(Ljava/io/PrintWriter;I)V", methodCache: &Component.list_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func list( _ _arg0: /* java.io.PrintWriter */ UnclassedObject?, _ _arg1: Int ) {
-        list( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public void java.awt.Component.list(java.io.PrintWriter)
-
-    /// public void java.awt.Component.list()
-
-    private static var list_MethodID_10: jmethodID?
-
-    open func list() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "list", methodSig: "()V", methodCache: &Component.list_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void java.awt.Component.list(java.io.PrintStream,int)
-
-    /// public java.awt.Dimension java.awt.Component.size()
-
-    private static var size_MethodID_11: jmethodID?
-
-    open func size() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "size", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.size_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
+    // Skipping method: true false false false false 
 
     /// static java.awt.Point java.awt.Component.access$100(java.awt.Component)
 
-    /// public java.awt.Container java.awt.Component.getParent()
-
-    private static var getParent_MethodID_12: jmethodID?
-
-    open func getParent() -> Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParent", methodSig: "()Ljava/awt/Container;", methodCache: &Component.getParent_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Container( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Point java.awt.Component.getLocation()
-
-    private static var getLocation_MethodID_13: jmethodID?
-
-    open func getLocation() -> Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocation", methodSig: "()Ljava/awt/Point;", methodCache: &Component.getLocation_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Point java.awt.Component.getLocation(java.awt.Point)
-
-    private static var getLocation_MethodID_14: jmethodID?
-
-    open func getLocation( arg0: Point? ) -> Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocation", methodSig: "(Ljava/awt/Point;)Ljava/awt/Point;", methodCache: &Component.getLocation_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point( javaObject: __return ) : nil
-    }
-
-    open func getLocation( _ _arg0: Point? ) -> Point! {
-        return getLocation( arg0: _arg0 )
-    }
-
-    /// private void java.awt.Component.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
-
-    /// private void java.awt.Component.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
+    // Skipping method: true false false false false 
 
     /// static java.awt.Insets java.awt.Component.access$400(java.awt.Component)
 
-    /// public void java.awt.Component.setName(java.lang.String)
+    // Skipping method: true false false false false 
 
-    private static var setName_MethodID_15: jmethodID?
+    /// static boolean java.awt.Component.access$500(java.lang.Class)
 
-    open func setName( arg0: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setName", methodSig: "(Ljava/lang/String;)V", methodCache: &Component.setName_MethodID_15, args: &__args, locals: &__locals )
-    }
+    // Skipping method: true false false false false 
 
-    open func setName( _ _arg0: String? ) {
-        setName( arg0: _arg0 )
-    }
+    /// private static native void java.awt.Component.initIDs()
 
-    /// public void java.awt.Component.print(java.awt.Graphics)
+    /// private static boolean java.awt.Component.isCoalesceEventsOverriden(java.lang.Class)
 
-    private static var print_MethodID_16: jmethodID?
+    /// static boolean java.awt.Component.isInstanceOf(java.lang.Object,java.lang.String)
 
-    open func print( arg0: Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "print", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Component.print_MethodID_16, args: &__args, locals: &__locals )
-    }
+    // Skipping method: true false false false false 
 
-    open func print( _ _arg0: Graphics? ) {
-        print( arg0: _arg0 )
-    }
+    /// static synchronized void java.awt.Component.setRequestFocusController(sun.awt.RequestFocusController)
+
+    // Skipping method: true false false false false 
 
     /// public boolean java.awt.Component.action(java.awt.Event,java.lang.Object)
 
-    private static var action_MethodID_17: jmethodID?
+    private static var action_MethodID_2: jmethodID?
 
     open func action( arg0: Event?, arg1: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "action", methodSig: "(Ljava/awt/Event;Ljava/lang/Object;)Z", methodCache: &Component.action_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "action", methodSig: "(Ljava/awt/Event;Ljava/lang/Object;)Z", methodCache: &Component.action_MethodID_2, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func action( _ _arg0: Event?, _ _arg1: java_swift.JavaObject? ) -> Bool {
         return action( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// static boolean java.awt.Component.access$500(java.lang.Class)
+    /// public void java.awt.Component.add(java.awt.PopupMenu)
 
-    /// public java.awt.Dimension java.awt.Component.getSize(java.awt.Dimension)
+    private static var add_MethodID_3: jmethodID?
 
-    private static var getSize_MethodID_18: jmethodID?
-
-    open func getSize( arg0: Dimension? ) -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func add( arg0: PopupMenu? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSize", methodSig: "(Ljava/awt/Dimension;)Ljava/awt/Dimension;", methodCache: &Component.getSize_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/PopupMenu;)V", methodCache: &Component.add_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    open func getSize( _ _arg0: Dimension? ) -> Dimension! {
-        return getSize( arg0: _arg0 )
+    open func add( _ _arg0: PopupMenu? ) {
+        add( arg0: _arg0 )
     }
 
-    /// public java.awt.Dimension java.awt.Component.getSize()
+    /// public synchronized void java.awt.Component.addComponentListener(java.awt.event.ComponentListener)
 
-    private static var getSize_MethodID_19: jmethodID?
+    private static var addComponentListener_MethodID_4: jmethodID?
 
-    open func getSize() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addComponentListener( arg0: ComponentListener? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.getSize_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// static sun.java2d.pipe.Region java.awt.Component.access$002(java.awt.Component,sun.java2d.pipe.Region)
-
-    /// protected java.lang.String java.awt.Component.paramString()
-
-    private static var paramString_MethodID_20: jmethodID?
-
-    open func paramString() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &Component.paramString_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addComponentListener", methodSig: "(Ljava/awt/event/ComponentListener;)V", methodCache: &Component.addComponentListener_MethodID_4, args: &__args, locals: &__locals )
     }
 
+    open func addComponentListener( _ _arg0: ComponentListener? ) {
+        addComponentListener( arg0: _arg0 )
+    }
 
-    /// public boolean java.awt.Component.isOpaque()
+    /// public synchronized void java.awt.Component.addFocusListener(java.awt.event.FocusListener)
 
-    private static var isOpaque_MethodID_21: jmethodID?
+    private static var addFocusListener_MethodID_5: jmethodID?
 
-    open func isOpaque() -> Bool {
+    open func addFocusListener( arg0: FocusListener? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isOpaque", methodSig: "()Z", methodCache: &Component.isOpaque_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addFocusListener", methodSig: "(Ljava/awt/event/FocusListener;)V", methodCache: &Component.addFocusListener_MethodID_5, args: &__args, locals: &__locals )
     }
 
+    open func addFocusListener( _ _arg0: FocusListener? ) {
+        addFocusListener( arg0: _arg0 )
+    }
 
-    /// public java.awt.Point java.awt.Component.location()
+    /// public void java.awt.Component.addHierarchyBoundsListener(java.awt.event.HierarchyBoundsListener)
 
-    private static var location_MethodID_22: jmethodID?
+    private static var addHierarchyBoundsListener_MethodID_6: jmethodID?
 
-    open func location() -> Point! {
+    open func addHierarchyBoundsListener( arg0: HierarchyBoundsListener? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addHierarchyBoundsListener", methodSig: "(Ljava/awt/event/HierarchyBoundsListener;)V", methodCache: &Component.addHierarchyBoundsListener_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func addHierarchyBoundsListener( _ _arg0: HierarchyBoundsListener? ) {
+        addHierarchyBoundsListener( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.addHierarchyListener(java.awt.event.HierarchyListener)
+
+    private static var addHierarchyListener_MethodID_7: jmethodID?
+
+    open func addHierarchyListener( arg0: HierarchyListener? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "location", methodSig: "()Ljava/awt/Point;", methodCache: &Component.location_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addHierarchyListener", methodSig: "(Ljava/awt/event/HierarchyListener;)V", methodCache: &Component.addHierarchyListener_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func addHierarchyListener( _ _arg0: HierarchyListener? ) {
+        addHierarchyListener( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.addInputMethodListener(java.awt.event.InputMethodListener)
+
+    private static var addInputMethodListener_MethodID_8: jmethodID?
+
+    open func addInputMethodListener( arg0: InputMethodListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addInputMethodListener", methodSig: "(Ljava/awt/event/InputMethodListener;)V", methodCache: &Component.addInputMethodListener_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func addInputMethodListener( _ _arg0: InputMethodListener? ) {
+        addInputMethodListener( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.addKeyListener(java.awt.event.KeyListener)
+
+    private static var addKeyListener_MethodID_9: jmethodID?
+
+    open func addKeyListener( arg0: KeyListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addKeyListener", methodSig: "(Ljava/awt/event/KeyListener;)V", methodCache: &Component.addKeyListener_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func addKeyListener( _ _arg0: KeyListener? ) {
+        addKeyListener( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.addMouseListener(java.awt.event.MouseListener)
+
+    private static var addMouseListener_MethodID_10: jmethodID?
+
+    open func addMouseListener( arg0: MouseListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMouseListener", methodSig: "(Ljava/awt/event/MouseListener;)V", methodCache: &Component.addMouseListener_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func addMouseListener( _ _arg0: MouseListener? ) {
+        addMouseListener( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.addMouseMotionListener(java.awt.event.MouseMotionListener)
+
+    private static var addMouseMotionListener_MethodID_11: jmethodID?
+
+    open func addMouseMotionListener( arg0: MouseMotionListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMouseMotionListener", methodSig: "(Ljava/awt/event/MouseMotionListener;)V", methodCache: &Component.addMouseMotionListener_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func addMouseMotionListener( _ _arg0: MouseMotionListener? ) {
+        addMouseMotionListener( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.addMouseWheelListener(java.awt.event.MouseWheelListener)
+
+    private static var addMouseWheelListener_MethodID_12: jmethodID?
+
+    open func addMouseWheelListener( arg0: MouseWheelListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMouseWheelListener", methodSig: "(Ljava/awt/event/MouseWheelListener;)V", methodCache: &Component.addMouseWheelListener_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func addMouseWheelListener( _ _arg0: MouseWheelListener? ) {
+        addMouseWheelListener( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.addNotify()
+
+    private static var addNotify_MethodID_13: jmethodID?
+
+    open func addNotify() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addNotify", methodSig: "()V", methodCache: &Component.addNotify_MethodID_13, args: &__args, locals: &__locals )
     }
 
 
-    /// public void java.awt.Component.setSize(int,int)
+    /// public void java.awt.Component.addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
 
-    private static var setSize_MethodID_23: jmethodID?
+    private static var addPropertyChangeListener_MethodID_14: jmethodID?
 
-    open func setSize( arg0: Int, arg1: Int ) {
+    open func addPropertyChangeListener( arg0: String?, arg1: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSize", methodSig: "(II)V", methodCache: &Component.setSize_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &Component.addPropertyChangeListener_MethodID_14, args: &__args, locals: &__locals )
     }
 
-    open func setSize( _ _arg0: Int, _ _arg1: Int ) {
-        setSize( arg0: _arg0, arg1: _arg1 )
+    open func addPropertyChangeListener( _ _arg0: String?, _ _arg1: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        addPropertyChangeListener( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public void java.awt.Component.setSize(java.awt.Dimension)
+    /// public void java.awt.Component.addPropertyChangeListener(java.beans.PropertyChangeListener)
 
-    private static var setSize_MethodID_24: jmethodID?
+    private static var addPropertyChangeListener_MethodID_15: jmethodID?
 
-    open func setSize( arg0: Dimension? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addPropertyChangeListener( arg0: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Component.setSize_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &Component.addPropertyChangeListener_MethodID_15, args: &__args, locals: &__locals )
     }
 
-    open func setSize( _ _arg0: Dimension? ) {
-        setSize( arg0: _arg0 )
+    open func addPropertyChangeListener( _ _arg0: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        addPropertyChangeListener( arg0: _arg0 )
     }
 
-    /// public void java.awt.Component.resize(java.awt.Dimension)
+    /// void java.awt.Component.adjustListeningChildrenOnParent(long,int)
 
-    private static var resize_MethodID_25: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func resize( arg0: Dimension? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// public void java.awt.Component.applyComponentOrientation(java.awt.ComponentOrientation)
+
+    private static var applyComponentOrientation_MethodID_16: jmethodID?
+
+    open func applyComponentOrientation( arg0: ComponentOrientation? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Component.resize_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "applyComponentOrientation", methodSig: "(Ljava/awt/ComponentOrientation;)V", methodCache: &Component.applyComponentOrientation_MethodID_16, args: &__args, locals: &__locals )
     }
 
-    open func resize( _ _arg0: Dimension? ) {
-        resize( arg0: _arg0 )
+    open func applyComponentOrientation( _ _arg0: ComponentOrientation? ) {
+        applyComponentOrientation( arg0: _arg0 )
     }
 
-    /// public void java.awt.Component.resize(int,int)
+    /// void java.awt.Component.applyCompoundShape(sun.java2d.pipe.Region)
 
-    private static var resize_MethodID_26: jmethodID?
-
-    open func resize( arg0: Int, arg1: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resize", methodSig: "(II)V", methodCache: &Component.resize_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func resize( _ _arg0: Int, _ _arg1: Int ) {
-        resize( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// private static native void java.awt.Component.initIDs()
-
-    /// public void java.awt.Component.enable(boolean)
-
-    private static var enable_MethodID_27: jmethodID?
-
-    open func enable( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enable", methodSig: "(Z)V", methodCache: &Component.enable_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func enable( _ _arg0: Bool ) {
-        enable( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.enable()
-
-    private static var enable_MethodID_28: jmethodID?
-
-    open func enable() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enable", methodSig: "()V", methodCache: &Component.enable_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void java.awt.Component.disable()
-
-    private static var disable_MethodID_29: jmethodID?
-
-    open func disable() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "disable", methodSig: "()V", methodCache: &Component.disable_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-
-    /// public boolean java.awt.Component.handleEvent(java.awt.Event)
-
-    private static var handleEvent_MethodID_30: jmethodID?
-
-    open func handleEvent( arg0: Event? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "handleEvent", methodSig: "(Ljava/awt/Event;)Z", methodCache: &Component.handleEvent_MethodID_30, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func handleEvent( _ _arg0: Event? ) -> Bool {
-        return handleEvent( arg0: _arg0 )
-    }
-
-    /// public boolean java.awt.Component.postEvent(java.awt.Event)
-
-    private static var postEvent_MethodID_31: jmethodID?
-
-    open func postEvent( evt: Event? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "postEvent", methodSig: "(Ljava/awt/Event;)Z", methodCache: &Component.postEvent_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func postEvent( _ _evt: Event? ) -> Bool {
-        return postEvent( evt: _evt )
-    }
-
-    /// java.awt.Component java.awt.Component.findUnderMouseInWindow(java.awt.PointerInfo)
-
-    /// java.awt.Point java.awt.Component.pointRelativeToComponent(java.awt.Point)
-
-    /// boolean java.awt.Component.isRecursivelyVisible()
-
-    /// void java.awt.Component.setAutoFocusTransferOnDisposal(boolean)
-
-    /// public void java.awt.Component.transferFocusBackward()
-
-    private static var transferFocusBackward_MethodID_32: jmethodID?
-
-    open func transferFocusBackward() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transferFocusBackward", methodSig: "()V", methodCache: &Component.transferFocusBackward_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-
-    /// boolean java.awt.Component.transferFocusBackward(boolean)
-
-    /// static boolean java.awt.Component.isInstanceOf(java.lang.Object,java.lang.String)
-
-    /// final void java.awt.Component.setFocusTraversalKeys_NoIDCheck(int,java.util.Set)
-
-    /// final java.util.Set java.awt.Component.getFocusTraversalKeys_NoIDCheck(int)
-
-    /// java.awt.Container java.awt.Component.getContainer()
-
-    /// final boolean java.awt.Component.isNonOpaqueForMixing()
-
-    /// final sun.java2d.pipe.Region java.awt.Component.getNormalShape()
-
-    /// final void java.awt.Component.subtractAndApplyShape(sun.java2d.pipe.Region)
+    // Skipping method: true false false false false 
 
     /// void java.awt.Component.applyCurrentShape()
 
-    /// final boolean java.awt.Component.isMixingNeeded()
+    // Skipping method: true false false false false 
 
-    /// final void java.awt.Component.subtractAndApplyShapeBelowMe()
+    /// private final void java.awt.Component.applyCurrentShapeBelowMe()
 
-    /// final boolean java.awt.Component.isFocusTraversableOverridden()
+    /// final boolean java.awt.Component.areBoundsValid()
 
-    /// final java.security.AccessControlContext java.awt.Component.getAccessControlContext()
+    // Skipping method: true false false false false 
 
-    /// int java.awt.Component.getBoundsOp()
+    /// public boolean java.awt.Component.areFocusTraversalKeysSet(int)
 
-    /// void java.awt.Component.setBoundsOp(int)
+    private static var areFocusTraversalKeysSet_MethodID_17: jmethodID?
+
+    open func areFocusTraversalKeysSet( arg0: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(arg0) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "areFocusTraversalKeysSet", methodSig: "(I)Z", methodCache: &Component.areFocusTraversalKeysSet_MethodID_17, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func areFocusTraversalKeysSet( _ _arg0: Int ) -> Bool {
+        return areFocusTraversalKeysSet( arg0: _arg0 )
+    }
+
+    /// boolean java.awt.Component.areInputMethodsEnabled()
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.Component.autoProcessMouseWheel(java.awt.event.MouseWheelEvent)
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Rectangle java.awt.Component.bounds()
+
+    private static var bounds_MethodID_18: jmethodID?
+
+    open func bounds() -> Rectangle! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "bounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Component.bounds_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
+    }
+
+
+    /// private sun.java2d.pipe.Region java.awt.Component.calculateCurrentShape()
+
+    /// final boolean java.awt.Component.canBeFocusOwner()
+
+    // Skipping method: true false false false false 
+
+    /// final boolean java.awt.Component.canBeFocusOwnerRecursively()
+
+    // Skipping method: true false false false false 
+
+    /// private boolean java.awt.Component.checkCoalescing()
+
+    /// void java.awt.Component.checkGD(java.lang.String)
+
+    // Skipping method: true false false false false 
+
+    /// public int java.awt.Component.checkImage(java.awt.Image,java.awt.image.ImageObserver)
+
+    private static var checkImage_MethodID_19: jmethodID?
+
+    open func checkImage( arg0: Image?, arg1: ImageObserver? ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkImage", methodSig: "(Ljava/awt/Image;Ljava/awt/image/ImageObserver;)I", methodCache: &Component.checkImage_MethodID_19, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func checkImage( _ _arg0: Image?, _ _arg1: ImageObserver? ) -> Int {
+        return checkImage( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public int java.awt.Component.checkImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
+
+    private static var checkImage_MethodID_20: jmethodID?
+
+    open func checkImage( arg0: Image?, arg1: Int, arg2: Int, arg3: ImageObserver? ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)I", methodCache: &Component.checkImage_MethodID_20, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func checkImage( _ _arg0: Image?, _ _arg1: Int, _ _arg2: Int, _ _arg3: ImageObserver? ) -> Int {
+        return checkImage( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
+    }
+
+    /// final void java.awt.Component.checkTreeLock()
+
+    // Skipping method: true false false false false 
+
+    /// boolean java.awt.Component.checkWindowClosingException()
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.Component.clearCurrentFocusCycleRootOnHide()
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.Component.clearMostRecentFocusOwnerOnHide()
+
+    // Skipping method: true false false false false 
+
+    /// protected java.awt.AWTEvent java.awt.Component.coalesceEvents(java.awt.AWTEvent,java.awt.AWTEvent)
+
+    private static var coalesceEvents_MethodID_21: jmethodID?
+
+    open func coalesceEvents( arg0: AWTEvent?, arg1: AWTEvent? ) -> AWTEvent! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "coalesceEvents", methodSig: "(Ljava/awt/AWTEvent;Ljava/awt/AWTEvent;)Ljava/awt/AWTEvent;", methodCache: &Component.coalesceEvents_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AWTEvent( javaObject: __return ) : nil
+    }
+
+    open func coalesceEvents( _ _arg0: AWTEvent?, _ _arg1: AWTEvent? ) -> AWTEvent! {
+        return coalesceEvents( arg0: _arg0, arg1: _arg1 )
+    }
 
     /// java.lang.String java.awt.Component.constructComponentName()
 
-    /// final java.awt.Container java.awt.Component.getParent_NoClientCode()
+    // Skipping method: true false false false false 
 
-    /// public synchronized void java.awt.Component.setDropTarget(java.awt.dnd.DropTarget)
+    /// public boolean java.awt.Component.contains(int,int)
 
-    private static var setDropTarget_MethodID_33: jmethodID?
+    private static var contains_MethodID_22: jmethodID?
 
-    open func setDropTarget( arg0: DropTarget? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func contains( arg0: Int, arg1: Int ) -> Bool {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDropTarget", methodSig: "(Ljava/awt/dnd/DropTarget;)V", methodCache: &Component.setDropTarget_MethodID_33, args: &__args, locals: &__locals )
-    }
-
-    open func setDropTarget( _ _arg0: DropTarget? ) {
-        setDropTarget( arg0: _arg0 )
-    }
-
-    /// public synchronized java.awt.dnd.DropTarget java.awt.Component.getDropTarget()
-
-    private static var getDropTarget_MethodID_34: jmethodID?
-
-    open func getDropTarget() -> DropTarget! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropTarget", methodSig: "()Ljava/awt/dnd/DropTarget;", methodCache: &Component.getDropTarget_MethodID_34, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DropTarget( javaObject: __return ) : nil
-    }
-
-
-    /// final java.awt.GraphicsConfiguration java.awt.Component.getGraphicsConfiguration_NoClientCode()
-
-    /// public java.awt.Toolkit java.awt.Component.getToolkit()
-
-    private static var getToolkit_MethodID_35: jmethodID?
-
-    open func getToolkit() -> Toolkit! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolkit", methodSig: "()Ljava/awt/Toolkit;", methodCache: &Component.getToolkit_MethodID_35, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Toolkit( javaObject: __return ) : nil
-    }
-
-
-    /// final java.awt.Toolkit java.awt.Component.getToolkitImpl()
-
-    /// final boolean java.awt.Component.isVisible_NoClientCode()
-
-    /// private java.awt.Rectangle java.awt.Component.getRecursivelyVisibleBounds()
-
-    /// final boolean java.awt.Component.isEnabledImpl()
-
-    /// public void java.awt.Component.enableInputMethods(boolean)
-
-    private static var enableInputMethods_MethodID_36: jmethodID?
-
-    open func enableInputMethods( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableInputMethods", methodSig: "(Z)V", methodCache: &Component.enableInputMethods_MethodID_36, args: &__args, locals: &__locals )
-    }
-
-    open func enableInputMethods( _ _arg0: Bool ) {
-        enableInputMethods( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.show()
-
-    private static var show_MethodID_37: jmethodID?
-
-    open func show() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "show", methodSig: "()V", methodCache: &Component.show_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void java.awt.Component.show(boolean)
-
-    private static var show_MethodID_38: jmethodID?
-
-    open func show( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "show", methodSig: "(Z)V", methodCache: &Component.show_MethodID_38, args: &__args, locals: &__locals )
-    }
-
-    open func show( _ _arg0: Bool ) {
-        show( arg0: _arg0 )
-    }
-
-    /// public boolean java.awt.Component.isForegroundSet()
-
-    private static var isForegroundSet_MethodID_39: jmethodID?
-
-    open func isForegroundSet() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isForegroundSet", methodSig: "()Z", methodCache: &Component.isForegroundSet_MethodID_39, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.Component.isBackgroundSet()
-
-    private static var isBackgroundSet_MethodID_40: jmethodID?
-
-    open func isBackgroundSet() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBackgroundSet", methodSig: "()Z", methodCache: &Component.isBackgroundSet_MethodID_40, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// final java.awt.Font java.awt.Component.getFont_NoClientCode()
-
-    /// public boolean java.awt.Component.isFontSet()
-
-    private static var isFontSet_MethodID_41: jmethodID?
-
-    open func isFontSet() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFontSet", methodSig: "()Z", methodCache: &Component.isFontSet_MethodID_41, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public java.util.Locale java.awt.Component.getLocale()
-
-    private static var getLocale_MethodID_42: jmethodID?
-
-    open func getLocale() -> java_util.JavaLocale! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocale", methodSig: "()Ljava/util/Locale;", methodCache: &Component.getLocale_MethodID_42, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.JavaLocale( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.image.ColorModel java.awt.Component.getColorModel()
-
-    private static var getColorModel_MethodID_43: jmethodID?
-
-    open func getColorModel() -> ColorModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &Component.getColorModel_MethodID_43, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ColorModel( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Point java.awt.Component.getLocationOnScreen()
-
-    private static var getLocationOnScreen_MethodID_44: jmethodID?
-
-    open func getLocationOnScreen() -> Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocationOnScreen", methodSig: "()Ljava/awt/Point;", methodCache: &Component.getLocationOnScreen_MethodID_44, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point( javaObject: __return ) : nil
-    }
-
-
-    /// final java.awt.Point java.awt.Component.getLocationOnScreen_NoTreeLock()
-
-    /// private java.awt.Point java.awt.Component.location_NoClientCode()
-
-    /// public void java.awt.Component.move(int,int)
-
-    private static var move_MethodID_45: jmethodID?
-
-    open func move( arg0: Int, arg1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(II)Z", methodCache: &Component.contains_MethodID_22, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func contains( _ _arg0: Int, _ _arg1: Int ) -> Bool {
+        return contains( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public boolean java.awt.Component.contains(java.awt.Point)
+
+    private static var contains_MethodID_23: jmethodID?
+
+    open func contains( arg0: Point? ) -> Bool {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "move", methodSig: "(II)V", methodCache: &Component.move_MethodID_45, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/awt/Point;)Z", methodCache: &Component.contains_MethodID_23, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    open func move( _ _arg0: Int, _ _arg1: Int ) {
-        move( arg0: _arg0, arg1: _arg1 )
+    open func contains( _ _arg0: Point? ) -> Bool {
+        return contains( arg0: _arg0 )
     }
 
-    /// private void java.awt.Component.repaintParentIfNeeded(int,int,int,int)
+    /// boolean java.awt.Component.containsFocus()
 
-    /// private void java.awt.Component.reshapeNativePeer(int,int,int,int,int)
+    // Skipping method: true false false false false 
 
-    /// private void java.awt.Component.notifyNewBounds(boolean,boolean)
+    /// int java.awt.Component.countHierarchyMembers()
 
-    /// final void java.awt.Component.revalidateSynchronously()
+    // Skipping method: true false false false false 
 
-    /// final java.awt.Graphics java.awt.Component.getGraphics_NoClientCode()
+    /// void java.awt.Component.createBufferStrategy(int)
 
-    /// public void java.awt.Component.setCursor(java.awt.Cursor)
+    // Skipping method: true false false false false 
 
-    private static var setCursor_MethodID_46: jmethodID?
+    /// void java.awt.Component.createBufferStrategy(int,java.awt.BufferCapabilities) throws java.awt.AWTException
 
-    open func setCursor( arg0: Cursor? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &Component.setCursor_MethodID_46, args: &__args, locals: &__locals )
-    }
+    // Skipping method: true false false false false 
 
-    open func setCursor( _ _arg0: Cursor? ) {
-        setCursor( arg0: _arg0 )
-    }
+    /// int java.awt.Component.createHierarchyEvents(int,java.awt.Component,java.awt.Container,long,boolean)
 
-    /// public java.awt.Cursor java.awt.Component.getCursor()
-
-    private static var getCursor_MethodID_47: jmethodID?
-
-    open func getCursor() -> Cursor! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &Component.getCursor_MethodID_47, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Cursor( javaObject: __return ) : nil
-    }
-
-
-    /// final java.awt.Cursor java.awt.Component.getCursor_NoClientCode()
-
-    /// public boolean java.awt.Component.isCursorSet()
-
-    private static var isCursorSet_MethodID_48: jmethodID?
-
-    open func isCursorSet() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCursorSet", methodSig: "()Z", methodCache: &Component.isCursorSet_MethodID_48, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void java.awt.Component.paintAll(java.awt.Graphics)
-
-    private static var paintAll_MethodID_49: jmethodID?
-
-    open func paintAll( arg0: Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintAll", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Component.paintAll_MethodID_49, args: &__args, locals: &__locals )
-    }
-
-    open func paintAll( _ _arg0: Graphics? ) {
-        paintAll( arg0: _arg0 )
-    }
-
-    /// private java.awt.Insets java.awt.Component.getInsets_NoClientCode()
+    // Skipping method: true false false false false 
 
     /// public java.awt.Image java.awt.Component.createImage(java.awt.image.ImageProducer)
 
-    private static var createImage_MethodID_50: jmethodID?
+    private static var createImage_MethodID_24: jmethodID?
 
     open func createImage( arg0: ImageProducer? ) -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(Ljava/awt/image/ImageProducer;)Ljava/awt/Image;", methodCache: &Component.createImage_MethodID_50, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(Ljava/awt/image/ImageProducer;)Ljava/awt/Image;", methodCache: &Component.createImage_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Image( javaObject: __return ) : nil
     }
@@ -1158,14 +972,14 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
 
     /// public java.awt.Image java.awt.Component.createImage(int,int)
 
-    private static var createImage_MethodID_51: jmethodID?
+    private static var createImage_MethodID_25: jmethodID?
 
     open func createImage( arg0: Int, arg1: Int ) -> Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(II)Ljava/awt/Image;", methodCache: &Component.createImage_MethodID_51, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createImage", methodSig: "(II)Ljava/awt/Image;", methodCache: &Component.createImage_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Image( javaObject: __return ) : nil
     }
@@ -1176,14 +990,14 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
 
     /// public java.awt.image.VolatileImage java.awt.Component.createVolatileImage(int,int)
 
-    private static var createVolatileImage_MethodID_52: jmethodID?
+    private static var createVolatileImage_MethodID_26: jmethodID?
 
     open func createVolatileImage( arg0: Int, arg1: Int ) -> VolatileImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createVolatileImage", methodSig: "(II)Ljava/awt/image/VolatileImage;", methodCache: &Component.createVolatileImage_MethodID_52, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createVolatileImage", methodSig: "(II)Ljava/awt/image/VolatileImage;", methodCache: &Component.createVolatileImage_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? VolatileImage( javaObject: __return ) : nil
     }
@@ -1194,17 +1008,18 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
 
     /// public java.awt.image.VolatileImage java.awt.Component.createVolatileImage(int,int,java.awt.ImageCapabilities) throws java.awt.AWTException
 
-    private static var createVolatileImage_MethodID_53: jmethodID?
+    private static var createVolatileImage_MethodID_27: jmethodID?
 
     open func createVolatileImage( arg0: Int, arg1: Int, arg2: ImageCapabilities? ) throws /* java.awt.AWTException */ -> VolatileImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createVolatileImage", methodSig: "(IILjava/awt/ImageCapabilities;)Ljava/awt/image/VolatileImage;", methodCache: &Component.createVolatileImage_MethodID_53, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createVolatileImage", methodSig: "(IILjava/awt/ImageCapabilities;)Ljava/awt/image/VolatileImage;", methodCache: &Component.createVolatileImage_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw AWTException( javaObject: throwable )
         }
         return __return != nil ? VolatileImage( javaObject: __return ) : nil
@@ -1214,1307 +1029,179 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
         return try createVolatileImage( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
-    /// public boolean java.awt.Component.prepareImage(java.awt.Image,java.awt.image.ImageObserver)
+    /// public void java.awt.Component.deliverEvent(java.awt.Event)
 
-    private static var prepareImage_MethodID_54: jmethodID?
+    private static var deliverEvent_MethodID_28: jmethodID?
 
-    open func prepareImage( arg0: Image?, arg1: ImageObserver? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func deliverEvent( arg0: Event? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "prepareImage", methodSig: "(Ljava/awt/Image;Ljava/awt/image/ImageObserver;)Z", methodCache: &Component.prepareImage_MethodID_54, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deliverEvent", methodSig: "(Ljava/awt/Event;)V", methodCache: &Component.deliverEvent_MethodID_28, args: &__args, locals: &__locals )
     }
 
-    open func prepareImage( _ _arg0: Image?, _ _arg1: ImageObserver? ) -> Bool {
-        return prepareImage( arg0: _arg0, arg1: _arg1 )
+    open func deliverEvent( _ _arg0: Event? ) {
+        deliverEvent( arg0: _arg0 )
     }
 
-    /// public boolean java.awt.Component.prepareImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
+    /// public void java.awt.Component.disable()
 
-    private static var prepareImage_MethodID_55: jmethodID?
+    private static var disable_MethodID_29: jmethodID?
 
-    open func prepareImage( arg0: Image?, arg1: Int, arg2: Int, arg3: ImageObserver? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open func disable() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "prepareImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)Z", methodCache: &Component.prepareImage_MethodID_55, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func prepareImage( _ _arg0: Image?, _ _arg1: Int, _ _arg2: Int, _ _arg3: ImageObserver? ) -> Bool {
-        return prepareImage( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
-    }
-
-    /// public int java.awt.Component.checkImage(java.awt.Image,java.awt.image.ImageObserver)
-
-    private static var checkImage_MethodID_56: jmethodID?
-
-    open func checkImage( arg0: Image?, arg1: ImageObserver? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkImage", methodSig: "(Ljava/awt/Image;Ljava/awt/image/ImageObserver;)I", methodCache: &Component.checkImage_MethodID_56, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func checkImage( _ _arg0: Image?, _ _arg1: ImageObserver? ) -> Int {
-        return checkImage( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public int java.awt.Component.checkImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
-
-    private static var checkImage_MethodID_57: jmethodID?
-
-    open func checkImage( arg0: Image?, arg1: Int, arg2: Int, arg3: ImageObserver? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)I", methodCache: &Component.checkImage_MethodID_57, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func checkImage( _ _arg0: Image?, _ _arg1: Int, _ _arg2: Int, _ _arg3: ImageObserver? ) -> Int {
-        return checkImage( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
-    }
-
-    /// void java.awt.Component.createBufferStrategy(int,java.awt.BufferCapabilities) throws java.awt.AWTException
-
-    /// void java.awt.Component.createBufferStrategy(int)
-
-    /// java.awt.image.BufferStrategy java.awt.Component.getBufferStrategy()
-
-    /// java.awt.Image java.awt.Component.getBackBuffer()
-
-    /// public void java.awt.Component.setIgnoreRepaint(boolean)
-
-    private static var setIgnoreRepaint_MethodID_58: jmethodID?
-
-    open func setIgnoreRepaint( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIgnoreRepaint", methodSig: "(Z)V", methodCache: &Component.setIgnoreRepaint_MethodID_58, args: &__args, locals: &__locals )
-    }
-
-    open func setIgnoreRepaint( _ _arg0: Bool ) {
-        setIgnoreRepaint( arg0: _arg0 )
-    }
-
-    /// public boolean java.awt.Component.getIgnoreRepaint()
-
-    private static var getIgnoreRepaint_MethodID_59: jmethodID?
-
-    open func getIgnoreRepaint() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getIgnoreRepaint", methodSig: "()Z", methodCache: &Component.getIgnoreRepaint_MethodID_59, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.Component.inside(int,int)
-
-    private static var inside_MethodID_60: jmethodID?
-
-    open func inside( arg0: Int, arg1: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inside", methodSig: "(II)Z", methodCache: &Component.inside_MethodID_60, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func inside( _ _arg0: Int, _ _arg1: Int ) -> Bool {
-        return inside( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// void java.awt.Component.autoProcessMouseWheel(java.awt.event.MouseWheelEvent)
-
-    /// boolean java.awt.Component.dispatchMouseWheelToAncestor(java.awt.event.MouseWheelEvent)
-
-    /// boolean java.awt.Component.checkWindowClosingException()
-
-    /// boolean java.awt.Component.areInputMethodsEnabled()
-
-    /// boolean java.awt.Component.eventTypeEnabled(int)
-
-    /// public synchronized void java.awt.Component.addComponentListener(java.awt.event.ComponentListener)
-
-    private static var addComponentListener_MethodID_61: jmethodID?
-
-    open func addComponentListener( arg0: ComponentListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addComponentListener", methodSig: "(Ljava/awt/event/ComponentListener;)V", methodCache: &Component.addComponentListener_MethodID_61, args: &__args, locals: &__locals )
-    }
-
-    open func addComponentListener( _ _arg0: ComponentListener? ) {
-        addComponentListener( arg0: _arg0 )
-    }
-
-    /// public synchronized void java.awt.Component.removeComponentListener(java.awt.event.ComponentListener)
-
-    private static var removeComponentListener_MethodID_62: jmethodID?
-
-    open func removeComponentListener( arg0: ComponentListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeComponentListener", methodSig: "(Ljava/awt/event/ComponentListener;)V", methodCache: &Component.removeComponentListener_MethodID_62, args: &__args, locals: &__locals )
-    }
-
-    open func removeComponentListener( _ _arg0: ComponentListener? ) {
-        removeComponentListener( arg0: _arg0 )
-    }
-
-    /// public synchronized java.awt.event.ComponentListener[] java.awt.Component.getComponentListeners()
-
-    private static var getComponentListeners_MethodID_63: jmethodID?
-
-    open func getComponentListeners() -> [ComponentListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentListeners", methodSig: "()[Ljava/awt/event/ComponentListener;", methodCache: &Component.getComponentListeners_MethodID_63, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ComponentListenerForward](), from: __return )
-    }
-
-
-    /// public synchronized void java.awt.Component.addFocusListener(java.awt.event.FocusListener)
-
-    private static var addFocusListener_MethodID_64: jmethodID?
-
-    open func addFocusListener( arg0: FocusListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addFocusListener", methodSig: "(Ljava/awt/event/FocusListener;)V", methodCache: &Component.addFocusListener_MethodID_64, args: &__args, locals: &__locals )
-    }
-
-    open func addFocusListener( _ _arg0: FocusListener? ) {
-        addFocusListener( arg0: _arg0 )
-    }
-
-    /// public synchronized void java.awt.Component.removeFocusListener(java.awt.event.FocusListener)
-
-    private static var removeFocusListener_MethodID_65: jmethodID?
-
-    open func removeFocusListener( arg0: FocusListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeFocusListener", methodSig: "(Ljava/awt/event/FocusListener;)V", methodCache: &Component.removeFocusListener_MethodID_65, args: &__args, locals: &__locals )
-    }
-
-    open func removeFocusListener( _ _arg0: FocusListener? ) {
-        removeFocusListener( arg0: _arg0 )
-    }
-
-    /// public synchronized java.awt.event.FocusListener[] java.awt.Component.getFocusListeners()
-
-    private static var getFocusListeners_MethodID_66: jmethodID?
-
-    open func getFocusListeners() -> [FocusListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusListeners", methodSig: "()[Ljava/awt/event/FocusListener;", methodCache: &Component.getFocusListeners_MethodID_66, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [FocusListenerForward](), from: __return )
-    }
-
-
-    /// public void java.awt.Component.addHierarchyListener(java.awt.event.HierarchyListener)
-
-    private static var addHierarchyListener_MethodID_67: jmethodID?
-
-    open func addHierarchyListener( arg0: HierarchyListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addHierarchyListener", methodSig: "(Ljava/awt/event/HierarchyListener;)V", methodCache: &Component.addHierarchyListener_MethodID_67, args: &__args, locals: &__locals )
-    }
-
-    open func addHierarchyListener( _ _arg0: HierarchyListener? ) {
-        addHierarchyListener( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.removeHierarchyListener(java.awt.event.HierarchyListener)
-
-    private static var removeHierarchyListener_MethodID_68: jmethodID?
-
-    open func removeHierarchyListener( arg0: HierarchyListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeHierarchyListener", methodSig: "(Ljava/awt/event/HierarchyListener;)V", methodCache: &Component.removeHierarchyListener_MethodID_68, args: &__args, locals: &__locals )
-    }
-
-    open func removeHierarchyListener( _ _arg0: HierarchyListener? ) {
-        removeHierarchyListener( arg0: _arg0 )
-    }
-
-    /// public synchronized java.awt.event.HierarchyListener[] java.awt.Component.getHierarchyListeners()
-
-    private static var getHierarchyListeners_MethodID_69: jmethodID?
-
-    open func getHierarchyListeners() -> [HierarchyListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHierarchyListeners", methodSig: "()[Ljava/awt/event/HierarchyListener;", methodCache: &Component.getHierarchyListeners_MethodID_69, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [HierarchyListenerForward](), from: __return )
-    }
-
-
-    /// public void java.awt.Component.addHierarchyBoundsListener(java.awt.event.HierarchyBoundsListener)
-
-    private static var addHierarchyBoundsListener_MethodID_70: jmethodID?
-
-    open func addHierarchyBoundsListener( arg0: HierarchyBoundsListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addHierarchyBoundsListener", methodSig: "(Ljava/awt/event/HierarchyBoundsListener;)V", methodCache: &Component.addHierarchyBoundsListener_MethodID_70, args: &__args, locals: &__locals )
-    }
-
-    open func addHierarchyBoundsListener( _ _arg0: HierarchyBoundsListener? ) {
-        addHierarchyBoundsListener( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.removeHierarchyBoundsListener(java.awt.event.HierarchyBoundsListener)
-
-    private static var removeHierarchyBoundsListener_MethodID_71: jmethodID?
-
-    open func removeHierarchyBoundsListener( arg0: HierarchyBoundsListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeHierarchyBoundsListener", methodSig: "(Ljava/awt/event/HierarchyBoundsListener;)V", methodCache: &Component.removeHierarchyBoundsListener_MethodID_71, args: &__args, locals: &__locals )
-    }
-
-    open func removeHierarchyBoundsListener( _ _arg0: HierarchyBoundsListener? ) {
-        removeHierarchyBoundsListener( arg0: _arg0 )
-    }
-
-    /// public synchronized java.awt.event.HierarchyBoundsListener[] java.awt.Component.getHierarchyBoundsListeners()
-
-    private static var getHierarchyBoundsListeners_MethodID_72: jmethodID?
-
-    open func getHierarchyBoundsListeners() -> [HierarchyBoundsListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHierarchyBoundsListeners", methodSig: "()[Ljava/awt/event/HierarchyBoundsListener;", methodCache: &Component.getHierarchyBoundsListeners_MethodID_72, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [HierarchyBoundsListenerForward](), from: __return )
-    }
-
-
-    /// public synchronized void java.awt.Component.addKeyListener(java.awt.event.KeyListener)
-
-    private static var addKeyListener_MethodID_73: jmethodID?
-
-    open func addKeyListener( arg0: KeyListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addKeyListener", methodSig: "(Ljava/awt/event/KeyListener;)V", methodCache: &Component.addKeyListener_MethodID_73, args: &__args, locals: &__locals )
-    }
-
-    open func addKeyListener( _ _arg0: KeyListener? ) {
-        addKeyListener( arg0: _arg0 )
-    }
-
-    /// public synchronized void java.awt.Component.removeKeyListener(java.awt.event.KeyListener)
-
-    private static var removeKeyListener_MethodID_74: jmethodID?
-
-    open func removeKeyListener( arg0: KeyListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeKeyListener", methodSig: "(Ljava/awt/event/KeyListener;)V", methodCache: &Component.removeKeyListener_MethodID_74, args: &__args, locals: &__locals )
-    }
-
-    open func removeKeyListener( _ _arg0: KeyListener? ) {
-        removeKeyListener( arg0: _arg0 )
-    }
-
-    /// public synchronized java.awt.event.KeyListener[] java.awt.Component.getKeyListeners()
-
-    private static var getKeyListeners_MethodID_75: jmethodID?
-
-    open func getKeyListeners() -> [KeyListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeyListeners", methodSig: "()[Ljava/awt/event/KeyListener;", methodCache: &Component.getKeyListeners_MethodID_75, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [KeyListenerForward](), from: __return )
-    }
-
-
-    /// public synchronized void java.awt.Component.addMouseListener(java.awt.event.MouseListener)
-
-    private static var addMouseListener_MethodID_76: jmethodID?
-
-    open func addMouseListener( arg0: MouseListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMouseListener", methodSig: "(Ljava/awt/event/MouseListener;)V", methodCache: &Component.addMouseListener_MethodID_76, args: &__args, locals: &__locals )
-    }
-
-    open func addMouseListener( _ _arg0: MouseListener? ) {
-        addMouseListener( arg0: _arg0 )
-    }
-
-    /// public synchronized void java.awt.Component.removeMouseListener(java.awt.event.MouseListener)
-
-    private static var removeMouseListener_MethodID_77: jmethodID?
-
-    open func removeMouseListener( arg0: MouseListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMouseListener", methodSig: "(Ljava/awt/event/MouseListener;)V", methodCache: &Component.removeMouseListener_MethodID_77, args: &__args, locals: &__locals )
-    }
-
-    open func removeMouseListener( _ _arg0: MouseListener? ) {
-        removeMouseListener( arg0: _arg0 )
-    }
-
-    /// public synchronized java.awt.event.MouseListener[] java.awt.Component.getMouseListeners()
-
-    private static var getMouseListeners_MethodID_78: jmethodID?
-
-    open func getMouseListeners() -> [MouseListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseListeners", methodSig: "()[Ljava/awt/event/MouseListener;", methodCache: &Component.getMouseListeners_MethodID_78, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [MouseListenerForward](), from: __return )
-    }
-
-
-    /// public synchronized void java.awt.Component.addMouseMotionListener(java.awt.event.MouseMotionListener)
-
-    private static var addMouseMotionListener_MethodID_79: jmethodID?
-
-    open func addMouseMotionListener( arg0: MouseMotionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMouseMotionListener", methodSig: "(Ljava/awt/event/MouseMotionListener;)V", methodCache: &Component.addMouseMotionListener_MethodID_79, args: &__args, locals: &__locals )
-    }
-
-    open func addMouseMotionListener( _ _arg0: MouseMotionListener? ) {
-        addMouseMotionListener( arg0: _arg0 )
-    }
-
-    /// public synchronized void java.awt.Component.removeMouseMotionListener(java.awt.event.MouseMotionListener)
-
-    private static var removeMouseMotionListener_MethodID_80: jmethodID?
-
-    open func removeMouseMotionListener( arg0: MouseMotionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMouseMotionListener", methodSig: "(Ljava/awt/event/MouseMotionListener;)V", methodCache: &Component.removeMouseMotionListener_MethodID_80, args: &__args, locals: &__locals )
-    }
-
-    open func removeMouseMotionListener( _ _arg0: MouseMotionListener? ) {
-        removeMouseMotionListener( arg0: _arg0 )
-    }
-
-    /// public synchronized java.awt.event.MouseMotionListener[] java.awt.Component.getMouseMotionListeners()
-
-    private static var getMouseMotionListeners_MethodID_81: jmethodID?
-
-    open func getMouseMotionListeners() -> [MouseMotionListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseMotionListeners", methodSig: "()[Ljava/awt/event/MouseMotionListener;", methodCache: &Component.getMouseMotionListeners_MethodID_81, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [MouseMotionListenerForward](), from: __return )
-    }
-
-
-    /// public synchronized void java.awt.Component.addMouseWheelListener(java.awt.event.MouseWheelListener)
-
-    private static var addMouseWheelListener_MethodID_82: jmethodID?
-
-    open func addMouseWheelListener( arg0: MouseWheelListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMouseWheelListener", methodSig: "(Ljava/awt/event/MouseWheelListener;)V", methodCache: &Component.addMouseWheelListener_MethodID_82, args: &__args, locals: &__locals )
-    }
-
-    open func addMouseWheelListener( _ _arg0: MouseWheelListener? ) {
-        addMouseWheelListener( arg0: _arg0 )
-    }
-
-    /// public synchronized void java.awt.Component.removeMouseWheelListener(java.awt.event.MouseWheelListener)
-
-    private static var removeMouseWheelListener_MethodID_83: jmethodID?
-
-    open func removeMouseWheelListener( arg0: MouseWheelListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMouseWheelListener", methodSig: "(Ljava/awt/event/MouseWheelListener;)V", methodCache: &Component.removeMouseWheelListener_MethodID_83, args: &__args, locals: &__locals )
-    }
-
-    open func removeMouseWheelListener( _ _arg0: MouseWheelListener? ) {
-        removeMouseWheelListener( arg0: _arg0 )
-    }
-
-    /// public synchronized java.awt.event.MouseWheelListener[] java.awt.Component.getMouseWheelListeners()
-
-    private static var getMouseWheelListeners_MethodID_84: jmethodID?
-
-    open func getMouseWheelListeners() -> [MouseWheelListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseWheelListeners", methodSig: "()[Ljava/awt/event/MouseWheelListener;", methodCache: &Component.getMouseWheelListeners_MethodID_84, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [MouseWheelListenerForward](), from: __return )
-    }
-
-
-    /// public synchronized void java.awt.Component.addInputMethodListener(java.awt.event.InputMethodListener)
-
-    private static var addInputMethodListener_MethodID_85: jmethodID?
-
-    open func addInputMethodListener( arg0: InputMethodListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addInputMethodListener", methodSig: "(Ljava/awt/event/InputMethodListener;)V", methodCache: &Component.addInputMethodListener_MethodID_85, args: &__args, locals: &__locals )
-    }
-
-    open func addInputMethodListener( _ _arg0: InputMethodListener? ) {
-        addInputMethodListener( arg0: _arg0 )
-    }
-
-    /// public synchronized void java.awt.Component.removeInputMethodListener(java.awt.event.InputMethodListener)
-
-    private static var removeInputMethodListener_MethodID_86: jmethodID?
-
-    open func removeInputMethodListener( arg0: InputMethodListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeInputMethodListener", methodSig: "(Ljava/awt/event/InputMethodListener;)V", methodCache: &Component.removeInputMethodListener_MethodID_86, args: &__args, locals: &__locals )
-    }
-
-    open func removeInputMethodListener( _ _arg0: InputMethodListener? ) {
-        removeInputMethodListener( arg0: _arg0 )
-    }
-
-    /// public synchronized java.awt.event.InputMethodListener[] java.awt.Component.getInputMethodListeners()
-
-    private static var getInputMethodListeners_MethodID_87: jmethodID?
-
-    open func getInputMethodListeners() -> [InputMethodListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputMethodListeners", methodSig: "()[Ljava/awt/event/InputMethodListener;", methodCache: &Component.getInputMethodListeners_MethodID_87, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [InputMethodListenerForward](), from: __return )
-    }
-
-
-    /// public java.awt.im.InputMethodRequests java.awt.Component.getInputMethodRequests()
-
-    private static var getInputMethodRequests_MethodID_88: jmethodID?
-
-    open func getInputMethodRequests() -> InputMethodRequests! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputMethodRequests", methodSig: "()Ljava/awt/im/InputMethodRequests;", methodCache: &Component.getInputMethodRequests_MethodID_88, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? InputMethodRequestsForward( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.im.InputContext java.awt.Component.getInputContext()
-
-    private static var getInputContext_MethodID_89: jmethodID?
-
-    open func getInputContext() -> InputContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputContext", methodSig: "()Ljava/awt/im/InputContext;", methodCache: &Component.getInputContext_MethodID_89, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? InputContext( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "disable", methodSig: "()V", methodCache: &Component.disable_MethodID_29, args: &__args, locals: &__locals )
     }
 
 
     /// protected final void java.awt.Component.disableEvents(long)
 
-    private static var disableEvents_MethodID_90: jmethodID?
+    private static var disableEvents_MethodID_30: jmethodID?
 
     open func disableEvents( arg0: Int64 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "disableEvents", methodSig: "(J)V", methodCache: &Component.disableEvents_MethodID_90, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( j: arg0 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "disableEvents", methodSig: "(J)V", methodCache: &Component.disableEvents_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func disableEvents( _ _arg0: Int64 ) {
         disableEvents( arg0: _arg0 )
     }
 
-    /// private boolean java.awt.Component.checkCoalescing()
+    /// public final void java.awt.Component.dispatchEvent(java.awt.AWTEvent)
 
-    /// private static boolean java.awt.Component.isCoalesceEventsOverriden(java.lang.Class)
+    private static var dispatchEvent_MethodID_31: jmethodID?
 
-    /// final boolean java.awt.Component.isCoalescingEnabled()
-
-    /// protected java.awt.AWTEvent java.awt.Component.coalesceEvents(java.awt.AWTEvent,java.awt.AWTEvent)
-
-    private static var coalesceEvents_MethodID_91: jmethodID?
-
-    open func coalesceEvents( arg0: AWTEvent?, arg1: AWTEvent? ) -> AWTEvent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func dispatchEvent( arg0: AWTEvent? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "coalesceEvents", methodSig: "(Ljava/awt/AWTEvent;Ljava/awt/AWTEvent;)Ljava/awt/AWTEvent;", methodCache: &Component.coalesceEvents_MethodID_91, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AWTEvent( javaObject: __return ) : nil
-    }
-
-    open func coalesceEvents( _ _arg0: AWTEvent?, _ _arg1: AWTEvent? ) -> AWTEvent! {
-        return coalesceEvents( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// protected void java.awt.Component.processComponentEvent(java.awt.event.ComponentEvent)
-
-    private static var processComponentEvent_MethodID_92: jmethodID?
-
-    open func processComponentEvent( arg0: ComponentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processComponentEvent", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &Component.processComponentEvent_MethodID_92, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispatchEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Component.dispatchEvent_MethodID_31, args: &__args, locals: &__locals )
     }
 
-    open func processComponentEvent( _ _arg0: ComponentEvent? ) {
-        processComponentEvent( arg0: _arg0 )
+    open func dispatchEvent( _ _arg0: AWTEvent? ) {
+        dispatchEvent( arg0: _arg0 )
     }
 
-    /// protected void java.awt.Component.processFocusEvent(java.awt.event.FocusEvent)
+    /// void java.awt.Component.dispatchEventImpl(java.awt.AWTEvent)
 
-    private static var processFocusEvent_MethodID_93: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func processFocusEvent( arg0: FocusEvent? ) {
+    /// boolean java.awt.Component.dispatchMouseWheelToAncestor(java.awt.event.MouseWheelEvent)
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.doLayout()
+
+    private static var doLayout_MethodID_32: jmethodID?
+
+    open func doLayout() {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processFocusEvent", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &Component.processFocusEvent_MethodID_93, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "doLayout", methodSig: "()V", methodCache: &Component.doLayout_MethodID_32, args: &__args, locals: &__locals )
     }
 
-    open func processFocusEvent( _ _arg0: FocusEvent? ) {
-        processFocusEvent( arg0: _arg0 )
-    }
-
-    /// protected void java.awt.Component.processMouseWheelEvent(java.awt.event.MouseWheelEvent)
-
-    private static var processMouseWheelEvent_MethodID_94: jmethodID?
-
-    open func processMouseWheelEvent( arg0: MouseWheelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseWheelEvent", methodSig: "(Ljava/awt/event/MouseWheelEvent;)V", methodCache: &Component.processMouseWheelEvent_MethodID_94, args: &__args, locals: &__locals )
-    }
-
-    open func processMouseWheelEvent( _ _arg0: MouseWheelEvent? ) {
-        processMouseWheelEvent( arg0: _arg0 )
-    }
-
-    /// protected void java.awt.Component.processInputMethodEvent(java.awt.event.InputMethodEvent)
-
-    private static var processInputMethodEvent_MethodID_95: jmethodID?
-
-    open func processInputMethodEvent( arg0: InputMethodEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processInputMethodEvent", methodSig: "(Ljava/awt/event/InputMethodEvent;)V", methodCache: &Component.processInputMethodEvent_MethodID_95, args: &__args, locals: &__locals )
-    }
-
-    open func processInputMethodEvent( _ _arg0: InputMethodEvent? ) {
-        processInputMethodEvent( arg0: _arg0 )
-    }
-
-    /// protected void java.awt.Component.processHierarchyEvent(java.awt.event.HierarchyEvent)
-
-    private static var processHierarchyEvent_MethodID_96: jmethodID?
-
-    open func processHierarchyEvent( arg0: HierarchyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processHierarchyEvent", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &Component.processHierarchyEvent_MethodID_96, args: &__args, locals: &__locals )
-    }
-
-    open func processHierarchyEvent( _ _arg0: HierarchyEvent? ) {
-        processHierarchyEvent( arg0: _arg0 )
-    }
-
-    /// protected void java.awt.Component.processHierarchyBoundsEvent(java.awt.event.HierarchyEvent)
-
-    private static var processHierarchyBoundsEvent_MethodID_97: jmethodID?
-
-    open func processHierarchyBoundsEvent( arg0: HierarchyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processHierarchyBoundsEvent", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &Component.processHierarchyBoundsEvent_MethodID_97, args: &__args, locals: &__locals )
-    }
-
-    open func processHierarchyBoundsEvent( _ _arg0: HierarchyEvent? ) {
-        processHierarchyBoundsEvent( arg0: _arg0 )
-    }
-
-    /// public boolean java.awt.Component.mouseDown(java.awt.Event,int,int)
-
-    private static var mouseDown_MethodID_98: jmethodID?
-
-    open func mouseDown( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseDown", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseDown_MethodID_98, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func mouseDown( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
-        return mouseDown( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public boolean java.awt.Component.mouseDrag(java.awt.Event,int,int)
-
-    private static var mouseDrag_MethodID_99: jmethodID?
-
-    open func mouseDrag( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseDrag", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseDrag_MethodID_99, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func mouseDrag( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
-        return mouseDrag( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public boolean java.awt.Component.mouseUp(java.awt.Event,int,int)
-
-    private static var mouseUp_MethodID_100: jmethodID?
-
-    open func mouseUp( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseUp", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseUp_MethodID_100, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func mouseUp( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
-        return mouseUp( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public boolean java.awt.Component.mouseMove(java.awt.Event,int,int)
-
-    private static var mouseMove_MethodID_101: jmethodID?
-
-    open func mouseMove( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseMove", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseMove_MethodID_101, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func mouseMove( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
-        return mouseMove( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public boolean java.awt.Component.mouseEnter(java.awt.Event,int,int)
-
-    private static var mouseEnter_MethodID_102: jmethodID?
-
-    open func mouseEnter( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseEnter", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseEnter_MethodID_102, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func mouseEnter( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
-        return mouseEnter( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public boolean java.awt.Component.mouseExit(java.awt.Event,int,int)
-
-    private static var mouseExit_MethodID_103: jmethodID?
-
-    open func mouseExit( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseExit", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseExit_MethodID_103, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func mouseExit( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
-        return mouseExit( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public boolean java.awt.Component.keyDown(java.awt.Event,int)
-
-    private static var keyDown_MethodID_104: jmethodID?
-
-    open func keyDown( arg0: Event?, arg1: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "keyDown", methodSig: "(Ljava/awt/Event;I)Z", methodCache: &Component.keyDown_MethodID_104, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func keyDown( _ _arg0: Event?, _ _arg1: Int ) -> Bool {
-        return keyDown( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public boolean java.awt.Component.keyUp(java.awt.Event,int)
-
-    private static var keyUp_MethodID_105: jmethodID?
-
-    open func keyUp( arg0: Event?, arg1: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "keyUp", methodSig: "(Ljava/awt/Event;I)Z", methodCache: &Component.keyUp_MethodID_105, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func keyUp( _ _arg0: Event?, _ _arg1: Int ) -> Bool {
-        return keyUp( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public boolean java.awt.Component.gotFocus(java.awt.Event,java.lang.Object)
-
-    private static var gotFocus_MethodID_106: jmethodID?
-
-    open func gotFocus( arg0: Event?, arg1: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "gotFocus", methodSig: "(Ljava/awt/Event;Ljava/lang/Object;)Z", methodCache: &Component.gotFocus_MethodID_106, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func gotFocus( _ _arg0: Event?, _ _arg1: java_swift.JavaObject? ) -> Bool {
-        return gotFocus( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public boolean java.awt.Component.lostFocus(java.awt.Event,java.lang.Object)
-
-    private static var lostFocus_MethodID_107: jmethodID?
-
-    open func lostFocus( arg0: Event?, arg1: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "lostFocus", methodSig: "(Ljava/awt/Event;Ljava/lang/Object;)Z", methodCache: &Component.lostFocus_MethodID_107, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func lostFocus( _ _arg0: Event?, _ _arg1: java_swift.JavaObject? ) -> Bool {
-        return lostFocus( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public boolean java.awt.Component.isFocusTraversable()
-
-    private static var isFocusTraversable_MethodID_108: jmethodID?
-
-    open func isFocusTraversable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusTraversable", methodSig: "()Z", methodCache: &Component.isFocusTraversable_MethodID_108, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void java.awt.Component.setFocusable(boolean)
-
-    private static var setFocusable_MethodID_109: jmethodID?
-
-    open func setFocusable( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusable", methodSig: "(Z)V", methodCache: &Component.setFocusable_MethodID_109, args: &__args, locals: &__locals )
-    }
-
-    open func setFocusable( _ _arg0: Bool ) {
-        setFocusable( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.setFocusTraversalKeysEnabled(boolean)
-
-    private static var setFocusTraversalKeysEnabled_MethodID_110: jmethodID?
-
-    open func setFocusTraversalKeysEnabled( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusTraversalKeysEnabled", methodSig: "(Z)V", methodCache: &Component.setFocusTraversalKeysEnabled_MethodID_110, args: &__args, locals: &__locals )
-    }
-
-    open func setFocusTraversalKeysEnabled( _ _arg0: Bool ) {
-        setFocusTraversalKeysEnabled( arg0: _arg0 )
-    }
-
-    /// public boolean java.awt.Component.getFocusTraversalKeysEnabled()
-
-    private static var getFocusTraversalKeysEnabled_MethodID_111: jmethodID?
-
-    open func getFocusTraversalKeysEnabled() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getFocusTraversalKeysEnabled", methodSig: "()Z", methodCache: &Component.getFocusTraversalKeysEnabled_MethodID_111, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// final boolean java.awt.Component.requestFocusHelper(boolean,boolean,sun.awt.CausedFocusEvent$Cause)
-
-    /// final boolean java.awt.Component.requestFocusHelper(boolean,boolean)
-
-    /// private boolean java.awt.Component.isRequestFocusAccepted(boolean,boolean,sun.awt.CausedFocusEvent$Cause)
-
-    /// static synchronized void java.awt.Component.setRequestFocusController(sun.awt.RequestFocusController)
-
-    /// final java.awt.Component java.awt.Component.getNextFocusCandidate()
-
-    /// public void java.awt.Component.transferFocusUpCycle()
-
-    private static var transferFocusUpCycle_MethodID_112: jmethodID?
-
-    open func transferFocusUpCycle() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transferFocusUpCycle", methodSig: "()V", methodCache: &Component.transferFocusUpCycle_MethodID_112, args: &__args, locals: &__locals )
-    }
-
-
-    /// public boolean java.awt.Component.hasFocus()
-
-    private static var hasFocus_MethodID_113: jmethodID?
-
-    open func hasFocus() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "hasFocus", methodSig: "()Z", methodCache: &Component.hasFocus_MethodID_113, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// boolean java.awt.Component.isAutoFocusTransferOnDisposal()
-
-    /// public void java.awt.Component.removePropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var removePropertyChangeListener_MethodID_114: jmethodID?
-
-    open func removePropertyChangeListener( arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &Component.removePropertyChangeListener_MethodID_114, args: &__args, locals: &__locals )
-    }
-
-    open func removePropertyChangeListener( _ _arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        removePropertyChangeListener( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
-
-    private static var removePropertyChangeListener_MethodID_115: jmethodID?
-
-    open func removePropertyChangeListener( arg0: String?, arg1: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &Component.removePropertyChangeListener_MethodID_115, args: &__args, locals: &__locals )
-    }
-
-    open func removePropertyChangeListener( _ _arg0: String?, _ _arg1: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        removePropertyChangeListener( arg0: _arg0, arg1: _arg1 )
-    }
 
     /// private void java.awt.Component.doSwingSerialization()
 
-    /// public void java.awt.Component.setComponentOrientation(java.awt.ComponentOrientation)
+    /// public void java.awt.Component.enable(boolean)
 
-    private static var setComponentOrientation_MethodID_116: jmethodID?
+    private static var enable_MethodID_33: jmethodID?
 
-    open func setComponentOrientation( arg0: ComponentOrientation? ) {
+    open func enable( arg0: Bool ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enable", methodSig: "(Z)V", methodCache: &Component.enable_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+    open func enable( _ _arg0: Bool ) {
+        enable( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.enable()
+
+    private static var enable_MethodID_34: jmethodID?
+
+    open func enable() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentOrientation", methodSig: "(Ljava/awt/ComponentOrientation;)V", methodCache: &Component.setComponentOrientation_MethodID_116, args: &__args, locals: &__locals )
-    }
-
-    open func setComponentOrientation( _ _arg0: ComponentOrientation? ) {
-        setComponentOrientation( arg0: _arg0 )
-    }
-
-    /// public java.awt.ComponentOrientation java.awt.Component.getComponentOrientation()
-
-    private static var getComponentOrientation_MethodID_117: jmethodID?
-
-    open func getComponentOrientation() -> ComponentOrientation! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentOrientation", methodSig: "()Ljava/awt/ComponentOrientation;", methodCache: &Component.getComponentOrientation_MethodID_117, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentOrientation( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enable", methodSig: "()V", methodCache: &Component.enable_MethodID_34, args: &__args, locals: &__locals )
     }
 
 
-    /// final boolean java.awt.Component.canBeFocusOwner()
+    /// protected final void java.awt.Component.enableEvents(long)
 
-    /// int java.awt.Component.getAccessibleIndexInParent()
+    private static var enableEvents_MethodID_35: jmethodID?
 
-    /// javax.accessibility.AccessibleStateSet java.awt.Component.getAccessibleStateSet()
-
-    /// final boolean java.awt.Component.areBoundsValid()
-
-    /// void java.awt.Component.applyCompoundShape(sun.java2d.pipe.Region)
-
-    /// private sun.java2d.pipe.Region java.awt.Component.getAppliedShape()
-
-    /// java.awt.Point java.awt.Component.getLocationOnWindow()
-
-    /// final int java.awt.Component.getSiblingIndexAbove()
-
-    /// final java.awt.peer.ComponentPeer java.awt.Component.getHWPeerAboveMe()
-
-    /// final int java.awt.Component.getSiblingIndexBelow()
-
-    /// private sun.java2d.pipe.Region java.awt.Component.calculateCurrentShape()
-
-    /// private final void java.awt.Component.applyCurrentShapeBelowMe()
-
-    /// public boolean java.awt.Component.isEnabled()
-
-    private static var isEnabled_MethodID_118: jmethodID?
-
-    open func isEnabled() -> Bool {
+    open func enableEvents( arg0: Int64 ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &Component.isEnabled_MethodID_118, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        __args[0] = jvalue( j: arg0 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableEvents", methodSig: "(J)V", methodCache: &Component.enableEvents_MethodID_35, args: &__args, locals: &__locals )
     }
 
+    open func enableEvents( _ _arg0: Int64 ) {
+        enableEvents( arg0: _arg0 )
+    }
 
-    /// public void java.awt.Component.validate()
+    /// public void java.awt.Component.enableInputMethods(boolean)
 
-    private static var validate_MethodID_119: jmethodID?
+    private static var enableInputMethods_MethodID_36: jmethodID?
 
-    open func validate() {
+    open func enableInputMethods( arg0: Bool ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "validate", methodSig: "()V", methodCache: &Component.validate_MethodID_119, args: &__args, locals: &__locals )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableInputMethods", methodSig: "(Z)V", methodCache: &Component.enableInputMethods_MethodID_36, args: &__args, locals: &__locals )
     }
 
-
-    /// public java.awt.Dimension java.awt.Component.getPreferredSize()
-
-    private static var getPreferredSize_MethodID_120: jmethodID?
-
-    open func getPreferredSize() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.getPreferredSize_MethodID_120, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
+    open func enableInputMethods( _ _arg0: Bool ) {
+        enableInputMethods( arg0: _arg0 )
     }
 
+    /// boolean java.awt.Component.eventEnabled(java.awt.AWTEvent)
 
-    /// public void java.awt.Component.setBackground(java.awt.Color)
+    // Skipping method: true false false false false 
 
-    private static var setBackground_MethodID_121: jmethodID?
+    /// boolean java.awt.Component.eventTypeEnabled(int)
 
-    open func setBackground( arg0: Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &Component.setBackground_MethodID_121, args: &__args, locals: &__locals )
-    }
+    // Skipping method: true false false false false 
 
-    open func setBackground( _ _arg0: Color? ) {
-        setBackground( arg0: _arg0 )
-    }
+    /// java.awt.Component java.awt.Component.findUnderMouseInWindow(java.awt.PointerInfo)
 
-    /// public void java.awt.Component.setForeground(java.awt.Color)
-
-    private static var setForeground_MethodID_122: jmethodID?
-
-    open func setForeground( arg0: Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setForeground", methodSig: "(Ljava/awt/Color;)V", methodCache: &Component.setForeground_MethodID_122, args: &__args, locals: &__locals )
-    }
-
-    open func setForeground( _ _arg0: Color? ) {
-        setForeground( arg0: _arg0 )
-    }
-
-    /// public java.awt.Color java.awt.Component.getBackground()
-
-    private static var getBackground_MethodID_123: jmethodID?
-
-    open func getBackground() -> Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackground", methodSig: "()Ljava/awt/Color;", methodCache: &Component.getBackground_MethodID_123, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Color( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Color java.awt.Component.getForeground()
-
-    private static var getForeground_MethodID_124: jmethodID?
-
-    open func getForeground() -> Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getForeground", methodSig: "()Ljava/awt/Color;", methodCache: &Component.getForeground_MethodID_124, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Color( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Font java.awt.Component.getFont()
-
-    private static var getFont_MethodID_125: jmethodID?
-
-    open func getFont() -> Font! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &Component.getFont_MethodID_125, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Font( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.Component.setFont(java.awt.Font)
-
-    private static var setFont_MethodID_126: jmethodID?
-
-    open func setFont( arg0: Font? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &Component.setFont_MethodID_126, args: &__args, locals: &__locals )
-    }
-
-    open func setFont( _ _arg0: Font? ) {
-        setFont( arg0: _arg0 )
-    }
-
-    /// public boolean java.awt.Component.imageUpdate(java.awt.Image,int,int,int,int,int)
-
-    private static var imageUpdate_MethodID_127: jmethodID?
-
-    open func imageUpdate( img: Image?, infoflags: Int, x: Int, y: Int, width: Int, height: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img, locals: &__locals )
-        __args[1] = JNIType.toJava( value: infoflags, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: width, locals: &__locals )
-        __args[5] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "imageUpdate", methodSig: "(Ljava/awt/Image;IIIII)Z", methodCache: &Component.imageUpdate_MethodID_127, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func imageUpdate( _ _img: Image?, _ _infoflags: Int, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) -> Bool {
-        return imageUpdate( img: _img, infoflags: _infoflags, x: _x, y: _y, width: _width, height: _height )
-    }
-
-    /// public javax.accessibility.AccessibleContext java.awt.Component.getAccessibleContext()
-
-    private static var getAccessibleContext_MethodID_128: jmethodID?
-
-    open func getAccessibleContext() -> /* javax.accessibility.AccessibleContext */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleContext", methodSig: "()Ljavax/accessibility/AccessibleContext;", methodCache: &Component.getAccessibleContext_MethodID_128, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.Component.firePropertyChange(java.lang.String,char,char)
-
-    private static var firePropertyChange_MethodID_129: jmethodID?
-
-    open func firePropertyChange( arg0: String?, arg1: UInt16, arg2: UInt16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;CC)V", methodCache: &Component.firePropertyChange_MethodID_129, args: &__args, locals: &__locals )
-    }
-
-    open func firePropertyChange( _ _arg0: String?, _ _arg1: UInt16, _ _arg2: UInt16 ) {
-        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// protected void java.awt.Component.firePropertyChange(java.lang.String,int,int)
-
-    private static var firePropertyChange_MethodID_130: jmethodID?
-
-    open func firePropertyChange( arg0: String?, arg1: Int, arg2: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;II)V", methodCache: &Component.firePropertyChange_MethodID_130, args: &__args, locals: &__locals )
-    }
-
-    open func firePropertyChange( _ _arg0: String?, _ _arg1: Int, _ _arg2: Int ) {
-        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// protected void java.awt.Component.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
-
-    private static var firePropertyChange_MethodID_131: jmethodID?
-
-    open func firePropertyChange( arg0: String?, arg1: java_swift.JavaObject?, arg2: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &Component.firePropertyChange_MethodID_131, args: &__args, locals: &__locals )
-    }
-
-    open func firePropertyChange( _ _arg0: String?, _ _arg1: java_swift.JavaObject?, _ _arg2: java_swift.JavaObject? ) {
-        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
+    // Skipping method: true false false false false 
 
     /// protected void java.awt.Component.firePropertyChange(java.lang.String,boolean,boolean)
 
-    private static var firePropertyChange_MethodID_132: jmethodID?
+    private static var firePropertyChange_MethodID_37: jmethodID?
 
     open func firePropertyChange( arg0: String?, arg1: Bool, arg2: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;ZZ)V", methodCache: &Component.firePropertyChange_MethodID_132, args: &__args, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(arg1 ? JNI_TRUE : JNI_FALSE) )
+        __args[2] = jvalue( z: jboolean(arg2 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;ZZ)V", methodCache: &Component.firePropertyChange_MethodID_37, args: &__args, locals: &__locals )
     }
 
     open func firePropertyChange( _ _arg0: String?, _ _arg1: Bool, _ _arg2: Bool ) {
         firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
-    /// public void java.awt.Component.firePropertyChange(java.lang.String,byte,byte)
-
-    private static var firePropertyChange_MethodID_133: jmethodID?
-
-    open func firePropertyChange( arg0: String?, arg1: Int8, arg2: Int8 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;BB)V", methodCache: &Component.firePropertyChange_MethodID_133, args: &__args, locals: &__locals )
-    }
-
-    open func firePropertyChange( _ _arg0: String?, _ _arg1: Int8, _ _arg2: Int8 ) {
-        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public void java.awt.Component.firePropertyChange(java.lang.String,long,long)
-
-    private static var firePropertyChange_MethodID_134: jmethodID?
-
-    open func firePropertyChange( arg0: String?, arg1: Int64, arg2: Int64 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;JJ)V", methodCache: &Component.firePropertyChange_MethodID_134, args: &__args, locals: &__locals )
-    }
-
-    open func firePropertyChange( _ _arg0: String?, _ _arg1: Int64, _ _arg2: Int64 ) {
-        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public void java.awt.Component.firePropertyChange(java.lang.String,short,short)
-
-    private static var firePropertyChange_MethodID_135: jmethodID?
-
-    open func firePropertyChange( arg0: String?, arg1: Int16, arg2: Int16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;SS)V", methodCache: &Component.firePropertyChange_MethodID_135, args: &__args, locals: &__locals )
-    }
-
-    open func firePropertyChange( _ _arg0: String?, _ _arg1: Int16, _ _arg2: Int16 ) {
-        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
     /// public void java.awt.Component.firePropertyChange(java.lang.String,double,double)
 
-    private static var firePropertyChange_MethodID_136: jmethodID?
+    private static var firePropertyChange_MethodID_38: jmethodID?
 
     open func firePropertyChange( arg0: String?, arg1: Double, arg2: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;DD)V", methodCache: &Component.firePropertyChange_MethodID_136, args: &__args, locals: &__locals )
+        __args[1] = jvalue( d: arg1 )
+        __args[2] = jvalue( d: arg2 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;DD)V", methodCache: &Component.firePropertyChange_MethodID_38, args: &__args, locals: &__locals )
     }
 
     open func firePropertyChange( _ _arg0: String?, _ _arg1: Double, _ _arg2: Double ) {
@@ -2523,146 +1210,230 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
 
     /// public void java.awt.Component.firePropertyChange(java.lang.String,float,float)
 
-    private static var firePropertyChange_MethodID_137: jmethodID?
+    private static var firePropertyChange_MethodID_39: jmethodID?
 
     open func firePropertyChange( arg0: String?, arg1: Float, arg2: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;FF)V", methodCache: &Component.firePropertyChange_MethodID_137, args: &__args, locals: &__locals )
+        __args[1] = jvalue( f: arg1 )
+        __args[2] = jvalue( f: arg2 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;FF)V", methodCache: &Component.firePropertyChange_MethodID_39, args: &__args, locals: &__locals )
     }
 
     open func firePropertyChange( _ _arg0: String?, _ _arg1: Float, _ _arg2: Float ) {
         firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
-    /// public void java.awt.Component.revalidate()
+    /// protected void java.awt.Component.firePropertyChange(java.lang.String,int,int)
 
-    private static var revalidate_MethodID_138: jmethodID?
+    private static var firePropertyChange_MethodID_40: jmethodID?
 
-    open func revalidate() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func firePropertyChange( arg0: String?, arg1: Int, arg2: Int ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "revalidate", methodSig: "()V", methodCache: &Component.revalidate_MethodID_138, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void java.awt.Component.repaint(long)
-
-    private static var repaint_MethodID_139: jmethodID?
-
-    open func repaint( arg0: Int64 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(J)V", methodCache: &Component.repaint_MethodID_139, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;II)V", methodCache: &Component.firePropertyChange_MethodID_40, args: &__args, locals: &__locals )
     }
 
-    open func repaint( _ _arg0: Int64 ) {
-        repaint( arg0: _arg0 )
+    open func firePropertyChange( _ _arg0: String?, _ _arg1: Int, _ _arg2: Int ) {
+        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
-    /// public void java.awt.Component.repaint()
+    /// public void java.awt.Component.firePropertyChange(java.lang.String,short,short)
 
-    private static var repaint_MethodID_140: jmethodID?
+    private static var firePropertyChange_MethodID_41: jmethodID?
 
-    open func repaint() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func firePropertyChange( arg0: String?, arg1: Int16, arg2: Int16 ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "()V", methodCache: &Component.repaint_MethodID_140, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( s: arg1 )
+        __args[2] = jvalue( s: arg2 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;SS)V", methodCache: &Component.firePropertyChange_MethodID_41, args: &__args, locals: &__locals )
     }
 
+    open func firePropertyChange( _ _arg0: String?, _ _arg1: Int16, _ _arg2: Int16 ) {
+        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
 
-    /// public void java.awt.Component.repaint(int,int,int,int)
+    /// public void java.awt.Component.firePropertyChange(java.lang.String,long,long)
 
-    private static var repaint_MethodID_141: jmethodID?
+    private static var firePropertyChange_MethodID_42: jmethodID?
 
-    open func repaint( arg0: Int, arg1: Int, arg2: Int, arg3: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open func firePropertyChange( arg0: String?, arg1: Int64, arg2: Int64 ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( j: arg1 )
+        __args[2] = jvalue( j: arg2 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;JJ)V", methodCache: &Component.firePropertyChange_MethodID_42, args: &__args, locals: &__locals )
+    }
+
+    open func firePropertyChange( _ _arg0: String?, _ _arg1: Int64, _ _arg2: Int64 ) {
+        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// public void java.awt.Component.firePropertyChange(java.lang.String,byte,byte)
+
+    private static var firePropertyChange_MethodID_43: jmethodID?
+
+    open func firePropertyChange( arg0: String?, arg1: Int8, arg2: Int8 ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( b: arg1 )
+        __args[2] = jvalue( b: arg2 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;BB)V", methodCache: &Component.firePropertyChange_MethodID_43, args: &__args, locals: &__locals )
+    }
+
+    open func firePropertyChange( _ _arg0: String?, _ _arg1: Int8, _ _arg2: Int8 ) {
+        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// public void java.awt.Component.firePropertyChange(java.lang.String,char,char)
+
+    private static var firePropertyChange_MethodID_44: jmethodID?
+
+    open func firePropertyChange( arg0: String?, arg1: UInt16, arg2: UInt16 ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( c: arg1 )
+        __args[2] = jvalue( c: arg2 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;CC)V", methodCache: &Component.firePropertyChange_MethodID_44, args: &__args, locals: &__locals )
+    }
+
+    open func firePropertyChange( _ _arg0: String?, _ _arg1: UInt16, _ _arg2: UInt16 ) {
+        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// protected void java.awt.Component.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
+
+    private static var firePropertyChange_MethodID_45: jmethodID?
+
+    open func firePropertyChange( arg0: String?, arg1: java_swift.JavaObject?, arg2: java_swift.JavaObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(IIII)V", methodCache: &Component.repaint_MethodID_141, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &Component.firePropertyChange_MethodID_45, args: &__args, locals: &__locals )
     }
 
-    open func repaint( _ _arg0: Int, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int ) {
-        repaint( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
+    open func firePropertyChange( _ _arg0: String?, _ _arg1: java_swift.JavaObject?, _ _arg2: java_swift.JavaObject? ) {
+        firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
-    /// public void java.awt.Component.repaint(long,int,int,int,int)
+    /// final java.security.AccessControlContext java.awt.Component.getAccessControlContext()
 
-    private static var repaint_MethodID_142: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func repaint( arg0: Int64, arg1: Int, arg2: Int, arg3: Int, arg4: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    /// public javax.accessibility.AccessibleContext java.awt.Component.getAccessibleContext()
+
+    private static var getAccessibleContext_MethodID_46: jmethodID?
+
+    open func getAccessibleContext() -> /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(JIIII)V", methodCache: &Component.repaint_MethodID_142, args: &__args, locals: &__locals )
-    }
-
-    open func repaint( _ _arg0: Int64, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int, _ _arg4: Int ) {
-        repaint( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4 )
-    }
-
-    /// public boolean java.awt.Component.isShowing()
-
-    private static var isShowing_MethodID_143: jmethodID?
-
-    open func isShowing() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isShowing", methodSig: "()Z", methodCache: &Component.isShowing_MethodID_143, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleContext", methodSig: "()Ljavax/accessibility/AccessibleContext;", methodCache: &Component.getAccessibleContext_MethodID_46, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __return ) : nil
     }
 
 
-    /// public void java.awt.Component.paint(java.awt.Graphics)
+    /// int java.awt.Component.getAccessibleIndexInParent()
 
-    private static var paint_MethodID_144: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func paint( arg0: Graphics? ) {
+    /// javax.accessibility.AccessibleStateSet java.awt.Component.getAccessibleStateSet()
+
+    // Skipping method: true false false false false 
+
+    /// public float java.awt.Component.getAlignmentX()
+
+    private static var getAlignmentX_MethodID_47: jmethodID?
+
+    open func getAlignmentX() -> Float {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAlignmentX", methodSig: "()F", methodCache: &Component.getAlignmentX_MethodID_47, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public float java.awt.Component.getAlignmentY()
+
+    private static var getAlignmentY_MethodID_48: jmethodID?
+
+    open func getAlignmentY() -> Float {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Component.paint_MethodID_144, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _arg0: Graphics? ) {
-        paint( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.printAll(java.awt.Graphics)
-
-    private static var printAll_MethodID_145: jmethodID?
-
-    open func printAll( arg0: Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "printAll", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Component.printAll_MethodID_145, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAlignmentY", methodSig: "()F", methodCache: &Component.getAlignmentY_MethodID_48, args: &__args, locals: &__locals )
+        return __return
     }
 
-    open func printAll( _ _arg0: Graphics? ) {
-        printAll( arg0: _arg0 )
+
+    /// private sun.java2d.pipe.Region java.awt.Component.getAppliedShape()
+
+    /// java.awt.Image java.awt.Component.getBackBuffer()
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Color java.awt.Component.getBackground()
+
+    private static var getBackground_MethodID_49: jmethodID?
+
+    open func getBackground() -> Color! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackground", methodSig: "()Ljava/awt/Color;", methodCache: &Component.getBackground_MethodID_49, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Color( javaObject: __return ) : nil
     }
+
+
+    /// public int java.awt.Component.getBaseline(int,int)
+
+    private static var getBaseline_MethodID_50: jmethodID?
+
+    open func getBaseline( arg0: Int, arg1: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaseline", methodSig: "(II)I", methodCache: &Component.getBaseline_MethodID_50, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getBaseline( _ _arg0: Int, _ _arg1: Int ) -> Int {
+        return getBaseline( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public java.awt.Component$BaselineResizeBehavior java.awt.Component.getBaselineResizeBehavior()
+
+    private static var getBaselineResizeBehavior_MethodID_51: jmethodID?
+
+    open func getBaselineResizeBehavior() -> Component_BaselineResizeBehavior! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBaselineResizeBehavior", methodSig: "()Ljava/awt/Component$BaselineResizeBehavior;", methodCache: &Component.getBaselineResizeBehavior_MethodID_51, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component_BaselineResizeBehavior( javaObject: __return ) : nil
+    }
+
 
     /// public java.awt.Rectangle java.awt.Component.getBounds(java.awt.Rectangle)
 
-    private static var getBounds_MethodID_146: jmethodID?
+    private static var getBounds_MethodID_52: jmethodID?
 
     open func getBounds( arg0: Rectangle? ) -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &Component.getBounds_MethodID_146, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &Component.getBounds_MethodID_52, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
@@ -2673,856 +1444,48 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
 
     /// public java.awt.Rectangle java.awt.Component.getBounds()
 
-    private static var getBounds_MethodID_147: jmethodID?
+    private static var getBounds_MethodID_53: jmethodID?
 
     open func getBounds() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Component.getBounds_MethodID_147, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Component.getBounds_MethodID_53, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
 
 
-    /// public void java.awt.Component.requestFocus()
+    /// int java.awt.Component.getBoundsOp()
 
-    private static var requestFocus_MethodID_148: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func requestFocus() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// java.awt.image.BufferStrategy java.awt.Component.getBufferStrategy()
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.image.ColorModel java.awt.Component.getColorModel()
+
+    private static var getColorModel_MethodID_54: jmethodID?
+
+    open func getColorModel() -> ColorModel! {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "requestFocus", methodSig: "()V", methodCache: &Component.requestFocus_MethodID_148, args: &__args, locals: &__locals )
-    }
-
-
-    /// boolean java.awt.Component.requestFocus(boolean,sun.awt.CausedFocusEvent$Cause)
-
-    /// protected boolean java.awt.Component.requestFocus(boolean)
-
-    private static var requestFocus_MethodID_149: jmethodID?
-
-    open func requestFocus( arg0: Bool ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "requestFocus", methodSig: "(Z)Z", methodCache: &Component.requestFocus_MethodID_149, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func requestFocus( _ _arg0: Bool ) -> Bool {
-        return requestFocus( arg0: _arg0 )
-    }
-
-    /// boolean java.awt.Component.requestFocus(sun.awt.CausedFocusEvent$Cause)
-
-    /// boolean java.awt.Component.requestFocusInWindow(sun.awt.CausedFocusEvent$Cause)
-
-    /// boolean java.awt.Component.requestFocusInWindow(boolean,sun.awt.CausedFocusEvent$Cause)
-
-    /// protected boolean java.awt.Component.requestFocusInWindow(boolean)
-
-    private static var requestFocusInWindow_MethodID_150: jmethodID?
-
-    open func requestFocusInWindow( arg0: Bool ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "requestFocusInWindow", methodSig: "(Z)Z", methodCache: &Component.requestFocusInWindow_MethodID_150, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func requestFocusInWindow( _ _arg0: Bool ) -> Bool {
-        return requestFocusInWindow( arg0: _arg0 )
-    }
-
-    /// public boolean java.awt.Component.requestFocusInWindow()
-
-    private static var requestFocusInWindow_MethodID_151: jmethodID?
-
-    open func requestFocusInWindow() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "requestFocusInWindow", methodSig: "()Z", methodCache: &Component.requestFocusInWindow_MethodID_151, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public java.awt.FontMetrics java.awt.Component.getFontMetrics(java.awt.Font)
-
-    private static var getFontMetrics_MethodID_152: jmethodID?
-
-    open func getFontMetrics( arg0: Font? ) -> FontMetrics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "(Ljava/awt/Font;)Ljava/awt/FontMetrics;", methodCache: &Component.getFontMetrics_MethodID_152, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &Component.getColorModel_MethodID_54, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? FontMetrics( javaObject: __return ) : nil
+        return __return != nil ? ColorModel( javaObject: __return ) : nil
     }
 
-    open func getFontMetrics( _ _arg0: Font? ) -> FontMetrics! {
-        return getFontMetrics( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.setPreferredSize(java.awt.Dimension)
-
-    private static var setPreferredSize_MethodID_153: jmethodID?
-
-    open func setPreferredSize( arg0: Dimension? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPreferredSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Component.setPreferredSize_MethodID_153, args: &__args, locals: &__locals )
-    }
-
-    open func setPreferredSize( _ _arg0: Dimension? ) {
-        setPreferredSize( arg0: _arg0 )
-    }
-
-    /// public java.awt.Dimension java.awt.Component.preferredSize()
-
-    private static var preferredSize_MethodID_154: jmethodID?
-
-    open func preferredSize() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.preferredSize_MethodID_154, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.Component.setMaximumSize(java.awt.Dimension)
-
-    private static var setMaximumSize_MethodID_155: jmethodID?
-
-    open func setMaximumSize( arg0: Dimension? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximumSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Component.setMaximumSize_MethodID_155, args: &__args, locals: &__locals )
-    }
-
-    open func setMaximumSize( _ _arg0: Dimension? ) {
-        setMaximumSize( arg0: _arg0 )
-    }
-
-    /// public java.awt.Dimension java.awt.Component.getMaximumSize()
-
-    private static var getMaximumSize_MethodID_156: jmethodID?
-
-    open func getMaximumSize() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.getMaximumSize_MethodID_156, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.Component.setMinimumSize(java.awt.Dimension)
-
-    private static var setMinimumSize_MethodID_157: jmethodID?
-
-    open func setMinimumSize( arg0: Dimension? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimumSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Component.setMinimumSize_MethodID_157, args: &__args, locals: &__locals )
-    }
-
-    open func setMinimumSize( _ _arg0: Dimension? ) {
-        setMinimumSize( arg0: _arg0 )
-    }
-
-    /// public java.awt.Dimension java.awt.Component.minimumSize()
-
-    private static var minimumSize_MethodID_158: jmethodID?
-
-    open func minimumSize() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.minimumSize_MethodID_158, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Dimension java.awt.Component.getMinimumSize()
-
-    private static var getMinimumSize_MethodID_159: jmethodID?
-
-    open func getMinimumSize() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.getMinimumSize_MethodID_159, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// public float java.awt.Component.getAlignmentY()
-
-    private static var getAlignmentY_MethodID_160: jmethodID?
-
-    open func getAlignmentY() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAlignmentY", methodSig: "()F", methodCache: &Component.getAlignmentY_MethodID_160, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
-    /// public float java.awt.Component.getAlignmentX()
-
-    private static var getAlignmentX_MethodID_161: jmethodID?
-
-    open func getAlignmentX() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAlignmentX", methodSig: "()F", methodCache: &Component.getAlignmentX_MethodID_161, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
-    /// public java.awt.Graphics java.awt.Component.getGraphics()
-
-    private static var getGraphics_MethodID_162: jmethodID?
-
-    open func getGraphics() -> Graphics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphics", methodSig: "()Ljava/awt/Graphics;", methodCache: &Component.getGraphics_MethodID_162, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Graphics( javaObject: __return ) : nil
-    }
-
-
-    /// public int java.awt.Component.getBaseline(int,int)
-
-    private static var getBaseline_MethodID_163: jmethodID?
-
-    open func getBaseline( arg0: Int, arg1: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaseline", methodSig: "(II)I", methodCache: &Component.getBaseline_MethodID_163, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getBaseline( _ _arg0: Int, _ _arg1: Int ) -> Int {
-        return getBaseline( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public java.awt.Component$BaselineResizeBehavior java.awt.Component.getBaselineResizeBehavior()
-
-    private static var getBaselineResizeBehavior_MethodID_164: jmethodID?
-
-    open func getBaselineResizeBehavior() -> Component_BaselineResizeBehavior! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBaselineResizeBehavior", methodSig: "()Ljava/awt/Component$BaselineResizeBehavior;", methodCache: &Component.getBaselineResizeBehavior_MethodID_164, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component_BaselineResizeBehavior( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.Component.setVisible(boolean)
-
-    private static var setVisible_MethodID_165: jmethodID?
-
-    open func setVisible( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisible", methodSig: "(Z)V", methodCache: &Component.setVisible_MethodID_165, args: &__args, locals: &__locals )
-    }
-
-    open func setVisible( _ _arg0: Bool ) {
-        setVisible( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.setEnabled(boolean)
-
-    private static var setEnabled_MethodID_166: jmethodID?
-
-    open func setEnabled( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &Component.setEnabled_MethodID_166, args: &__args, locals: &__locals )
-    }
-
-    open func setEnabled( _ _arg0: Bool ) {
-        setEnabled( arg0: _arg0 )
-    }
-
-    /// protected void java.awt.Component.processKeyEvent(java.awt.event.KeyEvent)
-
-    private static var processKeyEvent_MethodID_167: jmethodID?
-
-    open func processKeyEvent( arg0: KeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &Component.processKeyEvent_MethodID_167, args: &__args, locals: &__locals )
-    }
-
-    open func processKeyEvent( _ _arg0: KeyEvent? ) {
-        processKeyEvent( arg0: _arg0 )
-    }
-
-    /// public java.awt.Rectangle java.awt.Component.bounds()
-
-    private static var bounds_MethodID_168: jmethodID?
-
-    open func bounds() -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "bounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &Component.bounds_MethodID_168, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
-    }
-
-
-    /// protected void java.awt.Component.processMouseEvent(java.awt.event.MouseEvent)
-
-    private static var processMouseEvent_MethodID_169: jmethodID?
-
-    open func processMouseEvent( arg0: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseEvent", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &Component.processMouseEvent_MethodID_169, args: &__args, locals: &__locals )
-    }
-
-    open func processMouseEvent( _ _arg0: MouseEvent? ) {
-        processMouseEvent( arg0: _arg0 )
-    }
-
-    /// protected void java.awt.Component.processMouseMotionEvent(java.awt.event.MouseEvent)
-
-    private static var processMouseMotionEvent_MethodID_170: jmethodID?
-
-    open func processMouseMotionEvent( arg0: MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseMotionEvent", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &Component.processMouseMotionEvent_MethodID_170, args: &__args, locals: &__locals )
-    }
-
-    open func processMouseMotionEvent( _ _arg0: MouseEvent? ) {
-        processMouseMotionEvent( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.setFocusTraversalKeys(int,java.util.Set)
-
-    private static var setFocusTraversalKeys_MethodID_171: jmethodID?
-
-    open func setFocusTraversalKeys( arg0: Int, arg1: java_swift.JavaSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusTraversalKeys", methodSig: "(ILjava/util/Set;)V", methodCache: &Component.setFocusTraversalKeys_MethodID_171, args: &__args, locals: &__locals )
-    }
-
-    open func setFocusTraversalKeys( _ _arg0: Int, _ _arg1: java_swift.JavaSet? ) {
-        setFocusTraversalKeys( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public void java.awt.Component.reshape(int,int,int,int)
-
-    private static var reshape_MethodID_172: jmethodID?
-
-    open func reshape( arg0: Int, arg1: Int, arg2: Int, arg3: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reshape", methodSig: "(IIII)V", methodCache: &Component.reshape_MethodID_172, args: &__args, locals: &__locals )
-    }
-
-    open func reshape( _ _arg0: Int, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int ) {
-        reshape( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
-    }
-
-    /// public int java.awt.Component.getX()
-
-    private static var getX_MethodID_173: jmethodID?
-
-    open func getX() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getX", methodSig: "()I", methodCache: &Component.getX_MethodID_173, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.Component.getY()
-
-    private static var getY_MethodID_174: jmethodID?
-
-    open func getY() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getY", methodSig: "()I", methodCache: &Component.getY_MethodID_174, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.Component.getWidth()
-
-    private static var getWidth_MethodID_175: jmethodID?
-
-    open func getWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &Component.getWidth_MethodID_175, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.Component.getHeight()
-
-    private static var getHeight_MethodID_176: jmethodID?
-
-    open func getHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &Component.getHeight_MethodID_176, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.util.EventListener[] java.awt.Component.getListeners(java.lang.Class)
-
-    private static var getListeners_MethodID_177: jmethodID?
-
-    open func getListeners( arg0: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &Component.getListeners_MethodID_177, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _arg0: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.addNotify()
-
-    private static var addNotify_MethodID_178: jmethodID?
-
-    open func addNotify() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addNotify", methodSig: "()V", methodCache: &Component.addNotify_MethodID_178, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void java.awt.Component.removeNotify()
-
-    private static var removeNotify_MethodID_179: jmethodID?
-
-    open func removeNotify() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeNotify", methodSig: "()V", methodCache: &Component.removeNotify_MethodID_179, args: &__args, locals: &__locals )
-    }
-
-
-    /// public boolean java.awt.Component.isDoubleBuffered()
-
-    private static var isDoubleBuffered_MethodID_180: jmethodID?
-
-    open func isDoubleBuffered() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDoubleBuffered", methodSig: "()Z", methodCache: &Component.isDoubleBuffered_MethodID_180, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void java.awt.Component.hide()
-
-    private static var hide_MethodID_181: jmethodID?
-
-    open func hide() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "hide", methodSig: "()V", methodCache: &Component.hide_MethodID_181, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void java.awt.Component.nextFocus()
-
-    private static var nextFocus_MethodID_182: jmethodID?
-
-    open func nextFocus() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "nextFocus", methodSig: "()V", methodCache: &Component.nextFocus_MethodID_182, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected final void java.awt.Component.enableEvents(long)
-
-    private static var enableEvents_MethodID_183: jmethodID?
-
-    open func enableEvents( arg0: Int64 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableEvents", methodSig: "(J)V", methodCache: &Component.enableEvents_MethodID_183, args: &__args, locals: &__locals )
-    }
-
-    open func enableEvents( _ _arg0: Int64 ) {
-        enableEvents( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.setLocale(java.util.Locale)
-
-    private static var setLocale_MethodID_184: jmethodID?
-
-    open func setLocale( arg0: java_util.JavaLocale? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocale", methodSig: "(Ljava/util/Locale;)V", methodCache: &Component.setLocale_MethodID_184, args: &__args, locals: &__locals )
-    }
-
-    open func setLocale( _ _arg0: java_util.JavaLocale? ) {
-        setLocale( arg0: _arg0 )
-    }
-
-    /// public final java.lang.Object java.awt.Component.getTreeLock()
-
-    private static var getTreeLock_MethodID_185: jmethodID?
-
-    open func getTreeLock() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTreeLock", methodSig: "()Ljava/lang/Object;", methodCache: &Component.getTreeLock_MethodID_185, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
-    /// public boolean java.awt.Component.isVisible()
-
-    private static var isVisible_MethodID_186: jmethodID?
-
-    open func isVisible() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVisible", methodSig: "()Z", methodCache: &Component.isVisible_MethodID_186, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.Component.isFocusCycleRoot(java.awt.Container)
-
-    private static var isFocusCycleRoot_MethodID_187: jmethodID?
-
-    open func isFocusCycleRoot( arg0: Container? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusCycleRoot", methodSig: "(Ljava/awt/Container;)Z", methodCache: &Component.isFocusCycleRoot_MethodID_187, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isFocusCycleRoot( _ _arg0: Container? ) -> Bool {
-        return isFocusCycleRoot( arg0: _arg0 )
-    }
-
-    /// public java.awt.Container java.awt.Component.getFocusCycleRootAncestor()
-
-    private static var getFocusCycleRootAncestor_MethodID_188: jmethodID?
-
-    open func getFocusCycleRootAncestor() -> Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusCycleRootAncestor", methodSig: "()Ljava/awt/Container;", methodCache: &Component.getFocusCycleRootAncestor_MethodID_188, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Container( javaObject: __return ) : nil
-    }
-
-
-    /// public boolean java.awt.Component.isDisplayable()
-
-    private static var isDisplayable_MethodID_189: jmethodID?
-
-    open func isDisplayable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDisplayable", methodSig: "()Z", methodCache: &Component.isDisplayable_MethodID_189, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.Component.isPreferredSizeSet()
-
-    private static var isPreferredSizeSet_MethodID_190: jmethodID?
-
-    open func isPreferredSizeSet() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPreferredSizeSet", methodSig: "()Z", methodCache: &Component.isPreferredSizeSet_MethodID_190, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.Component.isMaximumSizeSet()
-
-    private static var isMaximumSizeSet_MethodID_191: jmethodID?
-
-    open func isMaximumSizeSet() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMaximumSizeSet", methodSig: "()Z", methodCache: &Component.isMaximumSizeSet_MethodID_191, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean java.awt.Component.isMinimumSizeSet()
-
-    private static var isMinimumSizeSet_MethodID_192: jmethodID?
-
-    open func isMinimumSizeSet() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMinimumSizeSet", methodSig: "()Z", methodCache: &Component.isMinimumSizeSet_MethodID_192, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public java.awt.peer.ComponentPeer java.awt.Component.getPeer()
-
-    private static var getPeer_MethodID_193: jmethodID?
-
-    open func getPeer() -> ComponentPeer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPeer", methodSig: "()Ljava/awt/peer/ComponentPeer;", methodCache: &Component.getPeer_MethodID_193, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentPeerForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.Component.setBounds(java.awt.Rectangle)
-
-    private static var setBounds_MethodID_194: jmethodID?
-
-    open func setBounds( arg0: Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &Component.setBounds_MethodID_194, args: &__args, locals: &__locals )
-    }
-
-    open func setBounds( _ _arg0: Rectangle? ) {
-        setBounds( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.setBounds(int,int,int,int)
-
-    private static var setBounds_MethodID_195: jmethodID?
-
-    open func setBounds( arg0: Int, arg1: Int, arg2: Int, arg3: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBounds", methodSig: "(IIII)V", methodCache: &Component.setBounds_MethodID_195, args: &__args, locals: &__locals )
-    }
-
-    open func setBounds( _ _arg0: Int, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int ) {
-        setBounds( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
-    }
-
-    /// public void java.awt.Component.setLocation(int,int)
-
-    private static var setLocation_MethodID_196: jmethodID?
-
-    open func setLocation( arg0: Int, arg1: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(II)V", methodCache: &Component.setLocation_MethodID_196, args: &__args, locals: &__locals )
-    }
-
-    open func setLocation( _ _arg0: Int, _ _arg1: Int ) {
-        setLocation( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public void java.awt.Component.setLocation(java.awt.Point)
-
-    private static var setLocation_MethodID_197: jmethodID?
-
-    open func setLocation( arg0: Point? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(Ljava/awt/Point;)V", methodCache: &Component.setLocation_MethodID_197, args: &__args, locals: &__locals )
-    }
-
-    open func setLocation( _ _arg0: Point? ) {
-        setLocation( arg0: _arg0 )
-    }
-
-    /// public java.beans.PropertyChangeListener[] java.awt.Component.getPropertyChangeListeners()
-
-    private static var getPropertyChangeListeners_MethodID_198: jmethodID?
-
-    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &Component.getPropertyChangeListeners_MethodID_198, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
-    }
-
-
-    /// public java.beans.PropertyChangeListener[] java.awt.Component.getPropertyChangeListeners(java.lang.String)
-
-    private static var getPropertyChangeListeners_MethodID_199: jmethodID?
-
-    open func getPropertyChangeListeners( arg0: String? ) -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "(Ljava/lang/String;)[Ljava/beans/PropertyChangeListener;", methodCache: &Component.getPropertyChangeListeners_MethodID_199, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
-    }
-
-    open func getPropertyChangeListeners( _ _arg0: String? ) -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        return getPropertyChangeListeners( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.invalidate()
-
-    private static var invalidate_MethodID_200: jmethodID?
-
-    open func invalidate() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidate", methodSig: "()V", methodCache: &Component.invalidate_MethodID_200, args: &__args, locals: &__locals )
-    }
-
-
-    /// void java.awt.Component.initializeFocusTraversalKeys()
-
-    /// boolean java.awt.Component.updateGraphicsData(java.awt.GraphicsConfiguration)
-
-    /// void java.awt.Component.checkGD(java.lang.String)
-
-    /// int java.awt.Component.numListening(long)
-
-    /// int java.awt.Component.countHierarchyMembers()
-
-    /// int java.awt.Component.createHierarchyEvents(int,java.awt.Component,java.awt.Container,long,boolean)
-
-    /// public void java.awt.Component.doLayout()
-
-    private static var doLayout_MethodID_201: jmethodID?
-
-    open func doLayout() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "doLayout", methodSig: "()V", methodCache: &Component.doLayout_MethodID_201, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void java.awt.Component.layout()
-
-    private static var layout_MethodID_202: jmethodID?
-
-    open func layout() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "()V", methodCache: &Component.layout_MethodID_202, args: &__args, locals: &__locals )
-    }
-
-
-    /// void java.awt.Component.invalidateParent()
-
-    /// void java.awt.Component.lightweightPaint(java.awt.Graphics)
-
-    /// void java.awt.Component.paintHeavyweightComponents(java.awt.Graphics)
-
-    /// void java.awt.Component.lightweightPrint(java.awt.Graphics)
-
-    /// void java.awt.Component.printHeavyweightComponents(java.awt.Graphics)
-
-    /// boolean java.awt.Component.eventEnabled(java.awt.AWTEvent)
-
-    /// protected void java.awt.Component.processEvent(java.awt.AWTEvent)
-
-    private static var processEvent_MethodID_203: jmethodID?
-
-    open func processEvent( arg0: AWTEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Component.processEvent_MethodID_203, args: &__args, locals: &__locals )
-    }
-
-    open func processEvent( _ _arg0: AWTEvent? ) {
-        processEvent( arg0: _arg0 )
-    }
-
-    /// void java.awt.Component.dispatchEventImpl(java.awt.AWTEvent)
-
-    /// public void java.awt.Component.deliverEvent(java.awt.Event)
-
-    private static var deliverEvent_MethodID_204: jmethodID?
-
-    open func deliverEvent( arg0: Event? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deliverEvent", methodSig: "(Ljava/awt/Event;)V", methodCache: &Component.deliverEvent_MethodID_204, args: &__args, locals: &__locals )
-    }
-
-    open func deliverEvent( _ _arg0: Event? ) {
-        deliverEvent( arg0: _arg0 )
-    }
-
-    /// public java.awt.Component java.awt.Component.getComponentAt(java.awt.Point)
-
-    private static var getComponentAt_MethodID_205: jmethodID?
-
-    open func getComponentAt( arg0: Point? ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAt", methodSig: "(Ljava/awt/Point;)Ljava/awt/Component;", methodCache: &Component.getComponentAt_MethodID_205, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Component( javaObject: __return ) : nil
-    }
-
-    open func getComponentAt( _ _arg0: Point? ) -> Component! {
-        return getComponentAt( arg0: _arg0 )
-    }
 
     /// public java.awt.Component java.awt.Component.getComponentAt(int,int)
 
-    private static var getComponentAt_MethodID_206: jmethodID?
+    private static var getComponentAt_MethodID_55: jmethodID?
 
     open func getComponentAt( arg0: Int, arg1: Int ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAt", methodSig: "(II)Ljava/awt/Component;", methodCache: &Component.getComponentAt_MethodID_206, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAt", methodSig: "(II)Ljava/awt/Component;", methodCache: &Component.getComponentAt_MethodID_55, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
     }
@@ -3531,51 +1494,120 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
         return getComponentAt( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public java.awt.Component java.awt.Component.locate(int,int)
+    /// public java.awt.Component java.awt.Component.getComponentAt(java.awt.Point)
 
-    private static var locate_MethodID_207: jmethodID?
+    private static var getComponentAt_MethodID_56: jmethodID?
 
-    open func locate( arg0: Int, arg1: Int ) -> Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getComponentAt( arg0: Point? ) -> Component! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "locate", methodSig: "(II)Ljava/awt/Component;", methodCache: &Component.locate_MethodID_207, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAt", methodSig: "(Ljava/awt/Point;)Ljava/awt/Component;", methodCache: &Component.getComponentAt_MethodID_56, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Component( javaObject: __return ) : nil
     }
 
-    open func locate( _ _arg0: Int, _ _arg1: Int ) -> Component! {
-        return locate( arg0: _arg0, arg1: _arg1 )
+    open func getComponentAt( _ _arg0: Point? ) -> Component! {
+        return getComponentAt( arg0: _arg0 )
     }
 
-    /// public java.awt.Point java.awt.Component.getMousePosition() throws java.awt.HeadlessException
+    /// public synchronized java.awt.event.ComponentListener[] java.awt.Component.getComponentListeners()
 
-    private static var getMousePosition_MethodID_208: jmethodID?
+    private static var getComponentListeners_MethodID_57: jmethodID?
 
-    open func getMousePosition() throws /* java.awt.HeadlessException */ -> Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getComponentListeners() -> [ComponentListener]! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMousePosition", methodSig: "()Ljava/awt/Point;", methodCache: &Component.getMousePosition_MethodID_208, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw HeadlessException( javaObject: throwable )
-        }
-        return __return != nil ? Point( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentListeners", methodSig: "()[Ljava/awt/event/ComponentListener;", methodCache: &Component.getComponentListeners_MethodID_57, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ComponentListenerForward].self, from: __return )
     }
 
 
-    /// boolean java.awt.Component.isSameOrAncestorOf(java.awt.Component,boolean)
+    /// public java.awt.ComponentOrientation java.awt.Component.getComponentOrientation()
+
+    private static var getComponentOrientation_MethodID_58: jmethodID?
+
+    open func getComponentOrientation() -> ComponentOrientation! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentOrientation", methodSig: "()Ljava/awt/ComponentOrientation;", methodCache: &Component.getComponentOrientation_MethodID_58, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentOrientation( javaObject: __return ) : nil
+    }
+
+
+    /// java.awt.Container java.awt.Component.getContainer()
+
+    // Skipping method: true false false false false 
+
+    /// java.awt.Window java.awt.Component.getContainingWindow()
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Cursor java.awt.Component.getCursor()
+
+    private static var getCursor_MethodID_59: jmethodID?
+
+    open func getCursor() -> Cursor! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &Component.getCursor_MethodID_59, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Cursor( javaObject: __return ) : nil
+    }
+
+
+    /// final java.awt.Cursor java.awt.Component.getCursor_NoClientCode()
+
+    // Skipping method: true false false false false 
+
+    /// public synchronized java.awt.dnd.DropTarget java.awt.Component.getDropTarget()
+
+    private static var getDropTarget_MethodID_60: jmethodID?
+
+    open func getDropTarget() -> DropTarget! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropTarget", methodSig: "()Ljava/awt/dnd/DropTarget;", methodCache: &Component.getDropTarget_MethodID_60, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DropTarget( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Container java.awt.Component.getFocusCycleRootAncestor()
+
+    private static var getFocusCycleRootAncestor_MethodID_61: jmethodID?
+
+    open func getFocusCycleRootAncestor() -> Container! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusCycleRootAncestor", methodSig: "()Ljava/awt/Container;", methodCache: &Component.getFocusCycleRootAncestor_MethodID_61, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Container( javaObject: __return ) : nil
+    }
+
+
+    /// public synchronized java.awt.event.FocusListener[] java.awt.Component.getFocusListeners()
+
+    private static var getFocusListeners_MethodID_62: jmethodID?
+
+    open func getFocusListeners() -> [FocusListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusListeners", methodSig: "()[Ljava/awt/event/FocusListener;", methodCache: &Component.getFocusListeners_MethodID_62, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [FocusListenerForward].self, from: __return )
+    }
+
 
     /// public java.util.Set java.awt.Component.getFocusTraversalKeys(int)
 
-    private static var getFocusTraversalKeys_MethodID_209: jmethodID?
+    private static var getFocusTraversalKeys_MethodID_63: jmethodID?
 
     open func getFocusTraversalKeys( arg0: Int ) -> java_swift.JavaSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusTraversalKeys", methodSig: "(I)Ljava/util/Set;", methodCache: &Component.getFocusTraversalKeys_MethodID_209, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(arg0) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusTraversalKeys", methodSig: "(I)Ljava/util/Set;", methodCache: &Component.getFocusTraversalKeys_MethodID_63, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaSetForward( javaObject: __return ) : nil
     }
@@ -3584,200 +1616,2500 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* ja
         return getFocusTraversalKeys( arg0: _arg0 )
     }
 
-    /// public boolean java.awt.Component.areFocusTraversalKeysSet(int)
+    /// public boolean java.awt.Component.getFocusTraversalKeysEnabled()
 
-    private static var areFocusTraversalKeysSet_MethodID_210: jmethodID?
+    private static var getFocusTraversalKeysEnabled_MethodID_64: jmethodID?
 
-    open func areFocusTraversalKeysSet( arg0: Int ) -> Bool {
+    open func getFocusTraversalKeysEnabled() -> Bool {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getFocusTraversalKeysEnabled", methodSig: "()Z", methodCache: &Component.getFocusTraversalKeysEnabled_MethodID_64, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// final java.util.Set java.awt.Component.getFocusTraversalKeys_NoIDCheck(int)
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Font java.awt.Component.getFont()
+
+    private static var getFont_MethodID_65: jmethodID?
+
+    open func getFont() -> Font! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "areFocusTraversalKeysSet", methodSig: "(I)Z", methodCache: &Component.areFocusTraversalKeysSet_MethodID_210, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func areFocusTraversalKeysSet( _ _arg0: Int ) -> Bool {
-        return areFocusTraversalKeysSet( arg0: _arg0 )
-    }
-
-    /// boolean java.awt.Component.containsFocus()
-
-    /// void java.awt.Component.clearMostRecentFocusOwnerOnHide()
-
-    /// void java.awt.Component.clearCurrentFocusCycleRootOnHide()
-
-    /// java.awt.Container java.awt.Component.getTraversalRoot()
-
-    /// boolean java.awt.Component.postsOldMouseEvents()
-
-    /// public void java.awt.Component.applyComponentOrientation(java.awt.ComponentOrientation)
-
-    private static var applyComponentOrientation_MethodID_211: jmethodID?
-
-    open func applyComponentOrientation( arg0: ComponentOrientation? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &Component.getFont_MethodID_65, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Font( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.FontMetrics java.awt.Component.getFontMetrics(java.awt.Font)
+
+    private static var getFontMetrics_MethodID_66: jmethodID?
+
+    open func getFontMetrics( arg0: Font? ) -> FontMetrics! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "applyComponentOrientation", methodSig: "(Ljava/awt/ComponentOrientation;)V", methodCache: &Component.applyComponentOrientation_MethodID_211, args: &__args, locals: &__locals )
-    }
-
-    open func applyComponentOrientation( _ _arg0: ComponentOrientation? ) {
-        applyComponentOrientation( arg0: _arg0 )
-    }
-
-    /// public void java.awt.Component.addPropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var addPropertyChangeListener_MethodID_212: jmethodID?
-
-    open func addPropertyChangeListener( arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &Component.addPropertyChangeListener_MethodID_212, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "(Ljava/awt/Font;)Ljava/awt/FontMetrics;", methodCache: &Component.getFontMetrics_MethodID_66, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? FontMetrics( javaObject: __return ) : nil
     }
 
-    open func addPropertyChangeListener( _ _arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        addPropertyChangeListener( arg0: _arg0 )
+    open func getFontMetrics( _ _arg0: Font? ) -> FontMetrics! {
+        return getFontMetrics( arg0: _arg0 )
     }
 
-    /// public void java.awt.Component.addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
+    /// final java.awt.Font java.awt.Component.getFont_NoClientCode()
 
-    private static var addPropertyChangeListener_MethodID_213: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func addPropertyChangeListener( arg0: String?, arg1: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    /// public java.awt.Color java.awt.Component.getForeground()
+
+    private static var getForeground_MethodID_67: jmethodID?
+
+    open func getForeground() -> Color! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &Component.addPropertyChangeListener_MethodID_213, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getForeground", methodSig: "()Ljava/awt/Color;", methodCache: &Component.getForeground_MethodID_67, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Color( javaObject: __return ) : nil
     }
 
-    open func addPropertyChangeListener( _ _arg0: String?, _ _arg1: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        addPropertyChangeListener( arg0: _arg0, arg1: _arg1 )
+
+    /// public java.awt.Graphics java.awt.Component.getGraphics()
+
+    private static var getGraphics_MethodID_68: jmethodID?
+
+    open func getGraphics() -> Graphics! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphics", methodSig: "()Ljava/awt/Graphics;", methodCache: &Component.getGraphics_MethodID_68, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Graphics( javaObject: __return ) : nil
     }
 
-    /// sun.java2d.pipe.Region java.awt.Component.getOpaqueShape()
-
-    /// void java.awt.Component.mixOnShowing()
-
-    /// void java.awt.Component.mixOnHiding(boolean)
-
-    /// void java.awt.Component.mixOnReshaping()
-
-    /// void java.awt.Component.mixOnZOrderChanging(int,int)
-
-    /// void java.awt.Component.mixOnValidating()
-
-    /// final void java.awt.Component.checkTreeLock()
 
     /// public java.awt.GraphicsConfiguration java.awt.Component.getGraphicsConfiguration()
 
-    private static var getGraphicsConfiguration_MethodID_214: jmethodID?
+    private static var getGraphicsConfiguration_MethodID_69: jmethodID?
 
     open func getGraphicsConfiguration() -> GraphicsConfiguration! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphicsConfiguration", methodSig: "()Ljava/awt/GraphicsConfiguration;", methodCache: &Component.getGraphicsConfiguration_MethodID_214, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphicsConfiguration", methodSig: "()Ljava/awt/GraphicsConfiguration;", methodCache: &Component.getGraphicsConfiguration_MethodID_69, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GraphicsConfiguration( javaObject: __return ) : nil
     }
 
 
-    /// java.awt.Window java.awt.Component.getContainingWindow()
+    /// final java.awt.GraphicsConfiguration java.awt.Component.getGraphicsConfiguration_NoClientCode()
 
-    /// void java.awt.Component.setGraphicsConfiguration(java.awt.GraphicsConfiguration)
+    // Skipping method: true false false false false 
 
-    /// final void java.awt.Component.invalidateIfValid()
+    /// final java.awt.Graphics java.awt.Component.getGraphics_NoClientCode()
 
-    /// public final void java.awt.Component.dispatchEvent(java.awt.AWTEvent)
+    // Skipping method: true false false false false 
 
-    private static var dispatchEvent_MethodID_215: jmethodID?
+    /// final java.awt.peer.ComponentPeer java.awt.Component.getHWPeerAboveMe()
 
-    open func dispatchEvent( arg0: AWTEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    // Skipping method: true false false false false 
+
+    /// public int java.awt.Component.getHeight()
+
+    private static var getHeight_MethodID_70: jmethodID?
+
+    open func getHeight() -> Int {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &Component.getHeight_MethodID_70, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public synchronized java.awt.event.HierarchyBoundsListener[] java.awt.Component.getHierarchyBoundsListeners()
+
+    private static var getHierarchyBoundsListeners_MethodID_71: jmethodID?
+
+    open func getHierarchyBoundsListeners() -> [HierarchyBoundsListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHierarchyBoundsListeners", methodSig: "()[Ljava/awt/event/HierarchyBoundsListener;", methodCache: &Component.getHierarchyBoundsListeners_MethodID_71, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [HierarchyBoundsListenerForward].self, from: __return )
+    }
+
+
+    /// public synchronized java.awt.event.HierarchyListener[] java.awt.Component.getHierarchyListeners()
+
+    private static var getHierarchyListeners_MethodID_72: jmethodID?
+
+    open func getHierarchyListeners() -> [HierarchyListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHierarchyListeners", methodSig: "()[Ljava/awt/event/HierarchyListener;", methodCache: &Component.getHierarchyListeners_MethodID_72, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [HierarchyListenerForward].self, from: __return )
+    }
+
+
+    /// public boolean java.awt.Component.getIgnoreRepaint()
+
+    private static var getIgnoreRepaint_MethodID_73: jmethodID?
+
+    open func getIgnoreRepaint() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getIgnoreRepaint", methodSig: "()Z", methodCache: &Component.getIgnoreRepaint_MethodID_73, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public java.awt.im.InputContext java.awt.Component.getInputContext()
+
+    private static var getInputContext_MethodID_74: jmethodID?
+
+    open func getInputContext() -> InputContext! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputContext", methodSig: "()Ljava/awt/im/InputContext;", methodCache: &Component.getInputContext_MethodID_74, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? InputContext( javaObject: __return ) : nil
+    }
+
+
+    /// public synchronized java.awt.event.InputMethodListener[] java.awt.Component.getInputMethodListeners()
+
+    private static var getInputMethodListeners_MethodID_75: jmethodID?
+
+    open func getInputMethodListeners() -> [InputMethodListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputMethodListeners", methodSig: "()[Ljava/awt/event/InputMethodListener;", methodCache: &Component.getInputMethodListeners_MethodID_75, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [InputMethodListenerForward].self, from: __return )
+    }
+
+
+    /// public java.awt.im.InputMethodRequests java.awt.Component.getInputMethodRequests()
+
+    private static var getInputMethodRequests_MethodID_76: jmethodID?
+
+    open func getInputMethodRequests() -> InputMethodRequests! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputMethodRequests", methodSig: "()Ljava/awt/im/InputMethodRequests;", methodCache: &Component.getInputMethodRequests_MethodID_76, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? InputMethodRequestsForward( javaObject: __return ) : nil
+    }
+
+
+    /// private java.awt.Insets java.awt.Component.getInsets_NoClientCode()
+
+    /// public synchronized java.awt.event.KeyListener[] java.awt.Component.getKeyListeners()
+
+    private static var getKeyListeners_MethodID_77: jmethodID?
+
+    open func getKeyListeners() -> [KeyListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeyListeners", methodSig: "()[Ljava/awt/event/KeyListener;", methodCache: &Component.getKeyListeners_MethodID_77, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [KeyListenerForward].self, from: __return )
+    }
+
+
+    /// public java.util.EventListener[] java.awt.Component.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_78: jmethodID?
+
+    open func getListeners( arg0: java_swift.JavaClass? ) -> [EventListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispatchEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Component.dispatchEvent_MethodID_215, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &Component.getListeners_MethodID_78, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward].self, from: __return )
     }
 
-    open func dispatchEvent( _ _arg0: AWTEvent? ) {
-        dispatchEvent( arg0: _arg0 )
+    open func getListeners( _ _arg0: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( arg0: _arg0 )
     }
 
-    /// final void java.awt.Component.updateCursorImmediately()
+    /// public java.util.Locale java.awt.Component.getLocale()
 
-    /// public boolean java.awt.Component.isFocusable()
+    private static var getLocale_MethodID_79: jmethodID?
 
-    private static var isFocusable_MethodID_216: jmethodID?
-
-    open func isFocusable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getLocale() -> java_util.JavaLocale! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusable", methodSig: "()Z", methodCache: &Component.isFocusable_MethodID_216, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocale", methodSig: "()Ljava/util/Locale;", methodCache: &Component.getLocale_MethodID_79, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.JavaLocale( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Point java.awt.Component.getLocation(java.awt.Point)
+
+    private static var getLocation_MethodID_80: jmethodID?
+
+    open func getLocation( arg0: Point? ) -> Point! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocation", methodSig: "(Ljava/awt/Point;)Ljava/awt/Point;", methodCache: &Component.getLocation_MethodID_80, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point( javaObject: __return ) : nil
+    }
+
+    open func getLocation( _ _arg0: Point? ) -> Point! {
+        return getLocation( arg0: _arg0 )
+    }
+
+    /// public java.awt.Point java.awt.Component.getLocation()
+
+    private static var getLocation_MethodID_81: jmethodID?
+
+    open func getLocation() -> Point! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocation", methodSig: "()Ljava/awt/Point;", methodCache: &Component.getLocation_MethodID_81, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Point java.awt.Component.getLocationOnScreen()
+
+    private static var getLocationOnScreen_MethodID_82: jmethodID?
+
+    open func getLocationOnScreen() -> Point! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocationOnScreen", methodSig: "()Ljava/awt/Point;", methodCache: &Component.getLocationOnScreen_MethodID_82, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point( javaObject: __return ) : nil
+    }
+
+
+    /// final java.awt.Point java.awt.Component.getLocationOnScreen_NoTreeLock()
+
+    // Skipping method: true false false false false 
+
+    /// java.awt.Point java.awt.Component.getLocationOnWindow()
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Dimension java.awt.Component.getMaximumSize()
+
+    private static var getMaximumSize_MethodID_83: jmethodID?
+
+    open func getMaximumSize() -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.getMaximumSize_MethodID_83, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Dimension java.awt.Component.getMinimumSize()
+
+    private static var getMinimumSize_MethodID_84: jmethodID?
+
+    open func getMinimumSize() -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.getMinimumSize_MethodID_84, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public synchronized java.awt.event.MouseListener[] java.awt.Component.getMouseListeners()
+
+    private static var getMouseListeners_MethodID_85: jmethodID?
+
+    open func getMouseListeners() -> [MouseListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseListeners", methodSig: "()[Ljava/awt/event/MouseListener;", methodCache: &Component.getMouseListeners_MethodID_85, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [MouseListenerForward].self, from: __return )
+    }
+
+
+    /// public synchronized java.awt.event.MouseMotionListener[] java.awt.Component.getMouseMotionListeners()
+
+    private static var getMouseMotionListeners_MethodID_86: jmethodID?
+
+    open func getMouseMotionListeners() -> [MouseMotionListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseMotionListeners", methodSig: "()[Ljava/awt/event/MouseMotionListener;", methodCache: &Component.getMouseMotionListeners_MethodID_86, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [MouseMotionListenerForward].self, from: __return )
+    }
+
+
+    /// public java.awt.Point java.awt.Component.getMousePosition() throws java.awt.HeadlessException
+
+    private static var getMousePosition_MethodID_87: jmethodID?
+
+    open func getMousePosition() throws /* java.awt.HeadlessException */ -> Point! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMousePosition", methodSig: "()Ljava/awt/Point;", methodCache: &Component.getMousePosition_MethodID_87, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw HeadlessException( javaObject: throwable )
+        }
+        return __return != nil ? Point( javaObject: __return ) : nil
+    }
+
+
+    /// public synchronized java.awt.event.MouseWheelListener[] java.awt.Component.getMouseWheelListeners()
+
+    private static var getMouseWheelListeners_MethodID_88: jmethodID?
+
+    open func getMouseWheelListeners() -> [MouseWheelListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseWheelListeners", methodSig: "()[Ljava/awt/event/MouseWheelListener;", methodCache: &Component.getMouseWheelListeners_MethodID_88, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [MouseWheelListenerForward].self, from: __return )
+    }
+
+
+    /// public java.lang.String java.awt.Component.getName()
+
+    private static var getName_MethodID_89: jmethodID?
+
+    open func getName() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getName", methodSig: "()Ljava/lang/String;", methodCache: &Component.getName_MethodID_89, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
 
     /// final java.awt.Container java.awt.Component.getNativeContainer()
 
-    /// public boolean java.awt.Component.isLightweight()
+    // Skipping method: true false false false false 
 
-    private static var isLightweight_MethodID_217: jmethodID?
+    /// final java.awt.Component java.awt.Component.getNextFocusCandidate()
 
-    open func isLightweight() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    // Skipping method: true false false false false 
+
+    /// final sun.java2d.pipe.Region java.awt.Component.getNormalShape()
+
+    // Skipping method: true false false false false 
+
+    /// java.lang.Object java.awt.Component.getObjectLock()
+
+    // Skipping method: true false false false false 
+
+    /// sun.java2d.pipe.Region java.awt.Component.getOpaqueShape()
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Container java.awt.Component.getParent()
+
+    private static var getParent_MethodID_90: jmethodID?
+
+    open func getParent() -> Container! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLightweight", methodSig: "()Z", methodCache: &Component.isLightweight_MethodID_217, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParent", methodSig: "()Ljava/awt/Container;", methodCache: &Component.getParent_MethodID_90, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Container( javaObject: __return ) : nil
     }
 
 
-    /// void java.awt.Component.updateZOrder()
+    /// final java.awt.Container java.awt.Component.getParent_NoClientCode()
 
-    /// final void java.awt.Component.relocateComponent()
+    // Skipping method: true false false false false 
+
+    /// public java.awt.peer.ComponentPeer java.awt.Component.getPeer()
+
+    private static var getPeer_MethodID_91: jmethodID?
+
+    open func getPeer() -> ComponentPeer! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPeer", methodSig: "()Ljava/awt/peer/ComponentPeer;", methodCache: &Component.getPeer_MethodID_91, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentPeerForward( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Dimension java.awt.Component.getPreferredSize()
+
+    private static var getPreferredSize_MethodID_92: jmethodID?
+
+    open func getPreferredSize() -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.getPreferredSize_MethodID_92, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public java.beans.PropertyChangeListener[] java.awt.Component.getPropertyChangeListeners(java.lang.String)
+
+    private static var getPropertyChangeListeners_MethodID_93: jmethodID?
+
+    open func getPropertyChangeListeners( arg0: String? ) -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "(Ljava/lang/String;)[Ljava/beans/PropertyChangeListener;", methodCache: &Component.getPropertyChangeListeners_MethodID_93, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward].self, from: __return )
+    }
+
+    open func getPropertyChangeListeners( _ _arg0: String? ) -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
+        return getPropertyChangeListeners( arg0: _arg0 )
+    }
+
+    /// public java.beans.PropertyChangeListener[] java.awt.Component.getPropertyChangeListeners()
+
+    private static var getPropertyChangeListeners_MethodID_94: jmethodID?
+
+    open func getPropertyChangeListeners() -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &Component.getPropertyChangeListeners_MethodID_94, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward].self, from: __return )
+    }
+
+
+    /// private java.awt.Rectangle java.awt.Component.getRecursivelyVisibleBounds()
+
+    /// final int java.awt.Component.getSiblingIndexAbove()
+
+    // Skipping method: true false false false false 
+
+    /// final int java.awt.Component.getSiblingIndexBelow()
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Dimension java.awt.Component.getSize(java.awt.Dimension)
+
+    private static var getSize_MethodID_95: jmethodID?
+
+    open func getSize( arg0: Dimension? ) -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSize", methodSig: "(Ljava/awt/Dimension;)Ljava/awt/Dimension;", methodCache: &Component.getSize_MethodID_95, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+    open func getSize( _ _arg0: Dimension? ) -> Dimension! {
+        return getSize( arg0: _arg0 )
+    }
+
+    /// public java.awt.Dimension java.awt.Component.getSize()
+
+    private static var getSize_MethodID_96: jmethodID?
+
+    open func getSize() -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.getSize_MethodID_96, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Toolkit java.awt.Component.getToolkit()
+
+    private static var getToolkit_MethodID_97: jmethodID?
+
+    open func getToolkit() -> Toolkit! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolkit", methodSig: "()Ljava/awt/Toolkit;", methodCache: &Component.getToolkit_MethodID_97, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Toolkit( javaObject: __return ) : nil
+    }
+
+
+    /// final java.awt.Toolkit java.awt.Component.getToolkitImpl()
+
+    // Skipping method: true false false false false 
+
+    /// java.awt.Container java.awt.Component.getTraversalRoot()
+
+    // Skipping method: true false false false false 
+
+    /// public final java.lang.Object java.awt.Component.getTreeLock()
+
+    private static var getTreeLock_MethodID_98: jmethodID?
+
+    open func getTreeLock() -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTreeLock", methodSig: "()Ljava/lang/Object;", methodCache: &Component.getTreeLock_MethodID_98, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
+    /// public int java.awt.Component.getWidth()
+
+    private static var getWidth_MethodID_99: jmethodID?
+
+    open func getWidth() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &Component.getWidth_MethodID_99, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.Component.getX()
+
+    private static var getX_MethodID_100: jmethodID?
+
+    open func getX() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getX", methodSig: "()I", methodCache: &Component.getX_MethodID_100, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.Component.getY()
+
+    private static var getY_MethodID_101: jmethodID?
+
+    open func getY() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getY", methodSig: "()I", methodCache: &Component.getY_MethodID_101, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public boolean java.awt.Component.gotFocus(java.awt.Event,java.lang.Object)
+
+    private static var gotFocus_MethodID_102: jmethodID?
+
+    open func gotFocus( arg0: Event?, arg1: java_swift.JavaObject? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "gotFocus", methodSig: "(Ljava/awt/Event;Ljava/lang/Object;)Z", methodCache: &Component.gotFocus_MethodID_102, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func gotFocus( _ _arg0: Event?, _ _arg1: java_swift.JavaObject? ) -> Bool {
+        return gotFocus( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public boolean java.awt.Component.handleEvent(java.awt.Event)
+
+    private static var handleEvent_MethodID_103: jmethodID?
+
+    open func handleEvent( arg0: Event? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "handleEvent", methodSig: "(Ljava/awt/Event;)Z", methodCache: &Component.handleEvent_MethodID_103, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func handleEvent( _ _arg0: Event? ) -> Bool {
+        return handleEvent( arg0: _arg0 )
+    }
+
+    /// public boolean java.awt.Component.hasFocus()
+
+    private static var hasFocus_MethodID_104: jmethodID?
+
+    open func hasFocus() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "hasFocus", methodSig: "()Z", methodCache: &Component.hasFocus_MethodID_104, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public void java.awt.Component.hide()
+
+    private static var hide_MethodID_105: jmethodID?
+
+    open func hide() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "hide", methodSig: "()V", methodCache: &Component.hide_MethodID_105, args: &__args, locals: &__locals )
+    }
+
+
+    /// public boolean java.awt.Component.imageUpdate(java.awt.Image,int,int,int,int,int)
+
+    private static var imageUpdate_MethodID_106: jmethodID?
+
+    open func imageUpdate( img: Image?, infoflags: Int, x: Int, y: Int, width: Int, height: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
+        __args[1] = jvalue( i: jint(infoflags) )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(width) )
+        __args[5] = jvalue( i: jint(height) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "imageUpdate", methodSig: "(Ljava/awt/Image;IIIII)Z", methodCache: &Component.imageUpdate_MethodID_106, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func imageUpdate( _ _img: Image?, _ _infoflags: Int, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) -> Bool {
+        return imageUpdate( img: _img, infoflags: _infoflags, x: _x, y: _y, width: _width, height: _height )
+    }
+
+    /// void java.awt.Component.initializeFocusTraversalKeys()
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Component.inside(int,int)
+
+    private static var inside_MethodID_107: jmethodID?
+
+    open func inside( arg0: Int, arg1: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inside", methodSig: "(II)Z", methodCache: &Component.inside_MethodID_107, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func inside( _ _arg0: Int, _ _arg1: Int ) -> Bool {
+        return inside( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.Component.invalidate()
+
+    private static var invalidate_MethodID_108: jmethodID?
+
+    open func invalidate() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidate", methodSig: "()V", methodCache: &Component.invalidate_MethodID_108, args: &__args, locals: &__locals )
+    }
+
+
+    /// final void java.awt.Component.invalidateIfValid()
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.Component.invalidateParent()
+
+    // Skipping method: true false false false false 
+
+    /// boolean java.awt.Component.isAutoFocusTransferOnDisposal()
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Component.isBackgroundSet()
+
+    private static var isBackgroundSet_MethodID_109: jmethodID?
+
+    open func isBackgroundSet() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBackgroundSet", methodSig: "()Z", methodCache: &Component.isBackgroundSet_MethodID_109, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// final boolean java.awt.Component.isCoalescingEnabled()
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Component.isCursorSet()
+
+    private static var isCursorSet_MethodID_110: jmethodID?
+
+    open func isCursorSet() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCursorSet", methodSig: "()Z", methodCache: &Component.isCursorSet_MethodID_110, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.Component.isDisplayable()
+
+    private static var isDisplayable_MethodID_111: jmethodID?
+
+    open func isDisplayable() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDisplayable", methodSig: "()Z", methodCache: &Component.isDisplayable_MethodID_111, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.Component.isDoubleBuffered()
+
+    private static var isDoubleBuffered_MethodID_112: jmethodID?
+
+    open func isDoubleBuffered() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDoubleBuffered", methodSig: "()Z", methodCache: &Component.isDoubleBuffered_MethodID_112, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.Component.isEnabled()
+
+    private static var isEnabled_MethodID_113: jmethodID?
+
+    open func isEnabled() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &Component.isEnabled_MethodID_113, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// final boolean java.awt.Component.isEnabledImpl()
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Component.isFocusCycleRoot(java.awt.Container)
+
+    private static var isFocusCycleRoot_MethodID_114: jmethodID?
+
+    open func isFocusCycleRoot( arg0: Container? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusCycleRoot", methodSig: "(Ljava/awt/Container;)Z", methodCache: &Component.isFocusCycleRoot_MethodID_114, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func isFocusCycleRoot( _ _arg0: Container? ) -> Bool {
+        return isFocusCycleRoot( arg0: _arg0 )
+    }
 
     /// public boolean java.awt.Component.isFocusOwner()
 
-    private static var isFocusOwner_MethodID_218: jmethodID?
+    private static var isFocusOwner_MethodID_115: jmethodID?
 
     open func isFocusOwner() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusOwner", methodSig: "()Z", methodCache: &Component.isFocusOwner_MethodID_218, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusOwner", methodSig: "()Z", methodCache: &Component.isFocusOwner_MethodID_115, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// final boolean java.awt.Component.canBeFocusOwnerRecursively()
+    /// public boolean java.awt.Component.isFocusTraversable()
 
-    /// boolean java.awt.Component.transferFocus(boolean)
+    private static var isFocusTraversable_MethodID_116: jmethodID?
 
-    /// public void java.awt.Component.transferFocus()
-
-    private static var transferFocus_MethodID_219: jmethodID?
-
-    open func transferFocus() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func isFocusTraversable() -> Bool {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transferFocus", methodSig: "()V", methodCache: &Component.transferFocus_MethodID_219, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusTraversable", methodSig: "()Z", methodCache: &Component.isFocusTraversable_MethodID_116, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// void java.awt.Component.adjustListeningChildrenOnParent(long,int)
+    /// final boolean java.awt.Component.isFocusTraversableOverridden()
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Component.isFocusable()
+
+    private static var isFocusable_MethodID_117: jmethodID?
+
+    open func isFocusable() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusable", methodSig: "()Z", methodCache: &Component.isFocusable_MethodID_117, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.Component.isFontSet()
+
+    private static var isFontSet_MethodID_118: jmethodID?
+
+    open func isFontSet() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFontSet", methodSig: "()Z", methodCache: &Component.isFontSet_MethodID_118, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.Component.isForegroundSet()
+
+    private static var isForegroundSet_MethodID_119: jmethodID?
+
+    open func isForegroundSet() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isForegroundSet", methodSig: "()Z", methodCache: &Component.isForegroundSet_MethodID_119, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.Component.isLightweight()
+
+    private static var isLightweight_MethodID_120: jmethodID?
+
+    open func isLightweight() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLightweight", methodSig: "()Z", methodCache: &Component.isLightweight_MethodID_120, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.Component.isMaximumSizeSet()
+
+    private static var isMaximumSizeSet_MethodID_121: jmethodID?
+
+    open func isMaximumSizeSet() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMaximumSizeSet", methodSig: "()Z", methodCache: &Component.isMaximumSizeSet_MethodID_121, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.Component.isMinimumSizeSet()
+
+    private static var isMinimumSizeSet_MethodID_122: jmethodID?
+
+    open func isMinimumSizeSet() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMinimumSizeSet", methodSig: "()Z", methodCache: &Component.isMinimumSizeSet_MethodID_122, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// final boolean java.awt.Component.isMixingNeeded()
+
+    // Skipping method: true false false false false 
+
+    /// final boolean java.awt.Component.isNonOpaqueForMixing()
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Component.isOpaque()
+
+    private static var isOpaque_MethodID_123: jmethodID?
+
+    open func isOpaque() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isOpaque", methodSig: "()Z", methodCache: &Component.isOpaque_MethodID_123, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.Component.isPreferredSizeSet()
+
+    private static var isPreferredSizeSet_MethodID_124: jmethodID?
+
+    open func isPreferredSizeSet() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPreferredSizeSet", methodSig: "()Z", methodCache: &Component.isPreferredSizeSet_MethodID_124, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// boolean java.awt.Component.isRecursivelyVisible()
+
+    // Skipping method: true false false false false 
+
+    /// private boolean java.awt.Component.isRequestFocusAccepted(boolean,boolean,sun.awt.CausedFocusEvent$Cause)
+
+    /// boolean java.awt.Component.isSameOrAncestorOf(java.awt.Component,boolean)
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Component.isShowing()
+
+    private static var isShowing_MethodID_125: jmethodID?
+
+    open func isShowing() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isShowing", methodSig: "()Z", methodCache: &Component.isShowing_MethodID_125, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
 
     /// public boolean java.awt.Component.isValid()
 
-    private static var isValid_MethodID_220: jmethodID?
+    private static var isValid_MethodID_126: jmethodID?
 
     open func isValid() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isValid", methodSig: "()Z", methodCache: &Component.isValid_MethodID_220, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isValid", methodSig: "()Z", methodCache: &Component.isValid_MethodID_126, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// java.lang.Object java.awt.Component.getObjectLock()
+    /// public boolean java.awt.Component.isVisible()
+
+    private static var isVisible_MethodID_127: jmethodID?
+
+    open func isVisible() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVisible", methodSig: "()Z", methodCache: &Component.isVisible_MethodID_127, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// final boolean java.awt.Component.isVisible_NoClientCode()
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Component.keyDown(java.awt.Event,int)
+
+    private static var keyDown_MethodID_128: jmethodID?
+
+    open func keyDown( arg0: Event?, arg1: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "keyDown", methodSig: "(Ljava/awt/Event;I)Z", methodCache: &Component.keyDown_MethodID_128, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func keyDown( _ _arg0: Event?, _ _arg1: Int ) -> Bool {
+        return keyDown( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public boolean java.awt.Component.keyUp(java.awt.Event,int)
+
+    private static var keyUp_MethodID_129: jmethodID?
+
+    open func keyUp( arg0: Event?, arg1: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "keyUp", methodSig: "(Ljava/awt/Event;I)Z", methodCache: &Component.keyUp_MethodID_129, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func keyUp( _ _arg0: Event?, _ _arg1: Int ) -> Bool {
+        return keyUp( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.Component.layout()
+
+    private static var layout_MethodID_130: jmethodID?
+
+    open func layout() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "()V", methodCache: &Component.layout_MethodID_130, args: &__args, locals: &__locals )
+    }
+
+
+    /// void java.awt.Component.lightweightPaint(java.awt.Graphics)
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.Component.lightweightPrint(java.awt.Graphics)
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.list(java.io.PrintWriter)
+
+    private static var list_MethodID_131: jmethodID?
+
+    open func list( arg0: /* class java.io.PrintWriter */ UnavailableObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "list", methodSig: "(Ljava/io/PrintWriter;)V", methodCache: &Component.list_MethodID_131, args: &__args, locals: &__locals )
+    }
+
+    open func list( _ _arg0: /* class java.io.PrintWriter */ UnavailableObject? ) {
+        list( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.list(java.io.PrintStream)
+
+    /// public void java.awt.Component.list(java.io.PrintWriter,int)
+
+    private static var list_MethodID_132: jmethodID?
+
+    open func list( arg0: /* class java.io.PrintWriter */ UnavailableObject?, arg1: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "list", methodSig: "(Ljava/io/PrintWriter;I)V", methodCache: &Component.list_MethodID_132, args: &__args, locals: &__locals )
+    }
+
+    open func list( _ _arg0: /* class java.io.PrintWriter */ UnavailableObject?, _ _arg1: Int ) {
+        list( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.Component.list(java.io.PrintStream,int)
+
+    /// public void java.awt.Component.list()
+
+    private static var list_MethodID_133: jmethodID?
+
+    open func list() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "list", methodSig: "()V", methodCache: &Component.list_MethodID_133, args: &__args, locals: &__locals )
+    }
+
+
+    /// public java.awt.Component java.awt.Component.locate(int,int)
+
+    private static var locate_MethodID_134: jmethodID?
+
+    open func locate( arg0: Int, arg1: Int ) -> Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "locate", methodSig: "(II)Ljava/awt/Component;", methodCache: &Component.locate_MethodID_134, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Component( javaObject: __return ) : nil
+    }
+
+    open func locate( _ _arg0: Int, _ _arg1: Int ) -> Component! {
+        return locate( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public java.awt.Point java.awt.Component.location()
+
+    private static var location_MethodID_135: jmethodID?
+
+    open func location() -> Point! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "location", methodSig: "()Ljava/awt/Point;", methodCache: &Component.location_MethodID_135, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point( javaObject: __return ) : nil
+    }
+
+
+    /// private java.awt.Point java.awt.Component.location_NoClientCode()
+
+    /// public boolean java.awt.Component.lostFocus(java.awt.Event,java.lang.Object)
+
+    private static var lostFocus_MethodID_136: jmethodID?
+
+    open func lostFocus( arg0: Event?, arg1: java_swift.JavaObject? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "lostFocus", methodSig: "(Ljava/awt/Event;Ljava/lang/Object;)Z", methodCache: &Component.lostFocus_MethodID_136, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func lostFocus( _ _arg0: Event?, _ _arg1: java_swift.JavaObject? ) -> Bool {
+        return lostFocus( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public java.awt.Dimension java.awt.Component.minimumSize()
+
+    private static var minimumSize_MethodID_137: jmethodID?
+
+    open func minimumSize() -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.minimumSize_MethodID_137, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// void java.awt.Component.mixOnHiding(boolean)
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.Component.mixOnReshaping()
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.Component.mixOnShowing()
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.Component.mixOnValidating()
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.Component.mixOnZOrderChanging(int,int)
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Component.mouseDown(java.awt.Event,int,int)
+
+    private static var mouseDown_MethodID_138: jmethodID?
+
+    open func mouseDown( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseDown", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseDown_MethodID_138, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func mouseDown( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
+        return mouseDown( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// public boolean java.awt.Component.mouseDrag(java.awt.Event,int,int)
+
+    private static var mouseDrag_MethodID_139: jmethodID?
+
+    open func mouseDrag( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseDrag", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseDrag_MethodID_139, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func mouseDrag( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
+        return mouseDrag( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// public boolean java.awt.Component.mouseEnter(java.awt.Event,int,int)
+
+    private static var mouseEnter_MethodID_140: jmethodID?
+
+    open func mouseEnter( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseEnter", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseEnter_MethodID_140, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func mouseEnter( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
+        return mouseEnter( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// public boolean java.awt.Component.mouseExit(java.awt.Event,int,int)
+
+    private static var mouseExit_MethodID_141: jmethodID?
+
+    open func mouseExit( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseExit", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseExit_MethodID_141, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func mouseExit( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
+        return mouseExit( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// public boolean java.awt.Component.mouseMove(java.awt.Event,int,int)
+
+    private static var mouseMove_MethodID_142: jmethodID?
+
+    open func mouseMove( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseMove", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseMove_MethodID_142, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func mouseMove( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
+        return mouseMove( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// public boolean java.awt.Component.mouseUp(java.awt.Event,int,int)
+
+    private static var mouseUp_MethodID_143: jmethodID?
+
+    open func mouseUp( arg0: Event?, arg1: Int, arg2: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "mouseUp", methodSig: "(Ljava/awt/Event;II)Z", methodCache: &Component.mouseUp_MethodID_143, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func mouseUp( _ _arg0: Event?, _ _arg1: Int, _ _arg2: Int ) -> Bool {
+        return mouseUp( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// public void java.awt.Component.move(int,int)
+
+    private static var move_MethodID_144: jmethodID?
+
+    open func move( arg0: Int, arg1: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "move", methodSig: "(II)V", methodCache: &Component.move_MethodID_144, args: &__args, locals: &__locals )
+    }
+
+    open func move( _ _arg0: Int, _ _arg1: Int ) {
+        move( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.Component.nextFocus()
+
+    private static var nextFocus_MethodID_145: jmethodID?
+
+    open func nextFocus() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "nextFocus", methodSig: "()V", methodCache: &Component.nextFocus_MethodID_145, args: &__args, locals: &__locals )
+    }
+
+
+    /// private void java.awt.Component.notifyNewBounds(boolean,boolean)
+
+    /// int java.awt.Component.numListening(long)
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.paint(java.awt.Graphics)
+
+    private static var paint_MethodID_146: jmethodID?
+
+    open func paint( arg0: Graphics? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Component.paint_MethodID_146, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _arg0: Graphics? ) {
+        paint( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.paintAll(java.awt.Graphics)
+
+    private static var paintAll_MethodID_147: jmethodID?
+
+    open func paintAll( arg0: Graphics? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintAll", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Component.paintAll_MethodID_147, args: &__args, locals: &__locals )
+    }
+
+    open func paintAll( _ _arg0: Graphics? ) {
+        paintAll( arg0: _arg0 )
+    }
+
+    /// void java.awt.Component.paintHeavyweightComponents(java.awt.Graphics)
+
+    // Skipping method: true false false false false 
+
+    /// protected java.lang.String java.awt.Component.paramString()
+
+    private static var paramString_MethodID_148: jmethodID?
+
+    open func paramString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &Component.paramString_MethodID_148, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// java.awt.Point java.awt.Component.pointRelativeToComponent(java.awt.Point)
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Component.postEvent(java.awt.Event)
+
+    private static var postEvent_MethodID_149: jmethodID?
+
+    open func postEvent( evt: Event? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "postEvent", methodSig: "(Ljava/awt/Event;)Z", methodCache: &Component.postEvent_MethodID_149, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func postEvent( _ _evt: Event? ) -> Bool {
+        return postEvent( evt: _evt )
+    }
+
+    /// boolean java.awt.Component.postsOldMouseEvents()
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Dimension java.awt.Component.preferredSize()
+
+    private static var preferredSize_MethodID_150: jmethodID?
+
+    open func preferredSize() -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.preferredSize_MethodID_150, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public boolean java.awt.Component.prepareImage(java.awt.Image,java.awt.image.ImageObserver)
+
+    private static var prepareImage_MethodID_151: jmethodID?
+
+    open func prepareImage( arg0: Image?, arg1: ImageObserver? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "prepareImage", methodSig: "(Ljava/awt/Image;Ljava/awt/image/ImageObserver;)Z", methodCache: &Component.prepareImage_MethodID_151, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func prepareImage( _ _arg0: Image?, _ _arg1: ImageObserver? ) -> Bool {
+        return prepareImage( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public boolean java.awt.Component.prepareImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
+
+    private static var prepareImage_MethodID_152: jmethodID?
+
+    open func prepareImage( arg0: Image?, arg1: Int, arg2: Int, arg3: ImageObserver? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "prepareImage", methodSig: "(Ljava/awt/Image;IILjava/awt/image/ImageObserver;)Z", methodCache: &Component.prepareImage_MethodID_152, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func prepareImage( _ _arg0: Image?, _ _arg1: Int, _ _arg2: Int, _ _arg3: ImageObserver? ) -> Bool {
+        return prepareImage( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
+    }
+
+    /// public void java.awt.Component.print(java.awt.Graphics)
+
+    private static var print_MethodID_153: jmethodID?
+
+    open func print( arg0: Graphics? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "print", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Component.print_MethodID_153, args: &__args, locals: &__locals )
+    }
+
+    open func print( _ _arg0: Graphics? ) {
+        print( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.printAll(java.awt.Graphics)
+
+    private static var printAll_MethodID_154: jmethodID?
+
+    open func printAll( arg0: Graphics? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "printAll", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Component.printAll_MethodID_154, args: &__args, locals: &__locals )
+    }
+
+    open func printAll( _ _arg0: Graphics? ) {
+        printAll( arg0: _arg0 )
+    }
+
+    /// void java.awt.Component.printHeavyweightComponents(java.awt.Graphics)
+
+    // Skipping method: true false false false false 
+
+    /// protected void java.awt.Component.processComponentEvent(java.awt.event.ComponentEvent)
+
+    private static var processComponentEvent_MethodID_155: jmethodID?
+
+    open func processComponentEvent( arg0: ComponentEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processComponentEvent", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &Component.processComponentEvent_MethodID_155, args: &__args, locals: &__locals )
+    }
+
+    open func processComponentEvent( _ _arg0: ComponentEvent? ) {
+        processComponentEvent( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.Component.processEvent(java.awt.AWTEvent)
+
+    private static var processEvent_MethodID_156: jmethodID?
+
+    open func processEvent( arg0: AWTEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processEvent", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &Component.processEvent_MethodID_156, args: &__args, locals: &__locals )
+    }
+
+    open func processEvent( _ _arg0: AWTEvent? ) {
+        processEvent( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.Component.processFocusEvent(java.awt.event.FocusEvent)
+
+    private static var processFocusEvent_MethodID_157: jmethodID?
+
+    open func processFocusEvent( arg0: FocusEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processFocusEvent", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &Component.processFocusEvent_MethodID_157, args: &__args, locals: &__locals )
+    }
+
+    open func processFocusEvent( _ _arg0: FocusEvent? ) {
+        processFocusEvent( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.Component.processHierarchyBoundsEvent(java.awt.event.HierarchyEvent)
+
+    private static var processHierarchyBoundsEvent_MethodID_158: jmethodID?
+
+    open func processHierarchyBoundsEvent( arg0: HierarchyEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processHierarchyBoundsEvent", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &Component.processHierarchyBoundsEvent_MethodID_158, args: &__args, locals: &__locals )
+    }
+
+    open func processHierarchyBoundsEvent( _ _arg0: HierarchyEvent? ) {
+        processHierarchyBoundsEvent( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.Component.processHierarchyEvent(java.awt.event.HierarchyEvent)
+
+    private static var processHierarchyEvent_MethodID_159: jmethodID?
+
+    open func processHierarchyEvent( arg0: HierarchyEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processHierarchyEvent", methodSig: "(Ljava/awt/event/HierarchyEvent;)V", methodCache: &Component.processHierarchyEvent_MethodID_159, args: &__args, locals: &__locals )
+    }
+
+    open func processHierarchyEvent( _ _arg0: HierarchyEvent? ) {
+        processHierarchyEvent( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.Component.processInputMethodEvent(java.awt.event.InputMethodEvent)
+
+    private static var processInputMethodEvent_MethodID_160: jmethodID?
+
+    open func processInputMethodEvent( arg0: InputMethodEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processInputMethodEvent", methodSig: "(Ljava/awt/event/InputMethodEvent;)V", methodCache: &Component.processInputMethodEvent_MethodID_160, args: &__args, locals: &__locals )
+    }
+
+    open func processInputMethodEvent( _ _arg0: InputMethodEvent? ) {
+        processInputMethodEvent( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.Component.processKeyEvent(java.awt.event.KeyEvent)
+
+    private static var processKeyEvent_MethodID_161: jmethodID?
+
+    open func processKeyEvent( arg0: KeyEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &Component.processKeyEvent_MethodID_161, args: &__args, locals: &__locals )
+    }
+
+    open func processKeyEvent( _ _arg0: KeyEvent? ) {
+        processKeyEvent( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.Component.processMouseEvent(java.awt.event.MouseEvent)
+
+    private static var processMouseEvent_MethodID_162: jmethodID?
+
+    open func processMouseEvent( arg0: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseEvent", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &Component.processMouseEvent_MethodID_162, args: &__args, locals: &__locals )
+    }
+
+    open func processMouseEvent( _ _arg0: MouseEvent? ) {
+        processMouseEvent( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.Component.processMouseMotionEvent(java.awt.event.MouseEvent)
+
+    private static var processMouseMotionEvent_MethodID_163: jmethodID?
+
+    open func processMouseMotionEvent( arg0: MouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseMotionEvent", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &Component.processMouseMotionEvent_MethodID_163, args: &__args, locals: &__locals )
+    }
+
+    open func processMouseMotionEvent( _ _arg0: MouseEvent? ) {
+        processMouseMotionEvent( arg0: _arg0 )
+    }
+
+    /// protected void java.awt.Component.processMouseWheelEvent(java.awt.event.MouseWheelEvent)
+
+    private static var processMouseWheelEvent_MethodID_164: jmethodID?
+
+    open func processMouseWheelEvent( arg0: MouseWheelEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseWheelEvent", methodSig: "(Ljava/awt/event/MouseWheelEvent;)V", methodCache: &Component.processMouseWheelEvent_MethodID_164, args: &__args, locals: &__locals )
+    }
+
+    open func processMouseWheelEvent( _ _arg0: MouseWheelEvent? ) {
+        processMouseWheelEvent( arg0: _arg0 )
+    }
+
+    /// private void java.awt.Component.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
+
+    /// final void java.awt.Component.relocateComponent()
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.remove(java.awt.MenuComponent)
+
+    private static var remove_MethodID_165: jmethodID?
+
+    open func remove( comp: MenuComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/MenuComponent;)V", methodCache: &Component.remove_MethodID_165, args: &__args, locals: &__locals )
+    }
+
+    open func remove( _ _comp: MenuComponent? ) {
+        remove( comp: _comp )
+    }
+
+    /// public synchronized void java.awt.Component.removeComponentListener(java.awt.event.ComponentListener)
+
+    private static var removeComponentListener_MethodID_166: jmethodID?
+
+    open func removeComponentListener( arg0: ComponentListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeComponentListener", methodSig: "(Ljava/awt/event/ComponentListener;)V", methodCache: &Component.removeComponentListener_MethodID_166, args: &__args, locals: &__locals )
+    }
+
+    open func removeComponentListener( _ _arg0: ComponentListener? ) {
+        removeComponentListener( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.removeFocusListener(java.awt.event.FocusListener)
+
+    private static var removeFocusListener_MethodID_167: jmethodID?
+
+    open func removeFocusListener( arg0: FocusListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeFocusListener", methodSig: "(Ljava/awt/event/FocusListener;)V", methodCache: &Component.removeFocusListener_MethodID_167, args: &__args, locals: &__locals )
+    }
+
+    open func removeFocusListener( _ _arg0: FocusListener? ) {
+        removeFocusListener( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.removeHierarchyBoundsListener(java.awt.event.HierarchyBoundsListener)
+
+    private static var removeHierarchyBoundsListener_MethodID_168: jmethodID?
+
+    open func removeHierarchyBoundsListener( arg0: HierarchyBoundsListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeHierarchyBoundsListener", methodSig: "(Ljava/awt/event/HierarchyBoundsListener;)V", methodCache: &Component.removeHierarchyBoundsListener_MethodID_168, args: &__args, locals: &__locals )
+    }
+
+    open func removeHierarchyBoundsListener( _ _arg0: HierarchyBoundsListener? ) {
+        removeHierarchyBoundsListener( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.removeHierarchyListener(java.awt.event.HierarchyListener)
+
+    private static var removeHierarchyListener_MethodID_169: jmethodID?
+
+    open func removeHierarchyListener( arg0: HierarchyListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeHierarchyListener", methodSig: "(Ljava/awt/event/HierarchyListener;)V", methodCache: &Component.removeHierarchyListener_MethodID_169, args: &__args, locals: &__locals )
+    }
+
+    open func removeHierarchyListener( _ _arg0: HierarchyListener? ) {
+        removeHierarchyListener( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.removeInputMethodListener(java.awt.event.InputMethodListener)
+
+    private static var removeInputMethodListener_MethodID_170: jmethodID?
+
+    open func removeInputMethodListener( arg0: InputMethodListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeInputMethodListener", methodSig: "(Ljava/awt/event/InputMethodListener;)V", methodCache: &Component.removeInputMethodListener_MethodID_170, args: &__args, locals: &__locals )
+    }
+
+    open func removeInputMethodListener( _ _arg0: InputMethodListener? ) {
+        removeInputMethodListener( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.removeKeyListener(java.awt.event.KeyListener)
+
+    private static var removeKeyListener_MethodID_171: jmethodID?
+
+    open func removeKeyListener( arg0: KeyListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeKeyListener", methodSig: "(Ljava/awt/event/KeyListener;)V", methodCache: &Component.removeKeyListener_MethodID_171, args: &__args, locals: &__locals )
+    }
+
+    open func removeKeyListener( _ _arg0: KeyListener? ) {
+        removeKeyListener( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.removeMouseListener(java.awt.event.MouseListener)
+
+    private static var removeMouseListener_MethodID_172: jmethodID?
+
+    open func removeMouseListener( arg0: MouseListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMouseListener", methodSig: "(Ljava/awt/event/MouseListener;)V", methodCache: &Component.removeMouseListener_MethodID_172, args: &__args, locals: &__locals )
+    }
+
+    open func removeMouseListener( _ _arg0: MouseListener? ) {
+        removeMouseListener( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.removeMouseMotionListener(java.awt.event.MouseMotionListener)
+
+    private static var removeMouseMotionListener_MethodID_173: jmethodID?
+
+    open func removeMouseMotionListener( arg0: MouseMotionListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMouseMotionListener", methodSig: "(Ljava/awt/event/MouseMotionListener;)V", methodCache: &Component.removeMouseMotionListener_MethodID_173, args: &__args, locals: &__locals )
+    }
+
+    open func removeMouseMotionListener( _ _arg0: MouseMotionListener? ) {
+        removeMouseMotionListener( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.removeMouseWheelListener(java.awt.event.MouseWheelListener)
+
+    private static var removeMouseWheelListener_MethodID_174: jmethodID?
+
+    open func removeMouseWheelListener( arg0: MouseWheelListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMouseWheelListener", methodSig: "(Ljava/awt/event/MouseWheelListener;)V", methodCache: &Component.removeMouseWheelListener_MethodID_174, args: &__args, locals: &__locals )
+    }
+
+    open func removeMouseWheelListener( _ _arg0: MouseWheelListener? ) {
+        removeMouseWheelListener( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.removeNotify()
+
+    private static var removeNotify_MethodID_175: jmethodID?
+
+    open func removeNotify() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeNotify", methodSig: "()V", methodCache: &Component.removeNotify_MethodID_175, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void java.awt.Component.removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)
+
+    private static var removePropertyChangeListener_MethodID_176: jmethodID?
+
+    open func removePropertyChangeListener( arg0: String?, arg1: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V", methodCache: &Component.removePropertyChangeListener_MethodID_176, args: &__args, locals: &__locals )
+    }
+
+    open func removePropertyChangeListener( _ _arg0: String?, _ _arg1: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        removePropertyChangeListener( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.Component.removePropertyChangeListener(java.beans.PropertyChangeListener)
+
+    private static var removePropertyChangeListener_MethodID_177: jmethodID?
+
+    open func removePropertyChangeListener( arg0: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &Component.removePropertyChangeListener_MethodID_177, args: &__args, locals: &__locals )
+    }
+
+    open func removePropertyChangeListener( _ _arg0: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        removePropertyChangeListener( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.repaint(int,int,int,int)
+
+    private static var repaint_MethodID_178: jmethodID?
+
+    open func repaint( arg0: Int, arg1: Int, arg2: Int, arg3: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        __args[3] = jvalue( i: jint(arg3) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(IIII)V", methodCache: &Component.repaint_MethodID_178, args: &__args, locals: &__locals )
+    }
+
+    open func repaint( _ _arg0: Int, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int ) {
+        repaint( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
+    }
+
+    /// public void java.awt.Component.repaint(long)
+
+    private static var repaint_MethodID_179: jmethodID?
+
+    open func repaint( arg0: Int64 ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( j: arg0 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(J)V", methodCache: &Component.repaint_MethodID_179, args: &__args, locals: &__locals )
+    }
+
+    open func repaint( _ _arg0: Int64 ) {
+        repaint( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.repaint(long,int,int,int,int)
+
+    private static var repaint_MethodID_180: jmethodID?
+
+    open func repaint( arg0: Int64, arg1: Int, arg2: Int, arg3: Int, arg4: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( j: arg0 )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        __args[3] = jvalue( i: jint(arg3) )
+        __args[4] = jvalue( i: jint(arg4) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(JIIII)V", methodCache: &Component.repaint_MethodID_180, args: &__args, locals: &__locals )
+    }
+
+    open func repaint( _ _arg0: Int64, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int, _ _arg4: Int ) {
+        repaint( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4 )
+    }
+
+    /// public void java.awt.Component.repaint()
+
+    private static var repaint_MethodID_181: jmethodID?
+
+    open func repaint() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "()V", methodCache: &Component.repaint_MethodID_181, args: &__args, locals: &__locals )
+    }
+
+
+    /// private void java.awt.Component.repaintParentIfNeeded(int,int,int,int)
+
+    /// protected boolean java.awt.Component.requestFocus(boolean)
+
+    private static var requestFocus_MethodID_182: jmethodID?
+
+    open func requestFocus( arg0: Bool ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "requestFocus", methodSig: "(Z)Z", methodCache: &Component.requestFocus_MethodID_182, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func requestFocus( _ _arg0: Bool ) -> Bool {
+        return requestFocus( arg0: _arg0 )
+    }
+
+    /// boolean java.awt.Component.requestFocus(boolean,sun.awt.CausedFocusEvent$Cause)
+
+    // Skipping method: true false false false false 
+
+    /// boolean java.awt.Component.requestFocus(sun.awt.CausedFocusEvent$Cause)
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.requestFocus()
+
+    private static var requestFocus_MethodID_183: jmethodID?
+
+    open func requestFocus() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "requestFocus", methodSig: "()V", methodCache: &Component.requestFocus_MethodID_183, args: &__args, locals: &__locals )
+    }
+
+
+    /// final boolean java.awt.Component.requestFocusHelper(boolean,boolean)
+
+    // Skipping method: true false false false false 
+
+    /// final boolean java.awt.Component.requestFocusHelper(boolean,boolean,sun.awt.CausedFocusEvent$Cause)
+
+    // Skipping method: true false false false false 
+
+    /// protected boolean java.awt.Component.requestFocusInWindow(boolean)
+
+    private static var requestFocusInWindow_MethodID_184: jmethodID?
+
+    open func requestFocusInWindow( arg0: Bool ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "requestFocusInWindow", methodSig: "(Z)Z", methodCache: &Component.requestFocusInWindow_MethodID_184, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func requestFocusInWindow( _ _arg0: Bool ) -> Bool {
+        return requestFocusInWindow( arg0: _arg0 )
+    }
+
+    /// boolean java.awt.Component.requestFocusInWindow(boolean,sun.awt.CausedFocusEvent$Cause)
+
+    // Skipping method: true false false false false 
+
+    /// boolean java.awt.Component.requestFocusInWindow(sun.awt.CausedFocusEvent$Cause)
+
+    // Skipping method: true false false false false 
+
+    /// public boolean java.awt.Component.requestFocusInWindow()
+
+    private static var requestFocusInWindow_MethodID_185: jmethodID?
+
+    open func requestFocusInWindow() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "requestFocusInWindow", methodSig: "()Z", methodCache: &Component.requestFocusInWindow_MethodID_185, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public void java.awt.Component.reshape(int,int,int,int)
+
+    private static var reshape_MethodID_186: jmethodID?
+
+    open func reshape( arg0: Int, arg1: Int, arg2: Int, arg3: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        __args[3] = jvalue( i: jint(arg3) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reshape", methodSig: "(IIII)V", methodCache: &Component.reshape_MethodID_186, args: &__args, locals: &__locals )
+    }
+
+    open func reshape( _ _arg0: Int, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int ) {
+        reshape( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
+    }
+
+    /// private void java.awt.Component.reshapeNativePeer(int,int,int,int,int)
+
+    /// public void java.awt.Component.resize(java.awt.Dimension)
+
+    private static var resize_MethodID_187: jmethodID?
+
+    open func resize( arg0: Dimension? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Component.resize_MethodID_187, args: &__args, locals: &__locals )
+    }
+
+    open func resize( _ _arg0: Dimension? ) {
+        resize( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.resize(int,int)
+
+    private static var resize_MethodID_188: jmethodID?
+
+    open func resize( arg0: Int, arg1: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resize", methodSig: "(II)V", methodCache: &Component.resize_MethodID_188, args: &__args, locals: &__locals )
+    }
+
+    open func resize( _ _arg0: Int, _ _arg1: Int ) {
+        resize( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.Component.revalidate()
+
+    private static var revalidate_MethodID_189: jmethodID?
+
+    open func revalidate() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "revalidate", methodSig: "()V", methodCache: &Component.revalidate_MethodID_189, args: &__args, locals: &__locals )
+    }
+
+
+    /// final void java.awt.Component.revalidateSynchronously()
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.Component.setAutoFocusTransferOnDisposal(boolean)
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.setBackground(java.awt.Color)
+
+    private static var setBackground_MethodID_190: jmethodID?
+
+    open func setBackground( arg0: Color? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &Component.setBackground_MethodID_190, args: &__args, locals: &__locals )
+    }
+
+    open func setBackground( _ _arg0: Color? ) {
+        setBackground( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setBounds(int,int,int,int)
+
+    private static var setBounds_MethodID_191: jmethodID?
+
+    open func setBounds( arg0: Int, arg1: Int, arg2: Int, arg3: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        __args[3] = jvalue( i: jint(arg3) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBounds", methodSig: "(IIII)V", methodCache: &Component.setBounds_MethodID_191, args: &__args, locals: &__locals )
+    }
+
+    open func setBounds( _ _arg0: Int, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int ) {
+        setBounds( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
+    }
+
+    /// public void java.awt.Component.setBounds(java.awt.Rectangle)
+
+    private static var setBounds_MethodID_192: jmethodID?
+
+    open func setBounds( arg0: Rectangle? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &Component.setBounds_MethodID_192, args: &__args, locals: &__locals )
+    }
+
+    open func setBounds( _ _arg0: Rectangle? ) {
+        setBounds( arg0: _arg0 )
+    }
+
+    /// void java.awt.Component.setBoundsOp(int)
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.setComponentOrientation(java.awt.ComponentOrientation)
+
+    private static var setComponentOrientation_MethodID_193: jmethodID?
+
+    open func setComponentOrientation( arg0: ComponentOrientation? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentOrientation", methodSig: "(Ljava/awt/ComponentOrientation;)V", methodCache: &Component.setComponentOrientation_MethodID_193, args: &__args, locals: &__locals )
+    }
+
+    open func setComponentOrientation( _ _arg0: ComponentOrientation? ) {
+        setComponentOrientation( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setCursor(java.awt.Cursor)
+
+    private static var setCursor_MethodID_194: jmethodID?
+
+    open func setCursor( arg0: Cursor? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &Component.setCursor_MethodID_194, args: &__args, locals: &__locals )
+    }
+
+    open func setCursor( _ _arg0: Cursor? ) {
+        setCursor( arg0: _arg0 )
+    }
+
+    /// public synchronized void java.awt.Component.setDropTarget(java.awt.dnd.DropTarget)
+
+    private static var setDropTarget_MethodID_195: jmethodID?
+
+    open func setDropTarget( arg0: DropTarget? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDropTarget", methodSig: "(Ljava/awt/dnd/DropTarget;)V", methodCache: &Component.setDropTarget_MethodID_195, args: &__args, locals: &__locals )
+    }
+
+    open func setDropTarget( _ _arg0: DropTarget? ) {
+        setDropTarget( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setEnabled(boolean)
+
+    private static var setEnabled_MethodID_196: jmethodID?
+
+    open func setEnabled( arg0: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &Component.setEnabled_MethodID_196, args: &__args, locals: &__locals )
+    }
+
+    open func setEnabled( _ _arg0: Bool ) {
+        setEnabled( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setFocusTraversalKeys(int,java.util.Set)
+
+    private static var setFocusTraversalKeys_MethodID_197: jmethodID?
+
+    open func setFocusTraversalKeys( arg0: Int, arg1: java_swift.JavaSet? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusTraversalKeys", methodSig: "(ILjava/util/Set;)V", methodCache: &Component.setFocusTraversalKeys_MethodID_197, args: &__args, locals: &__locals )
+    }
+
+    open func setFocusTraversalKeys( _ _arg0: Int, _ _arg1: java_swift.JavaSet? ) {
+        setFocusTraversalKeys( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.Component.setFocusTraversalKeysEnabled(boolean)
+
+    private static var setFocusTraversalKeysEnabled_MethodID_198: jmethodID?
+
+    open func setFocusTraversalKeysEnabled( arg0: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusTraversalKeysEnabled", methodSig: "(Z)V", methodCache: &Component.setFocusTraversalKeysEnabled_MethodID_198, args: &__args, locals: &__locals )
+    }
+
+    open func setFocusTraversalKeysEnabled( _ _arg0: Bool ) {
+        setFocusTraversalKeysEnabled( arg0: _arg0 )
+    }
+
+    /// final void java.awt.Component.setFocusTraversalKeys_NoIDCheck(int,java.util.Set)
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.setFocusable(boolean)
+
+    private static var setFocusable_MethodID_199: jmethodID?
+
+    open func setFocusable( arg0: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusable", methodSig: "(Z)V", methodCache: &Component.setFocusable_MethodID_199, args: &__args, locals: &__locals )
+    }
+
+    open func setFocusable( _ _arg0: Bool ) {
+        setFocusable( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setFont(java.awt.Font)
+
+    private static var setFont_MethodID_200: jmethodID?
+
+    open func setFont( arg0: Font? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &Component.setFont_MethodID_200, args: &__args, locals: &__locals )
+    }
+
+    open func setFont( _ _arg0: Font? ) {
+        setFont( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setForeground(java.awt.Color)
+
+    private static var setForeground_MethodID_201: jmethodID?
+
+    open func setForeground( arg0: Color? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setForeground", methodSig: "(Ljava/awt/Color;)V", methodCache: &Component.setForeground_MethodID_201, args: &__args, locals: &__locals )
+    }
+
+    open func setForeground( _ _arg0: Color? ) {
+        setForeground( arg0: _arg0 )
+    }
+
+    /// void java.awt.Component.setGraphicsConfiguration(java.awt.GraphicsConfiguration)
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.setIgnoreRepaint(boolean)
+
+    private static var setIgnoreRepaint_MethodID_202: jmethodID?
+
+    open func setIgnoreRepaint( arg0: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIgnoreRepaint", methodSig: "(Z)V", methodCache: &Component.setIgnoreRepaint_MethodID_202, args: &__args, locals: &__locals )
+    }
+
+    open func setIgnoreRepaint( _ _arg0: Bool ) {
+        setIgnoreRepaint( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setLocale(java.util.Locale)
+
+    private static var setLocale_MethodID_203: jmethodID?
+
+    open func setLocale( arg0: java_util.JavaLocale? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocale", methodSig: "(Ljava/util/Locale;)V", methodCache: &Component.setLocale_MethodID_203, args: &__args, locals: &__locals )
+    }
+
+    open func setLocale( _ _arg0: java_util.JavaLocale? ) {
+        setLocale( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setLocation(int,int)
+
+    private static var setLocation_MethodID_204: jmethodID?
+
+    open func setLocation( arg0: Int, arg1: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(II)V", methodCache: &Component.setLocation_MethodID_204, args: &__args, locals: &__locals )
+    }
+
+    open func setLocation( _ _arg0: Int, _ _arg1: Int ) {
+        setLocation( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.Component.setLocation(java.awt.Point)
+
+    private static var setLocation_MethodID_205: jmethodID?
+
+    open func setLocation( arg0: Point? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(Ljava/awt/Point;)V", methodCache: &Component.setLocation_MethodID_205, args: &__args, locals: &__locals )
+    }
+
+    open func setLocation( _ _arg0: Point? ) {
+        setLocation( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setMaximumSize(java.awt.Dimension)
+
+    private static var setMaximumSize_MethodID_206: jmethodID?
+
+    open func setMaximumSize( arg0: Dimension? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximumSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Component.setMaximumSize_MethodID_206, args: &__args, locals: &__locals )
+    }
+
+    open func setMaximumSize( _ _arg0: Dimension? ) {
+        setMaximumSize( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setMinimumSize(java.awt.Dimension)
+
+    private static var setMinimumSize_MethodID_207: jmethodID?
+
+    open func setMinimumSize( arg0: Dimension? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimumSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Component.setMinimumSize_MethodID_207, args: &__args, locals: &__locals )
+    }
+
+    open func setMinimumSize( _ _arg0: Dimension? ) {
+        setMinimumSize( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setName(java.lang.String)
+
+    private static var setName_MethodID_208: jmethodID?
+
+    open func setName( arg0: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setName", methodSig: "(Ljava/lang/String;)V", methodCache: &Component.setName_MethodID_208, args: &__args, locals: &__locals )
+    }
+
+    open func setName( _ _arg0: String? ) {
+        setName( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setPreferredSize(java.awt.Dimension)
+
+    private static var setPreferredSize_MethodID_209: jmethodID?
+
+    open func setPreferredSize( arg0: Dimension? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPreferredSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Component.setPreferredSize_MethodID_209, args: &__args, locals: &__locals )
+    }
+
+    open func setPreferredSize( _ _arg0: Dimension? ) {
+        setPreferredSize( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setSize(java.awt.Dimension)
+
+    private static var setSize_MethodID_210: jmethodID?
+
+    open func setSize( arg0: Dimension? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &Component.setSize_MethodID_210, args: &__args, locals: &__locals )
+    }
+
+    open func setSize( _ _arg0: Dimension? ) {
+        setSize( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.setSize(int,int)
+
+    private static var setSize_MethodID_211: jmethodID?
+
+    open func setSize( arg0: Int, arg1: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSize", methodSig: "(II)V", methodCache: &Component.setSize_MethodID_211, args: &__args, locals: &__locals )
+    }
+
+    open func setSize( _ _arg0: Int, _ _arg1: Int ) {
+        setSize( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void java.awt.Component.setVisible(boolean)
+
+    private static var setVisible_MethodID_212: jmethodID?
+
+    open func setVisible( arg0: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisible", methodSig: "(Z)V", methodCache: &Component.setVisible_MethodID_212, args: &__args, locals: &__locals )
+    }
+
+    open func setVisible( _ _arg0: Bool ) {
+        setVisible( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.show(boolean)
+
+    private static var show_MethodID_213: jmethodID?
+
+    open func show( arg0: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "show", methodSig: "(Z)V", methodCache: &Component.show_MethodID_213, args: &__args, locals: &__locals )
+    }
+
+    open func show( _ _arg0: Bool ) {
+        show( arg0: _arg0 )
+    }
+
+    /// public void java.awt.Component.show()
+
+    private static var show_MethodID_214: jmethodID?
+
+    open func show() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "show", methodSig: "()V", methodCache: &Component.show_MethodID_214, args: &__args, locals: &__locals )
+    }
+
+
+    /// public java.awt.Dimension java.awt.Component.size()
+
+    private static var size_MethodID_215: jmethodID?
+
+    open func size() -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "size", methodSig: "()Ljava/awt/Dimension;", methodCache: &Component.size_MethodID_215, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// final void java.awt.Component.subtractAndApplyShape(sun.java2d.pipe.Region)
+
+    // Skipping method: true false false false false 
+
+    /// final void java.awt.Component.subtractAndApplyShapeBelowMe()
+
+    // Skipping method: true false false false false 
+
+    /// public java.lang.String java.awt.Component.toString()
+
+    // Skipping method: false true false false false 
+
+    /// boolean java.awt.Component.transferFocus(boolean)
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.transferFocus()
+
+    private static var transferFocus_MethodID_216: jmethodID?
+
+    open func transferFocus() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transferFocus", methodSig: "()V", methodCache: &Component.transferFocus_MethodID_216, args: &__args, locals: &__locals )
+    }
+
+
+    /// boolean java.awt.Component.transferFocusBackward(boolean)
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.transferFocusBackward()
+
+    private static var transferFocusBackward_MethodID_217: jmethodID?
+
+    open func transferFocusBackward() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transferFocusBackward", methodSig: "()V", methodCache: &Component.transferFocusBackward_MethodID_217, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void java.awt.Component.transferFocusUpCycle()
+
+    private static var transferFocusUpCycle_MethodID_218: jmethodID?
+
+    open func transferFocusUpCycle() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "transferFocusUpCycle", methodSig: "()V", methodCache: &Component.transferFocusUpCycle_MethodID_218, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void java.awt.Component.update(java.awt.Graphics)
+
+    private static var update_MethodID_219: jmethodID?
+
+    open func update( arg0: Graphics? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Component.update_MethodID_219, args: &__args, locals: &__locals )
+    }
+
+    open func update( _ _arg0: Graphics? ) {
+        update( arg0: _arg0 )
+    }
+
+    /// final void java.awt.Component.updateCursorImmediately()
+
+    // Skipping method: true false false false false 
+
+    /// boolean java.awt.Component.updateGraphicsData(java.awt.GraphicsConfiguration)
+
+    // Skipping method: true false false false false 
+
+    /// void java.awt.Component.updateZOrder()
+
+    // Skipping method: true false false false false 
+
+    /// public void java.awt.Component.validate()
+
+    private static var validate_MethodID_220: jmethodID?
+
+    open func validate() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "validate", methodSig: "()V", methodCache: &Component.validate_MethodID_220, args: &__args, locals: &__locals )
+    }
+
+
+    /// private void java.awt.Component.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
 }
 

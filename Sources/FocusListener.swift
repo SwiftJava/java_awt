@@ -28,8 +28,8 @@ open class FocusListenerForward: java_util.EventListenerForward, FocusListener {
     private static var focusGained_MethodID_3: jmethodID?
 
     open func focusGained( e: FocusEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusGained", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &FocusListenerForward.focusGained_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -43,8 +43,8 @@ open class FocusListenerForward: java_util.EventListenerForward, FocusListener {
     private static var focusLost_MethodID_4: jmethodID?
 
     open func focusLost( e: FocusEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusLost", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &FocusListenerForward.focusLost_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -55,21 +55,16 @@ open class FocusListenerForward: java_util.EventListenerForward, FocusListener {
 
 }
 
-
 private typealias FocusListener_focusGained_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func FocusListener_focusGained_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     FocusListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).focusGained( e: e != nil ? FocusEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 private typealias FocusListener_focusLost_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func FocusListener_focusLost_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     FocusListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).focusLost( e: e != nil ? FocusEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class FocusListenerLocal_: JNILocalProxy<FocusListener, Any> {
@@ -119,17 +114,11 @@ open class FocusListenerBase: FocusListener {
     open func focusGained( e: FocusEvent? ) /**/ {
     }
 
-    open func focusGained( _ _e: FocusEvent? ) /**/ {
-        focusGained( e: _e )
-    }
 
     /// public abstract void java.awt.event.FocusListener.focusLost(java.awt.event.FocusEvent)
 
     open func focusLost( e: FocusEvent? ) /**/ {
     }
 
-    open func focusLost( _ _e: FocusEvent? ) /**/ {
-        focusLost( e: _e )
-    }
 
 }

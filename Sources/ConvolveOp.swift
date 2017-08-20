@@ -16,11 +16,16 @@ open class ConvolveOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     private static var ConvolveOpJNIClass: jclass?
 
-    /// java.awt.image.Kernel java.awt.image.ConvolveOp.kernel
+    /// public static final int java.awt.image.ConvolveOp.EDGE_NO_OP
 
-    /// int java.awt.image.ConvolveOp.edgeHint
+    private static var EDGE_NO_OP_FieldID: jfieldID?
 
-    /// java.awt.RenderingHints java.awt.image.ConvolveOp.hints
+    open static var EDGE_NO_OP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "EDGE_NO_OP", fieldType: "I", fieldCache: &EDGE_NO_OP_FieldID, className: "java/awt/image/ConvolveOp", classCache: &ConvolveOpJNIClass )
+            return Int(__value)
+        }
+    }
 
     /// public static final int java.awt.image.ConvolveOp.EDGE_ZERO_FILL
 
@@ -29,49 +34,31 @@ open class ConvolveOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
     open static var EDGE_ZERO_FILL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EDGE_ZERO_FILL", fieldType: "I", fieldCache: &EDGE_ZERO_FILL_FieldID, className: "java/awt/image/ConvolveOp", classCache: &ConvolveOpJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int java.awt.image.ConvolveOp.EDGE_NO_OP
+    /// int java.awt.image.ConvolveOp.edgeHint
 
-    private static var EDGE_NO_OP_FieldID: jfieldID?
+    // Skipping field: true false false false false false 
 
-    open static var EDGE_NO_OP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "EDGE_NO_OP", fieldType: "I", fieldCache: &EDGE_NO_OP_FieldID, className: "java/awt/image/ConvolveOp", classCache: &ConvolveOpJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// java.awt.RenderingHints java.awt.image.ConvolveOp.hints
 
-    /// public java.awt.image.ConvolveOp(java.awt.image.Kernel,int,java.awt.RenderingHints)
+    // Skipping field: true false false false false false 
 
-    private static var new_MethodID_1: jmethodID?
+    /// java.awt.image.Kernel java.awt.image.ConvolveOp.kernel
 
-    public convenience init( kernel: Kernel?, edgeCondition: Int, hints: RenderingHints? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: kernel, locals: &__locals )
-        __args[1] = JNIType.toJava( value: edgeCondition, locals: &__locals )
-        __args[2] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/ConvolveOp", classCache: &ConvolveOp.ConvolveOpJNIClass, methodSig: "(Ljava/awt/image/Kernel;ILjava/awt/RenderingHints;)V", methodCache: &ConvolveOp.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _kernel: Kernel?, _ _edgeCondition: Int, _ _hints: RenderingHints? ) {
-        self.init( kernel: _kernel, edgeCondition: _edgeCondition, hints: _hints )
-    }
+    // Skipping field: true false false false false false 
 
     /// public java.awt.image.ConvolveOp(java.awt.image.Kernel)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( kernel: Kernel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: kernel, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/ConvolveOp", classCache: &ConvolveOp.ConvolveOpJNIClass, methodSig: "(Ljava/awt/image/Kernel;)V", methodCache: &ConvolveOp.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/ConvolveOp", classCache: &ConvolveOp.ConvolveOpJNIClass, methodSig: "(Ljava/awt/image/Kernel;)V", methodCache: &ConvolveOp.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -80,99 +67,35 @@ open class ConvolveOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         self.init( kernel: _kernel )
     }
 
-    /// public final java.awt.image.BufferedImage java.awt.image.ConvolveOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
+    /// public java.awt.image.ConvolveOp(java.awt.image.Kernel,int,java.awt.RenderingHints)
 
-    private static var filter_MethodID_3: jmethodID?
+    private static var new_MethodID_2: jmethodID?
 
-    open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( kernel: Kernel?, edgeCondition: Int, hints: RenderingHints? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &ConvolveOp.filter_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BufferedImage( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: kernel, locals: &__locals )
+        __args[1] = jvalue( i: jint(edgeCondition) )
+        __args[2] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/ConvolveOp", classCache: &ConvolveOp.ConvolveOpJNIClass, methodSig: "(Ljava/awt/image/Kernel;ILjava/awt/RenderingHints;)V", methodCache: &ConvolveOp.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
     }
 
-    open func filter( _ _src: BufferedImage?, _ _dest: BufferedImage? ) -> BufferedImage! {
-        return filter( src: _src, dest: _dest )
+    public convenience init( _ _kernel: Kernel?, _ _edgeCondition: Int, _ _hints: RenderingHints? ) {
+        self.init( kernel: _kernel, edgeCondition: _edgeCondition, hints: _hints )
     }
-
-    /// public final java.awt.image.WritableRaster java.awt.image.ConvolveOp.filter(java.awt.image.Raster,java.awt.image.WritableRaster)
-
-    private static var filter_MethodID_4: jmethodID?
-
-    open func filter( src: Raster?, dest: WritableRaster? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &ConvolveOp.filter_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open func filter( _ _src: Raster?, _ _dest: WritableRaster? ) -> WritableRaster! {
-        return filter( src: _src, dest: _dest )
-    }
-
-    /// public final java.awt.geom.Rectangle2D java.awt.image.ConvolveOp.getBounds2D(java.awt.image.BufferedImage)
-
-    private static var getBounds2D_MethodID_5: jmethodID?
-
-    open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &ConvolveOp.getBounds2D_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-    open func getBounds2D( _ _src: BufferedImage? ) -> Rectangle2D! {
-        return getBounds2D( src: _src )
-    }
-
-    /// public final java.awt.geom.Rectangle2D java.awt.image.ConvolveOp.getBounds2D(java.awt.image.Raster)
-
-    private static var getBounds2D_MethodID_6: jmethodID?
-
-    open func getBounds2D( src: Raster? ) -> Rectangle2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &ConvolveOp.getBounds2D_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
-    }
-
-    open func getBounds2D( _ _src: Raster? ) -> Rectangle2D! {
-        return getBounds2D( src: _src )
-    }
-
-    /// public final java.awt.RenderingHints java.awt.image.ConvolveOp.getRenderingHints()
-
-    private static var getRenderingHints_MethodID_7: jmethodID?
-
-    open func getRenderingHints() -> RenderingHints! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &ConvolveOp.getRenderingHints_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: RenderingHints(), from: __return )
-    }
-
 
     /// public java.awt.image.BufferedImage java.awt.image.ConvolveOp.createCompatibleDestImage(java.awt.image.BufferedImage,java.awt.image.ColorModel)
 
-    private static var createCompatibleDestImage_MethodID_8: jmethodID?
+    private static var createCompatibleDestImage_MethodID_3: jmethodID?
 
     open func createCompatibleDestImage( src: BufferedImage?, destCM: ColorModel? ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
         __args[1] = JNIType.toJava( value: destCM, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &ConvolveOp.createCompatibleDestImage_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestImage", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;", methodCache: &ConvolveOp.createCompatibleDestImage_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImage( javaObject: __return ) : nil
     }
@@ -183,13 +106,13 @@ open class ConvolveOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     /// public java.awt.image.WritableRaster java.awt.image.ConvolveOp.createCompatibleDestRaster(java.awt.image.Raster)
 
-    private static var createCompatibleDestRaster_MethodID_9: jmethodID?
+    private static var createCompatibleDestRaster_MethodID_4: jmethodID?
 
     open func createCompatibleDestRaster( src: Raster? ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: src, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestRaster", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;", methodCache: &ConvolveOp.createCompatibleDestRaster_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleDestRaster", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;", methodCache: &ConvolveOp.createCompatibleDestRaster_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -198,16 +121,111 @@ open class ConvolveOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         return createCompatibleDestRaster( src: _src )
     }
 
+    /// public final java.awt.image.BufferedImage java.awt.image.ConvolveOp.filter(java.awt.image.BufferedImage,java.awt.image.BufferedImage)
+
+    private static var filter_MethodID_5: jmethodID?
+
+    open func filter( src: BufferedImage?, dest: BufferedImage? ) -> BufferedImage! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;", methodCache: &ConvolveOp.filter_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BufferedImage( javaObject: __return ) : nil
+    }
+
+    open func filter( _ _src: BufferedImage?, _ _dest: BufferedImage? ) -> BufferedImage! {
+        return filter( src: _src, dest: _dest )
+    }
+
+    /// public final java.awt.image.WritableRaster java.awt.image.ConvolveOp.filter(java.awt.image.Raster,java.awt.image.WritableRaster)
+
+    private static var filter_MethodID_6: jmethodID?
+
+    open func filter( src: Raster?, dest: WritableRaster? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "filter", methodSig: "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &ConvolveOp.filter_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open func filter( _ _src: Raster?, _ _dest: WritableRaster? ) -> WritableRaster! {
+        return filter( src: _src, dest: _dest )
+    }
+
+    /// public final java.awt.geom.Rectangle2D java.awt.image.ConvolveOp.getBounds2D(java.awt.image.BufferedImage)
+
+    private static var getBounds2D_MethodID_7: jmethodID?
+
+    open func getBounds2D( src: BufferedImage? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;", methodCache: &ConvolveOp.getBounds2D_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getBounds2D( _ _src: BufferedImage? ) -> Rectangle2D! {
+        return getBounds2D( src: _src )
+    }
+
+    /// public final java.awt.geom.Rectangle2D java.awt.image.ConvolveOp.getBounds2D(java.awt.image.Raster)
+
+    private static var getBounds2D_MethodID_8: jmethodID?
+
+    open func getBounds2D( src: Raster? ) -> Rectangle2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: src, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds2D", methodSig: "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;", methodCache: &ConvolveOp.getBounds2D_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Rectangle2D( javaObject: __return ) : nil
+    }
+
+    open func getBounds2D( _ _src: Raster? ) -> Rectangle2D! {
+        return getBounds2D( src: _src )
+    }
+
+    /// public int java.awt.image.ConvolveOp.getEdgeCondition()
+
+    private static var getEdgeCondition_MethodID_9: jmethodID?
+
+    open func getEdgeCondition() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEdgeCondition", methodSig: "()I", methodCache: &ConvolveOp.getEdgeCondition_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public final java.awt.image.Kernel java.awt.image.ConvolveOp.getKernel()
+
+    private static var getKernel_MethodID_10: jmethodID?
+
+    open func getKernel() -> Kernel! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKernel", methodSig: "()Ljava/awt/image/Kernel;", methodCache: &ConvolveOp.getKernel_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Kernel( javaObject: __return ) : nil
+    }
+
+
     /// public final java.awt.geom.Point2D java.awt.image.ConvolveOp.getPoint2D(java.awt.geom.Point2D,java.awt.geom.Point2D)
 
-    private static var getPoint2D_MethodID_10: jmethodID?
+    private static var getPoint2D_MethodID_11: jmethodID?
 
     open func getPoint2D( srcPt: Point2D?, dstPt: Point2D? ) -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: srcPt, locals: &__locals )
         __args[1] = JNIType.toJava( value: dstPt, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &ConvolveOp.getPoint2D_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPoint2D", methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;", methodCache: &ConvolveOp.getPoint2D_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point2D( javaObject: __return ) : nil
     }
@@ -216,28 +234,15 @@ open class ConvolveOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
         return getPoint2D( srcPt: _srcPt, dstPt: _dstPt )
     }
 
-    /// public int java.awt.image.ConvolveOp.getEdgeCondition()
+    /// public final java.awt.RenderingHints java.awt.image.ConvolveOp.getRenderingHints()
 
-    private static var getEdgeCondition_MethodID_11: jmethodID?
+    private static var getRenderingHints_MethodID_12: jmethodID?
 
-    open func getEdgeCondition() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getRenderingHints() -> RenderingHints! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEdgeCondition", methodSig: "()I", methodCache: &ConvolveOp.getEdgeCondition_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public final java.awt.image.Kernel java.awt.image.ConvolveOp.getKernel()
-
-    private static var getKernel_MethodID_12: jmethodID?
-
-    open func getKernel() -> Kernel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKernel", methodSig: "()Ljava/awt/image/Kernel;", methodCache: &ConvolveOp.getKernel_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Kernel( javaObject: __return ) : nil
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderingHints", methodSig: "()Ljava/awt/RenderingHints;", methodCache: &ConvolveOp.getRenderingHints_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: RenderingHints.self, from: __return )
     }
 
 

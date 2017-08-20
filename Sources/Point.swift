@@ -6,7 +6,7 @@ import java_lang
 
 /// class java.awt.Point ///
 
-open class Point: Point2D, /* java.io.Serializable */ UnclassedProtocol {
+open class Point: Point2D, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -20,19 +20,20 @@ open class Point: Point2D, /* java.io.Serializable */ UnclassedProtocol {
 
     private static var PointJNIClass: jclass?
 
+    /// private static final long java.awt.Point.serialVersionUID
+
     /// public int java.awt.Point.x
 
     private static var x_FieldID: jfieldID?
 
     open var x: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "x", fieldType: "I", fieldCache: &Point.x_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "x", fieldType: "I", fieldCache: &Point.x_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "x", fieldType: "I", fieldCache: &Point.x_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -43,29 +44,38 @@ open class Point: Point2D, /* java.io.Serializable */ UnclassedProtocol {
 
     open var y: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "y", fieldType: "I", fieldCache: &Point.y_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "y", fieldType: "I", fieldCache: &Point.y_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "y", fieldType: "I", fieldCache: &Point.y_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// private static final long java.awt.Point.serialVersionUID
-
-    /// public java.awt.Point(int,int)
+    /// public java.awt.Point()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Point", classCache: &Point.PointJNIClass, methodSig: "(II)V", methodCache: &Point.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "java/awt/Point", classCache: &Point.PointJNIClass, methodSig: "()V", methodCache: &Point.new_MethodID_1, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    /// public java.awt.Point(int,int)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( x: Int, y: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        let __object = JNIMethod.NewObject( className: "java/awt/Point", classCache: &Point.PointJNIClass, methodSig: "(II)V", methodCache: &Point.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -76,13 +86,13 @@ open class Point: Point2D, /* java.io.Serializable */ UnclassedProtocol {
 
     /// public java.awt.Point(java.awt.Point)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_3: jmethodID?
 
     public convenience init( p: Point? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/Point", classCache: &Point.PointJNIClass, methodSig: "(Ljava/awt/Point;)V", methodCache: &Point.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/Point", classCache: &Point.PointJNIClass, methodSig: "(Ljava/awt/Point;)V", methodCache: &Point.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -91,78 +101,74 @@ open class Point: Point2D, /* java.io.Serializable */ UnclassedProtocol {
         self.init( p: _p )
     }
 
-    /// public java.awt.Point()
-
-    private static var new_MethodID_3: jmethodID?
-
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "java/awt/Point", classCache: &Point.PointJNIClass, methodSig: "()V", methodCache: &Point.new_MethodID_3, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
     /// public boolean java.awt.Point.equals(java.lang.Object)
 
-    /// public java.lang.String java.awt.Point.toString()
+    // Skipping method: false true false false false 
 
     /// public java.awt.Point java.awt.Point.getLocation()
 
     private static var getLocation_MethodID_4: jmethodID?
 
     open func getLocation() -> Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLocation", methodSig: "()Ljava/awt/Point;", methodCache: &Point.getLocation_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Point( javaObject: __return ) : nil
     }
 
 
-    /// public void java.awt.Point.translate(int,int)
+    /// public double java.awt.Point.getX()
 
-    private static var translate_MethodID_5: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func translate( dx: Int, dy: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dx, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Point.translate_MethodID_5, args: &__args, locals: &__locals )
-    }
+    /// public double java.awt.Point.getY()
 
-    open func translate( _ _dx: Int, _ _dy: Int ) {
-        translate( dx: _dx, dy: _dy )
-    }
+    // Skipping method: false true false false false 
 
     /// public void java.awt.Point.move(int,int)
 
-    private static var move_MethodID_6: jmethodID?
+    private static var move_MethodID_5: jmethodID?
 
     open func move( x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "move", methodSig: "(II)V", methodCache: &Point.move_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "move", methodSig: "(II)V", methodCache: &Point.move_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func move( _ _x: Int, _ _y: Int ) {
         move( x: _x, y: _y )
     }
 
-    /// public double java.awt.Point.getX()
+    /// public void java.awt.Point.setLocation(double,double)
 
-    /// public double java.awt.Point.getY()
+    // Skipping method: false true false false false 
+
+    /// public void java.awt.Point.setLocation(int,int)
+
+    private static var setLocation_MethodID_6: jmethodID?
+
+    open func setLocation( x: Int, y: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(II)V", methodCache: &Point.setLocation_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func setLocation( _ _x: Int, _ _y: Int ) {
+        setLocation( x: _x, y: _y )
+    }
 
     /// public void java.awt.Point.setLocation(java.awt.Point)
 
     private static var setLocation_MethodID_7: jmethodID?
 
     open func setLocation( p: Point? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: p, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(Ljava/awt/Point;)V", methodCache: &Point.setLocation_MethodID_7, args: &__args, locals: &__locals )
     }
@@ -171,22 +177,24 @@ open class Point: Point2D, /* java.io.Serializable */ UnclassedProtocol {
         setLocation( p: _p )
     }
 
-    /// public void java.awt.Point.setLocation(double,double)
+    /// public java.lang.String java.awt.Point.toString()
 
-    /// public void java.awt.Point.setLocation(int,int)
+    // Skipping method: false true false false false 
 
-    private static var setLocation_MethodID_8: jmethodID?
+    /// public void java.awt.Point.translate(int,int)
 
-    open func setLocation( x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    private static var translate_MethodID_8: jmethodID?
+
+    open func translate( dx: Int, dy: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLocation", methodSig: "(II)V", methodCache: &Point.setLocation_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(dx) )
+        __args[1] = jvalue( i: jint(dy) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "translate", methodSig: "(II)V", methodCache: &Point.translate_MethodID_8, args: &__args, locals: &__locals )
     }
 
-    open func setLocation( _ _x: Int, _ _y: Int ) {
-        setLocation( x: _x, y: _y )
+    open func translate( _ _dx: Int, _ _dy: Int ) {
+        translate( dx: _dx, dy: _dy )
     }
 
 }

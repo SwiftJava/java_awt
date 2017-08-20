@@ -24,8 +24,8 @@ open class AdjustmentListenerForward: java_util.EventListenerForward, Adjustment
     private static var adjustmentValueChanged_MethodID_2: jmethodID?
 
     open func adjustmentValueChanged( e: AdjustmentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "adjustmentValueChanged", methodSig: "(Ljava/awt/event/AdjustmentEvent;)V", methodCache: &AdjustmentListenerForward.adjustmentValueChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class AdjustmentListenerForward: java_util.EventListenerForward, Adjustment
 
 }
 
-
 private typealias AdjustmentListener_adjustmentValueChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func AdjustmentListener_adjustmentValueChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     AdjustmentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).adjustmentValueChanged( e: e != nil ? AdjustmentEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class AdjustmentListenerLocal_: JNILocalProxy<AdjustmentListener, Any> {
@@ -89,8 +86,5 @@ open class AdjustmentListenerBase: AdjustmentListener {
     open func adjustmentValueChanged( e: AdjustmentEvent? ) /**/ {
     }
 
-    open func adjustmentValueChanged( _ _e: AdjustmentEvent? ) /**/ {
-        adjustmentValueChanged( e: _e )
-    }
 
 }

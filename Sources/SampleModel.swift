@@ -16,20 +16,19 @@ open class SampleModel: java_swift.JavaObject {
 
     private static var SampleModelJNIClass: jclass?
 
-    /// protected int java.awt.image.SampleModel.width
+    /// protected int java.awt.image.SampleModel.dataType
 
-    private static var width_FieldID: jfieldID?
+    private static var dataType_FieldID: jfieldID?
 
-    open var width: Int {
+    open var dataType: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &SampleModel.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &SampleModel.dataType_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &SampleModel.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &SampleModel.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -39,13 +38,12 @@ open class SampleModel: java_swift.JavaObject {
 
     open var height: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &SampleModel.height_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &SampleModel.height_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "height", fieldType: "I", fieldCache: &SampleModel.height_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -56,31 +54,29 @@ open class SampleModel: java_swift.JavaObject {
 
     open var numBands: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &SampleModel.numBands_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &SampleModel.numBands_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "numBands", fieldType: "I", fieldCache: &SampleModel.numBands_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// protected int java.awt.image.SampleModel.dataType
+    /// protected int java.awt.image.SampleModel.width
 
-    private static var dataType_FieldID: jfieldID?
+    private static var width_FieldID: jfieldID?
 
-    open var dataType: Int {
+    open var width: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &SampleModel.dataType_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &SampleModel.width_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "dataType", fieldType: "I", fieldCache: &SampleModel.dataType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &SampleModel.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -89,12 +85,12 @@ open class SampleModel: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( dataType: Int, w: Int, h: Int, numBands: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: w, locals: &__locals )
-        __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        __args[3] = JNIType.toJava( value: numBands, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(dataType) )
+        __args[1] = jvalue( i: jint(w) )
+        __args[2] = jvalue( i: jint(h) )
+        __args[3] = jvalue( i: jint(numBands) )
         let __object = JNIMethod.NewObject( className: "java/awt/image/SampleModel", classCache: &SampleModel.SampleModelJNIClass, methodSig: "(IIII)V", methodCache: &SampleModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -106,54 +102,32 @@ open class SampleModel: java_swift.JavaObject {
 
     /// private static native void java.awt.image.SampleModel.initIDs()
 
-    /// public final int java.awt.image.SampleModel.getDataType()
+    /// public abstract java.awt.image.SampleModel java.awt.image.SampleModel.createCompatibleSampleModel(int,int)
 
-    private static var getDataType_MethodID_2: jmethodID?
+    private static var createCompatibleSampleModel_MethodID_2: jmethodID?
 
-    open func getDataType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createCompatibleSampleModel( w: Int, h: Int ) -> SampleModel! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataType", methodSig: "()I", methodCache: &SampleModel.getDataType_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(w) )
+        __args[1] = jvalue( i: jint(h) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleSampleModel", methodSig: "(II)Ljava/awt/image/SampleModel;", methodCache: &SampleModel.createCompatibleSampleModel_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SampleModel( javaObject: __return ) : nil
     }
 
-
-    /// public abstract int[] java.awt.image.SampleModel.getSampleSize()
-
-    private static var getSampleSize_MethodID_3: jmethodID?
-
-    open func getSampleSize() -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSampleSize", methodSig: "()[I", methodCache: &SampleModel.getSampleSize_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
-    }
-
-
-    /// public abstract int java.awt.image.SampleModel.getSampleSize(int)
-
-    private static var getSampleSize_MethodID_4: jmethodID?
-
-    open func getSampleSize( band: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: band, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSampleSize", methodSig: "(I)I", methodCache: &SampleModel.getSampleSize_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getSampleSize( _ _band: Int ) -> Int {
-        return getSampleSize( band: _band )
+    open func createCompatibleSampleModel( _ _w: Int, _ _h: Int ) -> SampleModel! {
+        return createCompatibleSampleModel( w: _w, h: _h )
     }
 
     /// public abstract java.awt.image.DataBuffer java.awt.image.SampleModel.createDataBuffer()
 
-    private static var createDataBuffer_MethodID_5: jmethodID?
+    private static var createDataBuffer_MethodID_3: jmethodID?
 
     open func createDataBuffer() -> DataBuffer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDataBuffer", methodSig: "()Ljava/awt/image/DataBuffer;", methodCache: &SampleModel.createDataBuffer_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDataBuffer", methodSig: "()Ljava/awt/image/DataBuffer;", methodCache: &SampleModel.createDataBuffer_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DataBuffer( javaObject: __return ) : nil
     }
@@ -161,13 +135,13 @@ open class SampleModel: java_swift.JavaObject {
 
     /// public abstract java.awt.image.SampleModel java.awt.image.SampleModel.createSubsetSampleModel(int[])
 
-    private static var createSubsetSampleModel_MethodID_6: jmethodID?
+    private static var createSubsetSampleModel_MethodID_4: jmethodID?
 
     open func createSubsetSampleModel( bands: [Int32]? ) -> SampleModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: bands, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSubsetSampleModel", methodSig: "([I)Ljava/awt/image/SampleModel;", methodCache: &SampleModel.createSubsetSampleModel_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSubsetSampleModel", methodSig: "([I)Ljava/awt/image/SampleModel;", methodCache: &SampleModel.createSubsetSampleModel_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SampleModel( javaObject: __return ) : nil
     }
@@ -176,304 +150,20 @@ open class SampleModel: java_swift.JavaObject {
         return createSubsetSampleModel( bands: _bands )
     }
 
-    /// public abstract void java.awt.image.SampleModel.setDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
-
-    private static var setDataElements_MethodID_7: jmethodID?
-
-    open func setDataElements( x: Int, y: Int, obj: java_swift.JavaObject?, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: obj, locals: &__locals )
-        __args[3] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDataElements", methodSig: "(IILjava/lang/Object;Ljava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setDataElements_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setDataElements( _ _x: Int, _ _y: Int, _ _obj: java_swift.JavaObject?, _ _data: DataBuffer? ) {
-        setDataElements( x: _x, y: _y, obj: _obj, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setDataElements(int,int,int,int,java.lang.Object,java.awt.image.DataBuffer)
-
-    private static var setDataElements_MethodID_8: jmethodID?
-
-    open func setDataElements( x: Int, y: Int, w: Int, h: Int, obj: java_swift.JavaObject?, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: obj, locals: &__locals )
-        __args[5] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDataElements", methodSig: "(IIIILjava/lang/Object;Ljava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setDataElements_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setDataElements( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _obj: java_swift.JavaObject?, _ _data: DataBuffer? ) {
-        setDataElements( x: _x, y: _y, w: _w, h: _h, obj: _obj, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setPixel(int,int,float[],java.awt.image.DataBuffer)
-
-    private static var setPixel_MethodID_9: jmethodID?
-
-    open func setPixel( x: Int, y: Int, fArray: [Float]?, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: fArray, locals: &__locals )
-        __args[3] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixel", methodSig: "(II[FLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixel_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func setPixel( _ _x: Int, _ _y: Int, _ _fArray: [Float]?, _ _data: DataBuffer? ) {
-        setPixel( x: _x, y: _y, fArray: _fArray, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setPixel(int,int,double[],java.awt.image.DataBuffer)
-
-    private static var setPixel_MethodID_10: jmethodID?
-
-    open func setPixel( x: Int, y: Int, dArray: [Double]?, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: dArray, locals: &__locals )
-        __args[3] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixel", methodSig: "(II[DLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixel_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func setPixel( _ _x: Int, _ _y: Int, _ _dArray: [Double]?, _ _data: DataBuffer? ) {
-        setPixel( x: _x, y: _y, dArray: _dArray, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setPixel(int,int,int[],java.awt.image.DataBuffer)
-
-    private static var setPixel_MethodID_11: jmethodID?
-
-    open func setPixel( x: Int, y: Int, iArray: [Int32]?, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: iArray, locals: &__locals )
-        __args[3] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixel", methodSig: "(II[ILjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixel_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setPixel( _ _x: Int, _ _y: Int, _ _iArray: [Int32]?, _ _data: DataBuffer? ) {
-        setPixel( x: _x, y: _y, iArray: _iArray, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setPixels(int,int,int,int,double[],java.awt.image.DataBuffer)
-
-    private static var setPixels_MethodID_12: jmethodID?
-
-    open func setPixels( x: Int, y: Int, w: Int, h: Int, dArray: [Double]?, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: dArray, locals: &__locals )
-        __args[5] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIII[DLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixels_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _dArray: [Double]?, _ _data: DataBuffer? ) {
-        setPixels( x: _x, y: _y, w: _w, h: _h, dArray: _dArray, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setPixels(int,int,int,int,int[],java.awt.image.DataBuffer)
-
-    private static var setPixels_MethodID_13: jmethodID?
-
-    open func setPixels( x: Int, y: Int, w: Int, h: Int, iArray: [Int32]?, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: iArray, locals: &__locals )
-        __args[5] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIII[ILjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixels_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _iArray: [Int32]?, _ _data: DataBuffer? ) {
-        setPixels( x: _x, y: _y, w: _w, h: _h, iArray: _iArray, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setPixels(int,int,int,int,float[],java.awt.image.DataBuffer)
-
-    private static var setPixels_MethodID_14: jmethodID?
-
-    open func setPixels( x: Int, y: Int, w: Int, h: Int, fArray: [Float]?, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: fArray, locals: &__locals )
-        __args[5] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIII[FLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixels_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _fArray: [Float]?, _ _data: DataBuffer? ) {
-        setPixels( x: _x, y: _y, w: _w, h: _h, fArray: _fArray, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setSample(int,int,int,float,java.awt.image.DataBuffer)
-
-    private static var setSample_MethodID_15: jmethodID?
-
-    open func setSample( x: Int, y: Int, b: Int, s: Float, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: b, locals: &__locals )
-        __args[3] = JNIType.toJava( value: s, locals: &__locals )
-        __args[4] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSample", methodSig: "(IIIFLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSample_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setSample( _ _x: Int, _ _y: Int, _ _b: Int, _ _s: Float, _ _data: DataBuffer? ) {
-        setSample( x: _x, y: _y, b: _b, s: _s, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setSample(int,int,int,double,java.awt.image.DataBuffer)
-
-    private static var setSample_MethodID_16: jmethodID?
-
-    open func setSample( x: Int, y: Int, b: Int, s: Double, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: b, locals: &__locals )
-        __args[3] = JNIType.toJava( value: s, locals: &__locals )
-        __args[4] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSample", methodSig: "(IIIDLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSample_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setSample( _ _x: Int, _ _y: Int, _ _b: Int, _ _s: Double, _ _data: DataBuffer? ) {
-        setSample( x: _x, y: _y, b: _b, s: _s, data: _data )
-    }
-
-    /// public abstract void java.awt.image.SampleModel.setSample(int,int,int,int,java.awt.image.DataBuffer)
-
-    private static var setSample_MethodID_17: jmethodID?
-
-    open func setSample( x: Int, y: Int, b: Int, s: Int, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: b, locals: &__locals )
-        __args[3] = JNIType.toJava( value: s, locals: &__locals )
-        __args[4] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSample", methodSig: "(IIIILjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSample_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func setSample( _ _x: Int, _ _y: Int, _ _b: Int, _ _s: Int, _ _data: DataBuffer? ) {
-        setSample( x: _x, y: _y, b: _b, s: _s, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setSamples(int,int,int,int,int,float[],java.awt.image.DataBuffer)
-
-    private static var setSamples_MethodID_18: jmethodID?
-
-    open func setSamples( x: Int, y: Int, w: Int, h: Int, b: Int, fArray: [Float]?, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: b, locals: &__locals )
-        __args[5] = JNIType.toJava( value: fArray, locals: &__locals )
-        __args[6] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSamples", methodSig: "(IIIII[FLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSamples_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func setSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _fArray: [Float]?, _ _data: DataBuffer? ) {
-        setSamples( x: _x, y: _y, w: _w, h: _h, b: _b, fArray: _fArray, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
-
-    private static var setSamples_MethodID_19: jmethodID?
-
-    open func setSamples( x: Int, y: Int, w: Int, h: Int, b: Int, iArray: [Int32]?, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: b, locals: &__locals )
-        __args[5] = JNIType.toJava( value: iArray, locals: &__locals )
-        __args[6] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSamples", methodSig: "(IIIII[ILjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSamples_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _iArray: [Int32]?, _ _data: DataBuffer? ) {
-        setSamples( x: _x, y: _y, w: _w, h: _h, b: _b, iArray: _iArray, data: _data )
-    }
-
-    /// public void java.awt.image.SampleModel.setSamples(int,int,int,int,int,double[],java.awt.image.DataBuffer)
-
-    private static var setSamples_MethodID_20: jmethodID?
-
-    open func setSamples( x: Int, y: Int, w: Int, h: Int, b: Int, dArray: [Double]?, data: DataBuffer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: b, locals: &__locals )
-        __args[5] = JNIType.toJava( value: dArray, locals: &__locals )
-        __args[6] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSamples", methodSig: "(IIIII[DLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSamples_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func setSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _dArray: [Double]?, _ _data: DataBuffer? ) {
-        setSamples( x: _x, y: _y, w: _w, h: _h, b: _b, dArray: _dArray, data: _data )
-    }
-
-    /// public int java.awt.image.SampleModel.getTransferType()
-
-    private static var getTransferType_MethodID_21: jmethodID?
-
-    open func getTransferType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransferType", methodSig: "()I", methodCache: &SampleModel.getTransferType_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public java.lang.Object java.awt.image.SampleModel.getDataElements(int,int,int,int,java.lang.Object,java.awt.image.DataBuffer)
 
-    private static var getDataElements_MethodID_22: jmethodID?
+    private static var getDataElements_MethodID_5: jmethodID?
 
     open func getDataElements( x: Int, y: Int, w: Int, h: Int, obj: java_swift.JavaObject?, data: DataBuffer? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
         __args[4] = JNIType.toJava( value: obj, locals: &__locals )
         __args[5] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "(IIIILjava/lang/Object;Ljava/awt/image/DataBuffer;)Ljava/lang/Object;", methodCache: &SampleModel.getDataElements_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "(IIIILjava/lang/Object;Ljava/awt/image/DataBuffer;)Ljava/lang/Object;", methodCache: &SampleModel.getDataElements_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -484,16 +174,16 @@ open class SampleModel: java_swift.JavaObject {
 
     /// public abstract java.lang.Object java.awt.image.SampleModel.getDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
 
-    private static var getDataElements_MethodID_23: jmethodID?
+    private static var getDataElements_MethodID_6: jmethodID?
 
     open func getDataElements( x: Int, y: Int, obj: java_swift.JavaObject?, data: DataBuffer? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
         __args[2] = JNIType.toJava( value: obj, locals: &__locals )
         __args[3] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "(IILjava/lang/Object;Ljava/awt/image/DataBuffer;)Ljava/lang/Object;", methodCache: &SampleModel.getDataElements_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataElements", methodSig: "(IILjava/lang/Object;Ljava/awt/image/DataBuffer;)Ljava/lang/Object;", methodCache: &SampleModel.getDataElements_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -502,61 +192,67 @@ open class SampleModel: java_swift.JavaObject {
         return getDataElements( x: _x, y: _y, obj: _obj, data: _data )
     }
 
-    /// public abstract java.awt.image.SampleModel java.awt.image.SampleModel.createCompatibleSampleModel(int,int)
+    /// public final int java.awt.image.SampleModel.getDataType()
 
-    private static var createCompatibleSampleModel_MethodID_24: jmethodID?
+    private static var getDataType_MethodID_7: jmethodID?
 
-    open func createCompatibleSampleModel( w: Int, h: Int ) -> SampleModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getDataType() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCompatibleSampleModel", methodSig: "(II)Ljava/awt/image/SampleModel;", methodCache: &SampleModel.createCompatibleSampleModel_MethodID_24, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SampleModel( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDataType", methodSig: "()I", methodCache: &SampleModel.getDataType_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func createCompatibleSampleModel( _ _w: Int, _ _h: Int ) -> SampleModel! {
-        return createCompatibleSampleModel( w: _w, h: _h )
+
+    /// public final int java.awt.image.SampleModel.getHeight()
+
+    private static var getHeight_MethodID_8: jmethodID?
+
+    open func getHeight() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &SampleModel.getHeight_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
     }
+
 
     /// public final int java.awt.image.SampleModel.getNumBands()
 
-    private static var getNumBands_MethodID_25: jmethodID?
+    private static var getNumBands_MethodID_9: jmethodID?
 
     open func getNumBands() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumBands", methodSig: "()I", methodCache: &SampleModel.getNumBands_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumBands", methodSig: "()I", methodCache: &SampleModel.getNumBands_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
     /// public abstract int java.awt.image.SampleModel.getNumDataElements()
 
-    private static var getNumDataElements_MethodID_26: jmethodID?
+    private static var getNumDataElements_MethodID_10: jmethodID?
 
     open func getNumDataElements() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumDataElements", methodSig: "()I", methodCache: &SampleModel.getNumDataElements_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumDataElements", methodSig: "()I", methodCache: &SampleModel.getNumDataElements_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
     /// public double[] java.awt.image.SampleModel.getPixel(int,int,double[],java.awt.image.DataBuffer)
 
-    private static var getPixel_MethodID_27: jmethodID?
+    private static var getPixel_MethodID_11: jmethodID?
 
     open func getPixel( x: Int, y: Int, dArray: [Double]?, data: DataBuffer? ) -> [Double]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
         __args[2] = JNIType.toJava( value: dArray, locals: &__locals )
         __args[3] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[DLjava/awt/image/DataBuffer;)[D", methodCache: &SampleModel.getPixel_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Double](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[DLjava/awt/image/DataBuffer;)[D", methodCache: &SampleModel.getPixel_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Double].self, from: __return )
     }
 
     open func getPixel( _ _x: Int, _ _y: Int, _ _dArray: [Double]?, _ _data: DataBuffer? ) -> [Double]! {
@@ -565,17 +261,17 @@ open class SampleModel: java_swift.JavaObject {
 
     /// public float[] java.awt.image.SampleModel.getPixel(int,int,float[],java.awt.image.DataBuffer)
 
-    private static var getPixel_MethodID_28: jmethodID?
+    private static var getPixel_MethodID_12: jmethodID?
 
     open func getPixel( x: Int, y: Int, fArray: [Float]?, data: DataBuffer? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
         __args[2] = JNIType.toJava( value: fArray, locals: &__locals )
         __args[3] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[FLjava/awt/image/DataBuffer;)[F", methodCache: &SampleModel.getPixel_MethodID_28, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[FLjava/awt/image/DataBuffer;)[F", methodCache: &SampleModel.getPixel_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
     open func getPixel( _ _x: Int, _ _y: Int, _ _fArray: [Float]?, _ _data: DataBuffer? ) -> [Float]! {
@@ -584,17 +280,17 @@ open class SampleModel: java_swift.JavaObject {
 
     /// public int[] java.awt.image.SampleModel.getPixel(int,int,int[],java.awt.image.DataBuffer)
 
-    private static var getPixel_MethodID_29: jmethodID?
+    private static var getPixel_MethodID_13: jmethodID?
 
     open func getPixel( x: Int, y: Int, iArray: [Int32]?, data: DataBuffer? ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
         __args[2] = JNIType.toJava( value: iArray, locals: &__locals )
         __args[3] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[ILjava/awt/image/DataBuffer;)[I", methodCache: &SampleModel.getPixel_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixel", methodSig: "(II[ILjava/awt/image/DataBuffer;)[I", methodCache: &SampleModel.getPixel_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
     }
 
     open func getPixel( _ _x: Int, _ _y: Int, _ _iArray: [Int32]?, _ _data: DataBuffer? ) -> [Int32]! {
@@ -603,19 +299,19 @@ open class SampleModel: java_swift.JavaObject {
 
     /// public double[] java.awt.image.SampleModel.getPixels(int,int,int,int,double[],java.awt.image.DataBuffer)
 
-    private static var getPixels_MethodID_30: jmethodID?
+    private static var getPixels_MethodID_14: jmethodID?
 
     open func getPixels( x: Int, y: Int, w: Int, h: Int, dArray: [Double]?, data: DataBuffer? ) -> [Double]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
         __args[4] = JNIType.toJava( value: dArray, locals: &__locals )
         __args[5] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[DLjava/awt/image/DataBuffer;)[D", methodCache: &SampleModel.getPixels_MethodID_30, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Double](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[DLjava/awt/image/DataBuffer;)[D", methodCache: &SampleModel.getPixels_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Double].self, from: __return )
     }
 
     open func getPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _dArray: [Double]?, _ _data: DataBuffer? ) -> [Double]! {
@@ -624,19 +320,19 @@ open class SampleModel: java_swift.JavaObject {
 
     /// public float[] java.awt.image.SampleModel.getPixels(int,int,int,int,float[],java.awt.image.DataBuffer)
 
-    private static var getPixels_MethodID_31: jmethodID?
+    private static var getPixels_MethodID_15: jmethodID?
 
     open func getPixels( x: Int, y: Int, w: Int, h: Int, fArray: [Float]?, data: DataBuffer? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
         __args[4] = JNIType.toJava( value: fArray, locals: &__locals )
         __args[5] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[FLjava/awt/image/DataBuffer;)[F", methodCache: &SampleModel.getPixels_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[FLjava/awt/image/DataBuffer;)[F", methodCache: &SampleModel.getPixels_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
     open func getPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _fArray: [Float]?, _ _data: DataBuffer? ) -> [Float]! {
@@ -645,19 +341,19 @@ open class SampleModel: java_swift.JavaObject {
 
     /// public int[] java.awt.image.SampleModel.getPixels(int,int,int,int,int[],java.awt.image.DataBuffer)
 
-    private static var getPixels_MethodID_32: jmethodID?
+    private static var getPixels_MethodID_16: jmethodID?
 
     open func getPixels( x: Int, y: Int, w: Int, h: Int, iArray: [Int32]?, data: DataBuffer? ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
         __args[4] = JNIType.toJava( value: iArray, locals: &__locals )
         __args[5] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[ILjava/awt/image/DataBuffer;)[I", methodCache: &SampleModel.getPixels_MethodID_32, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPixels", methodSig: "(IIII[ILjava/awt/image/DataBuffer;)[I", methodCache: &SampleModel.getPixels_MethodID_16, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
     }
 
     open func getPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _iArray: [Int32]?, _ _data: DataBuffer? ) -> [Int32]! {
@@ -666,150 +362,450 @@ open class SampleModel: java_swift.JavaObject {
 
     /// public abstract int java.awt.image.SampleModel.getSample(int,int,int,java.awt.image.DataBuffer)
 
-    private static var getSample_MethodID_33: jmethodID?
+    private static var getSample_MethodID_17: jmethodID?
 
     open func getSample( x: Int, y: Int, b: Int, data: DataBuffer? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: b, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(b) )
         __args[3] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSample", methodSig: "(IIILjava/awt/image/DataBuffer;)I", methodCache: &SampleModel.getSample_MethodID_33, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSample", methodSig: "(IIILjava/awt/image/DataBuffer;)I", methodCache: &SampleModel.getSample_MethodID_17, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getSample( _ _x: Int, _ _y: Int, _ _b: Int, _ _data: DataBuffer? ) -> Int {
         return getSample( x: _x, y: _y, b: _b, data: _data )
     }
 
-    /// public float java.awt.image.SampleModel.getSampleFloat(int,int,int,java.awt.image.DataBuffer)
-
-    private static var getSampleFloat_MethodID_34: jmethodID?
-
-    open func getSampleFloat( x: Int, y: Int, b: Int, data: DataBuffer? ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: b, locals: &__locals )
-        __args[3] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getSampleFloat", methodSig: "(IIILjava/awt/image/DataBuffer;)F", methodCache: &SampleModel.getSampleFloat_MethodID_34, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    open func getSampleFloat( _ _x: Int, _ _y: Int, _ _b: Int, _ _data: DataBuffer? ) -> Float {
-        return getSampleFloat( x: _x, y: _y, b: _b, data: _data )
-    }
-
     /// public double java.awt.image.SampleModel.getSampleDouble(int,int,int,java.awt.image.DataBuffer)
 
-    private static var getSampleDouble_MethodID_35: jmethodID?
+    private static var getSampleDouble_MethodID_18: jmethodID?
 
     open func getSampleDouble( x: Int, y: Int, b: Int, data: DataBuffer? ) -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: b, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(b) )
         __args[3] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getSampleDouble", methodSig: "(IIILjava/awt/image/DataBuffer;)D", methodCache: &SampleModel.getSampleDouble_MethodID_35, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getSampleDouble", methodSig: "(IIILjava/awt/image/DataBuffer;)D", methodCache: &SampleModel.getSampleDouble_MethodID_18, args: &__args, locals: &__locals )
+        return __return
     }
 
     open func getSampleDouble( _ _x: Int, _ _y: Int, _ _b: Int, _ _data: DataBuffer? ) -> Double {
         return getSampleDouble( x: _x, y: _y, b: _b, data: _data )
     }
 
+    /// public float java.awt.image.SampleModel.getSampleFloat(int,int,int,java.awt.image.DataBuffer)
+
+    private static var getSampleFloat_MethodID_19: jmethodID?
+
+    open func getSampleFloat( x: Int, y: Int, b: Int, data: DataBuffer? ) -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(b) )
+        __args[3] = JNIType.toJava( value: data, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getSampleFloat", methodSig: "(IIILjava/awt/image/DataBuffer;)F", methodCache: &SampleModel.getSampleFloat_MethodID_19, args: &__args, locals: &__locals )
+        return __return
+    }
+
+    open func getSampleFloat( _ _x: Int, _ _y: Int, _ _b: Int, _ _data: DataBuffer? ) -> Float {
+        return getSampleFloat( x: _x, y: _y, b: _b, data: _data )
+    }
+
+    /// public abstract int java.awt.image.SampleModel.getSampleSize(int)
+
+    private static var getSampleSize_MethodID_20: jmethodID?
+
+    open func getSampleSize( band: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(band) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSampleSize", methodSig: "(I)I", methodCache: &SampleModel.getSampleSize_MethodID_20, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getSampleSize( _ _band: Int ) -> Int {
+        return getSampleSize( band: _band )
+    }
+
+    /// public abstract int[] java.awt.image.SampleModel.getSampleSize()
+
+    private static var getSampleSize_MethodID_21: jmethodID?
+
+    open func getSampleSize() -> [Int32]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSampleSize", methodSig: "()[I", methodCache: &SampleModel.getSampleSize_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
+    }
+
+
     /// public double[] java.awt.image.SampleModel.getSamples(int,int,int,int,int,double[],java.awt.image.DataBuffer)
 
-    private static var getSamples_MethodID_36: jmethodID?
+    private static var getSamples_MethodID_22: jmethodID?
 
     open func getSamples( x: Int, y: Int, w: Int, h: Int, b: Int, dArray: [Double]?, data: DataBuffer? ) -> [Double]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: b, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = jvalue( i: jint(b) )
         __args[5] = JNIType.toJava( value: dArray, locals: &__locals )
         __args[6] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSamples", methodSig: "(IIIII[DLjava/awt/image/DataBuffer;)[D", methodCache: &SampleModel.getSamples_MethodID_36, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Double](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSamples", methodSig: "(IIIII[DLjava/awt/image/DataBuffer;)[D", methodCache: &SampleModel.getSamples_MethodID_22, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Double].self, from: __return )
     }
 
     open func getSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _dArray: [Double]?, _ _data: DataBuffer? ) -> [Double]! {
         return getSamples( x: _x, y: _y, w: _w, h: _h, b: _b, dArray: _dArray, data: _data )
     }
 
-    /// public int[] java.awt.image.SampleModel.getSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
-
-    private static var getSamples_MethodID_37: jmethodID?
-
-    open func getSamples( x: Int, y: Int, w: Int, h: Int, b: Int, iArray: [Int32]?, data: DataBuffer? ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: b, locals: &__locals )
-        __args[5] = JNIType.toJava( value: iArray, locals: &__locals )
-        __args[6] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSamples", methodSig: "(IIIII[ILjava/awt/image/DataBuffer;)[I", methodCache: &SampleModel.getSamples_MethodID_37, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
-    }
-
-    open func getSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _iArray: [Int32]?, _ _data: DataBuffer? ) -> [Int32]! {
-        return getSamples( x: _x, y: _y, w: _w, h: _h, b: _b, iArray: _iArray, data: _data )
-    }
-
     /// public float[] java.awt.image.SampleModel.getSamples(int,int,int,int,int,float[],java.awt.image.DataBuffer)
 
-    private static var getSamples_MethodID_38: jmethodID?
+    private static var getSamples_MethodID_23: jmethodID?
 
     open func getSamples( x: Int, y: Int, w: Int, h: Int, b: Int, fArray: [Float]?, data: DataBuffer? ) -> [Float]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: b, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = jvalue( i: jint(b) )
         __args[5] = JNIType.toJava( value: fArray, locals: &__locals )
         __args[6] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSamples", methodSig: "(IIIII[FLjava/awt/image/DataBuffer;)[F", methodCache: &SampleModel.getSamples_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Float](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSamples", methodSig: "(IIIII[FLjava/awt/image/DataBuffer;)[F", methodCache: &SampleModel.getSamples_MethodID_23, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Float].self, from: __return )
     }
 
     open func getSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _fArray: [Float]?, _ _data: DataBuffer? ) -> [Float]! {
         return getSamples( x: _x, y: _y, w: _w, h: _h, b: _b, fArray: _fArray, data: _data )
     }
 
+    /// public int[] java.awt.image.SampleModel.getSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
+
+    private static var getSamples_MethodID_24: jmethodID?
+
+    open func getSamples( x: Int, y: Int, w: Int, h: Int, b: Int, iArray: [Int32]?, data: DataBuffer? ) -> [Int32]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = jvalue( i: jint(b) )
+        __args[5] = JNIType.toJava( value: iArray, locals: &__locals )
+        __args[6] = JNIType.toJava( value: data, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSamples", methodSig: "(IIIII[ILjava/awt/image/DataBuffer;)[I", methodCache: &SampleModel.getSamples_MethodID_24, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
+    }
+
+    open func getSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _iArray: [Int32]?, _ _data: DataBuffer? ) -> [Int32]! {
+        return getSamples( x: _x, y: _y, w: _w, h: _h, b: _b, iArray: _iArray, data: _data )
+    }
+
+    /// public int java.awt.image.SampleModel.getTransferType()
+
+    private static var getTransferType_MethodID_25: jmethodID?
+
+    open func getTransferType() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransferType", methodSig: "()I", methodCache: &SampleModel.getTransferType_MethodID_25, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public final int java.awt.image.SampleModel.getWidth()
 
-    private static var getWidth_MethodID_39: jmethodID?
+    private static var getWidth_MethodID_26: jmethodID?
 
     open func getWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &SampleModel.getWidth_MethodID_39, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &SampleModel.getWidth_MethodID_26, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public final int java.awt.image.SampleModel.getHeight()
+    /// public void java.awt.image.SampleModel.setDataElements(int,int,int,int,java.lang.Object,java.awt.image.DataBuffer)
 
-    private static var getHeight_MethodID_40: jmethodID?
+    private static var setDataElements_MethodID_27: jmethodID?
 
-    open func getHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setDataElements( x: Int, y: Int, w: Int, h: Int, obj: java_swift.JavaObject?, data: DataBuffer? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &SampleModel.getHeight_MethodID_40, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = JNIType.toJava( value: obj, locals: &__locals )
+        __args[5] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDataElements", methodSig: "(IIIILjava/lang/Object;Ljava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setDataElements_MethodID_27, args: &__args, locals: &__locals )
     }
 
+    open func setDataElements( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _obj: java_swift.JavaObject?, _ _data: DataBuffer? ) {
+        setDataElements( x: _x, y: _y, w: _w, h: _h, obj: _obj, data: _data )
+    }
+
+    /// public abstract void java.awt.image.SampleModel.setDataElements(int,int,java.lang.Object,java.awt.image.DataBuffer)
+
+    private static var setDataElements_MethodID_28: jmethodID?
+
+    open func setDataElements( x: Int, y: Int, obj: java_swift.JavaObject?, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = JNIType.toJava( value: obj, locals: &__locals )
+        __args[3] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDataElements", methodSig: "(IILjava/lang/Object;Ljava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setDataElements_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open func setDataElements( _ _x: Int, _ _y: Int, _ _obj: java_swift.JavaObject?, _ _data: DataBuffer? ) {
+        setDataElements( x: _x, y: _y, obj: _obj, data: _data )
+    }
+
+    /// public void java.awt.image.SampleModel.setPixel(int,int,double[],java.awt.image.DataBuffer)
+
+    private static var setPixel_MethodID_29: jmethodID?
+
+    open func setPixel( x: Int, y: Int, dArray: [Double]?, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = JNIType.toJava( value: dArray, locals: &__locals )
+        __args[3] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixel", methodSig: "(II[DLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixel_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func setPixel( _ _x: Int, _ _y: Int, _ _dArray: [Double]?, _ _data: DataBuffer? ) {
+        setPixel( x: _x, y: _y, dArray: _dArray, data: _data )
+    }
+
+    /// public void java.awt.image.SampleModel.setPixel(int,int,float[],java.awt.image.DataBuffer)
+
+    private static var setPixel_MethodID_30: jmethodID?
+
+    open func setPixel( x: Int, y: Int, fArray: [Float]?, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = JNIType.toJava( value: fArray, locals: &__locals )
+        __args[3] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixel", methodSig: "(II[FLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixel_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func setPixel( _ _x: Int, _ _y: Int, _ _fArray: [Float]?, _ _data: DataBuffer? ) {
+        setPixel( x: _x, y: _y, fArray: _fArray, data: _data )
+    }
+
+    /// public void java.awt.image.SampleModel.setPixel(int,int,int[],java.awt.image.DataBuffer)
+
+    private static var setPixel_MethodID_31: jmethodID?
+
+    open func setPixel( x: Int, y: Int, iArray: [Int32]?, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = JNIType.toJava( value: iArray, locals: &__locals )
+        __args[3] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixel", methodSig: "(II[ILjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixel_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+    open func setPixel( _ _x: Int, _ _y: Int, _ _iArray: [Int32]?, _ _data: DataBuffer? ) {
+        setPixel( x: _x, y: _y, iArray: _iArray, data: _data )
+    }
+
+    /// public void java.awt.image.SampleModel.setPixels(int,int,int,int,double[],java.awt.image.DataBuffer)
+
+    private static var setPixels_MethodID_32: jmethodID?
+
+    open func setPixels( x: Int, y: Int, w: Int, h: Int, dArray: [Double]?, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = JNIType.toJava( value: dArray, locals: &__locals )
+        __args[5] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIII[DLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixels_MethodID_32, args: &__args, locals: &__locals )
+    }
+
+    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _dArray: [Double]?, _ _data: DataBuffer? ) {
+        setPixels( x: _x, y: _y, w: _w, h: _h, dArray: _dArray, data: _data )
+    }
+
+    /// public void java.awt.image.SampleModel.setPixels(int,int,int,int,float[],java.awt.image.DataBuffer)
+
+    private static var setPixels_MethodID_33: jmethodID?
+
+    open func setPixels( x: Int, y: Int, w: Int, h: Int, fArray: [Float]?, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = JNIType.toJava( value: fArray, locals: &__locals )
+        __args[5] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIII[FLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixels_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _fArray: [Float]?, _ _data: DataBuffer? ) {
+        setPixels( x: _x, y: _y, w: _w, h: _h, fArray: _fArray, data: _data )
+    }
+
+    /// public void java.awt.image.SampleModel.setPixels(int,int,int,int,int[],java.awt.image.DataBuffer)
+
+    private static var setPixels_MethodID_34: jmethodID?
+
+    open func setPixels( x: Int, y: Int, w: Int, h: Int, iArray: [Int32]?, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = JNIType.toJava( value: iArray, locals: &__locals )
+        __args[5] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPixels", methodSig: "(IIII[ILjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setPixels_MethodID_34, args: &__args, locals: &__locals )
+    }
+
+    open func setPixels( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _iArray: [Int32]?, _ _data: DataBuffer? ) {
+        setPixels( x: _x, y: _y, w: _w, h: _h, iArray: _iArray, data: _data )
+    }
+
+    /// public void java.awt.image.SampleModel.setSample(int,int,int,double,java.awt.image.DataBuffer)
+
+    private static var setSample_MethodID_35: jmethodID?
+
+    open func setSample( x: Int, y: Int, b: Int, s: Double, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(b) )
+        __args[3] = jvalue( d: s )
+        __args[4] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSample", methodSig: "(IIIDLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSample_MethodID_35, args: &__args, locals: &__locals )
+    }
+
+    open func setSample( _ _x: Int, _ _y: Int, _ _b: Int, _ _s: Double, _ _data: DataBuffer? ) {
+        setSample( x: _x, y: _y, b: _b, s: _s, data: _data )
+    }
+
+    /// public void java.awt.image.SampleModel.setSample(int,int,int,float,java.awt.image.DataBuffer)
+
+    private static var setSample_MethodID_36: jmethodID?
+
+    open func setSample( x: Int, y: Int, b: Int, s: Float, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(b) )
+        __args[3] = jvalue( f: s )
+        __args[4] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSample", methodSig: "(IIIFLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSample_MethodID_36, args: &__args, locals: &__locals )
+    }
+
+    open func setSample( _ _x: Int, _ _y: Int, _ _b: Int, _ _s: Float, _ _data: DataBuffer? ) {
+        setSample( x: _x, y: _y, b: _b, s: _s, data: _data )
+    }
+
+    /// public abstract void java.awt.image.SampleModel.setSample(int,int,int,int,java.awt.image.DataBuffer)
+
+    private static var setSample_MethodID_37: jmethodID?
+
+    open func setSample( x: Int, y: Int, b: Int, s: Int, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(b) )
+        __args[3] = jvalue( i: jint(s) )
+        __args[4] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSample", methodSig: "(IIIILjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSample_MethodID_37, args: &__args, locals: &__locals )
+    }
+
+    open func setSample( _ _x: Int, _ _y: Int, _ _b: Int, _ _s: Int, _ _data: DataBuffer? ) {
+        setSample( x: _x, y: _y, b: _b, s: _s, data: _data )
+    }
+
+    /// public void java.awt.image.SampleModel.setSamples(int,int,int,int,int,double[],java.awt.image.DataBuffer)
+
+    private static var setSamples_MethodID_38: jmethodID?
+
+    open func setSamples( x: Int, y: Int, w: Int, h: Int, b: Int, dArray: [Double]?, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = jvalue( i: jint(b) )
+        __args[5] = JNIType.toJava( value: dArray, locals: &__locals )
+        __args[6] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSamples", methodSig: "(IIIII[DLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSamples_MethodID_38, args: &__args, locals: &__locals )
+    }
+
+    open func setSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _dArray: [Double]?, _ _data: DataBuffer? ) {
+        setSamples( x: _x, y: _y, w: _w, h: _h, b: _b, dArray: _dArray, data: _data )
+    }
+
+    /// public void java.awt.image.SampleModel.setSamples(int,int,int,int,int,float[],java.awt.image.DataBuffer)
+
+    private static var setSamples_MethodID_39: jmethodID?
+
+    open func setSamples( x: Int, y: Int, w: Int, h: Int, b: Int, fArray: [Float]?, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = jvalue( i: jint(b) )
+        __args[5] = JNIType.toJava( value: fArray, locals: &__locals )
+        __args[6] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSamples", methodSig: "(IIIII[FLjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSamples_MethodID_39, args: &__args, locals: &__locals )
+    }
+
+    open func setSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _fArray: [Float]?, _ _data: DataBuffer? ) {
+        setSamples( x: _x, y: _y, w: _w, h: _h, b: _b, fArray: _fArray, data: _data )
+    }
+
+    /// public void java.awt.image.SampleModel.setSamples(int,int,int,int,int,int[],java.awt.image.DataBuffer)
+
+    private static var setSamples_MethodID_40: jmethodID?
+
+    open func setSamples( x: Int, y: Int, w: Int, h: Int, b: Int, iArray: [Int32]?, data: DataBuffer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = jvalue( i: jint(b) )
+        __args[5] = JNIType.toJava( value: iArray, locals: &__locals )
+        __args[6] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSamples", methodSig: "(IIIII[ILjava/awt/image/DataBuffer;)V", methodCache: &SampleModel.setSamples_MethodID_40, args: &__args, locals: &__locals )
+    }
+
+    open func setSamples( _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _b: Int, _ _iArray: [Int32]?, _ _data: DataBuffer? ) {
+        setSamples( x: _x, y: _y, w: _w, h: _h, b: _b, iArray: _iArray, data: _data )
+    }
 
 }
 

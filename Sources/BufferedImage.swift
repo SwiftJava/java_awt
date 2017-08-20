@@ -17,70 +17,31 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var BufferedImageJNIClass: jclass?
 
-    /// private int java.awt.image.BufferedImage.imageType
+    /// private static final int java.awt.image.BufferedImage.DCM_555_BLU_MASK
 
-    /// private java.awt.image.ColorModel java.awt.image.BufferedImage.colorModel
+    /// private static final int java.awt.image.BufferedImage.DCM_555_GRN_MASK
 
-    /// private final java.awt.image.WritableRaster java.awt.image.BufferedImage.raster
+    /// private static final int java.awt.image.BufferedImage.DCM_555_RED_MASK
 
-    /// private sun.awt.image.OffScreenImageSource java.awt.image.BufferedImage.osis
+    /// private static final int java.awt.image.BufferedImage.DCM_565_BLU_MASK
 
-    /// private java.util.Hashtable java.awt.image.BufferedImage.properties
+    /// private static final int java.awt.image.BufferedImage.DCM_565_GRN_MASK
 
-    /// public static final int java.awt.image.BufferedImage.TYPE_CUSTOM
+    /// private static final int java.awt.image.BufferedImage.DCM_565_RED_MASK
 
-    private static var TYPE_CUSTOM_FieldID: jfieldID?
+    /// private static final int java.awt.image.BufferedImage.DCM_ALPHA_MASK
 
-    open static var TYPE_CUSTOM: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_CUSTOM", fieldType: "I", fieldCache: &TYPE_CUSTOM_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// private static final int java.awt.image.BufferedImage.DCM_BGR_BLU_MASK
 
-    /// public static final int java.awt.image.BufferedImage.TYPE_INT_RGB
+    /// private static final int java.awt.image.BufferedImage.DCM_BGR_GRN_MASK
 
-    private static var TYPE_INT_RGB_FieldID: jfieldID?
+    /// private static final int java.awt.image.BufferedImage.DCM_BGR_RED_MASK
 
-    open static var TYPE_INT_RGB: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_RGB", fieldType: "I", fieldCache: &TYPE_INT_RGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// private static final int java.awt.image.BufferedImage.DCM_BLUE_MASK
 
-    /// public static final int java.awt.image.BufferedImage.TYPE_INT_ARGB
+    /// private static final int java.awt.image.BufferedImage.DCM_GREEN_MASK
 
-    private static var TYPE_INT_ARGB_FieldID: jfieldID?
-
-    open static var TYPE_INT_ARGB: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_ARGB", fieldType: "I", fieldCache: &TYPE_INT_ARGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.BufferedImage.TYPE_INT_ARGB_PRE
-
-    private static var TYPE_INT_ARGB_PRE_FieldID: jfieldID?
-
-    open static var TYPE_INT_ARGB_PRE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_ARGB_PRE", fieldType: "I", fieldCache: &TYPE_INT_ARGB_PRE_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.BufferedImage.TYPE_INT_BGR
-
-    private static var TYPE_INT_BGR_FieldID: jfieldID?
-
-    open static var TYPE_INT_BGR: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_BGR", fieldType: "I", fieldCache: &TYPE_INT_BGR_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// private static final int java.awt.image.BufferedImage.DCM_RED_MASK
 
     /// public static final int java.awt.image.BufferedImage.TYPE_3BYTE_BGR
 
@@ -89,7 +50,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
     open static var TYPE_3BYTE_BGR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_3BYTE_BGR", fieldType: "I", fieldCache: &TYPE_3BYTE_BGR_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -100,7 +61,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
     open static var TYPE_4BYTE_ABGR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_4BYTE_ABGR", fieldType: "I", fieldCache: &TYPE_4BYTE_ABGR_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -111,51 +72,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
     open static var TYPE_4BYTE_ABGR_PRE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_4BYTE_ABGR_PRE", fieldType: "I", fieldCache: &TYPE_4BYTE_ABGR_PRE_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.BufferedImage.TYPE_USHORT_565_RGB
-
-    private static var TYPE_USHORT_565_RGB_FieldID: jfieldID?
-
-    open static var TYPE_USHORT_565_RGB: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_USHORT_565_RGB", fieldType: "I", fieldCache: &TYPE_USHORT_565_RGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.BufferedImage.TYPE_USHORT_555_RGB
-
-    private static var TYPE_USHORT_555_RGB_FieldID: jfieldID?
-
-    open static var TYPE_USHORT_555_RGB: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_USHORT_555_RGB", fieldType: "I", fieldCache: &TYPE_USHORT_555_RGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.BufferedImage.TYPE_BYTE_GRAY
-
-    private static var TYPE_BYTE_GRAY_FieldID: jfieldID?
-
-    open static var TYPE_BYTE_GRAY: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BYTE_GRAY", fieldType: "I", fieldCache: &TYPE_BYTE_GRAY_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int java.awt.image.BufferedImage.TYPE_USHORT_GRAY
-
-    private static var TYPE_USHORT_GRAY_FieldID: jfieldID?
-
-    open static var TYPE_USHORT_GRAY: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_USHORT_GRAY", fieldType: "I", fieldCache: &TYPE_USHORT_GRAY_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -166,7 +83,18 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
     open static var TYPE_BYTE_BINARY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BYTE_BINARY", fieldType: "I", fieldCache: &TYPE_BYTE_BINARY_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.BufferedImage.TYPE_BYTE_GRAY
+
+    private static var TYPE_BYTE_GRAY_FieldID: jfieldID?
+
+    open static var TYPE_BYTE_GRAY: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BYTE_GRAY", fieldType: "I", fieldCache: &TYPE_BYTE_GRAY_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
+            return Int(__value)
         }
     }
 
@@ -177,35 +105,131 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
     open static var TYPE_BYTE_INDEXED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BYTE_INDEXED", fieldType: "I", fieldCache: &TYPE_BYTE_INDEXED_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// private static final int java.awt.image.BufferedImage.DCM_RED_MASK
+    /// public static final int java.awt.image.BufferedImage.TYPE_CUSTOM
 
-    /// private static final int java.awt.image.BufferedImage.DCM_GREEN_MASK
+    private static var TYPE_CUSTOM_FieldID: jfieldID?
 
-    /// private static final int java.awt.image.BufferedImage.DCM_BLUE_MASK
+    open static var TYPE_CUSTOM: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_CUSTOM", fieldType: "I", fieldCache: &TYPE_CUSTOM_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
+            return Int(__value)
+        }
+    }
 
-    /// private static final int java.awt.image.BufferedImage.DCM_ALPHA_MASK
+    /// public static final int java.awt.image.BufferedImage.TYPE_INT_ARGB
 
-    /// private static final int java.awt.image.BufferedImage.DCM_565_RED_MASK
+    private static var TYPE_INT_ARGB_FieldID: jfieldID?
 
-    /// private static final int java.awt.image.BufferedImage.DCM_565_GRN_MASK
+    open static var TYPE_INT_ARGB: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_ARGB", fieldType: "I", fieldCache: &TYPE_INT_ARGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
+            return Int(__value)
+        }
+    }
 
-    /// private static final int java.awt.image.BufferedImage.DCM_565_BLU_MASK
+    /// public static final int java.awt.image.BufferedImage.TYPE_INT_ARGB_PRE
 
-    /// private static final int java.awt.image.BufferedImage.DCM_555_RED_MASK
+    private static var TYPE_INT_ARGB_PRE_FieldID: jfieldID?
 
-    /// private static final int java.awt.image.BufferedImage.DCM_555_GRN_MASK
+    open static var TYPE_INT_ARGB_PRE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_ARGB_PRE", fieldType: "I", fieldCache: &TYPE_INT_ARGB_PRE_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
+            return Int(__value)
+        }
+    }
 
-    /// private static final int java.awt.image.BufferedImage.DCM_555_BLU_MASK
+    /// public static final int java.awt.image.BufferedImage.TYPE_INT_BGR
 
-    /// private static final int java.awt.image.BufferedImage.DCM_BGR_RED_MASK
+    private static var TYPE_INT_BGR_FieldID: jfieldID?
 
-    /// private static final int java.awt.image.BufferedImage.DCM_BGR_GRN_MASK
+    open static var TYPE_INT_BGR: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_BGR", fieldType: "I", fieldCache: &TYPE_INT_BGR_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
+            return Int(__value)
+        }
+    }
 
-    /// private static final int java.awt.image.BufferedImage.DCM_BGR_BLU_MASK
+    /// public static final int java.awt.image.BufferedImage.TYPE_INT_RGB
+
+    private static var TYPE_INT_RGB_FieldID: jfieldID?
+
+    open static var TYPE_INT_RGB: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_RGB", fieldType: "I", fieldCache: &TYPE_INT_RGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.BufferedImage.TYPE_USHORT_555_RGB
+
+    private static var TYPE_USHORT_555_RGB_FieldID: jfieldID?
+
+    open static var TYPE_USHORT_555_RGB: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_USHORT_555_RGB", fieldType: "I", fieldCache: &TYPE_USHORT_555_RGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.BufferedImage.TYPE_USHORT_565_RGB
+
+    private static var TYPE_USHORT_565_RGB_FieldID: jfieldID?
+
+    open static var TYPE_USHORT_565_RGB: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_USHORT_565_RGB", fieldType: "I", fieldCache: &TYPE_USHORT_565_RGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.image.BufferedImage.TYPE_USHORT_GRAY
+
+    private static var TYPE_USHORT_GRAY_FieldID: jfieldID?
+
+    open static var TYPE_USHORT_GRAY: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TYPE_USHORT_GRAY", fieldType: "I", fieldCache: &TYPE_USHORT_GRAY_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// private java.awt.image.ColorModel java.awt.image.BufferedImage.colorModel
+
+    /// private int java.awt.image.BufferedImage.imageType
+
+    /// private sun.awt.image.OffScreenImageSource java.awt.image.BufferedImage.osis
+
+    /// private java.util.Hashtable java.awt.image.BufferedImage.properties
+
+    /// private final java.awt.image.WritableRaster java.awt.image.BufferedImage.raster
+
+    /// public static final int java.awt.Image.SCALE_AREA_AVERAGING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Image.SCALE_DEFAULT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Image.SCALE_FAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Image.SCALE_REPLICATE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Image.SCALE_SMOOTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object java.awt.Image.UndefinedProperty
+
+    // Skipping field: false true false false false false 
 
     /// private static java.awt.ImageCapabilities java.awt.Image.defaultImageCaps
 
@@ -215,41 +239,19 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     override open var accelerationPriority: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "accelerationPriority", fieldType: "F", fieldCache: &BufferedImage.accelerationPriority_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "accelerationPriority", fieldType: "F", fieldCache: &BufferedImage.accelerationPriority_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( f: newValue )
             JNIField.SetFloatField( fieldName: "accelerationPriority", fieldType: "F", fieldCache: &BufferedImage.accelerationPriority_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
 
-    /// public static final java.lang.Object java.awt.Image.UndefinedProperty
-
-    /// public static final int java.awt.Image.SCALE_DEFAULT
-
-    /// public static final int java.awt.Image.SCALE_FAST
-
-    /// public static final int java.awt.Image.SCALE_SMOOTH
-
-    /// public static final int java.awt.Image.SCALE_REPLICATE
-
-    /// public static final int java.awt.Image.SCALE_AREA_AVERAGING
-
     /// sun.awt.image.SurfaceManager java.awt.Image.surfaceManager
 
-    /// public static final int java.awt.Transparency.OPAQUE
-
-    private static var OPAQUE_FieldID: jfieldID?
-
-    open static var OPAQUE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.Transparency.BITMASK
 
@@ -258,7 +260,18 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
     open static var BITMASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BITMASK", fieldType: "I", fieldCache: &BITMASK_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int java.awt.Transparency.OPAQUE
+
+    private static var OPAQUE_FieldID: jfieldID?
+
+    open static var OPAQUE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
+            return Int(__value)
         }
     }
 
@@ -269,28 +282,28 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
     open static var TRANSLUCENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRANSLUCENT", fieldType: "I", fieldCache: &TRANSLUCENT_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public java.awt.image.BufferedImage(int,int,int,java.awt.image.IndexColorModel)
+    /// public java.awt.image.BufferedImage(java.awt.image.ColorModel,java.awt.image.WritableRaster,boolean,java.util.Hashtable)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( width: Int, height: Int, imageType: Int, cm: IndexColorModel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init( cm: ColorModel?, raster: WritableRaster?, isRasterPremultiplied: Bool, properties: java_util.Hashtable? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        __args[2] = JNIType.toJava( value: imageType, locals: &__locals )
-        __args[3] = JNIType.toJava( value: cm, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/BufferedImage", classCache: &BufferedImage.BufferedImageJNIClass, methodSig: "(IIILjava/awt/image/IndexColorModel;)V", methodCache: &BufferedImage.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: cm, locals: &__locals )
+        __args[1] = JNIType.toJava( value: raster, locals: &__locals )
+        __args[2] = jvalue( z: jboolean(isRasterPremultiplied ? JNI_TRUE : JNI_FALSE) )
+        __args[3] = JNIType.toJava( value: properties, mapClass: "java/util/Hashtable", locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/BufferedImage", classCache: &BufferedImage.BufferedImageJNIClass, methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/image/WritableRaster;ZLjava/util/Hashtable;)V", methodCache: &BufferedImage.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _width: Int, _ _height: Int, _ _imageType: Int, _ _cm: IndexColorModel? ) {
-        self.init( width: _width, height: _height, imageType: _imageType, cm: _cm )
+    public convenience init( _ _cm: ColorModel?, _ _raster: WritableRaster?, _ _isRasterPremultiplied: Bool, _ _properties: java_util.Hashtable? ) {
+        self.init( cm: _cm, raster: _raster, isRasterPremultiplied: _isRasterPremultiplied, properties: _properties )
     }
 
     /// public java.awt.image.BufferedImage(int,int,int)
@@ -298,11 +311,11 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( width: Int, height: Int, imageType: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        __args[2] = JNIType.toJava( value: imageType, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(width) )
+        __args[1] = jvalue( i: jint(height) )
+        __args[2] = jvalue( i: jint(imageType) )
         let __object = JNIMethod.NewObject( className: "java/awt/image/BufferedImage", classCache: &BufferedImage.BufferedImageJNIClass, methodSig: "(III)V", methodCache: &BufferedImage.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -312,35 +325,247 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
         self.init( width: _width, height: _height, imageType: _imageType )
     }
 
-    /// public java.awt.image.BufferedImage(java.awt.image.ColorModel,java.awt.image.WritableRaster,boolean,java.util.Hashtable)
+    /// public java.awt.image.BufferedImage(int,int,int,java.awt.image.IndexColorModel)
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init( cm: ColorModel?, raster: WritableRaster?, isRasterPremultiplied: Bool, properties: java_util.Hashtable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init( width: Int, height: Int, imageType: Int, cm: IndexColorModel? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cm, locals: &__locals )
-        __args[1] = JNIType.toJava( value: raster, locals: &__locals )
-        __args[2] = JNIType.toJava( value: isRasterPremultiplied, locals: &__locals )
-        __args[3] = JNIType.toJava( value: properties, mapClass: "java/util/Hashtable", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/image/BufferedImage", classCache: &BufferedImage.BufferedImageJNIClass, methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/image/WritableRaster;ZLjava/util/Hashtable;)V", methodCache: &BufferedImage.new_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(width) )
+        __args[1] = jvalue( i: jint(height) )
+        __args[2] = jvalue( i: jint(imageType) )
+        __args[3] = JNIType.toJava( value: cm, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/image/BufferedImage", classCache: &BufferedImage.BufferedImageJNIClass, methodSig: "(IIILjava/awt/image/IndexColorModel;)V", methodCache: &BufferedImage.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _cm: ColorModel?, _ _raster: WritableRaster?, _ _isRasterPremultiplied: Bool, _ _properties: java_util.Hashtable? ) {
-        self.init( cm: _cm, raster: _raster, isRasterPremultiplied: _isRasterPremultiplied, properties: _properties )
+    public convenience init( _ _width: Int, _ _height: Int, _ _imageType: Int, _ _cm: IndexColorModel? ) {
+        self.init( width: _width, height: _height, imageType: _imageType, cm: _cm )
     }
+
+    /// private static native void java.awt.image.BufferedImage.initIDs()
+
+    /// private static boolean java.awt.image.BufferedImage.isStandard(java.awt.image.ColorModel,java.awt.image.WritableRaster)
+
+    /// public void java.awt.image.BufferedImage.addTileObserver(java.awt.image.TileObserver)
+
+    private static var addTileObserver_MethodID_4: jmethodID?
+
+    open func addTileObserver( to: TileObserver? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: to, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTileObserver", methodSig: "(Ljava/awt/image/TileObserver;)V", methodCache: &BufferedImage.addTileObserver_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func addTileObserver( _ _to: TileObserver? ) {
+        addTileObserver( to: _to )
+    }
+
+    /// public void java.awt.image.BufferedImage.coerceData(boolean)
+
+    private static var coerceData_MethodID_5: jmethodID?
+
+    open func coerceData( isAlphaPremultiplied: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(isAlphaPremultiplied ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "coerceData", methodSig: "(Z)V", methodCache: &BufferedImage.coerceData_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func coerceData( _ _isAlphaPremultiplied: Bool ) {
+        coerceData( isAlphaPremultiplied: _isAlphaPremultiplied )
+    }
+
+    /// public java.awt.image.WritableRaster java.awt.image.BufferedImage.copyData(java.awt.image.WritableRaster)
+
+    private static var copyData_MethodID_6: jmethodID?
+
+    open func copyData( raster: WritableRaster? ) -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: raster, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "copyData", methodSig: "(Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &BufferedImage.copyData_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+    open func copyData( _ _raster: WritableRaster? ) -> WritableRaster! {
+        return copyData( raster: _raster )
+    }
+
+    /// public java.awt.Graphics2D java.awt.image.BufferedImage.createGraphics()
+
+    private static var createGraphics_MethodID_7: jmethodID?
+
+    open func createGraphics() -> Graphics2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createGraphics", methodSig: "()Ljava/awt/Graphics2D;", methodCache: &BufferedImage.createGraphics_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Graphics2D( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.image.WritableRaster java.awt.image.BufferedImage.getAlphaRaster()
+
+    private static var getAlphaRaster_MethodID_8: jmethodID?
+
+    open func getAlphaRaster() -> WritableRaster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAlphaRaster", methodSig: "()Ljava/awt/image/WritableRaster;", methodCache: &BufferedImage.getAlphaRaster_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.image.ColorModel java.awt.image.BufferedImage.getColorModel()
+
+    private static var getColorModel_MethodID_9: jmethodID?
+
+    open func getColorModel() -> ColorModel! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &BufferedImage.getColorModel_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ColorModel( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.image.Raster java.awt.image.BufferedImage.getData(java.awt.Rectangle)
+
+    private static var getData_MethodID_10: jmethodID?
+
+    open func getData( rect: Rectangle? ) -> Raster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: rect, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/image/Raster;", methodCache: &BufferedImage.getData_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Raster( javaObject: __return ) : nil
+    }
+
+    open func getData( _ _rect: Rectangle? ) -> Raster! {
+        return getData( rect: _rect )
+    }
+
+    /// public java.awt.image.Raster java.awt.image.BufferedImage.getData()
+
+    private static var getData_MethodID_11: jmethodID?
+
+    open func getData() -> Raster! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "()Ljava/awt/image/Raster;", methodCache: &BufferedImage.getData_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Raster( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Graphics java.awt.image.BufferedImage.getGraphics()
+
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.image.BufferedImage.getHeight(java.awt.image.ImageObserver)
+
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.image.BufferedImage.getHeight()
+
+    private static var getHeight_MethodID_12: jmethodID?
+
+    open func getHeight() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &BufferedImage.getHeight_MethodID_12, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.image.BufferedImage.getMinTileX()
+
+    private static var getMinTileX_MethodID_13: jmethodID?
+
+    open func getMinTileX() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinTileX", methodSig: "()I", methodCache: &BufferedImage.getMinTileX_MethodID_13, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.image.BufferedImage.getMinTileY()
+
+    private static var getMinTileY_MethodID_14: jmethodID?
+
+    open func getMinTileY() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinTileY", methodSig: "()I", methodCache: &BufferedImage.getMinTileY_MethodID_14, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.image.BufferedImage.getMinX()
+
+    private static var getMinX_MethodID_15: jmethodID?
+
+    open func getMinX() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinX", methodSig: "()I", methodCache: &BufferedImage.getMinX_MethodID_15, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.image.BufferedImage.getMinY()
+
+    private static var getMinY_MethodID_16: jmethodID?
+
+    open func getMinY() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinY", methodSig: "()I", methodCache: &BufferedImage.getMinY_MethodID_16, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.image.BufferedImage.getNumXTiles()
+
+    private static var getNumXTiles_MethodID_17: jmethodID?
+
+    open func getNumXTiles() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumXTiles", methodSig: "()I", methodCache: &BufferedImage.getNumXTiles_MethodID_17, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.image.BufferedImage.getNumYTiles()
+
+    private static var getNumYTiles_MethodID_18: jmethodID?
+
+    open func getNumYTiles() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumYTiles", methodSig: "()I", methodCache: &BufferedImage.getNumYTiles_MethodID_18, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
 
     /// public java.lang.Object java.awt.image.BufferedImage.getProperty(java.lang.String)
 
-    private static var getProperty_MethodID_4: jmethodID?
+    private static var getProperty_MethodID_19: jmethodID?
 
     open func getProperty( name: String? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProperty", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &BufferedImage.getProperty_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProperty", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &BufferedImage.getProperty_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -351,183 +576,31 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     /// public java.lang.Object java.awt.image.BufferedImage.getProperty(java.lang.String,java.awt.image.ImageObserver)
 
-    /// public java.lang.String java.awt.image.BufferedImage.toString()
+    // Skipping method: false true false false false 
 
-    /// public int java.awt.image.BufferedImage.getType()
+    /// public java.lang.String[] java.awt.image.BufferedImage.getPropertyNames()
 
-    private static var getType_MethodID_5: jmethodID?
+    private static var getPropertyNames_MethodID_20: jmethodID?
 
-    open func getType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getPropertyNames() -> [String]! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getType", methodSig: "()I", methodCache: &BufferedImage.getType_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// private static native void java.awt.image.BufferedImage.initIDs()
-
-    /// public java.awt.image.ColorModel java.awt.image.BufferedImage.getColorModel()
-
-    private static var getColorModel_MethodID_6: jmethodID?
-
-    open func getColorModel() -> ColorModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorModel", methodSig: "()Ljava/awt/image/ColorModel;", methodCache: &BufferedImage.getColorModel_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ColorModel( javaObject: __return ) : nil
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyNames", methodSig: "()[Ljava/lang/String;", methodCache: &BufferedImage.getPropertyNames_MethodID_20, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [String].self, from: __return )
     }
 
-
-    /// public java.awt.image.ImageProducer java.awt.image.BufferedImage.getSource()
-
-    /// public boolean java.awt.image.BufferedImage.isAlphaPremultiplied()
-
-    private static var isAlphaPremultiplied_MethodID_7: jmethodID?
-
-    open func isAlphaPremultiplied() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAlphaPremultiplied", methodSig: "()Z", methodCache: &BufferedImage.isAlphaPremultiplied_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void java.awt.image.BufferedImage.coerceData(boolean)
-
-    private static var coerceData_MethodID_8: jmethodID?
-
-    open func coerceData( isAlphaPremultiplied: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: isAlphaPremultiplied, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "coerceData", methodSig: "(Z)V", methodCache: &BufferedImage.coerceData_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func coerceData( _ _isAlphaPremultiplied: Bool ) {
-        coerceData( isAlphaPremultiplied: _isAlphaPremultiplied )
-    }
-
-    /// public java.awt.image.WritableRaster java.awt.image.BufferedImage.getAlphaRaster()
-
-    private static var getAlphaRaster_MethodID_9: jmethodID?
-
-    open func getAlphaRaster() -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAlphaRaster", methodSig: "()Ljava/awt/image/WritableRaster;", methodCache: &BufferedImage.getAlphaRaster_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-
-    /// public int java.awt.image.BufferedImage.getMinX()
-
-    private static var getMinX_MethodID_10: jmethodID?
-
-    open func getMinX() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinX", methodSig: "()I", methodCache: &BufferedImage.getMinX_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.image.BufferedImage.getMinY()
-
-    private static var getMinY_MethodID_11: jmethodID?
-
-    open func getMinY() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinY", methodSig: "()I", methodCache: &BufferedImage.getMinY_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.awt.image.Raster java.awt.image.BufferedImage.getData()
-
-    private static var getData_MethodID_12: jmethodID?
-
-    open func getData() -> Raster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "()Ljava/awt/image/Raster;", methodCache: &BufferedImage.getData_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Raster( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.image.Raster java.awt.image.BufferedImage.getData(java.awt.Rectangle)
-
-    private static var getData_MethodID_13: jmethodID?
-
-    open func getData( rect: Rectangle? ) -> Raster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rect, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/image/Raster;", methodCache: &BufferedImage.getData_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Raster( javaObject: __return ) : nil
-    }
-
-    open func getData( _ _rect: Rectangle? ) -> Raster! {
-        return getData( rect: _rect )
-    }
-
-    /// public java.awt.image.WritableRaster java.awt.image.BufferedImage.getRaster()
-
-    private static var getRaster_MethodID_14: jmethodID?
-
-    open func getRaster() -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRaster", methodSig: "()Ljava/awt/image/WritableRaster;", methodCache: &BufferedImage.getRaster_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.image.SampleModel java.awt.image.BufferedImage.getSampleModel()
-
-    private static var getSampleModel_MethodID_15: jmethodID?
-
-    open func getSampleModel() -> SampleModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSampleModel", methodSig: "()Ljava/awt/image/SampleModel;", methodCache: &BufferedImage.getSampleModel_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SampleModel( javaObject: __return ) : nil
-    }
-
-
-    /// public void java.awt.image.BufferedImage.setData(java.awt.image.Raster)
-
-    private static var setData_MethodID_16: jmethodID?
-
-    open func setData( r: Raster? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setData", methodSig: "(Ljava/awt/image/Raster;)V", methodCache: &BufferedImage.setData_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setData( _ _r: Raster? ) {
-        setData( r: _r )
-    }
 
     /// public int java.awt.image.BufferedImage.getRGB(int,int)
 
-    private static var getRGB_MethodID_17: jmethodID?
+    private static var getRGB_MethodID_21: jmethodID?
 
     open func getRGB( x: Int, y: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGB", methodSig: "(II)I", methodCache: &BufferedImage.getRGB_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRGB", methodSig: "(II)I", methodCache: &BufferedImage.getRGB_MethodID_21, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getRGB( _ _x: Int, _ _y: Int ) -> Int {
@@ -536,133 +609,81 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     /// public int[] java.awt.image.BufferedImage.getRGB(int,int,int,int,int[],int,int)
 
-    private static var getRGB_MethodID_18: jmethodID?
+    private static var getRGB_MethodID_22: jmethodID?
 
     open func getRGB( startX: Int, startY: Int, w: Int, h: Int, rgbArray: [Int32]?, offset: Int, scansize: Int ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startX, locals: &__locals )
-        __args[1] = JNIType.toJava( value: startY, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(startX) )
+        __args[1] = jvalue( i: jint(startY) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
         __args[4] = JNIType.toJava( value: rgbArray, locals: &__locals )
-        __args[5] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[6] = JNIType.toJava( value: scansize, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRGB", methodSig: "(IIII[III)[I", methodCache: &BufferedImage.getRGB_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        __args[5] = jvalue( i: jint(offset) )
+        __args[6] = jvalue( i: jint(scansize) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRGB", methodSig: "(IIII[III)[I", methodCache: &BufferedImage.getRGB_MethodID_22, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
     }
 
     open func getRGB( _ _startX: Int, _ _startY: Int, _ _w: Int, _ _h: Int, _ _rgbArray: [Int32]?, _ _offset: Int, _ _scansize: Int ) -> [Int32]! {
         return getRGB( startX: _startX, startY: _startY, w: _w, h: _h, rgbArray: _rgbArray, offset: _offset, scansize: _scansize )
     }
 
-    /// public int java.awt.image.BufferedImage.getTransparency()
+    /// public java.awt.image.WritableRaster java.awt.image.BufferedImage.getRaster()
 
-    private static var getTransparency_MethodID_19: jmethodID?
+    private static var getRaster_MethodID_23: jmethodID?
 
-    open func getTransparency() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getRaster() -> WritableRaster! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &BufferedImage.getTransparency_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.awt.Graphics2D java.awt.image.BufferedImage.createGraphics()
-
-    private static var createGraphics_MethodID_20: jmethodID?
-
-    open func createGraphics() -> Graphics2D! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createGraphics", methodSig: "()Ljava/awt/Graphics2D;", methodCache: &BufferedImage.createGraphics_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRaster", methodSig: "()Ljava/awt/image/WritableRaster;", methodCache: &BufferedImage.getRaster_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Graphics2D( javaObject: __return ) : nil
+        return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
 
 
-    /// public java.awt.Graphics java.awt.image.BufferedImage.getGraphics()
+    /// public java.awt.image.SampleModel java.awt.image.BufferedImage.getSampleModel()
 
-    /// public int java.awt.image.BufferedImage.getWidth()
+    private static var getSampleModel_MethodID_24: jmethodID?
 
-    private static var getWidth_MethodID_21: jmethodID?
-
-    open func getWidth() -> Int {
+    open func getSampleModel() -> SampleModel! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &BufferedImage.getWidth_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSampleModel", methodSig: "()Ljava/awt/image/SampleModel;", methodCache: &BufferedImage.getSampleModel_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SampleModel( javaObject: __return ) : nil
     }
 
 
-    /// public int java.awt.image.BufferedImage.getWidth(java.awt.image.ImageObserver)
+    /// public java.awt.image.ImageProducer java.awt.image.BufferedImage.getSource()
 
-    /// public int java.awt.image.BufferedImage.getHeight()
+    // Skipping method: false true false false false 
 
-    private static var getHeight_MethodID_22: jmethodID?
+    /// public java.util.Vector java.awt.image.BufferedImage.getSources()
 
-    open func getHeight() -> Int {
+    private static var getSources_MethodID_25: jmethodID?
+
+    open func getSources() -> java_util.Vector! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeight", methodSig: "()I", methodCache: &BufferedImage.getHeight_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSources", methodSig: "()Ljava/util/Vector;", methodCache: &BufferedImage.getSources_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.Vector( javaObject: __return ) : nil
     }
 
-
-    /// public int java.awt.image.BufferedImage.getHeight(java.awt.image.ImageObserver)
-
-    /// private static boolean java.awt.image.BufferedImage.isStandard(java.awt.image.ColorModel,java.awt.image.WritableRaster)
-
-    /// public synchronized void java.awt.image.BufferedImage.setRGB(int,int,int)
-
-    private static var setRGB_MethodID_23: jmethodID?
-
-    open func setRGB( x: Int, y: Int, rgb: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: rgb, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRGB", methodSig: "(III)V", methodCache: &BufferedImage.setRGB_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func setRGB( _ _x: Int, _ _y: Int, _ _rgb: Int ) {
-        setRGB( x: _x, y: _y, rgb: _rgb )
-    }
-
-    /// public void java.awt.image.BufferedImage.setRGB(int,int,int,int,int[],int,int)
-
-    private static var setRGB_MethodID_24: jmethodID?
-
-    open func setRGB( startX: Int, startY: Int, w: Int, h: Int, rgbArray: [Int32]?, offset: Int, scansize: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startX, locals: &__locals )
-        __args[1] = JNIType.toJava( value: startY, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        __args[4] = JNIType.toJava( value: rgbArray, locals: &__locals )
-        __args[5] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[6] = JNIType.toJava( value: scansize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRGB", methodSig: "(IIII[III)V", methodCache: &BufferedImage.setRGB_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open func setRGB( _ _startX: Int, _ _startY: Int, _ _w: Int, _ _h: Int, _ _rgbArray: [Int32]?, _ _offset: Int, _ _scansize: Int ) {
-        setRGB( startX: _startX, startY: _startY, w: _w, h: _h, rgbArray: _rgbArray, offset: _offset, scansize: _scansize )
-    }
 
     /// public java.awt.image.BufferedImage java.awt.image.BufferedImage.getSubimage(int,int,int,int)
 
-    private static var getSubimage_MethodID_25: jmethodID?
+    private static var getSubimage_MethodID_26: jmethodID?
 
     open func getSubimage( x: Int, y: Int, w: Int, h: Int ) -> BufferedImage! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: w, locals: &__locals )
-        __args[3] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSubimage", methodSig: "(IIII)Ljava/awt/image/BufferedImage;", methodCache: &BufferedImage.getSubimage_MethodID_25, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSubimage", methodSig: "(IIII)Ljava/awt/image/BufferedImage;", methodCache: &BufferedImage.getSubimage_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BufferedImage( javaObject: __return ) : nil
     }
@@ -671,137 +692,16 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
         return getSubimage( x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public java.util.Vector java.awt.image.BufferedImage.getSources()
-
-    private static var getSources_MethodID_26: jmethodID?
-
-    open func getSources() -> java_util.Vector! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSources", methodSig: "()Ljava/util/Vector;", methodCache: &BufferedImage.getSources_MethodID_26, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.Vector( javaObject: __return ) : nil
-    }
-
-
-    /// public java.lang.String[] java.awt.image.BufferedImage.getPropertyNames()
-
-    private static var getPropertyNames_MethodID_27: jmethodID?
-
-    open func getPropertyNames() -> [String]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyNames", methodSig: "()[Ljava/lang/String;", methodCache: &BufferedImage.getPropertyNames_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [String](), from: __return )
-    }
-
-
-    /// public int java.awt.image.BufferedImage.getNumXTiles()
-
-    private static var getNumXTiles_MethodID_28: jmethodID?
-
-    open func getNumXTiles() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumXTiles", methodSig: "()I", methodCache: &BufferedImage.getNumXTiles_MethodID_28, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.image.BufferedImage.getNumYTiles()
-
-    private static var getNumYTiles_MethodID_29: jmethodID?
-
-    open func getNumYTiles() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNumYTiles", methodSig: "()I", methodCache: &BufferedImage.getNumYTiles_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.image.BufferedImage.getMinTileX()
-
-    private static var getMinTileX_MethodID_30: jmethodID?
-
-    open func getMinTileX() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinTileX", methodSig: "()I", methodCache: &BufferedImage.getMinTileX_MethodID_30, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.image.BufferedImage.getMinTileY()
-
-    private static var getMinTileY_MethodID_31: jmethodID?
-
-    open func getMinTileY() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinTileY", methodSig: "()I", methodCache: &BufferedImage.getMinTileY_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.image.BufferedImage.getTileWidth()
-
-    private static var getTileWidth_MethodID_32: jmethodID?
-
-    open func getTileWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileWidth", methodSig: "()I", methodCache: &BufferedImage.getTileWidth_MethodID_32, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.image.BufferedImage.getTileHeight()
-
-    private static var getTileHeight_MethodID_33: jmethodID?
-
-    open func getTileHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileHeight", methodSig: "()I", methodCache: &BufferedImage.getTileHeight_MethodID_33, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.image.BufferedImage.getTileGridXOffset()
-
-    private static var getTileGridXOffset_MethodID_34: jmethodID?
-
-    open func getTileGridXOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileGridXOffset", methodSig: "()I", methodCache: &BufferedImage.getTileGridXOffset_MethodID_34, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int java.awt.image.BufferedImage.getTileGridYOffset()
-
-    private static var getTileGridYOffset_MethodID_35: jmethodID?
-
-    open func getTileGridYOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileGridYOffset", methodSig: "()I", methodCache: &BufferedImage.getTileGridYOffset_MethodID_35, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public java.awt.image.Raster java.awt.image.BufferedImage.getTile(int,int)
 
-    private static var getTile_MethodID_36: jmethodID?
+    private static var getTile_MethodID_27: jmethodID?
 
     open func getTile( tileX: Int, tileY: Int ) -> Raster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tileX, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tileY, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTile", methodSig: "(II)Ljava/awt/image/Raster;", methodCache: &BufferedImage.getTile_MethodID_36, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tileX) )
+        __args[1] = jvalue( i: jint(tileY) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTile", methodSig: "(II)Ljava/awt/image/Raster;", methodCache: &BufferedImage.getTile_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Raster( javaObject: __return ) : nil
     }
@@ -810,104 +710,104 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
         return getTile( tileX: _tileX, tileY: _tileY )
     }
 
-    /// public java.awt.image.WritableRaster java.awt.image.BufferedImage.copyData(java.awt.image.WritableRaster)
+    /// public int java.awt.image.BufferedImage.getTileGridXOffset()
 
-    private static var copyData_MethodID_37: jmethodID?
+    private static var getTileGridXOffset_MethodID_28: jmethodID?
 
-    open func copyData( raster: WritableRaster? ) -> WritableRaster! {
+    open func getTileGridXOffset() -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileGridXOffset", methodSig: "()I", methodCache: &BufferedImage.getTileGridXOffset_MethodID_28, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.image.BufferedImage.getTileGridYOffset()
+
+    private static var getTileGridYOffset_MethodID_29: jmethodID?
+
+    open func getTileGridYOffset() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: raster, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "copyData", methodSig: "(Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;", methodCache: &BufferedImage.copyData_MethodID_37, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? WritableRaster( javaObject: __return ) : nil
-    }
-
-    open func copyData( _ _raster: WritableRaster? ) -> WritableRaster! {
-        return copyData( raster: _raster )
-    }
-
-    /// public void java.awt.image.BufferedImage.addTileObserver(java.awt.image.TileObserver)
-
-    private static var addTileObserver_MethodID_38: jmethodID?
-
-    open func addTileObserver( to: TileObserver? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileGridYOffset", methodSig: "()I", methodCache: &BufferedImage.getTileGridYOffset_MethodID_29, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.image.BufferedImage.getTileHeight()
+
+    private static var getTileHeight_MethodID_30: jmethodID?
+
+    open func getTileHeight() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: to, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTileObserver", methodSig: "(Ljava/awt/image/TileObserver;)V", methodCache: &BufferedImage.addTileObserver_MethodID_38, args: &__args, locals: &__locals )
-    }
-
-    open func addTileObserver( _ _to: TileObserver? ) {
-        addTileObserver( to: _to )
-    }
-
-    /// public void java.awt.image.BufferedImage.removeTileObserver(java.awt.image.TileObserver)
-
-    private static var removeTileObserver_MethodID_39: jmethodID?
-
-    open func removeTileObserver( to: TileObserver? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileHeight", methodSig: "()I", methodCache: &BufferedImage.getTileHeight_MethodID_30, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.image.BufferedImage.getTileWidth()
+
+    private static var getTileWidth_MethodID_31: jmethodID?
+
+    open func getTileWidth() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: to, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeTileObserver", methodSig: "(Ljava/awt/image/TileObserver;)V", methodCache: &BufferedImage.removeTileObserver_MethodID_39, args: &__args, locals: &__locals )
-    }
-
-    open func removeTileObserver( _ _to: TileObserver? ) {
-        removeTileObserver( to: _to )
-    }
-
-    /// public boolean java.awt.image.BufferedImage.isTileWritable(int,int)
-
-    private static var isTileWritable_MethodID_40: jmethodID?
-
-    open func isTileWritable( tileX: Int, tileY: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tileX, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tileY, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTileWritable", methodSig: "(II)Z", methodCache: &BufferedImage.isTileWritable_MethodID_40, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isTileWritable( _ _tileX: Int, _ _tileY: Int ) -> Bool {
-        return isTileWritable( tileX: _tileX, tileY: _tileY )
-    }
-
-    /// public java.awt.Point[] java.awt.image.BufferedImage.getWritableTileIndices()
-
-    private static var getWritableTileIndices_MethodID_41: jmethodID?
-
-    open func getWritableTileIndices() -> [Point]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWritableTileIndices", methodSig: "()[Ljava/awt/Point;", methodCache: &BufferedImage.getWritableTileIndices_MethodID_41, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Point](), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTileWidth", methodSig: "()I", methodCache: &BufferedImage.getTileWidth_MethodID_31, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public boolean java.awt.image.BufferedImage.hasTileWriters()
+    /// public int java.awt.image.BufferedImage.getTransparency()
 
-    private static var hasTileWriters_MethodID_42: jmethodID?
+    private static var getTransparency_MethodID_32: jmethodID?
 
-    open func hasTileWriters() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getTransparency() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "hasTileWriters", methodSig: "()Z", methodCache: &BufferedImage.hasTileWriters_MethodID_42, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTransparency", methodSig: "()I", methodCache: &BufferedImage.getTransparency_MethodID_32, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.image.BufferedImage.getType()
+
+    private static var getType_MethodID_33: jmethodID?
+
+    open func getType() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getType", methodSig: "()I", methodCache: &BufferedImage.getType_MethodID_33, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int java.awt.image.BufferedImage.getWidth(java.awt.image.ImageObserver)
+
+    // Skipping method: false true false false false 
+
+    /// public int java.awt.image.BufferedImage.getWidth()
+
+    private static var getWidth_MethodID_34: jmethodID?
+
+    open func getWidth() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &BufferedImage.getWidth_MethodID_34, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
     /// public java.awt.image.WritableRaster java.awt.image.BufferedImage.getWritableTile(int,int)
 
-    private static var getWritableTile_MethodID_43: jmethodID?
+    private static var getWritableTile_MethodID_35: jmethodID?
 
     open func getWritableTile( tileX: Int, tileY: Int ) -> WritableRaster! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tileX, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tileY, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWritableTile", methodSig: "(II)Ljava/awt/image/WritableRaster;", methodCache: &BufferedImage.getWritableTile_MethodID_43, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tileX) )
+        __args[1] = jvalue( i: jint(tileY) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWritableTile", methodSig: "(II)Ljava/awt/image/WritableRaster;", methodCache: &BufferedImage.getWritableTile_MethodID_35, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? WritableRaster( javaObject: __return ) : nil
     }
@@ -916,21 +816,146 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
         return getWritableTile( tileX: _tileX, tileY: _tileY )
     }
 
+    /// public java.awt.Point[] java.awt.image.BufferedImage.getWritableTileIndices()
+
+    private static var getWritableTileIndices_MethodID_36: jmethodID?
+
+    open func getWritableTileIndices() -> [Point]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWritableTileIndices", methodSig: "()[Ljava/awt/Point;", methodCache: &BufferedImage.getWritableTileIndices_MethodID_36, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Point].self, from: __return )
+    }
+
+
+    /// public boolean java.awt.image.BufferedImage.hasTileWriters()
+
+    private static var hasTileWriters_MethodID_37: jmethodID?
+
+    open func hasTileWriters() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "hasTileWriters", methodSig: "()Z", methodCache: &BufferedImage.hasTileWriters_MethodID_37, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.image.BufferedImage.isAlphaPremultiplied()
+
+    private static var isAlphaPremultiplied_MethodID_38: jmethodID?
+
+    open func isAlphaPremultiplied() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAlphaPremultiplied", methodSig: "()Z", methodCache: &BufferedImage.isAlphaPremultiplied_MethodID_38, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean java.awt.image.BufferedImage.isTileWritable(int,int)
+
+    private static var isTileWritable_MethodID_39: jmethodID?
+
+    open func isTileWritable( tileX: Int, tileY: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tileX) )
+        __args[1] = jvalue( i: jint(tileY) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTileWritable", methodSig: "(II)Z", methodCache: &BufferedImage.isTileWritable_MethodID_39, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func isTileWritable( _ _tileX: Int, _ _tileY: Int ) -> Bool {
+        return isTileWritable( tileX: _tileX, tileY: _tileY )
+    }
+
     /// public void java.awt.image.BufferedImage.releaseWritableTile(int,int)
 
-    private static var releaseWritableTile_MethodID_44: jmethodID?
+    private static var releaseWritableTile_MethodID_40: jmethodID?
 
     open func releaseWritableTile( tileX: Int, tileY: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tileX, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tileY, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "releaseWritableTile", methodSig: "(II)V", methodCache: &BufferedImage.releaseWritableTile_MethodID_44, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tileX) )
+        __args[1] = jvalue( i: jint(tileY) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "releaseWritableTile", methodSig: "(II)V", methodCache: &BufferedImage.releaseWritableTile_MethodID_40, args: &__args, locals: &__locals )
     }
 
     open func releaseWritableTile( _ _tileX: Int, _ _tileY: Int ) {
         releaseWritableTile( tileX: _tileX, tileY: _tileY )
     }
+
+    /// public void java.awt.image.BufferedImage.removeTileObserver(java.awt.image.TileObserver)
+
+    private static var removeTileObserver_MethodID_41: jmethodID?
+
+    open func removeTileObserver( to: TileObserver? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: to, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeTileObserver", methodSig: "(Ljava/awt/image/TileObserver;)V", methodCache: &BufferedImage.removeTileObserver_MethodID_41, args: &__args, locals: &__locals )
+    }
+
+    open func removeTileObserver( _ _to: TileObserver? ) {
+        removeTileObserver( to: _to )
+    }
+
+    /// public void java.awt.image.BufferedImage.setData(java.awt.image.Raster)
+
+    private static var setData_MethodID_42: jmethodID?
+
+    open func setData( r: Raster? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setData", methodSig: "(Ljava/awt/image/Raster;)V", methodCache: &BufferedImage.setData_MethodID_42, args: &__args, locals: &__locals )
+    }
+
+    open func setData( _ _r: Raster? ) {
+        setData( r: _r )
+    }
+
+    /// public synchronized void java.awt.image.BufferedImage.setRGB(int,int,int)
+
+    private static var setRGB_MethodID_43: jmethodID?
+
+    open func setRGB( x: Int, y: Int, rgb: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(rgb) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRGB", methodSig: "(III)V", methodCache: &BufferedImage.setRGB_MethodID_43, args: &__args, locals: &__locals )
+    }
+
+    open func setRGB( _ _x: Int, _ _y: Int, _ _rgb: Int ) {
+        setRGB( x: _x, y: _y, rgb: _rgb )
+    }
+
+    /// public void java.awt.image.BufferedImage.setRGB(int,int,int,int,int[],int,int)
+
+    private static var setRGB_MethodID_44: jmethodID?
+
+    open func setRGB( startX: Int, startY: Int, w: Int, h: Int, rgbArray: [Int32]?, offset: Int, scansize: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(startX) )
+        __args[1] = jvalue( i: jint(startY) )
+        __args[2] = jvalue( i: jint(w) )
+        __args[3] = jvalue( i: jint(h) )
+        __args[4] = JNIType.toJava( value: rgbArray, locals: &__locals )
+        __args[5] = jvalue( i: jint(offset) )
+        __args[6] = jvalue( i: jint(scansize) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRGB", methodSig: "(IIII[III)V", methodCache: &BufferedImage.setRGB_MethodID_44, args: &__args, locals: &__locals )
+    }
+
+    open func setRGB( _ _startX: Int, _ _startY: Int, _ _w: Int, _ _h: Int, _ _rgbArray: [Int32]?, _ _offset: Int, _ _scansize: Int ) {
+        setRGB( startX: _startX, startY: _startY, w: _w, h: _h, rgbArray: _rgbArray, offset: _offset, scansize: _scansize )
+    }
+
+    /// public java.lang.String java.awt.image.BufferedImage.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

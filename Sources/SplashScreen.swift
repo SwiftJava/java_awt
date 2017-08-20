@@ -17,176 +17,189 @@ open class SplashScreen: java_swift.JavaObject {
 
     private static var SplashScreenJNIClass: jclass?
 
-    /// private java.awt.image.BufferedImage java.awt.SplashScreen.image
+    /// static final boolean java.awt.SplashScreen.$assertionsDisabled
 
-    /// private final long java.awt.SplashScreen.splashPtr
-
-    /// private static boolean java.awt.SplashScreen.wasClosed
-
-    /// private java.net.URL java.awt.SplashScreen.imageURL
-
-    /// private static java.awt.SplashScreen java.awt.SplashScreen.theInstance
+    // Skipping field: true false false false false false 
 
     /// private static final sun.util.logging.PlatformLogger java.awt.SplashScreen.log
 
-    /// static final boolean java.awt.SplashScreen.$assertionsDisabled
+    /// private static java.awt.SplashScreen java.awt.SplashScreen.theInstance
+
+    /// private static boolean java.awt.SplashScreen.wasClosed
+
+    /// private java.awt.image.BufferedImage java.awt.SplashScreen.image
+
+    /// private java.net.URL java.awt.SplashScreen.imageURL
+
+    /// private final long java.awt.SplashScreen.splashPtr
 
     /// java.awt.SplashScreen(long)
 
-    /// public void java.awt.SplashScreen.update() throws java.lang.IllegalStateException
+    // Skipping init: true false false 
 
-    private static var update_MethodID_1: jmethodID?
+    /// private static native void java.awt.SplashScreen._close(long)
 
-    open func update() throws /* java.lang.IllegalStateException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// private static native java.awt.Rectangle java.awt.SplashScreen._getBounds(long)
+
+    /// private static native java.lang.String java.awt.SplashScreen._getImageFileName(long)
+
+    /// private static native java.lang.String java.awt.SplashScreen._getImageJarName(long)
+
+    /// private static native long java.awt.SplashScreen._getInstance()
+
+    /// private static native float java.awt.SplashScreen._getScaleFactor(long)
+
+    /// private static native boolean java.awt.SplashScreen._isVisible(long)
+
+    /// private static native boolean java.awt.SplashScreen._setImageData(long,byte[])
+
+    /// private static native void java.awt.SplashScreen._update(long,int[],int,int,int,int,int)
+
+    /// public static java.awt.SplashScreen java.awt.SplashScreen.getSplashScreen()
+
+    private static var getSplashScreen_MethodID_1: jmethodID?
+
+    open class func getSplashScreen() -> SplashScreen! {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "()V", methodCache: &SplashScreen.update_MethodID_1, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.IllegalStateException( javaObject: throwable )
-        }
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/SplashScreen", classCache: &SplashScreenJNIClass, methodName: "getSplashScreen", methodSig: "()Ljava/awt/SplashScreen;", methodCache: &getSplashScreen_MethodID_1, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SplashScreen( javaObject: __return ) : nil
     }
 
+
+    /// static void java.awt.SplashScreen.markClosed()
+
+    // Skipping method: true false false false false 
+
+    /// private void java.awt.SplashScreen.checkVisible()
 
     /// public void java.awt.SplashScreen.close() throws java.lang.IllegalStateException
 
     private static var close_MethodID_2: jmethodID?
 
     open func close() throws /* java.lang.IllegalStateException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "close", methodSig: "()V", methodCache: &SplashScreen.close_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_lang.IllegalStateException( javaObject: throwable )
         }
-    }
-
-
-    /// public java.awt.Dimension java.awt.SplashScreen.getSize() throws java.lang.IllegalStateException
-
-    private static var getSize_MethodID_3: jmethodID?
-
-    open func getSize() throws /* java.lang.IllegalStateException */ -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &SplashScreen.getSize_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.IllegalStateException( javaObject: throwable )
-        }
-        return __return != nil ? Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// static void java.awt.SplashScreen.markClosed()
-
-    /// public void java.awt.SplashScreen.setImageURL(java.net.URL) throws java.lang.NullPointerException,java.io.IOException,java.lang.IllegalStateException
-
-    private static var setImageURL_MethodID_4: jmethodID?
-
-    open func setImageURL( arg0: /* java.net.URL */ UnclassedObject? ) throws /* java.lang.NullPointerException, java.io.IOException, java.lang.IllegalStateException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImageURL", methodSig: "(Ljava/net/URL;)V", methodCache: &SplashScreen.setImageURL_MethodID_4, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.NullPointerException( javaObject: throwable )
-        }
-    }
-
-    open func setImageURL( _ _arg0: /* java.net.URL */ UnclassedObject? ) throws /* java.lang.NullPointerException, java.io.IOException, java.lang.IllegalStateException */ {
-        try setImageURL( arg0: _arg0 )
-    }
-
-    /// private void java.awt.SplashScreen.checkVisible()
-
-    /// public java.net.URL java.awt.SplashScreen.getImageURL() throws java.lang.IllegalStateException
-
-    private static var getImageURL_MethodID_5: jmethodID?
-
-    open func getImageURL() throws /* java.lang.IllegalStateException */ -> /* java.net.URL */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImageURL", methodSig: "()Ljava/net/URL;", methodCache: &SplashScreen.getImageURL_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.IllegalStateException( javaObject: throwable )
-        }
-        return __return != nil ? /* java.net.URL */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-
-    /// private static native void java.awt.SplashScreen._update(long,int[],int,int,int,int,int)
-
-    /// private static native boolean java.awt.SplashScreen._isVisible(long)
-
-    /// private static native java.awt.Rectangle java.awt.SplashScreen._getBounds(long)
-
-    /// private static native long java.awt.SplashScreen._getInstance()
-
-    /// private static native void java.awt.SplashScreen._close(long)
-
-    /// private static native java.lang.String java.awt.SplashScreen._getImageFileName(long)
-
-    /// private static native java.lang.String java.awt.SplashScreen._getImageJarName(long)
-
-    /// private static native boolean java.awt.SplashScreen._setImageData(long,byte[])
-
-    /// private static native float java.awt.SplashScreen._getScaleFactor(long)
-
-    /// public java.awt.Rectangle java.awt.SplashScreen.getBounds() throws java.lang.IllegalStateException
-
-    private static var getBounds_MethodID_6: jmethodID?
-
-    open func getBounds() throws /* java.lang.IllegalStateException */ -> Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &SplashScreen.getBounds_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.IllegalStateException( javaObject: throwable )
-        }
-        return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
 
 
     /// public java.awt.Graphics2D java.awt.SplashScreen.createGraphics() throws java.lang.IllegalStateException
 
-    private static var createGraphics_MethodID_7: jmethodID?
+    private static var createGraphics_MethodID_3: jmethodID?
 
     open func createGraphics() throws /* java.lang.IllegalStateException */ -> Graphics2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createGraphics", methodSig: "()Ljava/awt/Graphics2D;", methodCache: &SplashScreen.createGraphics_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createGraphics", methodSig: "()Ljava/awt/Graphics2D;", methodCache: &SplashScreen.createGraphics_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_lang.IllegalStateException( javaObject: throwable )
         }
         return __return != nil ? Graphics2D( javaObject: __return ) : nil
     }
 
 
-    /// public boolean java.awt.SplashScreen.isVisible()
+    /// public java.awt.Rectangle java.awt.SplashScreen.getBounds() throws java.lang.IllegalStateException
 
-    private static var isVisible_MethodID_8: jmethodID?
+    private static var getBounds_MethodID_4: jmethodID?
 
-    open func isVisible() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getBounds() throws /* java.lang.IllegalStateException */ -> Rectangle! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVisible", methodSig: "()Z", methodCache: &SplashScreen.isVisible_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &SplashScreen.getBounds_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.IllegalStateException( javaObject: throwable )
+        }
+        return __return != nil ? Rectangle( javaObject: __return ) : nil
     }
 
 
-    /// public static java.awt.SplashScreen java.awt.SplashScreen.getSplashScreen()
+    /// public java.net.URL java.awt.SplashScreen.getImageURL() throws java.lang.IllegalStateException
 
-    private static var getSplashScreen_MethodID_9: jmethodID?
+    private static var getImageURL_MethodID_5: jmethodID?
 
-    open class func getSplashScreen() -> SplashScreen! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getImageURL() throws /* java.lang.IllegalStateException */ -> /* class java.net.URL */ UnavailableObject! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "java/awt/SplashScreen", classCache: &SplashScreenJNIClass, methodName: "getSplashScreen", methodSig: "()Ljava/awt/SplashScreen;", methodCache: &getSplashScreen_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImageURL", methodSig: "()Ljava/net/URL;", methodCache: &SplashScreen.getImageURL_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SplashScreen( javaObject: __return ) : nil
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.IllegalStateException( javaObject: throwable )
+        }
+        return __return != nil ? /* class java.net.URL */ UnavailableObject( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Dimension java.awt.SplashScreen.getSize() throws java.lang.IllegalStateException
+
+    private static var getSize_MethodID_6: jmethodID?
+
+    open func getSize() throws /* java.lang.IllegalStateException */ -> Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &SplashScreen.getSize_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.IllegalStateException( javaObject: throwable )
+        }
+        return __return != nil ? Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public boolean java.awt.SplashScreen.isVisible()
+
+    private static var isVisible_MethodID_7: jmethodID?
+
+    open func isVisible() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVisible", methodSig: "()Z", methodCache: &SplashScreen.isVisible_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public void java.awt.SplashScreen.setImageURL(java.net.URL) throws java.lang.NullPointerException,java.io.IOException,java.lang.IllegalStateException
+
+    private static var setImageURL_MethodID_8: jmethodID?
+
+    open func setImageURL( arg0: /* class java.net.URL */ UnavailableObject? ) throws /* java.lang.NullPointerException, java.io.IOException, java.lang.IllegalStateException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImageURL", methodSig: "(Ljava/net/URL;)V", methodCache: &SplashScreen.setImageURL_MethodID_8, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.NullPointerException( javaObject: throwable )
+        }
+    }
+
+    open func setImageURL( _ _arg0: /* class java.net.URL */ UnavailableObject? ) throws /* java.lang.NullPointerException, java.io.IOException, java.lang.IllegalStateException */ {
+        try setImageURL( arg0: _arg0 )
+    }
+
+    /// public void java.awt.SplashScreen.update() throws java.lang.IllegalStateException
+
+    private static var update_MethodID_9: jmethodID?
+
+    open func update() throws /* java.lang.IllegalStateException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "()V", methodCache: &SplashScreen.update_MethodID_9, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.IllegalStateException( javaObject: throwable )
+        }
     }
 
 

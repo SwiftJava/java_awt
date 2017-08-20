@@ -16,17 +16,6 @@ open class MouseWheelEvent: MouseEvent {
 
     private static var MouseWheelEventJNIClass: jclass?
 
-    /// public static final int java.awt.event.MouseWheelEvent.WHEEL_UNIT_SCROLL
-
-    private static var WHEEL_UNIT_SCROLL_FieldID: jfieldID?
-
-    open static var WHEEL_UNIT_SCROLL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WHEEL_UNIT_SCROLL", fieldType: "I", fieldCache: &WHEEL_UNIT_SCROLL_FieldID, className: "java/awt/event/MouseWheelEvent", classCache: &MouseWheelEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int java.awt.event.MouseWheelEvent.WHEEL_BLOCK_SCROLL
 
     private static var WHEEL_BLOCK_SCROLL_FieldID: jfieldID?
@@ -34,152 +23,338 @@ open class MouseWheelEvent: MouseEvent {
     open static var WHEEL_BLOCK_SCROLL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WHEEL_BLOCK_SCROLL", fieldType: "I", fieldCache: &WHEEL_BLOCK_SCROLL_FieldID, className: "java/awt/event/MouseWheelEvent", classCache: &MouseWheelEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// int java.awt.event.MouseWheelEvent.scrollType
+    /// public static final int java.awt.event.MouseWheelEvent.WHEEL_UNIT_SCROLL
 
-    /// int java.awt.event.MouseWheelEvent.scrollAmount
+    private static var WHEEL_UNIT_SCROLL_FieldID: jfieldID?
 
-    /// int java.awt.event.MouseWheelEvent.wheelRotation
-
-    /// double java.awt.event.MouseWheelEvent.preciseWheelRotation
+    open static var WHEEL_UNIT_SCROLL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WHEEL_UNIT_SCROLL", fieldType: "I", fieldCache: &WHEEL_UNIT_SCROLL_FieldID, className: "java/awt/event/MouseWheelEvent", classCache: &MouseWheelEventJNIClass )
+            return Int(__value)
+        }
+    }
 
     /// private static final long java.awt.event.MouseWheelEvent.serialVersionUID
 
-    /// public static final int java.awt.event.MouseEvent.MOUSE_FIRST
+    /// double java.awt.event.MouseWheelEvent.preciseWheelRotation
 
-    /// public static final int java.awt.event.MouseEvent.MOUSE_LAST
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.event.MouseEvent.MOUSE_CLICKED
+    /// int java.awt.event.MouseWheelEvent.scrollAmount
 
-    /// public static final int java.awt.event.MouseEvent.MOUSE_PRESSED
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.event.MouseEvent.MOUSE_RELEASED
+    /// int java.awt.event.MouseWheelEvent.scrollType
 
-    /// public static final int java.awt.event.MouseEvent.MOUSE_MOVED
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.event.MouseEvent.MOUSE_ENTERED
+    /// int java.awt.event.MouseWheelEvent.wheelRotation
 
-    /// public static final int java.awt.event.MouseEvent.MOUSE_EXITED
-
-    /// public static final int java.awt.event.MouseEvent.MOUSE_DRAGGED
-
-    /// public static final int java.awt.event.MouseEvent.MOUSE_WHEEL
-
-    /// public static final int java.awt.event.MouseEvent.NOBUTTON
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.event.MouseEvent.BUTTON1
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.event.MouseEvent.BUTTON2
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.event.MouseEvent.BUTTON3
 
-    /// int java.awt.event.MouseEvent.x
+    // Skipping field: false true false false false false 
 
-    /// int java.awt.event.MouseEvent.y
+    /// public static final int java.awt.event.MouseEvent.MOUSE_CLICKED
 
-    /// private int java.awt.event.MouseEvent.xAbs
+    // Skipping field: false true false false false false 
 
-    /// private int java.awt.event.MouseEvent.yAbs
+    /// public static final int java.awt.event.MouseEvent.MOUSE_DRAGGED
 
-    /// int java.awt.event.MouseEvent.clickCount
+    // Skipping field: false true false false false false 
 
-    /// int java.awt.event.MouseEvent.button
+    /// public static final int java.awt.event.MouseEvent.MOUSE_ENTERED
 
-    /// boolean java.awt.event.MouseEvent.popupTrigger
+    // Skipping field: false true false false false false 
 
-    /// private static final long java.awt.event.MouseEvent.serialVersionUID
+    /// public static final int java.awt.event.MouseEvent.MOUSE_EXITED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.MouseEvent.MOUSE_FIRST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.MouseEvent.MOUSE_LAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.MouseEvent.MOUSE_MOVED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.MouseEvent.MOUSE_PRESSED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.MouseEvent.MOUSE_RELEASED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.MouseEvent.MOUSE_WHEEL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.MouseEvent.NOBUTTON
+
+    // Skipping field: false true false false false false 
 
     /// private static int java.awt.event.MouseEvent.cachedNumberOfButtons
 
+    /// private static final long java.awt.event.MouseEvent.serialVersionUID
+
+    /// int java.awt.event.MouseEvent.button
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.event.MouseEvent.clickCount
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.event.MouseEvent.popupTrigger
+
+    // Skipping field: true false false false false false 
+
     /// private transient boolean java.awt.event.MouseEvent.shouldExcludeButtonFromExtModifiers
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.event.InputEvent.logger
+    /// int java.awt.event.MouseEvent.x
 
-    /// public static final int java.awt.event.InputEvent.SHIFT_MASK
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.event.InputEvent.CTRL_MASK
+    /// private int java.awt.event.MouseEvent.xAbs
 
-    /// public static final int java.awt.event.InputEvent.META_MASK
+    /// int java.awt.event.MouseEvent.y
 
-    /// public static final int java.awt.event.InputEvent.ALT_MASK
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.event.InputEvent.ALT_GRAPH_MASK
-
-    /// public static final int java.awt.event.InputEvent.BUTTON1_MASK
-
-    /// public static final int java.awt.event.InputEvent.BUTTON2_MASK
-
-    /// public static final int java.awt.event.InputEvent.BUTTON3_MASK
-
-    /// public static final int java.awt.event.InputEvent.SHIFT_DOWN_MASK
-
-    /// public static final int java.awt.event.InputEvent.CTRL_DOWN_MASK
-
-    /// public static final int java.awt.event.InputEvent.META_DOWN_MASK
+    /// private int java.awt.event.MouseEvent.yAbs
 
     /// public static final int java.awt.event.InputEvent.ALT_DOWN_MASK
 
-    /// public static final int java.awt.event.InputEvent.BUTTON1_DOWN_MASK
-
-    /// public static final int java.awt.event.InputEvent.BUTTON2_DOWN_MASK
-
-    /// public static final int java.awt.event.InputEvent.BUTTON3_DOWN_MASK
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.event.InputEvent.ALT_GRAPH_DOWN_MASK
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.ALT_GRAPH_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.ALT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON1_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON1_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON2_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON2_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON3_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON3_MASK
+
+    // Skipping field: false true false false false false 
+
     /// private static final int[] java.awt.event.InputEvent.BUTTON_DOWN_MASK
+
+    /// public static final int java.awt.event.InputEvent.CTRL_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.CTRL_MASK
+
+    // Skipping field: false true false false false false 
 
     /// static final int java.awt.event.InputEvent.FIRST_HIGH_BIT
 
-    /// static final int java.awt.event.InputEvent.JDK_1_3_MODIFIERS
+    // Skipping field: true false false false false false 
 
     /// static final int java.awt.event.InputEvent.HIGH_MODIFIERS
 
-    /// long java.awt.event.InputEvent.when
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.event.InputEvent.modifiers
+    /// static final int java.awt.event.InputEvent.JDK_1_3_MODIFIERS
 
-    /// private transient boolean java.awt.event.InputEvent.canAccessSystemClipboard
+    // Skipping field: true false false false false false 
+
+    /// public static final int java.awt.event.InputEvent.META_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.META_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.SHIFT_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.SHIFT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.event.InputEvent.logger
 
     /// static final long java.awt.event.InputEvent.serialVersionUID
 
+    // Skipping field: true true false false false false 
+
+    /// private transient boolean java.awt.event.InputEvent.canAccessSystemClipboard
+
+    /// int java.awt.event.InputEvent.modifiers
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.event.InputEvent.when
+
+    // Skipping field: true false false false false false 
+
     /// public static final int java.awt.event.ComponentEvent.COMPONENT_FIRST
 
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_LAST
-
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_MOVED
-
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_RESIZED
-
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_SHOWN
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.event.ComponentEvent.COMPONENT_HIDDEN
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_LAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_MOVED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_RESIZED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_SHOWN
+
+    // Skipping field: false true false false false false 
+
     /// private static final long java.awt.event.ComponentEvent.serialVersionUID
+
+    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
+
+    // Skipping field: true false false false false false 
+
+    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AWTEvent.log
 
+    /// private static final long java.awt.AWTEvent.serialVersionUID
+
+    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
+
     /// private byte[] java.awt.AWTEvent.bdata
-
-    /// protected int java.awt.AWTEvent.id
-
-    private static var id_FieldID: jfieldID?
-
-    override open var id: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &MouseWheelEvent.id_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &MouseWheelEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
 
     /// protected boolean java.awt.AWTEvent.consumed
 
@@ -187,70 +362,41 @@ open class MouseWheelEvent: MouseEvent {
 
     override open var consumed: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &MouseWheelEvent.consumed_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &MouseWheelEvent.consumed_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &MouseWheelEvent.consumed_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
-
     /// transient boolean java.awt.AWTEvent.focusManagerIsDispatching
+
+    // Skipping field: true false false false false false 
+
+    /// protected int java.awt.AWTEvent.id
+
+    private static var id_FieldID: jfieldID?
+
+    override open var id: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &MouseWheelEvent.id_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &MouseWheelEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
     /// transient boolean java.awt.AWTEvent.isPosted
 
+    // Skipping field: true false false false false false 
+
     /// private transient boolean java.awt.AWTEvent.isSystemGenerated
-
-    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
-
-    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
-
-    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
-
-    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
-
-    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
-
-    /// private static final long java.awt.AWTEvent.serialVersionUID
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -260,8 +406,8 @@ open class MouseWheelEvent: MouseEvent {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &MouseWheelEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &MouseWheelEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -271,34 +417,31 @@ open class MouseWheelEvent: MouseEvent {
         }
     }
 
-    /// public java.awt.event.MouseWheelEvent(java.awt.Component,int,long,int,int,int,int,int,int,boolean,int,int,int,double)
+    /// public java.awt.event.MouseWheelEvent(java.awt.Component,int,long,int,int,int,int,boolean,int,int,int)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, xAbs: Int, yAbs: Int, clickCount: Int, popupTrigger: Bool, scrollType: Int, scrollAmount: Int, wheelRotation: Int, preciseWheelRotation: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 14 )
+    public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, clickCount: Int, popupTrigger: Bool, scrollType: Int, scrollAmount: Int, wheelRotation: Int ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 11 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: when, locals: &__locals )
-        __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
-        __args[4] = JNIType.toJava( value: x, locals: &__locals )
-        __args[5] = JNIType.toJava( value: y, locals: &__locals )
-        __args[6] = JNIType.toJava( value: xAbs, locals: &__locals )
-        __args[7] = JNIType.toJava( value: yAbs, locals: &__locals )
-        __args[8] = JNIType.toJava( value: clickCount, locals: &__locals )
-        __args[9] = JNIType.toJava( value: popupTrigger, locals: &__locals )
-        __args[10] = JNIType.toJava( value: scrollType, locals: &__locals )
-        __args[11] = JNIType.toJava( value: scrollAmount, locals: &__locals )
-        __args[12] = JNIType.toJava( value: wheelRotation, locals: &__locals )
-        __args[13] = JNIType.toJava( value: preciseWheelRotation, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/event/MouseWheelEvent", classCache: &MouseWheelEvent.MouseWheelEventJNIClass, methodSig: "(Ljava/awt/Component;IJIIIIIIZIIID)V", methodCache: &MouseWheelEvent.new_MethodID_1, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
+        __args[2] = jvalue( j: when )
+        __args[3] = jvalue( i: jint(modifiers) )
+        __args[4] = jvalue( i: jint(x) )
+        __args[5] = jvalue( i: jint(y) )
+        __args[6] = jvalue( i: jint(clickCount) )
+        __args[7] = jvalue( z: jboolean(popupTrigger ? JNI_TRUE : JNI_FALSE) )
+        __args[8] = jvalue( i: jint(scrollType) )
+        __args[9] = jvalue( i: jint(scrollAmount) )
+        __args[10] = jvalue( i: jint(wheelRotation) )
+        let __object = JNIMethod.NewObject( className: "java/awt/event/MouseWheelEvent", classCache: &MouseWheelEvent.MouseWheelEventJNIClass, methodSig: "(Ljava/awt/Component;IJIIIIZIII)V", methodCache: &MouseWheelEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _source: Component?, _ _id: Int, _ _when: Int64, _ _modifiers: Int, _ _x: Int, _ _y: Int, _ _xAbs: Int, _ _yAbs: Int, _ _clickCount: Int, _ _popupTrigger: Bool, _ _scrollType: Int, _ _scrollAmount: Int, _ _wheelRotation: Int, _ _preciseWheelRotation: Double ) {
-        self.init( source: _source, id: _id, when: _when, modifiers: _modifiers, x: _x, y: _y, xAbs: _xAbs, yAbs: _yAbs, clickCount: _clickCount, popupTrigger: _popupTrigger, scrollType: _scrollType, scrollAmount: _scrollAmount, wheelRotation: _wheelRotation, preciseWheelRotation: _preciseWheelRotation )
+    public convenience init( _ _source: Component?, _ _id: Int, _ _when: Int64, _ _modifiers: Int, _ _x: Int, _ _y: Int, _ _clickCount: Int, _ _popupTrigger: Bool, _ _scrollType: Int, _ _scrollAmount: Int, _ _wheelRotation: Int ) {
+        self.init( source: _source, id: _id, when: _when, modifiers: _modifiers, x: _x, y: _y, clickCount: _clickCount, popupTrigger: _popupTrigger, scrollType: _scrollType, scrollAmount: _scrollAmount, wheelRotation: _wheelRotation )
     }
 
     /// public java.awt.event.MouseWheelEvent(java.awt.Component,int,long,int,int,int,int,int,int,boolean,int,int,int)
@@ -306,21 +449,21 @@ open class MouseWheelEvent: MouseEvent {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, xAbs: Int, yAbs: Int, clickCount: Int, popupTrigger: Bool, scrollType: Int, scrollAmount: Int, wheelRotation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 13 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 13 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: when, locals: &__locals )
-        __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
-        __args[4] = JNIType.toJava( value: x, locals: &__locals )
-        __args[5] = JNIType.toJava( value: y, locals: &__locals )
-        __args[6] = JNIType.toJava( value: xAbs, locals: &__locals )
-        __args[7] = JNIType.toJava( value: yAbs, locals: &__locals )
-        __args[8] = JNIType.toJava( value: clickCount, locals: &__locals )
-        __args[9] = JNIType.toJava( value: popupTrigger, locals: &__locals )
-        __args[10] = JNIType.toJava( value: scrollType, locals: &__locals )
-        __args[11] = JNIType.toJava( value: scrollAmount, locals: &__locals )
-        __args[12] = JNIType.toJava( value: wheelRotation, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
+        __args[2] = jvalue( j: when )
+        __args[3] = jvalue( i: jint(modifiers) )
+        __args[4] = jvalue( i: jint(x) )
+        __args[5] = jvalue( i: jint(y) )
+        __args[6] = jvalue( i: jint(xAbs) )
+        __args[7] = jvalue( i: jint(yAbs) )
+        __args[8] = jvalue( i: jint(clickCount) )
+        __args[9] = jvalue( z: jboolean(popupTrigger ? JNI_TRUE : JNI_FALSE) )
+        __args[10] = jvalue( i: jint(scrollType) )
+        __args[11] = jvalue( i: jint(scrollAmount) )
+        __args[12] = jvalue( i: jint(wheelRotation) )
         let __object = JNIMethod.NewObject( className: "java/awt/event/MouseWheelEvent", classCache: &MouseWheelEvent.MouseWheelEventJNIClass, methodSig: "(Ljava/awt/Component;IJIIIIIIZIII)V", methodCache: &MouseWheelEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -330,44 +473,45 @@ open class MouseWheelEvent: MouseEvent {
         self.init( source: _source, id: _id, when: _when, modifiers: _modifiers, x: _x, y: _y, xAbs: _xAbs, yAbs: _yAbs, clickCount: _clickCount, popupTrigger: _popupTrigger, scrollType: _scrollType, scrollAmount: _scrollAmount, wheelRotation: _wheelRotation )
     }
 
-    /// public java.awt.event.MouseWheelEvent(java.awt.Component,int,long,int,int,int,int,boolean,int,int,int)
+    /// public java.awt.event.MouseWheelEvent(java.awt.Component,int,long,int,int,int,int,int,int,boolean,int,int,int,double)
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, clickCount: Int, popupTrigger: Bool, scrollType: Int, scrollAmount: Int, wheelRotation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 11 )
+    public convenience init( source: Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, xAbs: Int, yAbs: Int, clickCount: Int, popupTrigger: Bool, scrollType: Int, scrollAmount: Int, wheelRotation: Int, preciseWheelRotation: Double ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 14 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: when, locals: &__locals )
-        __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
-        __args[4] = JNIType.toJava( value: x, locals: &__locals )
-        __args[5] = JNIType.toJava( value: y, locals: &__locals )
-        __args[6] = JNIType.toJava( value: clickCount, locals: &__locals )
-        __args[7] = JNIType.toJava( value: popupTrigger, locals: &__locals )
-        __args[8] = JNIType.toJava( value: scrollType, locals: &__locals )
-        __args[9] = JNIType.toJava( value: scrollAmount, locals: &__locals )
-        __args[10] = JNIType.toJava( value: wheelRotation, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/event/MouseWheelEvent", classCache: &MouseWheelEvent.MouseWheelEventJNIClass, methodSig: "(Ljava/awt/Component;IJIIIIZIII)V", methodCache: &MouseWheelEvent.new_MethodID_3, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
+        __args[2] = jvalue( j: when )
+        __args[3] = jvalue( i: jint(modifiers) )
+        __args[4] = jvalue( i: jint(x) )
+        __args[5] = jvalue( i: jint(y) )
+        __args[6] = jvalue( i: jint(xAbs) )
+        __args[7] = jvalue( i: jint(yAbs) )
+        __args[8] = jvalue( i: jint(clickCount) )
+        __args[9] = jvalue( z: jboolean(popupTrigger ? JNI_TRUE : JNI_FALSE) )
+        __args[10] = jvalue( i: jint(scrollType) )
+        __args[11] = jvalue( i: jint(scrollAmount) )
+        __args[12] = jvalue( i: jint(wheelRotation) )
+        __args[13] = jvalue( d: preciseWheelRotation )
+        let __object = JNIMethod.NewObject( className: "java/awt/event/MouseWheelEvent", classCache: &MouseWheelEvent.MouseWheelEventJNIClass, methodSig: "(Ljava/awt/Component;IJIIIIIIZIIID)V", methodCache: &MouseWheelEvent.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _source: Component?, _ _id: Int, _ _when: Int64, _ _modifiers: Int, _ _x: Int, _ _y: Int, _ _clickCount: Int, _ _popupTrigger: Bool, _ _scrollType: Int, _ _scrollAmount: Int, _ _wheelRotation: Int ) {
-        self.init( source: _source, id: _id, when: _when, modifiers: _modifiers, x: _x, y: _y, clickCount: _clickCount, popupTrigger: _popupTrigger, scrollType: _scrollType, scrollAmount: _scrollAmount, wheelRotation: _wheelRotation )
+    public convenience init( _ _source: Component?, _ _id: Int, _ _when: Int64, _ _modifiers: Int, _ _x: Int, _ _y: Int, _ _xAbs: Int, _ _yAbs: Int, _ _clickCount: Int, _ _popupTrigger: Bool, _ _scrollType: Int, _ _scrollAmount: Int, _ _wheelRotation: Int, _ _preciseWheelRotation: Double ) {
+        self.init( source: _source, id: _id, when: _when, modifiers: _modifiers, x: _x, y: _y, xAbs: _xAbs, yAbs: _yAbs, clickCount: _clickCount, popupTrigger: _popupTrigger, scrollType: _scrollType, scrollAmount: _scrollAmount, wheelRotation: _wheelRotation, preciseWheelRotation: _preciseWheelRotation )
     }
 
-    /// public java.lang.String java.awt.event.MouseWheelEvent.paramString()
+    /// public double java.awt.event.MouseWheelEvent.getPreciseWheelRotation()
 
-    /// public int java.awt.event.MouseWheelEvent.getScrollType()
+    private static var getPreciseWheelRotation_MethodID_4: jmethodID?
 
-    private static var getScrollType_MethodID_4: jmethodID?
-
-    open func getScrollType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getPreciseWheelRotation() -> Double {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollType", methodSig: "()I", methodCache: &MouseWheelEvent.getScrollType_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getPreciseWheelRotation", methodSig: "()D", methodCache: &MouseWheelEvent.getPreciseWheelRotation_MethodID_4, args: &__args, locals: &__locals )
+        return __return
     }
 
 
@@ -376,48 +520,52 @@ open class MouseWheelEvent: MouseEvent {
     private static var getScrollAmount_MethodID_5: jmethodID?
 
     open func getScrollAmount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollAmount", methodSig: "()I", methodCache: &MouseWheelEvent.getScrollAmount_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
-    /// public int java.awt.event.MouseWheelEvent.getWheelRotation()
+    /// public int java.awt.event.MouseWheelEvent.getScrollType()
 
-    private static var getWheelRotation_MethodID_6: jmethodID?
+    private static var getScrollType_MethodID_6: jmethodID?
 
-    open func getWheelRotation() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getScrollType() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWheelRotation", methodSig: "()I", methodCache: &MouseWheelEvent.getWheelRotation_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public double java.awt.event.MouseWheelEvent.getPreciseWheelRotation()
-
-    private static var getPreciseWheelRotation_MethodID_7: jmethodID?
-
-    open func getPreciseWheelRotation() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getPreciseWheelRotation", methodSig: "()D", methodCache: &MouseWheelEvent.getPreciseWheelRotation_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollType", methodSig: "()I", methodCache: &MouseWheelEvent.getScrollType_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
     /// public int java.awt.event.MouseWheelEvent.getUnitsToScroll()
 
-    private static var getUnitsToScroll_MethodID_8: jmethodID?
+    private static var getUnitsToScroll_MethodID_7: jmethodID?
 
     open func getUnitsToScroll() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUnitsToScroll", methodSig: "()I", methodCache: &MouseWheelEvent.getUnitsToScroll_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUnitsToScroll", methodSig: "()I", methodCache: &MouseWheelEvent.getUnitsToScroll_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+
+    /// public int java.awt.event.MouseWheelEvent.getWheelRotation()
+
+    private static var getWheelRotation_MethodID_8: jmethodID?
+
+    open func getWheelRotation() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWheelRotation", methodSig: "()I", methodCache: &MouseWheelEvent.getWheelRotation_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.lang.String java.awt.event.MouseWheelEvent.paramString()
+
+    // Skipping method: false true false false false 
 
 }
 

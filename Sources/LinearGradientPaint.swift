@@ -16,82 +16,113 @@ open class LinearGradientPaint: MultipleGradientPaint {
 
     private static var LinearGradientPaintJNIClass: jclass?
 
-    /// private final java.awt.geom.Point2D java.awt.LinearGradientPaint.start
-
     /// private final java.awt.geom.Point2D java.awt.LinearGradientPaint.end
 
-    /// final int java.awt.MultipleGradientPaint.transparency
-
-    /// final float[] java.awt.MultipleGradientPaint.fractions
-
-    /// final java.awt.Color[] java.awt.MultipleGradientPaint.colors
-
-    /// final java.awt.geom.AffineTransform java.awt.MultipleGradientPaint.gradientTransform
-
-    /// final java.awt.MultipleGradientPaint$CycleMethod java.awt.MultipleGradientPaint.cycleMethod
+    /// private final java.awt.geom.Point2D java.awt.LinearGradientPaint.start
 
     /// final java.awt.MultipleGradientPaint$ColorSpaceType java.awt.MultipleGradientPaint.colorSpace
 
-    /// java.awt.image.ColorModel java.awt.MultipleGradientPaint.model
+    // Skipping field: true false false false false false 
 
-    /// float[] java.awt.MultipleGradientPaint.normalizedIntervals
+    /// final java.awt.Color[] java.awt.MultipleGradientPaint.colors
 
-    /// boolean java.awt.MultipleGradientPaint.isSimpleLookup
+    // Skipping field: true false false false false false 
 
-    /// java.lang.ref.SoftReference java.awt.MultipleGradientPaint.gradients
+    /// final java.awt.MultipleGradientPaint$CycleMethod java.awt.MultipleGradientPaint.cycleMethod
 
-    /// java.lang.ref.SoftReference java.awt.MultipleGradientPaint.gradient
+    // Skipping field: true false false false false false 
 
     /// int java.awt.MultipleGradientPaint.fastGradientArraySize
 
-    /// public static final int java.awt.Transparency.OPAQUE
+    // Skipping field: true false false false false false 
+
+    /// final float[] java.awt.MultipleGradientPaint.fractions
+
+    // Skipping field: true false false false false false 
+
+    /// java.lang.ref.SoftReference java.awt.MultipleGradientPaint.gradient
+
+    // Skipping field: true false false false false false 
+
+    /// final java.awt.geom.AffineTransform java.awt.MultipleGradientPaint.gradientTransform
+
+    // Skipping field: true false false false false false 
+
+    /// java.lang.ref.SoftReference java.awt.MultipleGradientPaint.gradients
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.MultipleGradientPaint.isSimpleLookup
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.image.ColorModel java.awt.MultipleGradientPaint.model
+
+    // Skipping field: true false false false false false 
+
+    /// float[] java.awt.MultipleGradientPaint.normalizedIntervals
+
+    // Skipping field: true false false false false false 
+
+    /// final int java.awt.MultipleGradientPaint.transparency
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.Transparency.BITMASK
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Transparency.OPAQUE
+
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.Transparency.TRANSLUCENT
 
-    /// public java.awt.LinearGradientPaint(java.awt.geom.Point2D,java.awt.geom.Point2D,float[],java.awt.Color[],java.awt.MultipleGradientPaint$CycleMethod,java.awt.MultipleGradientPaint$ColorSpaceType,java.awt.geom.AffineTransform)
+    // Skipping field: false true false false false false 
+
+    /// public java.awt.LinearGradientPaint(float,float,float,float,float[],java.awt.Color[])
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( start: Point2D?, end: Point2D?, fractions: [Float]?, colors: [Color]?, cycleMethod: MultipleGradientPaint_CycleMethod?, colorSpace: MultipleGradientPaint_ColorSpaceType?, gradientTransform: AffineTransform? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+    public convenience init( startX: Float, startY: Float, endX: Float, endY: Float, fractions: [Float]?, colors: [Color]? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: start, locals: &__locals )
-        __args[1] = JNIType.toJava( value: end, locals: &__locals )
-        __args[2] = JNIType.toJava( value: fractions, locals: &__locals )
-        __args[3] = JNIType.toJava( value: colors, locals: &__locals )
-        __args[4] = JNIType.toJava( value: cycleMethod, locals: &__locals )
-        __args[5] = JNIType.toJava( value: colorSpace, locals: &__locals )
-        __args[6] = JNIType.toJava( value: gradientTransform, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/LinearGradientPaint", classCache: &LinearGradientPaint.LinearGradientPaintJNIClass, methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;[F[Ljava/awt/Color;Ljava/awt/MultipleGradientPaint$CycleMethod;Ljava/awt/MultipleGradientPaint$ColorSpaceType;Ljava/awt/geom/AffineTransform;)V", methodCache: &LinearGradientPaint.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = jvalue( f: startX )
+        __args[1] = jvalue( f: startY )
+        __args[2] = jvalue( f: endX )
+        __args[3] = jvalue( f: endY )
+        __args[4] = JNIType.toJava( value: fractions, locals: &__locals )
+        __args[5] = JNIType.toJava( value: colors, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/LinearGradientPaint", classCache: &LinearGradientPaint.LinearGradientPaintJNIClass, methodSig: "(FFFF[F[Ljava/awt/Color;)V", methodCache: &LinearGradientPaint.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _start: Point2D?, _ _end: Point2D?, _ _fractions: [Float]?, _ _colors: [Color]?, _ _cycleMethod: MultipleGradientPaint_CycleMethod?, _ _colorSpace: MultipleGradientPaint_ColorSpaceType?, _ _gradientTransform: AffineTransform? ) {
-        self.init( start: _start, end: _end, fractions: _fractions, colors: _colors, cycleMethod: _cycleMethod, colorSpace: _colorSpace, gradientTransform: _gradientTransform )
+    public convenience init( _ _startX: Float, _ _startY: Float, _ _endX: Float, _ _endY: Float, _ _fractions: [Float]?, _ _colors: [Color]? ) {
+        self.init( startX: _startX, startY: _startY, endX: _endX, endY: _endY, fractions: _fractions, colors: _colors )
     }
 
-    /// public java.awt.LinearGradientPaint(java.awt.geom.Point2D,java.awt.geom.Point2D,float[],java.awt.Color[],java.awt.MultipleGradientPaint$CycleMethod)
+    /// public java.awt.LinearGradientPaint(float,float,float,float,float[],java.awt.Color[],java.awt.MultipleGradientPaint$CycleMethod)
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( start: Point2D?, end: Point2D?, fractions: [Float]?, colors: [Color]?, cycleMethod: MultipleGradientPaint_CycleMethod? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    public convenience init( startX: Float, startY: Float, endX: Float, endY: Float, fractions: [Float]?, colors: [Color]?, cycleMethod: MultipleGradientPaint_CycleMethod? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: start, locals: &__locals )
-        __args[1] = JNIType.toJava( value: end, locals: &__locals )
-        __args[2] = JNIType.toJava( value: fractions, locals: &__locals )
-        __args[3] = JNIType.toJava( value: colors, locals: &__locals )
-        __args[4] = JNIType.toJava( value: cycleMethod, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/LinearGradientPaint", classCache: &LinearGradientPaint.LinearGradientPaintJNIClass, methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;[F[Ljava/awt/Color;Ljava/awt/MultipleGradientPaint$CycleMethod;)V", methodCache: &LinearGradientPaint.new_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( f: startX )
+        __args[1] = jvalue( f: startY )
+        __args[2] = jvalue( f: endX )
+        __args[3] = jvalue( f: endY )
+        __args[4] = JNIType.toJava( value: fractions, locals: &__locals )
+        __args[5] = JNIType.toJava( value: colors, locals: &__locals )
+        __args[6] = JNIType.toJava( value: cycleMethod, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/LinearGradientPaint", classCache: &LinearGradientPaint.LinearGradientPaintJNIClass, methodSig: "(FFFF[F[Ljava/awt/Color;Ljava/awt/MultipleGradientPaint$CycleMethod;)V", methodCache: &LinearGradientPaint.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _start: Point2D?, _ _end: Point2D?, _ _fractions: [Float]?, _ _colors: [Color]?, _ _cycleMethod: MultipleGradientPaint_CycleMethod? ) {
-        self.init( start: _start, end: _end, fractions: _fractions, colors: _colors, cycleMethod: _cycleMethod )
+    public convenience init( _ _startX: Float, _ _startY: Float, _ _endX: Float, _ _endY: Float, _ _fractions: [Float]?, _ _colors: [Color]?, _ _cycleMethod: MultipleGradientPaint_CycleMethod? ) {
+        self.init( startX: _startX, startY: _startY, endX: _endX, endY: _endY, fractions: _fractions, colors: _colors, cycleMethod: _cycleMethod )
     }
 
     /// public java.awt.LinearGradientPaint(java.awt.geom.Point2D,java.awt.geom.Point2D,float[],java.awt.Color[])
@@ -99,8 +130,8 @@ open class LinearGradientPaint: MultipleGradientPaint {
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( start: Point2D?, end: Point2D?, fractions: [Float]?, colors: [Color]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: start, locals: &__locals )
         __args[1] = JNIType.toJava( value: end, locals: &__locals )
         __args[2] = JNIType.toJava( value: fractions, locals: &__locals )
@@ -114,90 +145,63 @@ open class LinearGradientPaint: MultipleGradientPaint {
         self.init( start: _start, end: _end, fractions: _fractions, colors: _colors )
     }
 
-    /// public java.awt.LinearGradientPaint(float,float,float,float,float[],java.awt.Color[],java.awt.MultipleGradientPaint$CycleMethod)
+    /// public java.awt.LinearGradientPaint(java.awt.geom.Point2D,java.awt.geom.Point2D,float[],java.awt.Color[],java.awt.MultipleGradientPaint$CycleMethod)
 
     private static var new_MethodID_4: jmethodID?
 
-    public convenience init( startX: Float, startY: Float, endX: Float, endY: Float, fractions: [Float]?, colors: [Color]?, cycleMethod: MultipleGradientPaint_CycleMethod? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+    public convenience init( start: Point2D?, end: Point2D?, fractions: [Float]?, colors: [Color]?, cycleMethod: MultipleGradientPaint_CycleMethod? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startX, locals: &__locals )
-        __args[1] = JNIType.toJava( value: startY, locals: &__locals )
-        __args[2] = JNIType.toJava( value: endX, locals: &__locals )
-        __args[3] = JNIType.toJava( value: endY, locals: &__locals )
-        __args[4] = JNIType.toJava( value: fractions, locals: &__locals )
-        __args[5] = JNIType.toJava( value: colors, locals: &__locals )
-        __args[6] = JNIType.toJava( value: cycleMethod, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/LinearGradientPaint", classCache: &LinearGradientPaint.LinearGradientPaintJNIClass, methodSig: "(FFFF[F[Ljava/awt/Color;Ljava/awt/MultipleGradientPaint$CycleMethod;)V", methodCache: &LinearGradientPaint.new_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: start, locals: &__locals )
+        __args[1] = JNIType.toJava( value: end, locals: &__locals )
+        __args[2] = JNIType.toJava( value: fractions, locals: &__locals )
+        __args[3] = JNIType.toJava( value: colors, locals: &__locals )
+        __args[4] = JNIType.toJava( value: cycleMethod, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/LinearGradientPaint", classCache: &LinearGradientPaint.LinearGradientPaintJNIClass, methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;[F[Ljava/awt/Color;Ljava/awt/MultipleGradientPaint$CycleMethod;)V", methodCache: &LinearGradientPaint.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _startX: Float, _ _startY: Float, _ _endX: Float, _ _endY: Float, _ _fractions: [Float]?, _ _colors: [Color]?, _ _cycleMethod: MultipleGradientPaint_CycleMethod? ) {
-        self.init( startX: _startX, startY: _startY, endX: _endX, endY: _endY, fractions: _fractions, colors: _colors, cycleMethod: _cycleMethod )
+    public convenience init( _ _start: Point2D?, _ _end: Point2D?, _ _fractions: [Float]?, _ _colors: [Color]?, _ _cycleMethod: MultipleGradientPaint_CycleMethod? ) {
+        self.init( start: _start, end: _end, fractions: _fractions, colors: _colors, cycleMethod: _cycleMethod )
     }
 
-    /// public java.awt.LinearGradientPaint(float,float,float,float,float[],java.awt.Color[])
+    /// public java.awt.LinearGradientPaint(java.awt.geom.Point2D,java.awt.geom.Point2D,float[],java.awt.Color[],java.awt.MultipleGradientPaint$CycleMethod,java.awt.MultipleGradientPaint$ColorSpaceType,java.awt.geom.AffineTransform)
 
     private static var new_MethodID_5: jmethodID?
 
-    public convenience init( startX: Float, startY: Float, endX: Float, endY: Float, fractions: [Float]?, colors: [Color]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    public convenience init( start: Point2D?, end: Point2D?, fractions: [Float]?, colors: [Color]?, cycleMethod: MultipleGradientPaint_CycleMethod?, colorSpace: MultipleGradientPaint_ColorSpaceType?, gradientTransform: AffineTransform? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startX, locals: &__locals )
-        __args[1] = JNIType.toJava( value: startY, locals: &__locals )
-        __args[2] = JNIType.toJava( value: endX, locals: &__locals )
-        __args[3] = JNIType.toJava( value: endY, locals: &__locals )
-        __args[4] = JNIType.toJava( value: fractions, locals: &__locals )
-        __args[5] = JNIType.toJava( value: colors, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "java/awt/LinearGradientPaint", classCache: &LinearGradientPaint.LinearGradientPaintJNIClass, methodSig: "(FFFF[F[Ljava/awt/Color;)V", methodCache: &LinearGradientPaint.new_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: start, locals: &__locals )
+        __args[1] = JNIType.toJava( value: end, locals: &__locals )
+        __args[2] = JNIType.toJava( value: fractions, locals: &__locals )
+        __args[3] = JNIType.toJava( value: colors, locals: &__locals )
+        __args[4] = JNIType.toJava( value: cycleMethod, locals: &__locals )
+        __args[5] = JNIType.toJava( value: colorSpace, locals: &__locals )
+        __args[6] = JNIType.toJava( value: gradientTransform, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "java/awt/LinearGradientPaint", classCache: &LinearGradientPaint.LinearGradientPaintJNIClass, methodSig: "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;[F[Ljava/awt/Color;Ljava/awt/MultipleGradientPaint$CycleMethod;Ljava/awt/MultipleGradientPaint$ColorSpaceType;Ljava/awt/geom/AffineTransform;)V", methodCache: &LinearGradientPaint.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _startX: Float, _ _startY: Float, _ _endX: Float, _ _endY: Float, _ _fractions: [Float]?, _ _colors: [Color]? ) {
-        self.init( startX: _startX, startY: _startY, endX: _endX, endY: _endY, fractions: _fractions, colors: _colors )
+    public convenience init( _ _start: Point2D?, _ _end: Point2D?, _ _fractions: [Float]?, _ _colors: [Color]?, _ _cycleMethod: MultipleGradientPaint_CycleMethod?, _ _colorSpace: MultipleGradientPaint_ColorSpaceType?, _ _gradientTransform: AffineTransform? ) {
+        self.init( start: _start, end: _end, fractions: _fractions, colors: _colors, cycleMethod: _cycleMethod, colorSpace: _colorSpace, gradientTransform: _gradientTransform )
     }
-
-    /// public java.awt.geom.Point2D java.awt.LinearGradientPaint.getStartPoint()
-
-    private static var getStartPoint_MethodID_6: jmethodID?
-
-    open func getStartPoint() -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStartPoint", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &LinearGradientPaint.getStartPoint_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point2D( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.geom.Point2D java.awt.LinearGradientPaint.getEndPoint()
-
-    private static var getEndPoint_MethodID_7: jmethodID?
-
-    open func getEndPoint() -> Point2D! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEndPoint", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &LinearGradientPaint.getEndPoint_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Point2D( javaObject: __return ) : nil
-    }
-
 
     /// public java.awt.PaintContext java.awt.LinearGradientPaint.createContext(java.awt.image.ColorModel,java.awt.Rectangle,java.awt.geom.Rectangle2D,java.awt.geom.AffineTransform,java.awt.RenderingHints)
 
-    private static var createContext_MethodID_8: jmethodID?
+    private static var createContext_MethodID_6: jmethodID?
 
     open func createContext( cm: ColorModel?, deviceBounds: Rectangle?, userBounds: Rectangle2D?, transform: AffineTransform?, hints: RenderingHints? ) -> PaintContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: cm, locals: &__locals )
         __args[1] = JNIType.toJava( value: deviceBounds, locals: &__locals )
         __args[2] = JNIType.toJava( value: userBounds, locals: &__locals )
         __args[3] = JNIType.toJava( value: transform, locals: &__locals )
         __args[4] = JNIType.toJava( value: hints, mapClass: "java/awt/RenderingHints", locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContext", methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/Rectangle;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)Ljava/awt/PaintContext;", methodCache: &LinearGradientPaint.createContext_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContext", methodSig: "(Ljava/awt/image/ColorModel;Ljava/awt/Rectangle;Ljava/awt/geom/Rectangle2D;Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)Ljava/awt/PaintContext;", methodCache: &LinearGradientPaint.createContext_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PaintContextForward( javaObject: __return ) : nil
     }
@@ -205,6 +209,32 @@ open class LinearGradientPaint: MultipleGradientPaint {
     override open func createContext( _ _cm: ColorModel?, _ _deviceBounds: Rectangle?, _ _userBounds: Rectangle2D?, _ _transform: AffineTransform?, _ _hints: RenderingHints? ) -> PaintContext! {
         return createContext( cm: _cm, deviceBounds: _deviceBounds, userBounds: _userBounds, transform: _transform, hints: _hints )
     }
+
+    /// public java.awt.geom.Point2D java.awt.LinearGradientPaint.getEndPoint()
+
+    private static var getEndPoint_MethodID_7: jmethodID?
+
+    open func getEndPoint() -> Point2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEndPoint", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &LinearGradientPaint.getEndPoint_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point2D( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.geom.Point2D java.awt.LinearGradientPaint.getStartPoint()
+
+    private static var getStartPoint_MethodID_8: jmethodID?
+
+    open func getStartPoint() -> Point2D! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStartPoint", methodSig: "()Ljava/awt/geom/Point2D;", methodCache: &LinearGradientPaint.getStartPoint_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Point2D( javaObject: __return ) : nil
+    }
+
 
 }
 

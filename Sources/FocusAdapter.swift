@@ -21,8 +21,8 @@ open class FocusAdapter: java_swift.JavaObject, FocusListener {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/event/FocusAdapter", classCache: &FocusAdapter.FocusAdapterJNIClass, methodSig: "()V", methodCache: &FocusAdapter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -33,8 +33,8 @@ open class FocusAdapter: java_swift.JavaObject, FocusListener {
     private static var focusGained_MethodID_2: jmethodID?
 
     open func focusGained( e: FocusEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusGained", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &FocusAdapter.focusGained_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -48,8 +48,8 @@ open class FocusAdapter: java_swift.JavaObject, FocusListener {
     private static var focusLost_MethodID_3: jmethodID?
 
     open func focusLost( e: FocusEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusLost", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &FocusAdapter.focusLost_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -60,50 +60,40 @@ open class FocusAdapter: java_swift.JavaObject, FocusListener {
 
 }
 
-private typealias FocusAdapter_focusGained_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias FocusAdapter_equals_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
 
-private func FocusAdapter_focusGained_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    FocusAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).focusGained( e: e != nil ? FocusEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias FocusAdapter_focusLost_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func FocusAdapter_focusLost_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    FocusAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).focusLost( e: e != nil ? FocusEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias FocusAdapter_equals_5_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
-
-private func FocusAdapter_equals_5( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
-    JNI.inNative = true;
+private func FocusAdapter_equals_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
     let __return = FocusAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).equals( arg0: arg0 != nil ? java_swift.JavaObject( javaObject: arg0 ) : nil )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).z, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( z: jboolean(__return ? JNI_TRUE : JNI_FALSE) ).z, &__locals, removeLast: true )
 }
 
-private typealias FocusAdapter_toString_6_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+private typealias FocusAdapter_focusGained_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func FocusAdapter_toString_6( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
-    JNI.inNative = true;
-    let __return = FocusAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).l, &locals, removeLast: true )
+private func FocusAdapter_focusGained_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    FocusAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).focusGained( e: e != nil ? FocusEvent( javaObject: e ) : nil )
 }
 
-private typealias FocusAdapter_hashCode_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
+private typealias FocusAdapter_focusLost_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func FocusAdapter_hashCode_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
-    JNI.inNative = true;
+private func FocusAdapter_focusLost_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    FocusAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).focusLost( e: e != nil ? FocusEvent( javaObject: e ) : nil )
+}
+
+private typealias FocusAdapter_hashCode_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
+
+private func FocusAdapter_hashCode_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
     let __return = FocusAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).hashCode( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).i, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( i: jint(__return) ).i, &__locals, removeLast: true )
+}
+
+private typealias FocusAdapter_toString_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+
+private func FocusAdapter_toString_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
+    let __return = FocusAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
+    var __locals = [jobject]()
+    return JNI.check( JNIType.toJava( value: __return, locals: &__locals ).l, &__locals, removeLast: true )
 }
 
 fileprivate class FocusAdapterLocal_: JNIObjectProxy<FocusAdapter> {
@@ -111,20 +101,20 @@ fileprivate class FocusAdapterLocal_: JNIObjectProxy<FocusAdapter> {
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let FocusAdapter_focusGained_0_thunk: FocusAdapter_focusGained_0_type = FocusAdapter_focusGained_0
-        natives.append( JNINativeMethod( name: strdup("__focusGained"), signature: strdup("(JLjava/awt/event/FocusEvent;)V"), fnPtr: unsafeBitCast( FocusAdapter_focusGained_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let FocusAdapter_equals_0_thunk: FocusAdapter_equals_0_type = FocusAdapter_equals_0
+        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( FocusAdapter_equals_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let FocusAdapter_focusLost_1_thunk: FocusAdapter_focusLost_1_type = FocusAdapter_focusLost_1
-        natives.append( JNINativeMethod( name: strdup("__focusLost"), signature: strdup("(JLjava/awt/event/FocusEvent;)V"), fnPtr: unsafeBitCast( FocusAdapter_focusLost_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let FocusAdapter_focusGained_1_thunk: FocusAdapter_focusGained_1_type = FocusAdapter_focusGained_1
+        natives.append( JNINativeMethod( name: strdup("__focusGained"), signature: strdup("(JLjava/awt/event/FocusEvent;)V"), fnPtr: unsafeBitCast( FocusAdapter_focusGained_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let FocusAdapter_equals_5_thunk: FocusAdapter_equals_5_type = FocusAdapter_equals_5
-        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( FocusAdapter_equals_5_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let FocusAdapter_focusLost_2_thunk: FocusAdapter_focusLost_2_type = FocusAdapter_focusLost_2
+        natives.append( JNINativeMethod( name: strdup("__focusLost"), signature: strdup("(JLjava/awt/event/FocusEvent;)V"), fnPtr: unsafeBitCast( FocusAdapter_focusLost_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let FocusAdapter_toString_6_thunk: FocusAdapter_toString_6_type = FocusAdapter_toString_6
-        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( FocusAdapter_toString_6_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let FocusAdapter_hashCode_4_thunk: FocusAdapter_hashCode_4_type = FocusAdapter_hashCode_4
+        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( FocusAdapter_hashCode_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let FocusAdapter_hashCode_7_thunk: FocusAdapter_hashCode_7_type = FocusAdapter_hashCode_7
-        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( FocusAdapter_hashCode_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let FocusAdapter_toString_7_thunk: FocusAdapter_toString_7_type = FocusAdapter_toString_7
+        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( FocusAdapter_toString_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -167,8 +157,8 @@ open class FocusAdapterBase: FocusAdapter {
     private static var new_MethodID_4: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
 
         self.init( javaObject: nil )
         __args[0] = __local!.swiftValue()

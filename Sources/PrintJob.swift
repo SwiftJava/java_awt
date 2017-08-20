@@ -21,32 +21,32 @@ open class PrintJob: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/PrintJob", classCache: &PrintJob.PrintJobJNIClass, methodSig: "()V", methodCache: &PrintJob.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void java.awt.PrintJob.finalize()
+    /// public abstract void java.awt.PrintJob.end()
 
-    private static var finalize_MethodID_2: jmethodID?
+    private static var end_MethodID_2: jmethodID?
 
-    override open func finalize() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func end() {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finalize", methodSig: "()V", methodCache: &PrintJob.finalize_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "end", methodSig: "()V", methodCache: &PrintJob.end_MethodID_2, args: &__args, locals: &__locals )
     }
 
 
-    /// public abstract void java.awt.PrintJob.end()
+    /// public void java.awt.PrintJob.finalize()
 
-    private static var end_MethodID_3: jmethodID?
+    private static var finalize_MethodID_3: jmethodID?
 
-    open func end() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func finalize() {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "end", methodSig: "()V", methodCache: &PrintJob.end_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finalize", methodSig: "()V", methodCache: &PrintJob.finalize_MethodID_3, args: &__args, locals: &__locals )
     }
 
 
@@ -55,8 +55,8 @@ open class PrintJob: java_swift.JavaObject {
     private static var getGraphics_MethodID_4: jmethodID?
 
     open func getGraphics() -> Graphics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphics", methodSig: "()Ljava/awt/Graphics;", methodCache: &PrintJob.getGraphics_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Graphics( javaObject: __return ) : nil
@@ -68,8 +68,8 @@ open class PrintJob: java_swift.JavaObject {
     private static var getPageDimension_MethodID_5: jmethodID?
 
     open func getPageDimension() -> Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPageDimension", methodSig: "()Ljava/awt/Dimension;", methodCache: &PrintJob.getPageDimension_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Dimension( javaObject: __return ) : nil
@@ -81,10 +81,10 @@ open class PrintJob: java_swift.JavaObject {
     private static var getPageResolution_MethodID_6: jmethodID?
 
     open func getPageResolution() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPageResolution", methodSig: "()I", methodCache: &PrintJob.getPageResolution_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
@@ -93,10 +93,10 @@ open class PrintJob: java_swift.JavaObject {
     private static var lastPageFirst_MethodID_7: jmethodID?
 
     open func lastPageFirst() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "lastPageFirst", methodSig: "()Z", methodCache: &PrintJob.lastPageFirst_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 

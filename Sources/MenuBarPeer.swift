@@ -7,6 +7,10 @@ import java_swift
 
 public protocol MenuBarPeer: MenuComponentPeer {
 
+    /// public abstract void java.awt.peer.MenuBarPeer.addHelpMenu(java.awt.Menu)
+
+    func addHelpMenu( m: Menu? )
+
     /// public abstract void java.awt.peer.MenuBarPeer.addMenu(java.awt.Menu)
 
     func addMenu( m: Menu? )
@@ -15,10 +19,6 @@ public protocol MenuBarPeer: MenuComponentPeer {
 
     func delMenu( index: Int )
 
-    /// public abstract void java.awt.peer.MenuBarPeer.addHelpMenu(java.awt.Menu)
-
-    func addHelpMenu( m: Menu? )
-
 }
 
 
@@ -26,15 +26,30 @@ open class MenuBarPeerForward: MenuComponentPeerForward, MenuBarPeer {
 
     private static var MenuBarPeerJNIClass: jclass?
 
+    /// public abstract void java.awt.peer.MenuBarPeer.addHelpMenu(java.awt.Menu)
+
+    private static var addHelpMenu_MethodID_4: jmethodID?
+
+    open func addHelpMenu( m: Menu? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: m, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addHelpMenu", methodSig: "(Ljava/awt/Menu;)V", methodCache: &MenuBarPeerForward.addHelpMenu_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func addHelpMenu( _ _m: Menu? ) {
+        addHelpMenu( m: _m )
+    }
+
     /// public abstract void java.awt.peer.MenuBarPeer.addMenu(java.awt.Menu)
 
-    private static var addMenu_MethodID_4: jmethodID?
+    private static var addMenu_MethodID_5: jmethodID?
 
     open func addMenu( m: Menu? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: m, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMenu", methodSig: "(Ljava/awt/Menu;)V", methodCache: &MenuBarPeerForward.addMenu_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMenu", methodSig: "(Ljava/awt/Menu;)V", methodCache: &MenuBarPeerForward.addMenu_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func addMenu( _ _m: Menu? ) {
@@ -43,60 +58,44 @@ open class MenuBarPeerForward: MenuComponentPeerForward, MenuBarPeer {
 
     /// public abstract void java.awt.peer.MenuBarPeer.delMenu(int)
 
-    private static var delMenu_MethodID_5: jmethodID?
+    private static var delMenu_MethodID_6: jmethodID?
 
     open func delMenu( index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "delMenu", methodSig: "(I)V", methodCache: &MenuBarPeerForward.delMenu_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "delMenu", methodSig: "(I)V", methodCache: &MenuBarPeerForward.delMenu_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func delMenu( _ _index: Int ) {
         delMenu( index: _index )
     }
 
-    /// public abstract void java.awt.peer.MenuBarPeer.addHelpMenu(java.awt.Menu)
+    /// public abstract void java.awt.peer.MenuComponentPeer.dispose()
 
-    private static var addHelpMenu_MethodID_6: jmethodID?
+    private static var dispose_MethodID_7: jmethodID?
 
-    open func addHelpMenu( m: Menu? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func dispose() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addHelpMenu", methodSig: "(Ljava/awt/Menu;)V", methodCache: &MenuBarPeerForward.addHelpMenu_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &MenuBarPeerForward.dispose_MethodID_7, args: &__args, locals: &__locals )
     }
 
-    open func addHelpMenu( _ _m: Menu? ) {
-        addHelpMenu( m: _m )
-    }
 
     /// public abstract void java.awt.peer.MenuComponentPeer.setFont(java.awt.Font)
 
-    private static var setFont_MethodID_7: jmethodID?
+    private static var setFont_MethodID_8: jmethodID?
 
     override open func setFont( f: Font? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &MenuBarPeerForward.setFont_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &MenuBarPeerForward.setFont_MethodID_8, args: &__args, locals: &__locals )
     }
 
     override open func setFont( _ _f: Font? ) {
         setFont( f: _f )
     }
 
-    /// public abstract void java.awt.peer.MenuComponentPeer.dispose()
-
-    private static var dispose_MethodID_8: jmethodID?
-
-    override open func dispose() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &MenuBarPeerForward.dispose_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
 }
-
 

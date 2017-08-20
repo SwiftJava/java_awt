@@ -24,8 +24,8 @@ open class AWTEventListenerForward: java_util.EventListenerForward, AWTEventList
     private static var eventDispatched_MethodID_2: jmethodID?
 
     open func eventDispatched( event: AWTEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: event, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "eventDispatched", methodSig: "(Ljava/awt/AWTEvent;)V", methodCache: &AWTEventListenerForward.eventDispatched_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class AWTEventListenerForward: java_util.EventListenerForward, AWTEventList
 
 }
 
-
 private typealias AWTEventListener_eventDispatched_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func AWTEventListener_eventDispatched_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ event: jobject? ) -> () {
-    JNI.inNative = true;
     AWTEventListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).eventDispatched( event: event != nil ? AWTEvent( javaObject: event ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class AWTEventListenerLocal_: JNILocalProxy<AWTEventListener, Any> {
@@ -89,8 +86,5 @@ open class AWTEventListenerBase: AWTEventListener {
     open func eventDispatched( event: AWTEvent? ) /**/ {
     }
 
-    open func eventDispatched( _ _event: AWTEvent? ) /**/ {
-        eventDispatched( event: _event )
-    }
 
 }

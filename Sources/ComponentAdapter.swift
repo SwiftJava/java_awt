@@ -21,26 +21,26 @@ open class ComponentAdapter: java_swift.JavaObject, ComponentListener {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "java/awt/event/ComponentAdapter", classCache: &ComponentAdapter.ComponentAdapterJNIClass, methodSig: "()V", methodCache: &ComponentAdapter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void java.awt.event.ComponentAdapter.componentResized(java.awt.event.ComponentEvent)
+    /// public void java.awt.event.ComponentAdapter.componentHidden(java.awt.event.ComponentEvent)
 
-    private static var componentResized_MethodID_2: jmethodID?
+    private static var componentHidden_MethodID_2: jmethodID?
 
-    open func componentResized( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func componentHidden( e: ComponentEvent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentResized", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentAdapter.componentResized_MethodID_2, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentHidden", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentAdapter.componentHidden_MethodID_2, args: &__args, locals: &__locals )
     }
 
-    open func componentResized( _ _e: ComponentEvent? ) {
-        componentResized( e: _e )
+    open func componentHidden( _ _e: ComponentEvent? ) {
+        componentHidden( e: _e )
     }
 
     /// public void java.awt.event.ComponentAdapter.componentMoved(java.awt.event.ComponentEvent)
@@ -48,8 +48,8 @@ open class ComponentAdapter: java_swift.JavaObject, ComponentListener {
     private static var componentMoved_MethodID_3: jmethodID?
 
     open func componentMoved( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentMoved", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentAdapter.componentMoved_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -58,98 +58,84 @@ open class ComponentAdapter: java_swift.JavaObject, ComponentListener {
         componentMoved( e: _e )
     }
 
+    /// public void java.awt.event.ComponentAdapter.componentResized(java.awt.event.ComponentEvent)
+
+    private static var componentResized_MethodID_4: jmethodID?
+
+    open func componentResized( e: ComponentEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentResized", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentAdapter.componentResized_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func componentResized( _ _e: ComponentEvent? ) {
+        componentResized( e: _e )
+    }
+
     /// public void java.awt.event.ComponentAdapter.componentShown(java.awt.event.ComponentEvent)
 
-    private static var componentShown_MethodID_4: jmethodID?
+    private static var componentShown_MethodID_5: jmethodID?
 
     open func componentShown( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentShown", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentAdapter.componentShown_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentShown", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentAdapter.componentShown_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func componentShown( _ _e: ComponentEvent? ) {
         componentShown( e: _e )
     }
 
-    /// public void java.awt.event.ComponentAdapter.componentHidden(java.awt.event.ComponentEvent)
-
-    private static var componentHidden_MethodID_5: jmethodID?
-
-    open func componentHidden( e: ComponentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "componentHidden", methodSig: "(Ljava/awt/event/ComponentEvent;)V", methodCache: &ComponentAdapter.componentHidden_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func componentHidden( _ _e: ComponentEvent? ) {
-        componentHidden( e: _e )
-    }
-
 }
 
-private typealias ComponentAdapter_componentResized_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias ComponentAdapter_componentHidden_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func ComponentAdapter_componentResized_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    ComponentAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentResized( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
+private func ComponentAdapter_componentHidden_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    ComponentAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentHidden( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
 }
 
 private typealias ComponentAdapter_componentMoved_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func ComponentAdapter_componentMoved_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     ComponentAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentMoved( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias ComponentAdapter_componentShown_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias ComponentAdapter_componentResized_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func ComponentAdapter_componentShown_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
+private func ComponentAdapter_componentResized_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    ComponentAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentResized( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
+}
+
+private typealias ComponentAdapter_componentShown_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func ComponentAdapter_componentShown_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
     ComponentAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentShown( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias ComponentAdapter_componentHidden_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias ComponentAdapter_equals_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
 
-private func ComponentAdapter_componentHidden_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    ComponentAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).componentHidden( e: e != nil ? ComponentEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias ComponentAdapter_equals_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> jboolean
-
-private func ComponentAdapter_equals_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
-    JNI.inNative = true;
+private func ComponentAdapter_equals_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> jboolean {
     let __return = ComponentAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).equals( arg0: arg0 != nil ? java_swift.JavaObject( javaObject: arg0 ) : nil )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).z, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( z: jboolean(__return ? JNI_TRUE : JNI_FALSE) ).z, &__locals, removeLast: true )
 }
 
-private typealias ComponentAdapter_toString_8_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+private typealias ComponentAdapter_hashCode_6_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
 
-private func ComponentAdapter_toString_8( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
-    JNI.inNative = true;
-    let __return = ComponentAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).l, &locals, removeLast: true )
-}
-
-private typealias ComponentAdapter_hashCode_9_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jint
-
-private func ComponentAdapter_hashCode_9( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
-    JNI.inNative = true;
+private func ComponentAdapter_hashCode_6( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jint {
     let __return = ComponentAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).hashCode( )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).i, &locals, removeLast: true )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( i: jint(__return) ).i, &__locals, removeLast: true )
+}
+
+private typealias ComponentAdapter_toString_9_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong ) -> jobject?
+
+private func ComponentAdapter_toString_9( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong ) -> jobject? {
+    let __return = ComponentAdapterLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).toString( )
+    var __locals = [jobject]()
+    return JNI.check( JNIType.toJava( value: __return, locals: &__locals ).l, &__locals, removeLast: true )
 }
 
 fileprivate class ComponentAdapterLocal_: JNIObjectProxy<ComponentAdapter> {
@@ -157,26 +143,26 @@ fileprivate class ComponentAdapterLocal_: JNIObjectProxy<ComponentAdapter> {
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let ComponentAdapter_componentResized_0_thunk: ComponentAdapter_componentResized_0_type = ComponentAdapter_componentResized_0
-        natives.append( JNINativeMethod( name: strdup("__componentResized"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentAdapter_componentResized_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ComponentAdapter_componentHidden_0_thunk: ComponentAdapter_componentHidden_0_type = ComponentAdapter_componentHidden_0
+        natives.append( JNINativeMethod( name: strdup("__componentHidden"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentAdapter_componentHidden_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         let ComponentAdapter_componentMoved_1_thunk: ComponentAdapter_componentMoved_1_type = ComponentAdapter_componentMoved_1
         natives.append( JNINativeMethod( name: strdup("__componentMoved"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentAdapter_componentMoved_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let ComponentAdapter_componentShown_2_thunk: ComponentAdapter_componentShown_2_type = ComponentAdapter_componentShown_2
-        natives.append( JNINativeMethod( name: strdup("__componentShown"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentAdapter_componentShown_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ComponentAdapter_componentResized_2_thunk: ComponentAdapter_componentResized_2_type = ComponentAdapter_componentResized_2
+        natives.append( JNINativeMethod( name: strdup("__componentResized"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentAdapter_componentResized_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let ComponentAdapter_componentHidden_3_thunk: ComponentAdapter_componentHidden_3_type = ComponentAdapter_componentHidden_3
-        natives.append( JNINativeMethod( name: strdup("__componentHidden"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentAdapter_componentHidden_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ComponentAdapter_componentShown_3_thunk: ComponentAdapter_componentShown_3_type = ComponentAdapter_componentShown_3
+        natives.append( JNINativeMethod( name: strdup("__componentShown"), signature: strdup("(JLjava/awt/event/ComponentEvent;)V"), fnPtr: unsafeBitCast( ComponentAdapter_componentShown_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let ComponentAdapter_equals_7_thunk: ComponentAdapter_equals_7_type = ComponentAdapter_equals_7
-        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( ComponentAdapter_equals_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ComponentAdapter_equals_4_thunk: ComponentAdapter_equals_4_type = ComponentAdapter_equals_4
+        natives.append( JNINativeMethod( name: strdup("__equals"), signature: strdup("(JLjava/lang/Object;)Z"), fnPtr: unsafeBitCast( ComponentAdapter_equals_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let ComponentAdapter_toString_8_thunk: ComponentAdapter_toString_8_type = ComponentAdapter_toString_8
-        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( ComponentAdapter_toString_8_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ComponentAdapter_hashCode_6_thunk: ComponentAdapter_hashCode_6_type = ComponentAdapter_hashCode_6
+        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( ComponentAdapter_hashCode_6_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let ComponentAdapter_hashCode_9_thunk: ComponentAdapter_hashCode_9_type = ComponentAdapter_hashCode_9
-        natives.append( JNINativeMethod( name: strdup("__hashCode"), signature: strdup("(J)I"), fnPtr: unsafeBitCast( ComponentAdapter_hashCode_9_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let ComponentAdapter_toString_9_thunk: ComponentAdapter_toString_9_type = ComponentAdapter_toString_9
+        natives.append( JNINativeMethod( name: strdup("__toString"), signature: strdup("(J)Ljava/lang/String;"), fnPtr: unsafeBitCast( ComponentAdapter_toString_9_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -219,8 +205,8 @@ open class ComponentAdapterBase: ComponentAdapter {
     private static var new_MethodID_6: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
 
         self.init( javaObject: nil )
         __args[0] = __local!.swiftValue()

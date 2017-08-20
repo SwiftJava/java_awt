@@ -5,7 +5,7 @@ import java_swift
 
 /// class java.awt.JobAttributes$DestinationType ///
 
-open class JobAttributes_DestinationType: /* java.awt.AttributeValue */ UnclassedObject {
+open class JobAttributes_DestinationType: /* class java.awt.AttributeValue */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,12 +16,6 @@ open class JobAttributes_DestinationType: /* java.awt.AttributeValue */ Unclasse
 
     private static var JobAttributes_DestinationTypeJNIClass: jclass?
 
-    /// private static final int java.awt.JobAttributes$DestinationType.I_FILE
-
-    /// private static final int java.awt.JobAttributes$DestinationType.I_PRINTER
-
-    /// private static final java.lang.String[] java.awt.JobAttributes$DestinationType.NAMES
-
     /// public static final java.awt.JobAttributes$DestinationType java.awt.JobAttributes$DestinationType.FILE
 
     private static var FILE_FieldID: jfieldID?
@@ -29,9 +23,16 @@ open class JobAttributes_DestinationType: /* java.awt.AttributeValue */ Unclasse
     open static var FILE: JobAttributes_DestinationType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FILE", fieldType: "Ljava/awt/JobAttributes$DestinationType;", fieldCache: &FILE_FieldID, className: "java/awt/JobAttributes$DestinationType", classCache: &JobAttributes_DestinationTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JobAttributes_DestinationType( javaObject: __value ) : nil
         }
     }
+
+    /// private static final int java.awt.JobAttributes$DestinationType.I_FILE
+
+    /// private static final int java.awt.JobAttributes$DestinationType.I_PRINTER
+
+    /// private static final java.lang.String[] java.awt.JobAttributes$DestinationType.NAMES
 
     /// public static final java.awt.JobAttributes$DestinationType java.awt.JobAttributes$DestinationType.PRINTER
 
@@ -40,21 +41,43 @@ open class JobAttributes_DestinationType: /* java.awt.AttributeValue */ Unclasse
     open static var PRINTER: JobAttributes_DestinationType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PRINTER", fieldType: "Ljava/awt/JobAttributes$DestinationType;", fieldCache: &PRINTER_FieldID, className: "java/awt/JobAttributes$DestinationType", classCache: &JobAttributes_DestinationTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JobAttributes_DestinationType( javaObject: __value ) : nil
         }
     }
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AttributeValue.log
 
-    /// private final int java.awt.AttributeValue.value
-
     /// private final java.lang.String[] java.awt.AttributeValue.names
+
+    /// private final int java.awt.AttributeValue.value
 
     /// private java.awt.JobAttributes$DestinationType(int)
 
+    /// public int java.awt.JobAttributes$DestinationType.hashCode()
+
+    private static var hashCode_MethodID_1: jmethodID?
+
+    override open func hashCode() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "hashCode", methodSig: "()I", methodCache: &JobAttributes_DestinationType.hashCode_MethodID_1, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public java.lang.String java.awt.JobAttributes$DestinationType.toString()
 
-    /// public int java.awt.JobAttributes$DestinationType.hashCode()
+    private static var toString_MethodID_2: jmethodID?
+
+    override open func toString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toString", methodSig: "()Ljava/lang/String;", methodCache: &JobAttributes_DestinationType.toString_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
 }
 
