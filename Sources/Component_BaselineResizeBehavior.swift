@@ -9,7 +9,7 @@ public enum Component_BaselineResizeBehavior: Int, JNIObjectProtocol, JNIObjectI
 
     case CONSTANT_ASCENT, CONSTANT_DESCENT, CENTER_OFFSET, OTHER
 
-    static let enumConstants = try! JavaClass.forName("java.awt.Component$BaselineResizeBehavior")
+    static let enumConstants = JavaClass(loading: "java.awt.Component$BaselineResizeBehavior")
         .getEnumConstants()!.map { Component_BaselineResizeBehaviorForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> Component_BaselineResizeBehaviorForward {

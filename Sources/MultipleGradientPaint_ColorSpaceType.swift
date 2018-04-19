@@ -9,7 +9,7 @@ public enum MultipleGradientPaint_ColorSpaceType: Int, JNIObjectProtocol, JNIObj
 
     case SRGB, LINEAR_RGB
 
-    static let enumConstants = try! JavaClass.forName("java.awt.MultipleGradientPaint$ColorSpaceType")
+    static let enumConstants = JavaClass(loading: "java.awt.MultipleGradientPaint$ColorSpaceType")
         .getEnumConstants()!.map { MultipleGradientPaint_ColorSpaceTypeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> MultipleGradientPaint_ColorSpaceTypeForward {

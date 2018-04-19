@@ -9,7 +9,7 @@ public enum GraphicsDevice_WindowTranslucency: Int, JNIObjectProtocol, JNIObject
 
     case PERPIXEL_TRANSPARENT, TRANSLUCENT, PERPIXEL_TRANSLUCENT
 
-    static let enumConstants = try! JavaClass.forName("java.awt.GraphicsDevice$WindowTranslucency")
+    static let enumConstants = JavaClass(loading: "java.awt.GraphicsDevice$WindowTranslucency")
         .getEnumConstants()!.map { GraphicsDevice_WindowTranslucencyForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> GraphicsDevice_WindowTranslucencyForward {

@@ -9,7 +9,7 @@ public enum TrayIcon_MessageType: Int, JNIObjectProtocol, JNIObjectInit {
 
     case ERROR, WARNING, INFO, NONE
 
-    static let enumConstants = try! JavaClass.forName("java.awt.TrayIcon$MessageType")
+    static let enumConstants = JavaClass(loading: "java.awt.TrayIcon$MessageType")
         .getEnumConstants()!.map { TrayIcon_MessageTypeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> TrayIcon_MessageTypeForward {

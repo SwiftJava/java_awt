@@ -9,7 +9,7 @@ public enum Desktop_Action: Int, JNIObjectProtocol, JNIObjectInit {
 
     case OPEN, EDIT, PRINT, MAIL, BROWSE
 
-    static let enumConstants = try! JavaClass.forName("java.awt.Desktop$Action")
+    static let enumConstants = JavaClass(loading: "java.awt.Desktop$Action")
         .getEnumConstants()!.map { Desktop_ActionForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> Desktop_ActionForward {

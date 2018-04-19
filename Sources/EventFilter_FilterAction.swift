@@ -9,7 +9,7 @@ public enum EventFilter_FilterAction: Int, JNIObjectProtocol, JNIObjectInit {
 
     case ACCEPT, REJECT, ACCEPT_IMMEDIATELY
 
-    static let enumConstants = try! JavaClass.forName("java.awt.EventFilter$FilterAction")
+    static let enumConstants = JavaClass(loading: "java.awt.EventFilter$FilterAction")
         .getEnumConstants()!.map { EventFilter_FilterActionForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> EventFilter_FilterActionForward {

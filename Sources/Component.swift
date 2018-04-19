@@ -2647,23 +2647,23 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     /// public void java.awt.Component.list(java.io.PrintStream)
 
-    /// public void java.awt.Component.list(java.io.PrintWriter,int)
+    /// public void java.awt.Component.list(java.io.PrintStream,int)
 
     private static var list_MethodID_132: jmethodID?
 
-    open func list( arg0: /* class java.io.PrintWriter */ UnavailableObject?, arg1: Int ) {
+    open func list( arg0: /* class java.io.PrintStream */ UnavailableObject?, arg1: Int ) {
         var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = jvalue( i: jint(arg1) )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "list", methodSig: "(Ljava/io/PrintWriter;I)V", methodCache: &Component.list_MethodID_132, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "list", methodSig: "(Ljava/io/PrintStream;I)V", methodCache: &Component.list_MethodID_132, args: &__args, locals: &__locals )
     }
 
-    open func list( _ _arg0: /* class java.io.PrintWriter */ UnavailableObject?, _ _arg1: Int ) {
+    open func list( _ _arg0: /* class java.io.PrintStream */ UnavailableObject?, _ _arg1: Int ) {
         list( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public void java.awt.Component.list(java.io.PrintStream,int)
+    /// public void java.awt.Component.list(java.io.PrintWriter,int)
 
     /// public void java.awt.Component.list()
 

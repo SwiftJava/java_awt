@@ -9,7 +9,7 @@ public enum Window_Type: Int, JNIObjectProtocol, JNIObjectInit {
 
     case NORMAL, UTILITY, POPUP
 
-    static let enumConstants = try! JavaClass.forName("java.awt.Window$Type")
+    static let enumConstants = JavaClass(loading: "java.awt.Window$Type")
         .getEnumConstants()!.map { Window_TypeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> Window_TypeForward {

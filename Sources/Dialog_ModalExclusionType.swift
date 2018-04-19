@@ -9,7 +9,7 @@ public enum Dialog_ModalExclusionType: Int, JNIObjectProtocol, JNIObjectInit {
 
     case NO_EXCLUDE, APPLICATION_EXCLUDE, TOOLKIT_EXCLUDE
 
-    static let enumConstants = try! JavaClass.forName("java.awt.Dialog$ModalExclusionType")
+    static let enumConstants = JavaClass(loading: "java.awt.Dialog$ModalExclusionType")
         .getEnumConstants()!.map { Dialog_ModalExclusionTypeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> Dialog_ModalExclusionTypeForward {

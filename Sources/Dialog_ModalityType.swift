@@ -9,7 +9,7 @@ public enum Dialog_ModalityType: Int, JNIObjectProtocol, JNIObjectInit {
 
     case MODELESS, DOCUMENT_MODAL, APPLICATION_MODAL, TOOLKIT_MODAL
 
-    static let enumConstants = try! JavaClass.forName("java.awt.Dialog$ModalityType")
+    static let enumConstants = JavaClass(loading: "java.awt.Dialog$ModalityType")
         .getEnumConstants()!.map { Dialog_ModalityTypeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> Dialog_ModalityTypeForward {

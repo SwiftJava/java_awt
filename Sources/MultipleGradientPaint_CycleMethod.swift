@@ -9,7 +9,7 @@ public enum MultipleGradientPaint_CycleMethod: Int, JNIObjectProtocol, JNIObject
 
     case NO_CYCLE, REFLECT, REPEAT
 
-    static let enumConstants = try! JavaClass.forName("java.awt.MultipleGradientPaint$CycleMethod")
+    static let enumConstants = JavaClass(loading: "java.awt.MultipleGradientPaint$CycleMethod")
         .getEnumConstants()!.map { MultipleGradientPaint_CycleMethodForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> MultipleGradientPaint_CycleMethodForward {

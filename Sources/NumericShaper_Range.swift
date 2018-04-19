@@ -9,7 +9,7 @@ public enum NumericShaper_Range: Int, JNIObjectProtocol, JNIObjectInit {
 
     case EUROPEAN, ARABIC, EASTERN_ARABIC, DEVANAGARI, BENGALI, GURMUKHI, GUJARATI, ORIYA, TAMIL, TELUGU, KANNADA, MALAYALAM, THAI, LAO, TIBETAN, MYANMAR, ETHIOPIC, KHMER, MONGOLIAN, NKO, MYANMAR_SHAN, LIMBU, NEW_TAI_LUE, BALINESE, SUNDANESE, LEPCHA, OL_CHIKI, VAI, SAURASHTRA, KAYAH_LI, CHAM, TAI_THAM_HORA, TAI_THAM_THAM, JAVANESE, MEETEI_MAYEK
 
-    static let enumConstants = try! JavaClass.forName("java.awt.font.NumericShaper$Range")
+    static let enumConstants = JavaClass(loading: "java.awt.font.NumericShaper$Range")
         .getEnumConstants()!.map { NumericShaper_RangeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> NumericShaper_RangeForward {
