@@ -20,7 +20,7 @@ open class ActionEvent: AWTEvent {
 
     private static var ACTION_FIRST_FieldID: jfieldID?
 
-    open static var ACTION_FIRST: Int {
+    public static var ACTION_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ACTION_FIRST", fieldType: "I", fieldCache: &ACTION_FIRST_FieldID, className: "java/awt/event/ActionEvent", classCache: &ActionEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class ActionEvent: AWTEvent {
 
     private static var ACTION_LAST_FieldID: jfieldID?
 
-    open static var ACTION_LAST: Int {
+    public static var ACTION_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ACTION_LAST", fieldType: "I", fieldCache: &ACTION_LAST_FieldID, className: "java/awt/event/ActionEvent", classCache: &ActionEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class ActionEvent: AWTEvent {
 
     private static var ACTION_PERFORMED_FieldID: jfieldID?
 
-    open static var ACTION_PERFORMED: Int {
+    public static var ACTION_PERFORMED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ACTION_PERFORMED", fieldType: "I", fieldCache: &ACTION_PERFORMED_FieldID, className: "java/awt/event/ActionEvent", classCache: &ActionEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class ActionEvent: AWTEvent {
 
     private static var ALT_MASK_FieldID: jfieldID?
 
-    open static var ALT_MASK: Int {
+    public static var ALT_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALT_MASK", fieldType: "I", fieldCache: &ALT_MASK_FieldID, className: "java/awt/event/ActionEvent", classCache: &ActionEventJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class ActionEvent: AWTEvent {
 
     private static var CTRL_MASK_FieldID: jfieldID?
 
-    open static var CTRL_MASK: Int {
+    public static var CTRL_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CTRL_MASK", fieldType: "I", fieldCache: &CTRL_MASK_FieldID, className: "java/awt/event/ActionEvent", classCache: &ActionEventJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class ActionEvent: AWTEvent {
 
     private static var META_MASK_FieldID: jfieldID?
 
-    open static var META_MASK: Int {
+    public static var META_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "META_MASK", fieldType: "I", fieldCache: &META_MASK_FieldID, className: "java/awt/event/ActionEvent", classCache: &ActionEventJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class ActionEvent: AWTEvent {
 
     private static var SHIFT_MASK_FieldID: jfieldID?
 
-    open static var SHIFT_MASK: Int {
+    public static var SHIFT_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SHIFT_MASK", fieldType: "I", fieldCache: &SHIFT_MASK_FieldID, className: "java/awt/event/ActionEvent", classCache: &ActionEventJNIClass )
             return Int(__value)

@@ -21,7 +21,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var BOLD_FieldID: jfieldID?
 
-    open static var BOLD: Int {
+    public static var BOLD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BOLD", fieldType: "I", fieldCache: &BOLD_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var CENTER_BASELINE_FieldID: jfieldID?
 
-    open static var CENTER_BASELINE: Int {
+    public static var CENTER_BASELINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CENTER_BASELINE", fieldType: "I", fieldCache: &CENTER_BASELINE_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var DIALOG_FieldID: jfieldID?
 
-    open static var DIALOG: String! {
+    public static var DIALOG: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DIALOG", fieldType: "Ljava/lang/String;", fieldCache: &DIALOG_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -55,7 +55,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var DIALOG_INPUT_FieldID: jfieldID?
 
-    open static var DIALOG_INPUT: String! {
+    public static var DIALOG_INPUT: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DIALOG_INPUT", fieldType: "Ljava/lang/String;", fieldCache: &DIALOG_INPUT_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -69,7 +69,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var HANGING_BASELINE_FieldID: jfieldID?
 
-    open static var HANGING_BASELINE: Int {
+    public static var HANGING_BASELINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HANGING_BASELINE", fieldType: "I", fieldCache: &HANGING_BASELINE_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)
@@ -80,7 +80,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var ITALIC_FieldID: jfieldID?
 
-    open static var ITALIC: Int {
+    public static var ITALIC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ITALIC", fieldType: "I", fieldCache: &ITALIC_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)
@@ -91,7 +91,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var LAYOUT_LEFT_TO_RIGHT_FieldID: jfieldID?
 
-    open static var LAYOUT_LEFT_TO_RIGHT: Int {
+    public static var LAYOUT_LEFT_TO_RIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LAYOUT_LEFT_TO_RIGHT", fieldType: "I", fieldCache: &LAYOUT_LEFT_TO_RIGHT_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)
@@ -104,7 +104,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var LAYOUT_NO_LIMIT_CONTEXT_FieldID: jfieldID?
 
-    open static var LAYOUT_NO_LIMIT_CONTEXT: Int {
+    public static var LAYOUT_NO_LIMIT_CONTEXT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LAYOUT_NO_LIMIT_CONTEXT", fieldType: "I", fieldCache: &LAYOUT_NO_LIMIT_CONTEXT_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)
@@ -115,7 +115,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var LAYOUT_NO_START_CONTEXT_FieldID: jfieldID?
 
-    open static var LAYOUT_NO_START_CONTEXT: Int {
+    public static var LAYOUT_NO_START_CONTEXT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LAYOUT_NO_START_CONTEXT", fieldType: "I", fieldCache: &LAYOUT_NO_START_CONTEXT_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)
@@ -126,7 +126,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var LAYOUT_RIGHT_TO_LEFT_FieldID: jfieldID?
 
-    open static var LAYOUT_RIGHT_TO_LEFT: Int {
+    public static var LAYOUT_RIGHT_TO_LEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LAYOUT_RIGHT_TO_LEFT", fieldType: "I", fieldCache: &LAYOUT_RIGHT_TO_LEFT_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)
@@ -137,7 +137,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var MONOSPACED_FieldID: jfieldID?
 
-    open static var MONOSPACED: String! {
+    public static var MONOSPACED: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MONOSPACED", fieldType: "Ljava/lang/String;", fieldCache: &MONOSPACED_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -149,7 +149,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var PLAIN_FieldID: jfieldID?
 
-    open static var PLAIN: Int {
+    public static var PLAIN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PLAIN", fieldType: "I", fieldCache: &PLAIN_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)
@@ -164,7 +164,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var ROMAN_BASELINE_FieldID: jfieldID?
 
-    open static var ROMAN_BASELINE: Int {
+    public static var ROMAN_BASELINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ROMAN_BASELINE", fieldType: "I", fieldCache: &ROMAN_BASELINE_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)
@@ -175,7 +175,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var SANS_SERIF_FieldID: jfieldID?
 
-    open static var SANS_SERIF: String! {
+    public static var SANS_SERIF: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SANS_SERIF", fieldType: "Ljava/lang/String;", fieldCache: &SANS_SERIF_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -189,7 +189,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var SERIF_FieldID: jfieldID?
 
-    open static var SERIF: String! {
+    public static var SERIF: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SERIF", fieldType: "Ljava/lang/String;", fieldCache: &SERIF_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -201,7 +201,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var TRUETYPE_FONT_FieldID: jfieldID?
 
-    open static var TRUETYPE_FONT: Int {
+    public static var TRUETYPE_FONT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRUETYPE_FONT", fieldType: "I", fieldCache: &TRUETYPE_FONT_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)
@@ -212,7 +212,7 @@ open class Font: java_swift.JavaObject, /* interface java.io.Serializable */ Una
 
     private static var TYPE1_FONT_FieldID: jfieldID?
 
-    open static var TYPE1_FONT: Int {
+    public static var TYPE1_FONT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE1_FONT", fieldType: "I", fieldCache: &TYPE1_FONT_FieldID, className: "java/awt/Font", classCache: &FontJNIClass )
             return Int(__value)

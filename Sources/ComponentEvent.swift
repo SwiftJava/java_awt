@@ -20,7 +20,7 @@ open class ComponentEvent: AWTEvent {
 
     private static var COMPONENT_FIRST_FieldID: jfieldID?
 
-    open static var COMPONENT_FIRST: Int {
+    public static var COMPONENT_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMPONENT_FIRST", fieldType: "I", fieldCache: &COMPONENT_FIRST_FieldID, className: "java/awt/event/ComponentEvent", classCache: &ComponentEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class ComponentEvent: AWTEvent {
 
     private static var COMPONENT_HIDDEN_FieldID: jfieldID?
 
-    open static var COMPONENT_HIDDEN: Int {
+    public static var COMPONENT_HIDDEN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMPONENT_HIDDEN", fieldType: "I", fieldCache: &COMPONENT_HIDDEN_FieldID, className: "java/awt/event/ComponentEvent", classCache: &ComponentEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class ComponentEvent: AWTEvent {
 
     private static var COMPONENT_LAST_FieldID: jfieldID?
 
-    open static var COMPONENT_LAST: Int {
+    public static var COMPONENT_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMPONENT_LAST", fieldType: "I", fieldCache: &COMPONENT_LAST_FieldID, className: "java/awt/event/ComponentEvent", classCache: &ComponentEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class ComponentEvent: AWTEvent {
 
     private static var COMPONENT_MOVED_FieldID: jfieldID?
 
-    open static var COMPONENT_MOVED: Int {
+    public static var COMPONENT_MOVED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMPONENT_MOVED", fieldType: "I", fieldCache: &COMPONENT_MOVED_FieldID, className: "java/awt/event/ComponentEvent", classCache: &ComponentEventJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class ComponentEvent: AWTEvent {
 
     private static var COMPONENT_RESIZED_FieldID: jfieldID?
 
-    open static var COMPONENT_RESIZED: Int {
+    public static var COMPONENT_RESIZED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMPONENT_RESIZED", fieldType: "I", fieldCache: &COMPONENT_RESIZED_FieldID, className: "java/awt/event/ComponentEvent", classCache: &ComponentEventJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class ComponentEvent: AWTEvent {
 
     private static var COMPONENT_SHOWN_FieldID: jfieldID?
 
-    open static var COMPONENT_SHOWN: Int {
+    public static var COMPONENT_SHOWN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMPONENT_SHOWN", fieldType: "I", fieldCache: &COMPONENT_SHOWN_FieldID, className: "java/awt/event/ComponentEvent", classCache: &ComponentEventJNIClass )
             return Int(__value)

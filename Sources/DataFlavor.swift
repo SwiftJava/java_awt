@@ -24,7 +24,7 @@ open class DataFlavor: java_swift.JavaObject, /* interface java.io.Externalizabl
 
     private static var allHtmlFlavor_FieldID: jfieldID?
 
-    open static var allHtmlFlavor: DataFlavor! {
+    public static var allHtmlFlavor: DataFlavor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "allHtmlFlavor", fieldType: "Ljava/awt/datatransfer/DataFlavor;", fieldCache: &allHtmlFlavor_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -41,7 +41,7 @@ open class DataFlavor: java_swift.JavaObject, /* interface java.io.Externalizabl
 
     private static var fragmentHtmlFlavor_FieldID: jfieldID?
 
-    open static var fragmentHtmlFlavor: DataFlavor! {
+    public static var fragmentHtmlFlavor: DataFlavor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "fragmentHtmlFlavor", fieldType: "Ljava/awt/datatransfer/DataFlavor;", fieldCache: &fragmentHtmlFlavor_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -58,7 +58,7 @@ open class DataFlavor: java_swift.JavaObject, /* interface java.io.Externalizabl
 
     private static var imageFlavor_FieldID: jfieldID?
 
-    open static var imageFlavor: DataFlavor! {
+    public static var imageFlavor: DataFlavor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "imageFlavor", fieldType: "Ljava/awt/datatransfer/DataFlavor;", fieldCache: &imageFlavor_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -72,7 +72,7 @@ open class DataFlavor: java_swift.JavaObject, /* interface java.io.Externalizabl
 
     private static var javaFileListFlavor_FieldID: jfieldID?
 
-    open static var javaFileListFlavor: DataFlavor! {
+    public static var javaFileListFlavor: DataFlavor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "javaFileListFlavor", fieldType: "Ljava/awt/datatransfer/DataFlavor;", fieldCache: &javaFileListFlavor_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -84,7 +84,7 @@ open class DataFlavor: java_swift.JavaObject, /* interface java.io.Externalizabl
 
     private static var javaJVMLocalObjectMimeType_FieldID: jfieldID?
 
-    open static var javaJVMLocalObjectMimeType: String! {
+    public static var javaJVMLocalObjectMimeType: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "javaJVMLocalObjectMimeType", fieldType: "Ljava/lang/String;", fieldCache: &javaJVMLocalObjectMimeType_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -96,7 +96,7 @@ open class DataFlavor: java_swift.JavaObject, /* interface java.io.Externalizabl
 
     private static var javaRemoteObjectMimeType_FieldID: jfieldID?
 
-    open static var javaRemoteObjectMimeType: String! {
+    public static var javaRemoteObjectMimeType: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "javaRemoteObjectMimeType", fieldType: "Ljava/lang/String;", fieldCache: &javaRemoteObjectMimeType_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -108,7 +108,7 @@ open class DataFlavor: java_swift.JavaObject, /* interface java.io.Externalizabl
 
     private static var javaSerializedObjectMimeType_FieldID: jfieldID?
 
-    open static var javaSerializedObjectMimeType: String! {
+    public static var javaSerializedObjectMimeType: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "javaSerializedObjectMimeType", fieldType: "Ljava/lang/String;", fieldCache: &javaSerializedObjectMimeType_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -120,7 +120,7 @@ open class DataFlavor: java_swift.JavaObject, /* interface java.io.Externalizabl
 
     private static var plainTextFlavor_FieldID: jfieldID?
 
-    open static var plainTextFlavor: DataFlavor! {
+    public static var plainTextFlavor: DataFlavor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "plainTextFlavor", fieldType: "Ljava/awt/datatransfer/DataFlavor;", fieldCache: &plainTextFlavor_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -132,7 +132,7 @@ open class DataFlavor: java_swift.JavaObject, /* interface java.io.Externalizabl
 
     private static var selectionHtmlFlavor_FieldID: jfieldID?
 
-    open static var selectionHtmlFlavor: DataFlavor! {
+    public static var selectionHtmlFlavor: DataFlavor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "selectionHtmlFlavor", fieldType: "Ljava/awt/datatransfer/DataFlavor;", fieldCache: &selectionHtmlFlavor_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -151,7 +151,7 @@ open class DataFlavor: java_swift.JavaObject, /* interface java.io.Externalizabl
 
     private static var stringFlavor_FieldID: jfieldID?
 
-    open static var stringFlavor: DataFlavor! {
+    public static var stringFlavor: DataFlavor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "stringFlavor", fieldType: "Ljava/awt/datatransfer/DataFlavor;", fieldCache: &stringFlavor_FieldID, className: "java/awt/datatransfer/DataFlavor", classCache: &DataFlavorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

@@ -47,7 +47,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_3BYTE_BGR_FieldID: jfieldID?
 
-    open static var TYPE_3BYTE_BGR: Int {
+    public static var TYPE_3BYTE_BGR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_3BYTE_BGR", fieldType: "I", fieldCache: &TYPE_3BYTE_BGR_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -58,7 +58,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_4BYTE_ABGR_FieldID: jfieldID?
 
-    open static var TYPE_4BYTE_ABGR: Int {
+    public static var TYPE_4BYTE_ABGR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_4BYTE_ABGR", fieldType: "I", fieldCache: &TYPE_4BYTE_ABGR_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -69,7 +69,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_4BYTE_ABGR_PRE_FieldID: jfieldID?
 
-    open static var TYPE_4BYTE_ABGR_PRE: Int {
+    public static var TYPE_4BYTE_ABGR_PRE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_4BYTE_ABGR_PRE", fieldType: "I", fieldCache: &TYPE_4BYTE_ABGR_PRE_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -80,7 +80,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_BYTE_BINARY_FieldID: jfieldID?
 
-    open static var TYPE_BYTE_BINARY: Int {
+    public static var TYPE_BYTE_BINARY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BYTE_BINARY", fieldType: "I", fieldCache: &TYPE_BYTE_BINARY_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -91,7 +91,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_BYTE_GRAY_FieldID: jfieldID?
 
-    open static var TYPE_BYTE_GRAY: Int {
+    public static var TYPE_BYTE_GRAY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BYTE_GRAY", fieldType: "I", fieldCache: &TYPE_BYTE_GRAY_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -102,7 +102,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_BYTE_INDEXED_FieldID: jfieldID?
 
-    open static var TYPE_BYTE_INDEXED: Int {
+    public static var TYPE_BYTE_INDEXED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BYTE_INDEXED", fieldType: "I", fieldCache: &TYPE_BYTE_INDEXED_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -113,7 +113,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_CUSTOM_FieldID: jfieldID?
 
-    open static var TYPE_CUSTOM: Int {
+    public static var TYPE_CUSTOM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_CUSTOM", fieldType: "I", fieldCache: &TYPE_CUSTOM_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -124,7 +124,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_INT_ARGB_FieldID: jfieldID?
 
-    open static var TYPE_INT_ARGB: Int {
+    public static var TYPE_INT_ARGB: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_ARGB", fieldType: "I", fieldCache: &TYPE_INT_ARGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -135,7 +135,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_INT_ARGB_PRE_FieldID: jfieldID?
 
-    open static var TYPE_INT_ARGB_PRE: Int {
+    public static var TYPE_INT_ARGB_PRE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_ARGB_PRE", fieldType: "I", fieldCache: &TYPE_INT_ARGB_PRE_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -146,7 +146,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_INT_BGR_FieldID: jfieldID?
 
-    open static var TYPE_INT_BGR: Int {
+    public static var TYPE_INT_BGR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_BGR", fieldType: "I", fieldCache: &TYPE_INT_BGR_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -157,7 +157,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_INT_RGB_FieldID: jfieldID?
 
-    open static var TYPE_INT_RGB: Int {
+    public static var TYPE_INT_RGB: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT_RGB", fieldType: "I", fieldCache: &TYPE_INT_RGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -168,7 +168,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_USHORT_555_RGB_FieldID: jfieldID?
 
-    open static var TYPE_USHORT_555_RGB: Int {
+    public static var TYPE_USHORT_555_RGB: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_USHORT_555_RGB", fieldType: "I", fieldCache: &TYPE_USHORT_555_RGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -179,7 +179,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_USHORT_565_RGB_FieldID: jfieldID?
 
-    open static var TYPE_USHORT_565_RGB: Int {
+    public static var TYPE_USHORT_565_RGB: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_USHORT_565_RGB", fieldType: "I", fieldCache: &TYPE_USHORT_565_RGB_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -190,7 +190,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TYPE_USHORT_GRAY_FieldID: jfieldID?
 
-    open static var TYPE_USHORT_GRAY: Int {
+    public static var TYPE_USHORT_GRAY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_USHORT_GRAY", fieldType: "I", fieldCache: &TYPE_USHORT_GRAY_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -257,7 +257,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var BITMASK_FieldID: jfieldID?
 
-    open static var BITMASK: Int {
+    public static var BITMASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BITMASK", fieldType: "I", fieldCache: &BITMASK_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -268,7 +268,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var OPAQUE_FieldID: jfieldID?
 
-    open static var OPAQUE: Int {
+    public static var OPAQUE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)
@@ -279,7 +279,7 @@ open class BufferedImage: Image, WritableRenderedImage, Transparency {
 
     private static var TRANSLUCENT_FieldID: jfieldID?
 
-    open static var TRANSLUCENT: Int {
+    public static var TRANSLUCENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRANSLUCENT", fieldType: "I", fieldCache: &TRANSLUCENT_FieldID, className: "java/awt/image/BufferedImage", classCache: &BufferedImageJNIClass )
             return Int(__value)

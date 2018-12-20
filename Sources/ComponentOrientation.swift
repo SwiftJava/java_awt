@@ -23,7 +23,7 @@ open class ComponentOrientation: java_swift.JavaObject, /* interface java.io.Ser
 
     private static var LEFT_TO_RIGHT_FieldID: jfieldID?
 
-    open static var LEFT_TO_RIGHT: ComponentOrientation! {
+    public static var LEFT_TO_RIGHT: ComponentOrientation! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LEFT_TO_RIGHT", fieldType: "Ljava/awt/ComponentOrientation;", fieldCache: &LEFT_TO_RIGHT_FieldID, className: "java/awt/ComponentOrientation", classCache: &ComponentOrientationJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -37,7 +37,7 @@ open class ComponentOrientation: java_swift.JavaObject, /* interface java.io.Ser
 
     private static var RIGHT_TO_LEFT_FieldID: jfieldID?
 
-    open static var RIGHT_TO_LEFT: ComponentOrientation! {
+    public static var RIGHT_TO_LEFT: ComponentOrientation! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RIGHT_TO_LEFT", fieldType: "Ljava/awt/ComponentOrientation;", fieldCache: &RIGHT_TO_LEFT_FieldID, className: "java/awt/ComponentOrientation", classCache: &ComponentOrientationJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -49,7 +49,7 @@ open class ComponentOrientation: java_swift.JavaObject, /* interface java.io.Ser
 
     private static var UNKNOWN_FieldID: jfieldID?
 
-    open static var UNKNOWN: ComponentOrientation! {
+    public static var UNKNOWN: ComponentOrientation! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNKNOWN", fieldType: "Ljava/awt/ComponentOrientation;", fieldCache: &UNKNOWN_FieldID, className: "java/awt/ComponentOrientation", classCache: &ComponentOrientationJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

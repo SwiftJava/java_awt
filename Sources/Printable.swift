@@ -30,7 +30,7 @@ open class PrintableForward: JNIObjectForward, Printable {
 
     private static var NO_SUCH_PAGE_FieldID: jfieldID?
 
-    open static var NO_SUCH_PAGE: Int {
+    public static var NO_SUCH_PAGE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NO_SUCH_PAGE", fieldType: "I", fieldCache: &NO_SUCH_PAGE_FieldID, className: "java/awt/print/Printable", classCache: &PrintableJNIClass )
             return Int(__value)
@@ -41,7 +41,7 @@ open class PrintableForward: JNIObjectForward, Printable {
 
     private static var PAGE_EXISTS_FieldID: jfieldID?
 
-    open static var PAGE_EXISTS: Int {
+    public static var PAGE_EXISTS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PAGE_EXISTS", fieldType: "I", fieldCache: &PAGE_EXISTS_FieldID, className: "java/awt/print/Printable", classCache: &PrintableJNIClass )
             return Int(__value)

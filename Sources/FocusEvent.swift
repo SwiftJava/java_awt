@@ -20,7 +20,7 @@ open class FocusEvent: ComponentEvent {
 
     private static var FOCUS_FIRST_FieldID: jfieldID?
 
-    open static var FOCUS_FIRST: Int {
+    public static var FOCUS_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FOCUS_FIRST", fieldType: "I", fieldCache: &FOCUS_FIRST_FieldID, className: "java/awt/event/FocusEvent", classCache: &FocusEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class FocusEvent: ComponentEvent {
 
     private static var FOCUS_GAINED_FieldID: jfieldID?
 
-    open static var FOCUS_GAINED: Int {
+    public static var FOCUS_GAINED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FOCUS_GAINED", fieldType: "I", fieldCache: &FOCUS_GAINED_FieldID, className: "java/awt/event/FocusEvent", classCache: &FocusEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class FocusEvent: ComponentEvent {
 
     private static var FOCUS_LAST_FieldID: jfieldID?
 
-    open static var FOCUS_LAST: Int {
+    public static var FOCUS_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FOCUS_LAST", fieldType: "I", fieldCache: &FOCUS_LAST_FieldID, className: "java/awt/event/FocusEvent", classCache: &FocusEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class FocusEvent: ComponentEvent {
 
     private static var FOCUS_LOST_FieldID: jfieldID?
 
-    open static var FOCUS_LOST: Int {
+    public static var FOCUS_LOST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FOCUS_LOST", fieldType: "I", fieldCache: &FOCUS_LOST_FieldID, className: "java/awt/event/FocusEvent", classCache: &FocusEventJNIClass )
             return Int(__value)

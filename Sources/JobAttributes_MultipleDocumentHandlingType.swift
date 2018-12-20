@@ -26,7 +26,7 @@ open class JobAttributes_MultipleDocumentHandlingType: /* class java.awt.Attribu
 
     private static var SEPARATE_DOCUMENTS_COLLATED_COPIES_FieldID: jfieldID?
 
-    open static var SEPARATE_DOCUMENTS_COLLATED_COPIES: JobAttributes_MultipleDocumentHandlingType! {
+    public static var SEPARATE_DOCUMENTS_COLLATED_COPIES: JobAttributes_MultipleDocumentHandlingType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SEPARATE_DOCUMENTS_COLLATED_COPIES", fieldType: "Ljava/awt/JobAttributes$MultipleDocumentHandlingType;", fieldCache: &SEPARATE_DOCUMENTS_COLLATED_COPIES_FieldID, className: "java/awt/JobAttributes$MultipleDocumentHandlingType", classCache: &JobAttributes_MultipleDocumentHandlingTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -38,7 +38,7 @@ open class JobAttributes_MultipleDocumentHandlingType: /* class java.awt.Attribu
 
     private static var SEPARATE_DOCUMENTS_UNCOLLATED_COPIES_FieldID: jfieldID?
 
-    open static var SEPARATE_DOCUMENTS_UNCOLLATED_COPIES: JobAttributes_MultipleDocumentHandlingType! {
+    public static var SEPARATE_DOCUMENTS_UNCOLLATED_COPIES: JobAttributes_MultipleDocumentHandlingType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SEPARATE_DOCUMENTS_UNCOLLATED_COPIES", fieldType: "Ljava/awt/JobAttributes$MultipleDocumentHandlingType;", fieldCache: &SEPARATE_DOCUMENTS_UNCOLLATED_COPIES_FieldID, className: "java/awt/JobAttributes$MultipleDocumentHandlingType", classCache: &JobAttributes_MultipleDocumentHandlingTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

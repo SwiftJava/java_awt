@@ -80,7 +80,7 @@ open class FlatteningPathIterator: java_swift.JavaObject, PathIterator {
 
     private static var SEG_CLOSE_FieldID: jfieldID?
 
-    open static var SEG_CLOSE: Int {
+    public static var SEG_CLOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SEG_CLOSE", fieldType: "I", fieldCache: &SEG_CLOSE_FieldID, className: "java/awt/geom/FlatteningPathIterator", classCache: &FlatteningPathIteratorJNIClass )
             return Int(__value)
@@ -91,7 +91,7 @@ open class FlatteningPathIterator: java_swift.JavaObject, PathIterator {
 
     private static var SEG_CUBICTO_FieldID: jfieldID?
 
-    open static var SEG_CUBICTO: Int {
+    public static var SEG_CUBICTO: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SEG_CUBICTO", fieldType: "I", fieldCache: &SEG_CUBICTO_FieldID, className: "java/awt/geom/FlatteningPathIterator", classCache: &FlatteningPathIteratorJNIClass )
             return Int(__value)
@@ -102,7 +102,7 @@ open class FlatteningPathIterator: java_swift.JavaObject, PathIterator {
 
     private static var SEG_LINETO_FieldID: jfieldID?
 
-    open static var SEG_LINETO: Int {
+    public static var SEG_LINETO: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SEG_LINETO", fieldType: "I", fieldCache: &SEG_LINETO_FieldID, className: "java/awt/geom/FlatteningPathIterator", classCache: &FlatteningPathIteratorJNIClass )
             return Int(__value)
@@ -113,7 +113,7 @@ open class FlatteningPathIterator: java_swift.JavaObject, PathIterator {
 
     private static var SEG_MOVETO_FieldID: jfieldID?
 
-    open static var SEG_MOVETO: Int {
+    public static var SEG_MOVETO: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SEG_MOVETO", fieldType: "I", fieldCache: &SEG_MOVETO_FieldID, className: "java/awt/geom/FlatteningPathIterator", classCache: &FlatteningPathIteratorJNIClass )
             return Int(__value)
@@ -124,7 +124,7 @@ open class FlatteningPathIterator: java_swift.JavaObject, PathIterator {
 
     private static var SEG_QUADTO_FieldID: jfieldID?
 
-    open static var SEG_QUADTO: Int {
+    public static var SEG_QUADTO: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SEG_QUADTO", fieldType: "I", fieldCache: &SEG_QUADTO_FieldID, className: "java/awt/geom/FlatteningPathIterator", classCache: &FlatteningPathIteratorJNIClass )
             return Int(__value)
@@ -135,7 +135,7 @@ open class FlatteningPathIterator: java_swift.JavaObject, PathIterator {
 
     private static var WIND_EVEN_ODD_FieldID: jfieldID?
 
-    open static var WIND_EVEN_ODD: Int {
+    public static var WIND_EVEN_ODD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WIND_EVEN_ODD", fieldType: "I", fieldCache: &WIND_EVEN_ODD_FieldID, className: "java/awt/geom/FlatteningPathIterator", classCache: &FlatteningPathIteratorJNIClass )
             return Int(__value)
@@ -146,7 +146,7 @@ open class FlatteningPathIterator: java_swift.JavaObject, PathIterator {
 
     private static var WIND_NON_ZERO_FieldID: jfieldID?
 
-    open static var WIND_NON_ZERO: Int {
+    public static var WIND_NON_ZERO: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WIND_NON_ZERO", fieldType: "I", fieldCache: &WIND_NON_ZERO_FieldID, className: "java/awt/geom/FlatteningPathIterator", classCache: &FlatteningPathIteratorJNIClass )
             return Int(__value)

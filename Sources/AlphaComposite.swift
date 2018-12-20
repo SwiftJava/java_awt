@@ -20,7 +20,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var CLEAR_FieldID: jfieldID?
 
-    open static var CLEAR: Int {
+    public static var CLEAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CLEAR", fieldType: "I", fieldCache: &CLEAR_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var Clear_FieldID: jfieldID?
 
-    open static var Clear: AlphaComposite! {
+    public static var Clear: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Clear", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &Clear_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -43,7 +43,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var DST_FieldID: jfieldID?
 
-    open static var DST: Int {
+    public static var DST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DST", fieldType: "I", fieldCache: &DST_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -54,7 +54,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var DST_ATOP_FieldID: jfieldID?
 
-    open static var DST_ATOP: Int {
+    public static var DST_ATOP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DST_ATOP", fieldType: "I", fieldCache: &DST_ATOP_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -65,7 +65,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var DST_IN_FieldID: jfieldID?
 
-    open static var DST_IN: Int {
+    public static var DST_IN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DST_IN", fieldType: "I", fieldCache: &DST_IN_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -76,7 +76,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var DST_OUT_FieldID: jfieldID?
 
-    open static var DST_OUT: Int {
+    public static var DST_OUT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DST_OUT", fieldType: "I", fieldCache: &DST_OUT_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -87,7 +87,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var DST_OVER_FieldID: jfieldID?
 
-    open static var DST_OVER: Int {
+    public static var DST_OVER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DST_OVER", fieldType: "I", fieldCache: &DST_OVER_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -98,7 +98,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var Dst_FieldID: jfieldID?
 
-    open static var Dst: AlphaComposite! {
+    public static var Dst: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Dst", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &Dst_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -110,7 +110,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var DstAtop_FieldID: jfieldID?
 
-    open static var DstAtop: AlphaComposite! {
+    public static var DstAtop: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DstAtop", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &DstAtop_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -122,7 +122,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var DstIn_FieldID: jfieldID?
 
-    open static var DstIn: AlphaComposite! {
+    public static var DstIn: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DstIn", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &DstIn_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -134,7 +134,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var DstOut_FieldID: jfieldID?
 
-    open static var DstOut: AlphaComposite! {
+    public static var DstOut: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DstOut", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &DstOut_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -146,7 +146,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var DstOver_FieldID: jfieldID?
 
-    open static var DstOver: AlphaComposite! {
+    public static var DstOver: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DstOver", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &DstOver_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -162,7 +162,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var SRC_FieldID: jfieldID?
 
-    open static var SRC: Int {
+    public static var SRC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SRC", fieldType: "I", fieldCache: &SRC_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -173,7 +173,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var SRC_ATOP_FieldID: jfieldID?
 
-    open static var SRC_ATOP: Int {
+    public static var SRC_ATOP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SRC_ATOP", fieldType: "I", fieldCache: &SRC_ATOP_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -184,7 +184,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var SRC_IN_FieldID: jfieldID?
 
-    open static var SRC_IN: Int {
+    public static var SRC_IN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SRC_IN", fieldType: "I", fieldCache: &SRC_IN_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -195,7 +195,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var SRC_OUT_FieldID: jfieldID?
 
-    open static var SRC_OUT: Int {
+    public static var SRC_OUT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SRC_OUT", fieldType: "I", fieldCache: &SRC_OUT_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -206,7 +206,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var SRC_OVER_FieldID: jfieldID?
 
-    open static var SRC_OVER: Int {
+    public static var SRC_OVER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SRC_OVER", fieldType: "I", fieldCache: &SRC_OVER_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -217,7 +217,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var Src_FieldID: jfieldID?
 
-    open static var Src: AlphaComposite! {
+    public static var Src: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Src", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &Src_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -229,7 +229,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var SrcAtop_FieldID: jfieldID?
 
-    open static var SrcAtop: AlphaComposite! {
+    public static var SrcAtop: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SrcAtop", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &SrcAtop_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -241,7 +241,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var SrcIn_FieldID: jfieldID?
 
-    open static var SrcIn: AlphaComposite! {
+    public static var SrcIn: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SrcIn", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &SrcIn_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -253,7 +253,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var SrcOut_FieldID: jfieldID?
 
-    open static var SrcOut: AlphaComposite! {
+    public static var SrcOut: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SrcOut", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &SrcOut_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -265,7 +265,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var SrcOver_FieldID: jfieldID?
 
-    open static var SrcOver: AlphaComposite! {
+    public static var SrcOver: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SrcOver", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &SrcOver_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -277,7 +277,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var XOR_FieldID: jfieldID?
 
-    open static var XOR: Int {
+    public static var XOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "XOR", fieldType: "I", fieldCache: &XOR_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             return Int(__value)
@@ -288,7 +288,7 @@ open class AlphaComposite: java_swift.JavaObject, Composite {
 
     private static var Xor_FieldID: jfieldID?
 
-    open static var Xor: AlphaComposite! {
+    public static var Xor: AlphaComposite! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Xor", fieldType: "Ljava/awt/AlphaComposite;", fieldCache: &Xor_FieldID, className: "java/awt/AlphaComposite", classCache: &AlphaCompositeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

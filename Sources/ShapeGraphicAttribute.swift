@@ -20,7 +20,7 @@ open class ShapeGraphicAttribute: GraphicAttribute {
 
     private static var FILL_FieldID: jfieldID?
 
-    open static var FILL: Bool {
+    public static var FILL: Bool {
         get {
             let __value = JNIField.GetStaticBooleanField( fieldName: "FILL", fieldType: "Z", fieldCache: &FILL_FieldID, className: "java/awt/font/ShapeGraphicAttribute", classCache: &ShapeGraphicAttributeJNIClass )
             return __value != jboolean(JNI_FALSE)
@@ -31,7 +31,7 @@ open class ShapeGraphicAttribute: GraphicAttribute {
 
     private static var STROKE_FieldID: jfieldID?
 
-    open static var STROKE: Bool {
+    public static var STROKE: Bool {
         get {
             let __value = JNIField.GetStaticBooleanField( fieldName: "STROKE", fieldType: "Z", fieldCache: &STROKE_FieldID, className: "java/awt/font/ShapeGraphicAttribute", classCache: &ShapeGraphicAttributeJNIClass )
             return __value != jboolean(JNI_FALSE)

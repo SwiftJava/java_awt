@@ -56,7 +56,7 @@ open class Dialog_ModalityTypeForward: JNIObjectForward {
 
     private static var APPLICATION_MODAL_FieldID: jfieldID?
 
-    open static var APPLICATION_MODAL: Dialog_ModalityType! {
+    public static var APPLICATION_MODAL: Dialog_ModalityType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "APPLICATION_MODAL", fieldType: "Ljava/awt/Dialog$ModalityType;", fieldCache: &APPLICATION_MODAL_FieldID, className: "java/awt/Dialog$ModalityType", classCache: &Dialog_ModalityTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class Dialog_ModalityTypeForward: JNIObjectForward {
 
     private static var DOCUMENT_MODAL_FieldID: jfieldID?
 
-    open static var DOCUMENT_MODAL: Dialog_ModalityType! {
+    public static var DOCUMENT_MODAL: Dialog_ModalityType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DOCUMENT_MODAL", fieldType: "Ljava/awt/Dialog$ModalityType;", fieldCache: &DOCUMENT_MODAL_FieldID, className: "java/awt/Dialog$ModalityType", classCache: &Dialog_ModalityTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class Dialog_ModalityTypeForward: JNIObjectForward {
 
     private static var MODELESS_FieldID: jfieldID?
 
-    open static var MODELESS: Dialog_ModalityType! {
+    public static var MODELESS: Dialog_ModalityType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MODELESS", fieldType: "Ljava/awt/Dialog$ModalityType;", fieldCache: &MODELESS_FieldID, className: "java/awt/Dialog$ModalityType", classCache: &Dialog_ModalityTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -92,7 +92,7 @@ open class Dialog_ModalityTypeForward: JNIObjectForward {
 
     private static var TOOLKIT_MODAL_FieldID: jfieldID?
 
-    open static var TOOLKIT_MODAL: Dialog_ModalityType! {
+    public static var TOOLKIT_MODAL: Dialog_ModalityType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TOOLKIT_MODAL", fieldType: "Ljava/awt/Dialog$ModalityType;", fieldCache: &TOOLKIT_MODAL_FieldID, className: "java/awt/Dialog$ModalityType", classCache: &Dialog_ModalityTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

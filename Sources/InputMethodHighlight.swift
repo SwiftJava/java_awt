@@ -20,7 +20,7 @@ open class InputMethodHighlight: java_swift.JavaObject {
 
     private static var CONVERTED_TEXT_FieldID: jfieldID?
 
-    open static var CONVERTED_TEXT: Int {
+    public static var CONVERTED_TEXT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONVERTED_TEXT", fieldType: "I", fieldCache: &CONVERTED_TEXT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class InputMethodHighlight: java_swift.JavaObject {
 
     private static var RAW_TEXT_FieldID: jfieldID?
 
-    open static var RAW_TEXT: Int {
+    public static var RAW_TEXT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RAW_TEXT", fieldType: "I", fieldCache: &RAW_TEXT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class InputMethodHighlight: java_swift.JavaObject {
 
     private static var SELECTED_CONVERTED_TEXT_HIGHLIGHT_FieldID: jfieldID?
 
-    open static var SELECTED_CONVERTED_TEXT_HIGHLIGHT: InputMethodHighlight! {
+    public static var SELECTED_CONVERTED_TEXT_HIGHLIGHT: InputMethodHighlight! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_CONVERTED_TEXT_HIGHLIGHT", fieldType: "Ljava/awt/im/InputMethodHighlight;", fieldCache: &SELECTED_CONVERTED_TEXT_HIGHLIGHT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -54,7 +54,7 @@ open class InputMethodHighlight: java_swift.JavaObject {
 
     private static var SELECTED_RAW_TEXT_HIGHLIGHT_FieldID: jfieldID?
 
-    open static var SELECTED_RAW_TEXT_HIGHLIGHT: InputMethodHighlight! {
+    public static var SELECTED_RAW_TEXT_HIGHLIGHT: InputMethodHighlight! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_RAW_TEXT_HIGHLIGHT", fieldType: "Ljava/awt/im/InputMethodHighlight;", fieldCache: &SELECTED_RAW_TEXT_HIGHLIGHT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -66,7 +66,7 @@ open class InputMethodHighlight: java_swift.JavaObject {
 
     private static var UNSELECTED_CONVERTED_TEXT_HIGHLIGHT_FieldID: jfieldID?
 
-    open static var UNSELECTED_CONVERTED_TEXT_HIGHLIGHT: InputMethodHighlight! {
+    public static var UNSELECTED_CONVERTED_TEXT_HIGHLIGHT: InputMethodHighlight! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNSELECTED_CONVERTED_TEXT_HIGHLIGHT", fieldType: "Ljava/awt/im/InputMethodHighlight;", fieldCache: &UNSELECTED_CONVERTED_TEXT_HIGHLIGHT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -78,7 +78,7 @@ open class InputMethodHighlight: java_swift.JavaObject {
 
     private static var UNSELECTED_RAW_TEXT_HIGHLIGHT_FieldID: jfieldID?
 
-    open static var UNSELECTED_RAW_TEXT_HIGHLIGHT: InputMethodHighlight! {
+    public static var UNSELECTED_RAW_TEXT_HIGHLIGHT: InputMethodHighlight! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNSELECTED_RAW_TEXT_HIGHLIGHT", fieldType: "Ljava/awt/im/InputMethodHighlight;", fieldCache: &UNSELECTED_RAW_TEXT_HIGHLIGHT_FieldID, className: "java/awt/im/InputMethodHighlight", classCache: &InputMethodHighlightJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

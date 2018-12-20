@@ -24,7 +24,7 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
 
     private static var LANDSCAPE_FieldID: jfieldID?
 
-    open static var LANDSCAPE: Int {
+    public static var LANDSCAPE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LANDSCAPE", fieldType: "I", fieldCache: &LANDSCAPE_FieldID, className: "java/awt/print/PageFormat", classCache: &PageFormatJNIClass )
             return Int(__value)
@@ -35,7 +35,7 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
 
     private static var PORTRAIT_FieldID: jfieldID?
 
-    open static var PORTRAIT: Int {
+    public static var PORTRAIT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PORTRAIT", fieldType: "I", fieldCache: &PORTRAIT_FieldID, className: "java/awt/print/PageFormat", classCache: &PageFormatJNIClass )
             return Int(__value)
@@ -46,7 +46,7 @@ open class PageFormat: java_swift.JavaObject, java_lang.Cloneable {
 
     private static var REVERSE_LANDSCAPE_FieldID: jfieldID?
 
-    open static var REVERSE_LANDSCAPE: Int {
+    public static var REVERSE_LANDSCAPE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "REVERSE_LANDSCAPE", fieldType: "I", fieldCache: &REVERSE_LANDSCAPE_FieldID, className: "java/awt/print/PageFormat", classCache: &PageFormatJNIClass )
             return Int(__value)

@@ -20,7 +20,7 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* interface java.i
 
     private static var CENTER_FieldID: jfieldID?
 
-    open static var CENTER: Int {
+    public static var CENTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "java/awt/FlowLayout", classCache: &FlowLayoutJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* interface java.i
 
     private static var LEADING_FieldID: jfieldID?
 
-    open static var LEADING: Int {
+    public static var LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEADING", fieldType: "I", fieldCache: &LEADING_FieldID, className: "java/awt/FlowLayout", classCache: &FlowLayoutJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* interface java.i
 
     private static var LEFT_FieldID: jfieldID?
 
-    open static var LEFT: Int {
+    public static var LEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "java/awt/FlowLayout", classCache: &FlowLayoutJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* interface java.i
 
     private static var RIGHT_FieldID: jfieldID?
 
-    open static var RIGHT: Int {
+    public static var RIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "java/awt/FlowLayout", classCache: &FlowLayoutJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class FlowLayout: java_swift.JavaObject, LayoutManager, /* interface java.i
 
     private static var TRAILING_FieldID: jfieldID?
 
-    open static var TRAILING: Int {
+    public static var TRAILING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRAILING", fieldType: "I", fieldCache: &TRAILING_FieldID, className: "java/awt/FlowLayout", classCache: &FlowLayoutJNIClass )
             return Int(__value)

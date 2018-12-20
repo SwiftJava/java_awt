@@ -20,7 +20,7 @@ open class InputMethodEvent: AWTEvent {
 
     private static var CARET_POSITION_CHANGED_FieldID: jfieldID?
 
-    open static var CARET_POSITION_CHANGED: Int {
+    public static var CARET_POSITION_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CARET_POSITION_CHANGED", fieldType: "I", fieldCache: &CARET_POSITION_CHANGED_FieldID, className: "java/awt/event/InputMethodEvent", classCache: &InputMethodEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class InputMethodEvent: AWTEvent {
 
     private static var INPUT_METHOD_FIRST_FieldID: jfieldID?
 
-    open static var INPUT_METHOD_FIRST: Int {
+    public static var INPUT_METHOD_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INPUT_METHOD_FIRST", fieldType: "I", fieldCache: &INPUT_METHOD_FIRST_FieldID, className: "java/awt/event/InputMethodEvent", classCache: &InputMethodEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class InputMethodEvent: AWTEvent {
 
     private static var INPUT_METHOD_LAST_FieldID: jfieldID?
 
-    open static var INPUT_METHOD_LAST: Int {
+    public static var INPUT_METHOD_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INPUT_METHOD_LAST", fieldType: "I", fieldCache: &INPUT_METHOD_LAST_FieldID, className: "java/awt/event/InputMethodEvent", classCache: &InputMethodEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class InputMethodEvent: AWTEvent {
 
     private static var INPUT_METHOD_TEXT_CHANGED_FieldID: jfieldID?
 
-    open static var INPUT_METHOD_TEXT_CHANGED: Int {
+    public static var INPUT_METHOD_TEXT_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INPUT_METHOD_TEXT_CHANGED", fieldType: "I", fieldCache: &INPUT_METHOD_TEXT_CHANGED_FieldID, className: "java/awt/event/InputMethodEvent", classCache: &InputMethodEventJNIClass )
             return Int(__value)

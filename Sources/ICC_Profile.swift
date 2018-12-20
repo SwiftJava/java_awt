@@ -20,7 +20,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var CLASS_ABSTRACT_FieldID: jfieldID?
 
-    open static var CLASS_ABSTRACT: Int {
+    public static var CLASS_ABSTRACT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CLASS_ABSTRACT", fieldType: "I", fieldCache: &CLASS_ABSTRACT_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var CLASS_COLORSPACECONVERSION_FieldID: jfieldID?
 
-    open static var CLASS_COLORSPACECONVERSION: Int {
+    public static var CLASS_COLORSPACECONVERSION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CLASS_COLORSPACECONVERSION", fieldType: "I", fieldCache: &CLASS_COLORSPACECONVERSION_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var CLASS_DEVICELINK_FieldID: jfieldID?
 
-    open static var CLASS_DEVICELINK: Int {
+    public static var CLASS_DEVICELINK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CLASS_DEVICELINK", fieldType: "I", fieldCache: &CLASS_DEVICELINK_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var CLASS_DISPLAY_FieldID: jfieldID?
 
-    open static var CLASS_DISPLAY: Int {
+    public static var CLASS_DISPLAY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CLASS_DISPLAY", fieldType: "I", fieldCache: &CLASS_DISPLAY_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var CLASS_INPUT_FieldID: jfieldID?
 
-    open static var CLASS_INPUT: Int {
+    public static var CLASS_INPUT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CLASS_INPUT", fieldType: "I", fieldCache: &CLASS_INPUT_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var CLASS_NAMEDCOLOR_FieldID: jfieldID?
 
-    open static var CLASS_NAMEDCOLOR: Int {
+    public static var CLASS_NAMEDCOLOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CLASS_NAMEDCOLOR", fieldType: "I", fieldCache: &CLASS_NAMEDCOLOR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var CLASS_OUTPUT_FieldID: jfieldID?
 
-    open static var CLASS_OUTPUT: Int {
+    public static var CLASS_OUTPUT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CLASS_OUTPUT", fieldType: "I", fieldCache: &CLASS_OUTPUT_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -105,7 +105,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icAbsoluteColorimetric_FieldID: jfieldID?
 
-    open static var icAbsoluteColorimetric: Int {
+    public static var icAbsoluteColorimetric: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icAbsoluteColorimetric", fieldType: "I", fieldCache: &icAbsoluteColorimetric_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -116,7 +116,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icCurveCount_FieldID: jfieldID?
 
-    open static var icCurveCount: Int {
+    public static var icCurveCount: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icCurveCount", fieldType: "I", fieldCache: &icCurveCount_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -127,7 +127,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icCurveData_FieldID: jfieldID?
 
-    open static var icCurveData: Int {
+    public static var icCurveData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icCurveData", fieldType: "I", fieldCache: &icCurveData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -138,7 +138,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrAttributes_FieldID: jfieldID?
 
-    open static var icHdrAttributes: Int {
+    public static var icHdrAttributes: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrAttributes", fieldType: "I", fieldCache: &icHdrAttributes_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -149,7 +149,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrCmmId_FieldID: jfieldID?
 
-    open static var icHdrCmmId: Int {
+    public static var icHdrCmmId: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrCmmId", fieldType: "I", fieldCache: &icHdrCmmId_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -160,7 +160,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrColorSpace_FieldID: jfieldID?
 
-    open static var icHdrColorSpace: Int {
+    public static var icHdrColorSpace: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrColorSpace", fieldType: "I", fieldCache: &icHdrColorSpace_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -171,7 +171,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrCreator_FieldID: jfieldID?
 
-    open static var icHdrCreator: Int {
+    public static var icHdrCreator: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrCreator", fieldType: "I", fieldCache: &icHdrCreator_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -182,7 +182,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrDate_FieldID: jfieldID?
 
-    open static var icHdrDate: Int {
+    public static var icHdrDate: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrDate", fieldType: "I", fieldCache: &icHdrDate_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -193,7 +193,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrDeviceClass_FieldID: jfieldID?
 
-    open static var icHdrDeviceClass: Int {
+    public static var icHdrDeviceClass: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrDeviceClass", fieldType: "I", fieldCache: &icHdrDeviceClass_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -204,7 +204,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrFlags_FieldID: jfieldID?
 
-    open static var icHdrFlags: Int {
+    public static var icHdrFlags: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrFlags", fieldType: "I", fieldCache: &icHdrFlags_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -215,7 +215,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrIlluminant_FieldID: jfieldID?
 
-    open static var icHdrIlluminant: Int {
+    public static var icHdrIlluminant: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrIlluminant", fieldType: "I", fieldCache: &icHdrIlluminant_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -226,7 +226,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrMagic_FieldID: jfieldID?
 
-    open static var icHdrMagic: Int {
+    public static var icHdrMagic: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrMagic", fieldType: "I", fieldCache: &icHdrMagic_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -237,7 +237,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrManufacturer_FieldID: jfieldID?
 
-    open static var icHdrManufacturer: Int {
+    public static var icHdrManufacturer: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrManufacturer", fieldType: "I", fieldCache: &icHdrManufacturer_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -248,7 +248,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrModel_FieldID: jfieldID?
 
-    open static var icHdrModel: Int {
+    public static var icHdrModel: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrModel", fieldType: "I", fieldCache: &icHdrModel_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -259,7 +259,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrPcs_FieldID: jfieldID?
 
-    open static var icHdrPcs: Int {
+    public static var icHdrPcs: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrPcs", fieldType: "I", fieldCache: &icHdrPcs_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -270,7 +270,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrPlatform_FieldID: jfieldID?
 
-    open static var icHdrPlatform: Int {
+    public static var icHdrPlatform: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrPlatform", fieldType: "I", fieldCache: &icHdrPlatform_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -281,7 +281,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrProfileID_FieldID: jfieldID?
 
-    open static var icHdrProfileID: Int {
+    public static var icHdrProfileID: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrProfileID", fieldType: "I", fieldCache: &icHdrProfileID_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -292,7 +292,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrRenderingIntent_FieldID: jfieldID?
 
-    open static var icHdrRenderingIntent: Int {
+    public static var icHdrRenderingIntent: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrRenderingIntent", fieldType: "I", fieldCache: &icHdrRenderingIntent_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -303,7 +303,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrSize_FieldID: jfieldID?
 
-    open static var icHdrSize: Int {
+    public static var icHdrSize: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrSize", fieldType: "I", fieldCache: &icHdrSize_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -314,7 +314,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icHdrVersion_FieldID: jfieldID?
 
-    open static var icHdrVersion: Int {
+    public static var icHdrVersion: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icHdrVersion", fieldType: "I", fieldCache: &icHdrVersion_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -325,7 +325,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icICCAbsoluteColorimetric_FieldID: jfieldID?
 
-    open static var icICCAbsoluteColorimetric: Int {
+    public static var icICCAbsoluteColorimetric: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icICCAbsoluteColorimetric", fieldType: "I", fieldCache: &icICCAbsoluteColorimetric_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -336,7 +336,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icMediaRelativeColorimetric_FieldID: jfieldID?
 
-    open static var icMediaRelativeColorimetric: Int {
+    public static var icMediaRelativeColorimetric: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icMediaRelativeColorimetric", fieldType: "I", fieldCache: &icMediaRelativeColorimetric_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -347,7 +347,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icPerceptual_FieldID: jfieldID?
 
-    open static var icPerceptual: Int {
+    public static var icPerceptual: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icPerceptual", fieldType: "I", fieldCache: &icPerceptual_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -358,7 +358,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icRelativeColorimetric_FieldID: jfieldID?
 
-    open static var icRelativeColorimetric: Int {
+    public static var icRelativeColorimetric: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icRelativeColorimetric", fieldType: "I", fieldCache: &icRelativeColorimetric_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -369,7 +369,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSaturation_FieldID: jfieldID?
 
-    open static var icSaturation: Int {
+    public static var icSaturation: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSaturation", fieldType: "I", fieldCache: &icSaturation_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -380,7 +380,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigAToB0Tag_FieldID: jfieldID?
 
-    open static var icSigAToB0Tag: Int {
+    public static var icSigAToB0Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigAToB0Tag", fieldType: "I", fieldCache: &icSigAToB0Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -391,7 +391,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigAToB1Tag_FieldID: jfieldID?
 
-    open static var icSigAToB1Tag: Int {
+    public static var icSigAToB1Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigAToB1Tag", fieldType: "I", fieldCache: &icSigAToB1Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -402,7 +402,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigAToB2Tag_FieldID: jfieldID?
 
-    open static var icSigAToB2Tag: Int {
+    public static var icSigAToB2Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigAToB2Tag", fieldType: "I", fieldCache: &icSigAToB2Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -413,7 +413,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigAbstractClass_FieldID: jfieldID?
 
-    open static var icSigAbstractClass: Int {
+    public static var icSigAbstractClass: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigAbstractClass", fieldType: "I", fieldCache: &icSigAbstractClass_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -424,7 +424,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigBToA0Tag_FieldID: jfieldID?
 
-    open static var icSigBToA0Tag: Int {
+    public static var icSigBToA0Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigBToA0Tag", fieldType: "I", fieldCache: &icSigBToA0Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -435,7 +435,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigBToA1Tag_FieldID: jfieldID?
 
-    open static var icSigBToA1Tag: Int {
+    public static var icSigBToA1Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigBToA1Tag", fieldType: "I", fieldCache: &icSigBToA1Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -446,7 +446,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigBToA2Tag_FieldID: jfieldID?
 
-    open static var icSigBToA2Tag: Int {
+    public static var icSigBToA2Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigBToA2Tag", fieldType: "I", fieldCache: &icSigBToA2Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -457,7 +457,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigBlueColorantTag_FieldID: jfieldID?
 
-    open static var icSigBlueColorantTag: Int {
+    public static var icSigBlueColorantTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigBlueColorantTag", fieldType: "I", fieldCache: &icSigBlueColorantTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -468,7 +468,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigBlueMatrixColumnTag_FieldID: jfieldID?
 
-    open static var icSigBlueMatrixColumnTag: Int {
+    public static var icSigBlueMatrixColumnTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigBlueMatrixColumnTag", fieldType: "I", fieldCache: &icSigBlueMatrixColumnTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -479,7 +479,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigBlueTRCTag_FieldID: jfieldID?
 
-    open static var icSigBlueTRCTag: Int {
+    public static var icSigBlueTRCTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigBlueTRCTag", fieldType: "I", fieldCache: &icSigBlueTRCTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -490,7 +490,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigCalibrationDateTimeTag_FieldID: jfieldID?
 
-    open static var icSigCalibrationDateTimeTag: Int {
+    public static var icSigCalibrationDateTimeTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigCalibrationDateTimeTag", fieldType: "I", fieldCache: &icSigCalibrationDateTimeTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -501,7 +501,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigCharTargetTag_FieldID: jfieldID?
 
-    open static var icSigCharTargetTag: Int {
+    public static var icSigCharTargetTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigCharTargetTag", fieldType: "I", fieldCache: &icSigCharTargetTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -512,7 +512,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigChromaticAdaptationTag_FieldID: jfieldID?
 
-    open static var icSigChromaticAdaptationTag: Int {
+    public static var icSigChromaticAdaptationTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigChromaticAdaptationTag", fieldType: "I", fieldCache: &icSigChromaticAdaptationTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -523,7 +523,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigChromaticityTag_FieldID: jfieldID?
 
-    open static var icSigChromaticityTag: Int {
+    public static var icSigChromaticityTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigChromaticityTag", fieldType: "I", fieldCache: &icSigChromaticityTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -534,7 +534,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigCmyData_FieldID: jfieldID?
 
-    open static var icSigCmyData: Int {
+    public static var icSigCmyData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigCmyData", fieldType: "I", fieldCache: &icSigCmyData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -545,7 +545,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigCmykData_FieldID: jfieldID?
 
-    open static var icSigCmykData: Int {
+    public static var icSigCmykData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigCmykData", fieldType: "I", fieldCache: &icSigCmykData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -556,7 +556,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigColorSpaceClass_FieldID: jfieldID?
 
-    open static var icSigColorSpaceClass: Int {
+    public static var icSigColorSpaceClass: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigColorSpaceClass", fieldType: "I", fieldCache: &icSigColorSpaceClass_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -567,7 +567,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigColorantOrderTag_FieldID: jfieldID?
 
-    open static var icSigColorantOrderTag: Int {
+    public static var icSigColorantOrderTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigColorantOrderTag", fieldType: "I", fieldCache: &icSigColorantOrderTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -578,7 +578,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigColorantTableTag_FieldID: jfieldID?
 
-    open static var icSigColorantTableTag: Int {
+    public static var icSigColorantTableTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigColorantTableTag", fieldType: "I", fieldCache: &icSigColorantTableTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -589,7 +589,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigCopyrightTag_FieldID: jfieldID?
 
-    open static var icSigCopyrightTag: Int {
+    public static var icSigCopyrightTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigCopyrightTag", fieldType: "I", fieldCache: &icSigCopyrightTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -600,7 +600,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigCrdInfoTag_FieldID: jfieldID?
 
-    open static var icSigCrdInfoTag: Int {
+    public static var icSigCrdInfoTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigCrdInfoTag", fieldType: "I", fieldCache: &icSigCrdInfoTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -611,7 +611,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigDeviceMfgDescTag_FieldID: jfieldID?
 
-    open static var icSigDeviceMfgDescTag: Int {
+    public static var icSigDeviceMfgDescTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigDeviceMfgDescTag", fieldType: "I", fieldCache: &icSigDeviceMfgDescTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -622,7 +622,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigDeviceModelDescTag_FieldID: jfieldID?
 
-    open static var icSigDeviceModelDescTag: Int {
+    public static var icSigDeviceModelDescTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigDeviceModelDescTag", fieldType: "I", fieldCache: &icSigDeviceModelDescTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -633,7 +633,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigDeviceSettingsTag_FieldID: jfieldID?
 
-    open static var icSigDeviceSettingsTag: Int {
+    public static var icSigDeviceSettingsTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigDeviceSettingsTag", fieldType: "I", fieldCache: &icSigDeviceSettingsTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -644,7 +644,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigDisplayClass_FieldID: jfieldID?
 
-    open static var icSigDisplayClass: Int {
+    public static var icSigDisplayClass: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigDisplayClass", fieldType: "I", fieldCache: &icSigDisplayClass_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -655,7 +655,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigGamutTag_FieldID: jfieldID?
 
-    open static var icSigGamutTag: Int {
+    public static var icSigGamutTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigGamutTag", fieldType: "I", fieldCache: &icSigGamutTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -666,7 +666,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigGrayData_FieldID: jfieldID?
 
-    open static var icSigGrayData: Int {
+    public static var icSigGrayData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigGrayData", fieldType: "I", fieldCache: &icSigGrayData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -677,7 +677,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigGrayTRCTag_FieldID: jfieldID?
 
-    open static var icSigGrayTRCTag: Int {
+    public static var icSigGrayTRCTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigGrayTRCTag", fieldType: "I", fieldCache: &icSigGrayTRCTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -688,7 +688,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigGreenColorantTag_FieldID: jfieldID?
 
-    open static var icSigGreenColorantTag: Int {
+    public static var icSigGreenColorantTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigGreenColorantTag", fieldType: "I", fieldCache: &icSigGreenColorantTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -699,7 +699,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigGreenMatrixColumnTag_FieldID: jfieldID?
 
-    open static var icSigGreenMatrixColumnTag: Int {
+    public static var icSigGreenMatrixColumnTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigGreenMatrixColumnTag", fieldType: "I", fieldCache: &icSigGreenMatrixColumnTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -710,7 +710,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigGreenTRCTag_FieldID: jfieldID?
 
-    open static var icSigGreenTRCTag: Int {
+    public static var icSigGreenTRCTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigGreenTRCTag", fieldType: "I", fieldCache: &icSigGreenTRCTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -721,7 +721,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigHead_FieldID: jfieldID?
 
-    open static var icSigHead: Int {
+    public static var icSigHead: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigHead", fieldType: "I", fieldCache: &icSigHead_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -732,7 +732,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigHlsData_FieldID: jfieldID?
 
-    open static var icSigHlsData: Int {
+    public static var icSigHlsData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigHlsData", fieldType: "I", fieldCache: &icSigHlsData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -743,7 +743,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigHsvData_FieldID: jfieldID?
 
-    open static var icSigHsvData: Int {
+    public static var icSigHsvData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigHsvData", fieldType: "I", fieldCache: &icSigHsvData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -754,7 +754,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigInputClass_FieldID: jfieldID?
 
-    open static var icSigInputClass: Int {
+    public static var icSigInputClass: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigInputClass", fieldType: "I", fieldCache: &icSigInputClass_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -765,7 +765,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigLabData_FieldID: jfieldID?
 
-    open static var icSigLabData: Int {
+    public static var icSigLabData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigLabData", fieldType: "I", fieldCache: &icSigLabData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -776,7 +776,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigLinkClass_FieldID: jfieldID?
 
-    open static var icSigLinkClass: Int {
+    public static var icSigLinkClass: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigLinkClass", fieldType: "I", fieldCache: &icSigLinkClass_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -787,7 +787,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigLuminanceTag_FieldID: jfieldID?
 
-    open static var icSigLuminanceTag: Int {
+    public static var icSigLuminanceTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigLuminanceTag", fieldType: "I", fieldCache: &icSigLuminanceTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -798,7 +798,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigLuvData_FieldID: jfieldID?
 
-    open static var icSigLuvData: Int {
+    public static var icSigLuvData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigLuvData", fieldType: "I", fieldCache: &icSigLuvData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -809,7 +809,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigMeasurementTag_FieldID: jfieldID?
 
-    open static var icSigMeasurementTag: Int {
+    public static var icSigMeasurementTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigMeasurementTag", fieldType: "I", fieldCache: &icSigMeasurementTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -820,7 +820,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigMediaBlackPointTag_FieldID: jfieldID?
 
-    open static var icSigMediaBlackPointTag: Int {
+    public static var icSigMediaBlackPointTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigMediaBlackPointTag", fieldType: "I", fieldCache: &icSigMediaBlackPointTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -831,7 +831,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigMediaWhitePointTag_FieldID: jfieldID?
 
-    open static var icSigMediaWhitePointTag: Int {
+    public static var icSigMediaWhitePointTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigMediaWhitePointTag", fieldType: "I", fieldCache: &icSigMediaWhitePointTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -842,7 +842,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigNamedColor2Tag_FieldID: jfieldID?
 
-    open static var icSigNamedColor2Tag: Int {
+    public static var icSigNamedColor2Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigNamedColor2Tag", fieldType: "I", fieldCache: &icSigNamedColor2Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -853,7 +853,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigNamedColorClass_FieldID: jfieldID?
 
-    open static var icSigNamedColorClass: Int {
+    public static var icSigNamedColorClass: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigNamedColorClass", fieldType: "I", fieldCache: &icSigNamedColorClass_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -864,7 +864,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigOutputClass_FieldID: jfieldID?
 
-    open static var icSigOutputClass: Int {
+    public static var icSigOutputClass: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigOutputClass", fieldType: "I", fieldCache: &icSigOutputClass_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -875,7 +875,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigOutputResponseTag_FieldID: jfieldID?
 
-    open static var icSigOutputResponseTag: Int {
+    public static var icSigOutputResponseTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigOutputResponseTag", fieldType: "I", fieldCache: &icSigOutputResponseTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -886,7 +886,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigPreview0Tag_FieldID: jfieldID?
 
-    open static var icSigPreview0Tag: Int {
+    public static var icSigPreview0Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigPreview0Tag", fieldType: "I", fieldCache: &icSigPreview0Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -897,7 +897,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigPreview1Tag_FieldID: jfieldID?
 
-    open static var icSigPreview1Tag: Int {
+    public static var icSigPreview1Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigPreview1Tag", fieldType: "I", fieldCache: &icSigPreview1Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -908,7 +908,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigPreview2Tag_FieldID: jfieldID?
 
-    open static var icSigPreview2Tag: Int {
+    public static var icSigPreview2Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigPreview2Tag", fieldType: "I", fieldCache: &icSigPreview2Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -919,7 +919,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigProfileDescriptionTag_FieldID: jfieldID?
 
-    open static var icSigProfileDescriptionTag: Int {
+    public static var icSigProfileDescriptionTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigProfileDescriptionTag", fieldType: "I", fieldCache: &icSigProfileDescriptionTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -930,7 +930,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigProfileSequenceDescTag_FieldID: jfieldID?
 
-    open static var icSigProfileSequenceDescTag: Int {
+    public static var icSigProfileSequenceDescTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigProfileSequenceDescTag", fieldType: "I", fieldCache: &icSigProfileSequenceDescTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -941,7 +941,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigPs2CRD0Tag_FieldID: jfieldID?
 
-    open static var icSigPs2CRD0Tag: Int {
+    public static var icSigPs2CRD0Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigPs2CRD0Tag", fieldType: "I", fieldCache: &icSigPs2CRD0Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -952,7 +952,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigPs2CRD1Tag_FieldID: jfieldID?
 
-    open static var icSigPs2CRD1Tag: Int {
+    public static var icSigPs2CRD1Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigPs2CRD1Tag", fieldType: "I", fieldCache: &icSigPs2CRD1Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -963,7 +963,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigPs2CRD2Tag_FieldID: jfieldID?
 
-    open static var icSigPs2CRD2Tag: Int {
+    public static var icSigPs2CRD2Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigPs2CRD2Tag", fieldType: "I", fieldCache: &icSigPs2CRD2Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -974,7 +974,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigPs2CRD3Tag_FieldID: jfieldID?
 
-    open static var icSigPs2CRD3Tag: Int {
+    public static var icSigPs2CRD3Tag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigPs2CRD3Tag", fieldType: "I", fieldCache: &icSigPs2CRD3Tag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -985,7 +985,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigPs2CSATag_FieldID: jfieldID?
 
-    open static var icSigPs2CSATag: Int {
+    public static var icSigPs2CSATag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigPs2CSATag", fieldType: "I", fieldCache: &icSigPs2CSATag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -996,7 +996,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigPs2RenderingIntentTag_FieldID: jfieldID?
 
-    open static var icSigPs2RenderingIntentTag: Int {
+    public static var icSigPs2RenderingIntentTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigPs2RenderingIntentTag", fieldType: "I", fieldCache: &icSigPs2RenderingIntentTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1007,7 +1007,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigRedColorantTag_FieldID: jfieldID?
 
-    open static var icSigRedColorantTag: Int {
+    public static var icSigRedColorantTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigRedColorantTag", fieldType: "I", fieldCache: &icSigRedColorantTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1018,7 +1018,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigRedMatrixColumnTag_FieldID: jfieldID?
 
-    open static var icSigRedMatrixColumnTag: Int {
+    public static var icSigRedMatrixColumnTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigRedMatrixColumnTag", fieldType: "I", fieldCache: &icSigRedMatrixColumnTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1029,7 +1029,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigRedTRCTag_FieldID: jfieldID?
 
-    open static var icSigRedTRCTag: Int {
+    public static var icSigRedTRCTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigRedTRCTag", fieldType: "I", fieldCache: &icSigRedTRCTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1040,7 +1040,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigRgbData_FieldID: jfieldID?
 
-    open static var icSigRgbData: Int {
+    public static var icSigRgbData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigRgbData", fieldType: "I", fieldCache: &icSigRgbData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1051,7 +1051,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigScreeningDescTag_FieldID: jfieldID?
 
-    open static var icSigScreeningDescTag: Int {
+    public static var icSigScreeningDescTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigScreeningDescTag", fieldType: "I", fieldCache: &icSigScreeningDescTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1062,7 +1062,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigScreeningTag_FieldID: jfieldID?
 
-    open static var icSigScreeningTag: Int {
+    public static var icSigScreeningTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigScreeningTag", fieldType: "I", fieldCache: &icSigScreeningTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1073,7 +1073,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpace2CLR_FieldID: jfieldID?
 
-    open static var icSigSpace2CLR: Int {
+    public static var icSigSpace2CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpace2CLR", fieldType: "I", fieldCache: &icSigSpace2CLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1084,7 +1084,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpace3CLR_FieldID: jfieldID?
 
-    open static var icSigSpace3CLR: Int {
+    public static var icSigSpace3CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpace3CLR", fieldType: "I", fieldCache: &icSigSpace3CLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1095,7 +1095,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpace4CLR_FieldID: jfieldID?
 
-    open static var icSigSpace4CLR: Int {
+    public static var icSigSpace4CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpace4CLR", fieldType: "I", fieldCache: &icSigSpace4CLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1106,7 +1106,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpace5CLR_FieldID: jfieldID?
 
-    open static var icSigSpace5CLR: Int {
+    public static var icSigSpace5CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpace5CLR", fieldType: "I", fieldCache: &icSigSpace5CLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1117,7 +1117,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpace6CLR_FieldID: jfieldID?
 
-    open static var icSigSpace6CLR: Int {
+    public static var icSigSpace6CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpace6CLR", fieldType: "I", fieldCache: &icSigSpace6CLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1128,7 +1128,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpace7CLR_FieldID: jfieldID?
 
-    open static var icSigSpace7CLR: Int {
+    public static var icSigSpace7CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpace7CLR", fieldType: "I", fieldCache: &icSigSpace7CLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1139,7 +1139,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpace8CLR_FieldID: jfieldID?
 
-    open static var icSigSpace8CLR: Int {
+    public static var icSigSpace8CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpace8CLR", fieldType: "I", fieldCache: &icSigSpace8CLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1150,7 +1150,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpace9CLR_FieldID: jfieldID?
 
-    open static var icSigSpace9CLR: Int {
+    public static var icSigSpace9CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpace9CLR", fieldType: "I", fieldCache: &icSigSpace9CLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1161,7 +1161,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpaceACLR_FieldID: jfieldID?
 
-    open static var icSigSpaceACLR: Int {
+    public static var icSigSpaceACLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpaceACLR", fieldType: "I", fieldCache: &icSigSpaceACLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1172,7 +1172,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpaceBCLR_FieldID: jfieldID?
 
-    open static var icSigSpaceBCLR: Int {
+    public static var icSigSpaceBCLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpaceBCLR", fieldType: "I", fieldCache: &icSigSpaceBCLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1183,7 +1183,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpaceCCLR_FieldID: jfieldID?
 
-    open static var icSigSpaceCCLR: Int {
+    public static var icSigSpaceCCLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpaceCCLR", fieldType: "I", fieldCache: &icSigSpaceCCLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1194,7 +1194,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpaceDCLR_FieldID: jfieldID?
 
-    open static var icSigSpaceDCLR: Int {
+    public static var icSigSpaceDCLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpaceDCLR", fieldType: "I", fieldCache: &icSigSpaceDCLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1205,7 +1205,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpaceECLR_FieldID: jfieldID?
 
-    open static var icSigSpaceECLR: Int {
+    public static var icSigSpaceECLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpaceECLR", fieldType: "I", fieldCache: &icSigSpaceECLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1216,7 +1216,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigSpaceFCLR_FieldID: jfieldID?
 
-    open static var icSigSpaceFCLR: Int {
+    public static var icSigSpaceFCLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigSpaceFCLR", fieldType: "I", fieldCache: &icSigSpaceFCLR_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1227,7 +1227,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigTechnologyTag_FieldID: jfieldID?
 
-    open static var icSigTechnologyTag: Int {
+    public static var icSigTechnologyTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigTechnologyTag", fieldType: "I", fieldCache: &icSigTechnologyTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1238,7 +1238,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigUcrBgTag_FieldID: jfieldID?
 
-    open static var icSigUcrBgTag: Int {
+    public static var icSigUcrBgTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigUcrBgTag", fieldType: "I", fieldCache: &icSigUcrBgTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1249,7 +1249,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigViewingCondDescTag_FieldID: jfieldID?
 
-    open static var icSigViewingCondDescTag: Int {
+    public static var icSigViewingCondDescTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigViewingCondDescTag", fieldType: "I", fieldCache: &icSigViewingCondDescTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1260,7 +1260,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigViewingConditionsTag_FieldID: jfieldID?
 
-    open static var icSigViewingConditionsTag: Int {
+    public static var icSigViewingConditionsTag: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigViewingConditionsTag", fieldType: "I", fieldCache: &icSigViewingConditionsTag_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1271,7 +1271,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigXYZData_FieldID: jfieldID?
 
-    open static var icSigXYZData: Int {
+    public static var icSigXYZData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigXYZData", fieldType: "I", fieldCache: &icSigXYZData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1282,7 +1282,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigYCbCrData_FieldID: jfieldID?
 
-    open static var icSigYCbCrData: Int {
+    public static var icSigYCbCrData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigYCbCrData", fieldType: "I", fieldCache: &icSigYCbCrData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1293,7 +1293,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icSigYxyData_FieldID: jfieldID?
 
-    open static var icSigYxyData: Int {
+    public static var icSigYxyData: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icSigYxyData", fieldType: "I", fieldCache: &icSigYxyData_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1304,7 +1304,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icTagReserved_FieldID: jfieldID?
 
-    open static var icTagReserved: Int {
+    public static var icTagReserved: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icTagReserved", fieldType: "I", fieldCache: &icTagReserved_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1315,7 +1315,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icTagType_FieldID: jfieldID?
 
-    open static var icTagType: Int {
+    public static var icTagType: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icTagType", fieldType: "I", fieldCache: &icTagType_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)
@@ -1326,7 +1326,7 @@ open class ICC_Profile: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var icXYZNumberX_FieldID: jfieldID?
 
-    open static var icXYZNumberX: Int {
+    public static var icXYZNumberX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "icXYZNumberX", fieldType: "I", fieldCache: &icXYZNumberX_FieldID, className: "java/awt/color/ICC_Profile", classCache: &ICC_ProfileJNIClass )
             return Int(__value)

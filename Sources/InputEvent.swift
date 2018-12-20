@@ -20,7 +20,7 @@ open class InputEvent: ComponentEvent {
 
     private static var ALT_DOWN_MASK_FieldID: jfieldID?
 
-    open static var ALT_DOWN_MASK: Int {
+    public static var ALT_DOWN_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALT_DOWN_MASK", fieldType: "I", fieldCache: &ALT_DOWN_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class InputEvent: ComponentEvent {
 
     private static var ALT_GRAPH_DOWN_MASK_FieldID: jfieldID?
 
-    open static var ALT_GRAPH_DOWN_MASK: Int {
+    public static var ALT_GRAPH_DOWN_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALT_GRAPH_DOWN_MASK", fieldType: "I", fieldCache: &ALT_GRAPH_DOWN_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class InputEvent: ComponentEvent {
 
     private static var ALT_GRAPH_MASK_FieldID: jfieldID?
 
-    open static var ALT_GRAPH_MASK: Int {
+    public static var ALT_GRAPH_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALT_GRAPH_MASK", fieldType: "I", fieldCache: &ALT_GRAPH_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class InputEvent: ComponentEvent {
 
     private static var ALT_MASK_FieldID: jfieldID?
 
-    open static var ALT_MASK: Int {
+    public static var ALT_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALT_MASK", fieldType: "I", fieldCache: &ALT_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class InputEvent: ComponentEvent {
 
     private static var BUTTON1_DOWN_MASK_FieldID: jfieldID?
 
-    open static var BUTTON1_DOWN_MASK: Int {
+    public static var BUTTON1_DOWN_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BUTTON1_DOWN_MASK", fieldType: "I", fieldCache: &BUTTON1_DOWN_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class InputEvent: ComponentEvent {
 
     private static var BUTTON1_MASK_FieldID: jfieldID?
 
-    open static var BUTTON1_MASK: Int {
+    public static var BUTTON1_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BUTTON1_MASK", fieldType: "I", fieldCache: &BUTTON1_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class InputEvent: ComponentEvent {
 
     private static var BUTTON2_DOWN_MASK_FieldID: jfieldID?
 
-    open static var BUTTON2_DOWN_MASK: Int {
+    public static var BUTTON2_DOWN_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BUTTON2_DOWN_MASK", fieldType: "I", fieldCache: &BUTTON2_DOWN_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -97,7 +97,7 @@ open class InputEvent: ComponentEvent {
 
     private static var BUTTON2_MASK_FieldID: jfieldID?
 
-    open static var BUTTON2_MASK: Int {
+    public static var BUTTON2_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BUTTON2_MASK", fieldType: "I", fieldCache: &BUTTON2_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -108,7 +108,7 @@ open class InputEvent: ComponentEvent {
 
     private static var BUTTON3_DOWN_MASK_FieldID: jfieldID?
 
-    open static var BUTTON3_DOWN_MASK: Int {
+    public static var BUTTON3_DOWN_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BUTTON3_DOWN_MASK", fieldType: "I", fieldCache: &BUTTON3_DOWN_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -119,7 +119,7 @@ open class InputEvent: ComponentEvent {
 
     private static var BUTTON3_MASK_FieldID: jfieldID?
 
-    open static var BUTTON3_MASK: Int {
+    public static var BUTTON3_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BUTTON3_MASK", fieldType: "I", fieldCache: &BUTTON3_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -132,7 +132,7 @@ open class InputEvent: ComponentEvent {
 
     private static var CTRL_DOWN_MASK_FieldID: jfieldID?
 
-    open static var CTRL_DOWN_MASK: Int {
+    public static var CTRL_DOWN_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CTRL_DOWN_MASK", fieldType: "I", fieldCache: &CTRL_DOWN_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -143,7 +143,7 @@ open class InputEvent: ComponentEvent {
 
     private static var CTRL_MASK_FieldID: jfieldID?
 
-    open static var CTRL_MASK: Int {
+    public static var CTRL_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CTRL_MASK", fieldType: "I", fieldCache: &CTRL_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -166,7 +166,7 @@ open class InputEvent: ComponentEvent {
 
     private static var META_DOWN_MASK_FieldID: jfieldID?
 
-    open static var META_DOWN_MASK: Int {
+    public static var META_DOWN_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "META_DOWN_MASK", fieldType: "I", fieldCache: &META_DOWN_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -177,7 +177,7 @@ open class InputEvent: ComponentEvent {
 
     private static var META_MASK_FieldID: jfieldID?
 
-    open static var META_MASK: Int {
+    public static var META_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "META_MASK", fieldType: "I", fieldCache: &META_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -188,7 +188,7 @@ open class InputEvent: ComponentEvent {
 
     private static var SHIFT_DOWN_MASK_FieldID: jfieldID?
 
-    open static var SHIFT_DOWN_MASK: Int {
+    public static var SHIFT_DOWN_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SHIFT_DOWN_MASK", fieldType: "I", fieldCache: &SHIFT_DOWN_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)
@@ -199,7 +199,7 @@ open class InputEvent: ComponentEvent {
 
     private static var SHIFT_MASK_FieldID: jfieldID?
 
-    open static var SHIFT_MASK: Int {
+    public static var SHIFT_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SHIFT_MASK", fieldType: "I", fieldCache: &SHIFT_MASK_FieldID, className: "java/awt/event/InputEvent", classCache: &InputEventJNIClass )
             return Int(__value)

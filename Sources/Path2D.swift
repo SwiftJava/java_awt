@@ -78,7 +78,7 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     private static var WIND_EVEN_ODD_FieldID: jfieldID?
 
-    open static var WIND_EVEN_ODD: Int {
+    public static var WIND_EVEN_ODD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WIND_EVEN_ODD", fieldType: "I", fieldCache: &WIND_EVEN_ODD_FieldID, className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass )
             return Int(__value)
@@ -89,7 +89,7 @@ open class Path2D: java_swift.JavaObject, Shape, java_lang.Cloneable {
 
     private static var WIND_NON_ZERO_FieldID: jfieldID?
 
-    open static var WIND_NON_ZERO: Int {
+    public static var WIND_NON_ZERO: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WIND_NON_ZERO", fieldType: "I", fieldCache: &WIND_NON_ZERO_FieldID, className: "java/awt/geom/Path2D", classCache: &Path2DJNIClass )
             return Int(__value)

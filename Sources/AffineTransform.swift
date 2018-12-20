@@ -50,7 +50,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* inter
 
     private static var TYPE_FLIP_FieldID: jfieldID?
 
-    open static var TYPE_FLIP: Int {
+    public static var TYPE_FLIP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_FLIP", fieldType: "I", fieldCache: &TYPE_FLIP_FieldID, className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass )
             return Int(__value)
@@ -61,7 +61,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* inter
 
     private static var TYPE_GENERAL_ROTATION_FieldID: jfieldID?
 
-    open static var TYPE_GENERAL_ROTATION: Int {
+    public static var TYPE_GENERAL_ROTATION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_GENERAL_ROTATION", fieldType: "I", fieldCache: &TYPE_GENERAL_ROTATION_FieldID, className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass )
             return Int(__value)
@@ -72,7 +72,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* inter
 
     private static var TYPE_GENERAL_SCALE_FieldID: jfieldID?
 
-    open static var TYPE_GENERAL_SCALE: Int {
+    public static var TYPE_GENERAL_SCALE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_GENERAL_SCALE", fieldType: "I", fieldCache: &TYPE_GENERAL_SCALE_FieldID, className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass )
             return Int(__value)
@@ -83,7 +83,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* inter
 
     private static var TYPE_GENERAL_TRANSFORM_FieldID: jfieldID?
 
-    open static var TYPE_GENERAL_TRANSFORM: Int {
+    public static var TYPE_GENERAL_TRANSFORM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_GENERAL_TRANSFORM", fieldType: "I", fieldCache: &TYPE_GENERAL_TRANSFORM_FieldID, className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass )
             return Int(__value)
@@ -94,7 +94,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* inter
 
     private static var TYPE_IDENTITY_FieldID: jfieldID?
 
-    open static var TYPE_IDENTITY: Int {
+    public static var TYPE_IDENTITY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_IDENTITY", fieldType: "I", fieldCache: &TYPE_IDENTITY_FieldID, className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass )
             return Int(__value)
@@ -105,7 +105,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* inter
 
     private static var TYPE_MASK_ROTATION_FieldID: jfieldID?
 
-    open static var TYPE_MASK_ROTATION: Int {
+    public static var TYPE_MASK_ROTATION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_MASK_ROTATION", fieldType: "I", fieldCache: &TYPE_MASK_ROTATION_FieldID, className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass )
             return Int(__value)
@@ -116,7 +116,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* inter
 
     private static var TYPE_MASK_SCALE_FieldID: jfieldID?
 
-    open static var TYPE_MASK_SCALE: Int {
+    public static var TYPE_MASK_SCALE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_MASK_SCALE", fieldType: "I", fieldCache: &TYPE_MASK_SCALE_FieldID, className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass )
             return Int(__value)
@@ -127,7 +127,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* inter
 
     private static var TYPE_QUADRANT_ROTATION_FieldID: jfieldID?
 
-    open static var TYPE_QUADRANT_ROTATION: Int {
+    public static var TYPE_QUADRANT_ROTATION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_QUADRANT_ROTATION", fieldType: "I", fieldCache: &TYPE_QUADRANT_ROTATION_FieldID, className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass )
             return Int(__value)
@@ -138,7 +138,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* inter
 
     private static var TYPE_TRANSLATION_FieldID: jfieldID?
 
-    open static var TYPE_TRANSLATION: Int {
+    public static var TYPE_TRANSLATION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_TRANSLATION", fieldType: "I", fieldCache: &TYPE_TRANSLATION_FieldID, className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass )
             return Int(__value)
@@ -149,7 +149,7 @@ open class AffineTransform: java_swift.JavaObject, java_lang.Cloneable, /* inter
 
     private static var TYPE_UNIFORM_SCALE_FieldID: jfieldID?
 
-    open static var TYPE_UNIFORM_SCALE: Int {
+    public static var TYPE_UNIFORM_SCALE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_UNIFORM_SCALE", fieldType: "I", fieldCache: &TYPE_UNIFORM_SCALE_FieldID, className: "java/awt/geom/AffineTransform", classCache: &AffineTransformJNIClass )
             return Int(__value)

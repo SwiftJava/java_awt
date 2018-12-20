@@ -20,7 +20,7 @@ open class PageAttributes_ColorType: /* class java.awt.AttributeValue */ Unavail
 
     private static var COLOR_FieldID: jfieldID?
 
-    open static var COLOR: PageAttributes_ColorType! {
+    public static var COLOR: PageAttributes_ColorType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COLOR", fieldType: "Ljava/awt/PageAttributes$ColorType;", fieldCache: &COLOR_FieldID, className: "java/awt/PageAttributes$ColorType", classCache: &PageAttributes_ColorTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -36,7 +36,7 @@ open class PageAttributes_ColorType: /* class java.awt.AttributeValue */ Unavail
 
     private static var MONOCHROME_FieldID: jfieldID?
 
-    open static var MONOCHROME: PageAttributes_ColorType! {
+    public static var MONOCHROME: PageAttributes_ColorType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MONOCHROME", fieldType: "Ljava/awt/PageAttributes$ColorType;", fieldCache: &MONOCHROME_FieldID, className: "java/awt/PageAttributes$ColorType", classCache: &PageAttributes_ColorTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

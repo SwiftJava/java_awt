@@ -20,7 +20,7 @@ open class GraphicsDevice: java_swift.JavaObject {
 
     private static var TYPE_IMAGE_BUFFER_FieldID: jfieldID?
 
-    open static var TYPE_IMAGE_BUFFER: Int {
+    public static var TYPE_IMAGE_BUFFER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_IMAGE_BUFFER", fieldType: "I", fieldCache: &TYPE_IMAGE_BUFFER_FieldID, className: "java/awt/GraphicsDevice", classCache: &GraphicsDeviceJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class GraphicsDevice: java_swift.JavaObject {
 
     private static var TYPE_PRINTER_FieldID: jfieldID?
 
-    open static var TYPE_PRINTER: Int {
+    public static var TYPE_PRINTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_PRINTER", fieldType: "I", fieldCache: &TYPE_PRINTER_FieldID, className: "java/awt/GraphicsDevice", classCache: &GraphicsDeviceJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class GraphicsDevice: java_swift.JavaObject {
 
     private static var TYPE_RASTER_SCREEN_FieldID: jfieldID?
 
-    open static var TYPE_RASTER_SCREEN: Int {
+    public static var TYPE_RASTER_SCREEN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_RASTER_SCREEN", fieldType: "I", fieldCache: &TYPE_RASTER_SCREEN_FieldID, className: "java/awt/GraphicsDevice", classCache: &GraphicsDeviceJNIClass )
             return Int(__value)

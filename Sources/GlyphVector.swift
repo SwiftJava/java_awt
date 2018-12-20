@@ -24,7 +24,7 @@ open class GlyphVector: java_swift.JavaObject, java_lang.Cloneable {
 
     private static var FLAG_COMPLEX_GLYPHS_FieldID: jfieldID?
 
-    open static var FLAG_COMPLEX_GLYPHS: Int {
+    public static var FLAG_COMPLEX_GLYPHS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FLAG_COMPLEX_GLYPHS", fieldType: "I", fieldCache: &FLAG_COMPLEX_GLYPHS_FieldID, className: "java/awt/font/GlyphVector", classCache: &GlyphVectorJNIClass )
             return Int(__value)
@@ -35,7 +35,7 @@ open class GlyphVector: java_swift.JavaObject, java_lang.Cloneable {
 
     private static var FLAG_HAS_POSITION_ADJUSTMENTS_FieldID: jfieldID?
 
-    open static var FLAG_HAS_POSITION_ADJUSTMENTS: Int {
+    public static var FLAG_HAS_POSITION_ADJUSTMENTS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FLAG_HAS_POSITION_ADJUSTMENTS", fieldType: "I", fieldCache: &FLAG_HAS_POSITION_ADJUSTMENTS_FieldID, className: "java/awt/font/GlyphVector", classCache: &GlyphVectorJNIClass )
             return Int(__value)
@@ -46,7 +46,7 @@ open class GlyphVector: java_swift.JavaObject, java_lang.Cloneable {
 
     private static var FLAG_HAS_TRANSFORMS_FieldID: jfieldID?
 
-    open static var FLAG_HAS_TRANSFORMS: Int {
+    public static var FLAG_HAS_TRANSFORMS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FLAG_HAS_TRANSFORMS", fieldType: "I", fieldCache: &FLAG_HAS_TRANSFORMS_FieldID, className: "java/awt/font/GlyphVector", classCache: &GlyphVectorJNIClass )
             return Int(__value)
@@ -57,7 +57,7 @@ open class GlyphVector: java_swift.JavaObject, java_lang.Cloneable {
 
     private static var FLAG_MASK_FieldID: jfieldID?
 
-    open static var FLAG_MASK: Int {
+    public static var FLAG_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FLAG_MASK", fieldType: "I", fieldCache: &FLAG_MASK_FieldID, className: "java/awt/font/GlyphVector", classCache: &GlyphVectorJNIClass )
             return Int(__value)
@@ -68,7 +68,7 @@ open class GlyphVector: java_swift.JavaObject, java_lang.Cloneable {
 
     private static var FLAG_RUN_RTL_FieldID: jfieldID?
 
-    open static var FLAG_RUN_RTL: Int {
+    public static var FLAG_RUN_RTL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FLAG_RUN_RTL", fieldType: "I", fieldCache: &FLAG_RUN_RTL_FieldID, className: "java/awt/font/GlyphVector", classCache: &GlyphVectorJNIClass )
             return Int(__value)

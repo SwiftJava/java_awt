@@ -20,7 +20,7 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
 
     private static var PRIORITY_INTERCHAR_FieldID: jfieldID?
 
-    open static var PRIORITY_INTERCHAR: Int {
+    public static var PRIORITY_INTERCHAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PRIORITY_INTERCHAR", fieldType: "I", fieldCache: &PRIORITY_INTERCHAR_FieldID, className: "java/awt/font/GlyphJustificationInfo", classCache: &GlyphJustificationInfoJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
 
     private static var PRIORITY_KASHIDA_FieldID: jfieldID?
 
-    open static var PRIORITY_KASHIDA: Int {
+    public static var PRIORITY_KASHIDA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PRIORITY_KASHIDA", fieldType: "I", fieldCache: &PRIORITY_KASHIDA_FieldID, className: "java/awt/font/GlyphJustificationInfo", classCache: &GlyphJustificationInfoJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
 
     private static var PRIORITY_NONE_FieldID: jfieldID?
 
-    open static var PRIORITY_NONE: Int {
+    public static var PRIORITY_NONE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PRIORITY_NONE", fieldType: "I", fieldCache: &PRIORITY_NONE_FieldID, className: "java/awt/font/GlyphJustificationInfo", classCache: &GlyphJustificationInfoJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class GlyphJustificationInfo: java_swift.JavaObject {
 
     private static var PRIORITY_WHITESPACE_FieldID: jfieldID?
 
-    open static var PRIORITY_WHITESPACE: Int {
+    public static var PRIORITY_WHITESPACE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PRIORITY_WHITESPACE", fieldType: "I", fieldCache: &PRIORITY_WHITESPACE_FieldID, className: "java/awt/font/GlyphJustificationInfo", classCache: &GlyphJustificationInfoJNIClass )
             return Int(__value)

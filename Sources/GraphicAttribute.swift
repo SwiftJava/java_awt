@@ -20,7 +20,7 @@ open class GraphicAttribute: java_swift.JavaObject {
 
     private static var BOTTOM_ALIGNMENT_FieldID: jfieldID?
 
-    open static var BOTTOM_ALIGNMENT: Int {
+    public static var BOTTOM_ALIGNMENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BOTTOM_ALIGNMENT", fieldType: "I", fieldCache: &BOTTOM_ALIGNMENT_FieldID, className: "java/awt/font/GraphicAttribute", classCache: &GraphicAttributeJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class GraphicAttribute: java_swift.JavaObject {
 
     private static var CENTER_BASELINE_FieldID: jfieldID?
 
-    open static var CENTER_BASELINE: Int {
+    public static var CENTER_BASELINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CENTER_BASELINE", fieldType: "I", fieldCache: &CENTER_BASELINE_FieldID, className: "java/awt/font/GraphicAttribute", classCache: &GraphicAttributeJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class GraphicAttribute: java_swift.JavaObject {
 
     private static var HANGING_BASELINE_FieldID: jfieldID?
 
-    open static var HANGING_BASELINE: Int {
+    public static var HANGING_BASELINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HANGING_BASELINE", fieldType: "I", fieldCache: &HANGING_BASELINE_FieldID, className: "java/awt/font/GraphicAttribute", classCache: &GraphicAttributeJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class GraphicAttribute: java_swift.JavaObject {
 
     private static var ROMAN_BASELINE_FieldID: jfieldID?
 
-    open static var ROMAN_BASELINE: Int {
+    public static var ROMAN_BASELINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ROMAN_BASELINE", fieldType: "I", fieldCache: &ROMAN_BASELINE_FieldID, className: "java/awt/font/GraphicAttribute", classCache: &GraphicAttributeJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class GraphicAttribute: java_swift.JavaObject {
 
     private static var TOP_ALIGNMENT_FieldID: jfieldID?
 
-    open static var TOP_ALIGNMENT: Int {
+    public static var TOP_ALIGNMENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TOP_ALIGNMENT", fieldType: "I", fieldCache: &TOP_ALIGNMENT_FieldID, className: "java/awt/font/GraphicAttribute", classCache: &GraphicAttributeJNIClass )
             return Int(__value)

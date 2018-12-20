@@ -42,7 +42,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
 
     private static var COMPLETESCANLINES_FieldID: jfieldID?
 
-    open static var COMPLETESCANLINES: Int {
+    public static var COMPLETESCANLINES: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMPLETESCANLINES", fieldType: "I", fieldCache: &COMPLETESCANLINES_FieldID, className: "java/awt/image/ImageFilter", classCache: &ImageFilterJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
 
     private static var IMAGEABORTED_FieldID: jfieldID?
 
-    open static var IMAGEABORTED: Int {
+    public static var IMAGEABORTED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "IMAGEABORTED", fieldType: "I", fieldCache: &IMAGEABORTED_FieldID, className: "java/awt/image/ImageFilter", classCache: &ImageFilterJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
 
     private static var IMAGEERROR_FieldID: jfieldID?
 
-    open static var IMAGEERROR: Int {
+    public static var IMAGEERROR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "IMAGEERROR", fieldType: "I", fieldCache: &IMAGEERROR_FieldID, className: "java/awt/image/ImageFilter", classCache: &ImageFilterJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
 
     private static var RANDOMPIXELORDER_FieldID: jfieldID?
 
-    open static var RANDOMPIXELORDER: Int {
+    public static var RANDOMPIXELORDER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RANDOMPIXELORDER", fieldType: "I", fieldCache: &RANDOMPIXELORDER_FieldID, className: "java/awt/image/ImageFilter", classCache: &ImageFilterJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
 
     private static var SINGLEFRAME_FieldID: jfieldID?
 
-    open static var SINGLEFRAME: Int {
+    public static var SINGLEFRAME: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SINGLEFRAME", fieldType: "I", fieldCache: &SINGLEFRAME_FieldID, className: "java/awt/image/ImageFilter", classCache: &ImageFilterJNIClass )
             return Int(__value)
@@ -97,7 +97,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
 
     private static var SINGLEFRAMEDONE_FieldID: jfieldID?
 
-    open static var SINGLEFRAMEDONE: Int {
+    public static var SINGLEFRAMEDONE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SINGLEFRAMEDONE", fieldType: "I", fieldCache: &SINGLEFRAMEDONE_FieldID, className: "java/awt/image/ImageFilter", classCache: &ImageFilterJNIClass )
             return Int(__value)
@@ -108,7 +108,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
 
     private static var SINGLEPASS_FieldID: jfieldID?
 
-    open static var SINGLEPASS: Int {
+    public static var SINGLEPASS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SINGLEPASS", fieldType: "I", fieldCache: &SINGLEPASS_FieldID, className: "java/awt/image/ImageFilter", classCache: &ImageFilterJNIClass )
             return Int(__value)
@@ -119,7 +119,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
 
     private static var STATICIMAGEDONE_FieldID: jfieldID?
 
-    open static var STATICIMAGEDONE: Int {
+    public static var STATICIMAGEDONE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "STATICIMAGEDONE", fieldType: "I", fieldCache: &STATICIMAGEDONE_FieldID, className: "java/awt/image/ImageFilter", classCache: &ImageFilterJNIClass )
             return Int(__value)
@@ -130,7 +130,7 @@ open class ImageFilter: java_swift.JavaObject, ImageConsumer, java_lang.Cloneabl
 
     private static var TOPDOWNLEFTRIGHT_FieldID: jfieldID?
 
-    open static var TOPDOWNLEFTRIGHT: Int {
+    public static var TOPDOWNLEFTRIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TOPDOWNLEFTRIGHT", fieldType: "I", fieldCache: &TOPDOWNLEFTRIGHT_FieldID, className: "java/awt/image/ImageFilter", classCache: &ImageFilterJNIClass )
             return Int(__value)

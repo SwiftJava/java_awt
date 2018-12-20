@@ -56,7 +56,7 @@ open class Window_TypeForward: JNIObjectForward {
 
     private static var NORMAL_FieldID: jfieldID?
 
-    open static var NORMAL: Window_Type! {
+    public static var NORMAL: Window_Type! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NORMAL", fieldType: "Ljava/awt/Window$Type;", fieldCache: &NORMAL_FieldID, className: "java/awt/Window$Type", classCache: &Window_TypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class Window_TypeForward: JNIObjectForward {
 
     private static var POPUP_FieldID: jfieldID?
 
-    open static var POPUP: Window_Type! {
+    public static var POPUP: Window_Type! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "POPUP", fieldType: "Ljava/awt/Window$Type;", fieldCache: &POPUP_FieldID, className: "java/awt/Window$Type", classCache: &Window_TypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class Window_TypeForward: JNIObjectForward {
 
     private static var UTILITY_FieldID: jfieldID?
 
-    open static var UTILITY: Window_Type! {
+    public static var UTILITY: Window_Type! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UTILITY", fieldType: "Ljava/awt/Window$Type;", fieldCache: &UTILITY_FieldID, className: "java/awt/Window$Type", classCache: &Window_TypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

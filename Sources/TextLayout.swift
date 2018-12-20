@@ -26,7 +26,7 @@ open class TextLayout: java_swift.JavaObject, java_lang.Cloneable {
 
     private static var DEFAULT_CARET_POLICY_FieldID: jfieldID?
 
-    open static var DEFAULT_CARET_POLICY: TextLayout_CaretPolicy! {
+    public static var DEFAULT_CARET_POLICY: TextLayout_CaretPolicy! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DEFAULT_CARET_POLICY", fieldType: "Ljava/awt/font/TextLayout$CaretPolicy;", fieldCache: &DEFAULT_CARET_POLICY_FieldID, className: "java/awt/font/TextLayout", classCache: &TextLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

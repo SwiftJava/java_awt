@@ -54,7 +54,7 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
 
     private static var ABORT_FieldID: jfieldID?
 
-    open static var ABORT: Int {
+    public static var ABORT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ABORT", fieldType: "I", fieldCache: &ABORT_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
             return Int(__value)
@@ -65,7 +65,7 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
 
     private static var ALLBITS_FieldID: jfieldID?
 
-    open static var ALLBITS: Int {
+    public static var ALLBITS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALLBITS", fieldType: "I", fieldCache: &ALLBITS_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
             return Int(__value)
@@ -76,7 +76,7 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
 
     private static var ERROR_FieldID: jfieldID?
 
-    open static var ERROR: Int {
+    public static var ERROR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ERROR", fieldType: "I", fieldCache: &ERROR_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
             return Int(__value)
@@ -87,7 +87,7 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
 
     private static var FRAMEBITS_FieldID: jfieldID?
 
-    open static var FRAMEBITS: Int {
+    public static var FRAMEBITS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FRAMEBITS", fieldType: "I", fieldCache: &FRAMEBITS_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
             return Int(__value)
@@ -98,7 +98,7 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
 
     private static var HEIGHT_FieldID: jfieldID?
 
-    open static var HEIGHT: Int {
+    public static var HEIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HEIGHT", fieldType: "I", fieldCache: &HEIGHT_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
             return Int(__value)
@@ -109,7 +109,7 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
 
     private static var PROPERTIES_FieldID: jfieldID?
 
-    open static var PROPERTIES: Int {
+    public static var PROPERTIES: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PROPERTIES", fieldType: "I", fieldCache: &PROPERTIES_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
             return Int(__value)
@@ -120,7 +120,7 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
 
     private static var SOMEBITS_FieldID: jfieldID?
 
-    open static var SOMEBITS: Int {
+    public static var SOMEBITS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SOMEBITS", fieldType: "I", fieldCache: &SOMEBITS_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
             return Int(__value)
@@ -131,7 +131,7 @@ open class ImageObserverForward: JNIObjectForward, ImageObserver {
 
     private static var WIDTH_FieldID: jfieldID?
 
-    open static var WIDTH: Int {
+    public static var WIDTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WIDTH", fieldType: "I", fieldCache: &WIDTH_FieldID, className: "java/awt/image/ImageObserver", classCache: &ImageObserverJNIClass )
             return Int(__value)

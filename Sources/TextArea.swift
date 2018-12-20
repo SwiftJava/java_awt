@@ -20,7 +20,7 @@ open class TextArea: TextComponent {
 
     private static var SCROLLBARS_BOTH_FieldID: jfieldID?
 
-    open static var SCROLLBARS_BOTH: Int {
+    public static var SCROLLBARS_BOTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBARS_BOTH", fieldType: "I", fieldCache: &SCROLLBARS_BOTH_FieldID, className: "java/awt/TextArea", classCache: &TextAreaJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class TextArea: TextComponent {
 
     private static var SCROLLBARS_HORIZONTAL_ONLY_FieldID: jfieldID?
 
-    open static var SCROLLBARS_HORIZONTAL_ONLY: Int {
+    public static var SCROLLBARS_HORIZONTAL_ONLY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBARS_HORIZONTAL_ONLY", fieldType: "I", fieldCache: &SCROLLBARS_HORIZONTAL_ONLY_FieldID, className: "java/awt/TextArea", classCache: &TextAreaJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class TextArea: TextComponent {
 
     private static var SCROLLBARS_NONE_FieldID: jfieldID?
 
-    open static var SCROLLBARS_NONE: Int {
+    public static var SCROLLBARS_NONE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBARS_NONE", fieldType: "I", fieldCache: &SCROLLBARS_NONE_FieldID, className: "java/awt/TextArea", classCache: &TextAreaJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class TextArea: TextComponent {
 
     private static var SCROLLBARS_VERTICAL_ONLY_FieldID: jfieldID?
 
-    open static var SCROLLBARS_VERTICAL_ONLY: Int {
+    public static var SCROLLBARS_VERTICAL_ONLY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBARS_VERTICAL_ONLY", fieldType: "I", fieldCache: &SCROLLBARS_VERTICAL_ONLY_FieldID, className: "java/awt/TextArea", classCache: &TextAreaJNIClass )
             return Int(__value)

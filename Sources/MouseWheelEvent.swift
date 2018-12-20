@@ -20,7 +20,7 @@ open class MouseWheelEvent: MouseEvent {
 
     private static var WHEEL_BLOCK_SCROLL_FieldID: jfieldID?
 
-    open static var WHEEL_BLOCK_SCROLL: Int {
+    public static var WHEEL_BLOCK_SCROLL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WHEEL_BLOCK_SCROLL", fieldType: "I", fieldCache: &WHEEL_BLOCK_SCROLL_FieldID, className: "java/awt/event/MouseWheelEvent", classCache: &MouseWheelEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class MouseWheelEvent: MouseEvent {
 
     private static var WHEEL_UNIT_SCROLL_FieldID: jfieldID?
 
-    open static var WHEEL_UNIT_SCROLL: Int {
+    public static var WHEEL_UNIT_SCROLL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WHEEL_UNIT_SCROLL", fieldType: "I", fieldCache: &WHEEL_UNIT_SCROLL_FieldID, className: "java/awt/event/MouseWheelEvent", classCache: &MouseWheelEventJNIClass )
             return Int(__value)

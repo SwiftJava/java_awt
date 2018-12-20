@@ -20,7 +20,7 @@ open class JobAttributes_DefaultSelectionType: /* class java.awt.AttributeValue 
 
     private static var ALL_FieldID: jfieldID?
 
-    open static var ALL: JobAttributes_DefaultSelectionType! {
+    public static var ALL: JobAttributes_DefaultSelectionType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ALL", fieldType: "Ljava/awt/JobAttributes$DefaultSelectionType;", fieldCache: &ALL_FieldID, className: "java/awt/JobAttributes$DefaultSelectionType", classCache: &JobAttributes_DefaultSelectionTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -40,7 +40,7 @@ open class JobAttributes_DefaultSelectionType: /* class java.awt.AttributeValue 
 
     private static var RANGE_FieldID: jfieldID?
 
-    open static var RANGE: JobAttributes_DefaultSelectionType! {
+    public static var RANGE: JobAttributes_DefaultSelectionType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RANGE", fieldType: "Ljava/awt/JobAttributes$DefaultSelectionType;", fieldCache: &RANGE_FieldID, className: "java/awt/JobAttributes$DefaultSelectionType", classCache: &JobAttributes_DefaultSelectionTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -52,7 +52,7 @@ open class JobAttributes_DefaultSelectionType: /* class java.awt.AttributeValue 
 
     private static var SELECTION_FieldID: jfieldID?
 
-    open static var SELECTION: JobAttributes_DefaultSelectionType! {
+    public static var SELECTION: JobAttributes_DefaultSelectionType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTION", fieldType: "Ljava/awt/JobAttributes$DefaultSelectionType;", fieldCache: &SELECTION_FieldID, className: "java/awt/JobAttributes$DefaultSelectionType", classCache: &JobAttributes_DefaultSelectionTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

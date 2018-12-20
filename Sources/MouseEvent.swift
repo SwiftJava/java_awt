@@ -20,7 +20,7 @@ open class MouseEvent: InputEvent {
 
     private static var BUTTON1_FieldID: jfieldID?
 
-    open static var BUTTON1: Int {
+    public static var BUTTON1: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BUTTON1", fieldType: "I", fieldCache: &BUTTON1_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class MouseEvent: InputEvent {
 
     private static var BUTTON2_FieldID: jfieldID?
 
-    open static var BUTTON2: Int {
+    public static var BUTTON2: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BUTTON2", fieldType: "I", fieldCache: &BUTTON2_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class MouseEvent: InputEvent {
 
     private static var BUTTON3_FieldID: jfieldID?
 
-    open static var BUTTON3: Int {
+    public static var BUTTON3: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BUTTON3", fieldType: "I", fieldCache: &BUTTON3_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class MouseEvent: InputEvent {
 
     private static var MOUSE_CLICKED_FieldID: jfieldID?
 
-    open static var MOUSE_CLICKED: Int {
+    public static var MOUSE_CLICKED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_CLICKED", fieldType: "I", fieldCache: &MOUSE_CLICKED_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class MouseEvent: InputEvent {
 
     private static var MOUSE_DRAGGED_FieldID: jfieldID?
 
-    open static var MOUSE_DRAGGED: Int {
+    public static var MOUSE_DRAGGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_DRAGGED", fieldType: "I", fieldCache: &MOUSE_DRAGGED_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class MouseEvent: InputEvent {
 
     private static var MOUSE_ENTERED_FieldID: jfieldID?
 
-    open static var MOUSE_ENTERED: Int {
+    public static var MOUSE_ENTERED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_ENTERED", fieldType: "I", fieldCache: &MOUSE_ENTERED_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class MouseEvent: InputEvent {
 
     private static var MOUSE_EXITED_FieldID: jfieldID?
 
-    open static var MOUSE_EXITED: Int {
+    public static var MOUSE_EXITED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_EXITED", fieldType: "I", fieldCache: &MOUSE_EXITED_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -97,7 +97,7 @@ open class MouseEvent: InputEvent {
 
     private static var MOUSE_FIRST_FieldID: jfieldID?
 
-    open static var MOUSE_FIRST: Int {
+    public static var MOUSE_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_FIRST", fieldType: "I", fieldCache: &MOUSE_FIRST_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -108,7 +108,7 @@ open class MouseEvent: InputEvent {
 
     private static var MOUSE_LAST_FieldID: jfieldID?
 
-    open static var MOUSE_LAST: Int {
+    public static var MOUSE_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_LAST", fieldType: "I", fieldCache: &MOUSE_LAST_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -119,7 +119,7 @@ open class MouseEvent: InputEvent {
 
     private static var MOUSE_MOVED_FieldID: jfieldID?
 
-    open static var MOUSE_MOVED: Int {
+    public static var MOUSE_MOVED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_MOVED", fieldType: "I", fieldCache: &MOUSE_MOVED_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -130,7 +130,7 @@ open class MouseEvent: InputEvent {
 
     private static var MOUSE_PRESSED_FieldID: jfieldID?
 
-    open static var MOUSE_PRESSED: Int {
+    public static var MOUSE_PRESSED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_PRESSED", fieldType: "I", fieldCache: &MOUSE_PRESSED_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -141,7 +141,7 @@ open class MouseEvent: InputEvent {
 
     private static var MOUSE_RELEASED_FieldID: jfieldID?
 
-    open static var MOUSE_RELEASED: Int {
+    public static var MOUSE_RELEASED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_RELEASED", fieldType: "I", fieldCache: &MOUSE_RELEASED_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -152,7 +152,7 @@ open class MouseEvent: InputEvent {
 
     private static var MOUSE_WHEEL_FieldID: jfieldID?
 
-    open static var MOUSE_WHEEL: Int {
+    public static var MOUSE_WHEEL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_WHEEL", fieldType: "I", fieldCache: &MOUSE_WHEEL_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)
@@ -163,7 +163,7 @@ open class MouseEvent: InputEvent {
 
     private static var NOBUTTON_FieldID: jfieldID?
 
-    open static var NOBUTTON: Int {
+    public static var NOBUTTON: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NOBUTTON", fieldType: "I", fieldCache: &NOBUTTON_FieldID, className: "java/awt/event/MouseEvent", classCache: &MouseEventJNIClass )
             return Int(__value)

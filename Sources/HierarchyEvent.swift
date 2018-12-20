@@ -20,7 +20,7 @@ open class HierarchyEvent: AWTEvent {
 
     private static var ANCESTOR_MOVED_FieldID: jfieldID?
 
-    open static var ANCESTOR_MOVED: Int {
+    public static var ANCESTOR_MOVED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ANCESTOR_MOVED", fieldType: "I", fieldCache: &ANCESTOR_MOVED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class HierarchyEvent: AWTEvent {
 
     private static var ANCESTOR_RESIZED_FieldID: jfieldID?
 
-    open static var ANCESTOR_RESIZED: Int {
+    public static var ANCESTOR_RESIZED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ANCESTOR_RESIZED", fieldType: "I", fieldCache: &ANCESTOR_RESIZED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class HierarchyEvent: AWTEvent {
 
     private static var DISPLAYABILITY_CHANGED_FieldID: jfieldID?
 
-    open static var DISPLAYABILITY_CHANGED: Int {
+    public static var DISPLAYABILITY_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DISPLAYABILITY_CHANGED", fieldType: "I", fieldCache: &DISPLAYABILITY_CHANGED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class HierarchyEvent: AWTEvent {
 
     private static var HIERARCHY_CHANGED_FieldID: jfieldID?
 
-    open static var HIERARCHY_CHANGED: Int {
+    public static var HIERARCHY_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HIERARCHY_CHANGED", fieldType: "I", fieldCache: &HIERARCHY_CHANGED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class HierarchyEvent: AWTEvent {
 
     private static var HIERARCHY_FIRST_FieldID: jfieldID?
 
-    open static var HIERARCHY_FIRST: Int {
+    public static var HIERARCHY_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HIERARCHY_FIRST", fieldType: "I", fieldCache: &HIERARCHY_FIRST_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class HierarchyEvent: AWTEvent {
 
     private static var HIERARCHY_LAST_FieldID: jfieldID?
 
-    open static var HIERARCHY_LAST: Int {
+    public static var HIERARCHY_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HIERARCHY_LAST", fieldType: "I", fieldCache: &HIERARCHY_LAST_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class HierarchyEvent: AWTEvent {
 
     private static var PARENT_CHANGED_FieldID: jfieldID?
 
-    open static var PARENT_CHANGED: Int {
+    public static var PARENT_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PARENT_CHANGED", fieldType: "I", fieldCache: &PARENT_CHANGED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
             return Int(__value)
@@ -97,7 +97,7 @@ open class HierarchyEvent: AWTEvent {
 
     private static var SHOWING_CHANGED_FieldID: jfieldID?
 
-    open static var SHOWING_CHANGED: Int {
+    public static var SHOWING_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SHOWING_CHANGED", fieldType: "I", fieldCache: &SHOWING_CHANGED_FieldID, className: "java/awt/event/HierarchyEvent", classCache: &HierarchyEventJNIClass )
             return Int(__value)

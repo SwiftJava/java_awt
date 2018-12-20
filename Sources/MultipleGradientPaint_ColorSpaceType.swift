@@ -56,7 +56,7 @@ open class MultipleGradientPaint_ColorSpaceTypeForward: JNIObjectForward {
 
     private static var LINEAR_RGB_FieldID: jfieldID?
 
-    open static var LINEAR_RGB: MultipleGradientPaint_ColorSpaceType! {
+    public static var LINEAR_RGB: MultipleGradientPaint_ColorSpaceType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LINEAR_RGB", fieldType: "Ljava/awt/MultipleGradientPaint$ColorSpaceType;", fieldCache: &LINEAR_RGB_FieldID, className: "java/awt/MultipleGradientPaint$ColorSpaceType", classCache: &MultipleGradientPaint_ColorSpaceTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class MultipleGradientPaint_ColorSpaceTypeForward: JNIObjectForward {
 
     private static var SRGB_FieldID: jfieldID?
 
-    open static var SRGB: MultipleGradientPaint_ColorSpaceType! {
+    public static var SRGB: MultipleGradientPaint_ColorSpaceType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SRGB", fieldType: "Ljava/awt/MultipleGradientPaint$ColorSpaceType;", fieldCache: &SRGB_FieldID, className: "java/awt/MultipleGradientPaint$ColorSpaceType", classCache: &MultipleGradientPaint_ColorSpaceTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

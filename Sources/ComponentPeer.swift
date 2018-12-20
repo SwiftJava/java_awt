@@ -202,7 +202,7 @@ open class ComponentPeerForward: JNIObjectForward, ComponentPeer {
 
     private static var DEFAULT_OPERATION_FieldID: jfieldID?
 
-    open static var DEFAULT_OPERATION: Int {
+    public static var DEFAULT_OPERATION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT_OPERATION", fieldType: "I", fieldCache: &DEFAULT_OPERATION_FieldID, className: "java/awt/peer/ComponentPeer", classCache: &ComponentPeerJNIClass )
             return Int(__value)
@@ -213,7 +213,7 @@ open class ComponentPeerForward: JNIObjectForward, ComponentPeer {
 
     private static var NO_EMBEDDED_CHECK_FieldID: jfieldID?
 
-    open static var NO_EMBEDDED_CHECK: Int {
+    public static var NO_EMBEDDED_CHECK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NO_EMBEDDED_CHECK", fieldType: "I", fieldCache: &NO_EMBEDDED_CHECK_FieldID, className: "java/awt/peer/ComponentPeer", classCache: &ComponentPeerJNIClass )
             return Int(__value)
@@ -224,7 +224,7 @@ open class ComponentPeerForward: JNIObjectForward, ComponentPeer {
 
     private static var RESET_OPERATION_FieldID: jfieldID?
 
-    open static var RESET_OPERATION: Int {
+    public static var RESET_OPERATION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RESET_OPERATION", fieldType: "I", fieldCache: &RESET_OPERATION_FieldID, className: "java/awt/peer/ComponentPeer", classCache: &ComponentPeerJNIClass )
             return Int(__value)
@@ -235,7 +235,7 @@ open class ComponentPeerForward: JNIObjectForward, ComponentPeer {
 
     private static var SET_BOUNDS_FieldID: jfieldID?
 
-    open static var SET_BOUNDS: Int {
+    public static var SET_BOUNDS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SET_BOUNDS", fieldType: "I", fieldCache: &SET_BOUNDS_FieldID, className: "java/awt/peer/ComponentPeer", classCache: &ComponentPeerJNIClass )
             return Int(__value)
@@ -246,7 +246,7 @@ open class ComponentPeerForward: JNIObjectForward, ComponentPeer {
 
     private static var SET_CLIENT_SIZE_FieldID: jfieldID?
 
-    open static var SET_CLIENT_SIZE: Int {
+    public static var SET_CLIENT_SIZE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SET_CLIENT_SIZE", fieldType: "I", fieldCache: &SET_CLIENT_SIZE_FieldID, className: "java/awt/peer/ComponentPeer", classCache: &ComponentPeerJNIClass )
             return Int(__value)
@@ -257,7 +257,7 @@ open class ComponentPeerForward: JNIObjectForward, ComponentPeer {
 
     private static var SET_LOCATION_FieldID: jfieldID?
 
-    open static var SET_LOCATION: Int {
+    public static var SET_LOCATION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SET_LOCATION", fieldType: "I", fieldCache: &SET_LOCATION_FieldID, className: "java/awt/peer/ComponentPeer", classCache: &ComponentPeerJNIClass )
             return Int(__value)
@@ -268,7 +268,7 @@ open class ComponentPeerForward: JNIObjectForward, ComponentPeer {
 
     private static var SET_SIZE_FieldID: jfieldID?
 
-    open static var SET_SIZE: Int {
+    public static var SET_SIZE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SET_SIZE", fieldType: "I", fieldCache: &SET_SIZE_FieldID, className: "java/awt/peer/ComponentPeer", classCache: &ComponentPeerJNIClass )
             return Int(__value)

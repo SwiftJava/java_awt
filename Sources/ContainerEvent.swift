@@ -20,7 +20,7 @@ open class ContainerEvent: ComponentEvent {
 
     private static var COMPONENT_ADDED_FieldID: jfieldID?
 
-    open static var COMPONENT_ADDED: Int {
+    public static var COMPONENT_ADDED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMPONENT_ADDED", fieldType: "I", fieldCache: &COMPONENT_ADDED_FieldID, className: "java/awt/event/ContainerEvent", classCache: &ContainerEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class ContainerEvent: ComponentEvent {
 
     private static var COMPONENT_REMOVED_FieldID: jfieldID?
 
-    open static var COMPONENT_REMOVED: Int {
+    public static var COMPONENT_REMOVED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMPONENT_REMOVED", fieldType: "I", fieldCache: &COMPONENT_REMOVED_FieldID, className: "java/awt/event/ContainerEvent", classCache: &ContainerEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class ContainerEvent: ComponentEvent {
 
     private static var CONTAINER_FIRST_FieldID: jfieldID?
 
-    open static var CONTAINER_FIRST: Int {
+    public static var CONTAINER_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONTAINER_FIRST", fieldType: "I", fieldCache: &CONTAINER_FIRST_FieldID, className: "java/awt/event/ContainerEvent", classCache: &ContainerEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class ContainerEvent: ComponentEvent {
 
     private static var CONTAINER_LAST_FieldID: jfieldID?
 
-    open static var CONTAINER_LAST: Int {
+    public static var CONTAINER_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONTAINER_LAST", fieldType: "I", fieldCache: &CONTAINER_LAST_FieldID, className: "java/awt/event/ContainerEvent", classCache: &ContainerEventJNIClass )
             return Int(__value)

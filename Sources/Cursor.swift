@@ -20,7 +20,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var CROSSHAIR_CURSOR_FieldID: jfieldID?
 
-    open static var CROSSHAIR_CURSOR: Int {
+    public static var CROSSHAIR_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CROSSHAIR_CURSOR", fieldType: "I", fieldCache: &CROSSHAIR_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var CUSTOM_CURSOR_FieldID: jfieldID?
 
-    open static var CUSTOM_CURSOR: Int {
+    public static var CUSTOM_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CUSTOM_CURSOR", fieldType: "I", fieldCache: &CUSTOM_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -44,7 +44,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var DEFAULT_CURSOR_FieldID: jfieldID?
 
-    open static var DEFAULT_CURSOR: Int {
+    public static var DEFAULT_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT_CURSOR", fieldType: "I", fieldCache: &DEFAULT_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -61,7 +61,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var E_RESIZE_CURSOR_FieldID: jfieldID?
 
-    open static var E_RESIZE_CURSOR: Int {
+    public static var E_RESIZE_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "E_RESIZE_CURSOR", fieldType: "I", fieldCache: &E_RESIZE_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -72,7 +72,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var HAND_CURSOR_FieldID: jfieldID?
 
-    open static var HAND_CURSOR: Int {
+    public static var HAND_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HAND_CURSOR", fieldType: "I", fieldCache: &HAND_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -83,7 +83,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var MOVE_CURSOR_FieldID: jfieldID?
 
-    open static var MOVE_CURSOR: Int {
+    public static var MOVE_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOVE_CURSOR", fieldType: "I", fieldCache: &MOVE_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -94,7 +94,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var NE_RESIZE_CURSOR_FieldID: jfieldID?
 
-    open static var NE_RESIZE_CURSOR: Int {
+    public static var NE_RESIZE_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NE_RESIZE_CURSOR", fieldType: "I", fieldCache: &NE_RESIZE_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -105,7 +105,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var NW_RESIZE_CURSOR_FieldID: jfieldID?
 
-    open static var NW_RESIZE_CURSOR: Int {
+    public static var NW_RESIZE_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NW_RESIZE_CURSOR", fieldType: "I", fieldCache: &NW_RESIZE_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -116,7 +116,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var N_RESIZE_CURSOR_FieldID: jfieldID?
 
-    open static var N_RESIZE_CURSOR: Int {
+    public static var N_RESIZE_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "N_RESIZE_CURSOR", fieldType: "I", fieldCache: &N_RESIZE_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -127,7 +127,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var SE_RESIZE_CURSOR_FieldID: jfieldID?
 
-    open static var SE_RESIZE_CURSOR: Int {
+    public static var SE_RESIZE_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SE_RESIZE_CURSOR", fieldType: "I", fieldCache: &SE_RESIZE_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -138,7 +138,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var SW_RESIZE_CURSOR_FieldID: jfieldID?
 
-    open static var SW_RESIZE_CURSOR: Int {
+    public static var SW_RESIZE_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SW_RESIZE_CURSOR", fieldType: "I", fieldCache: &SW_RESIZE_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -149,7 +149,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var S_RESIZE_CURSOR_FieldID: jfieldID?
 
-    open static var S_RESIZE_CURSOR: Int {
+    public static var S_RESIZE_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "S_RESIZE_CURSOR", fieldType: "I", fieldCache: &S_RESIZE_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -160,7 +160,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var TEXT_CURSOR_FieldID: jfieldID?
 
-    open static var TEXT_CURSOR: Int {
+    public static var TEXT_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TEXT_CURSOR", fieldType: "I", fieldCache: &TEXT_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -171,7 +171,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var WAIT_CURSOR_FieldID: jfieldID?
 
-    open static var WAIT_CURSOR: Int {
+    public static var WAIT_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WAIT_CURSOR", fieldType: "I", fieldCache: &WAIT_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)
@@ -182,7 +182,7 @@ open class Cursor: java_swift.JavaObject, /* interface java.io.Serializable */ U
 
     private static var W_RESIZE_CURSOR_FieldID: jfieldID?
 
-    open static var W_RESIZE_CURSOR: Int {
+    public static var W_RESIZE_CURSOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "W_RESIZE_CURSOR", fieldType: "I", fieldCache: &W_RESIZE_CURSOR_FieldID, className: "java/awt/Cursor", classCache: &CursorJNIClass )
             return Int(__value)

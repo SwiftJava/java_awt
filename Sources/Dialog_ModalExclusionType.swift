@@ -56,7 +56,7 @@ open class Dialog_ModalExclusionTypeForward: JNIObjectForward {
 
     private static var APPLICATION_EXCLUDE_FieldID: jfieldID?
 
-    open static var APPLICATION_EXCLUDE: Dialog_ModalExclusionType! {
+    public static var APPLICATION_EXCLUDE: Dialog_ModalExclusionType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "APPLICATION_EXCLUDE", fieldType: "Ljava/awt/Dialog$ModalExclusionType;", fieldCache: &APPLICATION_EXCLUDE_FieldID, className: "java/awt/Dialog$ModalExclusionType", classCache: &Dialog_ModalExclusionTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class Dialog_ModalExclusionTypeForward: JNIObjectForward {
 
     private static var NO_EXCLUDE_FieldID: jfieldID?
 
-    open static var NO_EXCLUDE: Dialog_ModalExclusionType! {
+    public static var NO_EXCLUDE: Dialog_ModalExclusionType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NO_EXCLUDE", fieldType: "Ljava/awt/Dialog$ModalExclusionType;", fieldCache: &NO_EXCLUDE_FieldID, className: "java/awt/Dialog$ModalExclusionType", classCache: &Dialog_ModalExclusionTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class Dialog_ModalExclusionTypeForward: JNIObjectForward {
 
     private static var TOOLKIT_EXCLUDE_FieldID: jfieldID?
 
-    open static var TOOLKIT_EXCLUDE: Dialog_ModalExclusionType! {
+    public static var TOOLKIT_EXCLUDE: Dialog_ModalExclusionType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TOOLKIT_EXCLUDE", fieldType: "Ljava/awt/Dialog$ModalExclusionType;", fieldCache: &TOOLKIT_EXCLUDE_FieldID, className: "java/awt/Dialog$ModalExclusionType", classCache: &Dialog_ModalExclusionTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

@@ -24,7 +24,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var ABOVE_BASELINE_FieldID: jfieldID?
 
-    open static var ABOVE_BASELINE: Int {
+    public static var ABOVE_BASELINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ABOVE_BASELINE", fieldType: "I", fieldCache: &ABOVE_BASELINE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -35,7 +35,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var ABOVE_BASELINE_LEADING_FieldID: jfieldID?
 
-    open static var ABOVE_BASELINE_LEADING: Int {
+    public static var ABOVE_BASELINE_LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ABOVE_BASELINE_LEADING", fieldType: "I", fieldCache: &ABOVE_BASELINE_LEADING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -46,7 +46,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var ABOVE_BASELINE_TRAILING_FieldID: jfieldID?
 
-    open static var ABOVE_BASELINE_TRAILING: Int {
+    public static var ABOVE_BASELINE_TRAILING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ABOVE_BASELINE_TRAILING", fieldType: "I", fieldCache: &ABOVE_BASELINE_TRAILING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -57,7 +57,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var BASELINE_FieldID: jfieldID?
 
-    open static var BASELINE: Int {
+    public static var BASELINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BASELINE", fieldType: "I", fieldCache: &BASELINE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -68,7 +68,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var BASELINE_LEADING_FieldID: jfieldID?
 
-    open static var BASELINE_LEADING: Int {
+    public static var BASELINE_LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BASELINE_LEADING", fieldType: "I", fieldCache: &BASELINE_LEADING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -79,7 +79,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var BASELINE_TRAILING_FieldID: jfieldID?
 
-    open static var BASELINE_TRAILING: Int {
+    public static var BASELINE_TRAILING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BASELINE_TRAILING", fieldType: "I", fieldCache: &BASELINE_TRAILING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -90,7 +90,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var BELOW_BASELINE_FieldID: jfieldID?
 
-    open static var BELOW_BASELINE: Int {
+    public static var BELOW_BASELINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BELOW_BASELINE", fieldType: "I", fieldCache: &BELOW_BASELINE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -101,7 +101,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var BELOW_BASELINE_LEADING_FieldID: jfieldID?
 
-    open static var BELOW_BASELINE_LEADING: Int {
+    public static var BELOW_BASELINE_LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BELOW_BASELINE_LEADING", fieldType: "I", fieldCache: &BELOW_BASELINE_LEADING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -112,7 +112,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var BELOW_BASELINE_TRAILING_FieldID: jfieldID?
 
-    open static var BELOW_BASELINE_TRAILING: Int {
+    public static var BELOW_BASELINE_TRAILING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BELOW_BASELINE_TRAILING", fieldType: "I", fieldCache: &BELOW_BASELINE_TRAILING_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -123,7 +123,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var BOTH_FieldID: jfieldID?
 
-    open static var BOTH: Int {
+    public static var BOTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BOTH", fieldType: "I", fieldCache: &BOTH_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -134,7 +134,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var CENTER_FieldID: jfieldID?
 
-    open static var CENTER: Int {
+    public static var CENTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -145,7 +145,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var EAST_FieldID: jfieldID?
 
-    open static var EAST: Int {
+    public static var EAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EAST", fieldType: "I", fieldCache: &EAST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -156,7 +156,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var FIRST_LINE_END_FieldID: jfieldID?
 
-    open static var FIRST_LINE_END: Int {
+    public static var FIRST_LINE_END: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FIRST_LINE_END", fieldType: "I", fieldCache: &FIRST_LINE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -167,7 +167,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var FIRST_LINE_START_FieldID: jfieldID?
 
-    open static var FIRST_LINE_START: Int {
+    public static var FIRST_LINE_START: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FIRST_LINE_START", fieldType: "I", fieldCache: &FIRST_LINE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -178,7 +178,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var HORIZONTAL_FieldID: jfieldID?
 
-    open static var HORIZONTAL: Int {
+    public static var HORIZONTAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL", fieldType: "I", fieldCache: &HORIZONTAL_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -189,7 +189,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var LAST_LINE_END_FieldID: jfieldID?
 
-    open static var LAST_LINE_END: Int {
+    public static var LAST_LINE_END: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LAST_LINE_END", fieldType: "I", fieldCache: &LAST_LINE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -200,7 +200,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var LAST_LINE_START_FieldID: jfieldID?
 
-    open static var LAST_LINE_START: Int {
+    public static var LAST_LINE_START: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LAST_LINE_START", fieldType: "I", fieldCache: &LAST_LINE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -211,7 +211,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var LINE_END_FieldID: jfieldID?
 
-    open static var LINE_END: Int {
+    public static var LINE_END: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LINE_END", fieldType: "I", fieldCache: &LINE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -222,7 +222,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var LINE_START_FieldID: jfieldID?
 
-    open static var LINE_START: Int {
+    public static var LINE_START: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LINE_START", fieldType: "I", fieldCache: &LINE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -233,7 +233,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var NONE_FieldID: jfieldID?
 
-    open static var NONE: Int {
+    public static var NONE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NONE", fieldType: "I", fieldCache: &NONE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -244,7 +244,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var NORTH_FieldID: jfieldID?
 
-    open static var NORTH: Int {
+    public static var NORTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -255,7 +255,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var NORTHEAST_FieldID: jfieldID?
 
-    open static var NORTHEAST: Int {
+    public static var NORTHEAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NORTHEAST", fieldType: "I", fieldCache: &NORTHEAST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -266,7 +266,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var NORTHWEST_FieldID: jfieldID?
 
-    open static var NORTHWEST: Int {
+    public static var NORTHWEST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NORTHWEST", fieldType: "I", fieldCache: &NORTHWEST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -277,7 +277,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var PAGE_END_FieldID: jfieldID?
 
-    open static var PAGE_END: Int {
+    public static var PAGE_END: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PAGE_END", fieldType: "I", fieldCache: &PAGE_END_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -288,7 +288,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var PAGE_START_FieldID: jfieldID?
 
-    open static var PAGE_START: Int {
+    public static var PAGE_START: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PAGE_START", fieldType: "I", fieldCache: &PAGE_START_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -299,7 +299,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var RELATIVE_FieldID: jfieldID?
 
-    open static var RELATIVE: Int {
+    public static var RELATIVE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RELATIVE", fieldType: "I", fieldCache: &RELATIVE_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -310,7 +310,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var REMAINDER_FieldID: jfieldID?
 
-    open static var REMAINDER: Int {
+    public static var REMAINDER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "REMAINDER", fieldType: "I", fieldCache: &REMAINDER_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -321,7 +321,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var SOUTH_FieldID: jfieldID?
 
-    open static var SOUTH: Int {
+    public static var SOUTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -332,7 +332,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var SOUTHEAST_FieldID: jfieldID?
 
-    open static var SOUTHEAST: Int {
+    public static var SOUTHEAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SOUTHEAST", fieldType: "I", fieldCache: &SOUTHEAST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -343,7 +343,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var SOUTHWEST_FieldID: jfieldID?
 
-    open static var SOUTHWEST: Int {
+    public static var SOUTHWEST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SOUTHWEST", fieldType: "I", fieldCache: &SOUTHWEST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -354,7 +354,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var VERTICAL_FieldID: jfieldID?
 
-    open static var VERTICAL: Int {
+    public static var VERTICAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)
@@ -365,7 +365,7 @@ open class GridBagConstraints: java_swift.JavaObject, java_lang.Cloneable, /* in
 
     private static var WEST_FieldID: jfieldID?
 
-    open static var WEST: Int {
+    public static var WEST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "java/awt/GridBagConstraints", classCache: &GridBagConstraintsJNIClass )
             return Int(__value)

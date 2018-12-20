@@ -20,7 +20,7 @@ open class FileDialog: Dialog {
 
     private static var LOAD_FieldID: jfieldID?
 
-    open static var LOAD: Int {
+    public static var LOAD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LOAD", fieldType: "I", fieldCache: &LOAD_FieldID, className: "java/awt/FileDialog", classCache: &FileDialogJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class FileDialog: Dialog {
 
     private static var SAVE_FieldID: jfieldID?
 
-    open static var SAVE: Int {
+    public static var SAVE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SAVE", fieldType: "I", fieldCache: &SAVE_FieldID, className: "java/awt/FileDialog", classCache: &FileDialogJNIClass )
             return Int(__value)

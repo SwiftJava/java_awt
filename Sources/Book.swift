@@ -23,7 +23,7 @@ open class Book: java_swift.JavaObject, Pageable {
 
     private static var UNKNOWN_NUMBER_OF_PAGES_FieldID: jfieldID?
 
-    open static var UNKNOWN_NUMBER_OF_PAGES: Int {
+    public static var UNKNOWN_NUMBER_OF_PAGES: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UNKNOWN_NUMBER_OF_PAGES", fieldType: "I", fieldCache: &UNKNOWN_NUMBER_OF_PAGES_FieldID, className: "java/awt/print/Book", classCache: &BookJNIClass )
             return Int(__value)

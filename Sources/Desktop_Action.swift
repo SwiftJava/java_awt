@@ -56,7 +56,7 @@ open class Desktop_ActionForward: JNIObjectForward {
 
     private static var BROWSE_FieldID: jfieldID?
 
-    open static var BROWSE: Desktop_Action! {
+    public static var BROWSE: Desktop_Action! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BROWSE", fieldType: "Ljava/awt/Desktop$Action;", fieldCache: &BROWSE_FieldID, className: "java/awt/Desktop$Action", classCache: &Desktop_ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class Desktop_ActionForward: JNIObjectForward {
 
     private static var EDIT_FieldID: jfieldID?
 
-    open static var EDIT: Desktop_Action! {
+    public static var EDIT: Desktop_Action! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EDIT", fieldType: "Ljava/awt/Desktop$Action;", fieldCache: &EDIT_FieldID, className: "java/awt/Desktop$Action", classCache: &Desktop_ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class Desktop_ActionForward: JNIObjectForward {
 
     private static var MAIL_FieldID: jfieldID?
 
-    open static var MAIL: Desktop_Action! {
+    public static var MAIL: Desktop_Action! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MAIL", fieldType: "Ljava/awt/Desktop$Action;", fieldCache: &MAIL_FieldID, className: "java/awt/Desktop$Action", classCache: &Desktop_ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -92,7 +92,7 @@ open class Desktop_ActionForward: JNIObjectForward {
 
     private static var OPEN_FieldID: jfieldID?
 
-    open static var OPEN: Desktop_Action! {
+    public static var OPEN: Desktop_Action! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "OPEN", fieldType: "Ljava/awt/Desktop$Action;", fieldCache: &OPEN_FieldID, className: "java/awt/Desktop$Action", classCache: &Desktop_ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -104,7 +104,7 @@ open class Desktop_ActionForward: JNIObjectForward {
 
     private static var PRINT_FieldID: jfieldID?
 
-    open static var PRINT: Desktop_Action! {
+    public static var PRINT: Desktop_Action! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PRINT", fieldType: "Ljava/awt/Desktop$Action;", fieldCache: &PRINT_FieldID, className: "java/awt/Desktop$Action", classCache: &Desktop_ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

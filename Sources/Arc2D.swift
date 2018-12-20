@@ -20,7 +20,7 @@ open class Arc2D: RectangularShape {
 
     private static var CHORD_FieldID: jfieldID?
 
-    open static var CHORD: Int {
+    public static var CHORD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CHORD", fieldType: "I", fieldCache: &CHORD_FieldID, className: "java/awt/geom/Arc2D", classCache: &Arc2DJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class Arc2D: RectangularShape {
 
     private static var OPEN_FieldID: jfieldID?
 
-    open static var OPEN: Int {
+    public static var OPEN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OPEN", fieldType: "I", fieldCache: &OPEN_FieldID, className: "java/awt/geom/Arc2D", classCache: &Arc2DJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class Arc2D: RectangularShape {
 
     private static var PIE_FieldID: jfieldID?
 
-    open static var PIE: Int {
+    public static var PIE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PIE", fieldType: "I", fieldCache: &PIE_FieldID, className: "java/awt/geom/Arc2D", classCache: &Arc2DJNIClass )
             return Int(__value)

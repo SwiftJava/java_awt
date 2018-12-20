@@ -20,7 +20,7 @@ open class KeyEvent: InputEvent {
 
     private static var CHAR_UNDEFINED_FieldID: jfieldID?
 
-    open static var CHAR_UNDEFINED: UInt16 {
+    public static var CHAR_UNDEFINED: UInt16 {
         get {
             let __value = JNIField.GetStaticCharField( fieldName: "CHAR_UNDEFINED", fieldType: "C", fieldCache: &CHAR_UNDEFINED_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return __value
@@ -31,7 +31,7 @@ open class KeyEvent: InputEvent {
 
     private static var KEY_FIRST_FieldID: jfieldID?
 
-    open static var KEY_FIRST: Int {
+    public static var KEY_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_FIRST", fieldType: "I", fieldCache: &KEY_FIRST_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class KeyEvent: InputEvent {
 
     private static var KEY_LAST_FieldID: jfieldID?
 
-    open static var KEY_LAST: Int {
+    public static var KEY_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_LAST", fieldType: "I", fieldCache: &KEY_LAST_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class KeyEvent: InputEvent {
 
     private static var KEY_LOCATION_LEFT_FieldID: jfieldID?
 
-    open static var KEY_LOCATION_LEFT: Int {
+    public static var KEY_LOCATION_LEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_LOCATION_LEFT", fieldType: "I", fieldCache: &KEY_LOCATION_LEFT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class KeyEvent: InputEvent {
 
     private static var KEY_LOCATION_NUMPAD_FieldID: jfieldID?
 
-    open static var KEY_LOCATION_NUMPAD: Int {
+    public static var KEY_LOCATION_NUMPAD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_LOCATION_NUMPAD", fieldType: "I", fieldCache: &KEY_LOCATION_NUMPAD_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class KeyEvent: InputEvent {
 
     private static var KEY_LOCATION_RIGHT_FieldID: jfieldID?
 
-    open static var KEY_LOCATION_RIGHT: Int {
+    public static var KEY_LOCATION_RIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_LOCATION_RIGHT", fieldType: "I", fieldCache: &KEY_LOCATION_RIGHT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class KeyEvent: InputEvent {
 
     private static var KEY_LOCATION_STANDARD_FieldID: jfieldID?
 
-    open static var KEY_LOCATION_STANDARD: Int {
+    public static var KEY_LOCATION_STANDARD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_LOCATION_STANDARD", fieldType: "I", fieldCache: &KEY_LOCATION_STANDARD_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -97,7 +97,7 @@ open class KeyEvent: InputEvent {
 
     private static var KEY_LOCATION_UNKNOWN_FieldID: jfieldID?
 
-    open static var KEY_LOCATION_UNKNOWN: Int {
+    public static var KEY_LOCATION_UNKNOWN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_LOCATION_UNKNOWN", fieldType: "I", fieldCache: &KEY_LOCATION_UNKNOWN_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -108,7 +108,7 @@ open class KeyEvent: InputEvent {
 
     private static var KEY_PRESSED_FieldID: jfieldID?
 
-    open static var KEY_PRESSED: Int {
+    public static var KEY_PRESSED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_PRESSED", fieldType: "I", fieldCache: &KEY_PRESSED_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -119,7 +119,7 @@ open class KeyEvent: InputEvent {
 
     private static var KEY_RELEASED_FieldID: jfieldID?
 
-    open static var KEY_RELEASED: Int {
+    public static var KEY_RELEASED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_RELEASED", fieldType: "I", fieldCache: &KEY_RELEASED_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -130,7 +130,7 @@ open class KeyEvent: InputEvent {
 
     private static var KEY_TYPED_FieldID: jfieldID?
 
-    open static var KEY_TYPED: Int {
+    public static var KEY_TYPED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_TYPED", fieldType: "I", fieldCache: &KEY_TYPED_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -141,7 +141,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_0_FieldID: jfieldID?
 
-    open static var VK_0: Int {
+    public static var VK_0: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_0", fieldType: "I", fieldCache: &VK_0_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -152,7 +152,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_1_FieldID: jfieldID?
 
-    open static var VK_1: Int {
+    public static var VK_1: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_1", fieldType: "I", fieldCache: &VK_1_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -163,7 +163,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_2_FieldID: jfieldID?
 
-    open static var VK_2: Int {
+    public static var VK_2: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_2", fieldType: "I", fieldCache: &VK_2_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -174,7 +174,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_3_FieldID: jfieldID?
 
-    open static var VK_3: Int {
+    public static var VK_3: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_3", fieldType: "I", fieldCache: &VK_3_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -185,7 +185,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_4_FieldID: jfieldID?
 
-    open static var VK_4: Int {
+    public static var VK_4: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_4", fieldType: "I", fieldCache: &VK_4_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -196,7 +196,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_5_FieldID: jfieldID?
 
-    open static var VK_5: Int {
+    public static var VK_5: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_5", fieldType: "I", fieldCache: &VK_5_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -207,7 +207,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_6_FieldID: jfieldID?
 
-    open static var VK_6: Int {
+    public static var VK_6: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_6", fieldType: "I", fieldCache: &VK_6_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -218,7 +218,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_7_FieldID: jfieldID?
 
-    open static var VK_7: Int {
+    public static var VK_7: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_7", fieldType: "I", fieldCache: &VK_7_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -229,7 +229,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_8_FieldID: jfieldID?
 
-    open static var VK_8: Int {
+    public static var VK_8: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_8", fieldType: "I", fieldCache: &VK_8_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -240,7 +240,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_9_FieldID: jfieldID?
 
-    open static var VK_9: Int {
+    public static var VK_9: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_9", fieldType: "I", fieldCache: &VK_9_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -251,7 +251,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_A_FieldID: jfieldID?
 
-    open static var VK_A: Int {
+    public static var VK_A: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_A", fieldType: "I", fieldCache: &VK_A_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -262,7 +262,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_ACCEPT_FieldID: jfieldID?
 
-    open static var VK_ACCEPT: Int {
+    public static var VK_ACCEPT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_ACCEPT", fieldType: "I", fieldCache: &VK_ACCEPT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -273,7 +273,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_ADD_FieldID: jfieldID?
 
-    open static var VK_ADD: Int {
+    public static var VK_ADD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_ADD", fieldType: "I", fieldCache: &VK_ADD_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -284,7 +284,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_AGAIN_FieldID: jfieldID?
 
-    open static var VK_AGAIN: Int {
+    public static var VK_AGAIN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_AGAIN", fieldType: "I", fieldCache: &VK_AGAIN_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -295,7 +295,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_ALL_CANDIDATES_FieldID: jfieldID?
 
-    open static var VK_ALL_CANDIDATES: Int {
+    public static var VK_ALL_CANDIDATES: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_ALL_CANDIDATES", fieldType: "I", fieldCache: &VK_ALL_CANDIDATES_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -306,7 +306,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_ALPHANUMERIC_FieldID: jfieldID?
 
-    open static var VK_ALPHANUMERIC: Int {
+    public static var VK_ALPHANUMERIC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_ALPHANUMERIC", fieldType: "I", fieldCache: &VK_ALPHANUMERIC_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -317,7 +317,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_ALT_FieldID: jfieldID?
 
-    open static var VK_ALT: Int {
+    public static var VK_ALT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_ALT", fieldType: "I", fieldCache: &VK_ALT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -328,7 +328,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_ALT_GRAPH_FieldID: jfieldID?
 
-    open static var VK_ALT_GRAPH: Int {
+    public static var VK_ALT_GRAPH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_ALT_GRAPH", fieldType: "I", fieldCache: &VK_ALT_GRAPH_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -339,7 +339,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_AMPERSAND_FieldID: jfieldID?
 
-    open static var VK_AMPERSAND: Int {
+    public static var VK_AMPERSAND: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_AMPERSAND", fieldType: "I", fieldCache: &VK_AMPERSAND_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -350,7 +350,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_ASTERISK_FieldID: jfieldID?
 
-    open static var VK_ASTERISK: Int {
+    public static var VK_ASTERISK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_ASTERISK", fieldType: "I", fieldCache: &VK_ASTERISK_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -361,7 +361,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_AT_FieldID: jfieldID?
 
-    open static var VK_AT: Int {
+    public static var VK_AT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_AT", fieldType: "I", fieldCache: &VK_AT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -372,7 +372,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_B_FieldID: jfieldID?
 
-    open static var VK_B: Int {
+    public static var VK_B: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_B", fieldType: "I", fieldCache: &VK_B_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -383,7 +383,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_BACK_QUOTE_FieldID: jfieldID?
 
-    open static var VK_BACK_QUOTE: Int {
+    public static var VK_BACK_QUOTE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_BACK_QUOTE", fieldType: "I", fieldCache: &VK_BACK_QUOTE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -394,7 +394,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_BACK_SLASH_FieldID: jfieldID?
 
-    open static var VK_BACK_SLASH: Int {
+    public static var VK_BACK_SLASH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_BACK_SLASH", fieldType: "I", fieldCache: &VK_BACK_SLASH_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -405,7 +405,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_BACK_SPACE_FieldID: jfieldID?
 
-    open static var VK_BACK_SPACE: Int {
+    public static var VK_BACK_SPACE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_BACK_SPACE", fieldType: "I", fieldCache: &VK_BACK_SPACE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -416,7 +416,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_BEGIN_FieldID: jfieldID?
 
-    open static var VK_BEGIN: Int {
+    public static var VK_BEGIN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_BEGIN", fieldType: "I", fieldCache: &VK_BEGIN_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -427,7 +427,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_BRACELEFT_FieldID: jfieldID?
 
-    open static var VK_BRACELEFT: Int {
+    public static var VK_BRACELEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_BRACELEFT", fieldType: "I", fieldCache: &VK_BRACELEFT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -438,7 +438,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_BRACERIGHT_FieldID: jfieldID?
 
-    open static var VK_BRACERIGHT: Int {
+    public static var VK_BRACERIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_BRACERIGHT", fieldType: "I", fieldCache: &VK_BRACERIGHT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -449,7 +449,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_C_FieldID: jfieldID?
 
-    open static var VK_C: Int {
+    public static var VK_C: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_C", fieldType: "I", fieldCache: &VK_C_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -460,7 +460,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_CANCEL_FieldID: jfieldID?
 
-    open static var VK_CANCEL: Int {
+    public static var VK_CANCEL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_CANCEL", fieldType: "I", fieldCache: &VK_CANCEL_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -471,7 +471,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_CAPS_LOCK_FieldID: jfieldID?
 
-    open static var VK_CAPS_LOCK: Int {
+    public static var VK_CAPS_LOCK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_CAPS_LOCK", fieldType: "I", fieldCache: &VK_CAPS_LOCK_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -482,7 +482,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_CIRCUMFLEX_FieldID: jfieldID?
 
-    open static var VK_CIRCUMFLEX: Int {
+    public static var VK_CIRCUMFLEX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_CIRCUMFLEX", fieldType: "I", fieldCache: &VK_CIRCUMFLEX_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -493,7 +493,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_CLEAR_FieldID: jfieldID?
 
-    open static var VK_CLEAR: Int {
+    public static var VK_CLEAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_CLEAR", fieldType: "I", fieldCache: &VK_CLEAR_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -504,7 +504,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_CLOSE_BRACKET_FieldID: jfieldID?
 
-    open static var VK_CLOSE_BRACKET: Int {
+    public static var VK_CLOSE_BRACKET: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_CLOSE_BRACKET", fieldType: "I", fieldCache: &VK_CLOSE_BRACKET_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -515,7 +515,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_CODE_INPUT_FieldID: jfieldID?
 
-    open static var VK_CODE_INPUT: Int {
+    public static var VK_CODE_INPUT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_CODE_INPUT", fieldType: "I", fieldCache: &VK_CODE_INPUT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -526,7 +526,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_COLON_FieldID: jfieldID?
 
-    open static var VK_COLON: Int {
+    public static var VK_COLON: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_COLON", fieldType: "I", fieldCache: &VK_COLON_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -537,7 +537,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_COMMA_FieldID: jfieldID?
 
-    open static var VK_COMMA: Int {
+    public static var VK_COMMA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_COMMA", fieldType: "I", fieldCache: &VK_COMMA_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -548,7 +548,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_COMPOSE_FieldID: jfieldID?
 
-    open static var VK_COMPOSE: Int {
+    public static var VK_COMPOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_COMPOSE", fieldType: "I", fieldCache: &VK_COMPOSE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -559,7 +559,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_CONTEXT_MENU_FieldID: jfieldID?
 
-    open static var VK_CONTEXT_MENU: Int {
+    public static var VK_CONTEXT_MENU: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_CONTEXT_MENU", fieldType: "I", fieldCache: &VK_CONTEXT_MENU_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -570,7 +570,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_CONTROL_FieldID: jfieldID?
 
-    open static var VK_CONTROL: Int {
+    public static var VK_CONTROL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_CONTROL", fieldType: "I", fieldCache: &VK_CONTROL_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -581,7 +581,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_CONVERT_FieldID: jfieldID?
 
-    open static var VK_CONVERT: Int {
+    public static var VK_CONVERT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_CONVERT", fieldType: "I", fieldCache: &VK_CONVERT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -592,7 +592,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_COPY_FieldID: jfieldID?
 
-    open static var VK_COPY: Int {
+    public static var VK_COPY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_COPY", fieldType: "I", fieldCache: &VK_COPY_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -603,7 +603,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_CUT_FieldID: jfieldID?
 
-    open static var VK_CUT: Int {
+    public static var VK_CUT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_CUT", fieldType: "I", fieldCache: &VK_CUT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -614,7 +614,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_D_FieldID: jfieldID?
 
-    open static var VK_D: Int {
+    public static var VK_D: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_D", fieldType: "I", fieldCache: &VK_D_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -625,7 +625,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_ABOVEDOT_FieldID: jfieldID?
 
-    open static var VK_DEAD_ABOVEDOT: Int {
+    public static var VK_DEAD_ABOVEDOT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_ABOVEDOT", fieldType: "I", fieldCache: &VK_DEAD_ABOVEDOT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -636,7 +636,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_ABOVERING_FieldID: jfieldID?
 
-    open static var VK_DEAD_ABOVERING: Int {
+    public static var VK_DEAD_ABOVERING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_ABOVERING", fieldType: "I", fieldCache: &VK_DEAD_ABOVERING_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -647,7 +647,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_ACUTE_FieldID: jfieldID?
 
-    open static var VK_DEAD_ACUTE: Int {
+    public static var VK_DEAD_ACUTE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_ACUTE", fieldType: "I", fieldCache: &VK_DEAD_ACUTE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -658,7 +658,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_BREVE_FieldID: jfieldID?
 
-    open static var VK_DEAD_BREVE: Int {
+    public static var VK_DEAD_BREVE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_BREVE", fieldType: "I", fieldCache: &VK_DEAD_BREVE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -669,7 +669,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_CARON_FieldID: jfieldID?
 
-    open static var VK_DEAD_CARON: Int {
+    public static var VK_DEAD_CARON: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_CARON", fieldType: "I", fieldCache: &VK_DEAD_CARON_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -680,7 +680,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_CEDILLA_FieldID: jfieldID?
 
-    open static var VK_DEAD_CEDILLA: Int {
+    public static var VK_DEAD_CEDILLA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_CEDILLA", fieldType: "I", fieldCache: &VK_DEAD_CEDILLA_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -691,7 +691,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_CIRCUMFLEX_FieldID: jfieldID?
 
-    open static var VK_DEAD_CIRCUMFLEX: Int {
+    public static var VK_DEAD_CIRCUMFLEX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_CIRCUMFLEX", fieldType: "I", fieldCache: &VK_DEAD_CIRCUMFLEX_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -702,7 +702,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_DIAERESIS_FieldID: jfieldID?
 
-    open static var VK_DEAD_DIAERESIS: Int {
+    public static var VK_DEAD_DIAERESIS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_DIAERESIS", fieldType: "I", fieldCache: &VK_DEAD_DIAERESIS_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -713,7 +713,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_DOUBLEACUTE_FieldID: jfieldID?
 
-    open static var VK_DEAD_DOUBLEACUTE: Int {
+    public static var VK_DEAD_DOUBLEACUTE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_DOUBLEACUTE", fieldType: "I", fieldCache: &VK_DEAD_DOUBLEACUTE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -724,7 +724,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_GRAVE_FieldID: jfieldID?
 
-    open static var VK_DEAD_GRAVE: Int {
+    public static var VK_DEAD_GRAVE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_GRAVE", fieldType: "I", fieldCache: &VK_DEAD_GRAVE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -735,7 +735,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_IOTA_FieldID: jfieldID?
 
-    open static var VK_DEAD_IOTA: Int {
+    public static var VK_DEAD_IOTA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_IOTA", fieldType: "I", fieldCache: &VK_DEAD_IOTA_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -746,7 +746,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_MACRON_FieldID: jfieldID?
 
-    open static var VK_DEAD_MACRON: Int {
+    public static var VK_DEAD_MACRON: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_MACRON", fieldType: "I", fieldCache: &VK_DEAD_MACRON_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -757,7 +757,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_OGONEK_FieldID: jfieldID?
 
-    open static var VK_DEAD_OGONEK: Int {
+    public static var VK_DEAD_OGONEK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_OGONEK", fieldType: "I", fieldCache: &VK_DEAD_OGONEK_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -768,7 +768,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_SEMIVOICED_SOUND_FieldID: jfieldID?
 
-    open static var VK_DEAD_SEMIVOICED_SOUND: Int {
+    public static var VK_DEAD_SEMIVOICED_SOUND: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_SEMIVOICED_SOUND", fieldType: "I", fieldCache: &VK_DEAD_SEMIVOICED_SOUND_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -779,7 +779,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_TILDE_FieldID: jfieldID?
 
-    open static var VK_DEAD_TILDE: Int {
+    public static var VK_DEAD_TILDE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_TILDE", fieldType: "I", fieldCache: &VK_DEAD_TILDE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -790,7 +790,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DEAD_VOICED_SOUND_FieldID: jfieldID?
 
-    open static var VK_DEAD_VOICED_SOUND: Int {
+    public static var VK_DEAD_VOICED_SOUND: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DEAD_VOICED_SOUND", fieldType: "I", fieldCache: &VK_DEAD_VOICED_SOUND_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -801,7 +801,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DECIMAL_FieldID: jfieldID?
 
-    open static var VK_DECIMAL: Int {
+    public static var VK_DECIMAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DECIMAL", fieldType: "I", fieldCache: &VK_DECIMAL_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -812,7 +812,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DELETE_FieldID: jfieldID?
 
-    open static var VK_DELETE: Int {
+    public static var VK_DELETE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DELETE", fieldType: "I", fieldCache: &VK_DELETE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -823,7 +823,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DIVIDE_FieldID: jfieldID?
 
-    open static var VK_DIVIDE: Int {
+    public static var VK_DIVIDE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DIVIDE", fieldType: "I", fieldCache: &VK_DIVIDE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -834,7 +834,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DOLLAR_FieldID: jfieldID?
 
-    open static var VK_DOLLAR: Int {
+    public static var VK_DOLLAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DOLLAR", fieldType: "I", fieldCache: &VK_DOLLAR_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -845,7 +845,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_DOWN_FieldID: jfieldID?
 
-    open static var VK_DOWN: Int {
+    public static var VK_DOWN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_DOWN", fieldType: "I", fieldCache: &VK_DOWN_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -856,7 +856,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_E_FieldID: jfieldID?
 
-    open static var VK_E: Int {
+    public static var VK_E: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_E", fieldType: "I", fieldCache: &VK_E_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -867,7 +867,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_END_FieldID: jfieldID?
 
-    open static var VK_END: Int {
+    public static var VK_END: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_END", fieldType: "I", fieldCache: &VK_END_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -878,7 +878,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_ENTER_FieldID: jfieldID?
 
-    open static var VK_ENTER: Int {
+    public static var VK_ENTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_ENTER", fieldType: "I", fieldCache: &VK_ENTER_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -889,7 +889,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_EQUALS_FieldID: jfieldID?
 
-    open static var VK_EQUALS: Int {
+    public static var VK_EQUALS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_EQUALS", fieldType: "I", fieldCache: &VK_EQUALS_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -900,7 +900,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_ESCAPE_FieldID: jfieldID?
 
-    open static var VK_ESCAPE: Int {
+    public static var VK_ESCAPE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_ESCAPE", fieldType: "I", fieldCache: &VK_ESCAPE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -911,7 +911,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_EURO_SIGN_FieldID: jfieldID?
 
-    open static var VK_EURO_SIGN: Int {
+    public static var VK_EURO_SIGN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_EURO_SIGN", fieldType: "I", fieldCache: &VK_EURO_SIGN_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -922,7 +922,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_EXCLAMATION_MARK_FieldID: jfieldID?
 
-    open static var VK_EXCLAMATION_MARK: Int {
+    public static var VK_EXCLAMATION_MARK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_EXCLAMATION_MARK", fieldType: "I", fieldCache: &VK_EXCLAMATION_MARK_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -933,7 +933,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F_FieldID: jfieldID?
 
-    open static var VK_F: Int {
+    public static var VK_F: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F", fieldType: "I", fieldCache: &VK_F_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -944,7 +944,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F1_FieldID: jfieldID?
 
-    open static var VK_F1: Int {
+    public static var VK_F1: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F1", fieldType: "I", fieldCache: &VK_F1_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -955,7 +955,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F10_FieldID: jfieldID?
 
-    open static var VK_F10: Int {
+    public static var VK_F10: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F10", fieldType: "I", fieldCache: &VK_F10_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -966,7 +966,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F11_FieldID: jfieldID?
 
-    open static var VK_F11: Int {
+    public static var VK_F11: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F11", fieldType: "I", fieldCache: &VK_F11_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -977,7 +977,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F12_FieldID: jfieldID?
 
-    open static var VK_F12: Int {
+    public static var VK_F12: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F12", fieldType: "I", fieldCache: &VK_F12_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -988,7 +988,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F13_FieldID: jfieldID?
 
-    open static var VK_F13: Int {
+    public static var VK_F13: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F13", fieldType: "I", fieldCache: &VK_F13_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -999,7 +999,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F14_FieldID: jfieldID?
 
-    open static var VK_F14: Int {
+    public static var VK_F14: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F14", fieldType: "I", fieldCache: &VK_F14_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1010,7 +1010,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F15_FieldID: jfieldID?
 
-    open static var VK_F15: Int {
+    public static var VK_F15: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F15", fieldType: "I", fieldCache: &VK_F15_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1021,7 +1021,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F16_FieldID: jfieldID?
 
-    open static var VK_F16: Int {
+    public static var VK_F16: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F16", fieldType: "I", fieldCache: &VK_F16_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1032,7 +1032,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F17_FieldID: jfieldID?
 
-    open static var VK_F17: Int {
+    public static var VK_F17: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F17", fieldType: "I", fieldCache: &VK_F17_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1043,7 +1043,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F18_FieldID: jfieldID?
 
-    open static var VK_F18: Int {
+    public static var VK_F18: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F18", fieldType: "I", fieldCache: &VK_F18_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1054,7 +1054,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F19_FieldID: jfieldID?
 
-    open static var VK_F19: Int {
+    public static var VK_F19: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F19", fieldType: "I", fieldCache: &VK_F19_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1065,7 +1065,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F2_FieldID: jfieldID?
 
-    open static var VK_F2: Int {
+    public static var VK_F2: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F2", fieldType: "I", fieldCache: &VK_F2_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1076,7 +1076,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F20_FieldID: jfieldID?
 
-    open static var VK_F20: Int {
+    public static var VK_F20: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F20", fieldType: "I", fieldCache: &VK_F20_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1087,7 +1087,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F21_FieldID: jfieldID?
 
-    open static var VK_F21: Int {
+    public static var VK_F21: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F21", fieldType: "I", fieldCache: &VK_F21_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1098,7 +1098,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F22_FieldID: jfieldID?
 
-    open static var VK_F22: Int {
+    public static var VK_F22: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F22", fieldType: "I", fieldCache: &VK_F22_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1109,7 +1109,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F23_FieldID: jfieldID?
 
-    open static var VK_F23: Int {
+    public static var VK_F23: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F23", fieldType: "I", fieldCache: &VK_F23_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1120,7 +1120,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F24_FieldID: jfieldID?
 
-    open static var VK_F24: Int {
+    public static var VK_F24: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F24", fieldType: "I", fieldCache: &VK_F24_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1131,7 +1131,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F3_FieldID: jfieldID?
 
-    open static var VK_F3: Int {
+    public static var VK_F3: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F3", fieldType: "I", fieldCache: &VK_F3_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1142,7 +1142,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F4_FieldID: jfieldID?
 
-    open static var VK_F4: Int {
+    public static var VK_F4: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F4", fieldType: "I", fieldCache: &VK_F4_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1153,7 +1153,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F5_FieldID: jfieldID?
 
-    open static var VK_F5: Int {
+    public static var VK_F5: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F5", fieldType: "I", fieldCache: &VK_F5_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1164,7 +1164,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F6_FieldID: jfieldID?
 
-    open static var VK_F6: Int {
+    public static var VK_F6: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F6", fieldType: "I", fieldCache: &VK_F6_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1175,7 +1175,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F7_FieldID: jfieldID?
 
-    open static var VK_F7: Int {
+    public static var VK_F7: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F7", fieldType: "I", fieldCache: &VK_F7_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1186,7 +1186,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F8_FieldID: jfieldID?
 
-    open static var VK_F8: Int {
+    public static var VK_F8: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F8", fieldType: "I", fieldCache: &VK_F8_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1197,7 +1197,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_F9_FieldID: jfieldID?
 
-    open static var VK_F9: Int {
+    public static var VK_F9: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_F9", fieldType: "I", fieldCache: &VK_F9_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1208,7 +1208,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_FINAL_FieldID: jfieldID?
 
-    open static var VK_FINAL: Int {
+    public static var VK_FINAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_FINAL", fieldType: "I", fieldCache: &VK_FINAL_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1219,7 +1219,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_FIND_FieldID: jfieldID?
 
-    open static var VK_FIND: Int {
+    public static var VK_FIND: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_FIND", fieldType: "I", fieldCache: &VK_FIND_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1230,7 +1230,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_FULL_WIDTH_FieldID: jfieldID?
 
-    open static var VK_FULL_WIDTH: Int {
+    public static var VK_FULL_WIDTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_FULL_WIDTH", fieldType: "I", fieldCache: &VK_FULL_WIDTH_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1241,7 +1241,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_G_FieldID: jfieldID?
 
-    open static var VK_G: Int {
+    public static var VK_G: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_G", fieldType: "I", fieldCache: &VK_G_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1252,7 +1252,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_GREATER_FieldID: jfieldID?
 
-    open static var VK_GREATER: Int {
+    public static var VK_GREATER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_GREATER", fieldType: "I", fieldCache: &VK_GREATER_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1263,7 +1263,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_H_FieldID: jfieldID?
 
-    open static var VK_H: Int {
+    public static var VK_H: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_H", fieldType: "I", fieldCache: &VK_H_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1274,7 +1274,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_HALF_WIDTH_FieldID: jfieldID?
 
-    open static var VK_HALF_WIDTH: Int {
+    public static var VK_HALF_WIDTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_HALF_WIDTH", fieldType: "I", fieldCache: &VK_HALF_WIDTH_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1285,7 +1285,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_HELP_FieldID: jfieldID?
 
-    open static var VK_HELP: Int {
+    public static var VK_HELP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_HELP", fieldType: "I", fieldCache: &VK_HELP_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1296,7 +1296,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_HIRAGANA_FieldID: jfieldID?
 
-    open static var VK_HIRAGANA: Int {
+    public static var VK_HIRAGANA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_HIRAGANA", fieldType: "I", fieldCache: &VK_HIRAGANA_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1307,7 +1307,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_HOME_FieldID: jfieldID?
 
-    open static var VK_HOME: Int {
+    public static var VK_HOME: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_HOME", fieldType: "I", fieldCache: &VK_HOME_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1318,7 +1318,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_I_FieldID: jfieldID?
 
-    open static var VK_I: Int {
+    public static var VK_I: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_I", fieldType: "I", fieldCache: &VK_I_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1329,7 +1329,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_INPUT_METHOD_ON_OFF_FieldID: jfieldID?
 
-    open static var VK_INPUT_METHOD_ON_OFF: Int {
+    public static var VK_INPUT_METHOD_ON_OFF: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_INPUT_METHOD_ON_OFF", fieldType: "I", fieldCache: &VK_INPUT_METHOD_ON_OFF_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1340,7 +1340,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_INSERT_FieldID: jfieldID?
 
-    open static var VK_INSERT: Int {
+    public static var VK_INSERT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_INSERT", fieldType: "I", fieldCache: &VK_INSERT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1351,7 +1351,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_INVERTED_EXCLAMATION_MARK_FieldID: jfieldID?
 
-    open static var VK_INVERTED_EXCLAMATION_MARK: Int {
+    public static var VK_INVERTED_EXCLAMATION_MARK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_INVERTED_EXCLAMATION_MARK", fieldType: "I", fieldCache: &VK_INVERTED_EXCLAMATION_MARK_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1362,7 +1362,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_J_FieldID: jfieldID?
 
-    open static var VK_J: Int {
+    public static var VK_J: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_J", fieldType: "I", fieldCache: &VK_J_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1373,7 +1373,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_JAPANESE_HIRAGANA_FieldID: jfieldID?
 
-    open static var VK_JAPANESE_HIRAGANA: Int {
+    public static var VK_JAPANESE_HIRAGANA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_JAPANESE_HIRAGANA", fieldType: "I", fieldCache: &VK_JAPANESE_HIRAGANA_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1384,7 +1384,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_JAPANESE_KATAKANA_FieldID: jfieldID?
 
-    open static var VK_JAPANESE_KATAKANA: Int {
+    public static var VK_JAPANESE_KATAKANA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_JAPANESE_KATAKANA", fieldType: "I", fieldCache: &VK_JAPANESE_KATAKANA_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1395,7 +1395,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_JAPANESE_ROMAN_FieldID: jfieldID?
 
-    open static var VK_JAPANESE_ROMAN: Int {
+    public static var VK_JAPANESE_ROMAN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_JAPANESE_ROMAN", fieldType: "I", fieldCache: &VK_JAPANESE_ROMAN_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1406,7 +1406,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_K_FieldID: jfieldID?
 
-    open static var VK_K: Int {
+    public static var VK_K: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_K", fieldType: "I", fieldCache: &VK_K_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1417,7 +1417,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_KANA_FieldID: jfieldID?
 
-    open static var VK_KANA: Int {
+    public static var VK_KANA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_KANA", fieldType: "I", fieldCache: &VK_KANA_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1428,7 +1428,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_KANA_LOCK_FieldID: jfieldID?
 
-    open static var VK_KANA_LOCK: Int {
+    public static var VK_KANA_LOCK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_KANA_LOCK", fieldType: "I", fieldCache: &VK_KANA_LOCK_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1439,7 +1439,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_KANJI_FieldID: jfieldID?
 
-    open static var VK_KANJI: Int {
+    public static var VK_KANJI: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_KANJI", fieldType: "I", fieldCache: &VK_KANJI_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1450,7 +1450,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_KATAKANA_FieldID: jfieldID?
 
-    open static var VK_KATAKANA: Int {
+    public static var VK_KATAKANA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_KATAKANA", fieldType: "I", fieldCache: &VK_KATAKANA_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1461,7 +1461,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_KP_DOWN_FieldID: jfieldID?
 
-    open static var VK_KP_DOWN: Int {
+    public static var VK_KP_DOWN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_KP_DOWN", fieldType: "I", fieldCache: &VK_KP_DOWN_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1472,7 +1472,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_KP_LEFT_FieldID: jfieldID?
 
-    open static var VK_KP_LEFT: Int {
+    public static var VK_KP_LEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_KP_LEFT", fieldType: "I", fieldCache: &VK_KP_LEFT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1483,7 +1483,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_KP_RIGHT_FieldID: jfieldID?
 
-    open static var VK_KP_RIGHT: Int {
+    public static var VK_KP_RIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_KP_RIGHT", fieldType: "I", fieldCache: &VK_KP_RIGHT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1494,7 +1494,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_KP_UP_FieldID: jfieldID?
 
-    open static var VK_KP_UP: Int {
+    public static var VK_KP_UP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_KP_UP", fieldType: "I", fieldCache: &VK_KP_UP_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1505,7 +1505,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_L_FieldID: jfieldID?
 
-    open static var VK_L: Int {
+    public static var VK_L: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_L", fieldType: "I", fieldCache: &VK_L_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1516,7 +1516,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_LEFT_FieldID: jfieldID?
 
-    open static var VK_LEFT: Int {
+    public static var VK_LEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_LEFT", fieldType: "I", fieldCache: &VK_LEFT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1527,7 +1527,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_LEFT_PARENTHESIS_FieldID: jfieldID?
 
-    open static var VK_LEFT_PARENTHESIS: Int {
+    public static var VK_LEFT_PARENTHESIS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_LEFT_PARENTHESIS", fieldType: "I", fieldCache: &VK_LEFT_PARENTHESIS_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1538,7 +1538,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_LESS_FieldID: jfieldID?
 
-    open static var VK_LESS: Int {
+    public static var VK_LESS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_LESS", fieldType: "I", fieldCache: &VK_LESS_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1549,7 +1549,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_M_FieldID: jfieldID?
 
-    open static var VK_M: Int {
+    public static var VK_M: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_M", fieldType: "I", fieldCache: &VK_M_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1560,7 +1560,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_META_FieldID: jfieldID?
 
-    open static var VK_META: Int {
+    public static var VK_META: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_META", fieldType: "I", fieldCache: &VK_META_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1571,7 +1571,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_MINUS_FieldID: jfieldID?
 
-    open static var VK_MINUS: Int {
+    public static var VK_MINUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_MINUS", fieldType: "I", fieldCache: &VK_MINUS_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1582,7 +1582,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_MODECHANGE_FieldID: jfieldID?
 
-    open static var VK_MODECHANGE: Int {
+    public static var VK_MODECHANGE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_MODECHANGE", fieldType: "I", fieldCache: &VK_MODECHANGE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1593,7 +1593,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_MULTIPLY_FieldID: jfieldID?
 
-    open static var VK_MULTIPLY: Int {
+    public static var VK_MULTIPLY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_MULTIPLY", fieldType: "I", fieldCache: &VK_MULTIPLY_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1604,7 +1604,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_N_FieldID: jfieldID?
 
-    open static var VK_N: Int {
+    public static var VK_N: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_N", fieldType: "I", fieldCache: &VK_N_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1615,7 +1615,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NONCONVERT_FieldID: jfieldID?
 
-    open static var VK_NONCONVERT: Int {
+    public static var VK_NONCONVERT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NONCONVERT", fieldType: "I", fieldCache: &VK_NONCONVERT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1626,7 +1626,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUMBER_SIGN_FieldID: jfieldID?
 
-    open static var VK_NUMBER_SIGN: Int {
+    public static var VK_NUMBER_SIGN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUMBER_SIGN", fieldType: "I", fieldCache: &VK_NUMBER_SIGN_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1637,7 +1637,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUMPAD0_FieldID: jfieldID?
 
-    open static var VK_NUMPAD0: Int {
+    public static var VK_NUMPAD0: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUMPAD0", fieldType: "I", fieldCache: &VK_NUMPAD0_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1648,7 +1648,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUMPAD1_FieldID: jfieldID?
 
-    open static var VK_NUMPAD1: Int {
+    public static var VK_NUMPAD1: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUMPAD1", fieldType: "I", fieldCache: &VK_NUMPAD1_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1659,7 +1659,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUMPAD2_FieldID: jfieldID?
 
-    open static var VK_NUMPAD2: Int {
+    public static var VK_NUMPAD2: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUMPAD2", fieldType: "I", fieldCache: &VK_NUMPAD2_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1670,7 +1670,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUMPAD3_FieldID: jfieldID?
 
-    open static var VK_NUMPAD3: Int {
+    public static var VK_NUMPAD3: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUMPAD3", fieldType: "I", fieldCache: &VK_NUMPAD3_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1681,7 +1681,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUMPAD4_FieldID: jfieldID?
 
-    open static var VK_NUMPAD4: Int {
+    public static var VK_NUMPAD4: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUMPAD4", fieldType: "I", fieldCache: &VK_NUMPAD4_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1692,7 +1692,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUMPAD5_FieldID: jfieldID?
 
-    open static var VK_NUMPAD5: Int {
+    public static var VK_NUMPAD5: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUMPAD5", fieldType: "I", fieldCache: &VK_NUMPAD5_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1703,7 +1703,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUMPAD6_FieldID: jfieldID?
 
-    open static var VK_NUMPAD6: Int {
+    public static var VK_NUMPAD6: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUMPAD6", fieldType: "I", fieldCache: &VK_NUMPAD6_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1714,7 +1714,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUMPAD7_FieldID: jfieldID?
 
-    open static var VK_NUMPAD7: Int {
+    public static var VK_NUMPAD7: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUMPAD7", fieldType: "I", fieldCache: &VK_NUMPAD7_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1725,7 +1725,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUMPAD8_FieldID: jfieldID?
 
-    open static var VK_NUMPAD8: Int {
+    public static var VK_NUMPAD8: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUMPAD8", fieldType: "I", fieldCache: &VK_NUMPAD8_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1736,7 +1736,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUMPAD9_FieldID: jfieldID?
 
-    open static var VK_NUMPAD9: Int {
+    public static var VK_NUMPAD9: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUMPAD9", fieldType: "I", fieldCache: &VK_NUMPAD9_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1747,7 +1747,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_NUM_LOCK_FieldID: jfieldID?
 
-    open static var VK_NUM_LOCK: Int {
+    public static var VK_NUM_LOCK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_NUM_LOCK", fieldType: "I", fieldCache: &VK_NUM_LOCK_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1758,7 +1758,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_O_FieldID: jfieldID?
 
-    open static var VK_O: Int {
+    public static var VK_O: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_O", fieldType: "I", fieldCache: &VK_O_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1769,7 +1769,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_OPEN_BRACKET_FieldID: jfieldID?
 
-    open static var VK_OPEN_BRACKET: Int {
+    public static var VK_OPEN_BRACKET: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_OPEN_BRACKET", fieldType: "I", fieldCache: &VK_OPEN_BRACKET_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1780,7 +1780,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_P_FieldID: jfieldID?
 
-    open static var VK_P: Int {
+    public static var VK_P: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_P", fieldType: "I", fieldCache: &VK_P_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1791,7 +1791,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_PAGE_DOWN_FieldID: jfieldID?
 
-    open static var VK_PAGE_DOWN: Int {
+    public static var VK_PAGE_DOWN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_PAGE_DOWN", fieldType: "I", fieldCache: &VK_PAGE_DOWN_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1802,7 +1802,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_PAGE_UP_FieldID: jfieldID?
 
-    open static var VK_PAGE_UP: Int {
+    public static var VK_PAGE_UP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_PAGE_UP", fieldType: "I", fieldCache: &VK_PAGE_UP_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1813,7 +1813,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_PASTE_FieldID: jfieldID?
 
-    open static var VK_PASTE: Int {
+    public static var VK_PASTE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_PASTE", fieldType: "I", fieldCache: &VK_PASTE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1824,7 +1824,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_PAUSE_FieldID: jfieldID?
 
-    open static var VK_PAUSE: Int {
+    public static var VK_PAUSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_PAUSE", fieldType: "I", fieldCache: &VK_PAUSE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1835,7 +1835,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_PERIOD_FieldID: jfieldID?
 
-    open static var VK_PERIOD: Int {
+    public static var VK_PERIOD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_PERIOD", fieldType: "I", fieldCache: &VK_PERIOD_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1846,7 +1846,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_PLUS_FieldID: jfieldID?
 
-    open static var VK_PLUS: Int {
+    public static var VK_PLUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_PLUS", fieldType: "I", fieldCache: &VK_PLUS_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1857,7 +1857,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_PREVIOUS_CANDIDATE_FieldID: jfieldID?
 
-    open static var VK_PREVIOUS_CANDIDATE: Int {
+    public static var VK_PREVIOUS_CANDIDATE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_PREVIOUS_CANDIDATE", fieldType: "I", fieldCache: &VK_PREVIOUS_CANDIDATE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1868,7 +1868,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_PRINTSCREEN_FieldID: jfieldID?
 
-    open static var VK_PRINTSCREEN: Int {
+    public static var VK_PRINTSCREEN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_PRINTSCREEN", fieldType: "I", fieldCache: &VK_PRINTSCREEN_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1879,7 +1879,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_PROPS_FieldID: jfieldID?
 
-    open static var VK_PROPS: Int {
+    public static var VK_PROPS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_PROPS", fieldType: "I", fieldCache: &VK_PROPS_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1890,7 +1890,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_Q_FieldID: jfieldID?
 
-    open static var VK_Q: Int {
+    public static var VK_Q: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_Q", fieldType: "I", fieldCache: &VK_Q_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1901,7 +1901,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_QUOTE_FieldID: jfieldID?
 
-    open static var VK_QUOTE: Int {
+    public static var VK_QUOTE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_QUOTE", fieldType: "I", fieldCache: &VK_QUOTE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1912,7 +1912,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_QUOTEDBL_FieldID: jfieldID?
 
-    open static var VK_QUOTEDBL: Int {
+    public static var VK_QUOTEDBL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_QUOTEDBL", fieldType: "I", fieldCache: &VK_QUOTEDBL_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1923,7 +1923,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_R_FieldID: jfieldID?
 
-    open static var VK_R: Int {
+    public static var VK_R: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_R", fieldType: "I", fieldCache: &VK_R_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1934,7 +1934,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_RIGHT_FieldID: jfieldID?
 
-    open static var VK_RIGHT: Int {
+    public static var VK_RIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_RIGHT", fieldType: "I", fieldCache: &VK_RIGHT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1945,7 +1945,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_RIGHT_PARENTHESIS_FieldID: jfieldID?
 
-    open static var VK_RIGHT_PARENTHESIS: Int {
+    public static var VK_RIGHT_PARENTHESIS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_RIGHT_PARENTHESIS", fieldType: "I", fieldCache: &VK_RIGHT_PARENTHESIS_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1956,7 +1956,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_ROMAN_CHARACTERS_FieldID: jfieldID?
 
-    open static var VK_ROMAN_CHARACTERS: Int {
+    public static var VK_ROMAN_CHARACTERS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_ROMAN_CHARACTERS", fieldType: "I", fieldCache: &VK_ROMAN_CHARACTERS_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1967,7 +1967,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_S_FieldID: jfieldID?
 
-    open static var VK_S: Int {
+    public static var VK_S: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_S", fieldType: "I", fieldCache: &VK_S_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1978,7 +1978,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_SCROLL_LOCK_FieldID: jfieldID?
 
-    open static var VK_SCROLL_LOCK: Int {
+    public static var VK_SCROLL_LOCK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_SCROLL_LOCK", fieldType: "I", fieldCache: &VK_SCROLL_LOCK_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -1989,7 +1989,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_SEMICOLON_FieldID: jfieldID?
 
-    open static var VK_SEMICOLON: Int {
+    public static var VK_SEMICOLON: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_SEMICOLON", fieldType: "I", fieldCache: &VK_SEMICOLON_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2000,7 +2000,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_SEPARATER_FieldID: jfieldID?
 
-    open static var VK_SEPARATER: Int {
+    public static var VK_SEPARATER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_SEPARATER", fieldType: "I", fieldCache: &VK_SEPARATER_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2011,7 +2011,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_SEPARATOR_FieldID: jfieldID?
 
-    open static var VK_SEPARATOR: Int {
+    public static var VK_SEPARATOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_SEPARATOR", fieldType: "I", fieldCache: &VK_SEPARATOR_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2022,7 +2022,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_SHIFT_FieldID: jfieldID?
 
-    open static var VK_SHIFT: Int {
+    public static var VK_SHIFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_SHIFT", fieldType: "I", fieldCache: &VK_SHIFT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2033,7 +2033,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_SLASH_FieldID: jfieldID?
 
-    open static var VK_SLASH: Int {
+    public static var VK_SLASH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_SLASH", fieldType: "I", fieldCache: &VK_SLASH_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2044,7 +2044,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_SPACE_FieldID: jfieldID?
 
-    open static var VK_SPACE: Int {
+    public static var VK_SPACE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_SPACE", fieldType: "I", fieldCache: &VK_SPACE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2055,7 +2055,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_STOP_FieldID: jfieldID?
 
-    open static var VK_STOP: Int {
+    public static var VK_STOP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_STOP", fieldType: "I", fieldCache: &VK_STOP_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2066,7 +2066,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_SUBTRACT_FieldID: jfieldID?
 
-    open static var VK_SUBTRACT: Int {
+    public static var VK_SUBTRACT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_SUBTRACT", fieldType: "I", fieldCache: &VK_SUBTRACT_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2077,7 +2077,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_T_FieldID: jfieldID?
 
-    open static var VK_T: Int {
+    public static var VK_T: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_T", fieldType: "I", fieldCache: &VK_T_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2088,7 +2088,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_TAB_FieldID: jfieldID?
 
-    open static var VK_TAB: Int {
+    public static var VK_TAB: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_TAB", fieldType: "I", fieldCache: &VK_TAB_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2099,7 +2099,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_U_FieldID: jfieldID?
 
-    open static var VK_U: Int {
+    public static var VK_U: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_U", fieldType: "I", fieldCache: &VK_U_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2110,7 +2110,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_UNDEFINED_FieldID: jfieldID?
 
-    open static var VK_UNDEFINED: Int {
+    public static var VK_UNDEFINED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_UNDEFINED", fieldType: "I", fieldCache: &VK_UNDEFINED_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2121,7 +2121,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_UNDERSCORE_FieldID: jfieldID?
 
-    open static var VK_UNDERSCORE: Int {
+    public static var VK_UNDERSCORE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_UNDERSCORE", fieldType: "I", fieldCache: &VK_UNDERSCORE_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2132,7 +2132,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_UNDO_FieldID: jfieldID?
 
-    open static var VK_UNDO: Int {
+    public static var VK_UNDO: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_UNDO", fieldType: "I", fieldCache: &VK_UNDO_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2143,7 +2143,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_UP_FieldID: jfieldID?
 
-    open static var VK_UP: Int {
+    public static var VK_UP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_UP", fieldType: "I", fieldCache: &VK_UP_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2154,7 +2154,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_V_FieldID: jfieldID?
 
-    open static var VK_V: Int {
+    public static var VK_V: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_V", fieldType: "I", fieldCache: &VK_V_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2165,7 +2165,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_W_FieldID: jfieldID?
 
-    open static var VK_W: Int {
+    public static var VK_W: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_W", fieldType: "I", fieldCache: &VK_W_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2176,7 +2176,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_WINDOWS_FieldID: jfieldID?
 
-    open static var VK_WINDOWS: Int {
+    public static var VK_WINDOWS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_WINDOWS", fieldType: "I", fieldCache: &VK_WINDOWS_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2187,7 +2187,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_X_FieldID: jfieldID?
 
-    open static var VK_X: Int {
+    public static var VK_X: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_X", fieldType: "I", fieldCache: &VK_X_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2198,7 +2198,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_Y_FieldID: jfieldID?
 
-    open static var VK_Y: Int {
+    public static var VK_Y: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_Y", fieldType: "I", fieldCache: &VK_Y_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)
@@ -2209,7 +2209,7 @@ open class KeyEvent: InputEvent {
 
     private static var VK_Z_FieldID: jfieldID?
 
-    open static var VK_Z: Int {
+    public static var VK_Z: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VK_Z", fieldType: "I", fieldCache: &VK_Z_FieldID, className: "java/awt/event/KeyEvent", classCache: &KeyEventJNIClass )
             return Int(__value)

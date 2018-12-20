@@ -20,7 +20,7 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
 
     private static var INVOCATION_DEFAULT_FieldID: jfieldID?
 
-    open static var INVOCATION_DEFAULT: Int {
+    public static var INVOCATION_DEFAULT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INVOCATION_DEFAULT", fieldType: "I", fieldCache: &INVOCATION_DEFAULT_FieldID, className: "java/awt/event/InvocationEvent", classCache: &InvocationEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
 
     private static var INVOCATION_FIRST_FieldID: jfieldID?
 
-    open static var INVOCATION_FIRST: Int {
+    public static var INVOCATION_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INVOCATION_FIRST", fieldType: "I", fieldCache: &INVOCATION_FIRST_FieldID, className: "java/awt/event/InvocationEvent", classCache: &InvocationEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class InvocationEvent: AWTEvent, ActiveEvent {
 
     private static var INVOCATION_LAST_FieldID: jfieldID?
 
-    open static var INVOCATION_LAST: Int {
+    public static var INVOCATION_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INVOCATION_LAST", fieldType: "I", fieldCache: &INVOCATION_LAST_FieldID, className: "java/awt/event/InvocationEvent", classCache: &InvocationEventJNIClass )
             return Int(__value)

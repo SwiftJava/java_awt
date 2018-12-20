@@ -20,7 +20,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var ALL_RANGES_FieldID: jfieldID?
 
-    open static var ALL_RANGES: Int {
+    public static var ALL_RANGES: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALL_RANGES", fieldType: "I", fieldCache: &ALL_RANGES_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var ARABIC_FieldID: jfieldID?
 
-    open static var ARABIC: Int {
+    public static var ARABIC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ARABIC", fieldType: "I", fieldCache: &ARABIC_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -44,7 +44,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var BENGALI_FieldID: jfieldID?
 
-    open static var BENGALI: Int {
+    public static var BENGALI: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BENGALI", fieldType: "I", fieldCache: &BENGALI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -61,7 +61,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var DEVANAGARI_FieldID: jfieldID?
 
-    open static var DEVANAGARI: Int {
+    public static var DEVANAGARI: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEVANAGARI", fieldType: "I", fieldCache: &DEVANAGARI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -74,7 +74,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var EASTERN_ARABIC_FieldID: jfieldID?
 
-    open static var EASTERN_ARABIC: Int {
+    public static var EASTERN_ARABIC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EASTERN_ARABIC", fieldType: "I", fieldCache: &EASTERN_ARABIC_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -87,7 +87,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var ETHIOPIC_FieldID: jfieldID?
 
-    open static var ETHIOPIC: Int {
+    public static var ETHIOPIC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ETHIOPIC", fieldType: "I", fieldCache: &ETHIOPIC_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -100,7 +100,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var EUROPEAN_FieldID: jfieldID?
 
-    open static var EUROPEAN: Int {
+    public static var EUROPEAN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EUROPEAN", fieldType: "I", fieldCache: &EUROPEAN_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -113,7 +113,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var GUJARATI_FieldID: jfieldID?
 
-    open static var GUJARATI: Int {
+    public static var GUJARATI: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "GUJARATI", fieldType: "I", fieldCache: &GUJARATI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -126,7 +126,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var GURMUKHI_FieldID: jfieldID?
 
-    open static var GURMUKHI: Int {
+    public static var GURMUKHI: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "GURMUKHI", fieldType: "I", fieldCache: &GURMUKHI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -139,7 +139,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var KANNADA_FieldID: jfieldID?
 
-    open static var KANNADA: Int {
+    public static var KANNADA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KANNADA", fieldType: "I", fieldCache: &KANNADA_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -152,7 +152,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var KHMER_FieldID: jfieldID?
 
-    open static var KHMER: Int {
+    public static var KHMER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KHMER", fieldType: "I", fieldCache: &KHMER_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -165,7 +165,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var LAO_FieldID: jfieldID?
 
-    open static var LAO: Int {
+    public static var LAO: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LAO", fieldType: "I", fieldCache: &LAO_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -178,7 +178,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var MALAYALAM_FieldID: jfieldID?
 
-    open static var MALAYALAM: Int {
+    public static var MALAYALAM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MALAYALAM", fieldType: "I", fieldCache: &MALAYALAM_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -191,7 +191,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var MONGOLIAN_FieldID: jfieldID?
 
-    open static var MONGOLIAN: Int {
+    public static var MONGOLIAN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MONGOLIAN", fieldType: "I", fieldCache: &MONGOLIAN_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -204,7 +204,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var MYANMAR_FieldID: jfieldID?
 
-    open static var MYANMAR: Int {
+    public static var MYANMAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MYANMAR", fieldType: "I", fieldCache: &MYANMAR_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -219,7 +219,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var ORIYA_FieldID: jfieldID?
 
-    open static var ORIYA: Int {
+    public static var ORIYA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ORIYA", fieldType: "I", fieldCache: &ORIYA_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -232,7 +232,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var TAMIL_FieldID: jfieldID?
 
-    open static var TAMIL: Int {
+    public static var TAMIL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAMIL", fieldType: "I", fieldCache: &TAMIL_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -245,7 +245,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var TELUGU_FieldID: jfieldID?
 
-    open static var TELUGU: Int {
+    public static var TELUGU: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TELUGU", fieldType: "I", fieldCache: &TELUGU_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -258,7 +258,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var THAI_FieldID: jfieldID?
 
-    open static var THAI: Int {
+    public static var THAI: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "THAI", fieldType: "I", fieldCache: &THAI_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)
@@ -271,7 +271,7 @@ open class NumericShaper: java_swift.JavaObject, /* interface java.io.Serializab
 
     private static var TIBETAN_FieldID: jfieldID?
 
-    open static var TIBETAN: Int {
+    public static var TIBETAN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TIBETAN", fieldType: "I", fieldCache: &TIBETAN_FieldID, className: "java/awt/font/NumericShaper", classCache: &NumericShaperJNIClass )
             return Int(__value)

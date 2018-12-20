@@ -20,7 +20,7 @@ open class PaintEvent: ComponentEvent {
 
     private static var PAINT_FieldID: jfieldID?
 
-    open static var PAINT: Int {
+    public static var PAINT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PAINT", fieldType: "I", fieldCache: &PAINT_FieldID, className: "java/awt/event/PaintEvent", classCache: &PaintEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class PaintEvent: ComponentEvent {
 
     private static var PAINT_FIRST_FieldID: jfieldID?
 
-    open static var PAINT_FIRST: Int {
+    public static var PAINT_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PAINT_FIRST", fieldType: "I", fieldCache: &PAINT_FIRST_FieldID, className: "java/awt/event/PaintEvent", classCache: &PaintEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class PaintEvent: ComponentEvent {
 
     private static var PAINT_LAST_FieldID: jfieldID?
 
-    open static var PAINT_LAST: Int {
+    public static var PAINT_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PAINT_LAST", fieldType: "I", fieldCache: &PAINT_LAST_FieldID, className: "java/awt/event/PaintEvent", classCache: &PaintEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class PaintEvent: ComponentEvent {
 
     private static var UPDATE_FieldID: jfieldID?
 
-    open static var UPDATE: Int {
+    public static var UPDATE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UPDATE", fieldType: "I", fieldCache: &UPDATE_FieldID, className: "java/awt/event/PaintEvent", classCache: &PaintEventJNIClass )
             return Int(__value)

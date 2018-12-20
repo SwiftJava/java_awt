@@ -20,7 +20,7 @@ open class Image: java_swift.JavaObject {
 
     private static var SCALE_AREA_AVERAGING_FieldID: jfieldID?
 
-    open static var SCALE_AREA_AVERAGING: Int {
+    public static var SCALE_AREA_AVERAGING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCALE_AREA_AVERAGING", fieldType: "I", fieldCache: &SCALE_AREA_AVERAGING_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class Image: java_swift.JavaObject {
 
     private static var SCALE_DEFAULT_FieldID: jfieldID?
 
-    open static var SCALE_DEFAULT: Int {
+    public static var SCALE_DEFAULT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCALE_DEFAULT", fieldType: "I", fieldCache: &SCALE_DEFAULT_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class Image: java_swift.JavaObject {
 
     private static var SCALE_FAST_FieldID: jfieldID?
 
-    open static var SCALE_FAST: Int {
+    public static var SCALE_FAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCALE_FAST", fieldType: "I", fieldCache: &SCALE_FAST_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class Image: java_swift.JavaObject {
 
     private static var SCALE_REPLICATE_FieldID: jfieldID?
 
-    open static var SCALE_REPLICATE: Int {
+    public static var SCALE_REPLICATE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCALE_REPLICATE", fieldType: "I", fieldCache: &SCALE_REPLICATE_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class Image: java_swift.JavaObject {
 
     private static var SCALE_SMOOTH_FieldID: jfieldID?
 
-    open static var SCALE_SMOOTH: Int {
+    public static var SCALE_SMOOTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCALE_SMOOTH", fieldType: "I", fieldCache: &SCALE_SMOOTH_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class Image: java_swift.JavaObject {
 
     private static var UndefinedProperty_FieldID: jfieldID?
 
-    open static var UndefinedProperty: java_swift.JavaObject! {
+    public static var UndefinedProperty: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UndefinedProperty", fieldType: "Ljava/lang/Object;", fieldCache: &UndefinedProperty_FieldID, className: "java/awt/Image", classCache: &ImageJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

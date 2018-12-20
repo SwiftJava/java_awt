@@ -250,7 +250,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_ACNT_FieldID: jfieldID?
 
-    open static var TAG_ACNT: Int {
+    public static var TAG_ACNT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_ACNT", fieldType: "I", fieldCache: &TAG_ACNT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -261,7 +261,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_AVAR_FieldID: jfieldID?
 
-    open static var TAG_AVAR: Int {
+    public static var TAG_AVAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_AVAR", fieldType: "I", fieldCache: &TAG_AVAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -272,7 +272,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_BASE_FieldID: jfieldID?
 
-    open static var TAG_BASE: Int {
+    public static var TAG_BASE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_BASE", fieldType: "I", fieldCache: &TAG_BASE_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -283,7 +283,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_BDAT_FieldID: jfieldID?
 
-    open static var TAG_BDAT: Int {
+    public static var TAG_BDAT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_BDAT", fieldType: "I", fieldCache: &TAG_BDAT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -294,7 +294,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_BLOC_FieldID: jfieldID?
 
-    open static var TAG_BLOC: Int {
+    public static var TAG_BLOC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_BLOC", fieldType: "I", fieldCache: &TAG_BLOC_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -305,7 +305,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_BSLN_FieldID: jfieldID?
 
-    open static var TAG_BSLN: Int {
+    public static var TAG_BSLN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_BSLN", fieldType: "I", fieldCache: &TAG_BSLN_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -316,7 +316,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_CFF_FieldID: jfieldID?
 
-    open static var TAG_CFF: Int {
+    public static var TAG_CFF: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_CFF", fieldType: "I", fieldCache: &TAG_CFF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -327,7 +327,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_CMAP_FieldID: jfieldID?
 
-    open static var TAG_CMAP: Int {
+    public static var TAG_CMAP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_CMAP", fieldType: "I", fieldCache: &TAG_CMAP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -338,7 +338,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_CVAR_FieldID: jfieldID?
 
-    open static var TAG_CVAR: Int {
+    public static var TAG_CVAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_CVAR", fieldType: "I", fieldCache: &TAG_CVAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -349,7 +349,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_CVT_FieldID: jfieldID?
 
-    open static var TAG_CVT: Int {
+    public static var TAG_CVT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_CVT", fieldType: "I", fieldCache: &TAG_CVT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -360,7 +360,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_DSIG_FieldID: jfieldID?
 
-    open static var TAG_DSIG: Int {
+    public static var TAG_DSIG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_DSIG", fieldType: "I", fieldCache: &TAG_DSIG_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -371,7 +371,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_EBDT_FieldID: jfieldID?
 
-    open static var TAG_EBDT: Int {
+    public static var TAG_EBDT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_EBDT", fieldType: "I", fieldCache: &TAG_EBDT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -382,7 +382,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_EBLC_FieldID: jfieldID?
 
-    open static var TAG_EBLC: Int {
+    public static var TAG_EBLC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_EBLC", fieldType: "I", fieldCache: &TAG_EBLC_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -393,7 +393,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_EBSC_FieldID: jfieldID?
 
-    open static var TAG_EBSC: Int {
+    public static var TAG_EBSC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_EBSC", fieldType: "I", fieldCache: &TAG_EBSC_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -404,7 +404,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_FDSC_FieldID: jfieldID?
 
-    open static var TAG_FDSC: Int {
+    public static var TAG_FDSC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_FDSC", fieldType: "I", fieldCache: &TAG_FDSC_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -415,7 +415,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_FEAT_FieldID: jfieldID?
 
-    open static var TAG_FEAT: Int {
+    public static var TAG_FEAT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_FEAT", fieldType: "I", fieldCache: &TAG_FEAT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -426,7 +426,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_FMTX_FieldID: jfieldID?
 
-    open static var TAG_FMTX: Int {
+    public static var TAG_FMTX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_FMTX", fieldType: "I", fieldCache: &TAG_FMTX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -437,7 +437,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_FPGM_FieldID: jfieldID?
 
-    open static var TAG_FPGM: Int {
+    public static var TAG_FPGM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_FPGM", fieldType: "I", fieldCache: &TAG_FPGM_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -448,7 +448,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_FVAR_FieldID: jfieldID?
 
-    open static var TAG_FVAR: Int {
+    public static var TAG_FVAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_FVAR", fieldType: "I", fieldCache: &TAG_FVAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -459,7 +459,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_GASP_FieldID: jfieldID?
 
-    open static var TAG_GASP: Int {
+    public static var TAG_GASP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_GASP", fieldType: "I", fieldCache: &TAG_GASP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -470,7 +470,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_GDEF_FieldID: jfieldID?
 
-    open static var TAG_GDEF: Int {
+    public static var TAG_GDEF: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_GDEF", fieldType: "I", fieldCache: &TAG_GDEF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -481,7 +481,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_GLYF_FieldID: jfieldID?
 
-    open static var TAG_GLYF: Int {
+    public static var TAG_GLYF: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_GLYF", fieldType: "I", fieldCache: &TAG_GLYF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -492,7 +492,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_GPOS_FieldID: jfieldID?
 
-    open static var TAG_GPOS: Int {
+    public static var TAG_GPOS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_GPOS", fieldType: "I", fieldCache: &TAG_GPOS_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -503,7 +503,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_GSUB_FieldID: jfieldID?
 
-    open static var TAG_GSUB: Int {
+    public static var TAG_GSUB: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_GSUB", fieldType: "I", fieldCache: &TAG_GSUB_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -514,7 +514,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_GVAR_FieldID: jfieldID?
 
-    open static var TAG_GVAR: Int {
+    public static var TAG_GVAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_GVAR", fieldType: "I", fieldCache: &TAG_GVAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -525,7 +525,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_HDMX_FieldID: jfieldID?
 
-    open static var TAG_HDMX: Int {
+    public static var TAG_HDMX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_HDMX", fieldType: "I", fieldCache: &TAG_HDMX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -536,7 +536,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_HEAD_FieldID: jfieldID?
 
-    open static var TAG_HEAD: Int {
+    public static var TAG_HEAD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_HEAD", fieldType: "I", fieldCache: &TAG_HEAD_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -547,7 +547,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_HHEA_FieldID: jfieldID?
 
-    open static var TAG_HHEA: Int {
+    public static var TAG_HHEA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_HHEA", fieldType: "I", fieldCache: &TAG_HHEA_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -558,7 +558,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_HMTX_FieldID: jfieldID?
 
-    open static var TAG_HMTX: Int {
+    public static var TAG_HMTX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_HMTX", fieldType: "I", fieldCache: &TAG_HMTX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -569,7 +569,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_JSTF_FieldID: jfieldID?
 
-    open static var TAG_JSTF: Int {
+    public static var TAG_JSTF: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_JSTF", fieldType: "I", fieldCache: &TAG_JSTF_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -580,7 +580,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_JUST_FieldID: jfieldID?
 
-    open static var TAG_JUST: Int {
+    public static var TAG_JUST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_JUST", fieldType: "I", fieldCache: &TAG_JUST_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -591,7 +591,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_KERN_FieldID: jfieldID?
 
-    open static var TAG_KERN: Int {
+    public static var TAG_KERN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_KERN", fieldType: "I", fieldCache: &TAG_KERN_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -602,7 +602,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_LCAR_FieldID: jfieldID?
 
-    open static var TAG_LCAR: Int {
+    public static var TAG_LCAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_LCAR", fieldType: "I", fieldCache: &TAG_LCAR_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -613,7 +613,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_LOCA_FieldID: jfieldID?
 
-    open static var TAG_LOCA: Int {
+    public static var TAG_LOCA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_LOCA", fieldType: "I", fieldCache: &TAG_LOCA_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -624,7 +624,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_LTSH_FieldID: jfieldID?
 
-    open static var TAG_LTSH: Int {
+    public static var TAG_LTSH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_LTSH", fieldType: "I", fieldCache: &TAG_LTSH_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -635,7 +635,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_MAXP_FieldID: jfieldID?
 
-    open static var TAG_MAXP: Int {
+    public static var TAG_MAXP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_MAXP", fieldType: "I", fieldCache: &TAG_MAXP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -646,7 +646,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_MMFX_FieldID: jfieldID?
 
-    open static var TAG_MMFX: Int {
+    public static var TAG_MMFX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_MMFX", fieldType: "I", fieldCache: &TAG_MMFX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -657,7 +657,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_MMSD_FieldID: jfieldID?
 
-    open static var TAG_MMSD: Int {
+    public static var TAG_MMSD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_MMSD", fieldType: "I", fieldCache: &TAG_MMSD_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -668,7 +668,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_MORT_FieldID: jfieldID?
 
-    open static var TAG_MORT: Int {
+    public static var TAG_MORT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_MORT", fieldType: "I", fieldCache: &TAG_MORT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -679,7 +679,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_NAME_FieldID: jfieldID?
 
-    open static var TAG_NAME: Int {
+    public static var TAG_NAME: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_NAME", fieldType: "I", fieldCache: &TAG_NAME_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -690,7 +690,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_OPBD_FieldID: jfieldID?
 
-    open static var TAG_OPBD: Int {
+    public static var TAG_OPBD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_OPBD", fieldType: "I", fieldCache: &TAG_OPBD_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -701,7 +701,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_OS2_FieldID: jfieldID?
 
-    open static var TAG_OS2: Int {
+    public static var TAG_OS2: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_OS2", fieldType: "I", fieldCache: &TAG_OS2_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -712,7 +712,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_PCLT_FieldID: jfieldID?
 
-    open static var TAG_PCLT: Int {
+    public static var TAG_PCLT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_PCLT", fieldType: "I", fieldCache: &TAG_PCLT_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -723,7 +723,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_POST_FieldID: jfieldID?
 
-    open static var TAG_POST: Int {
+    public static var TAG_POST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_POST", fieldType: "I", fieldCache: &TAG_POST_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -734,7 +734,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_PREP_FieldID: jfieldID?
 
-    open static var TAG_PREP: Int {
+    public static var TAG_PREP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_PREP", fieldType: "I", fieldCache: &TAG_PREP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -745,7 +745,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_PROP_FieldID: jfieldID?
 
-    open static var TAG_PROP: Int {
+    public static var TAG_PROP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_PROP", fieldType: "I", fieldCache: &TAG_PROP_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -756,7 +756,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_TRAK_FieldID: jfieldID?
 
-    open static var TAG_TRAK: Int {
+    public static var TAG_TRAK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_TRAK", fieldType: "I", fieldCache: &TAG_TRAK_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -767,7 +767,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_TYP1_FieldID: jfieldID?
 
-    open static var TAG_TYP1: Int {
+    public static var TAG_TYP1: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_TYP1", fieldType: "I", fieldCache: &TAG_TYP1_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -778,7 +778,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_VDMX_FieldID: jfieldID?
 
-    open static var TAG_VDMX: Int {
+    public static var TAG_VDMX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_VDMX", fieldType: "I", fieldCache: &TAG_VDMX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -789,7 +789,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_VHEA_FieldID: jfieldID?
 
-    open static var TAG_VHEA: Int {
+    public static var TAG_VHEA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_VHEA", fieldType: "I", fieldCache: &TAG_VHEA_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)
@@ -800,7 +800,7 @@ open class OpenTypeForward: JNIObjectForward, OpenType {
 
     private static var TAG_VMTX_FieldID: jfieldID?
 
-    open static var TAG_VMTX: Int {
+    public static var TAG_VMTX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAG_VMTX", fieldType: "I", fieldCache: &TAG_VMTX_FieldID, className: "java/awt/font/OpenType", classCache: &OpenTypeJNIClass )
             return Int(__value)

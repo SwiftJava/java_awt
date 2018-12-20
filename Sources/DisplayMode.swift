@@ -20,7 +20,7 @@ open class DisplayMode: java_swift.JavaObject {
 
     private static var BIT_DEPTH_MULTI_FieldID: jfieldID?
 
-    open static var BIT_DEPTH_MULTI: Int {
+    public static var BIT_DEPTH_MULTI: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BIT_DEPTH_MULTI", fieldType: "I", fieldCache: &BIT_DEPTH_MULTI_FieldID, className: "java/awt/DisplayMode", classCache: &DisplayModeJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class DisplayMode: java_swift.JavaObject {
 
     private static var REFRESH_RATE_UNKNOWN_FieldID: jfieldID?
 
-    open static var REFRESH_RATE_UNKNOWN: Int {
+    public static var REFRESH_RATE_UNKNOWN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "REFRESH_RATE_UNKNOWN", fieldType: "I", fieldCache: &REFRESH_RATE_UNKNOWN_FieldID, className: "java/awt/DisplayMode", classCache: &DisplayModeJNIClass )
             return Int(__value)

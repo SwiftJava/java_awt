@@ -20,7 +20,7 @@ open class DataBuffer: java_swift.JavaObject {
 
     private static var TYPE_BYTE_FieldID: jfieldID?
 
-    open static var TYPE_BYTE: Int {
+    public static var TYPE_BYTE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BYTE", fieldType: "I", fieldCache: &TYPE_BYTE_FieldID, className: "java/awt/image/DataBuffer", classCache: &DataBufferJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class DataBuffer: java_swift.JavaObject {
 
     private static var TYPE_DOUBLE_FieldID: jfieldID?
 
-    open static var TYPE_DOUBLE: Int {
+    public static var TYPE_DOUBLE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_DOUBLE", fieldType: "I", fieldCache: &TYPE_DOUBLE_FieldID, className: "java/awt/image/DataBuffer", classCache: &DataBufferJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class DataBuffer: java_swift.JavaObject {
 
     private static var TYPE_FLOAT_FieldID: jfieldID?
 
-    open static var TYPE_FLOAT: Int {
+    public static var TYPE_FLOAT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_FLOAT", fieldType: "I", fieldCache: &TYPE_FLOAT_FieldID, className: "java/awt/image/DataBuffer", classCache: &DataBufferJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class DataBuffer: java_swift.JavaObject {
 
     private static var TYPE_INT_FieldID: jfieldID?
 
-    open static var TYPE_INT: Int {
+    public static var TYPE_INT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_INT", fieldType: "I", fieldCache: &TYPE_INT_FieldID, className: "java/awt/image/DataBuffer", classCache: &DataBufferJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class DataBuffer: java_swift.JavaObject {
 
     private static var TYPE_SHORT_FieldID: jfieldID?
 
-    open static var TYPE_SHORT: Int {
+    public static var TYPE_SHORT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_SHORT", fieldType: "I", fieldCache: &TYPE_SHORT_FieldID, className: "java/awt/image/DataBuffer", classCache: &DataBufferJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class DataBuffer: java_swift.JavaObject {
 
     private static var TYPE_UNDEFINED_FieldID: jfieldID?
 
-    open static var TYPE_UNDEFINED: Int {
+    public static var TYPE_UNDEFINED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_UNDEFINED", fieldType: "I", fieldCache: &TYPE_UNDEFINED_FieldID, className: "java/awt/image/DataBuffer", classCache: &DataBufferJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class DataBuffer: java_swift.JavaObject {
 
     private static var TYPE_USHORT_FieldID: jfieldID?
 
-    open static var TYPE_USHORT: Int {
+    public static var TYPE_USHORT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_USHORT", fieldType: "I", fieldCache: &TYPE_USHORT_FieldID, className: "java/awt/image/DataBuffer", classCache: &DataBufferJNIClass )
             return Int(__value)

@@ -21,7 +21,7 @@ open class DragSource: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var DefaultCopyDrop_FieldID: jfieldID?
 
-    open static var DefaultCopyDrop: Cursor! {
+    public static var DefaultCopyDrop: Cursor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DefaultCopyDrop", fieldType: "Ljava/awt/Cursor;", fieldCache: &DefaultCopyDrop_FieldID, className: "java/awt/dnd/DragSource", classCache: &DragSourceJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -33,7 +33,7 @@ open class DragSource: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var DefaultCopyNoDrop_FieldID: jfieldID?
 
-    open static var DefaultCopyNoDrop: Cursor! {
+    public static var DefaultCopyNoDrop: Cursor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DefaultCopyNoDrop", fieldType: "Ljava/awt/Cursor;", fieldCache: &DefaultCopyNoDrop_FieldID, className: "java/awt/dnd/DragSource", classCache: &DragSourceJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -45,7 +45,7 @@ open class DragSource: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var DefaultLinkDrop_FieldID: jfieldID?
 
-    open static var DefaultLinkDrop: Cursor! {
+    public static var DefaultLinkDrop: Cursor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DefaultLinkDrop", fieldType: "Ljava/awt/Cursor;", fieldCache: &DefaultLinkDrop_FieldID, className: "java/awt/dnd/DragSource", classCache: &DragSourceJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -57,7 +57,7 @@ open class DragSource: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var DefaultLinkNoDrop_FieldID: jfieldID?
 
-    open static var DefaultLinkNoDrop: Cursor! {
+    public static var DefaultLinkNoDrop: Cursor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DefaultLinkNoDrop", fieldType: "Ljava/awt/Cursor;", fieldCache: &DefaultLinkNoDrop_FieldID, className: "java/awt/dnd/DragSource", classCache: &DragSourceJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -69,7 +69,7 @@ open class DragSource: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var DefaultMoveDrop_FieldID: jfieldID?
 
-    open static var DefaultMoveDrop: Cursor! {
+    public static var DefaultMoveDrop: Cursor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DefaultMoveDrop", fieldType: "Ljava/awt/Cursor;", fieldCache: &DefaultMoveDrop_FieldID, className: "java/awt/dnd/DragSource", classCache: &DragSourceJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -81,7 +81,7 @@ open class DragSource: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var DefaultMoveNoDrop_FieldID: jfieldID?
 
-    open static var DefaultMoveNoDrop: Cursor! {
+    public static var DefaultMoveNoDrop: Cursor! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DefaultMoveNoDrop", fieldType: "Ljava/awt/Cursor;", fieldCache: &DefaultMoveNoDrop_FieldID, className: "java/awt/dnd/DragSource", classCache: &DragSourceJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

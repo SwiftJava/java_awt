@@ -20,7 +20,7 @@ open class TransformAttribute: java_swift.JavaObject, /* interface java.io.Seria
 
     private static var IDENTITY_FieldID: jfieldID?
 
-    open static var IDENTITY: TransformAttribute! {
+    public static var IDENTITY: TransformAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IDENTITY", fieldType: "Ljava/awt/font/TransformAttribute;", fieldCache: &IDENTITY_FieldID, className: "java/awt/font/TransformAttribute", classCache: &TransformAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

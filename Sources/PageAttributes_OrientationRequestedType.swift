@@ -24,7 +24,7 @@ open class PageAttributes_OrientationRequestedType: /* class java.awt.AttributeV
 
     private static var LANDSCAPE_FieldID: jfieldID?
 
-    open static var LANDSCAPE: PageAttributes_OrientationRequestedType! {
+    public static var LANDSCAPE: PageAttributes_OrientationRequestedType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LANDSCAPE", fieldType: "Ljava/awt/PageAttributes$OrientationRequestedType;", fieldCache: &LANDSCAPE_FieldID, className: "java/awt/PageAttributes$OrientationRequestedType", classCache: &PageAttributes_OrientationRequestedTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -38,7 +38,7 @@ open class PageAttributes_OrientationRequestedType: /* class java.awt.AttributeV
 
     private static var PORTRAIT_FieldID: jfieldID?
 
-    open static var PORTRAIT: PageAttributes_OrientationRequestedType! {
+    public static var PORTRAIT: PageAttributes_OrientationRequestedType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PORTRAIT", fieldType: "Ljava/awt/PageAttributes$OrientationRequestedType;", fieldCache: &PORTRAIT_FieldID, className: "java/awt/PageAttributes$OrientationRequestedType", classCache: &PageAttributes_OrientationRequestedTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

@@ -33,7 +33,7 @@ open class RenderableImageOp: java_swift.JavaObject, RenderableImage {
 
     private static var HINTS_OBSERVED_FieldID: jfieldID?
 
-    open static var HINTS_OBSERVED: String! {
+    public static var HINTS_OBSERVED: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HINTS_OBSERVED", fieldType: "Ljava/lang/String;", fieldCache: &HINTS_OBSERVED_FieldID, className: "java/awt/image/renderable/RenderableImageOp", classCache: &RenderableImageOpJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

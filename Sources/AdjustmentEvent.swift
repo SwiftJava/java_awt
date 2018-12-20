@@ -20,7 +20,7 @@ open class AdjustmentEvent: AWTEvent {
 
     private static var ADJUSTMENT_FIRST_FieldID: jfieldID?
 
-    open static var ADJUSTMENT_FIRST: Int {
+    public static var ADJUSTMENT_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ADJUSTMENT_FIRST", fieldType: "I", fieldCache: &ADJUSTMENT_FIRST_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class AdjustmentEvent: AWTEvent {
 
     private static var ADJUSTMENT_LAST_FieldID: jfieldID?
 
-    open static var ADJUSTMENT_LAST: Int {
+    public static var ADJUSTMENT_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ADJUSTMENT_LAST", fieldType: "I", fieldCache: &ADJUSTMENT_LAST_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class AdjustmentEvent: AWTEvent {
 
     private static var ADJUSTMENT_VALUE_CHANGED_FieldID: jfieldID?
 
-    open static var ADJUSTMENT_VALUE_CHANGED: Int {
+    public static var ADJUSTMENT_VALUE_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ADJUSTMENT_VALUE_CHANGED", fieldType: "I", fieldCache: &ADJUSTMENT_VALUE_CHANGED_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class AdjustmentEvent: AWTEvent {
 
     private static var BLOCK_DECREMENT_FieldID: jfieldID?
 
-    open static var BLOCK_DECREMENT: Int {
+    public static var BLOCK_DECREMENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BLOCK_DECREMENT", fieldType: "I", fieldCache: &BLOCK_DECREMENT_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class AdjustmentEvent: AWTEvent {
 
     private static var BLOCK_INCREMENT_FieldID: jfieldID?
 
-    open static var BLOCK_INCREMENT: Int {
+    public static var BLOCK_INCREMENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BLOCK_INCREMENT", fieldType: "I", fieldCache: &BLOCK_INCREMENT_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class AdjustmentEvent: AWTEvent {
 
     private static var TRACK_FieldID: jfieldID?
 
-    open static var TRACK: Int {
+    public static var TRACK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRACK", fieldType: "I", fieldCache: &TRACK_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class AdjustmentEvent: AWTEvent {
 
     private static var UNIT_DECREMENT_FieldID: jfieldID?
 
-    open static var UNIT_DECREMENT: Int {
+    public static var UNIT_DECREMENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UNIT_DECREMENT", fieldType: "I", fieldCache: &UNIT_DECREMENT_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
             return Int(__value)
@@ -97,7 +97,7 @@ open class AdjustmentEvent: AWTEvent {
 
     private static var UNIT_INCREMENT_FieldID: jfieldID?
 
-    open static var UNIT_INCREMENT: Int {
+    public static var UNIT_INCREMENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UNIT_INCREMENT", fieldType: "I", fieldCache: &UNIT_INCREMENT_FieldID, className: "java/awt/event/AdjustmentEvent", classCache: &AdjustmentEventJNIClass )
             return Int(__value)

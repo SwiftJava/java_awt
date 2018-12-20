@@ -21,7 +21,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var BACKGROUND_FieldID: jfieldID?
 
-    open static var BACKGROUND: TextAttribute! {
+    public static var BACKGROUND: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BACKGROUND", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &BACKGROUND_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -33,7 +33,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var BIDI_EMBEDDING_FieldID: jfieldID?
 
-    open static var BIDI_EMBEDDING: TextAttribute! {
+    public static var BIDI_EMBEDDING: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BIDI_EMBEDDING", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &BIDI_EMBEDDING_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -45,7 +45,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var CHAR_REPLACEMENT_FieldID: jfieldID?
 
-    open static var CHAR_REPLACEMENT: TextAttribute! {
+    public static var CHAR_REPLACEMENT: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CHAR_REPLACEMENT", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &CHAR_REPLACEMENT_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -57,7 +57,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var FAMILY_FieldID: jfieldID?
 
-    open static var FAMILY: TextAttribute! {
+    public static var FAMILY: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FAMILY", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &FAMILY_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -69,7 +69,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var FONT_FieldID: jfieldID?
 
-    open static var FONT: TextAttribute! {
+    public static var FONT: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FONT", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &FONT_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -81,7 +81,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var FOREGROUND_FieldID: jfieldID?
 
-    open static var FOREGROUND: TextAttribute! {
+    public static var FOREGROUND: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FOREGROUND", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &FOREGROUND_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -93,7 +93,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var INPUT_METHOD_HIGHLIGHT_FieldID: jfieldID?
 
-    open static var INPUT_METHOD_HIGHLIGHT: TextAttribute! {
+    public static var INPUT_METHOD_HIGHLIGHT: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INPUT_METHOD_HIGHLIGHT", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &INPUT_METHOD_HIGHLIGHT_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -105,7 +105,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var INPUT_METHOD_UNDERLINE_FieldID: jfieldID?
 
-    open static var INPUT_METHOD_UNDERLINE: TextAttribute! {
+    public static var INPUT_METHOD_UNDERLINE: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INPUT_METHOD_UNDERLINE", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &INPUT_METHOD_UNDERLINE_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -117,7 +117,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var JUSTIFICATION_FieldID: jfieldID?
 
-    open static var JUSTIFICATION: TextAttribute! {
+    public static var JUSTIFICATION: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JUSTIFICATION", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &JUSTIFICATION_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -129,7 +129,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var JUSTIFICATION_FULL_FieldID: jfieldID?
 
-    open static var JUSTIFICATION_FULL: Float! {
+    public static var JUSTIFICATION_FULL: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JUSTIFICATION_FULL", fieldType: "Ljava/lang/Float;", fieldCache: &JUSTIFICATION_FULL_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -141,7 +141,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var JUSTIFICATION_NONE_FieldID: jfieldID?
 
-    open static var JUSTIFICATION_NONE: Float! {
+    public static var JUSTIFICATION_NONE: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JUSTIFICATION_NONE", fieldType: "Ljava/lang/Float;", fieldCache: &JUSTIFICATION_NONE_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -153,7 +153,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var KERNING_FieldID: jfieldID?
 
-    open static var KERNING: TextAttribute! {
+    public static var KERNING: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KERNING", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &KERNING_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -165,7 +165,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var KERNING_ON_FieldID: jfieldID?
 
-    open static var KERNING_ON: java_lang.Integer! {
+    public static var KERNING_ON: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KERNING_ON", fieldType: "Ljava/lang/Integer;", fieldCache: &KERNING_ON_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -177,7 +177,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var LIGATURES_FieldID: jfieldID?
 
-    open static var LIGATURES: TextAttribute! {
+    public static var LIGATURES: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LIGATURES", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &LIGATURES_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -189,7 +189,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var LIGATURES_ON_FieldID: jfieldID?
 
-    open static var LIGATURES_ON: java_lang.Integer! {
+    public static var LIGATURES_ON: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LIGATURES_ON", fieldType: "Ljava/lang/Integer;", fieldCache: &LIGATURES_ON_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -201,7 +201,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var NUMERIC_SHAPING_FieldID: jfieldID?
 
-    open static var NUMERIC_SHAPING: TextAttribute! {
+    public static var NUMERIC_SHAPING: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NUMERIC_SHAPING", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &NUMERIC_SHAPING_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -213,7 +213,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var POSTURE_FieldID: jfieldID?
 
-    open static var POSTURE: TextAttribute! {
+    public static var POSTURE: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "POSTURE", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &POSTURE_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -225,7 +225,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var POSTURE_OBLIQUE_FieldID: jfieldID?
 
-    open static var POSTURE_OBLIQUE: Float! {
+    public static var POSTURE_OBLIQUE: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "POSTURE_OBLIQUE", fieldType: "Ljava/lang/Float;", fieldCache: &POSTURE_OBLIQUE_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -237,7 +237,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var POSTURE_REGULAR_FieldID: jfieldID?
 
-    open static var POSTURE_REGULAR: Float! {
+    public static var POSTURE_REGULAR: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "POSTURE_REGULAR", fieldType: "Ljava/lang/Float;", fieldCache: &POSTURE_REGULAR_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -249,7 +249,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var RUN_DIRECTION_FieldID: jfieldID?
 
-    open static var RUN_DIRECTION: TextAttribute! {
+    public static var RUN_DIRECTION: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RUN_DIRECTION", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &RUN_DIRECTION_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -261,7 +261,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var RUN_DIRECTION_LTR_FieldID: jfieldID?
 
-    open static var RUN_DIRECTION_LTR: java_lang.Boolean! {
+    public static var RUN_DIRECTION_LTR: java_lang.Boolean! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RUN_DIRECTION_LTR", fieldType: "Ljava/lang/Boolean;", fieldCache: &RUN_DIRECTION_LTR_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -273,7 +273,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var RUN_DIRECTION_RTL_FieldID: jfieldID?
 
-    open static var RUN_DIRECTION_RTL: java_lang.Boolean! {
+    public static var RUN_DIRECTION_RTL: java_lang.Boolean! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RUN_DIRECTION_RTL", fieldType: "Ljava/lang/Boolean;", fieldCache: &RUN_DIRECTION_RTL_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -285,7 +285,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var SIZE_FieldID: jfieldID?
 
-    open static var SIZE: TextAttribute! {
+    public static var SIZE: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SIZE", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &SIZE_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -297,7 +297,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var STRIKETHROUGH_FieldID: jfieldID?
 
-    open static var STRIKETHROUGH: TextAttribute! {
+    public static var STRIKETHROUGH: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "STRIKETHROUGH", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &STRIKETHROUGH_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -309,7 +309,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var STRIKETHROUGH_ON_FieldID: jfieldID?
 
-    open static var STRIKETHROUGH_ON: java_lang.Boolean! {
+    public static var STRIKETHROUGH_ON: java_lang.Boolean! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "STRIKETHROUGH_ON", fieldType: "Ljava/lang/Boolean;", fieldCache: &STRIKETHROUGH_ON_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -321,7 +321,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var SUPERSCRIPT_FieldID: jfieldID?
 
-    open static var SUPERSCRIPT: TextAttribute! {
+    public static var SUPERSCRIPT: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SUPERSCRIPT", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &SUPERSCRIPT_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -333,7 +333,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var SUPERSCRIPT_SUB_FieldID: jfieldID?
 
-    open static var SUPERSCRIPT_SUB: java_lang.Integer! {
+    public static var SUPERSCRIPT_SUB: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SUPERSCRIPT_SUB", fieldType: "Ljava/lang/Integer;", fieldCache: &SUPERSCRIPT_SUB_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -345,7 +345,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var SUPERSCRIPT_SUPER_FieldID: jfieldID?
 
-    open static var SUPERSCRIPT_SUPER: java_lang.Integer! {
+    public static var SUPERSCRIPT_SUPER: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SUPERSCRIPT_SUPER", fieldType: "Ljava/lang/Integer;", fieldCache: &SUPERSCRIPT_SUPER_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -357,7 +357,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var SWAP_COLORS_FieldID: jfieldID?
 
-    open static var SWAP_COLORS: TextAttribute! {
+    public static var SWAP_COLORS: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SWAP_COLORS", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &SWAP_COLORS_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -369,7 +369,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var SWAP_COLORS_ON_FieldID: jfieldID?
 
-    open static var SWAP_COLORS_ON: java_lang.Boolean! {
+    public static var SWAP_COLORS_ON: java_lang.Boolean! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SWAP_COLORS_ON", fieldType: "Ljava/lang/Boolean;", fieldCache: &SWAP_COLORS_ON_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -381,7 +381,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var TRACKING_FieldID: jfieldID?
 
-    open static var TRACKING: TextAttribute! {
+    public static var TRACKING: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TRACKING", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &TRACKING_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -393,7 +393,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var TRACKING_LOOSE_FieldID: jfieldID?
 
-    open static var TRACKING_LOOSE: Float! {
+    public static var TRACKING_LOOSE: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TRACKING_LOOSE", fieldType: "Ljava/lang/Float;", fieldCache: &TRACKING_LOOSE_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -405,7 +405,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var TRACKING_TIGHT_FieldID: jfieldID?
 
-    open static var TRACKING_TIGHT: Float! {
+    public static var TRACKING_TIGHT: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TRACKING_TIGHT", fieldType: "Ljava/lang/Float;", fieldCache: &TRACKING_TIGHT_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -417,7 +417,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var TRANSFORM_FieldID: jfieldID?
 
-    open static var TRANSFORM: TextAttribute! {
+    public static var TRANSFORM: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TRANSFORM", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &TRANSFORM_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -429,7 +429,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var UNDERLINE_FieldID: jfieldID?
 
-    open static var UNDERLINE: TextAttribute! {
+    public static var UNDERLINE: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNDERLINE", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &UNDERLINE_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -441,7 +441,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var UNDERLINE_LOW_DASHED_FieldID: jfieldID?
 
-    open static var UNDERLINE_LOW_DASHED: java_lang.Integer! {
+    public static var UNDERLINE_LOW_DASHED: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNDERLINE_LOW_DASHED", fieldType: "Ljava/lang/Integer;", fieldCache: &UNDERLINE_LOW_DASHED_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -453,7 +453,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var UNDERLINE_LOW_DOTTED_FieldID: jfieldID?
 
-    open static var UNDERLINE_LOW_DOTTED: java_lang.Integer! {
+    public static var UNDERLINE_LOW_DOTTED: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNDERLINE_LOW_DOTTED", fieldType: "Ljava/lang/Integer;", fieldCache: &UNDERLINE_LOW_DOTTED_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -465,7 +465,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var UNDERLINE_LOW_GRAY_FieldID: jfieldID?
 
-    open static var UNDERLINE_LOW_GRAY: java_lang.Integer! {
+    public static var UNDERLINE_LOW_GRAY: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNDERLINE_LOW_GRAY", fieldType: "Ljava/lang/Integer;", fieldCache: &UNDERLINE_LOW_GRAY_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -477,7 +477,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var UNDERLINE_LOW_ONE_PIXEL_FieldID: jfieldID?
 
-    open static var UNDERLINE_LOW_ONE_PIXEL: java_lang.Integer! {
+    public static var UNDERLINE_LOW_ONE_PIXEL: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNDERLINE_LOW_ONE_PIXEL", fieldType: "Ljava/lang/Integer;", fieldCache: &UNDERLINE_LOW_ONE_PIXEL_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -489,7 +489,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var UNDERLINE_LOW_TWO_PIXEL_FieldID: jfieldID?
 
-    open static var UNDERLINE_LOW_TWO_PIXEL: java_lang.Integer! {
+    public static var UNDERLINE_LOW_TWO_PIXEL: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNDERLINE_LOW_TWO_PIXEL", fieldType: "Ljava/lang/Integer;", fieldCache: &UNDERLINE_LOW_TWO_PIXEL_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -501,7 +501,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var UNDERLINE_ON_FieldID: jfieldID?
 
-    open static var UNDERLINE_ON: java_lang.Integer! {
+    public static var UNDERLINE_ON: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNDERLINE_ON", fieldType: "Ljava/lang/Integer;", fieldCache: &UNDERLINE_ON_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -513,7 +513,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_FieldID: jfieldID?
 
-    open static var WEIGHT: TextAttribute! {
+    public static var WEIGHT: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &WEIGHT_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -525,7 +525,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_BOLD_FieldID: jfieldID?
 
-    open static var WEIGHT_BOLD: Float! {
+    public static var WEIGHT_BOLD: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT_BOLD", fieldType: "Ljava/lang/Float;", fieldCache: &WEIGHT_BOLD_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -537,7 +537,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_DEMIBOLD_FieldID: jfieldID?
 
-    open static var WEIGHT_DEMIBOLD: Float! {
+    public static var WEIGHT_DEMIBOLD: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT_DEMIBOLD", fieldType: "Ljava/lang/Float;", fieldCache: &WEIGHT_DEMIBOLD_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -549,7 +549,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_DEMILIGHT_FieldID: jfieldID?
 
-    open static var WEIGHT_DEMILIGHT: Float! {
+    public static var WEIGHT_DEMILIGHT: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT_DEMILIGHT", fieldType: "Ljava/lang/Float;", fieldCache: &WEIGHT_DEMILIGHT_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -561,7 +561,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_EXTRABOLD_FieldID: jfieldID?
 
-    open static var WEIGHT_EXTRABOLD: Float! {
+    public static var WEIGHT_EXTRABOLD: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT_EXTRABOLD", fieldType: "Ljava/lang/Float;", fieldCache: &WEIGHT_EXTRABOLD_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -573,7 +573,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_EXTRA_LIGHT_FieldID: jfieldID?
 
-    open static var WEIGHT_EXTRA_LIGHT: Float! {
+    public static var WEIGHT_EXTRA_LIGHT: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT_EXTRA_LIGHT", fieldType: "Ljava/lang/Float;", fieldCache: &WEIGHT_EXTRA_LIGHT_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -585,7 +585,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_HEAVY_FieldID: jfieldID?
 
-    open static var WEIGHT_HEAVY: Float! {
+    public static var WEIGHT_HEAVY: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT_HEAVY", fieldType: "Ljava/lang/Float;", fieldCache: &WEIGHT_HEAVY_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -597,7 +597,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_LIGHT_FieldID: jfieldID?
 
-    open static var WEIGHT_LIGHT: Float! {
+    public static var WEIGHT_LIGHT: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT_LIGHT", fieldType: "Ljava/lang/Float;", fieldCache: &WEIGHT_LIGHT_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -609,7 +609,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_MEDIUM_FieldID: jfieldID?
 
-    open static var WEIGHT_MEDIUM: Float! {
+    public static var WEIGHT_MEDIUM: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT_MEDIUM", fieldType: "Ljava/lang/Float;", fieldCache: &WEIGHT_MEDIUM_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -621,7 +621,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_REGULAR_FieldID: jfieldID?
 
-    open static var WEIGHT_REGULAR: Float! {
+    public static var WEIGHT_REGULAR: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT_REGULAR", fieldType: "Ljava/lang/Float;", fieldCache: &WEIGHT_REGULAR_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -633,7 +633,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_SEMIBOLD_FieldID: jfieldID?
 
-    open static var WEIGHT_SEMIBOLD: Float! {
+    public static var WEIGHT_SEMIBOLD: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT_SEMIBOLD", fieldType: "Ljava/lang/Float;", fieldCache: &WEIGHT_SEMIBOLD_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -645,7 +645,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WEIGHT_ULTRABOLD_FieldID: jfieldID?
 
-    open static var WEIGHT_ULTRABOLD: Float! {
+    public static var WEIGHT_ULTRABOLD: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEIGHT_ULTRABOLD", fieldType: "Ljava/lang/Float;", fieldCache: &WEIGHT_ULTRABOLD_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -657,7 +657,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WIDTH_FieldID: jfieldID?
 
-    open static var WIDTH: TextAttribute! {
+    public static var WIDTH: TextAttribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WIDTH", fieldType: "Ljava/awt/font/TextAttribute;", fieldCache: &WIDTH_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -669,7 +669,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WIDTH_CONDENSED_FieldID: jfieldID?
 
-    open static var WIDTH_CONDENSED: Float! {
+    public static var WIDTH_CONDENSED: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WIDTH_CONDENSED", fieldType: "Ljava/lang/Float;", fieldCache: &WIDTH_CONDENSED_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -681,7 +681,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WIDTH_EXTENDED_FieldID: jfieldID?
 
-    open static var WIDTH_EXTENDED: Float! {
+    public static var WIDTH_EXTENDED: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WIDTH_EXTENDED", fieldType: "Ljava/lang/Float;", fieldCache: &WIDTH_EXTENDED_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -693,7 +693,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WIDTH_REGULAR_FieldID: jfieldID?
 
-    open static var WIDTH_REGULAR: Float! {
+    public static var WIDTH_REGULAR: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WIDTH_REGULAR", fieldType: "Ljava/lang/Float;", fieldCache: &WIDTH_REGULAR_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -705,7 +705,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WIDTH_SEMI_CONDENSED_FieldID: jfieldID?
 
-    open static var WIDTH_SEMI_CONDENSED: Float! {
+    public static var WIDTH_SEMI_CONDENSED: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WIDTH_SEMI_CONDENSED", fieldType: "Ljava/lang/Float;", fieldCache: &WIDTH_SEMI_CONDENSED_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -717,7 +717,7 @@ open class TextAttribute: /* class java.text.AttributedCharacterIterator$Attribu
 
     private static var WIDTH_SEMI_EXTENDED_FieldID: jfieldID?
 
-    open static var WIDTH_SEMI_EXTENDED: Float! {
+    public static var WIDTH_SEMI_EXTENDED: Float! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WIDTH_SEMI_EXTENDED", fieldType: "Ljava/lang/Float;", fieldCache: &WIDTH_SEMI_EXTENDED_FieldID, className: "java/awt/font/TextAttribute", classCache: &TextAttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

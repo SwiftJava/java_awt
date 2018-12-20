@@ -20,7 +20,7 @@ open class JobAttributes_DialogType: /* class java.awt.AttributeValue */ Unavail
 
     private static var COMMON_FieldID: jfieldID?
 
-    open static var COMMON: JobAttributes_DialogType! {
+    public static var COMMON: JobAttributes_DialogType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COMMON", fieldType: "Ljava/awt/JobAttributes$DialogType;", fieldCache: &COMMON_FieldID, className: "java/awt/JobAttributes$DialogType", classCache: &JobAttributes_DialogTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -40,7 +40,7 @@ open class JobAttributes_DialogType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NATIVE_FieldID: jfieldID?
 
-    open static var NATIVE: JobAttributes_DialogType! {
+    public static var NATIVE: JobAttributes_DialogType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NATIVE", fieldType: "Ljava/awt/JobAttributes$DialogType;", fieldCache: &NATIVE_FieldID, className: "java/awt/JobAttributes$DialogType", classCache: &JobAttributes_DialogTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -52,7 +52,7 @@ open class JobAttributes_DialogType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NONE_FieldID: jfieldID?
 
-    open static var NONE: JobAttributes_DialogType! {
+    public static var NONE: JobAttributes_DialogType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NONE", fieldType: "Ljava/awt/JobAttributes$DialogType;", fieldCache: &NONE_FieldID, className: "java/awt/JobAttributes$DialogType", classCache: &JobAttributes_DialogTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

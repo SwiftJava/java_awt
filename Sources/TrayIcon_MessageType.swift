@@ -56,7 +56,7 @@ open class TrayIcon_MessageTypeForward: JNIObjectForward {
 
     private static var ERROR_FieldID: jfieldID?
 
-    open static var ERROR: TrayIcon_MessageType! {
+    public static var ERROR: TrayIcon_MessageType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ERROR", fieldType: "Ljava/awt/TrayIcon$MessageType;", fieldCache: &ERROR_FieldID, className: "java/awt/TrayIcon$MessageType", classCache: &TrayIcon_MessageTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class TrayIcon_MessageTypeForward: JNIObjectForward {
 
     private static var INFO_FieldID: jfieldID?
 
-    open static var INFO: TrayIcon_MessageType! {
+    public static var INFO: TrayIcon_MessageType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INFO", fieldType: "Ljava/awt/TrayIcon$MessageType;", fieldCache: &INFO_FieldID, className: "java/awt/TrayIcon$MessageType", classCache: &TrayIcon_MessageTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class TrayIcon_MessageTypeForward: JNIObjectForward {
 
     private static var NONE_FieldID: jfieldID?
 
-    open static var NONE: TrayIcon_MessageType! {
+    public static var NONE: TrayIcon_MessageType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NONE", fieldType: "Ljava/awt/TrayIcon$MessageType;", fieldCache: &NONE_FieldID, className: "java/awt/TrayIcon$MessageType", classCache: &TrayIcon_MessageTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -92,7 +92,7 @@ open class TrayIcon_MessageTypeForward: JNIObjectForward {
 
     private static var WARNING_FieldID: jfieldID?
 
-    open static var WARNING: TrayIcon_MessageType! {
+    public static var WARNING: TrayIcon_MessageType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WARNING", fieldType: "Ljava/awt/TrayIcon$MessageType;", fieldCache: &WARNING_FieldID, className: "java/awt/TrayIcon$MessageType", classCache: &TrayIcon_MessageTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

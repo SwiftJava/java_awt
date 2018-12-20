@@ -20,7 +20,7 @@ open class TextEvent: AWTEvent {
 
     private static var TEXT_FIRST_FieldID: jfieldID?
 
-    open static var TEXT_FIRST: Int {
+    public static var TEXT_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TEXT_FIRST", fieldType: "I", fieldCache: &TEXT_FIRST_FieldID, className: "java/awt/event/TextEvent", classCache: &TextEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class TextEvent: AWTEvent {
 
     private static var TEXT_LAST_FieldID: jfieldID?
 
-    open static var TEXT_LAST: Int {
+    public static var TEXT_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TEXT_LAST", fieldType: "I", fieldCache: &TEXT_LAST_FieldID, className: "java/awt/event/TextEvent", classCache: &TextEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class TextEvent: AWTEvent {
 
     private static var TEXT_VALUE_CHANGED_FieldID: jfieldID?
 
-    open static var TEXT_VALUE_CHANGED: Int {
+    public static var TEXT_VALUE_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TEXT_VALUE_CHANGED", fieldType: "I", fieldCache: &TEXT_VALUE_CHANGED_FieldID, className: "java/awt/event/TextEvent", classCache: &TextEventJNIClass )
             return Int(__value)

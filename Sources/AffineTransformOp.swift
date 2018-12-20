@@ -20,7 +20,7 @@ open class AffineTransformOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     private static var TYPE_BICUBIC_FieldID: jfieldID?
 
-    open static var TYPE_BICUBIC: Int {
+    public static var TYPE_BICUBIC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BICUBIC", fieldType: "I", fieldCache: &TYPE_BICUBIC_FieldID, className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOpJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class AffineTransformOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     private static var TYPE_BILINEAR_FieldID: jfieldID?
 
-    open static var TYPE_BILINEAR: Int {
+    public static var TYPE_BILINEAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BILINEAR", fieldType: "I", fieldCache: &TYPE_BILINEAR_FieldID, className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOpJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class AffineTransformOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     private static var TYPE_NEAREST_NEIGHBOR_FieldID: jfieldID?
 
-    open static var TYPE_NEAREST_NEIGHBOR: Int {
+    public static var TYPE_NEAREST_NEIGHBOR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_NEAREST_NEIGHBOR", fieldType: "I", fieldCache: &TYPE_NEAREST_NEIGHBOR_FieldID, className: "java/awt/image/AffineTransformOp", classCache: &AffineTransformOpJNIClass )
             return Int(__value)

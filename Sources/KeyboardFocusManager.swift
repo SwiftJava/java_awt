@@ -26,7 +26,7 @@ open class KeyboardFocusManager: java_swift.JavaObject, KeyEventDispatcher, KeyE
 
     private static var BACKWARD_TRAVERSAL_KEYS_FieldID: jfieldID?
 
-    open static var BACKWARD_TRAVERSAL_KEYS: Int {
+    public static var BACKWARD_TRAVERSAL_KEYS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BACKWARD_TRAVERSAL_KEYS", fieldType: "I", fieldCache: &BACKWARD_TRAVERSAL_KEYS_FieldID, className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass )
             return Int(__value)
@@ -37,7 +37,7 @@ open class KeyboardFocusManager: java_swift.JavaObject, KeyEventDispatcher, KeyE
 
     private static var DOWN_CYCLE_TRAVERSAL_KEYS_FieldID: jfieldID?
 
-    open static var DOWN_CYCLE_TRAVERSAL_KEYS: Int {
+    public static var DOWN_CYCLE_TRAVERSAL_KEYS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DOWN_CYCLE_TRAVERSAL_KEYS", fieldType: "I", fieldCache: &DOWN_CYCLE_TRAVERSAL_KEYS_FieldID, className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass )
             return Int(__value)
@@ -48,7 +48,7 @@ open class KeyboardFocusManager: java_swift.JavaObject, KeyEventDispatcher, KeyE
 
     private static var FORWARD_TRAVERSAL_KEYS_FieldID: jfieldID?
 
-    open static var FORWARD_TRAVERSAL_KEYS: Int {
+    public static var FORWARD_TRAVERSAL_KEYS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FORWARD_TRAVERSAL_KEYS", fieldType: "I", fieldCache: &FORWARD_TRAVERSAL_KEYS_FieldID, className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class KeyboardFocusManager: java_swift.JavaObject, KeyEventDispatcher, KeyE
 
     private static var UP_CYCLE_TRAVERSAL_KEYS_FieldID: jfieldID?
 
-    open static var UP_CYCLE_TRAVERSAL_KEYS: Int {
+    public static var UP_CYCLE_TRAVERSAL_KEYS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UP_CYCLE_TRAVERSAL_KEYS", fieldType: "I", fieldCache: &UP_CYCLE_TRAVERSAL_KEYS_FieldID, className: "java/awt/KeyboardFocusManager", classCache: &KeyboardFocusManagerJNIClass )
             return Int(__value)

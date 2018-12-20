@@ -47,7 +47,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var KEY_ALPHA_INTERPOLATION_FieldID: jfieldID?
 
-    open static var KEY_ALPHA_INTERPOLATION: RenderingHints_Key! {
+    public static var KEY_ALPHA_INTERPOLATION: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_ALPHA_INTERPOLATION", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_ALPHA_INTERPOLATION_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -59,7 +59,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var KEY_ANTIALIASING_FieldID: jfieldID?
 
-    open static var KEY_ANTIALIASING: RenderingHints_Key! {
+    public static var KEY_ANTIALIASING: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_ANTIALIASING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_ANTIALIASING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -71,7 +71,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var KEY_COLOR_RENDERING_FieldID: jfieldID?
 
-    open static var KEY_COLOR_RENDERING: RenderingHints_Key! {
+    public static var KEY_COLOR_RENDERING: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_COLOR_RENDERING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_COLOR_RENDERING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -83,7 +83,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var KEY_DITHERING_FieldID: jfieldID?
 
-    open static var KEY_DITHERING: RenderingHints_Key! {
+    public static var KEY_DITHERING: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_DITHERING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_DITHERING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -95,7 +95,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var KEY_FRACTIONALMETRICS_FieldID: jfieldID?
 
-    open static var KEY_FRACTIONALMETRICS: RenderingHints_Key! {
+    public static var KEY_FRACTIONALMETRICS: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_FRACTIONALMETRICS", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_FRACTIONALMETRICS_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -107,7 +107,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var KEY_INTERPOLATION_FieldID: jfieldID?
 
-    open static var KEY_INTERPOLATION: RenderingHints_Key! {
+    public static var KEY_INTERPOLATION: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_INTERPOLATION", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_INTERPOLATION_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -119,7 +119,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var KEY_RENDERING_FieldID: jfieldID?
 
-    open static var KEY_RENDERING: RenderingHints_Key! {
+    public static var KEY_RENDERING: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_RENDERING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_RENDERING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -131,7 +131,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var KEY_STROKE_CONTROL_FieldID: jfieldID?
 
-    open static var KEY_STROKE_CONTROL: RenderingHints_Key! {
+    public static var KEY_STROKE_CONTROL: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_STROKE_CONTROL", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_STROKE_CONTROL_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -143,7 +143,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var KEY_TEXT_ANTIALIASING_FieldID: jfieldID?
 
-    open static var KEY_TEXT_ANTIALIASING: RenderingHints_Key! {
+    public static var KEY_TEXT_ANTIALIASING: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_TEXT_ANTIALIASING", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_TEXT_ANTIALIASING_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -155,7 +155,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var KEY_TEXT_LCD_CONTRAST_FieldID: jfieldID?
 
-    open static var KEY_TEXT_LCD_CONTRAST: RenderingHints_Key! {
+    public static var KEY_TEXT_LCD_CONTRAST: RenderingHints_Key! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEY_TEXT_LCD_CONTRAST", fieldType: "Ljava/awt/RenderingHints$Key;", fieldCache: &KEY_TEXT_LCD_CONTRAST_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -167,7 +167,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_ALPHA_INTERPOLATION_DEFAULT_FieldID: jfieldID?
 
-    open static var VALUE_ALPHA_INTERPOLATION_DEFAULT: java_swift.JavaObject! {
+    public static var VALUE_ALPHA_INTERPOLATION_DEFAULT: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ALPHA_INTERPOLATION_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ALPHA_INTERPOLATION_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -179,7 +179,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_ALPHA_INTERPOLATION_QUALITY_FieldID: jfieldID?
 
-    open static var VALUE_ALPHA_INTERPOLATION_QUALITY: java_swift.JavaObject! {
+    public static var VALUE_ALPHA_INTERPOLATION_QUALITY: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ALPHA_INTERPOLATION_QUALITY", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ALPHA_INTERPOLATION_QUALITY_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -191,7 +191,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_ALPHA_INTERPOLATION_SPEED_FieldID: jfieldID?
 
-    open static var VALUE_ALPHA_INTERPOLATION_SPEED: java_swift.JavaObject! {
+    public static var VALUE_ALPHA_INTERPOLATION_SPEED: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ALPHA_INTERPOLATION_SPEED", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ALPHA_INTERPOLATION_SPEED_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -203,7 +203,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_ANTIALIAS_DEFAULT_FieldID: jfieldID?
 
-    open static var VALUE_ANTIALIAS_DEFAULT: java_swift.JavaObject! {
+    public static var VALUE_ANTIALIAS_DEFAULT: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ANTIALIAS_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ANTIALIAS_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -215,7 +215,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_ANTIALIAS_OFF_FieldID: jfieldID?
 
-    open static var VALUE_ANTIALIAS_OFF: java_swift.JavaObject! {
+    public static var VALUE_ANTIALIAS_OFF: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ANTIALIAS_OFF", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ANTIALIAS_OFF_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -227,7 +227,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_ANTIALIAS_ON_FieldID: jfieldID?
 
-    open static var VALUE_ANTIALIAS_ON: java_swift.JavaObject! {
+    public static var VALUE_ANTIALIAS_ON: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_ANTIALIAS_ON", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_ANTIALIAS_ON_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -239,7 +239,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_COLOR_RENDER_DEFAULT_FieldID: jfieldID?
 
-    open static var VALUE_COLOR_RENDER_DEFAULT: java_swift.JavaObject! {
+    public static var VALUE_COLOR_RENDER_DEFAULT: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_COLOR_RENDER_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_COLOR_RENDER_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -251,7 +251,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_COLOR_RENDER_QUALITY_FieldID: jfieldID?
 
-    open static var VALUE_COLOR_RENDER_QUALITY: java_swift.JavaObject! {
+    public static var VALUE_COLOR_RENDER_QUALITY: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_COLOR_RENDER_QUALITY", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_COLOR_RENDER_QUALITY_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -263,7 +263,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_COLOR_RENDER_SPEED_FieldID: jfieldID?
 
-    open static var VALUE_COLOR_RENDER_SPEED: java_swift.JavaObject! {
+    public static var VALUE_COLOR_RENDER_SPEED: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_COLOR_RENDER_SPEED", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_COLOR_RENDER_SPEED_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -275,7 +275,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_DITHER_DEFAULT_FieldID: jfieldID?
 
-    open static var VALUE_DITHER_DEFAULT: java_swift.JavaObject! {
+    public static var VALUE_DITHER_DEFAULT: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_DITHER_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_DITHER_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -287,7 +287,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_DITHER_DISABLE_FieldID: jfieldID?
 
-    open static var VALUE_DITHER_DISABLE: java_swift.JavaObject! {
+    public static var VALUE_DITHER_DISABLE: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_DITHER_DISABLE", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_DITHER_DISABLE_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -299,7 +299,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_DITHER_ENABLE_FieldID: jfieldID?
 
-    open static var VALUE_DITHER_ENABLE: java_swift.JavaObject! {
+    public static var VALUE_DITHER_ENABLE: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_DITHER_ENABLE", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_DITHER_ENABLE_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -311,7 +311,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_FRACTIONALMETRICS_DEFAULT_FieldID: jfieldID?
 
-    open static var VALUE_FRACTIONALMETRICS_DEFAULT: java_swift.JavaObject! {
+    public static var VALUE_FRACTIONALMETRICS_DEFAULT: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_FRACTIONALMETRICS_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_FRACTIONALMETRICS_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -323,7 +323,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_FRACTIONALMETRICS_OFF_FieldID: jfieldID?
 
-    open static var VALUE_FRACTIONALMETRICS_OFF: java_swift.JavaObject! {
+    public static var VALUE_FRACTIONALMETRICS_OFF: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_FRACTIONALMETRICS_OFF", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_FRACTIONALMETRICS_OFF_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -335,7 +335,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_FRACTIONALMETRICS_ON_FieldID: jfieldID?
 
-    open static var VALUE_FRACTIONALMETRICS_ON: java_swift.JavaObject! {
+    public static var VALUE_FRACTIONALMETRICS_ON: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_FRACTIONALMETRICS_ON", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_FRACTIONALMETRICS_ON_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -347,7 +347,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_INTERPOLATION_BICUBIC_FieldID: jfieldID?
 
-    open static var VALUE_INTERPOLATION_BICUBIC: java_swift.JavaObject! {
+    public static var VALUE_INTERPOLATION_BICUBIC: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_INTERPOLATION_BICUBIC", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_INTERPOLATION_BICUBIC_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -359,7 +359,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_INTERPOLATION_BILINEAR_FieldID: jfieldID?
 
-    open static var VALUE_INTERPOLATION_BILINEAR: java_swift.JavaObject! {
+    public static var VALUE_INTERPOLATION_BILINEAR: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_INTERPOLATION_BILINEAR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_INTERPOLATION_BILINEAR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -371,7 +371,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_INTERPOLATION_NEAREST_NEIGHBOR_FieldID: jfieldID?
 
-    open static var VALUE_INTERPOLATION_NEAREST_NEIGHBOR: java_swift.JavaObject! {
+    public static var VALUE_INTERPOLATION_NEAREST_NEIGHBOR: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_INTERPOLATION_NEAREST_NEIGHBOR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_INTERPOLATION_NEAREST_NEIGHBOR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -383,7 +383,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_RENDER_DEFAULT_FieldID: jfieldID?
 
-    open static var VALUE_RENDER_DEFAULT: java_swift.JavaObject! {
+    public static var VALUE_RENDER_DEFAULT: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_RENDER_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_RENDER_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -395,7 +395,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_RENDER_QUALITY_FieldID: jfieldID?
 
-    open static var VALUE_RENDER_QUALITY: java_swift.JavaObject! {
+    public static var VALUE_RENDER_QUALITY: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_RENDER_QUALITY", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_RENDER_QUALITY_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -407,7 +407,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_RENDER_SPEED_FieldID: jfieldID?
 
-    open static var VALUE_RENDER_SPEED: java_swift.JavaObject! {
+    public static var VALUE_RENDER_SPEED: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_RENDER_SPEED", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_RENDER_SPEED_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -419,7 +419,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_STROKE_DEFAULT_FieldID: jfieldID?
 
-    open static var VALUE_STROKE_DEFAULT: java_swift.JavaObject! {
+    public static var VALUE_STROKE_DEFAULT: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_STROKE_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_STROKE_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -431,7 +431,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_STROKE_NORMALIZE_FieldID: jfieldID?
 
-    open static var VALUE_STROKE_NORMALIZE: java_swift.JavaObject! {
+    public static var VALUE_STROKE_NORMALIZE: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_STROKE_NORMALIZE", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_STROKE_NORMALIZE_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -443,7 +443,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_STROKE_PURE_FieldID: jfieldID?
 
-    open static var VALUE_STROKE_PURE: java_swift.JavaObject! {
+    public static var VALUE_STROKE_PURE: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_STROKE_PURE", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_STROKE_PURE_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -455,7 +455,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_TEXT_ANTIALIAS_DEFAULT_FieldID: jfieldID?
 
-    open static var VALUE_TEXT_ANTIALIAS_DEFAULT: java_swift.JavaObject! {
+    public static var VALUE_TEXT_ANTIALIAS_DEFAULT: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_DEFAULT", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_DEFAULT_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -467,7 +467,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_TEXT_ANTIALIAS_GASP_FieldID: jfieldID?
 
-    open static var VALUE_TEXT_ANTIALIAS_GASP: java_swift.JavaObject! {
+    public static var VALUE_TEXT_ANTIALIAS_GASP: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_GASP", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_GASP_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -479,7 +479,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_TEXT_ANTIALIAS_LCD_HBGR_FieldID: jfieldID?
 
-    open static var VALUE_TEXT_ANTIALIAS_LCD_HBGR: java_swift.JavaObject! {
+    public static var VALUE_TEXT_ANTIALIAS_LCD_HBGR: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_HBGR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_HBGR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -491,7 +491,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_TEXT_ANTIALIAS_LCD_HRGB_FieldID: jfieldID?
 
-    open static var VALUE_TEXT_ANTIALIAS_LCD_HRGB: java_swift.JavaObject! {
+    public static var VALUE_TEXT_ANTIALIAS_LCD_HRGB: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_HRGB", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_HRGB_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -503,7 +503,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_TEXT_ANTIALIAS_LCD_VBGR_FieldID: jfieldID?
 
-    open static var VALUE_TEXT_ANTIALIAS_LCD_VBGR: java_swift.JavaObject! {
+    public static var VALUE_TEXT_ANTIALIAS_LCD_VBGR: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_VBGR", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_VBGR_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -515,7 +515,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_TEXT_ANTIALIAS_LCD_VRGB_FieldID: jfieldID?
 
-    open static var VALUE_TEXT_ANTIALIAS_LCD_VRGB: java_swift.JavaObject! {
+    public static var VALUE_TEXT_ANTIALIAS_LCD_VRGB: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_LCD_VRGB", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_LCD_VRGB_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -527,7 +527,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_TEXT_ANTIALIAS_OFF_FieldID: jfieldID?
 
-    open static var VALUE_TEXT_ANTIALIAS_OFF: java_swift.JavaObject! {
+    public static var VALUE_TEXT_ANTIALIAS_OFF: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_OFF", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_OFF_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -539,7 +539,7 @@ open class RenderingHints: java_swift.JavaObject, java_swift.JavaMap, java_lang.
 
     private static var VALUE_TEXT_ANTIALIAS_ON_FieldID: jfieldID?
 
-    open static var VALUE_TEXT_ANTIALIAS_ON: java_swift.JavaObject! {
+    public static var VALUE_TEXT_ANTIALIAS_ON: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_TEXT_ANTIALIAS_ON", fieldType: "Ljava/lang/Object;", fieldCache: &VALUE_TEXT_ANTIALIAS_ON_FieldID, className: "java/awt/RenderingHints", classCache: &RenderingHintsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

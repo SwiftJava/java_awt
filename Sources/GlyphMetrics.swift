@@ -20,7 +20,7 @@ open class GlyphMetrics: java_swift.JavaObject {
 
     private static var COMBINING_FieldID: jfieldID?
 
-    open static var COMBINING: Int8 {
+    public static var COMBINING: Int8 {
         get {
             let __value = JNIField.GetStaticByteField( fieldName: "COMBINING", fieldType: "B", fieldCache: &COMBINING_FieldID, className: "java/awt/font/GlyphMetrics", classCache: &GlyphMetricsJNIClass )
             return __value
@@ -31,7 +31,7 @@ open class GlyphMetrics: java_swift.JavaObject {
 
     private static var COMPONENT_FieldID: jfieldID?
 
-    open static var COMPONENT: Int8 {
+    public static var COMPONENT: Int8 {
         get {
             let __value = JNIField.GetStaticByteField( fieldName: "COMPONENT", fieldType: "B", fieldCache: &COMPONENT_FieldID, className: "java/awt/font/GlyphMetrics", classCache: &GlyphMetricsJNIClass )
             return __value
@@ -42,7 +42,7 @@ open class GlyphMetrics: java_swift.JavaObject {
 
     private static var LIGATURE_FieldID: jfieldID?
 
-    open static var LIGATURE: Int8 {
+    public static var LIGATURE: Int8 {
         get {
             let __value = JNIField.GetStaticByteField( fieldName: "LIGATURE", fieldType: "B", fieldCache: &LIGATURE_FieldID, className: "java/awt/font/GlyphMetrics", classCache: &GlyphMetricsJNIClass )
             return __value
@@ -53,7 +53,7 @@ open class GlyphMetrics: java_swift.JavaObject {
 
     private static var STANDARD_FieldID: jfieldID?
 
-    open static var STANDARD: Int8 {
+    public static var STANDARD: Int8 {
         get {
             let __value = JNIField.GetStaticByteField( fieldName: "STANDARD", fieldType: "B", fieldCache: &STANDARD_FieldID, className: "java/awt/font/GlyphMetrics", classCache: &GlyphMetricsJNIClass )
             return __value
@@ -64,7 +64,7 @@ open class GlyphMetrics: java_swift.JavaObject {
 
     private static var WHITESPACE_FieldID: jfieldID?
 
-    open static var WHITESPACE: Int8 {
+    public static var WHITESPACE: Int8 {
         get {
             let __value = JNIField.GetStaticByteField( fieldName: "WHITESPACE", fieldType: "B", fieldCache: &WHITESPACE_FieldID, className: "java/awt/font/GlyphMetrics", classCache: &GlyphMetricsJNIClass )
             return __value

@@ -21,7 +21,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var BLACK_FieldID: jfieldID?
 
-    open static var BLACK: Color! {
+    public static var BLACK: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BLACK", fieldType: "Ljava/awt/Color;", fieldCache: &BLACK_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -33,7 +33,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var BLUE_FieldID: jfieldID?
 
-    open static var BLUE: Color! {
+    public static var BLUE: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BLUE", fieldType: "Ljava/awt/Color;", fieldCache: &BLUE_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -45,7 +45,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var CYAN_FieldID: jfieldID?
 
-    open static var CYAN: Color! {
+    public static var CYAN: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CYAN", fieldType: "Ljava/awt/Color;", fieldCache: &CYAN_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -57,7 +57,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var DARK_GRAY_FieldID: jfieldID?
 
-    open static var DARK_GRAY: Color! {
+    public static var DARK_GRAY: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DARK_GRAY", fieldType: "Ljava/awt/Color;", fieldCache: &DARK_GRAY_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -71,7 +71,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var GRAY_FieldID: jfieldID?
 
-    open static var GRAY: Color! {
+    public static var GRAY: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "GRAY", fieldType: "Ljava/awt/Color;", fieldCache: &GRAY_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -83,7 +83,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var GREEN_FieldID: jfieldID?
 
-    open static var GREEN: Color! {
+    public static var GREEN: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "GREEN", fieldType: "Ljava/awt/Color;", fieldCache: &GREEN_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -95,7 +95,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var LIGHT_GRAY_FieldID: jfieldID?
 
-    open static var LIGHT_GRAY: Color! {
+    public static var LIGHT_GRAY: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LIGHT_GRAY", fieldType: "Ljava/awt/Color;", fieldCache: &LIGHT_GRAY_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -107,7 +107,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var MAGENTA_FieldID: jfieldID?
 
-    open static var MAGENTA: Color! {
+    public static var MAGENTA: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MAGENTA", fieldType: "Ljava/awt/Color;", fieldCache: &MAGENTA_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -119,7 +119,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var ORANGE_FieldID: jfieldID?
 
-    open static var ORANGE: Color! {
+    public static var ORANGE: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ORANGE", fieldType: "Ljava/awt/Color;", fieldCache: &ORANGE_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -131,7 +131,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var PINK_FieldID: jfieldID?
 
-    open static var PINK: Color! {
+    public static var PINK: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PINK", fieldType: "Ljava/awt/Color;", fieldCache: &PINK_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -143,7 +143,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var RED_FieldID: jfieldID?
 
-    open static var RED: Color! {
+    public static var RED: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RED", fieldType: "Ljava/awt/Color;", fieldCache: &RED_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -155,7 +155,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var WHITE_FieldID: jfieldID?
 
-    open static var WHITE: Color! {
+    public static var WHITE: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WHITE", fieldType: "Ljava/awt/Color;", fieldCache: &WHITE_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -167,7 +167,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var YELLOW_FieldID: jfieldID?
 
-    open static var YELLOW: Color! {
+    public static var YELLOW: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "YELLOW", fieldType: "Ljava/awt/Color;", fieldCache: &YELLOW_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -179,7 +179,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var black_FieldID: jfieldID?
 
-    open static var black: Color! {
+    public static var black: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "black", fieldType: "Ljava/awt/Color;", fieldCache: &black_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -191,7 +191,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var blue_FieldID: jfieldID?
 
-    open static var blue: Color! {
+    public static var blue: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "blue", fieldType: "Ljava/awt/Color;", fieldCache: &blue_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -203,7 +203,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var cyan_FieldID: jfieldID?
 
-    open static var cyan: Color! {
+    public static var cyan: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "cyan", fieldType: "Ljava/awt/Color;", fieldCache: &cyan_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -215,7 +215,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var darkGray_FieldID: jfieldID?
 
-    open static var darkGray: Color! {
+    public static var darkGray: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "darkGray", fieldType: "Ljava/awt/Color;", fieldCache: &darkGray_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -227,7 +227,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var gray_FieldID: jfieldID?
 
-    open static var gray: Color! {
+    public static var gray: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "gray", fieldType: "Ljava/awt/Color;", fieldCache: &gray_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -239,7 +239,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var green_FieldID: jfieldID?
 
-    open static var green: Color! {
+    public static var green: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "green", fieldType: "Ljava/awt/Color;", fieldCache: &green_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -251,7 +251,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var lightGray_FieldID: jfieldID?
 
-    open static var lightGray: Color! {
+    public static var lightGray: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "lightGray", fieldType: "Ljava/awt/Color;", fieldCache: &lightGray_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -263,7 +263,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var magenta_FieldID: jfieldID?
 
-    open static var magenta: Color! {
+    public static var magenta: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "magenta", fieldType: "Ljava/awt/Color;", fieldCache: &magenta_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -275,7 +275,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var orange_FieldID: jfieldID?
 
-    open static var orange: Color! {
+    public static var orange: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "orange", fieldType: "Ljava/awt/Color;", fieldCache: &orange_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -287,7 +287,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var pink_FieldID: jfieldID?
 
-    open static var pink: Color! {
+    public static var pink: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "pink", fieldType: "Ljava/awt/Color;", fieldCache: &pink_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -299,7 +299,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var red_FieldID: jfieldID?
 
-    open static var red: Color! {
+    public static var red: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "red", fieldType: "Ljava/awt/Color;", fieldCache: &red_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -313,7 +313,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var white_FieldID: jfieldID?
 
-    open static var white: Color! {
+    public static var white: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "white", fieldType: "Ljava/awt/Color;", fieldCache: &white_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -325,7 +325,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var yellow_FieldID: jfieldID?
 
-    open static var yellow: Color! {
+    public static var yellow: Color! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "yellow", fieldType: "Ljava/awt/Color;", fieldCache: &yellow_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -349,7 +349,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var BITMASK_FieldID: jfieldID?
 
-    open static var BITMASK: Int {
+    public static var BITMASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BITMASK", fieldType: "I", fieldCache: &BITMASK_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             return Int(__value)
@@ -360,7 +360,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var OPAQUE_FieldID: jfieldID?
 
-    open static var OPAQUE: Int {
+    public static var OPAQUE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             return Int(__value)
@@ -371,7 +371,7 @@ open class Color: java_swift.JavaObject, Paint, /* interface java.io.Serializabl
 
     private static var TRANSLUCENT_FieldID: jfieldID?
 
-    open static var TRANSLUCENT: Int {
+    public static var TRANSLUCENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRANSLUCENT", fieldType: "I", fieldCache: &TRANSLUCENT_FieldID, className: "java/awt/Color", classCache: &ColorJNIClass )
             return Int(__value)

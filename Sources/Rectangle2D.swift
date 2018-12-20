@@ -20,7 +20,7 @@ open class Rectangle2D: RectangularShape {
 
     private static var OUT_BOTTOM_FieldID: jfieldID?
 
-    open static var OUT_BOTTOM: Int {
+    public static var OUT_BOTTOM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OUT_BOTTOM", fieldType: "I", fieldCache: &OUT_BOTTOM_FieldID, className: "java/awt/geom/Rectangle2D", classCache: &Rectangle2DJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class Rectangle2D: RectangularShape {
 
     private static var OUT_LEFT_FieldID: jfieldID?
 
-    open static var OUT_LEFT: Int {
+    public static var OUT_LEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OUT_LEFT", fieldType: "I", fieldCache: &OUT_LEFT_FieldID, className: "java/awt/geom/Rectangle2D", classCache: &Rectangle2DJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class Rectangle2D: RectangularShape {
 
     private static var OUT_RIGHT_FieldID: jfieldID?
 
-    open static var OUT_RIGHT: Int {
+    public static var OUT_RIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OUT_RIGHT", fieldType: "I", fieldCache: &OUT_RIGHT_FieldID, className: "java/awt/geom/Rectangle2D", classCache: &Rectangle2DJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class Rectangle2D: RectangularShape {
 
     private static var OUT_TOP_FieldID: jfieldID?
 
-    open static var OUT_TOP: Int {
+    public static var OUT_TOP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OUT_TOP", fieldType: "I", fieldCache: &OUT_TOP_FieldID, className: "java/awt/geom/Rectangle2D", classCache: &Rectangle2DJNIClass )
             return Int(__value)

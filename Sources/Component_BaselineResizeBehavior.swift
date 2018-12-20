@@ -56,7 +56,7 @@ open class Component_BaselineResizeBehaviorForward: JNIObjectForward {
 
     private static var CENTER_OFFSET_FieldID: jfieldID?
 
-    open static var CENTER_OFFSET: Component_BaselineResizeBehavior! {
+    public static var CENTER_OFFSET: Component_BaselineResizeBehavior! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CENTER_OFFSET", fieldType: "Ljava/awt/Component$BaselineResizeBehavior;", fieldCache: &CENTER_OFFSET_FieldID, className: "java/awt/Component$BaselineResizeBehavior", classCache: &Component_BaselineResizeBehaviorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class Component_BaselineResizeBehaviorForward: JNIObjectForward {
 
     private static var CONSTANT_ASCENT_FieldID: jfieldID?
 
-    open static var CONSTANT_ASCENT: Component_BaselineResizeBehavior! {
+    public static var CONSTANT_ASCENT: Component_BaselineResizeBehavior! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CONSTANT_ASCENT", fieldType: "Ljava/awt/Component$BaselineResizeBehavior;", fieldCache: &CONSTANT_ASCENT_FieldID, className: "java/awt/Component$BaselineResizeBehavior", classCache: &Component_BaselineResizeBehaviorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class Component_BaselineResizeBehaviorForward: JNIObjectForward {
 
     private static var CONSTANT_DESCENT_FieldID: jfieldID?
 
-    open static var CONSTANT_DESCENT: Component_BaselineResizeBehavior! {
+    public static var CONSTANT_DESCENT: Component_BaselineResizeBehavior! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CONSTANT_DESCENT", fieldType: "Ljava/awt/Component$BaselineResizeBehavior;", fieldCache: &CONSTANT_DESCENT_FieldID, className: "java/awt/Component$BaselineResizeBehavior", classCache: &Component_BaselineResizeBehaviorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -92,7 +92,7 @@ open class Component_BaselineResizeBehaviorForward: JNIObjectForward {
 
     private static var OTHER_FieldID: jfieldID?
 
-    open static var OTHER: Component_BaselineResizeBehavior! {
+    public static var OTHER: Component_BaselineResizeBehavior! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "OTHER", fieldType: "Ljava/awt/Component$BaselineResizeBehavior;", fieldCache: &OTHER_FieldID, className: "java/awt/Component$BaselineResizeBehavior", classCache: &Component_BaselineResizeBehaviorJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

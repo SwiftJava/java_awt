@@ -20,7 +20,7 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
 
     private static var CAP_BUTT_FieldID: jfieldID?
 
-    open static var CAP_BUTT: Int {
+    public static var CAP_BUTT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CAP_BUTT", fieldType: "I", fieldCache: &CAP_BUTT_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
 
     private static var CAP_ROUND_FieldID: jfieldID?
 
-    open static var CAP_ROUND: Int {
+    public static var CAP_ROUND: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CAP_ROUND", fieldType: "I", fieldCache: &CAP_ROUND_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
 
     private static var CAP_SQUARE_FieldID: jfieldID?
 
-    open static var CAP_SQUARE: Int {
+    public static var CAP_SQUARE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CAP_SQUARE", fieldType: "I", fieldCache: &CAP_SQUARE_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
 
     private static var JOIN_BEVEL_FieldID: jfieldID?
 
-    open static var JOIN_BEVEL: Int {
+    public static var JOIN_BEVEL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "JOIN_BEVEL", fieldType: "I", fieldCache: &JOIN_BEVEL_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
 
     private static var JOIN_MITER_FieldID: jfieldID?
 
-    open static var JOIN_MITER: Int {
+    public static var JOIN_MITER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "JOIN_MITER", fieldType: "I", fieldCache: &JOIN_MITER_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class BasicStroke: java_swift.JavaObject, Stroke {
 
     private static var JOIN_ROUND_FieldID: jfieldID?
 
-    open static var JOIN_ROUND: Int {
+    public static var JOIN_ROUND: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "JOIN_ROUND", fieldType: "I", fieldCache: &JOIN_ROUND_FieldID, className: "java/awt/BasicStroke", classCache: &BasicStrokeJNIClass )
             return Int(__value)

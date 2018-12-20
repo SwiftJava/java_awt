@@ -26,7 +26,7 @@ open class PageAttributes_OriginType: /* class java.awt.AttributeValue */ Unavai
 
     private static var PHYSICAL_FieldID: jfieldID?
 
-    open static var PHYSICAL: PageAttributes_OriginType! {
+    public static var PHYSICAL: PageAttributes_OriginType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PHYSICAL", fieldType: "Ljava/awt/PageAttributes$OriginType;", fieldCache: &PHYSICAL_FieldID, className: "java/awt/PageAttributes$OriginType", classCache: &PageAttributes_OriginTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -38,7 +38,7 @@ open class PageAttributes_OriginType: /* class java.awt.AttributeValue */ Unavai
 
     private static var PRINTABLE_FieldID: jfieldID?
 
-    open static var PRINTABLE: PageAttributes_OriginType! {
+    public static var PRINTABLE: PageAttributes_OriginType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PRINTABLE", fieldType: "Ljava/awt/PageAttributes$OriginType;", fieldCache: &PRINTABLE_FieldID, className: "java/awt/PageAttributes$OriginType", classCache: &PageAttributes_OriginTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

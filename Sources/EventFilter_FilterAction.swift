@@ -56,7 +56,7 @@ open class EventFilter_FilterActionForward: JNIObjectForward {
 
     private static var ACCEPT_FieldID: jfieldID?
 
-    open static var ACCEPT: EventFilter_FilterAction! {
+    public static var ACCEPT: EventFilter_FilterAction! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ACCEPT", fieldType: "Ljava/awt/EventFilter$FilterAction;", fieldCache: &ACCEPT_FieldID, className: "java/awt/EventFilter$FilterAction", classCache: &EventFilter_FilterActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class EventFilter_FilterActionForward: JNIObjectForward {
 
     private static var ACCEPT_IMMEDIATELY_FieldID: jfieldID?
 
-    open static var ACCEPT_IMMEDIATELY: EventFilter_FilterAction! {
+    public static var ACCEPT_IMMEDIATELY: EventFilter_FilterAction! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ACCEPT_IMMEDIATELY", fieldType: "Ljava/awt/EventFilter$FilterAction;", fieldCache: &ACCEPT_IMMEDIATELY_FieldID, className: "java/awt/EventFilter$FilterAction", classCache: &EventFilter_FilterActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class EventFilter_FilterActionForward: JNIObjectForward {
 
     private static var REJECT_FieldID: jfieldID?
 
-    open static var REJECT: EventFilter_FilterAction! {
+    public static var REJECT: EventFilter_FilterAction! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "REJECT", fieldType: "Ljava/awt/EventFilter$FilterAction;", fieldCache: &REJECT_FieldID, className: "java/awt/EventFilter$FilterAction", classCache: &EventFilter_FilterActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

@@ -20,7 +20,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var CS_CIEXYZ_FieldID: jfieldID?
 
-    open static var CS_CIEXYZ: Int {
+    public static var CS_CIEXYZ: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CS_CIEXYZ", fieldType: "I", fieldCache: &CS_CIEXYZ_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var CS_GRAY_FieldID: jfieldID?
 
-    open static var CS_GRAY: Int {
+    public static var CS_GRAY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CS_GRAY", fieldType: "I", fieldCache: &CS_GRAY_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var CS_LINEAR_RGB_FieldID: jfieldID?
 
-    open static var CS_LINEAR_RGB: Int {
+    public static var CS_LINEAR_RGB: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CS_LINEAR_RGB", fieldType: "I", fieldCache: &CS_LINEAR_RGB_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var CS_PYCC_FieldID: jfieldID?
 
-    open static var CS_PYCC: Int {
+    public static var CS_PYCC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CS_PYCC", fieldType: "I", fieldCache: &CS_PYCC_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var CS_sRGB_FieldID: jfieldID?
 
-    open static var CS_sRGB: Int {
+    public static var CS_sRGB: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CS_sRGB", fieldType: "I", fieldCache: &CS_sRGB_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -81,7 +81,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_2CLR_FieldID: jfieldID?
 
-    open static var TYPE_2CLR: Int {
+    public static var TYPE_2CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_2CLR", fieldType: "I", fieldCache: &TYPE_2CLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -92,7 +92,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_3CLR_FieldID: jfieldID?
 
-    open static var TYPE_3CLR: Int {
+    public static var TYPE_3CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_3CLR", fieldType: "I", fieldCache: &TYPE_3CLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -103,7 +103,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_4CLR_FieldID: jfieldID?
 
-    open static var TYPE_4CLR: Int {
+    public static var TYPE_4CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_4CLR", fieldType: "I", fieldCache: &TYPE_4CLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -114,7 +114,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_5CLR_FieldID: jfieldID?
 
-    open static var TYPE_5CLR: Int {
+    public static var TYPE_5CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_5CLR", fieldType: "I", fieldCache: &TYPE_5CLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -125,7 +125,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_6CLR_FieldID: jfieldID?
 
-    open static var TYPE_6CLR: Int {
+    public static var TYPE_6CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_6CLR", fieldType: "I", fieldCache: &TYPE_6CLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -136,7 +136,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_7CLR_FieldID: jfieldID?
 
-    open static var TYPE_7CLR: Int {
+    public static var TYPE_7CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_7CLR", fieldType: "I", fieldCache: &TYPE_7CLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -147,7 +147,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_8CLR_FieldID: jfieldID?
 
-    open static var TYPE_8CLR: Int {
+    public static var TYPE_8CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_8CLR", fieldType: "I", fieldCache: &TYPE_8CLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -158,7 +158,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_9CLR_FieldID: jfieldID?
 
-    open static var TYPE_9CLR: Int {
+    public static var TYPE_9CLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_9CLR", fieldType: "I", fieldCache: &TYPE_9CLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -169,7 +169,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_ACLR_FieldID: jfieldID?
 
-    open static var TYPE_ACLR: Int {
+    public static var TYPE_ACLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_ACLR", fieldType: "I", fieldCache: &TYPE_ACLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -180,7 +180,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_BCLR_FieldID: jfieldID?
 
-    open static var TYPE_BCLR: Int {
+    public static var TYPE_BCLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_BCLR", fieldType: "I", fieldCache: &TYPE_BCLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -191,7 +191,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_CCLR_FieldID: jfieldID?
 
-    open static var TYPE_CCLR: Int {
+    public static var TYPE_CCLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_CCLR", fieldType: "I", fieldCache: &TYPE_CCLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -202,7 +202,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_CMY_FieldID: jfieldID?
 
-    open static var TYPE_CMY: Int {
+    public static var TYPE_CMY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_CMY", fieldType: "I", fieldCache: &TYPE_CMY_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -213,7 +213,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_CMYK_FieldID: jfieldID?
 
-    open static var TYPE_CMYK: Int {
+    public static var TYPE_CMYK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_CMYK", fieldType: "I", fieldCache: &TYPE_CMYK_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -224,7 +224,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_DCLR_FieldID: jfieldID?
 
-    open static var TYPE_DCLR: Int {
+    public static var TYPE_DCLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_DCLR", fieldType: "I", fieldCache: &TYPE_DCLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -235,7 +235,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_ECLR_FieldID: jfieldID?
 
-    open static var TYPE_ECLR: Int {
+    public static var TYPE_ECLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_ECLR", fieldType: "I", fieldCache: &TYPE_ECLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -246,7 +246,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_FCLR_FieldID: jfieldID?
 
-    open static var TYPE_FCLR: Int {
+    public static var TYPE_FCLR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_FCLR", fieldType: "I", fieldCache: &TYPE_FCLR_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -257,7 +257,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_GRAY_FieldID: jfieldID?
 
-    open static var TYPE_GRAY: Int {
+    public static var TYPE_GRAY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_GRAY", fieldType: "I", fieldCache: &TYPE_GRAY_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -268,7 +268,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_HLS_FieldID: jfieldID?
 
-    open static var TYPE_HLS: Int {
+    public static var TYPE_HLS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_HLS", fieldType: "I", fieldCache: &TYPE_HLS_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -279,7 +279,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_HSV_FieldID: jfieldID?
 
-    open static var TYPE_HSV: Int {
+    public static var TYPE_HSV: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_HSV", fieldType: "I", fieldCache: &TYPE_HSV_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -290,7 +290,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_Lab_FieldID: jfieldID?
 
-    open static var TYPE_Lab: Int {
+    public static var TYPE_Lab: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_Lab", fieldType: "I", fieldCache: &TYPE_Lab_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -301,7 +301,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_Luv_FieldID: jfieldID?
 
-    open static var TYPE_Luv: Int {
+    public static var TYPE_Luv: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_Luv", fieldType: "I", fieldCache: &TYPE_Luv_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -312,7 +312,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_RGB_FieldID: jfieldID?
 
-    open static var TYPE_RGB: Int {
+    public static var TYPE_RGB: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_RGB", fieldType: "I", fieldCache: &TYPE_RGB_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -323,7 +323,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_XYZ_FieldID: jfieldID?
 
-    open static var TYPE_XYZ: Int {
+    public static var TYPE_XYZ: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_XYZ", fieldType: "I", fieldCache: &TYPE_XYZ_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -334,7 +334,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_YCbCr_FieldID: jfieldID?
 
-    open static var TYPE_YCbCr: Int {
+    public static var TYPE_YCbCr: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_YCbCr", fieldType: "I", fieldCache: &TYPE_YCbCr_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)
@@ -345,7 +345,7 @@ open class ColorSpace: java_swift.JavaObject, /* interface java.io.Serializable 
 
     private static var TYPE_Yxy_FieldID: jfieldID?
 
-    open static var TYPE_Yxy: Int {
+    public static var TYPE_Yxy: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TYPE_Yxy", fieldType: "I", fieldCache: &TYPE_Yxy_FieldID, className: "java/awt/color/ColorSpace", classCache: &ColorSpaceJNIClass )
             return Int(__value)

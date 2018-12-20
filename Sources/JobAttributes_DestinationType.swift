@@ -20,7 +20,7 @@ open class JobAttributes_DestinationType: /* class java.awt.AttributeValue */ Un
 
     private static var FILE_FieldID: jfieldID?
 
-    open static var FILE: JobAttributes_DestinationType! {
+    public static var FILE: JobAttributes_DestinationType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FILE", fieldType: "Ljava/awt/JobAttributes$DestinationType;", fieldCache: &FILE_FieldID, className: "java/awt/JobAttributes$DestinationType", classCache: &JobAttributes_DestinationTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -38,7 +38,7 @@ open class JobAttributes_DestinationType: /* class java.awt.AttributeValue */ Un
 
     private static var PRINTER_FieldID: jfieldID?
 
-    open static var PRINTER: JobAttributes_DestinationType! {
+    public static var PRINTER: JobAttributes_DestinationType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PRINTER", fieldType: "Ljava/awt/JobAttributes$DestinationType;", fieldCache: &PRINTER_FieldID, className: "java/awt/JobAttributes$DestinationType", classCache: &JobAttributes_DestinationTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

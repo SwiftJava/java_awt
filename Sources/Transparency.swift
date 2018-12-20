@@ -34,7 +34,7 @@ open class TransparencyForward: JNIObjectForward, Transparency {
 
     private static var BITMASK_FieldID: jfieldID?
 
-    open static var BITMASK: Int {
+    public static var BITMASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BITMASK", fieldType: "I", fieldCache: &BITMASK_FieldID, className: "java/awt/Transparency", classCache: &TransparencyJNIClass )
             return Int(__value)
@@ -45,7 +45,7 @@ open class TransparencyForward: JNIObjectForward, Transparency {
 
     private static var OPAQUE_FieldID: jfieldID?
 
-    open static var OPAQUE: Int {
+    public static var OPAQUE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OPAQUE", fieldType: "I", fieldCache: &OPAQUE_FieldID, className: "java/awt/Transparency", classCache: &TransparencyJNIClass )
             return Int(__value)
@@ -56,7 +56,7 @@ open class TransparencyForward: JNIObjectForward, Transparency {
 
     private static var TRANSLUCENT_FieldID: jfieldID?
 
-    open static var TRANSLUCENT: Int {
+    public static var TRANSLUCENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRANSLUCENT", fieldType: "I", fieldCache: &TRANSLUCENT_FieldID, className: "java/awt/Transparency", classCache: &TransparencyJNIClass )
             return Int(__value)

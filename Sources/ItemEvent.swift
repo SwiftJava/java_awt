@@ -20,7 +20,7 @@ open class ItemEvent: AWTEvent {
 
     private static var DESELECTED_FieldID: jfieldID?
 
-    open static var DESELECTED: Int {
+    public static var DESELECTED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DESELECTED", fieldType: "I", fieldCache: &DESELECTED_FieldID, className: "java/awt/event/ItemEvent", classCache: &ItemEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class ItemEvent: AWTEvent {
 
     private static var ITEM_FIRST_FieldID: jfieldID?
 
-    open static var ITEM_FIRST: Int {
+    public static var ITEM_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ITEM_FIRST", fieldType: "I", fieldCache: &ITEM_FIRST_FieldID, className: "java/awt/event/ItemEvent", classCache: &ItemEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class ItemEvent: AWTEvent {
 
     private static var ITEM_LAST_FieldID: jfieldID?
 
-    open static var ITEM_LAST: Int {
+    public static var ITEM_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ITEM_LAST", fieldType: "I", fieldCache: &ITEM_LAST_FieldID, className: "java/awt/event/ItemEvent", classCache: &ItemEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class ItemEvent: AWTEvent {
 
     private static var ITEM_STATE_CHANGED_FieldID: jfieldID?
 
-    open static var ITEM_STATE_CHANGED: Int {
+    public static var ITEM_STATE_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ITEM_STATE_CHANGED", fieldType: "I", fieldCache: &ITEM_STATE_CHANGED_FieldID, className: "java/awt/event/ItemEvent", classCache: &ItemEventJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class ItemEvent: AWTEvent {
 
     private static var SELECTED_FieldID: jfieldID?
 
-    open static var SELECTED: Int {
+    public static var SELECTED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SELECTED", fieldType: "I", fieldCache: &SELECTED_FieldID, className: "java/awt/event/ItemEvent", classCache: &ItemEventJNIClass )
             return Int(__value)

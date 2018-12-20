@@ -20,7 +20,7 @@ open class ScrollPane: Container {
 
     private static var SCROLLBARS_ALWAYS_FieldID: jfieldID?
 
-    open static var SCROLLBARS_ALWAYS: Int {
+    public static var SCROLLBARS_ALWAYS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBARS_ALWAYS", fieldType: "I", fieldCache: &SCROLLBARS_ALWAYS_FieldID, className: "java/awt/ScrollPane", classCache: &ScrollPaneJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class ScrollPane: Container {
 
     private static var SCROLLBARS_AS_NEEDED_FieldID: jfieldID?
 
-    open static var SCROLLBARS_AS_NEEDED: Int {
+    public static var SCROLLBARS_AS_NEEDED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBARS_AS_NEEDED", fieldType: "I", fieldCache: &SCROLLBARS_AS_NEEDED_FieldID, className: "java/awt/ScrollPane", classCache: &ScrollPaneJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class ScrollPane: Container {
 
     private static var SCROLLBARS_NEVER_FieldID: jfieldID?
 
-    open static var SCROLLBARS_NEVER: Int {
+    public static var SCROLLBARS_NEVER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLLBARS_NEVER", fieldType: "I", fieldCache: &SCROLLBARS_NEVER_FieldID, className: "java/awt/ScrollPane", classCache: &ScrollPaneJNIClass )
             return Int(__value)

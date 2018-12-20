@@ -21,7 +21,7 @@ open class Dialog: Window {
 
     private static var DEFAULT_MODALITY_TYPE_FieldID: jfieldID?
 
-    open static var DEFAULT_MODALITY_TYPE: Dialog_ModalityType! {
+    public static var DEFAULT_MODALITY_TYPE: Dialog_ModalityType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DEFAULT_MODALITY_TYPE", fieldType: "Ljava/awt/Dialog$ModalityType;", fieldCache: &DEFAULT_MODALITY_TYPE_FieldID, className: "java/awt/Dialog", classCache: &DialogJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

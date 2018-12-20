@@ -20,7 +20,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_ACTIVATED_FieldID: jfieldID?
 
-    open static var WINDOW_ACTIVATED: Int {
+    public static var WINDOW_ACTIVATED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_ACTIVATED", fieldType: "I", fieldCache: &WINDOW_ACTIVATED_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_CLOSED_FieldID: jfieldID?
 
-    open static var WINDOW_CLOSED: Int {
+    public static var WINDOW_CLOSED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_CLOSED", fieldType: "I", fieldCache: &WINDOW_CLOSED_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_CLOSING_FieldID: jfieldID?
 
-    open static var WINDOW_CLOSING: Int {
+    public static var WINDOW_CLOSING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_CLOSING", fieldType: "I", fieldCache: &WINDOW_CLOSING_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_DEACTIVATED_FieldID: jfieldID?
 
-    open static var WINDOW_DEACTIVATED: Int {
+    public static var WINDOW_DEACTIVATED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_DEACTIVATED", fieldType: "I", fieldCache: &WINDOW_DEACTIVATED_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_DEICONIFIED_FieldID: jfieldID?
 
-    open static var WINDOW_DEICONIFIED: Int {
+    public static var WINDOW_DEICONIFIED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_DEICONIFIED", fieldType: "I", fieldCache: &WINDOW_DEICONIFIED_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_FIRST_FieldID: jfieldID?
 
-    open static var WINDOW_FIRST: Int {
+    public static var WINDOW_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_FIRST", fieldType: "I", fieldCache: &WINDOW_FIRST_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_GAINED_FOCUS_FieldID: jfieldID?
 
-    open static var WINDOW_GAINED_FOCUS: Int {
+    public static var WINDOW_GAINED_FOCUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_GAINED_FOCUS", fieldType: "I", fieldCache: &WINDOW_GAINED_FOCUS_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)
@@ -97,7 +97,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_ICONIFIED_FieldID: jfieldID?
 
-    open static var WINDOW_ICONIFIED: Int {
+    public static var WINDOW_ICONIFIED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_ICONIFIED", fieldType: "I", fieldCache: &WINDOW_ICONIFIED_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)
@@ -108,7 +108,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_LAST_FieldID: jfieldID?
 
-    open static var WINDOW_LAST: Int {
+    public static var WINDOW_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_LAST", fieldType: "I", fieldCache: &WINDOW_LAST_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)
@@ -119,7 +119,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_LOST_FOCUS_FieldID: jfieldID?
 
-    open static var WINDOW_LOST_FOCUS: Int {
+    public static var WINDOW_LOST_FOCUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_LOST_FOCUS", fieldType: "I", fieldCache: &WINDOW_LOST_FOCUS_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)
@@ -130,7 +130,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_OPENED_FieldID: jfieldID?
 
-    open static var WINDOW_OPENED: Int {
+    public static var WINDOW_OPENED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_OPENED", fieldType: "I", fieldCache: &WINDOW_OPENED_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)
@@ -141,7 +141,7 @@ open class WindowEvent: ComponentEvent {
 
     private static var WINDOW_STATE_CHANGED_FieldID: jfieldID?
 
-    open static var WINDOW_STATE_CHANGED: Int {
+    public static var WINDOW_STATE_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_STATE_CHANGED", fieldType: "I", fieldCache: &WINDOW_STATE_CHANGED_FieldID, className: "java/awt/event/WindowEvent", classCache: &WindowEventJNIClass )
             return Int(__value)

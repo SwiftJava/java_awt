@@ -20,7 +20,7 @@ open class BufferCapabilities_FlipContents: /* class java.awt.AttributeValue */ 
 
     private static var BACKGROUND_FieldID: jfieldID?
 
-    open static var BACKGROUND: BufferCapabilities_FlipContents! {
+    public static var BACKGROUND: BufferCapabilities_FlipContents! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BACKGROUND", fieldType: "Ljava/awt/BufferCapabilities$FlipContents;", fieldCache: &BACKGROUND_FieldID, className: "java/awt/BufferCapabilities$FlipContents", classCache: &BufferCapabilities_FlipContentsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -32,7 +32,7 @@ open class BufferCapabilities_FlipContents: /* class java.awt.AttributeValue */ 
 
     private static var COPIED_FieldID: jfieldID?
 
-    open static var COPIED: BufferCapabilities_FlipContents! {
+    public static var COPIED: BufferCapabilities_FlipContents! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COPIED", fieldType: "Ljava/awt/BufferCapabilities$FlipContents;", fieldCache: &COPIED_FieldID, className: "java/awt/BufferCapabilities$FlipContents", classCache: &BufferCapabilities_FlipContentsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -54,7 +54,7 @@ open class BufferCapabilities_FlipContents: /* class java.awt.AttributeValue */ 
 
     private static var PRIOR_FieldID: jfieldID?
 
-    open static var PRIOR: BufferCapabilities_FlipContents! {
+    public static var PRIOR: BufferCapabilities_FlipContents! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PRIOR", fieldType: "Ljava/awt/BufferCapabilities$FlipContents;", fieldCache: &PRIOR_FieldID, className: "java/awt/BufferCapabilities$FlipContents", classCache: &BufferCapabilities_FlipContentsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -66,7 +66,7 @@ open class BufferCapabilities_FlipContents: /* class java.awt.AttributeValue */ 
 
     private static var UNDEFINED_FieldID: jfieldID?
 
-    open static var UNDEFINED: BufferCapabilities_FlipContents! {
+    public static var UNDEFINED: BufferCapabilities_FlipContents! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNDEFINED", fieldType: "Ljava/awt/BufferCapabilities$FlipContents;", fieldCache: &UNDEFINED_FieldID, className: "java/awt/BufferCapabilities$FlipContents", classCache: &BufferCapabilities_FlipContentsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

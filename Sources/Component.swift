@@ -25,7 +25,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var BOTTOM_ALIGNMENT_FieldID: jfieldID?
 
-    open static var BOTTOM_ALIGNMENT: Float {
+    public static var BOTTOM_ALIGNMENT: Float {
         get {
             let __value = JNIField.GetStaticFloatField( fieldName: "BOTTOM_ALIGNMENT", fieldType: "F", fieldCache: &BOTTOM_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return __value
@@ -36,7 +36,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var CENTER_ALIGNMENT_FieldID: jfieldID?
 
-    open static var CENTER_ALIGNMENT: Float {
+    public static var CENTER_ALIGNMENT: Float {
         get {
             let __value = JNIField.GetStaticFloatField( fieldName: "CENTER_ALIGNMENT", fieldType: "F", fieldCache: &CENTER_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return __value
@@ -53,7 +53,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var LEFT_ALIGNMENT_FieldID: jfieldID?
 
-    open static var LEFT_ALIGNMENT: Float {
+    public static var LEFT_ALIGNMENT: Float {
         get {
             let __value = JNIField.GetStaticFloatField( fieldName: "LEFT_ALIGNMENT", fieldType: "F", fieldCache: &LEFT_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return __value
@@ -68,7 +68,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var RIGHT_ALIGNMENT_FieldID: jfieldID?
 
-    open static var RIGHT_ALIGNMENT: Float {
+    public static var RIGHT_ALIGNMENT: Float {
         get {
             let __value = JNIField.GetStaticFloatField( fieldName: "RIGHT_ALIGNMENT", fieldType: "F", fieldCache: &RIGHT_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return __value
@@ -79,7 +79,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var TOP_ALIGNMENT_FieldID: jfieldID?
 
-    open static var TOP_ALIGNMENT: Float {
+    public static var TOP_ALIGNMENT: Float {
         get {
             let __value = JNIField.GetStaticFloatField( fieldName: "TOP_ALIGNMENT", fieldType: "F", fieldCache: &TOP_ALIGNMENT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return __value
@@ -407,7 +407,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var ABORT_FieldID: jfieldID?
 
-    open static var ABORT: Int {
+    public static var ABORT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ABORT", fieldType: "I", fieldCache: &ABORT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return Int(__value)
@@ -418,7 +418,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var ALLBITS_FieldID: jfieldID?
 
-    open static var ALLBITS: Int {
+    public static var ALLBITS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALLBITS", fieldType: "I", fieldCache: &ALLBITS_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return Int(__value)
@@ -429,7 +429,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var ERROR_FieldID: jfieldID?
 
-    open static var ERROR: Int {
+    public static var ERROR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ERROR", fieldType: "I", fieldCache: &ERROR_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return Int(__value)
@@ -440,7 +440,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var FRAMEBITS_FieldID: jfieldID?
 
-    open static var FRAMEBITS: Int {
+    public static var FRAMEBITS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FRAMEBITS", fieldType: "I", fieldCache: &FRAMEBITS_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return Int(__value)
@@ -451,7 +451,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var HEIGHT_FieldID: jfieldID?
 
-    open static var HEIGHT: Int {
+    public static var HEIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HEIGHT", fieldType: "I", fieldCache: &HEIGHT_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return Int(__value)
@@ -462,7 +462,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var PROPERTIES_FieldID: jfieldID?
 
-    open static var PROPERTIES: Int {
+    public static var PROPERTIES: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PROPERTIES", fieldType: "I", fieldCache: &PROPERTIES_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return Int(__value)
@@ -473,7 +473,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var SOMEBITS_FieldID: jfieldID?
 
-    open static var SOMEBITS: Int {
+    public static var SOMEBITS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SOMEBITS", fieldType: "I", fieldCache: &SOMEBITS_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return Int(__value)
@@ -484,7 +484,7 @@ open class Component: java_swift.JavaObject, ImageObserver, MenuContainer, /* in
 
     private static var WIDTH_FieldID: jfieldID?
 
-    open static var WIDTH: Int {
+    public static var WIDTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WIDTH", fieldType: "I", fieldCache: &WIDTH_FieldID, className: "java/awt/Component", classCache: &ComponentJNIClass )
             return Int(__value)

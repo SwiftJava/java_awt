@@ -21,7 +21,7 @@ open class MediaTracker: java_swift.JavaObject, /* interface java.io.Serializabl
 
     private static var ABORTED_FieldID: jfieldID?
 
-    open static var ABORTED: Int {
+    public static var ABORTED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ABORTED", fieldType: "I", fieldCache: &ABORTED_FieldID, className: "java/awt/MediaTracker", classCache: &MediaTrackerJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class MediaTracker: java_swift.JavaObject, /* interface java.io.Serializabl
 
     private static var COMPLETE_FieldID: jfieldID?
 
-    open static var COMPLETE: Int {
+    public static var COMPLETE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMPLETE", fieldType: "I", fieldCache: &COMPLETE_FieldID, className: "java/awt/MediaTracker", classCache: &MediaTrackerJNIClass )
             return Int(__value)
@@ -47,7 +47,7 @@ open class MediaTracker: java_swift.JavaObject, /* interface java.io.Serializabl
 
     private static var ERRORED_FieldID: jfieldID?
 
-    open static var ERRORED: Int {
+    public static var ERRORED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ERRORED", fieldType: "I", fieldCache: &ERRORED_FieldID, className: "java/awt/MediaTracker", classCache: &MediaTrackerJNIClass )
             return Int(__value)
@@ -58,7 +58,7 @@ open class MediaTracker: java_swift.JavaObject, /* interface java.io.Serializabl
 
     private static var LOADING_FieldID: jfieldID?
 
-    open static var LOADING: Int {
+    public static var LOADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LOADING", fieldType: "I", fieldCache: &LOADING_FieldID, className: "java/awt/MediaTracker", classCache: &MediaTrackerJNIClass )
             return Int(__value)

@@ -20,7 +20,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var AFTER_LAST_LINE_FieldID: jfieldID?
 
-    open static var AFTER_LAST_LINE: String! {
+    public static var AFTER_LAST_LINE: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "AFTER_LAST_LINE", fieldType: "Ljava/lang/String;", fieldCache: &AFTER_LAST_LINE_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -32,7 +32,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var AFTER_LINE_ENDS_FieldID: jfieldID?
 
-    open static var AFTER_LINE_ENDS: String! {
+    public static var AFTER_LINE_ENDS: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "AFTER_LINE_ENDS", fieldType: "Ljava/lang/String;", fieldCache: &AFTER_LINE_ENDS_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -44,7 +44,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var BEFORE_FIRST_LINE_FieldID: jfieldID?
 
-    open static var BEFORE_FIRST_LINE: String! {
+    public static var BEFORE_FIRST_LINE: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BEFORE_FIRST_LINE", fieldType: "Ljava/lang/String;", fieldCache: &BEFORE_FIRST_LINE_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -56,7 +56,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var BEFORE_LINE_BEGINS_FieldID: jfieldID?
 
-    open static var BEFORE_LINE_BEGINS: String! {
+    public static var BEFORE_LINE_BEGINS: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BEFORE_LINE_BEGINS", fieldType: "Ljava/lang/String;", fieldCache: &BEFORE_LINE_BEGINS_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var CENTER_FieldID: jfieldID?
 
-    open static var CENTER: String! {
+    public static var CENTER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CENTER", fieldType: "Ljava/lang/String;", fieldCache: &CENTER_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var EAST_FieldID: jfieldID?
 
-    open static var EAST: String! {
+    public static var EAST: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EAST", fieldType: "Ljava/lang/String;", fieldCache: &EAST_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -92,7 +92,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var LINE_END_FieldID: jfieldID?
 
-    open static var LINE_END: String! {
+    public static var LINE_END: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LINE_END", fieldType: "Ljava/lang/String;", fieldCache: &LINE_END_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -104,7 +104,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var LINE_START_FieldID: jfieldID?
 
-    open static var LINE_START: String! {
+    public static var LINE_START: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LINE_START", fieldType: "Ljava/lang/String;", fieldCache: &LINE_START_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -116,7 +116,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var NORTH_FieldID: jfieldID?
 
-    open static var NORTH: String! {
+    public static var NORTH: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NORTH", fieldType: "Ljava/lang/String;", fieldCache: &NORTH_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -128,7 +128,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var PAGE_END_FieldID: jfieldID?
 
-    open static var PAGE_END: String! {
+    public static var PAGE_END: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PAGE_END", fieldType: "Ljava/lang/String;", fieldCache: &PAGE_END_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -140,7 +140,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var PAGE_START_FieldID: jfieldID?
 
-    open static var PAGE_START: String! {
+    public static var PAGE_START: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PAGE_START", fieldType: "Ljava/lang/String;", fieldCache: &PAGE_START_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -152,7 +152,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var SOUTH_FieldID: jfieldID?
 
-    open static var SOUTH: String! {
+    public static var SOUTH: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SOUTH", fieldType: "Ljava/lang/String;", fieldCache: &SOUTH_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -164,7 +164,7 @@ open class BorderLayout: java_swift.JavaObject, LayoutManager2, /* interface jav
 
     private static var WEST_FieldID: jfieldID?
 
-    open static var WEST: String! {
+    public static var WEST: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEST", fieldType: "Ljava/lang/String;", fieldCache: &WEST_FieldID, className: "java/awt/BorderLayout", classCache: &BorderLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

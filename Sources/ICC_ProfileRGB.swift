@@ -20,7 +20,7 @@ open class ICC_ProfileRGB: ICC_Profile {
 
     private static var BLUECOMPONENT_FieldID: jfieldID?
 
-    open static var BLUECOMPONENT: Int {
+    public static var BLUECOMPONENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BLUECOMPONENT", fieldType: "I", fieldCache: &BLUECOMPONENT_FieldID, className: "java/awt/color/ICC_ProfileRGB", classCache: &ICC_ProfileRGBJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class ICC_ProfileRGB: ICC_Profile {
 
     private static var GREENCOMPONENT_FieldID: jfieldID?
 
-    open static var GREENCOMPONENT: Int {
+    public static var GREENCOMPONENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "GREENCOMPONENT", fieldType: "I", fieldCache: &GREENCOMPONENT_FieldID, className: "java/awt/color/ICC_ProfileRGB", classCache: &ICC_ProfileRGBJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class ICC_ProfileRGB: ICC_Profile {
 
     private static var REDCOMPONENT_FieldID: jfieldID?
 
-    open static var REDCOMPONENT: Int {
+    public static var REDCOMPONENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "REDCOMPONENT", fieldType: "I", fieldCache: &REDCOMPONENT_FieldID, className: "java/awt/color/ICC_ProfileRGB", classCache: &ICC_ProfileRGBJNIClass )
             return Int(__value)

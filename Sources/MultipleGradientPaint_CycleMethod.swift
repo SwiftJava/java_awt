@@ -56,7 +56,7 @@ open class MultipleGradientPaint_CycleMethodForward: JNIObjectForward {
 
     private static var NO_CYCLE_FieldID: jfieldID?
 
-    open static var NO_CYCLE: MultipleGradientPaint_CycleMethod! {
+    public static var NO_CYCLE: MultipleGradientPaint_CycleMethod! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NO_CYCLE", fieldType: "Ljava/awt/MultipleGradientPaint$CycleMethod;", fieldCache: &NO_CYCLE_FieldID, className: "java/awt/MultipleGradientPaint$CycleMethod", classCache: &MultipleGradientPaint_CycleMethodJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class MultipleGradientPaint_CycleMethodForward: JNIObjectForward {
 
     private static var REFLECT_FieldID: jfieldID?
 
-    open static var REFLECT: MultipleGradientPaint_CycleMethod! {
+    public static var REFLECT: MultipleGradientPaint_CycleMethod! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "REFLECT", fieldType: "Ljava/awt/MultipleGradientPaint$CycleMethod;", fieldCache: &REFLECT_FieldID, className: "java/awt/MultipleGradientPaint$CycleMethod", classCache: &MultipleGradientPaint_CycleMethodJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class MultipleGradientPaint_CycleMethodForward: JNIObjectForward {
 
     private static var REPEAT_FieldID: jfieldID?
 
-    open static var REPEAT: MultipleGradientPaint_CycleMethod! {
+    public static var REPEAT: MultipleGradientPaint_CycleMethod! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "REPEAT", fieldType: "Ljava/awt/MultipleGradientPaint$CycleMethod;", fieldCache: &REPEAT_FieldID, className: "java/awt/MultipleGradientPaint$CycleMethod", classCache: &MultipleGradientPaint_CycleMethodJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

@@ -56,7 +56,7 @@ open class GraphicsDevice_WindowTranslucencyForward: JNIObjectForward {
 
     private static var PERPIXEL_TRANSLUCENT_FieldID: jfieldID?
 
-    open static var PERPIXEL_TRANSLUCENT: GraphicsDevice_WindowTranslucency! {
+    public static var PERPIXEL_TRANSLUCENT: GraphicsDevice_WindowTranslucency! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PERPIXEL_TRANSLUCENT", fieldType: "Ljava/awt/GraphicsDevice$WindowTranslucency;", fieldCache: &PERPIXEL_TRANSLUCENT_FieldID, className: "java/awt/GraphicsDevice$WindowTranslucency", classCache: &GraphicsDevice_WindowTranslucencyJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class GraphicsDevice_WindowTranslucencyForward: JNIObjectForward {
 
     private static var PERPIXEL_TRANSPARENT_FieldID: jfieldID?
 
-    open static var PERPIXEL_TRANSPARENT: GraphicsDevice_WindowTranslucency! {
+    public static var PERPIXEL_TRANSPARENT: GraphicsDevice_WindowTranslucency! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PERPIXEL_TRANSPARENT", fieldType: "Ljava/awt/GraphicsDevice$WindowTranslucency;", fieldCache: &PERPIXEL_TRANSPARENT_FieldID, className: "java/awt/GraphicsDevice$WindowTranslucency", classCache: &GraphicsDevice_WindowTranslucencyJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class GraphicsDevice_WindowTranslucencyForward: JNIObjectForward {
 
     private static var TRANSLUCENT_FieldID: jfieldID?
 
-    open static var TRANSLUCENT: GraphicsDevice_WindowTranslucency! {
+    public static var TRANSLUCENT: GraphicsDevice_WindowTranslucency! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TRANSLUCENT", fieldType: "Ljava/awt/GraphicsDevice$WindowTranslucency;", fieldCache: &TRANSLUCENT_FieldID, className: "java/awt/GraphicsDevice$WindowTranslucency", classCache: &GraphicsDevice_WindowTranslucencyJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

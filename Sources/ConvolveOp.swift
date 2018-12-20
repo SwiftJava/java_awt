@@ -20,7 +20,7 @@ open class ConvolveOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     private static var EDGE_NO_OP_FieldID: jfieldID?
 
-    open static var EDGE_NO_OP: Int {
+    public static var EDGE_NO_OP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EDGE_NO_OP", fieldType: "I", fieldCache: &EDGE_NO_OP_FieldID, className: "java/awt/image/ConvolveOp", classCache: &ConvolveOpJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class ConvolveOp: java_swift.JavaObject, BufferedImageOp, RasterOp {
 
     private static var EDGE_ZERO_FILL_FieldID: jfieldID?
 
-    open static var EDGE_ZERO_FILL: Int {
+    public static var EDGE_ZERO_FILL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EDGE_ZERO_FILL", fieldType: "I", fieldCache: &EDGE_ZERO_FILL_FieldID, className: "java/awt/image/ConvolveOp", classCache: &ConvolveOpJNIClass )
             return Int(__value)

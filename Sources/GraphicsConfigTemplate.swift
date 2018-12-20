@@ -20,7 +20,7 @@ open class GraphicsConfigTemplate: java_swift.JavaObject, /* interface java.io.S
 
     private static var PREFERRED_FieldID: jfieldID?
 
-    open static var PREFERRED: Int {
+    public static var PREFERRED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PREFERRED", fieldType: "I", fieldCache: &PREFERRED_FieldID, className: "java/awt/GraphicsConfigTemplate", classCache: &GraphicsConfigTemplateJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class GraphicsConfigTemplate: java_swift.JavaObject, /* interface java.io.S
 
     private static var REQUIRED_FieldID: jfieldID?
 
-    open static var REQUIRED: Int {
+    public static var REQUIRED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "REQUIRED", fieldType: "I", fieldCache: &REQUIRED_FieldID, className: "java/awt/GraphicsConfigTemplate", classCache: &GraphicsConfigTemplateJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class GraphicsConfigTemplate: java_swift.JavaObject, /* interface java.io.S
 
     private static var UNNECESSARY_FieldID: jfieldID?
 
-    open static var UNNECESSARY: Int {
+    public static var UNNECESSARY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UNNECESSARY", fieldType: "I", fieldCache: &UNNECESSARY_FieldID, className: "java/awt/GraphicsConfigTemplate", classCache: &GraphicsConfigTemplateJNIClass )
             return Int(__value)

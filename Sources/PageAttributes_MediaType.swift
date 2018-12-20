@@ -20,7 +20,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A_FieldID: jfieldID?
 
-    open static var A: PageAttributes_MediaType! {
+    public static var A: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -32,7 +32,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A0_FieldID: jfieldID?
 
-    open static var A0: PageAttributes_MediaType! {
+    public static var A0: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -44,7 +44,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A1_FieldID: jfieldID?
 
-    open static var A1: PageAttributes_MediaType! {
+    public static var A1: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -56,7 +56,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A10_FieldID: jfieldID?
 
-    open static var A10: PageAttributes_MediaType! {
+    public static var A10: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A2_FieldID: jfieldID?
 
-    open static var A2: PageAttributes_MediaType! {
+    public static var A2: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A3_FieldID: jfieldID?
 
-    open static var A3: PageAttributes_MediaType! {
+    public static var A3: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -92,7 +92,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A4_FieldID: jfieldID?
 
-    open static var A4: PageAttributes_MediaType! {
+    public static var A4: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -104,7 +104,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A5_FieldID: jfieldID?
 
-    open static var A5: PageAttributes_MediaType! {
+    public static var A5: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -116,7 +116,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A6_FieldID: jfieldID?
 
-    open static var A6: PageAttributes_MediaType! {
+    public static var A6: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -128,7 +128,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A7_FieldID: jfieldID?
 
-    open static var A7: PageAttributes_MediaType! {
+    public static var A7: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -140,7 +140,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A8_FieldID: jfieldID?
 
-    open static var A8: PageAttributes_MediaType! {
+    public static var A8: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -152,7 +152,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var A9_FieldID: jfieldID?
 
-    open static var A9: PageAttributes_MediaType! {
+    public static var A9: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &A9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -164,7 +164,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B_FieldID: jfieldID?
 
-    open static var B: PageAttributes_MediaType! {
+    public static var B: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -176,7 +176,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B0_FieldID: jfieldID?
 
-    open static var B0: PageAttributes_MediaType! {
+    public static var B0: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -188,7 +188,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B1_FieldID: jfieldID?
 
-    open static var B1: PageAttributes_MediaType! {
+    public static var B1: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -200,7 +200,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B10_FieldID: jfieldID?
 
-    open static var B10: PageAttributes_MediaType! {
+    public static var B10: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -212,7 +212,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B2_FieldID: jfieldID?
 
-    open static var B2: PageAttributes_MediaType! {
+    public static var B2: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -224,7 +224,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B3_FieldID: jfieldID?
 
-    open static var B3: PageAttributes_MediaType! {
+    public static var B3: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -236,7 +236,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B4_FieldID: jfieldID?
 
-    open static var B4: PageAttributes_MediaType! {
+    public static var B4: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -248,7 +248,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B5_FieldID: jfieldID?
 
-    open static var B5: PageAttributes_MediaType! {
+    public static var B5: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -260,7 +260,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B6_FieldID: jfieldID?
 
-    open static var B6: PageAttributes_MediaType! {
+    public static var B6: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -272,7 +272,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B7_FieldID: jfieldID?
 
-    open static var B7: PageAttributes_MediaType! {
+    public static var B7: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -284,7 +284,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B8_FieldID: jfieldID?
 
-    open static var B8: PageAttributes_MediaType! {
+    public static var B8: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -296,7 +296,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var B9_FieldID: jfieldID?
 
-    open static var B9: PageAttributes_MediaType! {
+    public static var B9: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &B9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -308,7 +308,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C_FieldID: jfieldID?
 
-    open static var C: PageAttributes_MediaType! {
+    public static var C: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -320,7 +320,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C0_FieldID: jfieldID?
 
-    open static var C0: PageAttributes_MediaType! {
+    public static var C0: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -332,7 +332,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C1_FieldID: jfieldID?
 
-    open static var C1: PageAttributes_MediaType! {
+    public static var C1: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -344,7 +344,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C10_FieldID: jfieldID?
 
-    open static var C10: PageAttributes_MediaType! {
+    public static var C10: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -356,7 +356,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C2_FieldID: jfieldID?
 
-    open static var C2: PageAttributes_MediaType! {
+    public static var C2: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -368,7 +368,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C3_FieldID: jfieldID?
 
-    open static var C3: PageAttributes_MediaType! {
+    public static var C3: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -380,7 +380,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C4_FieldID: jfieldID?
 
-    open static var C4: PageAttributes_MediaType! {
+    public static var C4: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -392,7 +392,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C5_FieldID: jfieldID?
 
-    open static var C5: PageAttributes_MediaType! {
+    public static var C5: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -404,7 +404,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C6_FieldID: jfieldID?
 
-    open static var C6: PageAttributes_MediaType! {
+    public static var C6: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -416,7 +416,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C7_FieldID: jfieldID?
 
-    open static var C7: PageAttributes_MediaType! {
+    public static var C7: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -428,7 +428,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C8_FieldID: jfieldID?
 
-    open static var C8: PageAttributes_MediaType! {
+    public static var C8: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -440,7 +440,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var C9_FieldID: jfieldID?
 
-    open static var C9: PageAttributes_MediaType! {
+    public static var C9: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "C9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &C9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -452,7 +452,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var D_FieldID: jfieldID?
 
-    open static var D: PageAttributes_MediaType! {
+    public static var D: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "D", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &D_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -464,7 +464,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var E_FieldID: jfieldID?
 
-    open static var E: PageAttributes_MediaType! {
+    public static var E: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "E", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &E_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -476,7 +476,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_10_FieldID: jfieldID?
 
-    open static var ENV_10: PageAttributes_MediaType! {
+    public static var ENV_10: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -488,7 +488,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_10X13_FieldID: jfieldID?
 
-    open static var ENV_10X13: PageAttributes_MediaType! {
+    public static var ENV_10X13: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10X13", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10X13_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -500,7 +500,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_10X14_FieldID: jfieldID?
 
-    open static var ENV_10X14: PageAttributes_MediaType! {
+    public static var ENV_10X14: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10X14", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10X14_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -512,7 +512,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_10X15_FieldID: jfieldID?
 
-    open static var ENV_10X15: PageAttributes_MediaType! {
+    public static var ENV_10X15: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_10X15", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_10X15_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -524,7 +524,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_11_FieldID: jfieldID?
 
-    open static var ENV_11: PageAttributes_MediaType! {
+    public static var ENV_11: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_11", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_11_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -536,7 +536,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_12_FieldID: jfieldID?
 
-    open static var ENV_12: PageAttributes_MediaType! {
+    public static var ENV_12: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_12", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_12_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -548,7 +548,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_14_FieldID: jfieldID?
 
-    open static var ENV_14: PageAttributes_MediaType! {
+    public static var ENV_14: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_14", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_14_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -560,7 +560,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_6X9_FieldID: jfieldID?
 
-    open static var ENV_6X9: PageAttributes_MediaType! {
+    public static var ENV_6X9: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_6X9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_6X9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -572,7 +572,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_7X9_FieldID: jfieldID?
 
-    open static var ENV_7X9: PageAttributes_MediaType! {
+    public static var ENV_7X9: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_7X9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_7X9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -584,7 +584,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_9_FieldID: jfieldID?
 
-    open static var ENV_9: PageAttributes_MediaType! {
+    public static var ENV_9: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -596,7 +596,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_9X11_FieldID: jfieldID?
 
-    open static var ENV_9X11: PageAttributes_MediaType! {
+    public static var ENV_9X11: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_9X11", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_9X11_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -608,7 +608,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_9X12_FieldID: jfieldID?
 
-    open static var ENV_9X12: PageAttributes_MediaType! {
+    public static var ENV_9X12: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_9X12", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_9X12_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -620,7 +620,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_INVITE_FieldID: jfieldID?
 
-    open static var ENV_INVITE: PageAttributes_MediaType! {
+    public static var ENV_INVITE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_INVITE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_INVITE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -632,7 +632,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_ITALY_FieldID: jfieldID?
 
-    open static var ENV_ITALY: PageAttributes_MediaType! {
+    public static var ENV_ITALY: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_ITALY", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_ITALY_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -644,7 +644,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_MONARCH_FieldID: jfieldID?
 
-    open static var ENV_MONARCH: PageAttributes_MediaType! {
+    public static var ENV_MONARCH: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_MONARCH", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_MONARCH_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -656,7 +656,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ENV_PERSONAL_FieldID: jfieldID?
 
-    open static var ENV_PERSONAL: PageAttributes_MediaType! {
+    public static var ENV_PERSONAL: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENV_PERSONAL", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ENV_PERSONAL_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -668,7 +668,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var EXECUTIVE_FieldID: jfieldID?
 
-    open static var EXECUTIVE: PageAttributes_MediaType! {
+    public static var EXECUTIVE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EXECUTIVE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &EXECUTIVE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -680,7 +680,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var FOLIO_FieldID: jfieldID?
 
-    open static var FOLIO: PageAttributes_MediaType! {
+    public static var FOLIO: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FOLIO", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &FOLIO_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -692,7 +692,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var INVITE_FieldID: jfieldID?
 
-    open static var INVITE: PageAttributes_MediaType! {
+    public static var INVITE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INVITE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &INVITE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -704,7 +704,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var INVITE_ENVELOPE_FieldID: jfieldID?
 
-    open static var INVITE_ENVELOPE: PageAttributes_MediaType! {
+    public static var INVITE_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INVITE_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &INVITE_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -716,7 +716,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var INVOICE_FieldID: jfieldID?
 
-    open static var INVOICE: PageAttributes_MediaType! {
+    public static var INVOICE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INVOICE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &INVOICE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -728,7 +728,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_2A0_FieldID: jfieldID?
 
-    open static var ISO_2A0: PageAttributes_MediaType! {
+    public static var ISO_2A0: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_2A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_2A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -740,7 +740,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_4A0_FieldID: jfieldID?
 
-    open static var ISO_4A0: PageAttributes_MediaType! {
+    public static var ISO_4A0: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_4A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_4A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -752,7 +752,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_A0_FieldID: jfieldID?
 
-    open static var ISO_A0: PageAttributes_MediaType! {
+    public static var ISO_A0: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -764,7 +764,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_A1_FieldID: jfieldID?
 
-    open static var ISO_A1: PageAttributes_MediaType! {
+    public static var ISO_A1: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -776,7 +776,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_A10_FieldID: jfieldID?
 
-    open static var ISO_A10: PageAttributes_MediaType! {
+    public static var ISO_A10: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -788,7 +788,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_A2_FieldID: jfieldID?
 
-    open static var ISO_A2: PageAttributes_MediaType! {
+    public static var ISO_A2: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -800,7 +800,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_A3_FieldID: jfieldID?
 
-    open static var ISO_A3: PageAttributes_MediaType! {
+    public static var ISO_A3: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -812,7 +812,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_A4_FieldID: jfieldID?
 
-    open static var ISO_A4: PageAttributes_MediaType! {
+    public static var ISO_A4: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -824,7 +824,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_A5_FieldID: jfieldID?
 
-    open static var ISO_A5: PageAttributes_MediaType! {
+    public static var ISO_A5: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -836,7 +836,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_A6_FieldID: jfieldID?
 
-    open static var ISO_A6: PageAttributes_MediaType! {
+    public static var ISO_A6: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -848,7 +848,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_A7_FieldID: jfieldID?
 
-    open static var ISO_A7: PageAttributes_MediaType! {
+    public static var ISO_A7: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -860,7 +860,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_A8_FieldID: jfieldID?
 
-    open static var ISO_A8: PageAttributes_MediaType! {
+    public static var ISO_A8: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -872,7 +872,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_A9_FieldID: jfieldID?
 
-    open static var ISO_A9: PageAttributes_MediaType! {
+    public static var ISO_A9: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_A9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_A9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -884,7 +884,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B0_FieldID: jfieldID?
 
-    open static var ISO_B0: PageAttributes_MediaType! {
+    public static var ISO_B0: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -896,7 +896,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B1_FieldID: jfieldID?
 
-    open static var ISO_B1: PageAttributes_MediaType! {
+    public static var ISO_B1: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -908,7 +908,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B10_FieldID: jfieldID?
 
-    open static var ISO_B10: PageAttributes_MediaType! {
+    public static var ISO_B10: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -920,7 +920,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B2_FieldID: jfieldID?
 
-    open static var ISO_B2: PageAttributes_MediaType! {
+    public static var ISO_B2: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -932,7 +932,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B3_FieldID: jfieldID?
 
-    open static var ISO_B3: PageAttributes_MediaType! {
+    public static var ISO_B3: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -944,7 +944,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B4_FieldID: jfieldID?
 
-    open static var ISO_B4: PageAttributes_MediaType! {
+    public static var ISO_B4: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -956,7 +956,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B4_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_B4_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_B4_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B4_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B4_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -968,7 +968,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B5_FieldID: jfieldID?
 
-    open static var ISO_B5: PageAttributes_MediaType! {
+    public static var ISO_B5: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -980,7 +980,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B5_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_B5_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_B5_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B5_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B5_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -992,7 +992,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B6_FieldID: jfieldID?
 
-    open static var ISO_B6: PageAttributes_MediaType! {
+    public static var ISO_B6: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1004,7 +1004,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B7_FieldID: jfieldID?
 
-    open static var ISO_B7: PageAttributes_MediaType! {
+    public static var ISO_B7: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1016,7 +1016,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B8_FieldID: jfieldID?
 
-    open static var ISO_B8: PageAttributes_MediaType! {
+    public static var ISO_B8: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1028,7 +1028,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_B9_FieldID: jfieldID?
 
-    open static var ISO_B9: PageAttributes_MediaType! {
+    public static var ISO_B9: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_B9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_B9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1040,7 +1040,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C0_FieldID: jfieldID?
 
-    open static var ISO_C0: PageAttributes_MediaType! {
+    public static var ISO_C0: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1052,7 +1052,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C0_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_C0_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_C0_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C0_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C0_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1064,7 +1064,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C1_FieldID: jfieldID?
 
-    open static var ISO_C1: PageAttributes_MediaType! {
+    public static var ISO_C1: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1076,7 +1076,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C10_FieldID: jfieldID?
 
-    open static var ISO_C10: PageAttributes_MediaType! {
+    public static var ISO_C10: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1088,7 +1088,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C10_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_C10_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_C10_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C10_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C10_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1100,7 +1100,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C1_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_C1_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_C1_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C1_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C1_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1112,7 +1112,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C2_FieldID: jfieldID?
 
-    open static var ISO_C2: PageAttributes_MediaType! {
+    public static var ISO_C2: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1124,7 +1124,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C2_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_C2_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_C2_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C2_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C2_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1136,7 +1136,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C3_FieldID: jfieldID?
 
-    open static var ISO_C3: PageAttributes_MediaType! {
+    public static var ISO_C3: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1148,7 +1148,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C3_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_C3_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_C3_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C3_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C3_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1160,7 +1160,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C4_FieldID: jfieldID?
 
-    open static var ISO_C4: PageAttributes_MediaType! {
+    public static var ISO_C4: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1172,7 +1172,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C4_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_C4_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_C4_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C4_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C4_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1184,7 +1184,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C5_FieldID: jfieldID?
 
-    open static var ISO_C5: PageAttributes_MediaType! {
+    public static var ISO_C5: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1196,7 +1196,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C5_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_C5_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_C5_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C5_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C5_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1208,7 +1208,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C6_FieldID: jfieldID?
 
-    open static var ISO_C6: PageAttributes_MediaType! {
+    public static var ISO_C6: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1220,7 +1220,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C6_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_C6_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_C6_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C6_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C6_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1232,7 +1232,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C7_FieldID: jfieldID?
 
-    open static var ISO_C7: PageAttributes_MediaType! {
+    public static var ISO_C7: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1244,7 +1244,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C7_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_C7_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_C7_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C7_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C7_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1256,7 +1256,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C8_FieldID: jfieldID?
 
-    open static var ISO_C8: PageAttributes_MediaType! {
+    public static var ISO_C8: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1268,7 +1268,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C8_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_C8_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_C8_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C8_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C8_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1280,7 +1280,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C9_FieldID: jfieldID?
 
-    open static var ISO_C9: PageAttributes_MediaType! {
+    public static var ISO_C9: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1292,7 +1292,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_C9_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_C9_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_C9_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_C9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_C9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1304,7 +1304,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_DESIGNATED_LONG_FieldID: jfieldID?
 
-    open static var ISO_DESIGNATED_LONG: PageAttributes_MediaType! {
+    public static var ISO_DESIGNATED_LONG: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_DESIGNATED_LONG", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_DESIGNATED_LONG_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1316,7 +1316,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ISO_DESIGNATED_LONG_ENVELOPE_FieldID: jfieldID?
 
-    open static var ISO_DESIGNATED_LONG_ENVELOPE: PageAttributes_MediaType! {
+    public static var ISO_DESIGNATED_LONG_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISO_DESIGNATED_LONG_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ISO_DESIGNATED_LONG_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1328,7 +1328,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ITALY_FieldID: jfieldID?
 
-    open static var ITALY: PageAttributes_MediaType! {
+    public static var ITALY: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ITALY", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ITALY_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1340,7 +1340,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var ITALY_ENVELOPE_FieldID: jfieldID?
 
-    open static var ITALY_ENVELOPE: PageAttributes_MediaType! {
+    public static var ITALY_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ITALY_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &ITALY_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1502,7 +1502,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var JIS_B0_FieldID: jfieldID?
 
-    open static var JIS_B0: PageAttributes_MediaType! {
+    public static var JIS_B0: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B0", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B0_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1514,7 +1514,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var JIS_B1_FieldID: jfieldID?
 
-    open static var JIS_B1: PageAttributes_MediaType! {
+    public static var JIS_B1: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B1", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B1_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1526,7 +1526,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var JIS_B10_FieldID: jfieldID?
 
-    open static var JIS_B10: PageAttributes_MediaType! {
+    public static var JIS_B10: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B10", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B10_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1538,7 +1538,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var JIS_B2_FieldID: jfieldID?
 
-    open static var JIS_B2: PageAttributes_MediaType! {
+    public static var JIS_B2: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B2", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B2_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1550,7 +1550,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var JIS_B3_FieldID: jfieldID?
 
-    open static var JIS_B3: PageAttributes_MediaType! {
+    public static var JIS_B3: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B3", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B3_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1562,7 +1562,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var JIS_B4_FieldID: jfieldID?
 
-    open static var JIS_B4: PageAttributes_MediaType! {
+    public static var JIS_B4: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B4", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B4_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1574,7 +1574,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var JIS_B5_FieldID: jfieldID?
 
-    open static var JIS_B5: PageAttributes_MediaType! {
+    public static var JIS_B5: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B5", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B5_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1586,7 +1586,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var JIS_B6_FieldID: jfieldID?
 
-    open static var JIS_B6: PageAttributes_MediaType! {
+    public static var JIS_B6: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B6", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B6_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1598,7 +1598,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var JIS_B7_FieldID: jfieldID?
 
-    open static var JIS_B7: PageAttributes_MediaType! {
+    public static var JIS_B7: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B7", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B7_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1610,7 +1610,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var JIS_B8_FieldID: jfieldID?
 
-    open static var JIS_B8: PageAttributes_MediaType! {
+    public static var JIS_B8: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B8", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B8_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1622,7 +1622,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var JIS_B9_FieldID: jfieldID?
 
-    open static var JIS_B9: PageAttributes_MediaType! {
+    public static var JIS_B9: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JIS_B9", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &JIS_B9_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1634,7 +1634,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var LEDGER_FieldID: jfieldID?
 
-    open static var LEDGER: PageAttributes_MediaType! {
+    public static var LEDGER: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LEDGER", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &LEDGER_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1646,7 +1646,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var LEGAL_FieldID: jfieldID?
 
-    open static var LEGAL: PageAttributes_MediaType! {
+    public static var LEGAL: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LEGAL", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &LEGAL_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1658,7 +1658,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var LETTER_FieldID: jfieldID?
 
-    open static var LETTER: PageAttributes_MediaType! {
+    public static var LETTER: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LETTER", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &LETTER_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1670,7 +1670,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var MONARCH_FieldID: jfieldID?
 
-    open static var MONARCH: PageAttributes_MediaType! {
+    public static var MONARCH: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MONARCH", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &MONARCH_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1682,7 +1682,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var MONARCH_ENVELOPE_FieldID: jfieldID?
 
-    open static var MONARCH_ENVELOPE: PageAttributes_MediaType! {
+    public static var MONARCH_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MONARCH_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &MONARCH_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1696,7 +1696,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_10X13_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_10X13_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_10X13_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_10X13_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_10X13_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1708,7 +1708,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_10X14_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_10X14_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_10X14_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_10X14_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_10X14_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1720,7 +1720,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_10X15_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_10X15_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_10X15_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_10X15_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_10X15_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1732,7 +1732,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_6X9_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_6X9_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_6X9_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_6X9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_6X9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1744,7 +1744,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_7X9_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_7X9_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_7X9_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_7X9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_7X9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1756,7 +1756,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_9X11_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_9X11_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_9X11_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_9X11_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_9X11_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1768,7 +1768,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_9X12_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_9X12_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_9X12_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_9X12_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_9X12_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1780,7 +1780,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_LEGAL_FieldID: jfieldID?
 
-    open static var NA_LEGAL: PageAttributes_MediaType! {
+    public static var NA_LEGAL: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_LEGAL", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_LEGAL_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1792,7 +1792,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_LETTER_FieldID: jfieldID?
 
-    open static var NA_LETTER: PageAttributes_MediaType! {
+    public static var NA_LETTER: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_LETTER", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_LETTER_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1804,7 +1804,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_NUMBER_10_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_NUMBER_10_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_NUMBER_10_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_10_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_10_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1816,7 +1816,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_NUMBER_11_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_NUMBER_11_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_NUMBER_11_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_11_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_11_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1828,7 +1828,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_NUMBER_12_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_NUMBER_12_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_NUMBER_12_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_12_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_12_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1840,7 +1840,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_NUMBER_14_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_NUMBER_14_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_NUMBER_14_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_14_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_14_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1852,7 +1852,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NA_NUMBER_9_ENVELOPE_FieldID: jfieldID?
 
-    open static var NA_NUMBER_9_ENVELOPE: PageAttributes_MediaType! {
+    public static var NA_NUMBER_9_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NA_NUMBER_9_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NA_NUMBER_9_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1864,7 +1864,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var NOTE_FieldID: jfieldID?
 
-    open static var NOTE: PageAttributes_MediaType! {
+    public static var NOTE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NOTE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &NOTE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1876,7 +1876,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var PERSONAL_FieldID: jfieldID?
 
-    open static var PERSONAL: PageAttributes_MediaType! {
+    public static var PERSONAL: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PERSONAL", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &PERSONAL_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1888,7 +1888,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var PERSONAL_ENVELOPE_FieldID: jfieldID?
 
-    open static var PERSONAL_ENVELOPE: PageAttributes_MediaType! {
+    public static var PERSONAL_ENVELOPE: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PERSONAL_ENVELOPE", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &PERSONAL_ENVELOPE_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1900,7 +1900,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var QUARTO_FieldID: jfieldID?
 
-    open static var QUARTO: PageAttributes_MediaType! {
+    public static var QUARTO: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "QUARTO", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &QUARTO_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1912,7 +1912,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var STATEMENT_FieldID: jfieldID?
 
-    open static var STATEMENT: PageAttributes_MediaType! {
+    public static var STATEMENT: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "STATEMENT", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &STATEMENT_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1924,7 +1924,7 @@ open class PageAttributes_MediaType: /* class java.awt.AttributeValue */ Unavail
 
     private static var TABLOID_FieldID: jfieldID?
 
-    open static var TABLOID: PageAttributes_MediaType! {
+    public static var TABLOID: PageAttributes_MediaType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TABLOID", fieldType: "Ljava/awt/PageAttributes$MediaType;", fieldCache: &TABLOID_FieldID, className: "java/awt/PageAttributes$MediaType", classCache: &PageAttributes_MediaTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

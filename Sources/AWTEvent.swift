@@ -21,7 +21,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var ACTION_EVENT_MASK_FieldID: jfieldID?
 
-    open static var ACTION_EVENT_MASK: Int64 {
+    public static var ACTION_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "ACTION_EVENT_MASK", fieldType: "J", fieldCache: &ACTION_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -32,7 +32,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var ADJUSTMENT_EVENT_MASK_FieldID: jfieldID?
 
-    open static var ADJUSTMENT_EVENT_MASK: Int64 {
+    public static var ADJUSTMENT_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "ADJUSTMENT_EVENT_MASK", fieldType: "J", fieldCache: &ADJUSTMENT_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -43,7 +43,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var COMPONENT_EVENT_MASK_FieldID: jfieldID?
 
-    open static var COMPONENT_EVENT_MASK: Int64 {
+    public static var COMPONENT_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "COMPONENT_EVENT_MASK", fieldType: "J", fieldCache: &COMPONENT_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -54,7 +54,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var CONTAINER_EVENT_MASK_FieldID: jfieldID?
 
-    open static var CONTAINER_EVENT_MASK: Int64 {
+    public static var CONTAINER_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "CONTAINER_EVENT_MASK", fieldType: "J", fieldCache: &CONTAINER_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -65,7 +65,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var FOCUS_EVENT_MASK_FieldID: jfieldID?
 
-    open static var FOCUS_EVENT_MASK: Int64 {
+    public static var FOCUS_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "FOCUS_EVENT_MASK", fieldType: "J", fieldCache: &FOCUS_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -76,7 +76,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var HIERARCHY_BOUNDS_EVENT_MASK_FieldID: jfieldID?
 
-    open static var HIERARCHY_BOUNDS_EVENT_MASK: Int64 {
+    public static var HIERARCHY_BOUNDS_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "HIERARCHY_BOUNDS_EVENT_MASK", fieldType: "J", fieldCache: &HIERARCHY_BOUNDS_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -87,7 +87,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var HIERARCHY_EVENT_MASK_FieldID: jfieldID?
 
-    open static var HIERARCHY_EVENT_MASK: Int64 {
+    public static var HIERARCHY_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "HIERARCHY_EVENT_MASK", fieldType: "J", fieldCache: &HIERARCHY_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -102,7 +102,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var INPUT_METHOD_EVENT_MASK_FieldID: jfieldID?
 
-    open static var INPUT_METHOD_EVENT_MASK: Int64 {
+    public static var INPUT_METHOD_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "INPUT_METHOD_EVENT_MASK", fieldType: "J", fieldCache: &INPUT_METHOD_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -113,7 +113,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var INVOCATION_EVENT_MASK_FieldID: jfieldID?
 
-    open static var INVOCATION_EVENT_MASK: Int64 {
+    public static var INVOCATION_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "INVOCATION_EVENT_MASK", fieldType: "J", fieldCache: &INVOCATION_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -124,7 +124,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var ITEM_EVENT_MASK_FieldID: jfieldID?
 
-    open static var ITEM_EVENT_MASK: Int64 {
+    public static var ITEM_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "ITEM_EVENT_MASK", fieldType: "J", fieldCache: &ITEM_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -135,7 +135,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var KEY_EVENT_MASK_FieldID: jfieldID?
 
-    open static var KEY_EVENT_MASK: Int64 {
+    public static var KEY_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "KEY_EVENT_MASK", fieldType: "J", fieldCache: &KEY_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -146,7 +146,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var MOUSE_EVENT_MASK_FieldID: jfieldID?
 
-    open static var MOUSE_EVENT_MASK: Int64 {
+    public static var MOUSE_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "MOUSE_EVENT_MASK", fieldType: "J", fieldCache: &MOUSE_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -157,7 +157,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var MOUSE_MOTION_EVENT_MASK_FieldID: jfieldID?
 
-    open static var MOUSE_MOTION_EVENT_MASK: Int64 {
+    public static var MOUSE_MOTION_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "MOUSE_MOTION_EVENT_MASK", fieldType: "J", fieldCache: &MOUSE_MOTION_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -168,7 +168,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var MOUSE_WHEEL_EVENT_MASK_FieldID: jfieldID?
 
-    open static var MOUSE_WHEEL_EVENT_MASK: Int64 {
+    public static var MOUSE_WHEEL_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "MOUSE_WHEEL_EVENT_MASK", fieldType: "J", fieldCache: &MOUSE_WHEEL_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -179,7 +179,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var PAINT_EVENT_MASK_FieldID: jfieldID?
 
-    open static var PAINT_EVENT_MASK: Int64 {
+    public static var PAINT_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "PAINT_EVENT_MASK", fieldType: "J", fieldCache: &PAINT_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -190,7 +190,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var RESERVED_ID_MAX_FieldID: jfieldID?
 
-    open static var RESERVED_ID_MAX: Int {
+    public static var RESERVED_ID_MAX: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RESERVED_ID_MAX", fieldType: "I", fieldCache: &RESERVED_ID_MAX_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return Int(__value)
@@ -201,7 +201,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var TEXT_EVENT_MASK_FieldID: jfieldID?
 
-    open static var TEXT_EVENT_MASK: Int64 {
+    public static var TEXT_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "TEXT_EVENT_MASK", fieldType: "J", fieldCache: &TEXT_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -212,7 +212,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var WINDOW_EVENT_MASK_FieldID: jfieldID?
 
-    open static var WINDOW_EVENT_MASK: Int64 {
+    public static var WINDOW_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "WINDOW_EVENT_MASK", fieldType: "J", fieldCache: &WINDOW_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -223,7 +223,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var WINDOW_FOCUS_EVENT_MASK_FieldID: jfieldID?
 
-    open static var WINDOW_FOCUS_EVENT_MASK: Int64 {
+    public static var WINDOW_FOCUS_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "WINDOW_FOCUS_EVENT_MASK", fieldType: "J", fieldCache: &WINDOW_FOCUS_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value
@@ -234,7 +234,7 @@ open class AWTEvent: java_util.EventObject {
 
     private static var WINDOW_STATE_EVENT_MASK_FieldID: jfieldID?
 
-    open static var WINDOW_STATE_EVENT_MASK: Int64 {
+    public static var WINDOW_STATE_EVENT_MASK: Int64 {
         get {
             let __value = JNIField.GetStaticLongField( fieldName: "WINDOW_STATE_EVENT_MASK", fieldType: "J", fieldCache: &WINDOW_STATE_EVENT_MASK_FieldID, className: "java/awt/AWTEvent", classCache: &AWTEventJNIClass )
             return __value

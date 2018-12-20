@@ -28,7 +28,7 @@ open class JobAttributes_SidesType: /* class java.awt.AttributeValue */ Unavaila
 
     private static var ONE_SIDED_FieldID: jfieldID?
 
-    open static var ONE_SIDED: JobAttributes_SidesType! {
+    public static var ONE_SIDED: JobAttributes_SidesType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ONE_SIDED", fieldType: "Ljava/awt/JobAttributes$SidesType;", fieldCache: &ONE_SIDED_FieldID, className: "java/awt/JobAttributes$SidesType", classCache: &JobAttributes_SidesTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -40,7 +40,7 @@ open class JobAttributes_SidesType: /* class java.awt.AttributeValue */ Unavaila
 
     private static var TWO_SIDED_LONG_EDGE_FieldID: jfieldID?
 
-    open static var TWO_SIDED_LONG_EDGE: JobAttributes_SidesType! {
+    public static var TWO_SIDED_LONG_EDGE: JobAttributes_SidesType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TWO_SIDED_LONG_EDGE", fieldType: "Ljava/awt/JobAttributes$SidesType;", fieldCache: &TWO_SIDED_LONG_EDGE_FieldID, className: "java/awt/JobAttributes$SidesType", classCache: &JobAttributes_SidesTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -52,7 +52,7 @@ open class JobAttributes_SidesType: /* class java.awt.AttributeValue */ Unavaila
 
     private static var TWO_SIDED_SHORT_EDGE_FieldID: jfieldID?
 
-    open static var TWO_SIDED_SHORT_EDGE: JobAttributes_SidesType! {
+    public static var TWO_SIDED_SHORT_EDGE: JobAttributes_SidesType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TWO_SIDED_SHORT_EDGE", fieldType: "Ljava/awt/JobAttributes$SidesType;", fieldCache: &TWO_SIDED_SHORT_EDGE_FieldID, className: "java/awt/JobAttributes$SidesType", classCache: &JobAttributes_SidesTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

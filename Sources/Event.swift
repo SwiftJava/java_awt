@@ -20,7 +20,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var ACTION_EVENT_FieldID: jfieldID?
 
-    open static var ACTION_EVENT: Int {
+    public static var ACTION_EVENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ACTION_EVENT", fieldType: "I", fieldCache: &ACTION_EVENT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var ALT_MASK_FieldID: jfieldID?
 
-    open static var ALT_MASK: Int {
+    public static var ALT_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALT_MASK", fieldType: "I", fieldCache: &ALT_MASK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var BACK_SPACE_FieldID: jfieldID?
 
-    open static var BACK_SPACE: Int {
+    public static var BACK_SPACE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BACK_SPACE", fieldType: "I", fieldCache: &BACK_SPACE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var CAPS_LOCK_FieldID: jfieldID?
 
-    open static var CAPS_LOCK: Int {
+    public static var CAPS_LOCK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CAPS_LOCK", fieldType: "I", fieldCache: &CAPS_LOCK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var CTRL_MASK_FieldID: jfieldID?
 
-    open static var CTRL_MASK: Int {
+    public static var CTRL_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CTRL_MASK", fieldType: "I", fieldCache: &CTRL_MASK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var DELETE_FieldID: jfieldID?
 
-    open static var DELETE: Int {
+    public static var DELETE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DELETE", fieldType: "I", fieldCache: &DELETE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var DOWN_FieldID: jfieldID?
 
-    open static var DOWN: Int {
+    public static var DOWN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DOWN", fieldType: "I", fieldCache: &DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -97,7 +97,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var END_FieldID: jfieldID?
 
-    open static var END: Int {
+    public static var END: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "END", fieldType: "I", fieldCache: &END_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -108,7 +108,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var ENTER_FieldID: jfieldID?
 
-    open static var ENTER: Int {
+    public static var ENTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ENTER", fieldType: "I", fieldCache: &ENTER_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -119,7 +119,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var ESCAPE_FieldID: jfieldID?
 
-    open static var ESCAPE: Int {
+    public static var ESCAPE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ESCAPE", fieldType: "I", fieldCache: &ESCAPE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -130,7 +130,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F1_FieldID: jfieldID?
 
-    open static var F1: Int {
+    public static var F1: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F1", fieldType: "I", fieldCache: &F1_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -141,7 +141,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F10_FieldID: jfieldID?
 
-    open static var F10: Int {
+    public static var F10: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F10", fieldType: "I", fieldCache: &F10_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -152,7 +152,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F11_FieldID: jfieldID?
 
-    open static var F11: Int {
+    public static var F11: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F11", fieldType: "I", fieldCache: &F11_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -163,7 +163,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F12_FieldID: jfieldID?
 
-    open static var F12: Int {
+    public static var F12: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F12", fieldType: "I", fieldCache: &F12_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -174,7 +174,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F2_FieldID: jfieldID?
 
-    open static var F2: Int {
+    public static var F2: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F2", fieldType: "I", fieldCache: &F2_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -185,7 +185,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F3_FieldID: jfieldID?
 
-    open static var F3: Int {
+    public static var F3: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F3", fieldType: "I", fieldCache: &F3_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -196,7 +196,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F4_FieldID: jfieldID?
 
-    open static var F4: Int {
+    public static var F4: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F4", fieldType: "I", fieldCache: &F4_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -207,7 +207,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F5_FieldID: jfieldID?
 
-    open static var F5: Int {
+    public static var F5: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F5", fieldType: "I", fieldCache: &F5_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -218,7 +218,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F6_FieldID: jfieldID?
 
-    open static var F6: Int {
+    public static var F6: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F6", fieldType: "I", fieldCache: &F6_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -229,7 +229,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F7_FieldID: jfieldID?
 
-    open static var F7: Int {
+    public static var F7: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F7", fieldType: "I", fieldCache: &F7_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -240,7 +240,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F8_FieldID: jfieldID?
 
-    open static var F8: Int {
+    public static var F8: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F8", fieldType: "I", fieldCache: &F8_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -251,7 +251,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var F9_FieldID: jfieldID?
 
-    open static var F9: Int {
+    public static var F9: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "F9", fieldType: "I", fieldCache: &F9_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -262,7 +262,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var GOT_FOCUS_FieldID: jfieldID?
 
-    open static var GOT_FOCUS: Int {
+    public static var GOT_FOCUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "GOT_FOCUS", fieldType: "I", fieldCache: &GOT_FOCUS_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -273,7 +273,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var HOME_FieldID: jfieldID?
 
-    open static var HOME: Int {
+    public static var HOME: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HOME", fieldType: "I", fieldCache: &HOME_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -284,7 +284,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var INSERT_FieldID: jfieldID?
 
-    open static var INSERT: Int {
+    public static var INSERT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INSERT", fieldType: "I", fieldCache: &INSERT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -295,7 +295,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var KEY_ACTION_FieldID: jfieldID?
 
-    open static var KEY_ACTION: Int {
+    public static var KEY_ACTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_ACTION", fieldType: "I", fieldCache: &KEY_ACTION_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -306,7 +306,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var KEY_ACTION_RELEASE_FieldID: jfieldID?
 
-    open static var KEY_ACTION_RELEASE: Int {
+    public static var KEY_ACTION_RELEASE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_ACTION_RELEASE", fieldType: "I", fieldCache: &KEY_ACTION_RELEASE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -319,7 +319,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var KEY_PRESS_FieldID: jfieldID?
 
-    open static var KEY_PRESS: Int {
+    public static var KEY_PRESS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_PRESS", fieldType: "I", fieldCache: &KEY_PRESS_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -330,7 +330,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var KEY_RELEASE_FieldID: jfieldID?
 
-    open static var KEY_RELEASE: Int {
+    public static var KEY_RELEASE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "KEY_RELEASE", fieldType: "I", fieldCache: &KEY_RELEASE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -341,7 +341,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var LEFT_FieldID: jfieldID?
 
-    open static var LEFT: Int {
+    public static var LEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -352,7 +352,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var LIST_DESELECT_FieldID: jfieldID?
 
-    open static var LIST_DESELECT: Int {
+    public static var LIST_DESELECT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LIST_DESELECT", fieldType: "I", fieldCache: &LIST_DESELECT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -365,7 +365,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var LIST_SELECT_FieldID: jfieldID?
 
-    open static var LIST_SELECT: Int {
+    public static var LIST_SELECT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LIST_SELECT", fieldType: "I", fieldCache: &LIST_SELECT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -376,7 +376,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var LOAD_FILE_FieldID: jfieldID?
 
-    open static var LOAD_FILE: Int {
+    public static var LOAD_FILE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LOAD_FILE", fieldType: "I", fieldCache: &LOAD_FILE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -387,7 +387,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var LOST_FOCUS_FieldID: jfieldID?
 
-    open static var LOST_FOCUS: Int {
+    public static var LOST_FOCUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LOST_FOCUS", fieldType: "I", fieldCache: &LOST_FOCUS_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -398,7 +398,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var META_MASK_FieldID: jfieldID?
 
-    open static var META_MASK: Int {
+    public static var META_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "META_MASK", fieldType: "I", fieldCache: &META_MASK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -411,7 +411,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var MOUSE_DOWN_FieldID: jfieldID?
 
-    open static var MOUSE_DOWN: Int {
+    public static var MOUSE_DOWN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_DOWN", fieldType: "I", fieldCache: &MOUSE_DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -422,7 +422,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var MOUSE_DRAG_FieldID: jfieldID?
 
-    open static var MOUSE_DRAG: Int {
+    public static var MOUSE_DRAG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_DRAG", fieldType: "I", fieldCache: &MOUSE_DRAG_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -433,7 +433,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var MOUSE_ENTER_FieldID: jfieldID?
 
-    open static var MOUSE_ENTER: Int {
+    public static var MOUSE_ENTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_ENTER", fieldType: "I", fieldCache: &MOUSE_ENTER_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -446,7 +446,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var MOUSE_EXIT_FieldID: jfieldID?
 
-    open static var MOUSE_EXIT: Int {
+    public static var MOUSE_EXIT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_EXIT", fieldType: "I", fieldCache: &MOUSE_EXIT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -457,7 +457,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var MOUSE_MOVE_FieldID: jfieldID?
 
-    open static var MOUSE_MOVE: Int {
+    public static var MOUSE_MOVE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_MOVE", fieldType: "I", fieldCache: &MOUSE_MOVE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -468,7 +468,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var MOUSE_UP_FieldID: jfieldID?
 
-    open static var MOUSE_UP: Int {
+    public static var MOUSE_UP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_UP", fieldType: "I", fieldCache: &MOUSE_UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -479,7 +479,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var NUM_LOCK_FieldID: jfieldID?
 
-    open static var NUM_LOCK: Int {
+    public static var NUM_LOCK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NUM_LOCK", fieldType: "I", fieldCache: &NUM_LOCK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -490,7 +490,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var PAUSE_FieldID: jfieldID?
 
-    open static var PAUSE: Int {
+    public static var PAUSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PAUSE", fieldType: "I", fieldCache: &PAUSE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -501,7 +501,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var PGDN_FieldID: jfieldID?
 
-    open static var PGDN: Int {
+    public static var PGDN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PGDN", fieldType: "I", fieldCache: &PGDN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -512,7 +512,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var PGUP_FieldID: jfieldID?
 
-    open static var PGUP: Int {
+    public static var PGUP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PGUP", fieldType: "I", fieldCache: &PGUP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -523,7 +523,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var PRINT_SCREEN_FieldID: jfieldID?
 
-    open static var PRINT_SCREEN: Int {
+    public static var PRINT_SCREEN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PRINT_SCREEN", fieldType: "I", fieldCache: &PRINT_SCREEN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -534,7 +534,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var RIGHT_FieldID: jfieldID?
 
-    open static var RIGHT: Int {
+    public static var RIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -545,7 +545,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var SAVE_FILE_FieldID: jfieldID?
 
-    open static var SAVE_FILE: Int {
+    public static var SAVE_FILE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SAVE_FILE", fieldType: "I", fieldCache: &SAVE_FILE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -556,7 +556,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var SCROLL_ABSOLUTE_FieldID: jfieldID?
 
-    open static var SCROLL_ABSOLUTE: Int {
+    public static var SCROLL_ABSOLUTE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_ABSOLUTE", fieldType: "I", fieldCache: &SCROLL_ABSOLUTE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -567,7 +567,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var SCROLL_BEGIN_FieldID: jfieldID?
 
-    open static var SCROLL_BEGIN: Int {
+    public static var SCROLL_BEGIN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_BEGIN", fieldType: "I", fieldCache: &SCROLL_BEGIN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -578,7 +578,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var SCROLL_END_FieldID: jfieldID?
 
-    open static var SCROLL_END: Int {
+    public static var SCROLL_END: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_END", fieldType: "I", fieldCache: &SCROLL_END_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -591,7 +591,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var SCROLL_LINE_DOWN_FieldID: jfieldID?
 
-    open static var SCROLL_LINE_DOWN: Int {
+    public static var SCROLL_LINE_DOWN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_LINE_DOWN", fieldType: "I", fieldCache: &SCROLL_LINE_DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -602,7 +602,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var SCROLL_LINE_UP_FieldID: jfieldID?
 
-    open static var SCROLL_LINE_UP: Int {
+    public static var SCROLL_LINE_UP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_LINE_UP", fieldType: "I", fieldCache: &SCROLL_LINE_UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -613,7 +613,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var SCROLL_LOCK_FieldID: jfieldID?
 
-    open static var SCROLL_LOCK: Int {
+    public static var SCROLL_LOCK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_LOCK", fieldType: "I", fieldCache: &SCROLL_LOCK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -624,7 +624,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var SCROLL_PAGE_DOWN_FieldID: jfieldID?
 
-    open static var SCROLL_PAGE_DOWN: Int {
+    public static var SCROLL_PAGE_DOWN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_PAGE_DOWN", fieldType: "I", fieldCache: &SCROLL_PAGE_DOWN_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -635,7 +635,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var SCROLL_PAGE_UP_FieldID: jfieldID?
 
-    open static var SCROLL_PAGE_UP: Int {
+    public static var SCROLL_PAGE_UP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SCROLL_PAGE_UP", fieldType: "I", fieldCache: &SCROLL_PAGE_UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -646,7 +646,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var SHIFT_MASK_FieldID: jfieldID?
 
-    open static var SHIFT_MASK: Int {
+    public static var SHIFT_MASK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SHIFT_MASK", fieldType: "I", fieldCache: &SHIFT_MASK_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -657,7 +657,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var TAB_FieldID: jfieldID?
 
-    open static var TAB: Int {
+    public static var TAB: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TAB", fieldType: "I", fieldCache: &TAB_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -668,7 +668,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var UP_FieldID: jfieldID?
 
-    open static var UP: Int {
+    public static var UP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UP", fieldType: "I", fieldCache: &UP_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -679,7 +679,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var WINDOW_DEICONIFY_FieldID: jfieldID?
 
-    open static var WINDOW_DEICONIFY: Int {
+    public static var WINDOW_DEICONIFY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_DEICONIFY", fieldType: "I", fieldCache: &WINDOW_DEICONIFY_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -690,7 +690,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var WINDOW_DESTROY_FieldID: jfieldID?
 
-    open static var WINDOW_DESTROY: Int {
+    public static var WINDOW_DESTROY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_DESTROY", fieldType: "I", fieldCache: &WINDOW_DESTROY_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -703,7 +703,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var WINDOW_EXPOSE_FieldID: jfieldID?
 
-    open static var WINDOW_EXPOSE: Int {
+    public static var WINDOW_EXPOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_EXPOSE", fieldType: "I", fieldCache: &WINDOW_EXPOSE_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -714,7 +714,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var WINDOW_ICONIFY_FieldID: jfieldID?
 
-    open static var WINDOW_ICONIFY: Int {
+    public static var WINDOW_ICONIFY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_ICONIFY", fieldType: "I", fieldCache: &WINDOW_ICONIFY_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)
@@ -725,7 +725,7 @@ open class Event: java_swift.JavaObject, /* interface java.io.Serializable */ Un
 
     private static var WINDOW_MOVED_FieldID: jfieldID?
 
-    open static var WINDOW_MOVED: Int {
+    public static var WINDOW_MOVED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WINDOW_MOVED", fieldType: "I", fieldCache: &WINDOW_MOVED_FieldID, className: "java/awt/Event", classCache: &EventJNIClass )
             return Int(__value)

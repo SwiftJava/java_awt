@@ -20,7 +20,7 @@ open class PageAttributes_PrintQualityType: /* class java.awt.AttributeValue */ 
 
     private static var DRAFT_FieldID: jfieldID?
 
-    open static var DRAFT: PageAttributes_PrintQualityType! {
+    public static var DRAFT: PageAttributes_PrintQualityType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DRAFT", fieldType: "Ljava/awt/PageAttributes$PrintQualityType;", fieldCache: &DRAFT_FieldID, className: "java/awt/PageAttributes$PrintQualityType", classCache: &PageAttributes_PrintQualityTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -32,7 +32,7 @@ open class PageAttributes_PrintQualityType: /* class java.awt.AttributeValue */ 
 
     private static var HIGH_FieldID: jfieldID?
 
-    open static var HIGH: PageAttributes_PrintQualityType! {
+    public static var HIGH: PageAttributes_PrintQualityType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HIGH", fieldType: "Ljava/awt/PageAttributes$PrintQualityType;", fieldCache: &HIGH_FieldID, className: "java/awt/PageAttributes$PrintQualityType", classCache: &PageAttributes_PrintQualityTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -52,7 +52,7 @@ open class PageAttributes_PrintQualityType: /* class java.awt.AttributeValue */ 
 
     private static var NORMAL_FieldID: jfieldID?
 
-    open static var NORMAL: PageAttributes_PrintQualityType! {
+    public static var NORMAL: PageAttributes_PrintQualityType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NORMAL", fieldType: "Ljava/awt/PageAttributes$PrintQualityType;", fieldCache: &NORMAL_FieldID, className: "java/awt/PageAttributes$PrintQualityType", classCache: &PageAttributes_PrintQualityTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

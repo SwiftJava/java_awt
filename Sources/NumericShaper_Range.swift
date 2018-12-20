@@ -108,7 +108,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var ARABIC_FieldID: jfieldID?
 
-    open static var ARABIC: NumericShaper_Range! {
+    public static var ARABIC: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ARABIC", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &ARABIC_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -120,7 +120,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var BALINESE_FieldID: jfieldID?
 
-    open static var BALINESE: NumericShaper_Range! {
+    public static var BALINESE: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BALINESE", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &BALINESE_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -132,7 +132,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var BENGALI_FieldID: jfieldID?
 
-    open static var BENGALI: NumericShaper_Range! {
+    public static var BENGALI: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BENGALI", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &BENGALI_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -144,7 +144,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var CHAM_FieldID: jfieldID?
 
-    open static var CHAM: NumericShaper_Range! {
+    public static var CHAM: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CHAM", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &CHAM_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -156,7 +156,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var DEVANAGARI_FieldID: jfieldID?
 
-    open static var DEVANAGARI: NumericShaper_Range! {
+    public static var DEVANAGARI: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DEVANAGARI", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &DEVANAGARI_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -168,7 +168,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var EASTERN_ARABIC_FieldID: jfieldID?
 
-    open static var EASTERN_ARABIC: NumericShaper_Range! {
+    public static var EASTERN_ARABIC: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EASTERN_ARABIC", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &EASTERN_ARABIC_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -180,7 +180,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var ETHIOPIC_FieldID: jfieldID?
 
-    open static var ETHIOPIC: NumericShaper_Range! {
+    public static var ETHIOPIC: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ETHIOPIC", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &ETHIOPIC_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -192,7 +192,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var EUROPEAN_FieldID: jfieldID?
 
-    open static var EUROPEAN: NumericShaper_Range! {
+    public static var EUROPEAN: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EUROPEAN", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &EUROPEAN_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -204,7 +204,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var GUJARATI_FieldID: jfieldID?
 
-    open static var GUJARATI: NumericShaper_Range! {
+    public static var GUJARATI: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "GUJARATI", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &GUJARATI_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -216,7 +216,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var GURMUKHI_FieldID: jfieldID?
 
-    open static var GURMUKHI: NumericShaper_Range! {
+    public static var GURMUKHI: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "GURMUKHI", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &GURMUKHI_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -228,7 +228,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var JAVANESE_FieldID: jfieldID?
 
-    open static var JAVANESE: NumericShaper_Range! {
+    public static var JAVANESE: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "JAVANESE", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &JAVANESE_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -240,7 +240,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var KANNADA_FieldID: jfieldID?
 
-    open static var KANNADA: NumericShaper_Range! {
+    public static var KANNADA: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KANNADA", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &KANNADA_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -252,7 +252,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var KAYAH_LI_FieldID: jfieldID?
 
-    open static var KAYAH_LI: NumericShaper_Range! {
+    public static var KAYAH_LI: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KAYAH_LI", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &KAYAH_LI_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -264,7 +264,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var KHMER_FieldID: jfieldID?
 
-    open static var KHMER: NumericShaper_Range! {
+    public static var KHMER: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KHMER", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &KHMER_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -276,7 +276,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var LAO_FieldID: jfieldID?
 
-    open static var LAO: NumericShaper_Range! {
+    public static var LAO: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LAO", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &LAO_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -288,7 +288,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var LEPCHA_FieldID: jfieldID?
 
-    open static var LEPCHA: NumericShaper_Range! {
+    public static var LEPCHA: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LEPCHA", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &LEPCHA_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -300,7 +300,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var LIMBU_FieldID: jfieldID?
 
-    open static var LIMBU: NumericShaper_Range! {
+    public static var LIMBU: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LIMBU", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &LIMBU_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -312,7 +312,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var MALAYALAM_FieldID: jfieldID?
 
-    open static var MALAYALAM: NumericShaper_Range! {
+    public static var MALAYALAM: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MALAYALAM", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &MALAYALAM_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -324,7 +324,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var MEETEI_MAYEK_FieldID: jfieldID?
 
-    open static var MEETEI_MAYEK: NumericShaper_Range! {
+    public static var MEETEI_MAYEK: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MEETEI_MAYEK", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &MEETEI_MAYEK_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -336,7 +336,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var MONGOLIAN_FieldID: jfieldID?
 
-    open static var MONGOLIAN: NumericShaper_Range! {
+    public static var MONGOLIAN: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MONGOLIAN", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &MONGOLIAN_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -348,7 +348,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var MYANMAR_FieldID: jfieldID?
 
-    open static var MYANMAR: NumericShaper_Range! {
+    public static var MYANMAR: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MYANMAR", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &MYANMAR_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -360,7 +360,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var MYANMAR_SHAN_FieldID: jfieldID?
 
-    open static var MYANMAR_SHAN: NumericShaper_Range! {
+    public static var MYANMAR_SHAN: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MYANMAR_SHAN", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &MYANMAR_SHAN_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -372,7 +372,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var NEW_TAI_LUE_FieldID: jfieldID?
 
-    open static var NEW_TAI_LUE: NumericShaper_Range! {
+    public static var NEW_TAI_LUE: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NEW_TAI_LUE", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &NEW_TAI_LUE_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -384,7 +384,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var NKO_FieldID: jfieldID?
 
-    open static var NKO: NumericShaper_Range! {
+    public static var NKO: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NKO", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &NKO_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -396,7 +396,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var OL_CHIKI_FieldID: jfieldID?
 
-    open static var OL_CHIKI: NumericShaper_Range! {
+    public static var OL_CHIKI: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "OL_CHIKI", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &OL_CHIKI_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -408,7 +408,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var ORIYA_FieldID: jfieldID?
 
-    open static var ORIYA: NumericShaper_Range! {
+    public static var ORIYA: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ORIYA", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &ORIYA_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -420,7 +420,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var SAURASHTRA_FieldID: jfieldID?
 
-    open static var SAURASHTRA: NumericShaper_Range! {
+    public static var SAURASHTRA: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SAURASHTRA", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &SAURASHTRA_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -432,7 +432,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var SUNDANESE_FieldID: jfieldID?
 
-    open static var SUNDANESE: NumericShaper_Range! {
+    public static var SUNDANESE: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SUNDANESE", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &SUNDANESE_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -444,7 +444,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var TAI_THAM_HORA_FieldID: jfieldID?
 
-    open static var TAI_THAM_HORA: NumericShaper_Range! {
+    public static var TAI_THAM_HORA: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TAI_THAM_HORA", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &TAI_THAM_HORA_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -456,7 +456,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var TAI_THAM_THAM_FieldID: jfieldID?
 
-    open static var TAI_THAM_THAM: NumericShaper_Range! {
+    public static var TAI_THAM_THAM: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TAI_THAM_THAM", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &TAI_THAM_THAM_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -468,7 +468,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var TAMIL_FieldID: jfieldID?
 
-    open static var TAMIL: NumericShaper_Range! {
+    public static var TAMIL: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TAMIL", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &TAMIL_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -480,7 +480,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var TELUGU_FieldID: jfieldID?
 
-    open static var TELUGU: NumericShaper_Range! {
+    public static var TELUGU: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TELUGU", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &TELUGU_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -492,7 +492,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var THAI_FieldID: jfieldID?
 
-    open static var THAI: NumericShaper_Range! {
+    public static var THAI: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "THAI", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &THAI_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -504,7 +504,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var TIBETAN_FieldID: jfieldID?
 
-    open static var TIBETAN: NumericShaper_Range! {
+    public static var TIBETAN: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TIBETAN", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &TIBETAN_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -516,7 +516,7 @@ open class NumericShaper_RangeForward: JNIObjectForward {
 
     private static var VAI_FieldID: jfieldID?
 
-    open static var VAI: NumericShaper_Range! {
+    public static var VAI: NumericShaper_Range! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VAI", fieldType: "Ljava/awt/font/NumericShaper$Range;", fieldCache: &VAI_FieldID, className: "java/awt/font/NumericShaper$Range", classCache: &NumericShaper_RangeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

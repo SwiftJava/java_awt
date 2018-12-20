@@ -24,7 +24,7 @@ open class InputSubset: java_lang.Character_Subset {
 
     private static var FULLWIDTH_DIGITS_FieldID: jfieldID?
 
-    open static var FULLWIDTH_DIGITS: InputSubset! {
+    public static var FULLWIDTH_DIGITS: InputSubset! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FULLWIDTH_DIGITS", fieldType: "Ljava/awt/im/InputSubset;", fieldCache: &FULLWIDTH_DIGITS_FieldID, className: "java/awt/im/InputSubset", classCache: &InputSubsetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -36,7 +36,7 @@ open class InputSubset: java_lang.Character_Subset {
 
     private static var FULLWIDTH_LATIN_FieldID: jfieldID?
 
-    open static var FULLWIDTH_LATIN: InputSubset! {
+    public static var FULLWIDTH_LATIN: InputSubset! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FULLWIDTH_LATIN", fieldType: "Ljava/awt/im/InputSubset;", fieldCache: &FULLWIDTH_LATIN_FieldID, className: "java/awt/im/InputSubset", classCache: &InputSubsetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -48,7 +48,7 @@ open class InputSubset: java_lang.Character_Subset {
 
     private static var HALFWIDTH_KATAKANA_FieldID: jfieldID?
 
-    open static var HALFWIDTH_KATAKANA: InputSubset! {
+    public static var HALFWIDTH_KATAKANA: InputSubset! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HALFWIDTH_KATAKANA", fieldType: "Ljava/awt/im/InputSubset;", fieldCache: &HALFWIDTH_KATAKANA_FieldID, className: "java/awt/im/InputSubset", classCache: &InputSubsetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -60,7 +60,7 @@ open class InputSubset: java_lang.Character_Subset {
 
     private static var HANJA_FieldID: jfieldID?
 
-    open static var HANJA: InputSubset! {
+    public static var HANJA: InputSubset! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HANJA", fieldType: "Ljava/awt/im/InputSubset;", fieldCache: &HANJA_FieldID, className: "java/awt/im/InputSubset", classCache: &InputSubsetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -72,7 +72,7 @@ open class InputSubset: java_lang.Character_Subset {
 
     private static var KANJI_FieldID: jfieldID?
 
-    open static var KANJI: InputSubset! {
+    public static var KANJI: InputSubset! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KANJI", fieldType: "Ljava/awt/im/InputSubset;", fieldCache: &KANJI_FieldID, className: "java/awt/im/InputSubset", classCache: &InputSubsetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -84,7 +84,7 @@ open class InputSubset: java_lang.Character_Subset {
 
     private static var LATIN_FieldID: jfieldID?
 
-    open static var LATIN: InputSubset! {
+    public static var LATIN: InputSubset! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LATIN", fieldType: "Ljava/awt/im/InputSubset;", fieldCache: &LATIN_FieldID, className: "java/awt/im/InputSubset", classCache: &InputSubsetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -96,7 +96,7 @@ open class InputSubset: java_lang.Character_Subset {
 
     private static var LATIN_DIGITS_FieldID: jfieldID?
 
-    open static var LATIN_DIGITS: InputSubset! {
+    public static var LATIN_DIGITS: InputSubset! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LATIN_DIGITS", fieldType: "Ljava/awt/im/InputSubset;", fieldCache: &LATIN_DIGITS_FieldID, className: "java/awt/im/InputSubset", classCache: &InputSubsetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -108,7 +108,7 @@ open class InputSubset: java_lang.Character_Subset {
 
     private static var SIMPLIFIED_HANZI_FieldID: jfieldID?
 
-    open static var SIMPLIFIED_HANZI: InputSubset! {
+    public static var SIMPLIFIED_HANZI: InputSubset! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SIMPLIFIED_HANZI", fieldType: "Ljava/awt/im/InputSubset;", fieldCache: &SIMPLIFIED_HANZI_FieldID, className: "java/awt/im/InputSubset", classCache: &InputSubsetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -120,7 +120,7 @@ open class InputSubset: java_lang.Character_Subset {
 
     private static var TRADITIONAL_HANZI_FieldID: jfieldID?
 
-    open static var TRADITIONAL_HANZI: InputSubset! {
+    public static var TRADITIONAL_HANZI: InputSubset! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TRADITIONAL_HANZI", fieldType: "Ljava/awt/im/InputSubset;", fieldCache: &TRADITIONAL_HANZI_FieldID, className: "java/awt/im/InputSubset", classCache: &InputSubsetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
