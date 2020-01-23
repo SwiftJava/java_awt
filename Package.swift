@@ -1,3 +1,4 @@
+// swift-tools-version:5.0
 //
 //  Package.swift
 //  SwiftJava
@@ -10,7 +11,13 @@ import PackageDescription
 
 let package = Package(
     name: "java_awt",
+    products: [
+        .library(name: "java_awt", targets: ["java_awt"]),
+    ],
     dependencies: [
-        .Package(url: "https://github.com/SwiftJava/java_util.git", versions: Version(2,1,0)..<Version(3,0,0)),
-        ]
+        .package(url: "https://github.com/SwiftJava/java_util.git", .branch("master")),
+        ],
+    targets: [
+        .target(name: "java_awt", dependencies: ["java_util"], path: "Sources/"),
+    ]
 )
